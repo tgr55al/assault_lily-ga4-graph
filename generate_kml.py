@@ -56,7 +56,7 @@ def main():
     """
 
     # ファイルに保存
-    with open("ga4_map.kml", "w", encoding="utf-8") as f:
+    with open("output/ga4_map.kml", "w", encoding="utf-8") as f:
         f.write(kml_content)
 
     print("KML saved to ga4_map.kml")
