@@ -31,3 +31,4 @@ def main():
     print("GA4 data saved to ga4_result.csv")
 
 if __name__ == "__main__":
+    main()
