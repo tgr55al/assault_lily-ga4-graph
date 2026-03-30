@@ -24,7 +24,7 @@ jobs:
 
       - name: Decode service account key
         run: |
-          echo "${{ secrets.GA4_SERVICE_KEY }}" > service_account.json
+          printf "%s" "${{ secrets.GA4_SERVICE_KEY }}" > service_account.json
 
       - name: Run GA4 fetch script
         run: |
