@@ -59,4 +59,4 @@ def main():
     print("KML saved to ga4_map.kml")
 
 if __name__ == "__main__":
-    
+    main()
