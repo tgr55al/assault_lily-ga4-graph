@@ -11,28 +11,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # v3 → v4に更新（最新推奨）
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5   # v4 → v5に更新
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: |
-          pip install google-analytics-data
-
-      - name: Decode service account key
-        run: |
-          printf "%s" "${{ secrets.GA4_SERVICE_KEY }}" > service_account.json
+          pip install google-analytics-data pandas   # 必要ライブラリ追加
 
       - name: Run GA4 fetch script
-        run: |
-          python fetch_ga4.py
+        env:
+          GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}   # ← 環境変数で直接渡す（ファイル不要！）
+        run: python fetch_ga4.py
 
       - name: Generate KML
-        run: |
-          python generate_kml.py
+        run: python generate_kml.py
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
