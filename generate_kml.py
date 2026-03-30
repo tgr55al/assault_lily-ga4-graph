@@ -16,6 +16,8 @@ COUNTRY_COORDS = {
 }
 
 def main():
+    os.makedirs("output", exist_ok=True)
+
     kml_points = []
 
     # GA4 の結果を読み込む
