@@ -1,0 +1,41 @@
+name: GA4 Daily Export
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # 毎日 09:00 JST（UTC 0:00）
+  workflow_dispatch:       # 手動実行ボタンも追加
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install google-analytics-data
+
+      - name: Decode service account key
+        run: |
+          echo "${{ secrets.GA4_SERVICE_KEY }}" > service_account.json
+
+      - name: Run GA4 fetch script
+        run: |
+          python fetch_ga4.py
+
+      - name: Generate KML
+        run: |
+          python generate_kml.py
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
