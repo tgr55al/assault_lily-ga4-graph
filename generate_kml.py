@@ -1,4 +1,5 @@
 import csv
+import os
 
 # 国名 → 緯度経度の簡易マップ（必要に応じて追加可能）
 COUNTRY_COORDS = {
