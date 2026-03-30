@@ -1,32 +1,42 @@
-from google.analytics.data_v1beta import BetaAnalyticsDataClient
-from google.analytics.data_v1beta.types import RunReportRequest
+import os
 import json
+from google.oauth2 import service_account
+from google.analytics.data_v1beta import BetaAnalyticsDataClient
+from google.analytics.data_v1beta.types import (
+    RunReportRequest,
+    DateRange,
+    Dimension,
+    Metric,
+)
 
-# GA4 のプロパティ ID（例：123456789）
+# GA4 のプロパティ ID
 PROPERTY_ID = "530080930"
 
 def main():
-    # サービスアカウントキーを読み込み
-    with open("service_account.json", "r") as f:
-        info = json.load(f)
+    # Secretsを環境変数から直接読み込み（JSONが壊れない）
+    info = json.loads(os.environ["GA4_SERVICE_ACCOUNT"])
 
-    client = BetaAnalyticsDataClient.from_service_account_info(info)
+    # 認証情報を作成
+    credentials = service_account.Credentials.from_service_account_info(info)
+    client = BetaAnalyticsDataClient(credentials=credentials)
 
-    # GA4 API のリクエスト
+    # GA4 API リクエスト（dictではなく正しい型を使う）
     request = RunReportRequest(
         property=f"properties/{PROPERTY_ID}",
-        dimensions=[{"name": "country"}],
-        metrics=[{"name": "activeUsers"}],
-        date_ranges=[{"start_date": "7daysAgo", "end_date": "today"}],
+        dimensions=[Dimension(name="country")],
+        metrics=[Metric(name="activeUsers")],
+        date_ranges=[DateRange(start_date="7daysAgo", end_date="today")],
     )
 
     response = client.run_report(request)
 
-    # 結果を CSV に保存（後で KML 生成に使う）
+    # 結果を CSV に保存
     with open("ga4_result.csv", "w", encoding="utf-8") as f:
         f.write("country,activeUsers\n")
         for row in response.rows:
-            f.write(f"{row.dimension_values[0].value},{row.metric_values[0].value}\n")
+            country = row.dimension_values[0].value
+            users = row.metric_values[0].value
+            f.write(f"{country},{users}\n")
 
     print("GA4 data saved to ga4_result.csv")
 
