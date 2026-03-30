@@ -14,7 +14,7 @@ PROPERTY_ID = "530080930"
 
 def main():
     # Secretsを環境変数から直接読み込み（JSONが壊れない）
-    info = json.loads(os.environ["GA4_SERVICE_ACCOUNT"])
+    info = json.loads(os.environ["GA4_SERVICE_KEY"])
 
     # 認証情報を作成
     credentials = service_account.Credentials.from_service_account_info(info)
