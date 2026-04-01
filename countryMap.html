@@ -8,12 +8,10 @@
     <style>
         body, html { margin:0; padding:0; height:100%; }
         #map { width:100%; height:100vh; }
-        #debug { position:absolute; top:10px; left:10px; background:white; padding:12px; border:3px solid #3388ff; z-index:1000; font-size:14px; max-width:340px; box-shadow:0 0 15px rgba(0,0,0,0.4); line-height:1.4; }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    <div id="debug">読み込み中...</div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
@@ -22,46 +20,13 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        const debug = document.getElementById('debug');
-
-        fetch('ga4_map.kml?' + Date.now())
-            .then(r => r.text())
-            .then(kmlText => {
-                debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
-
-                // Placemarkごとに分割（これが一番確実）
-                const placemarkParts = kmlText.split('<Placemark>').slice(1);
-                debug.innerHTML += `分割されたPlacemark: ${placemarkParts.length}件<br>`;
-
-                const features = [];
-                for (let part of placemarkParts) {
-                    const nameMatch = part.match(/<name>(.*?)<\/name>/s);
-                    const valueMatch = part.match(/<value>(.*?)<\/value>/s);
-                    const coordMatch = part.match(/<coordinates>(.*?)<\/coordinates>/s);
-
-                    if (nameMatch && valueMatch && coordMatch) {
-                        const name = nameMatch[1].trim();
-                        const value = parseFloat(valueMatch[1].trim()) || 0;
-                        const [lon, lat] = coordMatch[1].trim().split(',').map(Number);
-
-                        features.push({
-                            type: 'Feature',
-                            properties: { name, value },
-                            geometry: { type: 'Point', coordinates: [lon, lat] }
-                        });
-                    }
-                }
-
-                if (features.length === 0) {
-                    debug.innerHTML += '<span style="color:red">抽出失敗</span>';
-                    return;
-                }
-
-                debug.innerHTML += `✅ ${features.length}件の円を表示`;
-
-                L.geoJSON({type:'FeatureCollection', features}, {
+        fetch('ga4_map.geojson?' + Date.now())
+            .then(r => r.json())
+            .then(geojson => {
+                L.geoJSON(geojson, {
                     pointToLayer: (feature, latlng) => {
-                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.8); // 日本が目立つサイズ
+                        const value = feature.properties.value || 0;
+                        const radius = Math.max(8, Math.sqrt(value) * 2.8); // 日本が一番目立つサイズ
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
@@ -75,9 +40,8 @@
                     }
                 }).addTo(map);
 
-                map.fitBounds(L.geoJSON({type:'FeatureCollection', features}).getBounds(), {padding: [50,50]});
-            })
-            .catch(() => debug.innerHTML = 'KML読み込み失敗');
+                map.fitBounds(L.geoJSON(geojson).getBounds(), {padding: [50,50]});
+            });
     </script>
 </body>
 </html>
