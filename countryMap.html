@@ -29,8 +29,8 @@
             .then(kmlText => {
                 debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
 
-                // シンプルな正規表現で全Placemarkを抽出（名前空間・インデント関係なし）
-                const placemarkRegex = /<Placemark>\s*<name>(.*?)<\/name>\s*<value>(.*?)<\/value>\s*<Point>\s*<coordinates>(.*?)<\/coordinates>/gs;
+                // より強力な正規表現（改行・空白・インデントを完全に無視）
+                const placemarkRegex = /<Placemark>[\s\S]*?<name>(.*?)<\/name>[\s\S]*?<value>(.*?)<\/value>[\s\S]*?<coordinates>(.*?)<\/coordinates>[\s\S]*?<\/Placemark>/gs;
                 const matches = [...kmlText.matchAll(placemarkRegex)];
 
                 debug.innerHTML += `抽出されたPlacemark: ${matches.length}件<br>`;
@@ -58,7 +58,7 @@
 
                 L.geoJSON({type:'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
-                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.2); // ← 大きさ調整ここ
+                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.2);
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
