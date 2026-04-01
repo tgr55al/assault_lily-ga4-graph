@@ -8,12 +8,12 @@
     <style>
         body, html { margin:0; padding:0; height:100%; }
         #map { width:100%; height:100vh; }
-        #debug { position:absolute; top:10px; left:10px; background:white; padding:10px; border:2px solid red; z-index:1000; font-size:14px; max-width:300px; }
+        #debug { position:absolute; top:10px; left:10px; background:white; padding:10px; border:2px solid #3388ff; z-index:1000; font-size:14px; max-width:320px; box-shadow:0 0 10px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    <div id="debug"></div>
+    <div id="debug">読み込み中...</div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
@@ -27,32 +27,20 @@
         fetch('ga4_map.kml')
             .then(r => r.text())
             .then(kmlText => {
-                debug.innerHTML = `KMLファイル読み込み成功<br>サイズ: ${kmlText.length} 文字<br>`;
+                debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
 
-                // 生テキストでPlacemarkの出現数をカウント
-                const rawCount = (kmlText.match(/Placemark/gi) || []).length;
-                debug.innerHTML += `生テキスト内のPlacemark: ${rawCount}件<br>`;
+                // シンプルな正規表現で全Placemarkを抽出（名前空間・インデント関係なし）
+                const placemarkRegex = /<Placemark>\s*<name>(.*?)<\/name>\s*<value>(.*?)<\/value>\s*<Point>\s*<coordinates>(.*?)<\/coordinates>/gs;
+                const matches = [...kmlText.matchAll(placemarkRegex)];
 
-                const parser = new DOMParser();
-                const kmlDoc = parser.parseFromString(kmlText, 'text/xml');
-                
-                const KML_NS = 'http://www.opengis.net/kml/2.2';
-                let placemarks = kmlDoc.getElementsByTagNameNS(KML_NS, 'Placemark');
-                if (placemarks.length === 0) placemarks = kmlDoc.getElementsByTagName('Placemark');
-                
-                debug.innerHTML += `解析後のPlacemark数: ${placemarks.length}件<br>`;
+                debug.innerHTML += `抽出されたPlacemark: ${matches.length}件<br>`;
 
                 const features = [];
-                for (let pm of placemarks) {
-                    const get = (tag) => pm.getElementsByTagNameNS(KML_NS, tag)[0] || pm.getElementsByTagName(tag)[0];
-                    const name = get('name')?.textContent.trim() || '不明';
-                    let value = 0;
-                    const valueEl = get('value') || get('Data')?.querySelector('value');
-                    if (valueEl) value = parseFloat(valueEl.textContent.trim()) || 0;
-
-                    const coordsEl = get('coordinates');
-                    if (!coordsEl) continue;
-                    const [lon, lat] = coordsEl.textContent.trim().split(',').map(Number).slice(0, 2);
+                for (let match of matches) {
+                    const name = match[1].trim();
+                    const value = parseFloat(match[2].trim()) || 0;
+                    const coords = match[3].trim().split(',').map(Number);
+                    const [lon, lat] = [coords[0], coords[1]];
 
                     features.push({
                         type: 'Feature',
@@ -61,13 +49,16 @@
                     });
                 }
 
-                debug.innerHTML += `最終的に抽出された国数: ${features.length}件`;
+                if (features.length === 0) {
+                    debug.innerHTML += '<span style="color:red">データ抽出失敗</span>';
+                    return;
+                }
 
-                if (features.length === 0) return;
+                debug.innerHTML += `✅ ${features.length}件の円を表示`;
 
                 L.geoJSON({type:'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
-                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.2);
+                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.2); // ← 大きさ調整ここ
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
@@ -83,9 +74,7 @@
 
                 map.fitBounds(L.geoJSON({type:'FeatureCollection', features}).getBounds(), {padding: [50,50]});
             })
-            .catch(() => {
-                debug.innerHTML = 'KML読み込み失敗';
-            });
+            .catch(() => debug.innerHTML = 'KML読み込み失敗');
     </script>
 </body>
 </html>
