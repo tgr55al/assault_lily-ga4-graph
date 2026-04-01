@@ -8,7 +8,7 @@
     <style>
         body, html { margin:0; padding:0; height:100%; }
         #map { width:100%; height:100vh; }
-        #debug { position:absolute; top:10px; left:10px; background:white; padding:10px; border:2px solid #3388ff; z-index:1000; font-size:14px; max-width:320px; box-shadow:0 0 10px rgba(0,0,0,0.3); }
+        #debug { position:absolute; top:10px; left:10px; background:white; padding:10px; border:3px solid #3388ff; z-index:1000; font-size:14px; max-width:320px; box-shadow:0 0 15px rgba(0,0,0,0.4); }
     </style>
 </head>
 <body>
@@ -24,23 +24,26 @@
 
         const debug = document.getElementById('debug');
 
-        // キャッシュ無効化 + 強力正規表現で確実に抽出
         fetch('ga4_map.kml?' + Date.now())
             .then(r => r.text())
             .then(kmlText => {
                 debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
 
-                // 超強力正規表現（改行・空白・xmlns全部無視）
-                const placemarkRegex = /<Placemark>[\s\S]*?<name>(.*?)<\/name>[\s\S]*?<value>(.*?)<\/value>[\s\S]*?<coordinates>(.*?)<\/coordinates>[\s\S]*?<\/Placemark>/gs;
-                const matches = [...kmlText.matchAll(placemarkRegex)];
+                // KMLの名前空間を除去（これが一番効く）
+                const cleanKml = kmlText.replace(/xmlns="[^"]*"/g, '');
+                const parser = new DOMParser();
+                const kmlDoc = parser.parseFromString(cleanKml, 'text/xml');
 
-                debug.innerHTML += `抽出されたPlacemark: ${matches.length}件<br>`;
+                const placemarks = kmlDoc.getElementsByTagName('Placemark');
+                debug.innerHTML += `抽出されたPlacemark: ${placemarks.length}件<br>`;
 
                 const features = [];
-                for (let match of matches) {
-                    const name = match[1].trim();
-                    const value = parseFloat(match[2].trim()) || 0;
-                    const [lon, lat] = match[3].trim().split(',').map(Number);
+                for (let pm of placemarks) {
+                    const name = pm.getElementsByTagName('name')[0]?.textContent.trim() || '不明';
+                    const value = parseFloat(pm.getElementsByTagName('value')[0]?.textContent.trim()) || 0;
+                    const coordsText = pm.getElementsByTagName('coordinates')[0]?.textContent.trim();
+                    if (!coordsText) continue;
+                    const [lon, lat] = coordsText.split(',').map(n => parseFloat(n));
 
                     features.push({
                         type: 'Feature',
@@ -50,7 +53,7 @@
                 }
 
                 if (features.length === 0) {
-                    debug.innerHTML += '<span style="color:red">データ抽出失敗</span>';
+                    debug.innerHTML += '<span style="color:red">抽出失敗</span>';
                     return;
                 }
 
@@ -58,7 +61,7 @@
 
                 L.geoJSON({type:'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
-                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.5); // ← 2.5に少し大きく調整
+                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.8); // 日本が一番目立つサイズ
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
