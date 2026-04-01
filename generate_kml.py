@@ -37,7 +37,8 @@ def main():
             # KML の Placemark を作成
             placemark = f"""
             <Placemark>
-                <name>{country} ({users})</name>
+                <name>{country}</name>
+                <value>{users}</value>
                 <Point>
                     <coordinates>{lon},{lat},0</coordinates>
                 </Point>
