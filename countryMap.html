@@ -8,7 +8,7 @@
     <style>
         body, html { margin:0; padding:0; height:100%; }
         #map { width:100%; height:100vh; }
-        #debug { position:absolute; top:10px; left:10px; background:white; padding:10px; border:3px solid #3388ff; z-index:1000; font-size:14px; max-width:320px; box-shadow:0 0 15px rgba(0,0,0,0.4); }
+        #debug { position:absolute; top:10px; left:10px; background:white; padding:12px; border:3px solid #3388ff; z-index:1000; font-size:14px; max-width:340px; box-shadow:0 0 15px rgba(0,0,0,0.4); line-height:1.4; }
     </style>
 </head>
 <body>
@@ -29,27 +29,27 @@
             .then(kmlText => {
                 debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
 
-                // KMLの名前空間を除去（これが一番効く）
-                const cleanKml = kmlText.replace(/xmlns="[^"]*"/g, '');
-                const parser = new DOMParser();
-                const kmlDoc = parser.parseFromString(cleanKml, 'text/xml');
-
-                const placemarks = kmlDoc.getElementsByTagName('Placemark');
-                debug.innerHTML += `抽出されたPlacemark: ${placemarks.length}件<br>`;
+                // Placemarkごとに分割（これが一番確実）
+                const placemarkParts = kmlText.split('<Placemark>').slice(1);
+                debug.innerHTML += `分割されたPlacemark: ${placemarkParts.length}件<br>`;
 
                 const features = [];
-                for (let pm of placemarks) {
-                    const name = pm.getElementsByTagName('name')[0]?.textContent.trim() || '不明';
-                    const value = parseFloat(pm.getElementsByTagName('value')[0]?.textContent.trim()) || 0;
-                    const coordsText = pm.getElementsByTagName('coordinates')[0]?.textContent.trim();
-                    if (!coordsText) continue;
-                    const [lon, lat] = coordsText.split(',').map(n => parseFloat(n));
+                for (let part of placemarkParts) {
+                    const nameMatch = part.match(/<name>(.*?)<\/name>/s);
+                    const valueMatch = part.match(/<value>(.*?)<\/value>/s);
+                    const coordMatch = part.match(/<coordinates>(.*?)<\/coordinates>/s);
 
-                    features.push({
-                        type: 'Feature',
-                        properties: { name, value },
-                        geometry: { type: 'Point', coordinates: [lon, lat] }
-                    });
+                    if (nameMatch && valueMatch && coordMatch) {
+                        const name = nameMatch[1].trim();
+                        const value = parseFloat(valueMatch[1].trim()) || 0;
+                        const [lon, lat] = coordMatch[1].trim().split(',').map(Number);
+
+                        features.push({
+                            type: 'Feature',
+                            properties: { name, value },
+                            geometry: { type: 'Point', coordinates: [lon, lat] }
+                        });
+                    }
                 }
 
                 if (features.length === 0) {
@@ -61,7 +61,7 @@
 
                 L.geoJSON({type:'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
-                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.8); // 日本が一番目立つサイズ
+                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.8); // 日本が目立つサイズ
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
