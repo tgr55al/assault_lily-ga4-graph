@@ -24,26 +24,23 @@
 
         const debug = document.getElementById('debug');
 
-        fetch('ga4_map.kml')
+        // キャッシュ無効化 + 強力正規表現で確実に抽出
+        fetch('ga4_map.kml?' + Date.now())
             .then(r => r.text())
             .then(kmlText => {
                 debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
 
-                // 名前空間を強制的に除去（これで確実にPlacemarkを抽出）
-                const cleanKml = kmlText.replace(/xmlns="[^"]+"/g, '');
-                const parser = new DOMParser();
-                const kmlDoc = parser.parseFromString(cleanKml, 'text/xml');
+                // 超強力正規表現（改行・空白・xmlns全部無視）
+                const placemarkRegex = /<Placemark>[\s\S]*?<name>(.*?)<\/name>[\s\S]*?<value>(.*?)<\/value>[\s\S]*?<coordinates>(.*?)<\/coordinates>[\s\S]*?<\/Placemark>/gs;
+                const matches = [...kmlText.matchAll(placemarkRegex)];
 
-                const placemarks = kmlDoc.getElementsByTagName('Placemark');
-                debug.innerHTML += `抽出されたPlacemark: ${placemarks.length}件<br>`;
+                debug.innerHTML += `抽出されたPlacemark: ${matches.length}件<br>`;
 
                 const features = [];
-                for (let pm of placemarks) {
-                    const name = pm.getElementsByTagName('name')[0]?.textContent.trim() || '不明';
-                    const value = parseFloat(pm.getElementsByTagName('value')[0]?.textContent.trim()) || 0;
-                    const coordsText = pm.getElementsByTagName('coordinates')[0]?.textContent.trim();
-                    if (!coordsText) continue;
-                    const [lon, lat] = coordsText.split(',').map(Number);
+                for (let match of matches) {
+                    const name = match[1].trim();
+                    const value = parseFloat(match[2].trim()) || 0;
+                    const [lon, lat] = match[3].trim().split(',').map(Number);
 
                     features.push({
                         type: 'Feature',
@@ -61,13 +58,13 @@
 
                 L.geoJSON({type:'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
-                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.2); // ← 大きさ調整
+                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.5); // ← 2.5に少し大きく調整
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
-                            color: '#2c5aa0',
+                            color: '#1e4a8a',
                             weight: 2,
-                            fillOpacity: 0.45
+                            fillOpacity: 0.55
                         });
                     },
                     onEachFeature: (feature, layer) => {
