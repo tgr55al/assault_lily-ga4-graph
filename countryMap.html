@@ -8,7 +8,6 @@
     <style>
         body, html { margin:0; padding:0; height:100%; }
         #map { width:100%; height:100vh; }
-        .leaflet-popup-content { font-size: 14px; line-height: 1.4; }
     </style>
 </head>
 <body>
@@ -16,33 +15,38 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const map = L.map('map', { zoomControl: true }).setView([20, 60], 2);
+        const map = L.map('map').setView([20, 60], 2);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors',
-            maxZoom: 18
+            attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
+        const KML_NS = 'http://www.opengis.net/kml/2.2';
+
         fetch('ga4_map.kml')
-            .then(response => response.text())
+            .then(r => r.text())
             .then(kmlText => {
                 const parser = new DOMParser();
                 const kmlDoc = parser.parseFromString(kmlText, 'text/xml');
                 
-                // シンプルにPlacemarkを取得（名前空間問題を回避）
-                const placemarks = kmlDoc.getElementsByTagName('Placemark');
-                
-                const features = [];
+                // 名前空間対応でPlacemarkを取得
+                let placemarks = kmlDoc.getElementsByTagNameNS(KML_NS, 'Placemark');
+                if (placemarks.length === 0) {
+                    placemarks = kmlDoc.getElementsByTagName('Placemark'); // フォールバック
+                }
 
-                for (let placemark of placemarks) {
-                    const name = placemark.getElementsByTagName('name')[0]?.textContent.trim() || '不明';
-                    const valueStr = placemark.getElementsByTagName('value')[0]?.textContent.trim() || '0';
+                const features = [];
+                for (let pm of placemarks) {
+                    const get = (tag) => 
+                        pm.getElementsByTagNameNS(KML_NS, tag)[0] || 
+                        pm.getElementsByTagName(tag)[0];
+
+                    const name = get('name')?.textContent.trim() || '不明';
+                    const valueStr = get('value')?.textContent.trim() || '0';
                     const value = parseFloat(valueStr);
                     
-                    const coordsEl = placemark.getElementsByTagName('coordinates')[0];
+                    const coordsEl = get('coordinates');
                     if (!coordsEl) continue;
-                    
-                    const coordsText = coordsEl.textContent.trim();
-                    const [lon, lat] = coordsText.split(',').map(Number).slice(0, 2);
+                    const [lon, lat] = coordsEl.textContent.trim().split(',').map(Number).slice(0, 2);
                     
                     features.push({
                         type: 'Feature',
@@ -51,43 +55,32 @@
                     });
                 }
 
-                // デバッグ表示（データ数確認）
                 if (features.length === 0) {
                     document.getElementById('map').innerHTML += `
-                        <p style="position:absolute;top:20px;left:20px;color:red;background:white;padding:15px;border:3px solid red;z-index:1000;font-size:16px;">
+                        <p style="position:absolute;top:20px;left:20px;color:red;background:white;padding:15px;border:3px solid red;z-index:1000;">
                             KMLデータが見つかりませんでした<br>
                             Placemark数: ${placemarks.length}件
                         </p>`;
                     return;
                 }
 
-                // GA4と同じプロポーショナルサークル
-                L.geoJSON({ type: 'FeatureCollection', features }, {
-                    pointToLayer: function(feature, latlng) {
-                        const value = feature.properties.value || 0;
-                        const radius = Math.max(8, Math.sqrt(value) * 2.2);  // ← ここで大きさ調整
+                L.geoJSON({type:'FeatureCollection', features}, {
+                    pointToLayer: (feature, latlng) => {
+                        const radius = Math.max(8, Math.sqrt(feature.properties.value) * 2.2);
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
                             color: '#2c5aa0',
                             weight: 2,
-                            opacity: 1,
                             fillOpacity: 0.45
                         });
                     },
-                    onEachFeature: function(feature, layer) {
-                        layer.bindPopup(`
-                            <strong>${feature.properties.name}</strong><br>
-                            値: <strong>${feature.properties.value}</strong>
-                        `);
+                    onEachFeature: (feature, layer) => {
+                        layer.bindPopup(`<strong>${feature.properties.name}</strong><br>値: <strong>${feature.properties.value}</strong>`);
                     }
                 }).addTo(map);
 
-                map.fitBounds(L.geoJSON({ type: 'FeatureCollection', features }).getBounds(), { padding: [50, 50] });
-            })
-            .catch(err => {
-                console.error(err);
-                document.getElementById('map').innerHTML = '<p style="color:red;padding:20px;">KML読み込み失敗</p>';
+                map.fitBounds(L.geoJSON({type:'FeatureCollection', features}).getBounds(), {padding: [50,50]});
             });
     </script>
 </body>
