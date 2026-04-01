@@ -16,55 +16,67 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // 地図初期化（世界全体が見やすい位置・ズーム）
         const map = L.map('map', { zoomControl: true }).setView([20, 60], 2);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors',
             maxZoom: 18
         }).addTo(map);
 
-        // KMLを直接読み込んで手動でGeoJSON作成（valueタグを確実に取得）
+        const KML_NS = 'http://www.opengis.net/kml/2.2';
+
         fetch('ga4_map.kml')
             .then(response => response.text())
             .then(kmlText => {
                 const parser = new DOMParser();
                 const kmlDoc = parser.parseFromString(kmlText, 'text/xml');
                 
-                const placemarks = kmlDoc.getElementsByTagName('Placemark');
+                // 名前空間対応でPlacemarkを取得
+                let placemarks = kmlDoc.getElementsByTagNameNS(KML_NS, 'Placemark');
+                if (placemarks.length === 0) {
+                    placemarks = kmlDoc.getElementsByTagName('Placemark'); // フォールバック
+                }
+
                 const features = [];
 
                 for (let placemark of placemarks) {
-                    const name = placemark.getElementsByTagName('name')[0]?.textContent.trim() || '不明';
-                    const valueStr = placemark.getElementsByTagName('value')[0]?.textContent.trim() || '0';
+                    // 名前空間対応で各タグを取得
+                    const getTag = (tagName) => 
+                        placemark.getElementsByTagNameNS(KML_NS, tagName)[0] || 
+                        placemark.getElementsByTagName(tagName)[0];
+
+                    const nameEl = getTag('name');
+                    const valueEl = getTag('value');
+                    const coordsEl = getTag('coordinates');
+
+                    const name = nameEl ? nameEl.textContent.trim() : '不明';
+                    const valueStr = valueEl ? valueEl.textContent.trim() : '0';
                     const value = parseFloat(valueStr);
                     
-                    const coordsText = placemark.getElementsByTagName('coordinates')[0]?.textContent.trim();
-                    if (!coordsText) continue;
-                    
-                    const [lon, lat] = coordsText.split(',').map(Number);
+                    if (!coordsEl) continue;
+                    const coordsText = coordsEl.textContent.trim();
+                    const [lon, lat] = coordsText.split(',').map(Number).slice(0, 2);
                     
                     features.push({
                         type: 'Feature',
                         properties: { name, value },
-                        geometry: {
-                            type: 'Point',
-                            coordinates: [lon, lat]
-                        }
+                        geometry: { type: 'Point', coordinates: [lon, lat] }
                     });
                 }
 
                 if (features.length === 0) {
-                    document.getElementById('map').innerHTML += '<p style="position:absolute;top:20px;left:20px;color:red;background:white;padding:10px;border:2px solid red;">KMLにデータが見つかりませんでした</p>';
+                    document.getElementById('map').innerHTML += `
+                        <p style="position:absolute;top:20px;left:20px;color:red;background:white;padding:15px;border:3px solid red;z-index:1000;">
+                            KMLデータが見つかりませんでした<br>
+                            （Placemark数: ${placemarks.length}件）
+                        </p>`;
                     return;
                 }
 
-                // プロポーショナルサークル表示
+                // プロポーショナルサークル（GA4画像とほぼ同じ見た目）
                 L.geoJSON({ type: 'FeatureCollection', features }, {
                     pointToLayer: function(feature, latlng) {
                         const value = feature.properties.value || 0;
-                        // GA4画像に近い見た目になるよう調整済み（必要なら 2.2 の数字を変更）
-                        const radius = Math.max(8, Math.sqrt(value) * 2.2);
-                        
+                        const radius = Math.max(8, Math.sqrt(value) * 2.2);  // ← ここで大きさ調整可能
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
@@ -75,21 +87,18 @@
                         });
                     },
                     onEachFeature: function(feature, layer) {
-                        const name = feature.properties.name;
-                        const value = feature.properties.value;
                         layer.bindPopup(`
-                            <strong>${name}</strong><br>
-                            値: <strong>${value}</strong>
-                        `, { closeButton: true });
+                            <strong>${feature.properties.name}</strong><br>
+                            値: <strong>${feature.properties.value}</strong>
+                        `);
                     }
                 }).addTo(map);
 
-                // データがあれば自動で少しズーム調整
                 map.fitBounds(L.geoJSON({ type: 'FeatureCollection', features }).getBounds(), { padding: [50, 50] });
             })
             .catch(err => {
-                console.error('KML読み込みエラー:', err);
-                document.getElementById('map').innerHTML = '<p style="color:red;padding:20px;">KMLの読み込みに失敗しました。ga4_map.kml が同じフォルダにあるか確認してください。</p>';
+                console.error(err);
+                document.getElementById('map').innerHTML = '<p style="color:red;padding:20px;">KML読み込み失敗</p>';
             });
     </script>
 </body>
