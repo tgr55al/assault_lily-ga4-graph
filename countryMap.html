@@ -15,36 +15,59 @@
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/togeojson/0.16.0/togeojson.min.js"></script>
     <script>
-        // 地図初期化
-        const map = L.map('map', { zoomControl: true }).setView([20, 0], 2);
+        // 地図初期化（世界全体が見やすい位置・ズーム）
+        const map = L.map('map', { zoomControl: true }).setView([20, 60], 2);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors',
             maxZoom: 18
         }).addTo(map);
 
-        // KMLを読み込み（同じGitHub PagesなのでCORS問題なし）
+        // KMLを直接読み込んで手動でGeoJSON作成（valueタグを確実に取得）
         fetch('ga4_map.kml')
             .then(response => response.text())
             .then(kmlText => {
                 const parser = new DOMParser();
                 const kmlDoc = parser.parseFromString(kmlText, 'text/xml');
                 
-                // toGeoJSONでKML → GeoJSON変換
-                const geojson = toGeoJSON.kml(kmlDoc);
-                
+                const placemarks = kmlDoc.getElementsByTagName('Placemark');
+                const features = [];
+
+                for (let placemark of placemarks) {
+                    const name = placemark.getElementsByTagName('name')[0]?.textContent.trim() || '不明';
+                    const valueStr = placemark.getElementsByTagName('value')[0]?.textContent.trim() || '0';
+                    const value = parseFloat(valueStr);
+                    
+                    const coordsText = placemark.getElementsByTagName('coordinates')[0]?.textContent.trim();
+                    if (!coordsText) continue;
+                    
+                    const [lon, lat] = coordsText.split(',').map(Number);
+                    
+                    features.push({
+                        type: 'Feature',
+                        properties: { name, value },
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [lon, lat]
+                        }
+                    });
+                }
+
+                if (features.length === 0) {
+                    document.getElementById('map').innerHTML += '<p style="position:absolute;top:20px;left:20px;color:red;background:white;padding:10px;border:2px solid red;">KMLにデータが見つかりませんでした</p>';
+                    return;
+                }
+
                 // プロポーショナルサークル表示
-                L.geoJSON(geojson, {
+                L.geoJSON({ type: 'FeatureCollection', features }, {
                     pointToLayer: function(feature, latlng) {
-                        const value = parseFloat(feature.properties.value) || 0;
-                        // 円の大きさ = √value × 倍率（画像に近い見た目になるよう調整済）
-                        // 必要ならここの「2.2」を1.5〜3.0の間で調整してください
+                        const value = feature.properties.value || 0;
+                        // GA4画像に近い見た目になるよう調整済み（必要なら 2.2 の数字を変更）
                         const radius = Math.max(8, Math.sqrt(value) * 2.2);
                         
                         return L.circleMarker(latlng, {
                             radius: radius,
-                            fillColor: '#3388ff',     // GA4風の青
+                            fillColor: '#3388ff',
                             color: '#2c5aa0',
                             weight: 2,
                             opacity: 1,
@@ -52,18 +75,21 @@
                         });
                     },
                     onEachFeature: function(feature, layer) {
-                        const name = feature.properties.name || '不明';
-                        const value = feature.properties.value || 0;
+                        const name = feature.properties.name;
+                        const value = feature.properties.value;
                         layer.bindPopup(`
                             <strong>${name}</strong><br>
                             値: <strong>${value}</strong>
                         `, { closeButton: true });
                     }
                 }).addTo(map);
+
+                // データがあれば自動で少しズーム調整
+                map.fitBounds(L.geoJSON({ type: 'FeatureCollection', features }).getBounds(), { padding: [50, 50] });
             })
             .catch(err => {
                 console.error('KML読み込みエラー:', err);
-                document.getElementById('map').innerHTML = '<p style="color:red;padding:20px;">KMLの読み込みに失敗しました。リポジトリにga4_map.kmlがあるか確認してください。</p>';
+                document.getElementById('map').innerHTML = '<p style="color:red;padding:20px;">KMLの読み込みに失敗しました。ga4_map.kml が同じフォルダにあるか確認してください。</p>';
             });
     </script>
 </body>
