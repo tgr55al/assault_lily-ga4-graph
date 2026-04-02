@@ -24,12 +24,12 @@
 
         const debug = document.getElementById('debug');
 
+        // 強制キャッシュ無効 + 超シンプル分割
         fetch('ga4_map.kml?' + Date.now())
             .then(r => r.text())
             .then(kmlText => {
                 debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
 
-                // 超シンプル分割（これが一番確実）
                 const parts = kmlText.split('<Placemark>');
                 debug.innerHTML += `Placemark分割数: ${parts.length}件<br>`;
 
