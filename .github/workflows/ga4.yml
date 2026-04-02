@@ -3,37 +3,34 @@ name: GA4 Daily Export
 on:
   schedule:
     - cron: "0 15 * * *"   # 毎日 00:00 JST（UTC 15:00）
-  workflow_dispatch:       # 手動実行ボタンも追加
+  workflow_dispatch:      # 手動実行も可能
 
 jobs:
   run:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write         # gh-pagesへのpush権限を付与
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4   # v3 → v4に更新（最新推奨）
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5   # v4 → v5に更新
+      - name: Pythonを設定
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
-          pip install google-analytics-data pandas   # 必要ライブラリ追加
+      - name: 依存関係をインストール
+        run: pip install requests pandas
 
-      - name: Run GA4 fetch script
-        env:
-          GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}   # ← 環境変数で直接渡す（ファイル不要！）
+      - name: GA4データを取得
         run: python fetch_ga4.py
 
-      - name: Generate KML
+      - name: KMLとGeoJSONを生成
         run: python generate_kml.py
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: GitHub Pagesにデプロイ
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
+          publish_dir: .          # ルート直下の全ファイルを公開
+          publish_branch: gh-pages
+          force_orphan: true
