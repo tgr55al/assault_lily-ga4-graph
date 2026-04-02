@@ -48,7 +48,10 @@ def main():
 
     # GA4結果を読み込み
     with open("ga4_region_japan.csv", "r", encoding="utf-8") as f:
-        ga4_data = list(csv.DictReader(f))
+        ga4_data = [
+            row for row in csv.DictReader(f)
+            if row["region"] not in ("", "(not set)")
+        ]
     print(f"📊 ga4_region_japan.csvから {len(ga4_data)}件の都道府県データを読み込み")
 
     # 不足している都道府県の座標を自動取得
@@ -120,8 +123,8 @@ def main():
         f.write(kml_content)
 
     print(f"🎉 完了！ {len(features)}件のGeoJSON + KMLを生成しました")
-    print("   → ga4_map.geojson（Leaflet用・ルート直下）")
-    print("   → ga4_map.kml（従来用・ルート直下）")
+    print("   → ga4_map_japan.geojson（Leaflet用・ルート直下）")
+    print("   → ga4_map_japan.kml（従来用・ルート直下）")
 
 if __name__ == "__main__":
     main()
