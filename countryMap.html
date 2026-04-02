@@ -8,10 +8,12 @@
     <style>
         body, html { margin:0; padding:0; height:100%; }
         #map { width:100%; height:100vh; }
+        #debug { position:absolute; top:10px; left:10px; background:white; padding:12px; border:3px solid #3388ff; z-index:1000; font-size:14px; max-width:340px; }
     </style>
 </head>
 <body>
     <div id="map"></div>
+    <div id="debug">読み込み中...</div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
@@ -20,13 +22,44 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        fetch('ga4_map.geojson?' + Date.now())
-            .then(r => r.json())
-            .then(geojson => {
-                L.geoJSON(geojson, {
+        const debug = document.getElementById('debug');
+
+        fetch('ga4_map.kml?' + Date.now())
+            .then(r => r.text())
+            .then(kmlText => {
+                debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
+
+                // 超シンプル分割（これが一番確実）
+                const parts = kmlText.split('<Placemark>');
+                debug.innerHTML += `Placemark分割数: ${parts.length}件<br>`;
+
+                const features = [];
+                for (let i = 1; i < parts.length; i++) {
+                    const part = parts[i];
+                    const nameMatch = part.match(/<name>(.*?)<\/name>/);
+                    const valueMatch = part.match(/<value>(.*?)<\/value>/);
+                    const coordMatch = part.match(/<coordinates>(.*?)<\/coordinates>/);
+
+                    if (nameMatch && valueMatch && coordMatch) {
+                        const name = nameMatch[1].trim();
+                        const value = parseFloat(valueMatch[1].trim()) || 0;
+                        const [lon, lat] = coordMatch[1].trim().split(',').map(Number);
+
+                        features.push({
+                            type: 'Feature',
+                            properties: { name, value },
+                            geometry: { type: 'Point', coordinates: [lon, lat] }
+                        });
+                    }
+                }
+
+                debug.innerHTML += `抽出成功: ${features.length}件`;
+
+                if (features.length === 0) return;
+
+                L.geoJSON({type: 'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
-                        const value = feature.properties.value || 0;
-                        const radius = Math.max(8, Math.sqrt(value) * 2.8); // 日本が一番目立つサイズ
+                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.8);
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
@@ -40,8 +73,9 @@
                     }
                 }).addTo(map);
 
-                map.fitBounds(L.geoJSON(geojson).getBounds(), {padding: [50,50]});
-            });
+                map.fitBounds(L.geoJSON({type: 'FeatureCollection', features}).getBounds(), {padding: [50,50]});
+            })
+            .catch(() => debug.innerHTML = 'KML読み込み失敗');
     </script>
 </body>
 </html>
