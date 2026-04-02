@@ -20,6 +20,20 @@ def get_coordinates(country):
         print(f"  ⚠️ APIエラー: {country} → {e}")
     return None
 
+def load_country_map():
+    """ISO 3166 国名（英語→日本語）変換表を読み込む"""
+    country_map = {}
+    with open("country_map.csv", "r", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            country_map[row["english"]] = row["japanese"]
+    return country_map
+
+COUNTRY_JA = load_country_map()
+
+def to_japanese(country):
+    """国名を日本語へ変換（未登録はそのまま）"""
+    return COUNTRY_JA.get(country, country)
+
 def main():
     print("🚀 GA4プロポーショナルサークル地図生成開始")
 
