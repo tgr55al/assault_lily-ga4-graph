@@ -31,6 +31,7 @@ jobs:
         env:
           GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
         run: python fetch_ga4.py
+        run: python fetch_japan_ga4.py
 
       - name: KMLとGeoJSONを生成
         run: python generate_kml.py
