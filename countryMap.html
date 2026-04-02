@@ -64,7 +64,7 @@
                         });
                     },
                     onEachFeature: (feature, layer) => {
-                        layer.bindPopup(`<strong>${feature.properties.name}</strong><br>値: <strong>${feature.properties.value}</strong>`);
+                        layer.bindPopup(`<strong>${feature.properties.name}</strong><br>閲覧者数: <strong>${feature.properties.value}</strong>`);
                     }
                 }).addTo(map);
 
