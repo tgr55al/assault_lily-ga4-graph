@@ -24,8 +24,8 @@
 
         const debug = document.getElementById('debug');
 
-        // 強制キャッシュ無効 + 超シンプル分割
-        fetch('ga4_map.kml?' + Date.now())
+        // キャッシュ完全無効化 + 超シンプル分割
+        fetch('ga4_map.kml', { cache: 'no-store' })
             .then(r => r.text())
             .then(kmlText => {
                 debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
