@@ -49,7 +49,7 @@ def main():
     with open("ga4_result.csv", "r", encoding="utf-8") as f:
         ga4_data = [
             row for row in csv.DictReader(f)
-            if row["region"] not in ("", "(not set)")
+            if row["country"] not in ("", "(not set)")
         ]
     print(f"📊 ga4_result.csvから {len(ga4_data)}件の国データを読み込み")
 
