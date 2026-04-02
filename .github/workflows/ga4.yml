@@ -27,10 +27,14 @@ jobs:
           pip install --upgrade pip
           pip install requests pandas google-auth google-auth-oauthlib google-api-python-client google-analytics-data
 
-      - name: GA4データを取得
+      - name: GA4データを取得（全世界）
         env:
           GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
         run: python fetch_ga4.py
+
+      - name: GA4データを取得（日本）
+        env:
+          GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
         run: python fetch_japan_ga4.py
 
       - name: KMLとGeoJSONを生成
