@@ -39,21 +39,21 @@ def main():
 
     # 既存のcoords.csvを読み込み
     coords = {}
-    if os.path.exists("coords.csv"):
-        with open("coords.csv", "r", encoding="utf-8") as f:
+    if os.path.exists("coords_japan.csv"):
+        with open("coords_japan.csv", "r", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 coords[row["region"]] = (float(row["lat"]), float(row["lon"]))
-        print(f"✅ coords.csvから {len(coords)}件読み込み")
+        print(f"✅ coords_japan.csvから {len(coords)}件読み込み")
 
     # GA4結果を読み込み
     with open("ga4_region_japan.csv", "r", encoding="utf-8") as f:
         ga4_data = list(csv.DictReader(f))
-    print(f"📊 ga4_result.csvから {len(ga4_data)}件の国データを読み込み")
+    print(f"📊 ga4_region_japan.csvから {len(ga4_data)}件の都道府県データを読み込み")
 
-    # 不足している国の座標を自動取得
+    # 不足している都道府県の座標を自動取得
     missing = [row["region"] for row in ga4_data if row["region"] not in coords]
     if missing:
-        print(f"🔍 新しい国 {len(missing)}件を自動取得中...")
+        print(f"🔍 新しい都道府県 {len(missing)}件を自動取得中...")
         for region in missing:
             print(f"   → {region} ", end="")
             latlon = get_coordinates(region)
@@ -64,14 +64,14 @@ def main():
                 print("❌ 取得失敗")
             time.sleep(1.2)
 
-    # coords.csvを最新化
-    with open("coords.csv", "w", encoding="utf-8", newline="") as f:
+    # coords_japan.csvを最新化
+    with open("coords_japan.csv", "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["region", "lat", "lon"])
         writer.writeheader()
         for c in sorted(coords.keys()):
             lat, lon = coords[c]
             writer.writerow({"region": c, "lat": lat, "lon": lon})
-    print(f"✅ coords.csv更新完了（合計 {len(coords)}件）")
+    print(f"✅ coords_japan.csv更新完了（合計 {len(coords)}件）")
 
     # GeoJSON + KML生成
     features = []
@@ -105,7 +105,7 @@ def main():
 
     # ルート直下に保存（GitHub Pagesが確実に公開する場所）
     geojson = {"type": "FeatureCollection", "features": features}
-    with open("ga4_map.geojson", "w", encoding="utf-8") as f:
+    with open("ga4_map_japan.geojson", "w", encoding="utf-8") as f:
         json.dump(geojson, f, ensure_ascii=False, indent=2)
 
     kml_content = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -115,7 +115,7 @@ def main():
         {''.join(kml_points)}
     </Document>
 </kml>"""
-    with open("ga4_map.kml", "w", encoding="utf-8") as f:
+    with open("ga4_map_japan.kml", "w", encoding="utf-8") as f:
         f.write(kml_content)
 
     print(f"🎉 完了！ {len(features)}件のGeoJSON + KMLを生成しました")
