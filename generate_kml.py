@@ -89,11 +89,9 @@ def main():
         """
         kml_points.append(placemark)
 
-    # outputフォルダに保存（workflowがデプロイする場所）
-    os.makedirs("output", exist_ok=True)
-
+    # ルート直下に保存（GitHub Pagesが確実に公開する場所）
     geojson = {"type": "FeatureCollection", "features": features}
-    with open("output/ga4_map.geojson", "w", encoding="utf-8") as f:
+    with open("ga4_map.geojson", "w", encoding="utf-8") as f:
         json.dump(geojson, f, ensure_ascii=False, indent=2)
 
     kml_content = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -103,10 +101,12 @@ def main():
         {''.join(kml_points)}
     </Document>
 </kml>"""
-    with open("output/ga4_map.kml", "w", encoding="utf-8") as f:
+    with open("ga4_map.kml", "w", encoding="utf-8") as f:
         f.write(kml_content)
 
-    print(f"🎉 完了！ {len(features)}件のGeoJSON + KMLを生成しました（outputフォルダ）")
+    print(f"🎉 完了！ {len(features)}件のGeoJSON + KMLを生成しました")
+    print("   → ga4_map.geojson（Leaflet用・ルート直下）")
+    print("   → ga4_map.kml（従来用・ルート直下）")
 
 if __name__ == "__main__":
     main()
