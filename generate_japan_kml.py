@@ -6,8 +6,9 @@ import json
 from urllib.parse import quote
 
 def get_coordinates(region):
-    """国名から緯度経度を自動取得（Nominatim API）"""
-    url = f"https://nominatim.openstreetmap.org/search?region={quote(region)}&format=json&limit=1"
+    """都道府県名から緯度経度を取得（Nominatim API）"""
+    query = f"{region}, Japan"
+    url = f"https://nominatim.openstreetmap.org/search?q={quote(query)}&format=json&limit=1"
     headers = {'User-Agent': 'AssaultLilyGA4Map/1.0'}
     
     try:
