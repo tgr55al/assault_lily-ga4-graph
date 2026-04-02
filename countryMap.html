@@ -15,7 +15,12 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const map = L.map('map').setView([20, 60], 2);
+        // worldCopyJump: true で横無限ループ（円が消えなくなる）
+        const map = L.map('map', {
+            worldCopyJump: true,     // ← これが一番重要！
+            maxBoundsViscosity: 1.0
+        }).setView([20, 60], 2);
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
@@ -48,15 +53,8 @@
                 L.geoJSON({type: 'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
                         const value = feature.properties.value || 0;
-                        
-                        // ★ ここでバランス調整（日本の円が大きすぎないように）
-                        // 現在の設定：logスケールで圧縮（おすすめ）
+                        // バランス調整済み（日本が目立ちすぎない程度）
                         const radius = Math.max(6, Math.log10(value + 1) * 18);
-
-                        // 別のバランスにしたい場合は以下を試してください：
-                        // const radius = Math.max(6, Math.sqrt(value) * 1.6);   // 従来のsqrt（少し控えめ）
-                        // const radius = Math.max(6, Math.pow(value, 0.4) * 35); // さらに抑えたい場合
-
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
