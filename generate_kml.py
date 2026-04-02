@@ -48,7 +48,7 @@ def main():
                 print("✅ 取得成功")
             else:
                 print("❌ 取得失敗")
-            time.sleep(1.2)  # API制限を守る
+            time.sleep(1.2)
 
     # coords.csvを最新化
     with open("coords.csv", "w", encoding="utf-8", newline="") as f:
@@ -77,7 +77,7 @@ def main():
             "geometry": {"type": "Point", "coordinates": [lon, lat]}
         })
 
-        # KML（従来互換）
+        # KML
         placemark = f"""
             <Placemark>
                 <name>{country}</name>
@@ -89,12 +89,13 @@ def main():
         """
         kml_points.append(placemark)
 
-    # GeoJSON保存（ルート直下）
+    # outputフォルダに保存（workflowがデプロイする場所）
+    os.makedirs("output", exist_ok=True)
+
     geojson = {"type": "FeatureCollection", "features": features}
-    with open("ga4_map.geojson", "w", encoding="utf-8") as f:
+    with open("output/ga4_map.geojson", "w", encoding="utf-8") as f:
         json.dump(geojson, f, ensure_ascii=False, indent=2)
 
-    # KML保存（ルート直下）
     kml_content = f"""<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
     <Document>
@@ -102,12 +103,10 @@ def main():
         {''.join(kml_points)}
     </Document>
 </kml>"""
-    with open("ga4_map.kml", "w", encoding="utf-8") as f:
+    with open("output/ga4_map.kml", "w", encoding="utf-8") as f:
         f.write(kml_content)
 
-    print(f"🎉 完了！ {len(features)}件のGeoJSON + KMLを生成しました")
-    print("   → ga4_map.geojson（Leaflet用）")
-    print("   → ga4_map.kml（従来用）")
+    print(f"🎉 完了！ {len(features)}件のGeoJSON + KMLを生成しました（outputフォルダ）")
 
 if __name__ == "__main__":
     main()
