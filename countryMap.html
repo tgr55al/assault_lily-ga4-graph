@@ -8,12 +8,10 @@
     <style>
         body, html { margin:0; padding:0; height:100%; }
         #map { width:100%; height:100vh; }
-        #debug { position:absolute; top:10px; left:10px; background:white; padding:12px; border:3px solid #3388ff; z-index:1000; font-size:14px; max-width:340px; }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    <div id="debug">読み込み中...</div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
@@ -22,18 +20,12 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        const debug = document.getElementById('debug');
-
-        // キャッシュ完全無効化 + 超シンプル分割
-        fetch('ga4_map.kml', { cache: 'no-store' })
+        fetch('ga4_map.kml?' + Date.now())
             .then(r => r.text())
             .then(kmlText => {
-                debug.innerHTML = `KML読み込み成功<br>サイズ: ${kmlText.length}文字<br>`;
-
                 const parts = kmlText.split('<Placemark>');
-                debug.innerHTML += `Placemark分割数: ${parts.length}件<br>`;
-
                 const features = [];
+
                 for (let i = 1; i < parts.length; i++) {
                     const part = parts[i];
                     const nameMatch = part.match(/<name>(.*?)<\/name>/);
@@ -53,13 +45,18 @@
                     }
                 }
 
-                debug.innerHTML += `抽出成功: ${features.length}件`;
-
-                if (features.length === 0) return;
-
                 L.geoJSON({type: 'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
-                        const radius = Math.max(8, Math.sqrt(feature.properties.value || 0) * 2.8);
+                        const value = feature.properties.value || 0;
+                        
+                        // ★ ここでバランス調整（日本の円が大きすぎないように）
+                        // 現在の設定：logスケールで圧縮（おすすめ）
+                        const radius = Math.max(6, Math.log10(value + 1) * 22);
+
+                        // 別のバランスにしたい場合は以下を試してください：
+                        // const radius = Math.max(6, Math.sqrt(value) * 1.6);   // 従来のsqrt（少し控えめ）
+                        // const radius = Math.max(6, Math.pow(value, 0.4) * 35); // さらに抑えたい場合
+
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
@@ -74,8 +71,7 @@
                 }).addTo(map);
 
                 map.fitBounds(L.geoJSON({type: 'FeatureCollection', features}).getBounds(), {padding: [50,50]});
-            })
-            .catch(() => debug.innerHTML = 'KML読み込み失敗');
+            });
     </script>
 </body>
 </html>
