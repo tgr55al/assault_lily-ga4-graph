@@ -2,7 +2,7 @@ name: GA4 Daily Export
 
 on:
   schedule:
-    - cron: "0 15 * * *"   # 毎日 00:00 JST（UTC 15:00）
+    - cron: "0 * * * *"   # 1時間に1回（毎時0分）
   workflow_dispatch:       # 手動実行も可能
 
 # ← ここを追加（これが必須）
