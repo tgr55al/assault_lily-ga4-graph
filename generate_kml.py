@@ -87,14 +87,14 @@ def main():
         # GeoJSON
         features.append({
             "type": "Feature",
-            "properties": {"name": country, "value": value},
+            "properties": {"name": to_japanese(country), "value": value},
             "geometry": {"type": "Point", "coordinates": [lon, lat]}
         })
 
         # KML
         placemark = f"""
             <Placemark>
-                <name>{country}</name>
+                <name>{to_japanese(country)}</name>
                 <value>{value}</value>
                 <Point>
                     <coordinates>{lon},{lat},0</coordinates>
