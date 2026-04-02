@@ -5,6 +5,10 @@ on:
     - cron: "0 15 * * *"   # 毎日 00:00 JST（UTC 15:00）
   workflow_dispatch:       # 手動実行も可能
 
+# ← ここを追加（これが必須）
+permissions:
+  contents: write
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -25,7 +29,7 @@ jobs:
 
       - name: GA4データを取得
         env:
-          GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}   # ← 環境変数で直接渡す（ファイル不要！）
+          GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
         run: python fetch_ga4.py
 
       - name: KMLとGeoJSONを生成
@@ -35,6 +39,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .          # ルート直下の全ファイルを公開
+          publish_dir: .                # ルート直下の全ファイルを公開
           publish_branch: gh-pages
           force_orphan: true
