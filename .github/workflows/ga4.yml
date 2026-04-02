@@ -37,8 +37,11 @@ jobs:
           GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
         run: python fetch_japan_ga4.py
 
-      - name: KMLとGeoJSONを生成
+      - name: KMLとGeoJSONを生成（全世界）
         run: python generate_kml.py
+
+      - name: KMLとGeoJSONを生成（日本）
+        run: python generate_japan_kml.py
 
       - name: GitHub Pagesにデプロイ
         uses: peaceiris/actions-gh-pages@v4
