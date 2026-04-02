@@ -51,7 +51,7 @@
                         
                         // ★ ここでバランス調整（日本の円が大きすぎないように）
                         // 現在の設定：logスケールで圧縮（おすすめ）
-                        const radius = Math.max(6, Math.log10(value + 1) * 22);
+                        const radius = Math.max(6, Math.log10(value + 1) * 18);
 
                         // 別のバランスにしたい場合は以下を試してください：
                         // const radius = Math.max(6, Math.sqrt(value) * 1.6);   // 従来のsqrt（少し控えめ）
