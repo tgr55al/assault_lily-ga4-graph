@@ -46,7 +46,7 @@ def main():
         print(f"✅ coords.csvから {len(coords)}件読み込み")
 
     # GA4結果を読み込み
-    with open("ga4_result.csv", "r", encoding="utf-8") as f:
+    with open("ga4_region_japan.csv", "r", encoding="utf-8") as f:
         ga4_data = list(csv.DictReader(f))
     print(f"📊 ga4_result.csvから {len(ga4_data)}件の国データを読み込み")
 
