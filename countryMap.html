@@ -53,8 +53,11 @@
                 L.geoJSON({type: 'FeatureCollection', features}, {
                     pointToLayer: (feature, latlng) => {
                         const value = feature.properties.value || 0;
-                        // バランス調整済み（日本が目立ちすぎない程度）
-                        const radius = Math.max(6, Math.log10(value + 1) * 18);
+
+                        // 日本だけ半径を小さくする
+                        const scale = (feature.properties.name === "日本") ? 0.55 : 1.0;
+                        const radius = Math.max(6, Math.log10(value + 1) * 18 * scale);
+
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
