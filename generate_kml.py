@@ -4,6 +4,7 @@ import time
 import urllib.request
 import json
 from urllib.parse import quote
+import datetime
 
 def get_coordinates(country):
     """国名から緯度経度を自動取得（Nominatim API）"""
