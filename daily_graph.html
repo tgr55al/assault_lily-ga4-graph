@@ -24,8 +24,7 @@
                 const yAxis = chart.scales.y;
                 const ctx = chart.ctx;
 
-                const label = yAxis.options.title.text;
-                if (!label) return;
+                const label = "閲覧数";
 
                 const x = yAxis.left - 30;  // 横位置
                 const y = (yAxis.top + yAxis.bottom) / 2; // 中央
@@ -86,7 +85,7 @@
                             title: { display: true, text: 'アサルトリリィwiki 閲覧数推移' }
                         },
                         scales: {
-                            y: { beginAtZero: true, title: { display: false, text: '閲覧数' } },
+                            y: { beginAtZero: true, title: { display: false } },
                             x: { title: { display: true, text: '日付' } }
                         }
                     }
