@@ -17,6 +17,38 @@
     </div>
 
     <script>
+        // ★ 日本語縦書きラベルプラグイン
+        const verticalLabelPlugin = {
+            id: 'verticalLabelPlugin',
+            afterDraw(chart) {
+                const yAxis = chart.scales.y;
+                const ctx = chart.ctx;
+
+                const label = yAxis.options.title.text;
+                if (!label) return;
+
+                const x = yAxis.left - 30;  // 横位置
+                const y = (yAxis.top + yAxis.bottom) / 2; // 中央
+
+                ctx.save();
+                ctx.font = "16px sans-serif";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+
+                const chars = label.split("");
+                const lineHeight = 20;
+
+                chars.forEach((ch, i) => {
+                    ctx.fillText(ch, x, y - ((chars.length - 1) * lineHeight) / 2 + i * lineHeight);
+                });
+
+                ctx.restore();
+            }
+        };
+
+        Chart.register(verticalLabelPlugin);
+
+        // CSV 読み込み
         fetch('daily_data.csv?' + Date.now())
             .then(r => r.text())
             .then(csvText => {
@@ -54,7 +86,7 @@
                             title: { display: true, text: 'Assault Lily GA4 日別閲覧数推移' }
                         },
                         scales: {
-                            y: { beginAtZero: true, title: { display: true, text: '閲覧数' } },
+                            y: { beginAtZero: true, title: { display: false, text: '閲覧数' } },
                             x: { title: { display: true, text: '日付' } }
                         }
                     }
