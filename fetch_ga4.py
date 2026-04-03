@@ -71,18 +71,20 @@ def main():
     # ③ daily_data.csv に保存（今日の値だけ）
     # -----------------------------
     daily_file = "daily_data.csv"
+    today_str = datetime.now().date().strftime("%Y-%m-%d")
+
     daily_data = {}
 
-    # 既存データ読み込み
+    # 既存データを読み込み（過去分はそのまま保持）
     if os.path.exists(daily_file):
         with open(daily_file, "r", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 daily_data[row["date"]] = int(row["total_active_users"])
 
-    # 今日の値を更新
+    # 今日の値だけ上書き
     daily_data[today_str] = today_total
 
-    # 日付順に書き直し
+    # 日付順に並べて書き戻す（過去データはそのまま）
     with open(daily_file, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["date", "total_active_users"])
         writer.writeheader()
