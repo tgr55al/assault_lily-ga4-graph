@@ -23,30 +23,35 @@
             afterLayout(chart) {
                 const yAxis = chart.scales.y;
                 const ctx = chart.ctx;
-
+        
                 const label = "閲覧数";
-
-                const x = yAxis.left - 5;  // 横位置
-                const y = (yAxis.top + yAxis.bottom) / 2; // 中央
-
+        
+                const x = yAxis.left - 5;
+                const y = (yAxis.top + yAxis.bottom) / 2;
+        
                 ctx.save();
                 ctx.font = "16px sans-serif";
                 ctx.textAlign = "center";
                 ctx.textBaseline = "middle";
-
+        
                 const chars = label.split("");
-                const lineHeight = 20;
-
+                const lineHeight = 32;
+        
                 chars.forEach((ch, i) => {
-                    ctx.fillText(ch, x, y - ((chars.length - 1) * lineHeight) / 2 + i * lineHeight);
+                    ctx.fillText(
+                        ch,
+                        x,
+                        y - ((chars.length - 1) * lineHeight) / 2 + i * lineHeight
+                    );
                 });
-
+        
                 ctx.restore();
             }
         };
-
-        Chart.register(verticalLabelPlugin);
-
+        
+        // ★ Chart.register ではなく、こちらを使う
+        Chart.defaults.plugins.verticalLabelPlugin = verticalLabelPlugin;
+        
         // CSV 読み込み
         fetch('daily_data.csv?' + Date.now())
             .then(r => r.text())
