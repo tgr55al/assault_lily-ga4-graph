@@ -77,7 +77,7 @@ def main():
 
     # 既存データを読み込み（過去分はそのまま保持）
     if os.path.exists(daily_file):
-        with open(daily_file, "r", encoding="utf-8") as f:
+        with open(daily_file, "r", encoding="utf-8-sig") as f:
             for row in csv.DictReader(f):
                 daily_data[row["date"]] = int(row["total_active_users"])
 
