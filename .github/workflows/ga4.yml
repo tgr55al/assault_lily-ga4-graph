@@ -32,6 +32,14 @@ jobs:
           GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
         run: python fetch_ga4.py
 
+      - name: Commit daily_data.csv
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add daily_data.csv
+          git commit -m "Update daily_data.csv"
+          git push
+
       - name: GA4データを取得（日本）
         env:
           GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
