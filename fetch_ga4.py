@@ -9,6 +9,7 @@ from google.analytics.data_v1beta.types import (
     Dimension,
     Metric,
 )
+import csv
 
 # GA4 のプロパティ ID
 PROPERTY_ID = "530080930"
