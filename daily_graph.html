@@ -37,7 +37,7 @@
                     data: {
                         labels: dates,
                         datasets: [{
-                            label: '日別閲覧数 (Active Users)',
+                            label: '閲覧数',
                             data: values,
                             borderColor: '#3388ff',
                             backgroundColor: 'rgba(51, 136, 255, 0.1)',
@@ -56,7 +56,7 @@
                         },
                         scales: {
                             y: { beginAtZero: true, title: { display: false } },
-                            x: { title: { display: true, text: '日付' } }
+                            x: { title: { display: false } }
                         }
                     }
                 });
