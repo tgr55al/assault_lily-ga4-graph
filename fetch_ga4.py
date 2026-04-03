@@ -1,6 +1,6 @@
 import os
 import json
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta
 from google.oauth2 import service_account
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import (
@@ -51,7 +51,7 @@ def main():
     # -----------------------------
     # ② 今日のアクティブユーザー数だけを取得
     # -----------------------------
-    today_str = date.today().strftime("%Y-%m-%d")
+    today_str = datetime.now().date().strftime("%Y-%m-%d")
 
     request_today = RunReportRequest(
         property=f"properties/{PROPERTY_ID}",
