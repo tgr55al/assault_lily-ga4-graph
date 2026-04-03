@@ -23,8 +23,8 @@ def main():
     client = BetaAnalyticsDataClient(credentials=credentials)
 
     # 過去30日分の日付範囲を作成
-    end_date = datetime.now().date()
-    start_date = end_date - timedelta(days=DAYS_BACK - 1)
+    end_date = datetime.now().date().strftime("%Y-%m-%d")
+    start_date = (datetime.now().date() - timedelta(days=DAYS_BACK - 1)).strftime("%Y-%m-%d")
 
     # GA4 API リクエスト
     request = RunReportRequest(
