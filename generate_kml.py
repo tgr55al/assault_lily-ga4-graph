@@ -77,25 +77,6 @@ def main():
             writer.writerow({"country": c, "lat": lat, "lon": lon})
     print(f"✅ coords.csv更新完了（合計 {len(coords)}件）")
 
-    # 既存データを読み込み（今日のデータがあるかチェック）
-    daily_data = {}
-    if os.path.exists(daily_file):
-        with open(daily_file, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                daily_data[row["date"]] = int(row["total_active_users"])
-
-    # 今日のデータを更新（上書き）
-    daily_data[today] = total_users
-    print(f"✅ {today} のデータ ({total_users} users) を更新/保存")
-
-    # 日付順にソートして書き直し（重複防止）
-    with open(daily_file, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["date", "total_active_users"])
-        writer.writeheader()
-        for date in sorted(daily_data.keys()):
-            writer.writerow({"date": date, "total_active_users": daily_data[date]})
-
     # ==================== GeoJSON + KML生成 ====================
     features = []
     kml_points = []
