@@ -17,6 +17,29 @@
     </div>
 
     <script>
+        const verticalLinePlugin = {
+            id: 'verticalLinePlugin',
+            afterDraw(chart, args, options) {
+                const { ctx, chartArea, tooltip } = chart;
+
+                if (!tooltip || !tooltip._active || !tooltip._active.length) return;
+
+                const activePoint = tooltip._active[0].element;
+                const x = activePoint.x;
+
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(x, chartArea.top);
+                ctx.lineTo(x, chartArea.bottom);
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+                ctx.stroke();
+                ctx.restore();
+            }
+        };
+
+        Chart.register(verticalLinePlugin);
+        
         // CSV 読み込み
         fetch('daily_data.csv?' + Date.now())
             .then(r => r.text())
