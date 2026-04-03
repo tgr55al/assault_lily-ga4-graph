@@ -29,14 +29,14 @@ def main():
     start_date = (datetime.now().date() - timedelta(days=DAYS_BACK - 1)).strftime("%Y-%m-%d")
     
     # GA4 API リクエスト（dictではなく正しい型を使う）
-    request = RunReportRequest(
+    response_30days = RunReportRequest(
         property=f"properties/{PROPERTY_ID}",
         dimensions=[Dimension(name="country")],
         metrics=[Metric(name="activeUsers")],
         date_ranges=[DateRange(start_date=start_date, end_date=end_date)],
     )
 
-    response = client.run_report(request)
+    response = client.run_report(response_30days)
 
     # 結果を CSV に保存
     with open("ga4_result.csv", "w", encoding="utf-8") as f:
