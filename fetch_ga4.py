@@ -22,9 +22,9 @@ def main():
     credentials = service_account.Credentials.from_service_account_info(info)
     client = BetaAnalyticsDataClient(credentials=credentials)
 
-    end_date = datetime.now().date()
-    start_date = end_date - timedelta(days=DAYS_BACK - 1)
-
+    end_date = datetime.now().date().strftime("%Y-%m-%d")
+    start_date = (datetime.now().date() - timedelta(days=DAYS_BACK - 1)).strftime("%Y-%m-%d")
+    
     # GA4 API リクエスト（dictではなく正しい型を使う）
     request = RunReportRequest(
         property=f"properties/{PROPERTY_ID}",
