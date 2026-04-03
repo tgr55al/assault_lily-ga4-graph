@@ -20,7 +20,7 @@
         // ★ 日本語縦書きラベルプラグイン
         const verticalLabelPlugin = {
             id: 'verticalLabelPlugin',
-            afterDraw(chart) {
+            afterLayout(chart) {
                 const yAxis = chart.scales.y;
                 const ctx = chart.ctx;
 
@@ -72,7 +72,7 @@
                             borderColor: '#3388ff',
                             backgroundColor: 'rgba(51, 136, 255, 0.1)',
                             borderWidth: 3,
-                            tension: 0.3,
+                            tension: 0,
                             pointRadius: 4,
                             pointHoverRadius: 6
                         }]
