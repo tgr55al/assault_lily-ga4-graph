@@ -11,6 +11,7 @@ from google.analytics.data_v1beta.types import (
 
 # GA4 のプロパティ ID
 PROPERTY_ID = "530080930"
+DAYS_BACK = 30                               # 過去何日分取得するか
 
 def main():
     # Secretsを環境変数から直接読み込み（JSONが壊れない）
@@ -20,12 +21,15 @@ def main():
     credentials = service_account.Credentials.from_service_account_info(info)
     client = BetaAnalyticsDataClient(credentials=credentials)
 
+    end_date = datetime.now().date()
+    start_date = end_date - timedelta(days=DAYS_BACK - 1)
+
     # GA4 API リクエスト（dictではなく正しい型を使う）
     request = RunReportRequest(
         property=f"properties/{PROPERTY_ID}",
         dimensions=[Dimension(name="country")],
         metrics=[Metric(name="activeUsers")],
-        date_ranges=[DateRange(start_date="7daysAgo", end_date="today")],
+        date_ranges=[DateRange(start_date=start_date, end_date=end_date)],
     )
 
     response = client.run_report(request)
