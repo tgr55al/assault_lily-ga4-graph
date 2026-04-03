@@ -22,6 +22,7 @@ def main():
     credentials = service_account.Credentials.from_service_account_info(info)
     client = BetaAnalyticsDataClient(credentials=credentials)
 
+    # 過去30日分の日付範囲を作成
     end_date = datetime.now().date().strftime("%Y-%m-%d")
     start_date = (datetime.now().date() - timedelta(days=DAYS_BACK - 1)).strftime("%Y-%m-%d")
     
