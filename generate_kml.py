@@ -80,7 +80,15 @@ def main():
     # ==================== 日別データ蓄積（1日1回のみ更新） ====================
     daily_file = "daily_data.csv"
     today = datetime.date.today().isoformat()
-    total_users = sum(int(row["activeUsers"]) for row in ga4_data)
+
+    daily_data = {}
+    if os.path.exists(daily_file):
+        with open(daily_file, "r", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                daily_data[row["date"]] = int(row["total_active_users"])
+
+    today_users = daily_data.get(today, 0)
+    print(f"📅 今日 {today} のアクティブユーザー数: {today_users}")
 
     # 既存データを読み込み（今日のデータがあるかチェック）
     daily_data = {}
