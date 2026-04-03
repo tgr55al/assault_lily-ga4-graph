@@ -77,19 +77,6 @@ def main():
             writer.writerow({"country": c, "lat": lat, "lon": lon})
     print(f"✅ coords.csv更新完了（合計 {len(coords)}件）")
 
-    # ==================== 日別データ蓄積（1日1回のみ更新） ====================
-    daily_file = "daily_data.csv"
-    today = datetime.date.today().isoformat()
-
-    daily_data = {}
-    if os.path.exists(daily_file):
-        with open(daily_file, "r", encoding="utf-8") as f:
-            for row in csv.DictReader(f):
-                daily_data[row["date"]] = int(row["total_active_users"])
-
-    today_users = daily_data.get(today, 0)
-    print(f"📅 今日 {today} のアクティブユーザー数: {today_users}")
-
     # 既存データを読み込み（今日のデータがあるかチェック）
     daily_data = {}
     if os.path.exists(daily_file):
