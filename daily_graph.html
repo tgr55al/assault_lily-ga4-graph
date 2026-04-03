@@ -41,7 +41,7 @@
                             data: values,
                             borderColor: '#3388ff',
                             backgroundColor: 'rgba(51, 136, 255, 0.1)',
-                            borderWidth: 3,
+                            borderWidth: 2,
                             tension: 0,
                             pointRadius: 4,
                             pointHoverRadius: 6
@@ -52,7 +52,11 @@
                         maintainAspectRatio: false,
                         plugins: {
                             legend: { position: 'top' },
-                            title: { display: false }
+                            title: { display: false },
+                            tooltip: {
+                                    intersect: false,
+                                    mode: 'index'
+                                }
                         },
                         scales: {
                             y: { beginAtZero: true, title: { display: false } },
