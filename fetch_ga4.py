@@ -50,7 +50,24 @@ def main():
     print("📊 過去30日間の国別データ → ga4_result.csv に保存")
 
     # -----------------------------
-    # ② 今日のアクティブユーザー数だけを取得
+    # ②-1 前日のアクティブユーザー数を取得
+    # -----------------------------
+    yesterday_str = (datetime.now().date() - timedelta(days=1)).strftime("%Y-%m-%d")
+
+    request_yesterday = RunReportRequest(
+        property=f"properties/{PROPERTY_ID}",
+        dimensions=[Dimension(name="country")],
+        metrics=[Metric(name="activeUsers")],
+        date_ranges=[DateRange(start_date=yesterday_str, end_date=yesterday_str)],
+    )
+
+    response_yesterday = client.run_report(request_yesterday)
+    yesterday_total = sum(int(row.metric_values[0].value) for row in response_yesterday.rows)
+
+    print(f"📅 前日 {yesterday_str} のアクティブユーザー数：{yesterday_total}")
+    
+    # -----------------------------
+    # ②-2 今日のアクティブユーザー数だけを取得
     # -----------------------------
     today_str = datetime.now().date().strftime("%Y-%m-%d")
 
@@ -83,6 +100,9 @@ def main():
 
     # 今日の値だけ上書き
     daily_data[today_str] = today_total
+
+    # 前日分も上書き（毎回最新に更新）
+    daily_data[yesterday_str] = yesterday_total
 
     # 日付順に並べて書き戻す（過去データはそのまま）
     with open(daily_file, "w", encoding="utf-8", newline="") as f:
