@@ -1,5 +1,5 @@
 import json
-
+from pathlib import Path
 
 def build_features(rows, key_field: str, value_field: str, coords: dict, to_japanese_func):
     """GeoJSON Feature と KML Placemark を構築"""
