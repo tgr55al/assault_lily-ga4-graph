@@ -13,11 +13,8 @@ def update_daily_screenPageViews_log(client):
     os.makedirs("ga4Data", exist_ok=True)
     daily_file = "ga4Data/daily_screenPageViews.csv"
 
-    today = (datetime.now().date() - timedelta(days=7)).strftime("%Y-%m-%d")
-    yesterday = (datetime.now().date() - timedelta(days=6)).strftime("%Y-%m-%d")
-
-    #a8days_ago = (datetime.now().date() - timedelta(days=8)).strftime("%Y-%m-%d")
-    #a9days_ago = (datetime.now().date() - timedelta(days=9)).strftime("%Y-%m-%d")
+    today = (datetime.now().date() - timedelta(days=9)).strftime("%Y-%m-%d")
+    yesterday = (datetime.now().date() - timedelta(days=8)).strftime("%Y-%m-%d")
 
     # 今日
     request_today = RunReportRequest(
