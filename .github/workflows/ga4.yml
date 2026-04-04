@@ -5,7 +5,6 @@ on:
     - cron: "0 * * * *"   # 1時間に1回（毎時0分）
   workflow_dispatch:       # 手動実行も可能
 
-# ← ここを追加（これが必須）
 permissions:
   contents: write
 
@@ -27,10 +26,10 @@ jobs:
           pip install --upgrade pip
           pip install requests pandas google-auth google-auth-oauthlib google-api-python-client google-analytics-data
 
-      - name: GA4データを取得（全世界）
+      - name: GA4データ処理（すべて）
         env:
           GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
-        run: python fetch_ga4.py
+        run: python main.py
 
       - name: Commit daily_data.csv
         run: |
@@ -39,17 +38,6 @@ jobs:
           git add daily_data.csv
           git commit -m "Update daily_data.csv" || echo "No changes to commit"
           git push || echo "No changes to push"
-
-      - name: GA4データを取得（日本）
-        env:
-          GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
-        run: python fetch_japan_ga4.py
-
-      - name: KMLとGeoJSONを生成（全世界）
-        run: python generate_kml.py
-
-      - name: KMLとGeoJSONを生成（日本）
-        run: python generate_japan_kml.py
 
       - name: GitHub Pagesにデプロイ
         uses: peaceiris/actions-gh-pages@v4
