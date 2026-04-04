@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+        <name>GA4 Active Users Map</name>
+
+            <Placemark>
+                <name>東京</name>
+                <value>1213</value>
+                <Point>
+                    <coordinates>139.7638947,35.6768601,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>大阪</name>
+                <value>307</value>
+                <Point>
+                    <coordinates>135.5014539,34.6937569,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>神奈川</name>
+                <value>263</value>
+                <Point>
+                    <coordinates>139.374753,35.4342935,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>兵庫</name>
+                <value>158</value>
+                <Point>
+                    <coordinates>134.860666,34.914934,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>北海道</name>
+                <value>136</value>
+                <Point>
+                    <coordinates>142.8197834,43.4519831,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>愛知</name>
+                <value>134</value>
+                <Point>
+                    <coordinates>137.254574,34.9991645,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>埼玉</name>
+                <value>127</value>
+                <Point>
+                    <coordinates>139.4160114,35.9754168,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>千葉</name>
+                <value>120</value>
+                <Point>
+                    <coordinates>140.2647303,35.549399,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>福岡</name>
+                <value>93</value>
+                <Point>
+                    <coordinates>130.6180016,33.6251241,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>宮城</name>
+                <value>67</value>
+                <Point>
+                    <coordinates>140.9761025,38.3880155,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>京都</name>
+                <value>63</value>
+                <Point>
+                    <coordinates>135.7681441,35.0115754,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>静岡</name>
+                <value>62</value>
+                <Point>
+                    <coordinates>138.3831697,34.9751974,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>茨城</name>
+                <value>53</value>
+                <Point>
+                    <coordinates>140.4703384,36.2869536,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>広島</name>
+                <value>49</value>
+                <Point>
+                    <coordinates>132.4517589,34.3917241,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>長野</name>
+                <value>45</value>
+                <Point>
+                    <coordinates>138.0319015,36.1143945,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>三重</name>
+                <value>39</value>
+                <Point>
+                    <coordinates>136.5154489,34.7339685,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>新潟</name>
+                <value>37</value>
+                <Point>
+                    <coordinates>138.7669125,37.6452283,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>岡山</name>
+                <value>34</value>
+                <Point>
+                    <coordinates>133.7759256,34.8581334,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>群馬</name>
+                <value>31</value>
+                <Point>
+                    <coordinates>139.033483,36.52198,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>福島</name>
+                <value>25</value>
+                <Point>
+                    <coordinates>140.4745807,37.760777,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>岐阜</name>
+                <value>25</value>
+                <Point>
+                    <coordinates>136.7627526,35.4230949,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>栃木</name>
+                <value>25</value>
+                <Point>
+                    <coordinates>139.8096549,36.6782167,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>青森</name>
+                <value>22</value>
+                <Point>
+                    <coordinates>140.590121,40.886943,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>愛媛</name>
+                <value>20</value>
+                <Point>
+                    <coordinates>132.8185275,33.6013646,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>滋賀</name>
+                <value>20</value>
+                <Point>
+                    <coordinates>136.109385,35.247154,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>奈良</name>
+                <value>19</value>
+                <Point>
+                    <coordinates>135.8048359,34.6845445,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>島根</name>
+                <value>18</value>
+                <Point>
+                    <coordinates>132.537439,34.9418212,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>山形</name>
+                <value>15</value>
+                <Point>
+                    <coordinates>140.083237,38.4746705,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>和歌山</name>
+                <value>14</value>
+                <Point>
+                    <coordinates>135.5930743,33.8070292,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>岩手</name>
+                <value>13</value>
+                <Point>
+                    <coordinates>141.4253574,39.5713763,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>長崎</name>
+                <value>13</value>
+                <Point>
+                    <coordinates>129.7874339,33.1154683,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>富山</name>
+                <value>13</value>
+                <Point>
+                    <coordinates>137.2183531,36.6468015,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>秋田</name>
+                <value>12</value>
+                <Point>
+                    <coordinates>140.342608,39.6898802,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>石川</name>
+                <value>12</value>
+                <Point>
+                    <coordinates>136.8162839,36.9890574,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>山口</name>
+                <value>12</value>
+                <Point>
+                    <coordinates>131.5873845,34.2379614,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>香川</name>
+                <value>10</value>
+                <Point>
+                    <coordinates>134.0586579,34.2480104,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>高知</name>
+                <value>10</value>
+                <Point>
+                    <coordinates>133.5310918,33.5588482,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>鹿児島</name>
+                <value>9</value>
+                <Point>
+                    <coordinates>130.5474077,31.521587,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>熊本</name>
+                <value>9</value>
+                <Point>
+                    <coordinates>130.6341345,32.6450475,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>宮崎</name>
+                <value>7</value>
+                <Point>
+                    <coordinates>131.294542,32.097681,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>徳島</name>
+                <value>7</value>
+                <Point>
+                    <coordinates>134.2509634,33.9196418,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>大分</name>
+                <value>6</value>
+                <Point>
+                    <coordinates>131.6096524,33.2393864,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>沖縄</name>
+                <value>6</value>
+                <Point>
+                    <coordinates>128.0255901,26.5707754,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>鳥取</name>
+                <value>5</value>
+                <Point>
+                    <coordinates>133.8678525,35.3555075,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>山梨</name>
+                <value>5</value>
+                <Point>
+                    <coordinates>138.6380495,35.6399328,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>福井</name>
+                <value>4</value>
+                <Point>
+                    <coordinates>136.6068127,35.9263502,0</coordinates>
+                </Point>
+            </Placemark>
+
+            <Placemark>
+                <name>佐賀</name>
+                <value>3</value>
+                <Point>
+                    <coordinates>130.1296585,33.2185408,0</coordinates>
+                </Point>
+            </Placemark>
+
+    </Document>
+</kml>
