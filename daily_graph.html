@@ -39,9 +39,9 @@
         };
 
         Chart.register(verticalLinePlugin);
-        
+
         // CSV 読み込み
-        fetch('daily_data.csv?' + Date.now())
+        fetch('ga4Data/daily_data.csv?' + Date.now())
             .then(r => r.text())
             .then(csvText => {
                 const rows = csvText.trim().split('\n').slice(1); // ヘッダー除去
