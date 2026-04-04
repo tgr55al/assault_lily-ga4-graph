@@ -117,7 +117,10 @@
             title: { display: false },
             datalabels: {
               color: "#000",
-              font: { size: 11 },
+              font: {
+                size: 14,
+                weight: "bold"
+              },
               formatter: (value, ctx) => {
                 const dataArr = ctx.chart.data.datasets[0].data;
                 const sum = dataArr.reduce((a, b) => a + b, 0);
@@ -127,8 +130,9 @@
               },
               textAlign: "center",
               anchor: "center",
-              align: "center",
-              clamp: true
+              align: "end",
+              offset: 12,
+              clamp: false
             }
           }
         },
