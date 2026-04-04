@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>Assault Lily GA4 日別閲覧数グラフ</title>
+    <title>アサルトリリィwiki GA4 日別閲覧者数グラフ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
@@ -41,7 +41,7 @@
         Chart.register(verticalLinePlugin);
 
         // CSV 読み込み
-        fetch('daily_data.csv?' + Date.now())
+        fetch('daily_activeUsers.csv?' + Date.now())
             .then(r => r.text())
             .then(csvText => {
                 const rows = csvText.trim().split('\n').slice(1); // ヘッダー除去
@@ -100,7 +100,7 @@
                 });
             })
             .catch(() => {
-                document.getElementById('container').innerHTML = '<p style="color:red;padding:20px;">daily_data.csvの読み込みに失敗しました</p>';
+                document.getElementById('container').innerHTML = '<p style="color:red;padding:20px;">daily_activeUsers.csvの読み込みに失敗しました</p>';
             });
     </script>
 </body>

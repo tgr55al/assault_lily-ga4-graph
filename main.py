@@ -4,7 +4,8 @@ from pathlib import Path
 from ga4.ga4_client import create_client
 from ga4.country_report import fetch_country_30days
 from ga4.region_japan import fetch_region_japan
-from ga4.daily_log import update_daily_log
+from ga4.daily_activeUsers_log import update_daily_activeUsers_log
+from ga4.daily_screenPageViews_log import update_daily_screenPageViews_log
 
 from maps.world_map import main as world_map_main
 from maps.japan_map import main as japan_map_main
@@ -17,7 +18,8 @@ def main():
 
     fetch_country_30days(client)
     fetch_region_japan(client)
-    update_daily_log(client)
+    update_daily_activeUsers_log(client)
+    update_daily_screenPageViews_log(client)
 
     print("✅ GA4 データ処理完了")
 
