@@ -15,9 +15,8 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // worldCopyJump: true で横無限ループ（円が消えなくなる）
         const map = L.map('map', {
-            worldCopyJump: true,     // ← これが一番重要！
+            worldCopyJump: true,
             maxBoundsViscosity: 1.0
         }).setView([20, 60], 2);
 
@@ -25,32 +24,12 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        fetch('../kml/ga4_map.kml?' + Date.now())
-            .then(r => r.text())
-            .then(kmlText => {
-                const parts = kmlText.split('<Placemark>');
-                const features = [];
+        // ★ GeoJSON を読み込む（pages/ から見て ../geojson/）
+        fetch('../geojson/ga4_map.geojson?' + Date.now())
+            .then(r => r.json())
+            .then(data => {
 
-                for (let i = 1; i < parts.length; i++) {
-                    const part = parts[i];
-                    const nameMatch = part.match(/<name>(.*?)<\/name>/);
-                    const valueMatch = part.match(/<value>(.*?)<\/value>/);
-                    const coordMatch = part.match(/<coordinates>(.*?)<\/coordinates>/);
-
-                    if (nameMatch && valueMatch && coordMatch) {
-                        const name = nameMatch[1].trim();
-                        const value = parseFloat(valueMatch[1].trim()) || 0;
-                        const [lon, lat] = coordMatch[1].trim().split(',').map(Number);
-
-                        features.push({
-                            type: 'Feature',
-                            properties: { name, value },
-                            geometry: { type: 'Point', coordinates: [lon, lat] }
-                        });
-                    }
-                }
-
-                L.geoJSON({type: 'FeatureCollection', features}, {
+                const geoLayer = L.geoJSON(data, {
                     pointToLayer: (feature, latlng) => {
                         const value = feature.properties.value || 0;
 
@@ -67,11 +46,14 @@
                         });
                     },
                     onEachFeature: (feature, layer) => {
-                        layer.bindPopup(`<strong>${feature.properties.name}</strong><br>閲覧者数: <strong>${feature.properties.value}</strong>`);
+                        layer.bindPopup(
+                            `<strong>${feature.properties.name}</strong><br>
+                             閲覧者数: <strong>${feature.properties.value}</strong>`
+                        );
                     }
                 }).addTo(map);
 
-                map.fitBounds(L.geoJSON({type: 'FeatureCollection', features}).getBounds(), {padding: [50,50]});
+                map.fitBounds(geoLayer.getBounds(), { padding: [50, 50] });
             });
     </script>
 </body>
