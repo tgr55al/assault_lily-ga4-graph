@@ -17,47 +17,54 @@
   </div>
 
   <script>
-    // ▼ CSV を読み込む（BOM除去・trim徹底）
+    // 不可視文字・全角スペースも含めて正規化
+    function normalize(str) {
+      return (str || "")
+        .replace(/^\uFEFF/, "")   // BOM
+        .replace(/\u200B/g, "")   // ゼロ幅スペース
+        .replace(/　/g, " ")      // 全角スペース → 半角
+        .trim();
+    }
+
     async function loadCSV(url) {
       let text = await fetch(url).then(r => r.text());
       text = text.replace(/^\uFEFF/, ""); // BOM除去
-
       const lines = text.trim().split(/\r?\n/);
-      const header = lines[0].split(',').map(h => h.trim());
+      const header = lines[0].split(',').map(h => normalize(h));
 
       return lines.slice(1).map(line => {
-        const cols = line.split(',').map(c => c.trim());
+        const cols = line.split(',').map(c => normalize(c));
         const obj = {};
-        header.forEach((h, i) => obj[h] = (cols[i] || "").trim());
+        header.forEach((h, i) => obj[h] = cols[i] || "");
         return obj;
       });
     }
 
     async function main() {
-      // ▼ 外部 CSV 読み込み（ここを修正）
+      // ga4_region_japan.csv と japan_map.csv を読み込み
       const regionRows = await loadCSV("ga4_region_japan.csv");
       const regionJaRows = await loadCSV("japan_map.csv");
 
-      // ▼ 日本語変換マップ
+      // 英語 → 日本語マップ
       const regionJaMap = {};
       regionJaRows.forEach(row => {
-        const key = (row.english || "").trim();
-        const val = (row.japanese || "").trim();
+        const key = normalize(row.english);
+        const val = normalize(row.japanese);
         if (key) regionJaMap[key] = val;
       });
 
-      // ▼ データ整形（(not set) と空欄除外）
+      // データ整形：(not set)・空欄・0 を除外
       const data = regionRows
         .map(r => ({
-          region: (r.region || "").trim(),
+          region: normalize(r.region),
           activeUsers: Number(r.activeUsers || 0)
         }))
-        .filter(r => r.region && r.region !== "(not set)" && r.activeUsers > 0);
+        .filter(r => r.region !== "" && r.region !== "(not set)" && r.activeUsers > 0);
 
-      // ▼ 合計
+      // 合計
       const total = data.reduce((s, r) => s + r.activeUsers, 0);
 
-      // ▼ 3% 以下を Other にまとめる
+      // 3% 以下を Other にまとめる
       const threshold = total * 0.03;
       const major = [];
       let otherSum = 0;
@@ -74,18 +81,17 @@
         major.push({ region: "Other", activeUsers: otherSum });
       }
 
-      // ▼ 日本語ラベル変換（確実に日本語にする）
+      // 日本語ラベルに変換
       const labels = major.map(r => {
         if (r.region === "Other") return "その他";
-
-        const key = r.region.trim();
+        const key = normalize(r.region);
         return regionJaMap[key] || key;
       });
 
       // ▼ 値
       const values = major.map(r => r.activeUsers);
 
-      // ▼ Chart.js 描画
+      // 円グラフ描画
       const ctx = document.getElementById("regionPie").getContext("2d");
 
       const colors = [
@@ -108,7 +114,7 @@
           responsive: true,
           plugins: {
             legend: { position: "right" },
-            title: { display: false }, // ← タイトル非表示
+            title: { display: false },
             datalabels: {
               color: "#000",
               font: { size: 11 },
