@@ -45,7 +45,7 @@ def main():
     print(f"✅ {CONFIG['coords_csv']} 更新完了（合計 {len(coords)}件）")
 
     # GeoJSON
-    features, placemarks = build_features(
+    features = build_features(
         rows,
         key_field=CONFIG["key_field"],
         value_field=CONFIG["value_field"],
