@@ -61,6 +61,7 @@ jobs:
           cp pages/*.html public/
           cp geojson/*.geojson public/
           cp ga4Data/*.csv public/
+          cp master/japan_map.csv public/
 
       - name: GitHub Pagesにデプロイ
         uses: peaceiris/actions-gh-pages@v4
