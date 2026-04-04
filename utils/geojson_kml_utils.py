@@ -40,6 +40,9 @@ def build_features(rows, key_field: str, value_field: str, coords: dict, to_japa
 
 
 def write_geojson(path: str, features) -> None:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
     geojson = {"type": "FeatureCollection", "features": features}
     with open(path, "w", encoding="utf-8") as f:
         json.dump(geojson, f, ensure_ascii=False, indent=2)

@@ -9,7 +9,6 @@ CONFIG = {
     "translation_csv": "master/japan_map.csv",
     "coords_csv": "master/coords_japan.csv",
     "geojson_out": "geojson/ga4_map_japan.geojson",
-    "kml_out": "kml/ga4_map_japan.kml",
     "key_field": "region",
     "value_field": "activeUsers",
     "query_suffix": ", Japan",   # 都道府県 + Japan
@@ -56,11 +55,9 @@ def main():
     )
 
     write_geojson(CONFIG["geojson_out"], features)
-    write_kml(CONFIG["kml_out"], placemarks, CONFIG["kml_title"])
 
     print(f"🎉 完了！ {len(features)}件の GeoJSON + KML を生成しました")
     print(f"   → {CONFIG['geojson_out']}")
-    print(f"   → {CONFIG['kml_out']}")
 
 
 if __name__ == "__main__":
