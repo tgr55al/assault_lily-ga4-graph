@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>地域別アクティブユーザー（円グラフ）</title>
+  <title>アサルトリリィwiki プロポーショナルサークル日本地図（円グラフ）</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
   <style>
@@ -11,53 +11,54 @@
   </style>
 </head>
 <body>
-  <h1>地域別アクティブユーザー（円グラフ）</h1>
+
   <div id="chart-container">
     <canvas id="regionPie"></canvas>
   </div>
 
   <script>
-    // ▼ CSV を読み込む関数（trim 付き）
+    // ▼ CSV を読み込む（BOM除去・trim徹底）
     async function loadCSV(url) {
-      const text = await fetch(url).then(r => r.text());
+      let text = await fetch(url).then(r => r.text());
+      text = text.replace(/^\uFEFF/, ""); // BOM除去
+
       const lines = text.trim().split(/\r?\n/);
       const header = lines[0].split(',').map(h => h.trim());
+
       return lines.slice(1).map(line => {
         const cols = line.split(',').map(c => c.trim());
         const obj = {};
-        header.forEach((h, i) => obj[h] = cols[i] ?? '');
+        header.forEach((h, i) => obj[h] = (cols[i] || "").trim());
         return obj;
       });
     }
 
     async function main() {
-      // ▼ 外部CSVを読み込み
-      const regionRows = await loadCSV('ga4_region_japan.csv'); // region,activeUsers
-      const regionJaRows = await loadCSV('japan_map.csv');  // english,japanese
+      // ▼ 外部 CSV 読み込み（ここを修正）
+      const regionRows = await loadCSV("ga4_region_japan.csv");
+      const regionJaRows = await loadCSV("japan_map.csv");
 
-      // ▼ 日本語変換マップ作成（英語 → 日本語）
+      // ▼ 日本語変換マップ
       const regionJaMap = {};
       regionJaRows.forEach(row => {
-        const key = (row.english || '').trim();
-        const val = (row.japanese || '').trim();
-        if (key) {
-          regionJaMap[key] = val;
-        }
+        const key = (row.english || "").trim();
+        const val = (row.japanese || "").trim();
+        if (key) regionJaMap[key] = val;
       });
 
-      // ▼ データ整形（(not set) と空欄を除外）
+      // ▼ データ整形（(not set) と空欄除外）
       const data = regionRows
         .map(r => ({
-          region: (r.region || '').trim(),
+          region: (r.region || "").trim(),
           activeUsers: Number(r.activeUsers || 0)
         }))
-        .filter(r => r.region && r.region !== '(not set)' && r.activeUsers > 0);
+        .filter(r => r.region && r.region !== "(not set)" && r.activeUsers > 0);
 
-      // ▼ 合計値
-      const total = data.reduce((sum, r) => sum + r.activeUsers, 0);
+      // ▼ 合計
+      const total = data.reduce((s, r) => s + r.activeUsers, 0);
 
-      // ▼ 2% 未満を Other にまとめる
-      const threshold = total * 0.02;
+      // ▼ 3% 以下を Other にまとめる
+      const threshold = total * 0.03;
       const major = [];
       let otherSum = 0;
 
@@ -70,31 +71,32 @@
       });
 
       if (otherSum > 0) {
-        major.push({ region: 'Other', activeUsers: otherSum });
+        major.push({ region: "Other", activeUsers: otherSum });
       }
 
-      // ▼ ラベル（日本語変換）
+      // ▼ 日本語ラベル変換（確実に日本語にする）
       const labels = major.map(r => {
-        if (r.region === 'Other') return 'その他';
+        if (r.region === "Other") return "その他";
+
         const key = r.region.trim();
-        return regionJaMap[key] || key; // マップに無ければ英語のまま
+        return regionJaMap[key] || key;
       });
 
       // ▼ 値
       const values = major.map(r => r.activeUsers);
 
       // ▼ Chart.js 描画
-      const ctx = document.getElementById('regionPie').getContext('2d');
+      const ctx = document.getElementById("regionPie").getContext("2d");
 
       const colors = [
-        '#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f',
-        '#edc948','#b07aa1','#ff9da7','#9c755f','#bab0ab',
-        '#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd',
-        '#8c564b','#e377c2','#7f7f7f','#bcbd22','#17becf'
+        "#4e79a7","#f28e2b","#e15759","#76b7b2","#59a14f",
+        "#edc948","#b07aa1","#ff9da7","#9c755f","#bab0ab",
+        "#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd",
+        "#8c564b","#e377c2","#7f7f7f","#bcbd22","#17becf"
       ];
 
       new Chart(ctx, {
-        type: 'pie',
+        type: "pie",
         data: {
           labels: labels,
           datasets: [{
@@ -105,26 +107,21 @@
         options: {
           responsive: true,
           plugins: {
-            legend: { position: 'right' },
-            title: {
-              display: true,
-              text: '地域別アクティブユーザー（日本語 + Other 集約）'
-            },
+            legend: { position: "right" },
+            title: { display: false }, // ← タイトル非表示
             datalabels: {
-              color: '#000',
-              font: {
-                size: 11,
-              },
+              color: "#000",
+              font: { size: 11 },
               formatter: (value, ctx) => {
                 const dataArr = ctx.chart.data.datasets[0].data;
                 const sum = dataArr.reduce((a, b) => a + b, 0);
-                const pct = sum ? (value / sum * 100).toFixed(1) + '%' : '';
+                const pct = ((value / sum) * 100).toFixed(1) + "%";
                 const label = ctx.chart.data.labels[ctx.dataIndex];
-                return label + '\n' + pct;
+                return label + "\n" + pct;
               },
-              textAlign: 'center',
-              anchor: 'center',
-              align: 'center',
+              textAlign: "center",
+              anchor: "center",
+              align: "center",
               clamp: true
             }
           }
@@ -135,5 +132,6 @@
 
     main();
   </script>
+
 </body>
 </html>
