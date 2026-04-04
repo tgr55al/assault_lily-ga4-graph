@@ -2,7 +2,6 @@ import csv
 import os
 from google.analytics.data_v1beta.types import RunReportRequest, DateRange, Dimension, Metric
 from ga4.date_utils import get_today, get_yesterday
-from datetime import datetime, timedelta
 
 PROPERTY_ID = "530080930"
 
@@ -13,8 +12,8 @@ def update_daily_screenPageViews_log(client):
     os.makedirs("ga4Data", exist_ok=True)
     daily_file = "ga4Data/daily_screenPageViews.csv"
 
-    today = (datetime.now().date() - timedelta(days=9)).strftime("%Y-%m-%d")
-    yesterday = (datetime.now().date() - timedelta(days=8)).strftime("%Y-%m-%d")
+    today = get_today()
+    yesterday = get_yesterday()
 
     # 今日
     request_today = RunReportRequest(
