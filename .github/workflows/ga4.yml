@@ -39,12 +39,6 @@ jobs:
           git commit -m "Update daily_data.csv" || echo "No changes to commit"
           git push || echo "No changes to push"
 
-      - name: KMLとGeoJSONを生成（全世界）
-        run: python generate_kml.py
-
-      - name: KMLとGeoJSONを生成（日本）
-        run: python generate_japan_kml.py
-
       - name: GitHub Pagesにデプロイ
         uses: peaceiris/actions-gh-pages@v4
         with:
