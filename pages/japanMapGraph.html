@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>地域別アクティブユーザー（円グラフ）</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
   <style>
     body { font-family: system-ui, sans-serif; margin: 20px; }
     #chart-container { max-width: 800px; margin: 0 auto; }
@@ -16,37 +17,41 @@
   </div>
 
   <script>
-    // ▼ CSV を読み込む関数
+    // ▼ CSV を読み込む関数（trim 付き）
     async function loadCSV(url) {
       const text = await fetch(url).then(r => r.text());
       const lines = text.trim().split(/\r?\n/);
-      const header = lines[0].split(',');
+      const header = lines[0].split(',').map(h => h.trim());
       return lines.slice(1).map(line => {
-        const cols = line.split(',');
+        const cols = line.split(',').map(c => c.trim());
         const obj = {};
-        header.forEach((h, i) => obj[h] = cols[i]);
+        header.forEach((h, i) => obj[h] = cols[i] ?? '');
         return obj;
       });
     }
 
     async function main() {
       // ▼ 外部CSVを読み込み
-      const regionRows = await loadCSV('ga4_region_japan.csv');
-      const regionJaRows = await loadCSV('japan_map.csv');
+      const regionRows = await loadCSV('ga4_region_japan.csv'); // region,activeUsers
+      const regionJaRows = await loadCSV('japan_map.csv');  // english,japanese
 
-      // ▼ 日本語変換マップ作成
+      // ▼ 日本語変換マップ作成（英語 → 日本語）
       const regionJaMap = {};
       regionJaRows.forEach(row => {
-        regionJaMap[row.english] = row.japanese;
+        const key = (row.english || '').trim();
+        const val = (row.japanese || '').trim();
+        if (key) {
+          regionJaMap[key] = val;
+        }
       });
 
       // ▼ データ整形（(not set) と空欄を除外）
       const data = regionRows
-        .filter(r => r.region && r.region !== '(not set)')
         .map(r => ({
-          region: r.region,
+          region: (r.region || '').trim(),
           activeUsers: Number(r.activeUsers || 0)
-        }));
+        }))
+        .filter(r => r.region && r.region !== '(not set)' && r.activeUsers > 0);
 
       // ▼ 合計値
       const total = data.reduce((sum, r) => sum + r.activeUsers, 0);
@@ -71,7 +76,8 @@
       // ▼ ラベル（日本語変換）
       const labels = major.map(r => {
         if (r.region === 'Other') return 'その他';
-        return regionJaMap[r.region] || r.region;
+        const key = r.region.trim();
+        return regionJaMap[key] || key; // マップに無ければ英語のまま
       });
 
       // ▼ 値
@@ -102,10 +108,28 @@
             legend: { position: 'right' },
             title: {
               display: true,
-              text: '地域別アクティブユーザー（日本語ラベル + Other 集約）'
+              text: '地域別アクティブユーザー（日本語 + Other 集約）'
+            },
+            datalabels: {
+              color: '#000',
+              font: {
+                size: 11,
+              },
+              formatter: (value, ctx) => {
+                const dataArr = ctx.chart.data.datasets[0].data;
+                const sum = dataArr.reduce((a, b) => a + b, 0);
+                const pct = sum ? (value / sum * 100).toFixed(1) + '%' : '';
+                const label = ctx.chart.data.labels[ctx.dataIndex];
+                return label + '\n' + pct;
+              },
+              textAlign: 'center',
+              anchor: 'center',
+              align: 'center',
+              clamp: true
             }
           }
-        }
+        },
+        plugins: [ChartDataLabels]
       });
     }
 
