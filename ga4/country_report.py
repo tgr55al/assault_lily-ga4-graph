@@ -9,8 +9,8 @@ def fetch_country_30days(client, days=30):
     print("::group::国別30日集計")
 
     # 出力先フォルダ
-    os.makedirs("master", exist_ok=True)
-    output_path = "master/country_map.csv"
+    os.makedirs("ga4Data", exist_ok=True)
+    output_path = "ga4Data/ga4_result.csv"
 
     start_date, end_date = get_date_range(days)
 

@@ -8,8 +8,8 @@ def fetch_region_japan(client, days=30):
     print("::group::日本地域別集計")
 
     # 出力先フォルダ
-    os.makedirs("master", exist_ok=True)
-    output_path = "master/japan_map.csv"
+    os.makedirs("ga4Data", exist_ok=True)
+    output_path = "ga4Data/ga4_region_japan.csv"
 
     start_date, end_date = get_date_range(days)
 
