@@ -1,7 +1,7 @@
 import csv
 from utils.translation_utils import load_translation_map, to_japanese
 from utils.coords_utils import load_coords, save_coords, fill_missing_coords
-from utils.geojson_kml_utils import build_features, write_geojson, write_kml
+from utils.geojson_utils import build_features, write_geojson
 
 
 CONFIG = {
@@ -13,7 +13,6 @@ CONFIG = {
     "value_field": "activeUsers",
     "query_suffix": "",        # 国名そのまま
     "label": "国",
-    "kml_title": "GA4 Active Users Map (World)",
 }
 
 
@@ -45,7 +44,7 @@ def main():
     save_coords(CONFIG["coords_csv"], CONFIG["key_field"], coords)
     print(f"✅ {CONFIG['coords_csv']} 更新完了（合計 {len(coords)}件）")
 
-    # GeoJSON + KML
+    # GeoJSON
     features, placemarks = build_features(
         rows,
         key_field=CONFIG["key_field"],
@@ -56,7 +55,7 @@ def main():
 
     write_geojson(CONFIG["geojson_out"], features)
 
-    print(f"🎉 完了！ {len(features)}件の GeoJSON + KML を生成しました")
+    print(f"🎉 完了！ {len(features)}件の GeoJSON")
     print(f"   → {CONFIG['geojson_out']}")
 
 
