@@ -39,10 +39,25 @@ jobs:
           git commit -m "Update daily_data.csv" || echo "No changes to commit"
           git push || echo "No changes to push"
 
+      - name: Commit coords.csv
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add master/coords.csv
+          git commit -m "Update coords.csv" || echo "No changes to commit"
+          git push || echo "No changes to push"
+
+      - name: 公開用ファイルを public/ にコピー
+        run: |
+          mkdir -p public
+          cp pages/*.html public/
+          cp geojson/*.geojson public/
+          cp ga4Data/*.csv public/
+
       - name: GitHub Pagesにデプロイ
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .                # ルート直下の全ファイルを公開
+          publish_dir: ./public
           publish_branch: gh-pages
           force_orphan: true
