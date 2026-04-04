@@ -10,7 +10,7 @@ def get_coordinates(country):
     """国名から緯度経度を自動取得（Nominatim API）"""
     url = f"https://nominatim.openstreetmap.org/search?country={quote(country)}&format=json&limit=1"
     headers = {'User-Agent': 'AssaultLilyGA4Map/1.0'}
-    
+
     try:
         req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req, timeout=10) as resp:
@@ -24,7 +24,7 @@ def get_coordinates(country):
 def load_country_map():
     """ISO 3166 国名（英語→日本語）変換表を読み込む"""
     country_map = {}
-    with open("country_map.csv", "r", encoding="utf-8") as f:
+    with open("master/country_map.csv", "r", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             country_map[row["english"]] = row["japanese"]
     return country_map

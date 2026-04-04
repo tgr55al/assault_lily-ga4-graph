@@ -10,7 +10,7 @@ def get_coordinates(region):
     query = f"{region}, Japan"
     url = f"https://nominatim.openstreetmap.org/search?q={quote(query)}&format=json&limit=1"
     headers = {'User-Agent': 'AssaultLilyGA4Map/1.0'}
-    
+
     try:
         req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req, timeout=10) as resp:
@@ -24,7 +24,7 @@ def get_coordinates(region):
 def load_region_map():
     """ISO 3166 都道府県名（英語→日本語）変換表を読み込む"""
     region_map = {}
-    with open("japan_map.csv", "r", encoding="utf-8") as f:
+    with open("master/japan_map.csv", "r", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             region_map[row["english"]] = row["japanese"]
     return region_map
