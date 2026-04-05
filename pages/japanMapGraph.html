@@ -125,8 +125,9 @@
                 const dataArr = ctx.chart.data.datasets[0].data;
                 const sum = dataArr.reduce((a, b) => a + b, 0);
                 const pct = ((value / sum) * 100).toFixed(1) + "%";
-                const label = ctx.chart.data.labels[ctx.dataIndex];
-                return label + "\n" + pct;
+                //const label = ctx.chart.data.labels[ctx.dataIndex];
+                //return label + "\n" + pct;
+                return pct;
               },
               textAlign: "center",
               anchor: "center",
