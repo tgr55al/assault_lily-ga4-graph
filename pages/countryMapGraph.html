@@ -7,7 +7,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
   <style>
     body { font-family: system-ui, sans-serif; margin: 20px; }
-    #chart-container { max-width: 800px; margin: 0 auto; }
+    #chart-container { max-width: 800px; margin: 0 auto; padding: 0; }
+    canvas { display: block; margin: 0; padding: 0; }
   </style>
 </head>
 <body>
@@ -138,9 +139,9 @@
 
                 // 偶数・奇数で offset を変える
                 if (index % 2 === 0) {
-                  return 12;   // 偶数
+                  return 8;   // 偶数
                 } else {
-                  return 28;   // 奇数
+                  return 30;   // 奇数
                 }
               }
             },
