@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アサルトリリィwiki プロポーショナルサークル世界地図（円グラフ）</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 20px; }
+    #chart-container { max-width: 800px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+  <div id="chart-container">
+    <canvas id="countryPie"></canvas>
+  </div>
+
+  <script>
+    // 不可視文字・全角スペースも含めて正規化
+    function normalize(str) {
+      return (str || "")
+        .replace(/^\uFEFF/, "")   // BOM
+        .replace(/\u200B/g, "")   // ゼロ幅スペース
+        .replace(/　/g, " ")      // 全角スペース → 半角
+        .trim();
+    }
+
+    async function loadCSV(url) {
+      let text = await fetch(url).then(r => r.text());
+      text = text.replace(/^\uFEFF/, ""); // BOM除去
+      const lines = text.trim().split(/\r?\n/);
+      const header = lines[0].split(',').map(h => normalize(h));
+
+      return lines.slice(1).map(line => {
+        const cols = line.split(',').map(c => normalize(c));
+        const obj = {};
+        header.forEach((h, i) => obj[h] = cols[i] || "");
+        return obj;
+      });
+    }
+
+    async function main() {
+      // ga4_result.csv と country_map.csv を読み込み
+      const countryRows = await loadCSV("ga4_result.csv");
+      const countryJaRows = await loadCSV("country_map.csv");
+
+      // 英語 → 日本語マップ
+      const countryJaMap = {};
+      countryJaRows.forEach(row => {
+        const key = normalize(row.english);
+        const val = normalize(row.japanese);
+        if (key) countryJaMap[key] = val;
+      });
+
+      // データ整形：(not set)・空欄・0 を除外
+      const data = countryRows
+        .map(r => ({
+          country: normalize(r.country),
+          activeUsers: Number(r.activeUsers || 0)
+        }))
+        .filter(r => r.country !== "" && r.country !== "(not set)" && r.activeUsers > 0);
+
+      // 合計
+      const total = data.reduce((s, r) => s + r.activeUsers, 0);
+
+      // 1% 以下を Other にまとめる
+      const threshold = total * 0.01;
+      const major = [];
+      let otherSum = 0;
+
+      data.forEach(r => {
+        if (r.activeUsers < threshold) {
+          otherSum += r.activeUsers;
+        } else {
+          major.push(r);
+        }
+      });
+
+      if (otherSum > 0) {
+        major.push({ country: "Other", activeUsers: otherSum });
+      }
+
+      // 日本語ラベルに変換
+      const labels = major.map(r => {
+        if (r.country === "Other") return "その他";
+        const key = normalize(r.country);
+        return countryJaMap[key] || key;
+      });
+
+      // 値
+      const values = major.map(r => r.activeUsers);
+
+      // 円グラフ描画
+      const ctx = document.getElementById("countryPie").getContext("2d");
+
+      const colors = [
+        "#4e79a7","#f28e2b","#e15759","#76b7b2","#59a14f",
+        "#edc948","#b07aa1","#ff9da7","#9c755f","#bab0ab",
+        "#1f77b4","#ff7f0e","#2ca02c","#d62728","#9467bd",
+        "#8c564b","#e377c2","#7f7f7f","#bcbd22","#17becf"
+      ];
+
+      new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            backgroundColor: labels.map((_, i) => colors[i % colors.length]),
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: "right" },
+            title: { display: false },
+            datalabels: {
+              color: "#000",
+              font: {
+                size: 11,
+                weight: "bold"
+              },
+              formatter: (value, ctx) => {
+                const dataArr = ctx.chart.data.datasets[0].data;
+                const sum = dataArr.reduce((a, b) => a + b, 0);
+                const pct = ((value / sum) * 100).toFixed(1) + "%";
+                const label = ctx.chart.data.labels[ctx.dataIndex];
+                return label + "\n" + pct;
+              },
+              textAlign: "center",
+              anchor: "center",
+              align: "end",
+              clamp: false,
+              offset: 30
+            }
+          }
+        },
+        plugins: [ChartDataLabels]
+      });
+    }
+
+    main();
+  </script>
+
+</body>
+</html>
