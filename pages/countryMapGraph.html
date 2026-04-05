@@ -109,6 +109,7 @@
           datasets: [{
             data: values,
             backgroundColor: labels.map((_, i) => colors[i % colors.length]),
+            radius: "98%",
           }]
         },
         options: {
@@ -116,7 +117,6 @@
           layout: {
             padding: 0
           },
-          radius: "98%",
           plugins: {
             legend: { position: "right" },
             title: { display: false },
