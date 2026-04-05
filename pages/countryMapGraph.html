@@ -133,7 +133,16 @@
               anchor: "center",
               align: "end",
               clamp: false,
-              offset: 40
+              offset: (ctx) => {
+                const index = ctx.dataIndex;
+
+                // 偶数・奇数で offset を変える
+                if (index % 2 === 0) {
+                  return 18;   // 偶数
+                } else {
+                  return 28;   // 奇数
+                }
+              }
             },
             layout: {
               padding: 0
