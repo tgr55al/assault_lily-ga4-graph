@@ -15,14 +15,20 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // 初期設定: 日本を見た目上中央にして世界地図を表示
+        // 初期設定: 日本を中央にした世界地図表示
         const initialCenter = [36.0, 138.0]; // 日本中心付近
-        const initialZoom = 1;
+        const initialZoom = 1;               // 世界地図表示の基本ズーム
 
-        // 世界の経度範囲で maxBounds を設定（横ラップを無効化するための境界）
-        const worldBounds = L.latLngBounds(
-            L.latLng(-85, -180),
-            L.latLng(85, 180)
+        // 横方向の許容幅（経度差の半分）。小さくすると左右スクロールがより制限される。
+        // 例: horizSpan = 80 -> 左右に合計160度の幅を許可
+        const horizSpan = 80;
+
+        // 左右スクロールを制限するための maxBounds を作成
+        const west = initialCenter[1] - horizSpan;
+        const east = initialCenter[1] + horizSpan;
+        const worldLimitedBounds = L.latLngBounds(
+            L.latLng(-85, west),
+            L.latLng(85, east)
         );
 
         const map = L.map('map', {
@@ -30,9 +36,9 @@
             zoom: initialZoom,
             minZoom: 1,
             maxZoom: 18,
-            worldCopyJump: false,
-            maxBounds: worldBounds,
-            maxBoundsViscosity: 1.0
+            worldCopyJump: false,      // 横ラップの自動ジャンプを無効化
+            maxBounds: worldLimitedBounds,
+            maxBoundsViscosity: 1.0    // 境界で完全に押し戻す
         });
 
         // タイルレイヤー: noWrap: true でタイルの横ラップを無効化
