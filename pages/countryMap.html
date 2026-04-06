@@ -15,11 +15,9 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // 世界地図を表示しつつ「見た目上」日本を中央に据える設定
-        // - center の経度を 138 前後にすると日本が画面中央に来やすい（ズームレベルに依存）
-        // - worldCopyJump: true にして横ラップを有効にし、経度が ±180 を越える移動を滑らかにする
+        // 初期設定: 日本を見た目上中央にして世界地図を表示
         const initialCenter = [36.0, 138.0]; // 日本中心付近
-        const initialZoom = 2;               // 世界地図表示の基本ズーム（必要に応じて 2→3 など調整）
+        const initialZoom = 1;
 
         const map = L.map('map', {
             center: initialCenter,
@@ -35,14 +33,30 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
+        // 経度を地図中心に最も近いコピーに正規化する関数
+        // 例: 地図中心が 138E のとき、-100W (260W) は +260-360 = -100 ではなく
+        // 中心に近い経度（138±180 の範囲）に調整され、左端で見切れる問題を回避します。
+        function normalizeLngToCenter(lng) {
+            const centerLng = map.getCenter().lng;
+            let d = lng;
+            while (d < centerLng - 180) d += 360;
+            while (d > centerLng + 180) d -= 360;
+            return d;
+        }
+
         // GeoJSON を読み込んで世界地図上にサークルを配置する
-        // ファイル名は適宜変更してください（ga4_map.geojson を想定）
         fetch('ga4_map.geojson?' + Date.now())
             .then(r => r.json())
             .then(data => {
                 // GeoJSON の各ポイントに対して円マーカーを作成
                 const geoLayer = L.geoJSON(data, {
                     pointToLayer: (feature, latlng) => {
+                        // latlng は元の緯度経度。経度だけ正規化して最も近いコピーを使う
+                        const origLat = latlng.lat;
+                        const origLng = latlng.lng;
+                        const adjLng = normalizeLngToCenter(origLng);
+                        const adjLatLng = L.latLng(origLat, adjLng);
+
                         const value = feature.properties.value || 0;
                         // 値に応じた半径（世界地図表示でも見やすいようにスケール調整）
                         // 日本のポイントだけ少し小さくする例
@@ -50,7 +64,7 @@
                         const baseScale = isJapan ? 4.0 : 6.0;
                         const radius = Math.max(4, Math.log10(value + 1) * baseScale);
 
-                        return L.circleMarker(latlng, {
+                        return L.circleMarker(adjLatLng, {
                             radius: radius,
                             fillColor: '#3388ff',
                             color: '#1e4a8a',
