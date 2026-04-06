@@ -8,57 +8,42 @@
     <style>
         body, html { margin:0; padding:0; height:100%; }
         #map { width:100%; height:100vh; }
-        .control-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-            background: white;
-            padding: 6px 10px;
-            border-radius: 4px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-            font-family: sans-serif;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
     <div id="map"></div>
-    <div id="wrapToggle" class="control-btn">ラップ無効化</div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // --- 設定
-        const initialCenter = [36.0, 138.0]; // 日本中心
-        const initialZoom = 1;               // 世界地図のズーム
-        const autoDisableAfterMs = 0;        // >0 にすると自動で無効化（ms）。0 は自動無効化しない。
+        // 初期設定: 日本を画面中央に固定した世界地図
+        const initialCenter = [36.0, 138.0]; // 日本中心付近
+        const initialZoom = 1;               // 世界地図のズーム（必要に応じて調整）
 
-        // タイルレイヤ作成ヘルパー
-        function createTileLayer(noWrap) {
-            return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap contributors',
-                noWrap: !!noWrap
-            });
-        }
-
-        // マップ初期化（横ラップ許可で表示）
         const map = L.map('map', {
             center: initialCenter,
             zoom: initialZoom,
             minZoom: 1,
             maxZoom: 18,
-            worldCopyJump: false
+            worldCopyJump: false,    // 自動ジャンプは無効
+            maxBoundsViscosity: 0.0  // 境界押し戻しは使わない（パン自体を無効化するため）
         });
 
-        // 初期タイル（横ラップ許可）
-        let tileLayer = createTileLayer(false);
-        tileLayer.addTo(map);
+        // タイル（横ラップは許可しておくがパンは無効化する）
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            noWrap: false
+        }).addTo(map);
 
-        // データ保持
-        let originalData = null;
-        window._geoLayer = null;
+        // マップのパンを無効化して日本を常に中央に固定
+        map.dragging.disable();
+        map.touchZoom.disable();
+        map.doubleClickZoom.disable();
+        map.boxZoom.disable();
+        map.keyboard.disable();
+        // ただしズーム操作はコントロールで可能にしておく（ホイールは任意で有効化）
+        // map.scrollWheelZoom.enable(); // ホイールでズームさせたい場合は有効化
 
-        // 経度を中心に最も近いコピーに正規化
+        // 経度を日本中心に合わせて「見た目上」右側に表示するための正規化関数
         function normalizeLngToCenter(lng, centerLng) {
             let d = lng;
             while (d < centerLng - 180) d += 360;
@@ -66,111 +51,47 @@
             return d;
         }
 
-        // 経度を -180..180 の範囲に戻す（canonicalize）
-        function canonicalizeLng(lng) {
-            let d = ((lng + 180) % 360 + 360) % 360 - 180;
-            return d;
-        }
-
-        // GeoJSON を描画（オプションで center に合わせて経度を正規化）
-        function drawLayer(data, normalizeToCenter = true) {
-            if (window._geoLayer) {
-                map.removeLayer(window._geoLayer);
-                window._geoLayer = null;
-            }
-            const centerLng = map.getCenter().lng;
-            window._geoLayer = L.geoJSON(data, {
-                pointToLayer: (feature, latlng) => {
-                    let lat = latlng.lat;
-                    let lng = latlng.lng;
-                    if (normalizeToCenter) {
-                        lng = normalizeLngToCenter(lng, centerLng);
-                    } else {
-                        lng = canonicalizeLng(lng);
-                    }
-                    const adj = L.latLng(lat, lng);
-                    const value = feature.properties.value || 0;
-                    // 値に応じた半径（世界地図表示でも見やすいようにスケール調整）
-                    // 日本のポイントだけ少し小さくする例
-                    const isJapan = (feature.properties.country === 'JP' || feature.properties.name === '日本');
-                    const baseScale = isJapan ? 4.0 : 6.0;
-                    const radius = Math.max(4, Math.log10(value + 1) * baseScale);
-                    return L.circleMarker(adj, {
-                        radius: radius,
-                        fillColor: '#3388ff',
-                        color: '#1e4a8a',
-                        weight: 1,
-                        fillOpacity: 0.6
-                    });
-                },
-                onEachFeature: (feature, layer) => {
-                    const name = feature.properties.name || '';
-                    const value = feature.properties.value || 0;
-                    layer.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong>`);
-                }
-            }).addTo(map);
-        }
-
-        // GeoJSON 読み込み（ファイル名は適宜変更）
+        // GeoJSON を読み込んでサークルを配置（読み込み時に一度だけ正規化して描画）
         fetch('ga4_map.geojson?' + Date.now())
             .then(r => r.json())
-            .then(json => {
-                originalData = json;
-                // 初期は中心に近いコピーに正規化して描画（日本が中央でアメリカは右側に見える）
-                drawLayer(originalData, true);
+            .then(data => {
+                const centerLng = map.getCenter().lng;
+
+                // カスタムレイヤを作成して、経度を正規化した位置で描画
+                const geoLayer = L.geoJSON(data, {
+                    pointToLayer: (feature, latlng) => {
+                        const origLat = latlng.lat;
+                        const origLng = latlng.lng;
+                        const adjLng = normalizeLngToCenter(origLng, centerLng);
+                        const adjLatLng = L.latLng(origLat, adjLng);
+
+                        const value = feature.properties.value || 0;
+                        // 値に応じた半径（世界地図表示でも見やすいようにスケール調整）
+                        // 日本のポイントだけ少し小さくする例
+                        const isJapan = (feature.properties.country === 'JP' || feature.properties.name === '日本');
+                        const baseScale = isJapan ? 4.0 : 6.0;
+                        const radius = Math.max(4, Math.log10(value + 1) * baseScale);
+
+                        return L.circleMarker(adjLatLng, {
+                            radius: radius,
+                            fillColor: '#3388ff',
+                            color: '#1e4a8a',
+                            weight: 1,
+                            fillOpacity: 0.6
+                        });
+                    },
+                    onEachFeature: (feature, layer) => {
+                        const name = feature.properties.name || '';
+                        const value = feature.properties.value || 0;
+                        layer.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong>`);
+                    }
+                }).addTo(map);
+
+                // 日本を中央に固定しているため、ここで fitBounds は呼ばない
             })
-            .catch(err => console.error('GeoJSON 読み込み失敗', err));
-
-        // ラップ無効化処理
-        function disableHorizontalWrap() {
-            // 既に noWrap のタイルなら何もしない
-            if (tileLayer && tileLayer.options && tileLayer.options.noWrap) return;
-
-            // 1) 現在のタイルを削除して noWrap:true のタイルに差し替え
-            if (tileLayer) map.removeLayer(tileLayer);
-            tileLayer = createTileLayer(true);
-            tileLayer.addTo(map);
-
-            // 2) worldCopyJump を無効化（念のため）
-            map.options.worldCopyJump = false;
-
-            // 3) 必要なら横パンを制限する maxBounds を設定（日本中心付近の幅に制限）
-            //    ここでは初期中心を基準に左右 ±160 度を許可（必要に応じて調整）
-            const horizSpan = 160;
-            const west = initialCenter[1] - horizSpan;
-            const east = initialCenter[1] + horizSpan;
-            const limitedBounds = L.latLngBounds(L.latLng(-85, west), L.latLng(85, east));
-            map.setMaxBounds(limitedBounds);
-            map.options.maxBoundsViscosity = 1.0;
-
-            // 4) マーカーを canonicalize（-180..180 に戻す）して再描画
-            if (originalData) drawLayer(originalData, false);
-        }
-
-        // UI ボタン
-        const btn = document.getElementById('wrapToggle');
-        btn.addEventListener('click', () => {
-            disableHorizontalWrap();
-            btn.textContent = 'ラップ無効化済';
-            btn.style.opacity = 0.7;
-            btn.style.pointerEvents = 'none';
-        });
-
-        // 自動無効化（必要なら有効化）
-        if (autoDisableAfterMs > 0) {
-            setTimeout(() => {
-                disableHorizontalWrap();
-                btn.textContent = 'ラップ無効化済';
-                btn.style.opacity = 0.7;
-                btn.style.pointerEvents = 'none';
-            }, autoDisableAfterMs);
-        }
-
-        // 補足: ユーザーがパンを試みても横ラップは発生しない（noWrap:true に差し替えた後）
-        // 注意点:
-        // - タイル差し替えで一瞬タイルの再読み込みが発生しますが、見た目は自然です。
-        // - ラップ無効化後は遠隔のポイントが画面外になる可能性があるため、
-        //   読み込み時に正規化しておくか、無効化後に canonicalize して再描画しています。
+            .catch(err => {
+                console.error('GeoJSON の読み込みに失敗しました:', err);
+            });
     </script>
 </body>
 </html>
