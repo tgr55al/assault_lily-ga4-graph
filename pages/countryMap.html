@@ -15,54 +15,46 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // 初期設定: 日本を画面中央に固定した世界地図
+        // 初期設定: 日本を見た目上中央にして世界地図を表示
         const initialCenter = [36.0, 138.0]; // 日本中心付近
-        const initialZoom = 1;               // 世界地図のズーム（必要に応じて調整）
+        const initialZoom = 1;
 
         const map = L.map('map', {
             center: initialCenter,
             zoom: initialZoom,
             minZoom: 1,
             maxZoom: 18,
-            worldCopyJump: false,    // 自動ジャンプは無効
-            maxBoundsViscosity: 0.0  // 境界押し戻しは使わない（パン自体を無効化するため）
+            worldCopyJump: true,
+            maxBoundsViscosity: 0.5
         });
 
-        // タイル（横ラップは許可しておくがパンは無効化する）
+        // タイルレイヤー
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors',
-            noWrap: false
+            attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        // マップのパンを無効化して日本を常に中央に固定
-        map.dragging.disable();
-        map.touchZoom.disable();
-        map.doubleClickZoom.disable();
-        map.boxZoom.disable();
-        map.keyboard.disable();
-        // ただしズーム操作はコントロールで可能にしておく（ホイールは任意で有効化）
-        // map.scrollWheelZoom.enable(); // ホイールでズームさせたい場合は有効化
-
-        // 経度を日本中心に合わせて「見た目上」右側に表示するための正規化関数
-        function normalizeLngToCenter(lng, centerLng) {
+        // 経度を地図中心に最も近いコピーに正規化する関数
+        // 例: 地図中心が 138E のとき、-100W (260W) は +260-360 = -100 ではなく
+        // 中心に近い経度（138±180 の範囲）に調整され、左端で見切れる問題を回避します。
+        function normalizeLngToCenter(lng) {
+            const centerLng = map.getCenter().lng;
             let d = lng;
             while (d < centerLng - 180) d += 360;
             while (d > centerLng + 180) d -= 360;
             return d;
         }
 
-        // GeoJSON を読み込んでサークルを配置（読み込み時に一度だけ正規化して描画）
+        // GeoJSON を読み込んで世界地図上にサークルを配置する
         fetch('ga4_map.geojson?' + Date.now())
             .then(r => r.json())
             .then(data => {
-                const centerLng = map.getCenter().lng;
-
-                // カスタムレイヤを作成して、経度を正規化した位置で描画
+                // GeoJSON の各ポイントに対して円マーカーを作成
                 const geoLayer = L.geoJSON(data, {
                     pointToLayer: (feature, latlng) => {
+                        // latlng は元の緯度経度。経度だけ正規化して最も近いコピーを使う
                         const origLat = latlng.lat;
                         const origLng = latlng.lng;
-                        const adjLng = normalizeLngToCenter(origLng, centerLng);
+                        const adjLng = normalizeLngToCenter(origLng);
                         const adjLatLng = L.latLng(origLat, adjLng);
 
                         const value = feature.properties.value || 0;
@@ -87,7 +79,6 @@
                     }
                 }).addTo(map);
 
-                // 日本を中央に固定しているため、ここで fitBounds は呼ばない
             })
             .catch(err => {
                 console.error('GeoJSON の読み込みに失敗しました:', err);
