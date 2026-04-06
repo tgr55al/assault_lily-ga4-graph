@@ -28,130 +28,61 @@
             maxBoundsViscosity: 0.5
         });
 
-        // タイルレイヤー（横ラップ許可）
+        // タイルレイヤー
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors',
-            noWrap: false
+            attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        // レイヤグループ：すべての描画マーカーをここで管理
-        const markersGroup = L.layerGroup().addTo(map);
-
-        // 候補経度（元, ±360）を返す
-        function lngCandidates(lng) {
-            return [lng - 360, lng, lng + 360];
+        // 経度を地図中心に最も近いコピーに正規化する関数
+        // 例: 地図中心が 138E のとき、-100W (260W) は +260-360 = -100 ではなく
+        // 中心に近い経度（138±180 の範囲）に調整され、左端で見切れる問題を回避します。
+        function normalizeLngToCenter(lng) {
+            const centerLng = map.getCenter().lng;
+            let d = lng;
+            while (d < centerLng - 180) d += 360;
+            while (d > centerLng + 180) d -= 360;
+            return d;
         }
 
-        // 指定緯度で候補経度のうち bounds に入るものだけ返す
-        function visibleLngCandidatesAtLat(lat, lng, bounds) {
-            const cands = lngCandidates(lng);
-            return cands.filter(candidateLng => bounds.contains(L.latLng(lat, candidateLng)));
-        }
-
-        // GeoJSON を読み込んで世界地図上にサークルを配置（左右コピー対応）
-        let originalData = null;
-
-        function drawAllMarkers(data) {
-            // 既存マーカーをクリア
-            markersGroup.clearLayers();
-            const bounds = map.getBounds();
-
-            // 各 feature を処理
-            data.features.forEach(feature => {
-                const lat = feature.geometry.coordinates[1];
-                const lng = feature.geometry.coordinates[0];
-				// 候補経度のうち現在の表示範囲に入るものを選ぶ
-                const visibleCands = visibleLngCandidatesAtLat(lat, lng, bounds);
-
-                // もしどれも見えない場合、近接判定で左右どちらかに表示したいなら
-                // center に近い候補を 1 つだけ描画する（オプション）
-                if (visibleCands.length === 0) {
-                    // 中心経度に最も近い候補を選ぶ
-                    const centerLng = map.getCenter().lng;
-                    const candidates = lngCandidates(lng);
-                    candidates.sort((a, b) => Math.abs(a - centerLng) - Math.abs(b - centerLng));
-                    visibleCands.push(candidates[0]);
-                }
-
-                // 各可視候補にマーカーを追加
-                visibleCands.forEach(candidateLng => {
-                    const adjLatLng = L.latLng(lat, candidateLng);
-                    const value = feature.properties.value || 0;
-                    // 値に応じた半径（世界地図表示でも見やすいようにスケール調整）
-                    // 日本のポイントだけ少し小さくする例
-                    const isJapan = (feature.properties.country === 'JP' || feature.properties.name === '日本');
-                    const baseScale = isJapan ? 4.0 : 6.0;
-                    const radius = Math.max(4, Math.log10(value + 1) * baseScale);
-
-                    const marker = L.circleMarker(adjLatLng, {
-                        radius: radius,
-                        fillColor: '#3388ff',
-                        color: '#1e4a8a',
-                        weight: 1,
-                        fillOpacity: 0.6
-                    });
-
-                    marker.bindPopup(`<strong>${feature.properties.name || ''}</strong><br>閲覧者数: <strong>${value}</strong>`);
-                    markersGroup.addLayer(marker);
-                });
-            });
-        }
-
-        // 初回読み込み
+        // GeoJSON を読み込んで世界地図上にサークルを配置する
         fetch('ga4_map.geojson?' + Date.now())
             .then(r => r.json())
             .then(data => {
-                originalData = data;
-                drawAllMarkers(originalData);
+                // GeoJSON の各ポイントに対して円マーカーを作成
+                const geoLayer = L.geoJSON(data, {
+                    pointToLayer: (feature, latlng) => {
+                        // latlng は元の緯度経度。経度だけ正規化して最も近いコピーを使う
+                        const origLat = latlng.lat;
+                        const origLng = latlng.lng;
+                        const adjLng = normalizeLngToCenter(origLng);
+                        const adjLatLng = L.latLng(origLat, adjLng);
+
+                        const value = feature.properties.value || 0;
+                        // 値に応じた半径（世界地図表示でも見やすいようにスケール調整）
+                        // 日本のポイントだけ少し小さくする例
+                        const isJapan = (feature.properties.country === 'JP' || feature.properties.name === '日本');
+                        const baseScale = isJapan ? 4.0 : 6.0;
+                        const radius = Math.max(4, Math.log10(value + 1) * baseScale);
+
+                        return L.circleMarker(adjLatLng, {
+                            radius: radius,
+                            fillColor: '#3388ff',
+                            color: '#1e4a8a',
+                            weight: 1,
+                            fillOpacity: 0.6
+                        });
+                    },
+                    onEachFeature: (feature, layer) => {
+                        const name = feature.properties.name || '';
+                        const value = feature.properties.value || 0;
+                        layer.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong>`);
+                    }
+                }).addTo(map);
+
             })
             .catch(err => {
                 console.error('GeoJSON の読み込みに失敗しました:', err);
             });
-
-        // 地図が移動／ズームされたら再描画（デバウンス）
-        let redrawTimer = null;
-        function scheduleRedraw() {
-            if (!originalData) return;
-            if (redrawTimer) clearTimeout(redrawTimer);
-            redrawTimer = setTimeout(() => {
-                drawAllMarkers(originalData);
-                redrawTimer = null;
-            }, 150);
-        }
-        map.on('moveend', scheduleRedraw);
-        map.on('zoomend', scheduleRedraw);
-
-        // === ここから上下パン（緯度移動）を抑えるロジック ===
-        // 固定する緯度（初期中心の緯度）を保存
-        const fixedLat = initialCenter[0];
-
-        // ドラッグ中に緯度を固定して経度のみ変化させる
-        // drag イベントは連続的に発火するため animate:false でパンを即時反映
-        map.on('drag', () => {
-            const c = map.getCenter();
-            // 現在の経度はそのまま、緯度だけ fixedLat に戻す
-            // panTo を使うとユーザーのドラッグ操作が滑らかに見える
-            map.panTo([fixedLat, c.lng], { animate: false });
-        });
-
-        // touch デバイスでの挙動を補助（念のため）
-        map.on('touchmove', () => {
-            const c = map.getCenter();
-            map.panTo([fixedLat, c.lng], { animate: false });
-        });
-
-        // moveend 後も念のため緯度を固定（ズームやプログラム移動に備える）
-        map.on('moveend', () => {
-            const c = map.getCenter();
-            if (Math.abs(c.lat - fixedLat) > 1e-6) {
-                map.setView([fixedLat, c.lng], map.getZoom(), { animate: false });
-            }
-        });
-
-        // === ロジックここまで ===
-
-        // 最後に、初期表示で日本が中央に来るように再セット（念のため）
-        map.setView(initialCenter, initialZoom, { animate: false });
     </script>
 </body>
 </html>
