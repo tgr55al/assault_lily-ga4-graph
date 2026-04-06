@@ -15,16 +15,28 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const map = L.map('map', {
-            worldCopyJump: true,
-            maxBoundsViscosity: 1.0
-        }).setView([35, 135], 4); // 日本中心に調整
+        // --- 本州＋沖縄 用の矩形境界（必要に応じて微調整してください）
+        const southWest = L.latLng(24.0, 122.0); // 南西（沖縄を含む）
+        const northEast = L.latLng(40.0, 146.0); // 北東（北海道は含まない）
+        const japanBoundsHonshuOkinawa = L.latLngBounds(southWest, northEast);
 
+        // マップ初期化
+        const map = L.map('map', {
+            center: [34.5, 136.0],
+            zoom: 5,
+            minZoom: 4,
+            maxZoom: 12,
+            worldCopyJump: false,          // 横ループを無効化
+            maxBounds: japanBoundsHonshuOkinawa,
+            maxBoundsViscosity: 1.0       // 境界で完全に押し戻す
+        });
+
+        // タイルレイヤー
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        // ★ GeoJSON を読み込む（pages/ から見て ../geojson/）
+		// ★ GeoJSON を読み込む（pages/ から見て ../geojson/）
         fetch('ga4_map_japan.geojson?' + Date.now())
             .then(r => r.json())
             .then(data => {
@@ -52,8 +64,26 @@
                     }
                 }).addTo(map);
 
-                map.fitBounds(geoLayer.getBounds(), { padding: [50, 50] });
+                const bounds = geoLayer.getBounds();
+                if (bounds.isValid()) {
+                    // GeoJSON の範囲に合わせて表示（パディングを追加）
+                    map.fitBounds(bounds.pad(0.15), { padding: [50, 50] });
+                }
+            })
+            .catch(err => {
+                console.error('GeoJSON の読み込みに失敗しました:', err);
             });
+
+        // フォールバック: moveend で境界外なら押し戻す（maxBoundsViscosity が効かない場合の保険）
+        map.on('moveend', () => {
+            const center = map.getCenter();
+            if (!japanBoundsHonshuOkinawa.contains(center)) {
+                map.panInsideBounds(japanBoundsHonshuOkinawa, { animate: true });
+            }
+        });
+
+        // 追加オプション（必要なら有効化）
+        // map.setMaxBounds(japanBoundsHonshuOkinawa); // 既にオプションで設定済み
     </script>
 </body>
 </html>
