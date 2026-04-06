@@ -95,15 +95,6 @@
 
                     // 新しい maxBounds を設定
                     map.setMaxBounds(leftRestrictedBounds);
-
-                    // fitBounds 後にもう一段ズームアップしたい場合はここで調整（例: +1）
-                    const increasedZoom = Math.min(map.getZoom() + 1, map.getMaxZoom());
-                    map.setView(map.getCenter(), increasedZoom, { animate: false });
-
-                    // 中心が新しい境界外にいる場合は押し戻す
-                    if (!leftRestrictedBounds.contains(map.getCenter())) {
-                        map.panInsideBounds(leftRestrictedBounds, { animate: false });
-                    }
                 }
             })
             .catch(err => {
