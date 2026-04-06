@@ -20,7 +20,7 @@
         const northEast = L.latLng(40.0, 146.0); // 北東（北海道は含まない）
         const japanBoundsHonshuOkinawa = L.latLngBounds(southWest, northEast);
 
-        // マップ初期化
+        // マップ初期化（初期は基本境界を設定）
         const map = L.map('map', {
             center: [34.5, 136.0],
             zoom: 5,
@@ -36,7 +36,11 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        // GeoJSON を読み込んで円マーカーを追加（ファイル名は適宜変更）
+        // 左端だけ狭めたいときに設定する経度（例: 124.0）
+        // 値を大きくすると（東に寄せると）左側のスクロール可能範囲が狭くなります
+        const desiredLeftLng = 124.0;
+
+        // GeoJSON を読み込んで円マーカーを追加
         fetch('ga4_map_japan.geojson?' + Date.now())
             .then(r => r.json())
             .then(data => {
@@ -75,22 +79,44 @@
                     // pad(値) は縦横に余白を付ける。0.15〜0.25 程度が実用的。
                     const allowedBounds = combined.pad(0.18);
 
+                    // allowedBounds の南北と東端はそのまま使い、左（西）だけ desiredLeftLng にする
+                    const south = allowedBounds.getSouth();
+                    const north = allowedBounds.getNorth();
+                    const east = allowedBounds.getEast();
+
+                    // 安全チェック: desiredLeftLng が east より東（大きすぎ）にならないようにする
+                    const newWest = Math.min(desiredLeftLng, east - 0.01);
+
+                    // 新しい矩形を作成（左だけ狭める）
+                    const leftRestrictedBounds = L.latLngBounds(
+                        L.latLng(south, newWest),   // 南西（lat, lng）
+                        L.latLng(north, east)       // 北東（lat, lng）
+                    );
+
                     // 新しい maxBounds を設定
-                    map.setMaxBounds(allowedBounds);
+                    map.setMaxBounds(leftRestrictedBounds);
+
+                    // fitBounds 後にもう一段ズームアップしたい場合はここで調整（例: +1）
+                    const increasedZoom = Math.min(map.getZoom() + 1, map.getMaxZoom());
+                    map.setView(map.getCenter(), increasedZoom, { animate: false });
+
+                    // 中心が新しい境界外にいる場合は押し戻す
+                    if (!leftRestrictedBounds.contains(map.getCenter())) {
+                        map.panInsideBounds(leftRestrictedBounds, { animate: false });
+                    }
                 }
             })
             .catch(err => {
                 console.error('GeoJSON の読み込みに失敗しました:', err);
             });
 
-        // フォールバック: moveend で境界外なら押し戻す（maxBoundsViscosity が効かない場合の保険）
+        // フォールバック: moveend で境界外なら押し戻す
         map.on('moveend', () => {
             const mb = map.options.maxBounds;
             if (mb && !mb.contains(map.getCenter())) {
                 map.panInsideBounds(mb, { animate: true });
             }
         });
-
     </script>
 </body>
 </html>
