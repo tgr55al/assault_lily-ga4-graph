@@ -42,19 +42,7 @@
             return [lng - 360, lng, lng + 360];
         }
 
-        // 候補経度のうち bounds に入るものだけ返す
-        function visibleLngCandidates(lng, bounds) {
-            const cands = lngCandidates(lng);
-            return cands.filter(candidateLng => {
-                // Leaflet の bounds は経度ラップを考慮しないため、
-                // 緯度はそのまま、経度は candidateLng をそのまま使って判定
-                // ここでは簡単に LatLngBounds.contains を使うために
-                // 候補を LatLng にして判定する
-                return bounds.contains(L.latLng(0, candidateLng)); // 緯度0で経度が範囲内か確認
-            });
-        }
-
-        // より正確な判定：指定緯度で判定（feature の緯度を使う）
+        // 指定緯度で候補経度のうち bounds に入るものだけ返す
         function visibleLngCandidatesAtLat(lat, lng, bounds) {
             const cands = lngCandidates(lng);
             return cands.filter(candidateLng => bounds.contains(L.latLng(lat, candidateLng)));
@@ -66,14 +54,13 @@
         function drawAllMarkers(data) {
             // 既存マーカーをクリア
             markersGroup.clearLayers();
-
             const bounds = map.getBounds();
 
             // 各 feature を処理
             data.features.forEach(feature => {
                 const lat = feature.geometry.coordinates[1];
                 const lng = feature.geometry.coordinates[0];
-                // 候補経度のうち現在の表示範囲に入るものを選ぶ
+				// 候補経度のうち現在の表示範囲に入るものを選ぶ
                 const visibleCands = visibleLngCandidatesAtLat(lat, lng, bounds);
 
                 // もしどれも見えない場合、近接判定で左右どちらかに表示したいなら
@@ -134,6 +121,37 @@
         map.on('moveend', scheduleRedraw);
         map.on('zoomend', scheduleRedraw);
 
+        // === ここから上下パン（緯度移動）を抑えるロジック ===
+        // 固定する緯度（初期中心の緯度）を保存
+        const fixedLat = initialCenter[0];
+
+        // ドラッグ中に緯度を固定して経度のみ変化させる
+        // drag イベントは連続的に発火するため animate:false でパンを即時反映
+        map.on('drag', () => {
+            const c = map.getCenter();
+            // 現在の経度はそのまま、緯度だけ fixedLat に戻す
+            // panTo を使うとユーザーのドラッグ操作が滑らかに見える
+            map.panTo([fixedLat, c.lng], { animate: false });
+        });
+
+        // touch デバイスでの挙動を補助（念のため）
+        map.on('touchmove', () => {
+            const c = map.getCenter();
+            map.panTo([fixedLat, c.lng], { animate: false });
+        });
+
+        // moveend 後も念のため緯度を固定（ズームやプログラム移動に備える）
+        map.on('moveend', () => {
+            const c = map.getCenter();
+            if (Math.abs(c.lat - fixedLat) > 1e-6) {
+                map.setView([fixedLat, c.lng], map.getZoom(), { animate: false });
+            }
+        });
+
+        // === ロジックここまで ===
+
+        // 最後に、初期表示で日本が中央に来るように再セット（念のため）
+        map.setView(initialCenter, initialZoom, { animate: false });
     </script>
 </body>
 </html>
