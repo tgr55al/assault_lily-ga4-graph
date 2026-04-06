@@ -37,8 +37,10 @@
         }).addTo(map);
 
         // 左端だけ狭めたいときに設定する経度（例: 124.0）
-        // 値を大きくすると（東に寄せると）左側のスクロール可能範囲が狭くなります
         const desiredLeftLng = 124.0;
+
+        // 下側（南端）を少し上げてスクロール可能範囲を狭める（例: 25.0）
+        const desiredBottomLat = 25.0;
 
         // GeoJSON を読み込んで円マーカーを追加
         fetch('ga4_map_japan.geojson?' + Date.now())
@@ -79,15 +81,19 @@
                     // pad(値) は縦横に余白を付ける。0.15〜0.25 程度が実用的。
                     const allowedBounds = combined.pad(0.18);
 
-                    // allowedBounds の南北と東端はそのまま使い、左（西）だけ desiredLeftLng にする
-                    const south = allowedBounds.getSouth();
+                    // allowedBounds の東端と北端はそのまま使い、左（西）だけ desiredLeftLng にする
+                    let south = allowedBounds.getSouth();
                     const north = allowedBounds.getNorth();
                     const east = allowedBounds.getEast();
+
+                    // 下側のスクロールを少し減らすために南端を desiredBottomLat より北にする
+                    // ただし allowedBounds の南端より北にしすぎないように min を取る
+                    south = Math.max(south, desiredBottomLat);
 
                     // 安全チェック: desiredLeftLng が east より東（大きすぎ）にならないようにする
                     const newWest = Math.min(desiredLeftLng, east - 0.01);
 
-                    // 新しい矩形を作成（左だけ狭める）
+                    // 新しい矩形を作成（左だけ狭め、下側は desiredBottomLat で制限）
                     const leftRestrictedBounds = L.latLngBounds(
                         L.latLng(south, newWest),   // 南西（lat, lng）
                         L.latLng(north, east)       // 北東（lat, lng）
