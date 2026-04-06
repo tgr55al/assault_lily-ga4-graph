@@ -15,7 +15,7 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // --- 本州＋沖縄 用の矩形境界（必要に応じて微調整してください）
+        // --- 本州＋沖縄 用の矩形境界
         const southWest = L.latLng(24.0, 122.0); // 南西（沖縄を含む）
         const northEast = L.latLng(40.0, 146.0); // 北東（北海道は含まない）
         const japanBoundsHonshuOkinawa = L.latLngBounds(southWest, northEast);
@@ -26,9 +26,9 @@
             zoom: 5,
             minZoom: 4,
             maxZoom: 12,
-            worldCopyJump: false,          // 横ループを無効化
+            worldCopyJump: false,
             maxBounds: japanBoundsHonshuOkinawa,
-            maxBoundsViscosity: 1.0       // 境界で完全に押し戻す
+            maxBoundsViscosity: 1.0
         });
 
         // タイルレイヤー
@@ -36,18 +36,14 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-		// ★ GeoJSON を読み込む（pages/ から見て ../geojson/）
+        // GeoJSON を読み込んで円マーカーを追加（ファイル名は適宜変更）
         fetch('ga4_map_japan.geojson?' + Date.now())
             .then(r => r.json())
             .then(data => {
-
                 const geoLayer = L.geoJSON(data, {
                     pointToLayer: (feature, latlng) => {
                         const value = feature.properties.value || 0;
-
-                        // 日本は世界より密集しているので少し大きめ
                         const radius = Math.max(6, Math.log10(value + 1) * 7);
-
                         return L.circleMarker(latlng, {
                             radius: radius,
                             fillColor: '#3388ff',
@@ -66,8 +62,21 @@
 
                 const bounds = geoLayer.getBounds();
                 if (bounds.isValid()) {
-                    // GeoJSON の範囲に合わせて表示（パディングを追加）
-                    map.fitBounds(bounds.pad(0.15), { padding: [50, 50] });
+                    // 1) GeoJSON の範囲に合わせて表示（パディングを追加）
+                    //    maxZoom を指定して過度なズームインを防ぐ
+                    map.fitBounds(bounds.pad(0.12), { padding: [50, 50], maxZoom: 10 });
+
+                    // 2) 表示後に maxBounds を調整して「上方向にもう少し余裕」を持たせる
+                    //    基本境界と GeoJSON の範囲を結合してから余白を付ける
+                    const combined = L.latLngBounds(japanBoundsHonshuOkinawa.getSouthWest(), japanBoundsHonshuOkinawa.getNorthEast());
+                    combined.extend(bounds.getSouthWest());
+                    combined.extend(bounds.getNorthEast());
+
+                    // pad(値) は縦横に余白を付ける。0.15〜0.25 程度が実用的。
+                    const allowedBounds = combined.pad(0.18);
+
+                    // 新しい maxBounds を設定
+                    map.setMaxBounds(allowedBounds);
                 }
             })
             .catch(err => {
@@ -76,14 +85,12 @@
 
         // フォールバック: moveend で境界外なら押し戻す（maxBoundsViscosity が効かない場合の保険）
         map.on('moveend', () => {
-            const center = map.getCenter();
-            if (!japanBoundsHonshuOkinawa.contains(center)) {
-                map.panInsideBounds(japanBoundsHonshuOkinawa, { animate: true });
+            const mb = map.options.maxBounds;
+            if (mb && !mb.contains(map.getCenter())) {
+                map.panInsideBounds(mb, { animate: true });
             }
         });
 
-        // 追加オプション（必要なら有効化）
-        // map.setMaxBounds(japanBoundsHonshuOkinawa); // 既にオプションで設定済み
     </script>
 </body>
 </html>
