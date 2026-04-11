@@ -68,6 +68,9 @@
 
                 const bounds = geoLayer.getBounds();
                 if (bounds.isValid()) {
+
+                    map.setView([34.5, 136.0], 5);
+
                     // 1) GeoJSON の範囲に合わせて表示（パディングを追加）
                     //    maxZoom を指定して過度なズームインを防ぐ
                     map.fitBounds(bounds.pad(0.12), { padding: [50, 50], maxZoom: 10 });
