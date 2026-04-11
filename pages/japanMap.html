@@ -15,7 +15,7 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-		// --- 北海道＋本州＋沖縄 用の矩形境界
+        // --- 北海道＋本州＋沖縄 用の矩形境界
         const southWest = L.latLng(25.0, 124.0); // 南西（沖縄を含む）
         const northEast = L.latLng(46.0, 148.0); // 北東（北海道を含む）
         const japanBoundsHonshuOkinawa = L.latLngBounds(southWest, northEast);
@@ -64,8 +64,8 @@
             return L.latLngBounds(L.latLng(minLat, minLng), L.latLng(maxLat, maxLng));
         }
 
-        // drawAllMarkers: 2つ目のコード準拠の処理を関数化
         function drawAllMarkers(data) {
+            // 既存マーカーをクリア
             markersGroup.clearLayers();
             if (!data || !data.features || data.features.length === 0) return;
 
@@ -87,7 +87,18 @@
                 });
 
                 const name = feature.properties && feature.properties.name ? feature.properties.name : '不明';
+                // ポップアップ（クリックで表示）
                 marker.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong>`);
+                // ツールチップ（ホバーで表示）
+                // 内容は簡潔に：名前と値。offset をマーカー半径分上にずらして被らないようにする。
+                marker.bindTooltip(`${name} — ${value}`, {
+                    direction: 'top',
+                    offset: [0, -Math.max(6, radius)],
+                    opacity: 0.9,
+                    permanent: false,
+                    sticky: true
+                });
+
                 markersGroup.addLayer(marker);
             });
         }
