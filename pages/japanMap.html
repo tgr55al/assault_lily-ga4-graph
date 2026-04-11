@@ -27,6 +27,10 @@
         const MIN_LAT_SPAN = 0.15;   // fitBounds を使うための最小縦幅（度）
         const MIN_LNG_SPAN = 0.2;    // fitBounds を使うための最小横幅（度）
 
+        // fitBounds のアニメーション無効化と補正遅延（最小修正で効果を出すための設定）
+        const FIT_ANIMATE = false;
+        const CLAMP_DELAY = 250;
+
         // マップ初期化（初期は基本境界を設定）
         const map = L.map('map', {
             center: DEFAULT_CENTER,
@@ -67,7 +71,7 @@
             .then(data => {
                 const geoLayer = L.geoJSON(data, {
                     pointToLayer: (feature, latlng) => {
-                        const value = feature.properties.value || 0;
+                        const value = feature.properties && feature.properties.value ? feature.properties.value : 0;
                         const radius = Math.max(6, Math.log10(value + 1) * 7);
                         return L.circleMarker(latlng, {
                             radius: radius,
@@ -78,9 +82,11 @@
                         });
                     },
                     onEachFeature: (feature, layer) => {
+                        const name = feature.properties && feature.properties.name ? feature.properties.name : '不明';
+                        const value = feature.properties && feature.properties.value ? feature.properties.value : 0;
                         layer.bindPopup(
-                            `<strong>${feature.properties.name}</strong><br>
-                             閲覧者数: <strong>${feature.properties.value}</strong>`
+                            `<strong>${name}</strong><br>
+                             閲覧者数: <strong>${value}</strong>`
                         );
                     }
                 }).addTo(map);
@@ -92,16 +98,21 @@
                     return;
                 }
 
+                // --- 最小修正: コンテナが非表示→表示されるケースに備えて invalidateSize を呼ぶ
+                // これにより折りたたみ展開時の誤ズームを防げることが多い
+                map.invalidateSize();
+
                 // 範囲の大きさをチェックして小さすぎる場合は fitBounds を使わない
                 const latSpan = Math.abs(bounds.getNorth() - bounds.getSouth());
                 const lngSpan = Math.abs(bounds.getEast() - bounds.getWest());
 
                 if (latSpan < MIN_LAT_SPAN && lngSpan < MIN_LNG_SPAN) {
-                    // 単一地点や非常に狭い範囲 → デフォルト表示にフォールバック
-                    map.setView(DEFAULT_CENTER, DEFAULT_ZOOM);
+                    // 単一地点や非常に狭い範囲 → デフォルト表示にフォールバック（またはその地点中心に固定ズーム）
+                    const center = bounds.getCenter();
+                    map.setView([center.lat, center.lng], 7); // 単一地点は明示的にズームを指定
                 } else {
-                    // 通常は fitBounds を使う（maxZoom を指定）
-                    map.fitBounds(bounds.pad(0.12), { padding: [50, 50], maxZoom: SAFE_MAX_ZOOM });
+                    // 通常は fitBounds を使う（アニメーション無効 + maxZoom 指定）
+                    map.fitBounds(bounds.pad(0.12), { padding: [50, 50], maxZoom: SAFE_MAX_ZOOM, animate: FIT_ANIMATE });
 
                     // fitBounds のアニメーションやタイミング差で一瞬ズームしすぎることがあるため補正
                     const clampZoom = () => {
@@ -110,7 +121,7 @@
                         }
                     };
                     map.once('zoomend', clampZoom);
-                    setTimeout(clampZoom, 300);
+                    setTimeout(clampZoom, CLAMP_DELAY);
                 }
 
                 // 2) 表示後に maxBounds を調整して「上方向にもう少し余裕」を持たせる
