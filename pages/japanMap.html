@@ -15,9 +15,9 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // --- 本州＋沖縄 用の矩形境界
+		// --- 北海道＋本州＋沖縄 用の矩形境界
         const southWest = L.latLng(24.0, 122.0); // 南西（沖縄を含む）
-        const northEast = L.latLng(40.0, 146.0); // 北東（北海道は含まない）
+        const northEast = L.latLng(46.0, 146.0); // 北東（北海道を含む）
         const japanBoundsHonshuOkinawa = L.latLngBounds(southWest, northEast);
 
         // 表示制御の定数
@@ -40,49 +40,93 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        // 左端だけ狭めたいときに設定する経度（例: 124.0）
+        // 左端だけ狭めたいときに設定する経度
         const desiredLeftLng = 124.0;
 
-        // 下側（南端）を少し上げてスクロール可能範囲を狭める（例: 25.0）
+        // 下側（南端）を少し上げてスクロール可能範囲を狭める
         const desiredBottomLat = 25.0;
 
-        // 誤操作を減らしたい場合は以下を有効化
-        // map.doubleClickZoom.disable();
-        // map.scrollWheelZoom.disable();
-        // map.touchZoom.disable();
+        // マーカー管理用レイヤー
+        const markersGroup = L.layerGroup().addTo(map);
 
-        // GeoJSON を読み込んで円マーカーを追加
+        // 元データを保持
+        let originalData = null;
+
+        // GeoJSON の features から bounds を計算するユーティリティ
+        function computeBoundsFromFeatures(features) {
+            if (!features || features.length === 0) return null;
+            let minLat = Infinity, minLng = Infinity, maxLat = -Infinity, maxLng = -Infinity;
+            features.forEach(f => {
+                if (!f || !f.geometry || !Array.isArray(f.geometry.coordinates)) return;
+                const lng = Number(f.geometry.coordinates[0]);
+                const lat = Number(f.geometry.coordinates[1]);
+                if (!isFinite(lat) || !isFinite(lng)) return;
+                minLat = Math.min(minLat, lat);
+                minLng = Math.min(minLng, lng);
+                maxLat = Math.max(maxLat, lat);
+                maxLng = Math.max(maxLng, lng);
+            });
+            if (minLat === Infinity) return null;
+            return L.latLngBounds(L.latLng(minLat, minLng), L.latLng(maxLat, maxLng));
+        }
+
+        // drawAllMarkers: 2つ目のコード準拠の処理を関数化
+        function drawAllMarkers(data) {
+            markersGroup.clearLayers();
+            if (!data || !data.features || data.features.length === 0) return;
+
+            data.features.forEach(feature => {
+                if (!feature || !feature.geometry || !Array.isArray(feature.geometry.coordinates)) return;
+                const lng = Number(feature.geometry.coordinates[0]);
+                const lat = Number(feature.geometry.coordinates[1]);
+                if (!isFinite(lat) || !isFinite(lng)) return;
+
+                const value = feature.properties && feature.properties.value ? Number(feature.properties.value) : 0;
+                const radius = Math.max(6, Math.log10(value + 1) * 7);
+
+                const marker = L.circleMarker([lat, lng], {
+                    radius: radius,
+                    fillColor: '#3388ff',
+                    color: '#1e4a8a',
+                    weight: 2,
+                    fillOpacity: 0.55
+                });
+
+                const name = feature.properties && feature.properties.name ? feature.properties.name : '不明';
+                marker.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong>`);
+                markersGroup.addLayer(marker);
+            });
+        }
+
+        // GeoJSON を読み込んで円マーカーを追加し、表示範囲を調整する（drawAllMarkers を利用）
         fetch('ga4_map_japan.geojson?' + Date.now())
-            .then(r => r.json())
+            .then(r => {
+                if (!r.ok) throw new Error('HTTP error ' + r.status);
+                return r.json();
+            })
             .then(data => {
-                const geoLayer = L.geoJSON(data, {
-                    pointToLayer: (feature, latlng) => {
-                        const value = feature.properties && feature.properties.value ? feature.properties.value : 0;
-                        const radius = Math.max(6, Math.log10(value + 1) * 7);
-                        return L.circleMarker(latlng, {
-                            radius: radius,
-                            fillColor: '#3388ff',
-                            color: '#1e4a8a',
-                            weight: 2,
-                            fillOpacity: 0.55
-                        });
-                    },
-                    onEachFeature: (feature, layer) => {
-                        const name = feature.properties && feature.properties.name ? feature.properties.name : '不明';
-                        const value = feature.properties && feature.properties.value ? feature.properties.value : 0;
-                        layer.bindPopup(
-                            `<strong>${name}</strong><br>
-                             閲覧者数: <strong>${value}</strong>`
-                        );
-                    }
-                }).addTo(map);
+                originalData = data;
 
-                // --- 最小修正: コンテナが非表示→表示されるケースに備えて invalidateSize を呼ぶ
-                // これにより折りたたみ展開時の誤ズームを防げることが多い
-                map.invalidateSize();
+                // データが空なら早期リターン
+                if (!originalData || !originalData.features || originalData.features.length === 0) {
+                    console.warn('GeoJSON が空です。地図は初期設定のまま表示します。');
+                    map.invalidateSize();
+                    return;
+                }
 
-                // pad(値) は縦横に余白を付ける。0.15〜0.25 程度が実用的。
-                const allowedBounds = combined.pad(0.18);
+                // マーカーを描画
+                drawAllMarkers(originalData);
+
+                // GeoJSON の実際の bounds を計算
+                const bounds = computeBoundsFromFeatures(originalData.features);
+                if (!bounds || !bounds.isValid()) {
+                    console.warn('GeoJSON の bounds が無効です。maxBounds の調整をスキップします。');
+                    map.invalidateSize();
+                    return;
+                }
+
+                // 地図表示に余白を付けた allowedBounds を作る
+                const allowedBounds = bounds.pad(0.18);
 
                 // allowedBounds の東端と北端はそのまま使い、左（西）だけ desiredLeftLng にする
                 let south = allowedBounds.getSouth();
@@ -103,9 +147,20 @@
 
                 // 新しい maxBounds を設定
                 map.setMaxBounds(leftRestrictedBounds);
+
+                // 地図を GeoJSON の範囲に収める（必要なら）
+                try {
+                    map.fitBounds(bounds, { padding: [20, 20], maxZoom: DEFAULT_ZOOM + 2 });
+                } catch (e) {
+                    console.warn('fitBounds に失敗しました:', e);
+                }
+
+                // コンテナが非表示→表示されるケースに備えて invalidateSize を呼ぶ
+                map.invalidateSize();
             })
             .catch(err => {
                 console.error('GeoJSON の読み込みに失敗しました:', err);
+                map.invalidateSize();
             });
 
         // フォールバック: moveend で境界外なら押し戻す
@@ -114,6 +169,11 @@
             if (mb && !mb.contains(map.getCenter())) {
                 map.panInsideBounds(mb, { animate: true });
             }
+        });
+
+        // ウィンドウリサイズ時に再計算
+        window.addEventListener('resize', () => {
+            map.invalidateSize();
         });
     </script>
 </body>
