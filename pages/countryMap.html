@@ -16,14 +16,14 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // 初期設定: 日本を見た目上中央にして世界地図を表示
-        const initialCenter = [36.0, 138.0]; // 日本中心付近
-        const initialZoom = 1;
+        const DEFAULT_CENTER = [36.0, 138.0]; // 日本中心付近
+        const DEFAULT_ZOOM = 1;
 
         const map = L.map('map', {
-            center: initialCenter,
-            zoom: initialZoom,
+            center: DEFAULT_CENTER,
+            zoom: DEFAULT_ZOOM,
             minZoom: 1,
-            maxZoom: 7,
+            maxZoom: 5,
             worldCopyJump: true,
             maxBoundsViscosity: 0.5
         });

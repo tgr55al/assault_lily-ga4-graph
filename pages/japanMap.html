@@ -23,13 +23,6 @@
         // 表示制御の定数
         const DEFAULT_CENTER = [34.5, 136.0];
         const DEFAULT_ZOOM = 5;
-        const SAFE_MAX_ZOOM = 10;    // 自動フィットやユーザー操作で許容する最大ズーム
-        const MIN_LAT_SPAN = 0.15;   // fitBounds を使うための最小縦幅（度）
-        const MIN_LNG_SPAN = 0.2;    // fitBounds を使うための最小横幅（度）
-
-        // fitBounds のアニメーション無効化と補正遅延（最小修正で効果を出すための設定）
-        const FIT_ANIMATE = false;
-        const CLAMP_DELAY = 250;
 
         // マップ初期化（初期は基本境界を設定）
         const map = L.map('map', {
@@ -58,13 +51,6 @@
         // map.scrollWheelZoom.disable();
         // map.touchZoom.disable();
 
-        // 常時ズーム上限を超えたら補正するハンドラ（ユーザー操作対策）
-        map.on('zoomend', () => {
-            if (map.getZoom() > SAFE_MAX_ZOOM) {
-                map.setZoom(SAFE_MAX_ZOOM);
-            }
-        });
-
         // GeoJSON を読み込んで円マーカーを追加
         fetch('ga4_map_japan.geojson?' + Date.now())
             .then(r => r.json())
@@ -91,43 +77,9 @@
                     }
                 }).addTo(map);
 
-                const bounds = geoLayer.getBounds();
-                if (!bounds.isValid()) {
-                    // GeoJSON に有効な範囲がない場合はデフォルト表示
-                    map.setView(DEFAULT_CENTER, DEFAULT_ZOOM);
-                    return;
-                }
-
                 // --- 最小修正: コンテナが非表示→表示されるケースに備えて invalidateSize を呼ぶ
                 // これにより折りたたみ展開時の誤ズームを防げることが多い
                 map.invalidateSize();
-
-                // 範囲の大きさをチェックして小さすぎる場合は fitBounds を使わない
-                const latSpan = Math.abs(bounds.getNorth() - bounds.getSouth());
-                const lngSpan = Math.abs(bounds.getEast() - bounds.getWest());
-
-                if (latSpan < MIN_LAT_SPAN && lngSpan < MIN_LNG_SPAN) {
-                    // 単一地点や非常に狭い範囲 → デフォルト表示にフォールバック（またはその地点中心に固定ズーム）
-                    const center = bounds.getCenter();
-                    map.setView([center.lat, center.lng], 7); // 単一地点は明示的にズームを指定
-                } else {
-                    // 通常は fitBounds を使う（アニメーション無効 + maxZoom 指定）
-                    map.fitBounds(bounds.pad(0.12), { padding: [50, 50], maxZoom: SAFE_MAX_ZOOM, animate: FIT_ANIMATE });
-
-                    // fitBounds のアニメーションやタイミング差で一瞬ズームしすぎることがあるため補正
-                    const clampZoom = () => {
-                        if (map.getZoom() > SAFE_MAX_ZOOM) {
-                            map.setZoom(SAFE_MAX_ZOOM);
-                        }
-                    };
-                    map.once('zoomend', clampZoom);
-                    setTimeout(clampZoom, CLAMP_DELAY);
-                }
-
-                // 2) 表示後に maxBounds を調整して「上方向にもう少し余裕」を持たせる
-                const combined = L.latLngBounds(japanBoundsHonshuOkinawa.getSouthWest(), japanBoundsHonshuOkinawa.getNorthEast());
-                combined.extend(bounds.getSouthWest());
-                combined.extend(bounds.getNorthEast());
 
                 // pad(値) は縦横に余白を付ける。0.15〜0.25 程度が実用的。
                 const allowedBounds = combined.pad(0.18);
