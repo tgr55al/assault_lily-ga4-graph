@@ -16,8 +16,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
 		// --- 北海道＋本州＋沖縄 用の矩形境界
-        const southWest = L.latLng(24.0, 122.0); // 南西（沖縄を含む）
-        const northEast = L.latLng(46.0, 146.0); // 北東（北海道を含む）
+        const southWest = L.latLng(25.0, 124.0); // 南西（沖縄を含む）
+        const northEast = L.latLng(46.0, 148.0); // 北東（北海道を含む）
         const japanBoundsHonshuOkinawa = L.latLngBounds(southWest, northEast);
 
         // 表示制御の定数
@@ -39,12 +39,6 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
-
-        // 左端だけ狭めたいときに設定する経度
-        const desiredLeftLng = 124.0;
-
-        // 下側（南端）を少し上げてスクロール可能範囲を狭める
-        const desiredBottomLat = 25.0;
 
         // マーカー管理用レイヤー
         const markersGroup = L.layerGroup().addTo(map);
@@ -107,56 +101,8 @@
             .then(data => {
                 originalData = data;
 
-                // データが空なら早期リターン
-                if (!originalData || !originalData.features || originalData.features.length === 0) {
-                    console.warn('GeoJSON が空です。地図は初期設定のまま表示します。');
-                    map.invalidateSize();
-                    return;
-                }
-
                 // マーカーを描画
                 drawAllMarkers(originalData);
-
-                // GeoJSON の実際の bounds を計算
-                const bounds = computeBoundsFromFeatures(originalData.features);
-                if (!bounds || !bounds.isValid()) {
-                    console.warn('GeoJSON の bounds が無効です。maxBounds の調整をスキップします。');
-                    map.invalidateSize();
-                    return;
-                }
-
-                // 地図表示に余白を付けた allowedBounds を作る
-                const allowedBounds = bounds.pad(0.18);
-
-                // allowedBounds の東端と北端はそのまま使い、左（西）だけ desiredLeftLng にする
-                let south = allowedBounds.getSouth();
-                const north = allowedBounds.getNorth();
-                const east = allowedBounds.getEast();
-
-                // 下側のスクロールを少し減らすために南端を desiredBottomLat より北にする
-                south = Math.max(south, desiredBottomLat);
-
-                // 安全チェック: desiredLeftLng が east より東（大きすぎ）にならないようにする
-                const newWest = Math.min(desiredLeftLng, east - 0.01);
-
-                // 新しい矩形を作成（左だけ狭め、下側は desiredBottomLat で制限）
-                const leftRestrictedBounds = L.latLngBounds(
-                    L.latLng(south, newWest),   // 南西（lat, lng）
-                    L.latLng(north, east)       // 北東（lat, lng）
-                );
-
-                // 新しい maxBounds を設定
-                map.setMaxBounds(leftRestrictedBounds);
-
-                // 地図を GeoJSON の範囲に収める（必要なら）
-                try {
-                    map.fitBounds(bounds, { padding: [20, 20], maxZoom: DEFAULT_ZOOM + 2 });
-                } catch (e) {
-                    console.warn('fitBounds に失敗しました:', e);
-                }
-
-                // コンテナが非表示→表示されるケースに備えて invalidateSize を呼ぶ
-                map.invalidateSize();
             })
             .catch(err => {
                 console.error('GeoJSON の読み込みに失敗しました:', err);
