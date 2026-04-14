@@ -88,7 +88,7 @@
 
                 const name = feature.properties && feature.properties.name ? feature.properties.name : '不明';
                 // ポップアップ（クリックで表示）
-                marker.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong>`);
+                marker.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong> (viewers)`);
 
                 markersGroup.addLayer(marker);
             });

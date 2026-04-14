@@ -4,7 +4,6 @@ from pathlib import Path
 def build_features(rows, key_field: str, value_field: str, coords: dict, to_japanese_func):
     """GeoJSON Feature を構築"""
     features = []
-    placemarks = []
 
     for row in rows:
         key = row[key_field]
@@ -20,7 +19,7 @@ def build_features(rows, key_field: str, value_field: str, coords: dict, to_japa
         # GeoJSON
         features.append({
             "type": "Feature",
-            "properties": {"name": name_ja, "value": value},
+            "properties": {"name": f"{name_ja} ({key})", "value": value},
             "geometry": {"type": "Point", "coordinates": [lon, lat]},
         })
 
