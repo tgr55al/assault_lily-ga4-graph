@@ -91,7 +91,9 @@
                         intersect: false,
                         mode: 'index',
                         callbacks: {
-                          title: () => "",
+                          title: function(tooltipItems) {
+                            return tooltipItems[0]?.label ?? "";
+                          },
                           label: function(context) {
                             const value = context.formattedValue ?? (context.parsed && context.parsed.y) ?? context.raw;
                             return `閲覧回数: ${value} (views)`;
