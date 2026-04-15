@@ -56,47 +56,53 @@
                 });
 
                 new Chart(document.getElementById('chart'), {
-                    type: 'line',
-                    data: {
-                        labels: dates,
-                        datasets: [{
-                            label: '閲覧者数',
-                            data: values,
-                            borderColor: '#3388ff',
-                            backgroundColor: 'rgba(51, 136, 255, 0.1)',
-                            borderWidth: 2,
-                            tension: 0,
-                            pointRadius: 4,
-                            pointHoverRadius: 6
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false },
-                            title: { display: false },
-                            interaction: {
-                                mode: 'index',
-                                intersect: false,
-                                displayColors: false
-                            },
-                            tooltip: {
-                                    backgroundColor: 'rgba(255,255,255,0.95)',
-                                    titleColor: '#000',
-                                    bodyColor: '#000',
-                                    borderWidth: 0,
-                                    usePointStyle: false,
-                                    displayColors: false,
-                                    intersect: false,
-                                    mode: 'index'
-                            }
-                        },
-                        scales: {
-                            x: { title: { display: false }, grid: { display: false } },
-                            y: { beginAtZero: true, title: { display: false } }
+                  type: 'line',
+                  data: {
+                    labels: dates,
+                    datasets: [{
+                      label: '閲覧者数',
+                      data: values,
+                      borderColor: '#3388ff',
+                      backgroundColor: 'rgba(51, 136, 255, 0.1)',
+                      borderWidth: 2,
+                      tension: 0,
+                      pointRadius: 4,
+                      pointHoverRadius: 6
+                    }]
+                  },
+                  options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      legend: { display: false },
+                      title: { display: false },
+                      interaction: {
+                        mode: 'index',
+                        intersect: false,
+                        displayColors: false
+                      },
+                      tooltip: {
+                        backgroundColor: 'rgba(255,255,255,0.95)',
+                        titleColor: '#000',
+                        bodyColor: '#000',
+                        borderWidth: 0,
+                        usePointStyle: false,
+                        displayColors: false,
+                        intersect: false,
+                        mode: 'index',
+                        callbacks: {
+                          label: function(context) {
+                            const value = context.formattedValue ?? (context.parsed && context.parsed.y) ?? context.raw;
+                            return `${value} (viewers)`;
+                          }
                         }
+                      }
+                    },
+                    scales: {
+                      x: { title: { display: false }, grid: { display: false } },
+                      y: { beginAtZero: true, title: { display: false } }
                     }
+                  }
                 });
             })
             .catch(() => {

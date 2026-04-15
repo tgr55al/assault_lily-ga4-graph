@@ -82,12 +82,16 @@
         major.push({ country: "Other", activeUsers: otherSum });
       }
 
-      // 日本語ラベルに変換
-      const labels = major.map(r => {
+      // 日本語ラベル（ja）と英語ラベル（en）を別配列で作成し、表示用に結合する
+      const labelsJa = major.map(r => {
         if (r.country === "Other") return "その他";
         const key = normalize(r.country);
         return countryJaMap[key] || key;
       });
+      const labelsEn = major.map(r => r.region === "Other" ? "Other" : r.region);
+
+      // 表示ラベル: "日本語 (English)"
+      const displayLabels = labelsJa.map((ja, i) => `${ja} (${labelsEn[i]})`);
 
       // 値
       const values = major.map(r => r.activeUsers);
@@ -105,10 +109,10 @@
       new Chart(ctx, {
         type: "pie",
         data: {
-          labels: labels,
+          labels: displayLabels,
           datasets: [{
             data: values,
-            backgroundColor: labels.map((_, i) => colors[i % colors.length]),
+            backgroundColor: displayLabels.map((_, i) => colors[i % colors.length]),
             radius: "98%",
           }]
         },
@@ -130,8 +134,6 @@
                 const dataArr = ctx.chart.data.datasets[0].data;
                 const sum = dataArr.reduce((a, b) => a + b, 0);
                 const pct = ((value / sum) * 100).toFixed(1) + "%";
-                //const label = ctx.chart.data.labels[ctx.dataIndex];
-                //return label + "\n" + pct;
                 return pct;
               },
               textAlign: "center",
@@ -146,6 +148,26 @@
                   return 8;   // 偶数
                 } else {
                   return 30;   // 奇数
+                }
+              }
+            },
+            // ツールチップをカスタム
+            tooltip: {
+              backgroundColor: 'rgba(255,255,255,0.95)',
+              titleColor: '#000',
+              bodyColor: '#000',
+              borderWidth: 0,
+              displayColors: false,
+              callbacks: {
+                // 1行目: ラベル（displayLabels のまま）
+                title: function(tooltipItems) {
+                  // tooltipItems は配列。最初の要素の label を返す
+                  return tooltipItems[0]?.label ?? "";
+                },
+                // 2行目: 閲覧者数: {値} (viewers)
+                label: function(context) {
+                  const value = context.parsed ?? context.raw ?? 0;
+                  return `閲覧者数: ${value} (viewers)`;
                 }
               }
             }

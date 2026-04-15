@@ -89,7 +89,13 @@
                                     usePointStyle: false,
                                     displayColors: false,
                                     intersect: false,
-                                    mode: 'index'
+                                    mode: 'index',
+                                    callbacks: {
+                                      label: function(context) {
+                                        const value = context.formattedValue ?? (context.parsed && context.parsed.y) ?? context.raw;
+                                        return `${value} (views)`;
+                                      }
+                                    }
                             }
                         },
                         scales: {
