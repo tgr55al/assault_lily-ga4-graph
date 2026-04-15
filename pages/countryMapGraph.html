@@ -151,16 +151,8 @@
               align: "end",
               clamp: false,
               offset: (ctx) => {
-                const chart = ctx.chart;
-                const refWidth = 500; // 100% と見なす基準幅
-                const current = (chart.chartArea && chart.chartArea.width) ? chart.chartArea.width : chart.width;
-                const scale = Math.max(0, Math.min(1, current / refWidth)); // 0～1 にクランプ
-
-                const baseEven = 4;
-                const baseOdd  = 32;
-                const even = Math.round(baseEven * scale);
-                const odd  = Math.round(baseOdd  * scale);
-
+                const even = 30
+                const odd  = 8
                 return (ctx.dataIndex % 2 === 0) ? even : odd;
               }
             },
