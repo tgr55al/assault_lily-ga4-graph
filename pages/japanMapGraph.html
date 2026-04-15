@@ -150,7 +150,16 @@
               anchor: "center",
               align: "end",
               clamp: false,
-              offset: 30
+              offset: (ctx) => {
+                const index = ctx.dataIndex;
+
+                // 偶数・奇数で offset を変える
+                if (index % 2 === 0) {
+                  return 8;   // 偶数
+                } else {
+                  return 28;   // 奇数
+                }
+              }
             },
             // ツールチップをカスタム
             tooltip: {
