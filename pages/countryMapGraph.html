@@ -9,12 +9,22 @@
     body { font-family: system-ui, sans-serif; margin: 0; }
     #chart-container { max-width: 800px; margin: 0 auto; padding: 0; }
     canvas { display: block; margin: 0; padding: 0; }
+    /* 合計表示のスタイル */
+    #total {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: #111;
+    }
   </style>
 </head>
 <body>
 
   <div id="chart-container">
     <canvas id="countryPie"></canvas>
+    <!-- ここに合計を表示 -->
+    <div id="total" aria-live="polite"></div>
   </div>
 
   <script>
@@ -161,7 +171,6 @@
               callbacks: {
                 // 1行目: ラベル（displayLabels のまま）
                 title: function(tooltipItems) {
-                  // tooltipItems は配列。最初の要素の label を返す
                   return tooltipItems[0]?.label ?? "";
                 },
                 // 2行目: 閲覧者数: {値} (viewers)
@@ -175,6 +184,11 @@
         },
         plugins: [ChartDataLabels]
       });
+
+      // --- ここで合計を表示 ---
+      const totalValue = values.reduce((a, b) => a + b, 0);
+      const formattedTotal = new Intl.NumberFormat('ja-JP').format(totalValue);
+      document.getElementById('total').textContent = `閲覧者数合計: ${formattedTotal} (viewers)`;
     }
 
     main();
