@@ -91,6 +91,7 @@
                         intersect: false,
                         mode: 'index',
                         callbacks: {
+                          title: () => "",
                           label: function(context) {
                             const value = context.formattedValue ?? (context.parsed && context.parsed.y) ?? context.raw;
                             return `閲覧者数: ${value} (viewers)`;
