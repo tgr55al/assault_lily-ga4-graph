@@ -88,7 +88,7 @@
         const key = normalize(r.country);
         return countryJaMap[key] || key;
       });
-      const labelsEn = major.map(r => r.region === "Other" ? "Other" : r.region);
+      const labelsEn = major.map(r => r.country === "Other" ? "Other" : r.country);
 
       // 表示ラベル: "日本語 (English)"
       const displayLabels = labelsJa.map((ja, i) => `${ja} (${labelsEn[i]})`);
