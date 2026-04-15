@@ -151,14 +151,17 @@
               align: "end",
               clamp: false,
               offset: (ctx) => {
-                const index = ctx.dataIndex;
+                const chart = ctx.chart;
+                const refWidth = 500; // 100% と見なす基準幅
+                const current = (chart.chartArea && chart.chartArea.width) ? chart.chartArea.width : chart.width;
+                const scale = Math.max(0, Math.min(1, current / refWidth)); // 0～1 にクランプ
 
-                // 偶数・奇数で offset を変える
-                if (index % 2 === 0) {
-                  return 28;   // 偶数
-                } else {
-                  return 8;   // 奇数
-                }
+                const baseEven = 8;
+                const baseOdd  = 30;
+                const even = Math.round(baseEven * scale);
+                const odd  = Math.round(baseOdd  * scale);
+
+                return (ctx.dataIndex % 2 === 0) ? even : odd;
               }
             },
             // ツールチップをカスタム
