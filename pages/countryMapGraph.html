@@ -156,8 +156,8 @@
                 const current = (chart.chartArea && chart.chartArea.width) ? chart.chartArea.width : chart.width;
                 const scale = Math.max(0, Math.min(1, current / refWidth)); // 0～1 にクランプ
 
-                const baseEven = 8;
-                const baseOdd  = 30;
+                const baseEven = 4;
+                const baseOdd  = 32;
                 const even = Math.round(baseEven * scale);
                 const odd  = Math.round(baseOdd  * scale);
 
