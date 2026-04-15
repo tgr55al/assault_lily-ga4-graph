@@ -19,7 +19,7 @@
     <script>
         const verticalLinePlugin = {
             id: 'verticalLinePlugin',
-            afterDraw(chart, args, options) {
+            afterDraw(chart) {
                 const { ctx, chartArea, tooltip } = chart;
 
                 if (!tooltip || !tooltip._active || !tooltip._active.length) return;
@@ -78,8 +78,7 @@
                       title: { display: false },
                       interaction: {
                         mode: 'index',
-                        intersect: false,
-                        displayColors: false
+                        intersect: false
                       },
                       tooltip: {
                         backgroundColor: 'rgba(255,255,255,0.95)',
