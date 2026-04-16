@@ -29,10 +29,14 @@ def fetch_region_japan(client, days=30):
         f.write("region,activeUsers\n")
         for row in response.rows:
             country = row.dimension_values[0].value
-            region = row.dimension_values[1].value
+            # region を安全に取り出して前後空白を削除
+            raw_region = row.dimension_values[1].value
+            region = raw_region.strip() if raw_region is not None else ""
+
             users = row.metric_values[0].value
 
-            if country == "Japan":
+            # Japan かつ region が空文字でも (not set) でもない場合のみ書き出す
+            if country == "Japan" and region not in ("", "(not set)"):
                 f.write(f"{region},{users}\n")
 
     print(f"🗾 日本地域別データ → {output_path} に保存")
