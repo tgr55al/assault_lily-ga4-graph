@@ -1,0 +1,719 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "日本 (Japan)",
+        "value": 8484
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2394179,
+          36.5748441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "中国 (China)",
+        "value": 315
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.999927,
+          35.000074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "アメリカ合衆国 (United States)",
+        "value": 275
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.445882,
+          39.7837304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "台湾 (Taiwan)",
+        "value": 159
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9820179,
+          23.9739374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "香港 (Hong Kong)",
+        "value": 74
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.1628907,
+          22.2792968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ベトナム (Vietnam)",
+        "value": 55
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.9650855,
+          15.9266657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "韓国 (South Korea)",
+        "value": 52
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.6961188,
+          36.638392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "インドネシア (Indonesia)",
+        "value": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.8902853,
+          -2.4833826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "シンガポール (Singapore)",
+        "value": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8194992,
+          1.357107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "マレーシア (Malaysia)",
+        "value": 16
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.2656823,
+          4.5693754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "イギリス (United Kingdom)",
+        "value": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.2765753,
+          54.7023545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "タイ (Thailand)",
+        "value": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.83273,
+          14.8971921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "オーストラリア (Australia)",
+        "value": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.755,
+          -24.7761086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "カナダ (Canada)",
+        "value": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.991707,
+          61.0666922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "フィリピン (Philippines)",
+        "value": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          122.7312101,
+          12.7503486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "オランダ (Netherlands)",
+        "value": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.6343227,
+          52.2434979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ブラジル (Brazil)",
+        "value": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.2,
+          -10.3333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ドイツ (Germany)",
+        "value": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.4478313,
+          51.1638175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "インド (India)",
+        "value": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.6677428,
+          22.3511148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "フランス (France)",
+        "value": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.8883335,
+          46.603354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "メキシコ (Mexico)",
+        "value": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.0077097,
+          23.6585116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ポーランド (Poland)",
+        "value": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.134422,
+          52.215933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "スペイン (Spain)",
+        "value": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.8379791,
+          39.3260685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "スウェーデン (Sweden)",
+        "value": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5208584,
+          59.6749712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "チリ (Chile)",
+        "value": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3187697,
+          -31.7613365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "フィンランド (Finland)",
+        "value": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.9209164,
+          63.2467777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "イタリア (Italy)",
+        "value": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.674297,
+          42.6384261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ニュージーランド (New Zealand)",
+        "value": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.8344077,
+          -41.5000831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ノルウェー (Norway)",
+        "value": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7876653,
+          61.1529386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ウクライナ (Ukraine)",
+        "value": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.2718321,
+          49.4871968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "アラブ首長国連邦 (United Arab Emirates)",
+        "value": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          53.9994829,
+          24.0002488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "アルバニア (Albania)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.9999619,
+          41.000028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "アルジェリア (Algeria)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0588445,
+          36.7729333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "バーレーン (Bahrain)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.5344606,
+          26.1551249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "バングラデシュ (Bangladesh)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.2934413,
+          24.4769288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ベルギー (Belgium)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.6667145,
+          50.6402809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ボリビア (Bolivia)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.9912286,
+          -17.0568696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "コロンビア (Colombia)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.9088133,
+          4.099917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ジョージア (Georgia)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.1137366,
+          32.3293809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "イラク (Iraq)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.1749775,
+          33.0955793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ジャマイカ (Jamaica)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.3947693,
+          18.1850507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "リビア (Libya)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.1236723,
+          26.8234472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "モロッコ (Morocco)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.3713379,
+          28.3347722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ナイジェリア (Nigeria)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.9999721,
+          9.6000359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "オマーン (Oman)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.0036901,
+          21.0000287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ペルー (Peru)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.0458515,
+          -6.8699697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "プエルトリコ (Puerto Rico)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.4858295,
+          18.2247706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ロシア (Russia)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.7453061,
+          64.6863136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "南アフリカ (South Africa)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.991639,
+          -28.8166236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "スイス (Switzerland)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2319736,
+          46.7985624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "トルコ (Türkiye)",
+        "value": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2316631,
+          39.294076
+        ]
+      }
+    }
+  ]
+}

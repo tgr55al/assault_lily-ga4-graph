@@ -1,0 +1,663 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "東京 (Tokyo)",
+        "value": 3683
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7638947,
+          35.6768601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "大阪 (Osaka)",
+        "value": 915
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5014539,
+          34.6937569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "神奈川 (Kanagawa)",
+        "value": 692
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.374753,
+          35.4342935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "北海道 (Hokkaido)",
+        "value": 455
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.8197834,
+          43.4519831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "千葉 (Chiba)",
+        "value": 403
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.2647303,
+          35.549399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "埼玉 (Saitama)",
+        "value": 396
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.4160114,
+          35.9754168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "宮城 (Miyagi)",
+        "value": 366
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.9761025,
+          38.3880155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "愛知 (Aichi)",
+        "value": 364
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.254574,
+          34.9991645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "兵庫 (Hyogo)",
+        "value": 348
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.860666,
+          34.914934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "福岡 (Fukuoka)",
+        "value": 208
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6180016,
+          33.6251241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "京都 (Kyoto)",
+        "value": 173
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.7681441,
+          35.0115754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "静岡 (Shizuoka)",
+        "value": 161
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3831697,
+          34.9751974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "茨城 (Ibaraki)",
+        "value": 148
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4703384,
+          36.2869536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "広島 (Hiroshima)",
+        "value": 118
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.4517589,
+          34.3917241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "栃木 (Tochigi)",
+        "value": 109
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8096549,
+          36.6782167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "新潟 (Niigata)",
+        "value": 98
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7669125,
+          37.6452283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "長野 (Nagano)",
+        "value": 94
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.0319015,
+          36.1143945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "三重 (Mie)",
+        "value": 78
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.5154489,
+          34.7339685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "岡山 (Okayama)",
+        "value": 78
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.7759256,
+          34.8581334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "岐阜 (Gifu)",
+        "value": 77
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7627526,
+          35.4230949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "群馬 (Gunma)",
+        "value": 75
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.033483,
+          36.52198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "愛媛 (Ehime)",
+        "value": 61
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.8185275,
+          33.6013646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "奈良 (Nara)",
+        "value": 54
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.8048359,
+          34.6845445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "福島 (Fukushima)",
+        "value": 48
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.4745807,
+          37.760777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "青森 (Aomori)",
+        "value": 46
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.590121,
+          40.886943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "岩手 (Iwate)",
+        "value": 42
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.4253574,
+          39.5713763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "長崎 (Nagasaki)",
+        "value": 41
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.7874339,
+          33.1154683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "滋賀 (Shiga)",
+        "value": 39
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.109385,
+          35.247154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "山形 (Yamagata)",
+        "value": 36
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.083237,
+          38.4746705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "熊本 (Kumamoto)",
+        "value": 35
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.6341345,
+          32.6450475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "富山 (Toyama)",
+        "value": 35
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.2183531,
+          36.6468015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "島根 (Shimane)",
+        "value": 33
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.537439,
+          34.9418212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "山梨 (Yamanashi)",
+        "value": 33
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.6380495,
+          35.6399328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "秋田 (Akita)",
+        "value": 32
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.342608,
+          39.6898802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "鹿児島 (Kagoshima)",
+        "value": 31
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.5474077,
+          31.521587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "沖縄 (Okinawa)",
+        "value": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.0255901,
+          26.5707754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "石川 (Ishikawa)",
+        "value": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8162839,
+          36.9890574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "香川 (Kagawa)",
+        "value": 28
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.0586579,
+          34.2480104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "山口 (Yamaguchi)",
+        "value": 26
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.5873845,
+          34.2379614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "和歌山 (Wakayama)",
+        "value": 25
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5930743,
+          33.8070292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "大分 (Oita)",
+        "value": 24
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.6096524,
+          33.2393864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "高知 (Kochi)",
+        "value": 19
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5310918,
+          33.5588482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "鳥取 (Tottori)",
+        "value": 18
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8678525,
+          35.3555075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "福井 (Fukui)",
+        "value": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.6068127,
+          35.9263502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "佐賀 (Saga)",
+        "value": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.1296585,
+          33.2185408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "宮崎 (Miyazaki)",
+        "value": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.294542,
+          32.097681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "徳島 (Tokushima)",
+        "value": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.2509634,
+          33.9196418
+        ]
+      }
+    }
+  ]
+}
