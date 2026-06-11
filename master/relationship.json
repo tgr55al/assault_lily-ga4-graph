@@ -6,102 +6,118 @@
       "id": "riri",
       "name": "一柳 梨璃",
       "school": "百合ヶ丘女学院",
-      "wiki": "一柳梨璃"
+      "wiki": "一柳梨璃",
+      "image": "https://i.gyazo.com/9064c75abec22b6aac7c20cce7433294.jpg"
     },
     {
-      "id": "yume",
+      "id": "yuyu",
       "name": "白井 夢結",
       "school": "百合ヶ丘女学院",
-      "wiki": "白井夢結"
+      "wiki": "白井夢結",
+      "image": "https://i.gyazo.com/afec4f915006648530d08c7dc346e99d.jpg"
     },
     {
       "id": "kaede",
       "name": "楓・J・ヌーベル",
       "school": "百合ヶ丘女学院",
-      "wiki": "楓・J・ヌーベル"
+      "wiki": "楓・J・ヌーベル",
+      "image": "https://i.gyazo.com/c2e125c766e6b83a37e47f3b819f5804.jpg"
     },
     {
-      "id": "ninae",
+      "id": "fumi",
       "name": "二川 二水",
       "school": "百合ヶ丘女学院",
-      "wiki": "二川二水"
+      "wiki": "二川二水",
+      "image": "https://i.gyazo.com/19e333b25a80b724068cef2574e2c0b1.jpg"
     },
     {
-      "id": "juri",
+      "id": "mai",
       "name": "吉村・Thi・梅",
       "school": "百合ヶ丘女学院",
-      "wiki": "吉村・Thi・梅"
+      "wiki": "吉村・Thi・梅",
+      "image": "https://i.gyazo.com/97309cc4cef2824867350ef1db845ca8.jpg"
     },
     {
       "id": "kuo",
       "name": "郭 神琳",
       "school": "百合ヶ丘女学院",
-      "wiki": "郭神琳"
+      "wiki": "郭神琳",
+      "image": "https://i.gyazo.com/f571c4c99747806e205b69092844f53b.jpg"
     },
     {
       "id": "miriam",
-      "name": "ミリアム・ヒルデガルド・v・グロビウス",
+      "name": "ミリアム・ヒルデガルド・v・グロピウス",
       "school": "百合ヶ丘女学院",
-      "wiki": "ミリアム・ヒルデガルド・v・グロビウス"
+      "wiki": "ミリアム・ヒルデガルド・v・グロピウス",
+      "image": "https://i.gyazo.com/3dec05c31e27e596e7f00f5d774a3aa4.jpg"
     },
     {
-      "id": "ando",
-      "name": "安藤 鶴妙",
+      "id": "tazusa",
+      "name": "安藤 鶴紗",
       "school": "百合ヶ丘女学院",
-      "wiki": "安藤鶴妙"
+      "wiki": "安藤鶴紗",
+      "image": "https://i.gyazo.com/48ef6f97d7d1dce089e17accf9f9cc66.jpg"
     },
     {
-      "id": "ou",
-      "name": "王 両熹",
+      "id": "yujia",
+      "name": "王 雨嘉",
       "school": "百合ヶ丘女学院",
-      "wiki": "王両熹"
+      "wiki": "王雨嘉",
+      "image": "https://i.gyazo.com/ad3ae42ed54fa05079d06f03578c9e06.jpg"
     },
     {
-      "id": "kanau",
+      "id": "kanaho",
       "name": "今 叶星",
-      "school": "百合ヶ丘女学院",
-      "wiki": "今叶星"
+      "school": "神庭女子藝術高校",
+      "wiki": "今叶星",
+      "image": "https://i.gyazo.com/fca68209eee3c0b540408aa441da1328.jpg"
     },
     {
-      "id": "hatsuka",
-      "name": "初鹿野 瑙",
-      "school": "百合ヶ丘女学院",
-      "wiki": "初鹿野瑙"
+      "id": "yo",
+      "name": "初鹿野 瑤",
+      "school": "エレンスゲ女学園",
+      "wiki": "初鹿野瑤",
+      "image": "https://i.gyazo.com/ee670dee01a4026a93f141e95fac5b98.jpg"
     },
     {
-      "id": "iijima",
+      "id": "renka",
       "name": "飯島 恋花",
-      "school": "百合ヶ丘女学院",
-      "wiki": "飯島恋花"
+      "school": "エレンスゲ女学園",
+      "wiki": "飯島恋花",
+      "image": "https://i.gyazo.com/0b03c6905871a6c09aa875809310de07.jpg"
     },
     {
       "id": "sasaki",
-      "name": "佐々木 嵐",
-      "school": "百合ヶ丘女学院",
-      "wiki": "佐々木嵐"
+      "name": "佐々木 藍",
+      "school": "エレンスゲ女学園",
+      "wiki": "佐々木藍",
+      "image": "https://i.gyazo.com/585dc7e87f3c5fcb75c0f98886d72fa7.jpg"
     },
     {
-      "id": "sagawa",
-      "name": "相澤 一業",
-      "school": "百合ヶ丘女学院",
-      "wiki": "相澤一業"
+      "id": "kazuha",
+      "name": "相澤 一葉",
+      "school": "エレンスゲ女学園",
+      "wiki": "相澤一葉",
+      "image": "https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"
     }
   ],
 
   "relations": [
-    {"from": "riri",     "to": "yume",    "type": "シュッツエンゲル", "spoiler": false},
-    {"from": "riri",     "to": "kaede",   "type": "シュッツエンゲル", "spoiler": false},
-    {"from": "riri",     "to": "ninae",   "type": "親友・友人",       "spoiler": false},
-    {"from": "riri",     "to": "juri",    "type": "親友・友人",       "spoiler": false},
-    {"from": "riri",     "to": "kuo",     "type": "親友・友人",       "spoiler": false},
-    {"from": "riri",     "to": "ando",    "type": "先輩・後輩",       "spoiler": false},
-    {"from": "riri",     "to": "miriam",  "type": "先輩・後輩",       "spoiler": false},
-    {"from": "riri",     "to": "kanau",   "type": "先輩・後輩",       "spoiler": false},
-    {"from": "miriam",   "to": "ou",      "type": "ライバル・対立",   "spoiler": false},
-    {"from": "miriam",   "to": "hatsuka", "type": "同レギオン",       "spoiler": false},
-    {"from": "kanau",    "to": "sagawa",  "type": "同レギオン",       "spoiler": false},
-    {"from": "hatsuka",  "to": "iijima",  "type": "先輩・後輩",       "spoiler": false},
-    {"from": "hatsuka",  "to": "sasaki",  "type": "先輩・後輩",       "spoiler": false},
-    {"from": "yume",     "to": "kaede",   "type": "シュッツエンゲル", "spoiler": true, "note": "劇場版ネタバレ"}
+    { "from": "riri",   "to": "yuyu",   "type": "憧れ・後輩",          "spoiler": false },
+    { "from": "riri",   "to": "yuyu",   "type": "シュッツエンゲル",    "spoiler": true  },
+    { "from": "riri",   "to": "kaede",  "type": "シュッツエンゲル",    "spoiler": false },
+    { "from": "riri",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
+    { "from": "riri",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
+    { "from": "riri",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
+    { "from": "riri",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
+    { "from": "riri",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
+    { "from": "riri",   "to": "kanaho", "type": "隊長仲間",            "spoiler": false },
+    { "from": "riri",   "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
+    { "from": "kanaho", "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
+    { "from": "miriam", "to": "yujia",  "type": "同レギオン",          "spoiler": false },
+    { "from": "kazuha", "to": "yo",     "type": "同レギオン",          "spoiler": false },
+    { "from": "kanaho", "to": "kazuha", "type": "同レギオン",          "spoiler": false },
+    { "from": "yo",     "to": "renka",  "type": "同レギオン・友人",    "spoiler": false },
+    { "from": "yo",     "to": "sasaki", "type": "同レギオン",          "spoiler": false }
   ]
 }
