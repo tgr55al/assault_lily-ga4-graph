@@ -99,25 +99,1368 @@
       "school": "エレンスゲ女学園",
       "wiki": "相澤一葉",
       "image": "https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"
+    },
+    {
+      "id": "yuri",
+      "name": "一柳 結梨",
+      "school": "百合ヶ丘女学院",
+      "wiki": "一柳結梨",
+      "image": "https://i.gyazo.com/a68d12e974a73bb95cc4ebe41cbff474.jpg"
+    },
+    {
+      "id": "shiori",
+      "name": "六角 汐里",
+      "school": "百合ヶ丘女学院",
+      "wiki": "六角汐里",
+      "image": "https://i.gyazo.com/23968b1a0d870e7e5ff69b48143fdbda.jpg"
+    },
+    {
+      "id": "hijiri",
+      "name": "谷口 聖",
+      "school": "百合ヶ丘女学院",
+      "wiki": "谷口聖",
+      "image": "https://i.gyazo.com/8bc40582ff7230b1c4b0ff3695fb712f.jpg"
+    },
+    {
+      "id": "waka",
+      "name": "新家 和香",
+      "school": "百合ヶ丘女学院",
+      "wiki": "新家和香",
+      "image": null
+    },
+    {
+      "id": "botan",
+      "name": "泉 牡丹",
+      "school": "百合ヶ丘女学院",
+      "wiki": "泉牡丹",
+      "image": null
+    },
+    {
+      "id": "sakura",
+      "name": "工藤 朔愛",
+      "school": "百合ヶ丘女学院",
+      "wiki": "工藤朔愛",
+      "image": "https://i.gyazo.com/f8427d1d732c1535a062fb683f18076c.jpg"
+    },
+    {
+      "id": "midori",
+      "name": "原 美土莉",
+      "school": "百合ヶ丘女学院",
+      "wiki": "原美土莉",
+      "image": null
+    },
+    {
+      "id": "nayuru",
+      "name": "熊谷 那由流",
+      "school": "百合ヶ丘女学院",
+      "wiki": "熊谷那由流",
+      "image": null
+    },
+    {
+      "id": "mika",
+      "name": "磯崎 美花",
+      "school": "百合ヶ丘女学院",
+      "wiki": "磯崎美花",
+      "image": null
+    },
+    {
+      "id": "hazuki",
+      "name": "牛田 琶月",
+      "school": "百合ヶ丘女学院",
+      "wiki": "牛田琶月",
+      "image": "https://i.gyazo.com/20dea7f6fddd512db10584cb997f6beb.jpg"
+    },
+    {
+      "id": "nagi",
+      "name": "田村 那岐",
+      "school": "百合ヶ丘女学院",
+      "wiki": "田村那岐",
+      "image": "https://i.gyazo.com/64c7df876771683f984e51187b596597.jpg"
+    },
+    {
+      "id": "diana",
+      "name": "ディアナ・コールハース",
+      "school": "百合ヶ丘女学院",
+      "wiki": "ディアナ・コールハース",
+      "image": null
+    },
+    {
+      "id": "mitsune",
+      "name": "有馬 充音",
+      "school": "百合ヶ丘女学院",
+      "wiki": "有馬充音",
+      "image": null
+    },
+    {
+      "id": "konomi",
+      "name": "芦原 木乃実",
+      "school": "百合ヶ丘女学院",
+      "wiki": "芦原木乃実",
+      "image": null
+    },
+    {
+      "id": "sayuri",
+      "name": "菊池 沙優吏",
+      "school": "百合ヶ丘女学院",
+      "wiki": "菊池沙優吏",
+      "image": null
+    },
+    {
+      "id": "matose",
+      "name": "平林 南十星",
+      "school": "百合ヶ丘女学院",
+      "wiki": "平林南十星",
+      "image": null
+    },
+    {
+      "id": "amane",
+      "name": "天野 天葉",
+      "school": "百合ヶ丘女学院",
+      "wiki": "天野天葉",
+      "image": "https://i.gyazo.com/68d1559d7ff4ed7e05e7bd2aa7687051.jpg"
+    },
+    {
+      "id": "kusumi",
+      "name": "江川 樟美",
+      "school": "百合ヶ丘女学院",
+      "wiki": "江川樟美",
+      "image": "https://i.gyazo.com/b12a1fa6f1998c5248440030f672bca9.jpg"
+    },
+    {
+      "id": "ena",
+      "name": "番匠谷 依奈",
+      "school": "百合ヶ丘女学院",
+      "wiki": "番匠谷依奈",
+      "image": "https://i.gyazo.com/0f184437a986af0de3168991a3c127a7.jpg"
+    },
+    {
+      "id": "tsukishi",
+      "name": "高須賀 月詩",
+      "school": "百合ヶ丘女学院",
+      "wiki": "高須賀月詩",
+      "image": "https://i.gyazo.com/ec502a0842a473a6d54e01664d0b0c40.jpg"
+    },
+    {
+      "id": "ichi",
+      "name": "田中 壱",
+      "school": "百合ヶ丘女学院",
+      "wiki": "田中壱",
+      "image": "https://i.gyazo.com/7d0397e92ebb0956bb0e2dcbce50a067.jpg"
+    },
+    {
+      "id": "araya",
+      "name": "遠藤 亜羅椰",
+      "school": "百合ヶ丘女学院",
+      "wiki": "遠藤亜羅椰",
+      "image": "https://i.gyazo.com/4bdb6b218ca3a537906dc353fe2907ca.jpg"
+    },
+    {
+      "id": "akane",
+      "name": "渡邉 茜",
+      "school": "百合ヶ丘女学院",
+      "wiki": "渡邉茜",
+      "image": "https://i.gyazo.com/d5cb8fbd0c5a1abd4204d792a63933d5.jpg"
+    },
+    {
+      "id": "misora",
+      "name": "金箱 弥宙",
+      "school": "百合ヶ丘女学院",
+      "wiki": "金箱弥宙",
+      "image": "https://i.gyazo.com/a814c112b76439cad949e0eeeaf82140.jpg"
+    },
+    {
+      "id": "tatsuhime",
+      "name": "森 辰姫",
+      "school": "百合ヶ丘女学院",
+      "wiki": "森辰姫",
+      "image": "https://i.gyazo.com/d2854e47c822383b1ca1f5b27128e205.jpg"
+    },
+    {
+      "id": "wakana",
+      "name": "槇 若菜",
+      "school": "百合ヶ丘女学院",
+      "wiki": "槇若菜",
+      "image": "https://i.gyazo.com/a2d5c48b458f32bf3ffbff2a6df89189.jpg"
+    },
+    {
+      "id": "kisa",
+      "name": "岡田 綺更",
+      "school": "百合ヶ丘女学院",
+      "wiki": "岡田綺更",
+      "image": "https://i.gyazo.com/88593a3ab23664f704e1765f74e4b603.jpg"
+    },
+    {
+      "id": "noa",
+      "name": "毛綱 乃彩",
+      "school": "百合ヶ丘女学院",
+      "wiki": "毛綱乃彩",
+      "image": "https://i.gyazo.com/d7c7dc279d6433c98f2a8347619afbd6.jpg"
+    },
+    {
+      "id": "kaho",
+      "name": "青木 夏帆",
+      "school": "百合ヶ丘女学院",
+      "wiki": "青木夏帆",
+      "image": "https://i.gyazo.com/54aebd93c6c78337fd11a8e89a36a82a.jpg"
+    },
+    {
+      "id": "hiromu",
+      "name": "妹島 広夢",
+      "school": "百合ヶ丘女学院",
+      "wiki": "妹島広夢",
+      "image": "https://i.gyazo.com/416b9ff8c0bfbb6fecefdbaaafc821a4.png"
+    },
+    {
+      "id": "yukihi",
+      "name": "倉又 雪陽",
+      "school": "百合ヶ丘女学院",
+      "wiki": "倉又雪陽",
+      "image": "https://i.gyazo.com/b867e26a9108e84a54458d187087cf85.jpg"
+    },
+    {
+      "id": "sayu",
+      "name": "立原 紗癒",
+      "school": "百合ヶ丘女学院",
+      "wiki": "立原紗癒",
+      "image": "https://i.gyazo.com/fdc838da3ea5dcfb7a33f6f7126c8666.jpg"
+    },
+    {
+      "id": "himiko",
+      "name": "辰野 日美子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "辰野日美子",
+      "image": null
+    },
+    {
+      "id": "kano",
+      "name": "坂 樺埜",
+      "school": "百合ヶ丘女学院",
+      "wiki": "坂樺埜",
+      "image": null
+    },
+    {
+      "id": "mako",
+      "name": "西澤 眞子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "西澤眞子",
+      "image": null
+    },
+    {
+      "id": "chika",
+      "name": "竹腰 千華",
+      "school": "百合ヶ丘女学院",
+      "wiki": "竹腰千華",
+      "image": "https://i.gyazo.com/66b1b0269647cdd9ce32f69c6a8b2578.jpg"
+    },
+    {
+      "id": "nalu",
+      "name": "境沢 奈留",
+      "school": "百合ヶ丘女学院",
+      "wiki": "境沢奈留",
+      "image": null
+    },
+    {
+      "id": "hozumi",
+      "name": "杉浦 穂澄",
+      "school": "百合ヶ丘女学院",
+      "wiki": "杉浦穂澄",
+      "image": null
+    },
+    {
+      "id": "kaoru",
+      "name": "林 薫",
+      "school": "百合ヶ丘女学院",
+      "wiki": "林薫",
+      "image": null
+    },
+    {
+      "id": "maasa",
+      "name": "福屋 真亜沙",
+      "school": "百合ヶ丘女学院",
+      "wiki": "福屋真亜沙",
+      "image": null
+    },
+    {
+      "id": "teika",
+      "name": "近藤 貞花",
+      "school": "百合ヶ丘女学院",
+      "wiki": "近藤貞花",
+      "image": "https://i.gyazo.com/7a56ac76c611fcd9b6c23f36cd22ea55.jpg"
+    },
+    {
+      "id": "fuyuka",
+      "name": "長谷部 冬佳",
+      "school": "百合ヶ丘女学院",
+      "wiki": "長谷部冬佳",
+      "image": "https://i.gyazo.com/ec483e6f211227a5c1cbb9eac7710d8f.jpg"
+    },
+    {
+      "id": "tsutsuri",
+      "name": "木子 都々里",
+      "school": "百合ヶ丘女学院",
+      "wiki": "木子都々里",
+      "image": "https://i.gyazo.com/d2c170eeb6c1aec6d38bdc12e884fe5d.jpg"
+    },
+    {
+      "id": "homare",
+      "name": "今川 誉",
+      "school": "百合ヶ丘女学院",
+      "wiki": "今川誉",
+      "image": "https://i.gyazo.com/49ebe71d643d8db38c6b2b1ff047149f.jpg"
+    },
+    {
+      "id": "tokiwa",
+      "name": "村上 常盤",
+      "school": "百合ヶ丘女学院",
+      "wiki": "村上常盤",
+      "image": "https://i.gyazo.com/f55da5b8ed20b5f61f948e28216fbe87.jpg"
+    },
+    {
+      "id": "chise",
+      "name": "清家 知世",
+      "school": "百合ヶ丘女学院",
+      "wiki": "清家知世",
+      "image": "https://i.gyazo.com/fadf4b548f18ed93f4bcda7bea0def80.jpg"
+    },
+    {
+      "id": "hiwari",
+      "name": "山梨 日羽梨",
+      "school": "百合ヶ丘女学院",
+      "wiki": "山梨日羽梨",
+      "image": "https://i.gyazo.com/e112cb2fa08871680a0acd8853f6ba47.jpg"
+    },
+    {
+      "id": "hanna",
+      "name": "黒川・ナディ・絆奈",
+      "school": "百合ヶ丘女学院",
+      "wiki": "黒川・ナディ・絆奈",
+      "image": "https://i.gyazo.com/34e579f668777226aeb388139a7009fa.jpg"
+    },
+    {
+      "id": "luise",
+      "name": "ルイセ・インゲルス",
+      "school": "百合ヶ丘女学院",
+      "wiki": "ルイセ・インゲルス",
+      "image": "https://i.gyazo.com/f5a848e985d9529ee7e2cf2ea1808f20.jpg"
+    },
+    {
+      "id": "toa",
+      "name": "鉄川 兎愛",
+      "school": "百合ヶ丘女学院",
+      "wiki": "鉄川兎愛",
+      "image": "https://i.gyazo.com/abdb0dafc25e1b9aed697bdd791e25fb.jpg"
+    },
+    {
+      "id": "seira",
+      "name": "今井 星蘭",
+      "school": "百合ヶ丘女学院",
+      "wiki": "今井星蘭",
+      "image": "https://i.gyazo.com/3ad6e97b39e46c612477e6f5d0c716b5.jpg"
+    },
+    {
+      "id": "kirari",
+      "name": "長坂 稀星",
+      "school": "百合ヶ丘女学院",
+      "wiki": "長坂稀星",
+      "image": "https://i.gyazo.com/5be05c6d054ab0f14434490764e1e226.jpg"
+    },
+    {
+      "id": "asuka",
+      "name": "山崎 明伽",
+      "school": "百合ヶ丘女学院",
+      "wiki": "山崎明伽",
+      "image": "https://i.gyazo.com/81e7108af0d6f8767c079c482304dcf3.jpg"
+    },
+    {
+      "id": "ayako",
+      "name": "柳澤 綾子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "柳澤綾子",
+      "image": "https://i.gyazo.com/243932d5e16f091dcbe82345517b9eaf.jpg"
+    },
+    {
+      "id": "hitomi",
+      "name": "荒川 仁深",
+      "school": "百合ヶ丘女学院",
+      "wiki": "荒川仁深",
+      "image": null
+    },
+    {
+      "id": "kanade",
+      "name": "鬼木 奏調",
+      "school": "百合ヶ丘女学院",
+      "wiki": "鬼木奏調",
+      "image": null
+    },
+    {
+      "id": "shifusa",
+      "name": "出江 史房",
+      "school": "百合ヶ丘女学院",
+      "wiki": "出江史房",
+      "image": "https://i.gyazo.com/7f91f53e8c7308ec493a218684cf0e3e.jpg"
+    },
+    {
+      "id": "soyo",
+      "name": "梵 中",
+      "school": "百合ヶ丘女学院",
+      "wiki": "梵中",
+      "image": null
+    },
+    {
+      "id": "tsubame",
+      "name": "中村 翼芽",
+      "school": "百合ヶ丘女学院",
+      "wiki": "中村翼芽",
+      "image": null
+    },
+    {
+      "id": "hinata",
+      "name": "藤森 陽愛",
+      "school": "百合ヶ丘女学院",
+      "wiki": "藤森陽愛",
+      "image": null
+    },
+    {
+      "id": "mika2",
+      "name": "片山 珠花",
+      "school": "百合ヶ丘女学院",
+      "wiki": "片山珠花",
+      "image": null
+    },
+    {
+      "id": "alicia",
+      "name": "アリツィア・リベスキンド",
+      "school": "百合ヶ丘女学院",
+      "wiki": "アリツィア・リベスキンド",
+      "image": null
+    },
+    {
+      "id": "akira",
+      "name": "光井 晃",
+      "school": "百合ヶ丘女学院",
+      "wiki": "光井晃",
+      "image": null
+    },
+    {
+      "id": "shizuku",
+      "name": "谷尻 雫",
+      "school": "百合ヶ丘女学院",
+      "wiki": "谷尻雫",
+      "image": null
+    },
+    {
+      "id": "mayuri",
+      "name": "内田 眞悠理",
+      "school": "百合ヶ丘女学院",
+      "wiki": "内田眞悠理",
+      "image": "https://i.gyazo.com/aa3505ad49bcc15e6260520d9d20918d.jpg"
+    },
+    {
+      "id": "kotoko",
+      "name": "保須田 琴子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "保須田琴子",
+      "image": null
+    },
+    {
+      "id": "juna",
+      "name": "前川 樹奈",
+      "school": "百合ヶ丘女学院",
+      "wiki": "前川樹奈",
+      "image": null
+    },
+    {
+      "id": "yae",
+      "name": "高橋 耶依",
+      "school": "百合ヶ丘女学院",
+      "wiki": "高橋耶依",
+      "image": null
+    },
+    {
+      "id": "shizuka",
+      "name": "伊東 閑",
+      "school": "百合ヶ丘女学院",
+      "wiki": "伊東閑",
+      "image": "https://i.gyazo.com/96067e3a2c2b9656cf4f59002028ea69.jpg"
+    },
+    {
+      "id": "sara",
+      "name": "沙羅・シュタケンシュナイダー",
+      "school": "百合ヶ丘女学院",
+      "wiki": "沙羅・シュタケンシュナイダー",
+      "image": null
+    },
+    {
+      "id": "mirei",
+      "name": "山本 美玲",
+      "school": "百合ヶ丘女学院",
+      "wiki": "山本美玲",
+      "image": null
+    },
+    {
+      "id": "noko",
+      "name": "剣持 乃子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "剣持乃子",
+      "image": null
+    },
+    {
+      "id": "kokoro",
+      "name": "村野 心",
+      "school": "百合ヶ丘女学院",
+      "wiki": "村野心",
+      "image": null
+    },
+    {
+      "id": "rosalinde",
+      "name": "ロザリンデ・フリーデグンデ・v・オットー",
+      "school": "百合ヶ丘女学院",
+      "wiki": "ロザリンデ・フリーデグンデ・v・オットー",
+      "image": "https://i.gyazo.com/76ec5a7f2aff2830b68025ce10bbd38e.jpg"
+    },
+    {
+      "id": "iki",
+      "name": "北河原 伊紀",
+      "school": "百合ヶ丘女学院",
+      "wiki": "北河原伊紀",
+      "image": "https://i.gyazo.com/e8c43aa032bbd629e329278966ad33e2.jpg"
+    },
+    {
+      "id": "aoto",
+      "name": "石上 碧乙",
+      "school": "百合ヶ丘女学院",
+      "wiki": "石上碧乙",
+      "image": "https://i.gyazo.com/fb1849817b440e2344c3f927db3f1b5e.jpg"
+    },
+    {
+      "id": "samidori",
+      "name": "山田 早緑",
+      "school": "百合ヶ丘女学院",
+      "wiki": "山田早緑",
+      "image": null
+    },
+    {
+      "id": "akiho",
+      "name": "金田 陽穂",
+      "school": "百合ヶ丘女学院",
+      "wiki": "金田陽穂",
+      "image": null
+    },
+    {
+      "id": "sato",
+      "name": "小野木 瑳都",
+      "school": "百合ヶ丘女学院",
+      "wiki": "小野木瑳都",
+      "image": null
+    },
+    {
+      "id": "ryo",
+      "name": "安井 諒",
+      "school": "百合ヶ丘女学院",
+      "wiki": "安井諒",
+      "image": null
+    },
+    {
+      "id": "suiren",
+      "name": "大島 水蓮",
+      "school": "百合ヶ丘女学院",
+      "wiki": "大島水蓮",
+      "image": null
+    },
+    {
+      "id": "sakura2",
+      "name": "後藤 嵯紅羅",
+      "school": "百合ヶ丘女学院",
+      "wiki": "後藤嵯紅羅",
+      "image": null
+    },
+    {
+      "id": "matsuri",
+      "name": "秦 祀",
+      "school": "百合ヶ丘女学院",
+      "wiki": "秦祀",
+      "image": "https://i.gyazo.com/73fafc0aef895153f4ac83c5e48f0336.jpg"
+    },
+    {
+      "id": "gazuki",
+      "name": "木村 雅月",
+      "school": "百合ヶ丘女学院",
+      "wiki": "木村雅月",
+      "image": null
+    },
+    {
+      "id": "haruhi",
+      "name": "高崎 遥礼",
+      "school": "百合ヶ丘女学院",
+      "wiki": "高崎遥礼",
+      "image": null
+    },
+    {
+      "id": "hanano",
+      "name": "内藤 羽那乃",
+      "school": "百合ヶ丘女学院",
+      "wiki": "内藤羽那乃",
+      "image": null
+    },
+    {
+      "id": "tatsuka",
+      "name": "藤村 龍佳",
+      "school": "百合ヶ丘女学院",
+      "wiki": "藤村龍佳",
+      "image": null
+    },
+    {
+      "id": "monica",
+      "name": "モニカ・ロッシ",
+      "school": "百合ヶ丘女学院",
+      "wiki": "モニカ・ロッシ",
+      "image": "https://i.gyazo.com/925b6d188d58c9d441c17137378b66a0.jpg"
+    },
+    {
+      "id": "hazuki2",
+      "name": "桜井 葉月",
+      "school": "百合ヶ丘女学院",
+      "wiki": "桜井葉月",
+      "image": null
+    },
+    {
+      "id": "rachel",
+      "name": "ラシェル・ド・ムホー",
+      "school": "百合ヶ丘女学院",
+      "wiki": "ラシェル・ド・ムホー",
+      "image": null
+    },
+    {
+      "id": "mitsumi",
+      "name": "武田 光未",
+      "school": "百合ヶ丘女学院",
+      "wiki": "武田光未",
+      "image": "https://i.gyazo.com/ae4bce4788bd0d4c2c25ac3e40a0c5f9.jpg"
+    },
+    {
+      "id": "natsuki",
+      "name": "遠野 捺輝",
+      "school": "百合ヶ丘女学院",
+      "wiki": "遠野捺輝",
+      "image": "https://i.gyazo.com/05c7bdfcd49869087aa94f7a9b223d39.jpg"
+    },
+    {
+      "id": "shiki",
+      "name": "大角 梓氣",
+      "school": "百合ヶ丘女学院",
+      "wiki": "大角梓氣",
+      "image": null
+    },
+    {
+      "id": "rinka",
+      "name": "菊竹 凛花",
+      "school": "百合ヶ丘女学院",
+      "wiki": "菊竹凛花",
+      "image": "https://i.gyazo.com/0392142549f3d566fbdd7614d8b0cc0e.jpg"
+    },
+    {
+      "id": "tomochi",
+      "name": "丹下 朋智",
+      "school": "百合ヶ丘女学院",
+      "wiki": "丹下朋智",
+      "image": "https://i.gyazo.com/cf6cdfffc641e78091d2ffa68529ed89.jpg"
+    },
+    {
+      "id": "kanene",
+      "name": "車谷 佳寧",
+      "school": "百合ヶ丘女学院",
+      "wiki": "車谷佳寧",
+      "image": "https://i.gyazo.com/f631324bb31e0891e126b1719b166ba8.jpg"
+    },
+    {
+      "id": "kohaku",
+      "name": "浅田 琥珀",
+      "school": "百合ヶ丘女学院",
+      "wiki": "浅田琥珀",
+      "image": null
+    },
+    {
+      "id": "ayane",
+      "name": "隈 綾音",
+      "school": "百合ヶ丘女学院",
+      "wiki": "隈綾音",
+      "image": null
+    },
+    {
+      "id": "sierra",
+      "name": "多田 紫恵楽",
+      "school": "百合ヶ丘女学院",
+      "wiki": "多田紫恵楽",
+      "image": "https://i.gyazo.com/6e3ee540335ad2f10d3e1a0efc4432fa.jpg"
+    },
+    {
+      "id": "gyokuha",
+      "name": "八束 玉葉",
+      "school": "百合ヶ丘女学院",
+      "wiki": "八束玉葉",
+      "image": null
+    },
+    {
+      "id": "miu",
+      "name": "五十嵐 美卯",
+      "school": "百合ヶ丘女学院",
+      "wiki": "五十嵐美卯",
+      "image": null
+    },
+    {
+      "id": "ageha",
+      "name": "吉田 鳳蝶",
+      "school": "百合ヶ丘女学院",
+      "wiki": "吉田鳳蝶",
+      "image": "https://i.gyazo.com/f743bc7cdcdf9dab93dfd80011a08faf.jpg"
+    },
+    {
+      "id": "hifumi",
+      "name": "堀口 一二三",
+      "school": "百合ヶ丘女学院",
+      "wiki": "堀口一二三",
+      "image": null
+    },
+    {
+      "id": "kuon",
+      "name": "田根 久遠",
+      "school": "百合ヶ丘女学院",
+      "wiki": "田根久遠",
+      "image": null
+    },
+    {
+      "id": "yoshimi",
+      "name": "池田 好吟",
+      "school": "百合ヶ丘女学院",
+      "wiki": "池田好吟",
+      "image": null
+    },
+    {
+      "id": "eriri",
+      "name": "八木 慧莉",
+      "school": "百合ヶ丘女学院",
+      "wiki": "八木慧莉",
+      "image": null
+    },
+    {
+      "id": "ouka",
+      "name": "池上 桜花",
+      "school": "百合ヶ丘女学院",
+      "wiki": "池上桜花",
+      "image": null
+    },
+    {
+      "id": "hika",
+      "name": "左 光加",
+      "school": "百合ヶ丘女学院",
+      "wiki": "左光加",
+      "image": null
+    },
+    {
+      "id": "yuyuki",
+      "name": "篠原 宥雪",
+      "school": "百合ヶ丘女学院",
+      "wiki": "篠原宥雪",
+      "image": null
+    },
+    {
+      "id": "rikka",
+      "name": "仰木 六花",
+      "school": "百合ヶ丘女学院",
+      "wiki": "仰木六花",
+      "image": null
+    },
+    {
+      "id": "tsukishiro",
+      "name": "滝 月白",
+      "school": "百合ヶ丘女学院",
+      "wiki": "滝月白",
+      "image": null
+    },
+    {
+      "id": "mashiro",
+      "name": "茶谷 眞白",
+      "school": "百合ヶ丘女学院",
+      "wiki": "茶谷眞白",
+      "image": null
+    },
+    {
+      "id": "remon",
+      "name": "高松 檸檬",
+      "school": "百合ヶ丘女学院",
+      "wiki": "高松檸檬",
+      "image": null
+    },
+    {
+      "id": "sumi",
+      "name": "浅田 須美",
+      "school": "百合ヶ丘女学院",
+      "wiki": "浅田須美",
+      "image": null
+    },
+    {
+      "id": "rizumu",
+      "name": "坂倉 莉澄",
+      "school": "百合ヶ丘女学院",
+      "wiki": "坂倉莉澄",
+      "image": null
+    },
+    {
+      "id": "tokiha",
+      "name": "進来 鴇羽",
+      "school": "百合ヶ丘女学院",
+      "wiki": "進来鴇羽",
+      "image": null
+    },
+    {
+      "id": "koharu",
+      "name": "小嶋 心春",
+      "school": "百合ヶ丘女学院",
+      "wiki": "小嶋心春",
+      "image": null
+    },
+    {
+      "id": "mao",
+      "name": "曽野 真央",
+      "school": "百合ヶ丘女学院",
+      "wiki": "曽野真央",
+      "image": null
+    },
+    {
+      "id": "toko",
+      "name": "乾 柊子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "乾柊子",
+      "image": null
+    },
+    {
+      "id": "kaname",
+      "name": "永山 枢",
+      "school": "百合ヶ丘女学院",
+      "wiki": "永山枢",
+      "image": null
+    },
+    {
+      "id": "yoko",
+      "name": "関野 陽子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "関野陽子",
+      "image": "https://i.gyazo.com/e8cf8fc8176df96657190924fcac96c0.jpg"
+    },
+    {
+      "id": "risuko",
+      "name": "竹内 瑮子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "竹内瑮子",
+      "image": null
+    },
+    {
+      "id": "amiri",
+      "name": "野田 雨莉",
+      "school": "百合ヶ丘女学院",
+      "wiki": "野田雨莉",
+      "image": null
+    },
+    {
+      "id": "non",
+      "name": "井出 暖",
+      "school": "百合ヶ丘女学院",
+      "wiki": "井出暖",
+      "image": null
+    },
+    {
+      "id": "mihiro",
+      "name": "早川 弥宏",
+      "school": "百合ヶ丘女学院",
+      "wiki": "早川弥宏",
+      "image": "https://i.gyazo.com/04bbf4f5100ec41c71b6971572ff44b3.jpg"
+    },
+    {
+      "id": "makoto",
+      "name": "富永 真",
+      "school": "百合ヶ丘女学院",
+      "wiki": "富永真",
+      "image": "https://i.gyazo.com/ee51b19c765ed599a09071d3dae33adb.jpg"
+    },
+    {
+      "id": "moyuyu",
+      "name": "真島 百由",
+      "school": "百合ヶ丘女学院",
+      "wiki": "真島百由",
+      "image": "https://i.gyazo.com/5e4529b5168cda5e60ae3518cbfc24f3.jpg"
+    },
+    {
+      "id": "yugo",
+      "name": "薬師寺 佑合",
+      "school": "百合ヶ丘女学院",
+      "wiki": "薬師寺佑合",
+      "image": null
+    },
+    {
+      "id": "natsumi",
+      "name": "妻木 奈摘",
+      "school": "百合ヶ丘女学院",
+      "wiki": "妻木奈摘",
+      "image": "https://i.gyazo.com/d7e977dc1dbda2ef6cb33a7a65d79834.jpg"
+    },
+    {
+      "id": "koto",
+      "name": "増沢 湖都",
+      "school": "百合ヶ丘女学院",
+      "wiki": "増沢湖都",
+      "image": null
+    },
+    {
+      "id": "mafuyu",
+      "name": "立石 冴冬",
+      "school": "百合ヶ丘女学院",
+      "wiki": "立石冴冬",
+      "image": null
+    },
+    {
+      "id": "chigusa",
+      "name": "三分一 千草",
+      "school": "百合ヶ丘女学院",
+      "wiki": "三分一千草",
+      "image": null
+    },
+    {
+      "id": "rumi",
+      "name": "鬼頭 瑠美",
+      "school": "百合ヶ丘女学院",
+      "wiki": "鬼頭瑠美",
+      "image": null
+    },
+    {
+      "id": "hiyoru",
+      "name": "浦辺 日和",
+      "school": "百合ヶ丘女学院",
+      "wiki": "浦辺日和",
+      "image": null
+    },
+    {
+      "id": "sana",
+      "name": "置塩 紗菜",
+      "school": "百合ヶ丘女学院",
+      "wiki": "置塩紗菜",
+      "image": null
+    },
+    {
+      "id": "shoko",
+      "name": "北山 祥子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "北山祥子",
+      "image": null
+    },
+    {
+      "id": "riko",
+      "name": "末光 莉子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "末光莉子",
+      "image": null
+    },
+    {
+      "id": "nagisa",
+      "name": "吉阪 凪沙",
+      "school": "百合ヶ丘女学院",
+      "wiki": "吉阪凪沙",
+      "image": "https://i.gyazo.com/a5b2f3f2b9ae7b9a7ae419bedd68c3f0.jpg"
+    },
+    {
+      "id": "cherice",
+      "name": "シェリス・ヤコブセン",
+      "school": "百合ヶ丘女学院",
+      "wiki": "シェリス・ヤコブセン",
+      "image": "https://i.gyazo.com/897074fde6775bd2eb13bb112d2302d4.jpg"
+    },
+    {
+      "id": "giera",
+      "name": "高松 祇恵良",
+      "school": "百合ヶ丘女学院",
+      "wiki": "高松祇恵良",
+      "image": "https://i.gyazo.com/e324e3af70f8d28a1286bb1cbac4f74c.jpg"
+    },
+    {
+      "id": "koutsuki",
+      "name": "高松 咬月",
+      "school": "百合ヶ丘女学院",
+      "wiki": "高松咬月",
+      "image": "https://i.gyazo.com/5a97c1795ca22b10532b50041554e534.jpg"
+    },
+    {
+      "id": "nadeshiko",
+      "name": "小島 撫子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "小島撫子",
+      "image": "https://i.gyazo.com/a92cb2916bc49d89478c1f4cb5eacc6e.jpg"
+    },
+    {
+      "id": "aika",
+      "name": "明石 愛華",
+      "school": "百合ヶ丘女学院",
+      "wiki": "明石愛華",
+      "image": "https://i.gyazo.com/31d7da0029ee6a1aedf5d2c18ba13db2.jpg"
+    },
+    {
+      "id": "misuzu",
+      "name": "川添 美鈴",
+      "school": "百合ヶ丘女学院",
+      "wiki": "川添美鈴",
+      "image": "https://i.gyazo.com/21ab5f1ccc679e4b8f898d5a80331e77.jpg"
+    },
+    {
+      "id": "sawa",
+      "name": "板垣 冴和",
+      "school": "百合ヶ丘女学院",
+      "wiki": "板垣冴和",
+      "image": null
+    },
+    {
+      "id": "chiho",
+      "name": "白井 咲朱",
+      "school": "その他・不明",
+      "wiki": "白井咲朱",
+      "image": null
+    },
+    {
+      "id": "koto2",
+      "name": "兼藤 瑚采",
+      "school": "その他・不明",
+      "wiki": "兼藤瑚采",
+      "image": null
+    },
+    {
+      "id": "muyu",
+      "name": "白井 朱結",
+      "school": "その他・不明",
+      "wiki": "白井朱結",
+      "image": null
+    },
+    {
+      "id": "akisa",
+      "name": "柄沢 秋早",
+      "school": "百合ヶ丘女学院",
+      "wiki": "柄沢秋早",
+      "image": null
+    },
+    {
+      "id": "mitsutoshi",
+      "name": "石本 光稔",
+      "school": "百合ヶ丘女学院",
+      "wiki": "石本光稔",
+      "image": null
+    },
+    {
+      "id": "yukiko",
+      "name": "片岡 由貴子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "片岡由貴子",
+      "image": null
+    },
+    {
+      "id": "mileru",
+      "name": "塚本 碧琉",
+      "school": "百合ヶ丘女学院",
+      "wiki": "塚本碧琉",
+      "image": null
+    },
+    {
+      "id": "chihiro",
+      "name": "山口 千尋",
+      "school": "百合ヶ丘女学院",
+      "wiki": "山口千尋",
+      "image": null
+    },
+    {
+      "id": "aiko",
+      "name": "西村 藍子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "西村藍子",
+      "image": null
+    },
+    {
+      "id": "ayako2",
+      "name": "山下 絢子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "山下絢子",
+      "image": null
+    },
+    {
+      "id": "shie",
+      "name": "吉田 紫衣",
+      "school": "百合ヶ丘女学院",
+      "wiki": "吉田紫衣",
+      "image": null
+    },
+    {
+      "id": "midori2",
+      "name": "北原 翆",
+      "school": "百合ヶ丘女学院",
+      "wiki": "北原翆",
+      "image": null
+    },
+    {
+      "id": "akiko",
+      "name": "田中 章子",
+      "school": "百合ヶ丘女学院",
+      "wiki": "田中章子",
+      "image": null
+    },
+    {
+      "id": "uta",
+      "name": "山田 嬉詩",
+      "school": "その他・不明",
+      "wiki": "山田嬉詩",
+      "image": null
+    },
+    {
+      "id": "cemil",
+      "name": "チェミル・フリードハイム",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "チェミル・フリードハイム",
+      "image": "https://i.gyazo.com/59f1de8b4f45fa2cca63f3c6e91c8cb0.jpg"
+    },
+    {
+      "id": "luludis",
+      "name": "ルルディス・ブロムシュテット",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ルルディス・ブロムシュテット",
+      "image": "https://i.gyazo.com/0632b41562487c84644c63d17c14372b.jpg"
+    },
+    {
+      "id": "althea",
+      "name": "アルテア・アレッサンドリーニ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "アルテア・アレッサンドリーニ",
+      "image": "https://i.gyazo.com/e92b9448f7da25f6b3c0eef376515fe6.jpg"
+    },
+    {
+      "id": "lemie",
+      "name": "レミエ・アレッサンドリーニ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "レミエ・アレッサンドリーニ",
+      "image": "https://i.gyazo.com/40477087db429ede2219241c57b2296b.jpg"
+    },
+    {
+      "id": "stella",
+      "name": "ステラ・エル・サッソン",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ステラ・エル・サッソン",
+      "image": null
+    },
+    {
+      "id": "nyx",
+      "name": "ニュクス・クルレンティス",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ニュクス・クルレンティス",
+      "image": null
+    },
+    {
+      "id": "lelia",
+      "name": "レリア・アンゲルブレシュト",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "レリア・アンゲルブレシュト",
+      "image": null
+    },
+    {
+      "id": "mirabelle",
+      "name": "ミラベル・アンゲルブレシュト",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ミラベル・アンゲルブレシュト",
+      "image": null
+    },
+    {
+      "id": "nino",
+      "name": "ニノ・カヒッゼ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ニノ・カヒッゼ",
+      "image": null
+    },
+    {
+      "id": "beatrice",
+      "name": "ベアトリス・ベルリオーズ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ベアトリス・ベルリオーズ",
+      "image": null
+    },
+    {
+      "id": "reiei",
+      "name": "佐渡 黎叡",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "佐渡黎叡",
+      "image": null
+    },
+    {
+      "id": "charlotta",
+      "name": "シャルロッタ・スヴェトラーノフ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "シャルロッタ・スヴェトラーノフ",
+      "image": null
+    },
+    {
+      "id": "ticia",
+      "name": "ティシア・パウムガルトナー",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ティシア・パウムガルトナー",
+      "image": "https://i.gyazo.com/3bcdeb503c591bdcec14741951833b60.jpg"
+    },
+    {
+      "id": "liaridel",
+      "name": "リーアリデル・エッシェンバッハ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "リーアリデル・エッシェンバッハ",
+      "image": null
+    },
+    {
+      "id": "catalina",
+      "name": "カタリナ・アセンシオ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "カタリナ・アセンシオ",
+      "image": null
+    },
+    {
+      "id": "natasha",
+      "name": "ナターシャ・メッテル",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ナターシャ・メッテル",
+      "image": null
+    },
+    {
+      "id": "christa",
+      "name": "クリスタ・フリュクベリ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "クリスタ・フリュクベリ",
+      "image": null
+    },
+    {
+      "id": "catrinel",
+      "name": "カトリネル・エネスク",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "カトリネル・エネスク",
+      "image": null
+    },
+    {
+      "id": "cynthia",
+      "name": "シンシア・ラフォンテーヌ",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "シンシア・ラフォンテーヌ",
+      "image": null
+    },
+    {
+      "id": "shizuki",
+      "name": "永野 紫月",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "永野紫月",
+      "image": null
+    },
+    {
+      "id": "plum",
+      "name": "プルム・シベリウス",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "プルム・シベリウス",
+      "image": null
+    },
+    {
+      "id": "felicia",
+      "name": "フェリシア・ウォディントン",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "フェリシア・ウォディントン",
+      "image": null
+    },
+    {
+      "id": "alexia",
+      "name": "アレクシア・フォン・アイスフェルト",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "アレクシア・フォン・アイスフェルト",
+      "image": "https://i.gyazo.com/5e6be6e8311f59dc149fc418f3f76fc3.png"
+    },
+    {
+      "id": "ronja",
+      "name": "ロニヤ・ミリング",
+      "school": "聖メルクリウスインターナショナルスクール",
+      "wiki": "ロニヤ・ミリング",
+      "image": null
+    },
+    {
+      "id": "chikaru",
+      "name": "芹沢 千香瑠",
+      "school": "エレンスゲ女学園",
+      "wiki": "芹沢千香瑠",
+      "image": "https://i.gyazo.com/3032236cca8ac13e9688f8e5ab259870.jpg"
+    },
+    {
+      "id": "takane",
+      "name": "宮川 高嶺",
+      "school": "神庭女子藝術高校",
+      "wiki": "宮川高嶺",
+      "image": "https://i.gyazo.com/a62c24b3a08776480449502b5c1d67e8.jpg"
+    },
+    {
+      "id": "koha",
+      "name": "土岐 紅巴",
+      "school": "神庭女子藝術高校",
+      "wiki": "土岐紅巴",
+      "image": "https://i.gyazo.com/b878b7a55bb9f28033956fede81f8e24.jpg"
+    },
+    {
+      "id": "akari",
+      "name": "丹羽 灯莉",
+      "school": "神庭女子藝術高校",
+      "wiki": "丹羽灯莉",
+      "image": "https://i.gyazo.com/79fe444df7b3c6cc7f3e7aa71072c53d.jpg"
+    },
+    {
+      "id": "himeka",
+      "name": "定盛 姫歌",
+      "school": "神庭女子藝術高校",
+      "wiki": "定盛姫歌",
+      "image": "https://i.gyazo.com/7a1a185fb3339d70edb78d6543e50d5a.jpg"
     }
   ],
 
   "relations": [
     { "from": "riri",   "to": "yuyu",   "type": "憧れ・後輩",          "spoiler": false },
     { "from": "riri",   "to": "yuyu",   "type": "シュッツエンゲル",    "spoiler": true  },
-    { "from": "riri",   "to": "kaede",  "type": "シュッツエンゲル",    "spoiler": false },
+    { "from": "riri",   "to": "kaede",  "type": "同レギオン",    "spoiler": false },
     { "from": "riri",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
+    { "from": "riri",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "kanaho", "type": "隊長仲間",            "spoiler": false },
     { "from": "riri",   "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
-    { "from": "kanaho", "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
+    { "from": "kaede",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
+    { "from": "kaede",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
+    { "from": "kaede",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
+    { "from": "kaede",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
+    { "from": "kaede",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
+    { "from": "kaede",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
+    { "from": "fumi",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
+    { "from": "fumi",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
+    { "from": "fumi",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
+    { "from": "fumi",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
+    { "from": "fumi",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
+    { "from": "mai",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
+    { "from": "mai",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
+    { "from": "mai",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
+    { "from": "mai",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
+    { "from": "kuo",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
+    { "from": "kuo",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
+    { "from": "kuo",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
+    { "from": "tazusa",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
+    { "from": "tazusa",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
     { "from": "miriam", "to": "yujia",  "type": "同レギオン",          "spoiler": false },
+    { "from": "kanaho", "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
+    { "from": "kazuha", "to": "renka",     "type": "同レギオン",          "spoiler": false },
+    { "from": "kazuha", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
+    { "from": "kazuha", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
     { "from": "kazuha", "to": "yo",     "type": "同レギオン",          "spoiler": false },
-    { "from": "kanaho", "to": "kazuha", "type": "同レギオン",          "spoiler": false },
-    { "from": "yo",     "to": "renka",  "type": "同レギオン・友人",    "spoiler": false },
-    { "from": "yo",     "to": "sasaki", "type": "同レギオン",          "spoiler": false }
+    { "from": "renka", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
+    { "from": "renka", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
+    { "from": "renka",     "to": "yo",  "type": "同レギオン・友人",    "spoiler": false },
+    { "from": "yo", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
+    { "from": "yo", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
+    { "from": "sasaki", "to": "chikaru",     "type": "同レギオン",          "spoiler": false }
   ]
 }

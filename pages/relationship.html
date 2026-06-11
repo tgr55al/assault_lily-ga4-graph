@@ -79,7 +79,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 #focus-link { font-size: 11px; color: #888; margin-left: 4px; text-decoration: none; }
 #focus-link:hover { text-decoration: underline; }
 
-/* ── 学校フィルター ── */
+/* ── ガーデンフィルター ── */
 #school-filter {
   display: flex;
   flex-wrap: wrap;
@@ -187,7 +187,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   </div>
 
   <div id="school-filter">
-    <span class="tb-label">所属校:</span>
+    <span class="tb-label">所属ガーデン:</span>
   </div>
 
   <div id="network" style="position:relative">
@@ -236,7 +236,7 @@ const SCHOOL_COLORS = {
   "その他・不明":       "#9e9e9e"
 };
 
-// 学校の正式名称からチェックボックス表示名へのマッピング用関数
+// ガーデンの正式名称からチェックボックス表示名へのマッピング用関数
 function getSchoolShortName(fullName) {
   if (fullName === "その他・不明") return fullName;
   return fullName.replace(/(私立ルドビコ女学院)$/, "ルド女").replace(/(女学院|女学園|女子藝術高校|高校)$/, "");
