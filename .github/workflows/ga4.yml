@@ -64,6 +64,7 @@ jobs:
           cp master/japan_map.csv public/
           cp master/country_map.csv public/
           cp master/terms.json public/
+          cp master/relationship.json public/
 
       - name: GitHub Pagesにデプロイ
         uses: peaceiris/actions-gh-pages@v4

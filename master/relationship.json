@@ -1,0 +1,107 @@
+{
+  "_comment": "アサルトリリィ 相関図データ。characters と relations を編集してください。",
+
+  "characters": [
+    {
+      "id": "riri",
+      "name": "一柳 梨璃",
+      "school": "百合ヶ丘女学院",
+      "wiki": "一柳梨璃"
+    },
+    {
+      "id": "yume",
+      "name": "白井 夢結",
+      "school": "百合ヶ丘女学院",
+      "wiki": "白井夢結"
+    },
+    {
+      "id": "kaede",
+      "name": "楓・J・ヌーベル",
+      "school": "百合ヶ丘女学院",
+      "wiki": "楓・J・ヌーベル"
+    },
+    {
+      "id": "ninae",
+      "name": "二川 二水",
+      "school": "百合ヶ丘女学院",
+      "wiki": "二川二水"
+    },
+    {
+      "id": "juri",
+      "name": "吉村・Thi・梅",
+      "school": "百合ヶ丘女学院",
+      "wiki": "吉村・Thi・梅"
+    },
+    {
+      "id": "kuo",
+      "name": "郭 神琳",
+      "school": "百合ヶ丘女学院",
+      "wiki": "郭神琳"
+    },
+    {
+      "id": "miriam",
+      "name": "ミリアム・ヒルデガルド・v・グロビウス",
+      "school": "百合ヶ丘女学院",
+      "wiki": "ミリアム・ヒルデガルド・v・グロビウス"
+    },
+    {
+      "id": "ando",
+      "name": "安藤 鶴妙",
+      "school": "百合ヶ丘女学院",
+      "wiki": "安藤鶴妙"
+    },
+    {
+      "id": "ou",
+      "name": "王 両熹",
+      "school": "百合ヶ丘女学院",
+      "wiki": "王両熹"
+    },
+    {
+      "id": "kanau",
+      "name": "今 叶星",
+      "school": "百合ヶ丘女学院",
+      "wiki": "今叶星"
+    },
+    {
+      "id": "hatsuka",
+      "name": "初鹿野 瑙",
+      "school": "百合ヶ丘女学院",
+      "wiki": "初鹿野瑙"
+    },
+    {
+      "id": "iijima",
+      "name": "飯島 恋花",
+      "school": "百合ヶ丘女学院",
+      "wiki": "飯島恋花"
+    },
+    {
+      "id": "sasaki",
+      "name": "佐々木 嵐",
+      "school": "百合ヶ丘女学院",
+      "wiki": "佐々木嵐"
+    },
+    {
+      "id": "sagawa",
+      "name": "相澤 一業",
+      "school": "百合ヶ丘女学院",
+      "wiki": "相澤一業"
+    }
+  ],
+
+  "relations": [
+    {"from": "riri",     "to": "yume",    "type": "シュッツエンゲル", "spoiler": false},
+    {"from": "riri",     "to": "kaede",   "type": "シュッツエンゲル", "spoiler": false},
+    {"from": "riri",     "to": "ninae",   "type": "親友・友人",       "spoiler": false},
+    {"from": "riri",     "to": "juri",    "type": "親友・友人",       "spoiler": false},
+    {"from": "riri",     "to": "kuo",     "type": "親友・友人",       "spoiler": false},
+    {"from": "riri",     "to": "ando",    "type": "先輩・後輩",       "spoiler": false},
+    {"from": "riri",     "to": "miriam",  "type": "先輩・後輩",       "spoiler": false},
+    {"from": "riri",     "to": "kanau",   "type": "先輩・後輩",       "spoiler": false},
+    {"from": "miriam",   "to": "ou",      "type": "ライバル・対立",   "spoiler": false},
+    {"from": "miriam",   "to": "hatsuka", "type": "同レギオン",       "spoiler": false},
+    {"from": "kanau",    "to": "sagawa",  "type": "同レギオン",       "spoiler": false},
+    {"from": "hatsuka",  "to": "iijima",  "type": "先輩・後輩",       "spoiler": false},
+    {"from": "hatsuka",  "to": "sasaki",  "type": "先輩・後輩",       "spoiler": false},
+    {"from": "yume",     "to": "kaede",   "type": "シュッツエンゲル", "spoiler": true, "note": "劇場版ネタバレ"}
+  ]
+}
