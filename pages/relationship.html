@@ -126,36 +126,6 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   flex-shrink: 0;
 }
 
-/* ── JSONパネル ── */
-#json-panel {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(560px, 95vw);
-  background: #fff;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
-  z-index: 100;
-  padding: 16px;
-  font-size: 13px;
-}
-#json-panel h3 { font-size: 14px; margin-bottom: 10px; color: #222; }
-#json-textarea {
-  width: 100%;
-  height: 160px;
-  font-size: 11px;
-  font-family: monospace;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  padding: 6px;
-  resize: vertical;
-}
-#json-panel .panel-actions { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
-#json-msg { font-size: 12px; }
-
 /* ── 凡例ドロワー ── */
 #legend-toggle-bar {
   padding: 3px 10px;
@@ -206,12 +176,11 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     <span class="tb-label">表示階層:</span>
     <input id="depth-input" type="number" min="1" max="30" value="2" title="表示する関係の深さ（1〜30）">
     <button id="btn-redraw">再描画</button>
-    <button id="btn-all">全展開 🎉</button>
+    <button id="btn-all">全展開 🌐</button>
     <span class="tb-sep">|</span>
     <button id="btn-spoiler">ネタバレ OFF</button>
     <span class="tb-sep">|</span>
     <button id="btn-reset-focus">フォーカスリセット</button>
-    <button id="btn-json">JSONを読み込む</button>
     <span class="tb-sep">|</span>
     <span id="focus-label">注目: <b id="focus-name">読み込み中…</b></span>
     <a id="focus-link" href="#" target="_blank" style="display:none">[Wikiへ]</a>
@@ -234,21 +203,6 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 
 </div>
 
-<!-- JSONパネル（モーダル） -->
-<div id="json-panel">
-  <h3>JSONデータを読み込む</h3>
-  <p style="font-size:11px;color:#666;margin-bottom:6px">
-    data.json と同じ形式のJSONを貼り付けてください。<br>
-    読み込むと現在のデータを上書きします。
-  </p>
-  <textarea id="json-textarea" placeholder='{"characters":[...],"relations":[]}'></textarea>
-  <div class="panel-actions">
-    <button id="btn-json-load">読み込む</button>
-    <button id="btn-json-close">閉じる</button>
-    <span id="json-msg"></span>
-  </div>
-</div>
-
 <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 <script>
 // ============================================================
@@ -257,7 +211,10 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 const WIKI_BASE = "https://w.atwiki.jp/assault_lily/?page=";
 
 // data.json の場所（GitHub Pages上では同ディレクトリ）
-const DATA_URL = "./data.json";
+const DATA_URL = "../master/relationship.json";
+
+// イラストがない場合のデフォルトダミー画像（透明、または汎用アイコンなど）
+const DEFAULT_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'><circle cx='25' cy='25' r='20' fill='%23ccc'/></svg>";
 
 const REL_COLORS = {
   "シュッツエンゲル": "#e91e8c",
@@ -387,19 +344,21 @@ function render() {
     const isFocus = id === focusId;
     const school = c?.school || "その他・不明";
     const col = SCHOOL_COLORS[school] || "#9e9e9e";
+
     return {
       id,
       label: c?.name ?? id,
+      shape: "circularImage",                         // 形状を円形画像に設定
+      image: c?.image || DEFAULT_IMAGE,              // JSON内の画像URL（なければダミー画像）
       color: {
-        background: isFocus ? col : col + "44",
-        border: col,
-        highlight: { background: col, border: "#111" },
-        hover: { background: col + "aa", border: col }
+        background: "#ffffff",
+        border: col,                                  // 学校のカラーをフチの色にする
+        highlight: { background: "#ffffff", border: "#111" },
+        hover: { background: "#ffffff", border: col }
       },
-      font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus },
-      borderWidth: isFocus ? 4 : 2,
-      size: isFocus ? 26 : 18,
-      shape: "dot",
+      font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus, vadjust: 32 }, // 文字位置を画像の下に調整
+      borderWidth: isFocus ? 5 : 3,                   // 注目キャラのフチを太く
+      size: isFocus ? 35 : 25,                        // アイコンのサイズ
       title: c ? `${c.name}（${c.school || ""}）` : id
     };
   });
@@ -433,7 +392,7 @@ function render() {
       enabled: true,
       barnesHut: {
         gravitationalConstant: allMode ? -3000 : -5500,
-        springLength: allMode ? 120 : 180,
+        springLength: allMode ? 140 : 200,
         damping: 0.5
       },
       stabilization: { iterations: allMode ? 100 : 200 }
@@ -480,8 +439,8 @@ function render() {
   const nodeCnt = Object.keys(visIds).length;
   const edgeCnt = edges.length;
   setStatus(`表示中: ${nodeCnt}人 / 全${data.characters.length}人、関係: ${edgeCnt}件`
-    + (allMode ? "　【全展開モード】" : `　【${depth}階層】`)
-    + (showSpoiler ? "　⚠ネタバレON" : ""));
+    + (allMode ? " 【全展開モード】" : ` 【${depth}階層】`)
+    + (showSpoiler ? " ⚠ネタバレON" : ""));
 }
 
 // ============================================================
@@ -557,7 +516,7 @@ function buildLegend() {
   // 所属校
   const schTitle = document.createElement("div");
   schTitle.style.cssText = "width:100%;font-size:10px;color:#888;margin-top:6px;margin-bottom:2px";
-  schTitle.textContent = "── 所属校（ノード色）";
+  schTitle.textContent = "── 所属校（アイコン枠線色）";
   lg.appendChild(schTitle);
 
   Object.entries(SCHOOL_COLORS).forEach(([school, col]) => {
@@ -626,49 +585,25 @@ document.getElementById("btn-reset-focus").addEventListener("click", () => {
   }
 });
 
-document.getElementById("btn-json").addEventListener("click", () => {
-  document.getElementById("json-panel").style.display = "block";
-});
-document.getElementById("btn-json-close").addEventListener("click", () => {
-  document.getElementById("json-panel").style.display = "none";
-});
-document.getElementById("btn-json-load").addEventListener("click", () => {
-  const txt = document.getElementById("json-textarea").value.trim();
-  const msg = document.getElementById("json-msg");
-  try {
-    const parsed = JSON.parse(txt);
-    if (!parsed.characters || !parsed.relations) throw new Error("characters と relations が必要です");
-    network = null;  // ネットワークを再生成
-    document.getElementById("network").innerHTML = "";
-    applyData(parsed);
-    msg.style.color = "green";
-    msg.textContent = `✓ ${parsed.characters.length}人 / ${parsed.relations.length}件 読み込み完了`;
-    document.getElementById("json-panel").style.display = "none";
-  } catch (e) {
-    msg.style.color = "red";
-    msg.textContent = "✗ " + e.message;
-  }
-});
-
 // ============================================================
 // サンプルデータ（data.json 読み込み失敗時のフォールバック）
 // ============================================================
 const SAMPLE_DATA = {
   characters: [
-    {id:"riri",    name:"一柳 梨璃",    school:"百合ヶ丘女学院"},
-    {id:"yume",    name:"白井 夢結",    school:"百合ヶ丘女学院"},
-    {id:"kaede",   name:"楓・J・ヌーベル", school:"百合ヶ丘女学院"},
-    {id:"ninae",   name:"二川 二水",    school:"百合ヶ丘女学院"},
-    {id:"juri",    name:"吉村・Thi・梅", school:"百合ヶ丘女学院"},
-    {id:"kuo",     name:"郭 神琳",      school:"百合ヶ丘女学院"},
-    {id:"miriam",  name:"ミリアム・ヒルデガルド・v・グロビウス", school:"百合ヶ丘女学院"},
-    {id:"ando",    name:"安藤 鶴妙",    school:"百合ヶ丘女学院"},
-    {id:"ou",      name:"王 両熹",      school:"百合ヶ丘女学院"},
-    {id:"kanau",   name:"今 叶星",      school:"百合ヶ丘女学院"},
-    {id:"hatsuka", name:"初鹿野 瑙",    school:"百合ヶ丘女学院"},
-    {id:"iijima",  name:"飯島 恋花",    school:"百合ヶ丘女学院"},
-    {id:"sasaki",  name:"佐々木 嵐",    school:"百合ヶ丘女学院"},
-    {id:"sagawa",  name:"相澤 一業",    school:"百合ヶ丘女学院"}
+    {id:"riri",    name:"一柳梨璃",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/9064c75abec22b6aac7c20cce7433294.jpg"},
+    {id:"yume",    name:"白井夢結",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/afec4f915006648530d08c7dc346e99d.jpg"},
+    {id:"kaede",   name:"楓・J・ヌーベル", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/c2e125c766e6b83a37e47f3b819f5804.jpg"},
+    {id:"ninae",   name:"二川二水",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/19e333b25a80b724068cef2574e2c0b1.jpg"},
+    {id:"juri",    name:"吉村・Thi・梅", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/97309cc4cef2824867350ef1db845ca8.jpg"},
+    {id:"kuo",     name:"郭神琳",      school:"百合ヶ丘女学院", image:"https://i.gyazo.com/f571c4c99747806e205b69092844f53b.jpg"},
+    {id:"miriam",  name:"ミリアム・ヒルデガルド・v・グロビウス", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/3dec05c31e27e596e7f00f5d774a3aa4.jpg"},
+    {id:"ando",    name:"安藤鶴紗",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/48ef6f97d7d1dce089e17accf9f9cc66.jpg"},
+    {id:"ou",      name:"王雨嘉",      school:"百合ヶ丘女学院", image:"https://i.gyazo.com/ad3ae42ed54fa05079d06f03578c9e06.jpg"},
+    {id:"kanau",   name:"今叶星",      school:"神庭女子藝術高校", image:"https://i.gyazo.com/fca68209eee3c0b540408aa441da1328.jpg"},
+    {id:"hatsuka", name:"初鹿野瑤",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/ee670dee01a4026a93f141e95fac5b98.jpg"},
+    {id:"iijima",  name:"飯島恋花",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/0b03c6905871a6c09aa875809310de07.jpg"},
+    {id:"sasaki",  name:"佐々木藍",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/585dc7e87f3c5fcb75c0f98886d72fa7.jpg"},
+    {id:"sagawa",  name:"相澤一葉",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"}
   ],
   relations: [
     {from:"riri",    to:"yume",    type:"シュッツエンゲル", spoiler:false},
