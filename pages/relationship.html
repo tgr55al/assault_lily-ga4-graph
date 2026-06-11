@@ -213,7 +213,7 @@ const WIKI_BASE = "https://w.atwiki.jp/assault_lily/?page=";
 // data.json の場所（GitHub Pages上では同ディレクトリ）
 const DATA_URL = "../master/relationship.json";
 
-// イラストがない場合のデフォルトダミー画像（透明、または汎用アイコンなど）
+// イラストがない場合のデフォルトダミー画像
 const DEFAULT_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'><circle cx='25' cy='25' r='20' fill='%23ccc'/></svg>";
 
 const REL_COLORS = {
@@ -228,20 +228,26 @@ const REL_COLORS = {
 };
 
 const SCHOOL_COLORS = {
-  "百合ヶ丘女学院":   "#e91e8c",
-  "御台場女学校":     "#ff9800",
-  "ルドビコ女学院":   "#4caf50",
-  "エレンスガ女学院": "#2196f3",
-  "ヘルヴォル女学院": "#9c27b0",
-  "その他・不明":     "#9e9e9e"
+  "百合ヶ丘女学院":     "#e91e8c",
+  "御台場女学校":       "#ff9800",
+  "私立ルドビコ女学院": "#4caf50",
+  "エレンスゲ女学園":   "#2196f3",
+  "神庭女子藝術高校":   "#8e24aa",
+  "その他・不明":       "#9e9e9e"
 };
+
+// 学校の正式名称からチェックボックス表示名へのマッピング用関数
+function getSchoolShortName(fullName) {
+  if (fullName === "その他・不明") return fullName;
+  return fullName.replace(/(私立ルドビコ女学院)$/, "ルド女").replace(/(女学院|女学園|女子藝術高校|高校)$/, "");
+}
 
 // ============================================================
 // 状態
 // ============================================================
 let data = { characters: [], relations: [] };
 let charMap = {};
-let schoolFilter = {};   // school -> bool
+let schoolFilter = {};   // school(正式名称) -> bool
 let focusId = null;
 let depth = 2;
 let allMode = false;
@@ -345,21 +351,28 @@ function render() {
     const school = c?.school || "その他・不明";
     const col = SCHOOL_COLORS[school] || "#9e9e9e";
 
+    // 注目ノードかそれ以外かでベースサイズを切り替え
+    const baseSize = isFocus ? 35 : 25;
+
     return {
       id,
       label: c?.name ?? id,
-      shape: "circularImage",                         // 形状を円形画像に設定
-      image: c?.image || DEFAULT_IMAGE,              // JSON内の画像URL（なければダミー画像）
+      shape: "circularImage",
+      image: c?.image || DEFAULT_IMAGE,
       color: {
         background: "#ffffff",
-        border: col,                                  // 学校のカラーをフチの色にする
+        border: col,
         highlight: { background: "#ffffff", border: "#111" },
         hover: { background: "#ffffff", border: col }
       },
-      font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus, vadjust: 32 }, // 文字位置を画像の下に調整
-      borderWidth: isFocus ? 5 : 3,                   // 注目キャラのフチを太く
-      size: isFocus ? 35 : 25,                        // アイコンのサイズ
-      title: c ? `${c.name}（${c.school || ""}）` : id
+      font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus, vadjust: 20 },
+      borderWidth: isFocus ? 5 : 3,
+      size: baseSize,
+      // 選択時に少し大きくなるよう内部パラメータを設定
+      scaling: {
+        min: baseSize,
+        max: baseSize * 1.3
+      }
     };
   });
 
@@ -375,11 +388,10 @@ function render() {
       to: r.to,
       label: r.type,
       color: { color: col, opacity: 0.82, highlight: col, hover: col },
-      font: { size: 10, color: col, strokeWidth: 3, strokeColor: "#fff" },
+      font: { face: "Hiragino Sans, Meiryo, sans-serif", size: 10, color: col, strokeWidth: 3, strokeColor: "#fff" },
       width: 2,
       dashes: r.spoiler ? [6, 3] : false,
-      arrows: "",
-      title: r.note ? `${r.type}（${r.note}）` : r.type
+      arrows: ""
     });
   });
 
@@ -397,12 +409,15 @@ function render() {
       },
       stabilization: { iterations: allMode ? 100 : 200 }
     },
-    nodes: { font: { face: "Hiragino Sans, Meiryo, sans-serif" } },
+    nodes: {
+      font: { face: "Hiragino Sans, Meiryo, sans-serif" }
+    },
     edges: {
       smooth: { type: "continuous" },
       font: { face: "Hiragino Sans, Meiryo, sans-serif", align: "middle" }
     },
-    interaction: { hover: true, tooltipDelay: 150, navigationButtons: false }
+    // hover: false に変更し、選択時の挙動を設定
+    interaction: { hover: false, tooltipDelay: 3600000, navigationButtons: false }
   };
 
   if (network) {
@@ -415,12 +430,35 @@ function render() {
       network.setOptions({ physics: { enabled: false } });
     });
 
-    // クリック: フォーカス変更（再描画はボタンで）
+    // クリック: フォーカス変更 + アイコンサイズ変更処理
     network.on("click", params => {
-      if (!params.nodes.length) return;
+      if (!params.nodes.length) {
+        // 何もないところをクリックした時はサイズを元に戻す
+        const allNodes = vNodes.get();
+        allNodes.forEach(n => {
+          const isFocus = n.id === focusId;
+          n.size = isFocus ? 35 : 25;
+        });
+        vNodes.update(allNodes);
+        return;
+      }
+
       const id = params.nodes[0];
       const c = charMap[id];
       if (!c) return;
+
+      // すべてのノードの大きさを一度リセットし、選択されたノードだけ大きくする
+      const allNodes = vNodes.get();
+      allNodes.forEach(n => {
+        const isFocus = n.id === id; // 新しいフォーカス対象か
+        if (isFocus) {
+          n.size = (id === focusId) ? 45 : 35; // 注目度に応じて拡大
+        } else {
+          n.size = (n.id === focusId) ? 35 : 25;
+        }
+      });
+      vNodes.update(allNodes);
+
       focusId = id;
       updateFocusLabel();
       setStatus(`${c.name} をフォーカスしました。「再描画」で表示を更新できます。`);
@@ -488,7 +526,8 @@ function buildSchoolFilter() {
     });
 
     chip.appendChild(chk);
-    chip.appendChild(document.createTextNode(school));
+    // getSchoolShortName を使って、後ろの「女学院」などをカットした名前を表示
+    chip.appendChild(document.createTextNode(getSchoolShortName(school)));
     sf.appendChild(chip);
   });
 }
