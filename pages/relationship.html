@@ -234,13 +234,25 @@ const SCHOOL_COLORS = {
   "エレンスゲ女学園":                         "#2196f3",
   "神庭女子藝術高校":                         "#8e24aa",
   "聖メルクリウスインターナショナルスクール": "#1a237e",
+  "聖メルクリウスインターナショナルスクール": "#1a237e",
   "その他・不明":                             "#9e9e9e"
 };
 
 // ガーデンの正式名称からチェックボックス表示名へのマッピング用関数
 function getSchoolShortName(fullName) {
   if (fullName === "その他・不明") return fullName;
-  return fullName.replace(/(私立ルドビコ女学院)$/, "ルド女").replace(/(聖メルクリウスインターナショナルスクール)$/, "メルクリウス").replace(/(女学院|女学園|女子藝術高校|高校)$/, "");
+  return fullName.replace(/(私立ルドビコ女学院)$/, "ルド女")
+  .replace(/(聖メルクリウスインターナショナルスクール)$/, "メルクリウス")
+  .replace(/(鎌倉府立桜ノ杜女子高等学校)$/, "桜ノ杜")
+  .replace(/(城ヶ島工科女子高等学校)$/, "城ヶ島")
+  .replace(/(江ノ島臨海女学校)$/, "江ノ島")
+  .replace(/(聖橋大学附属女子高等学校)$/, "聖橋")
+  .replace(/(甲斐聖山女子高等学校)$/, "甲斐聖山")
+  .replace(/(アンブロシア女学苑高等學校)$/, "アンブロシア")
+  .replace(/(鞍馬山環境女子高等学校)$/, "鞍馬山")
+  .replace(/(鹿野苑高等女学園)$/, "鹿野苑")
+  .replace(/(ヘイムスクリングラトレードゴード)$/, "ヘイムスクリングラ")
+  .replace(/(女学院|女学園|女子藝術高校|女学薗|女学館|女学校|女子美術高校|高等学館)$/, "");
 }
 
 // ============================================================
@@ -646,20 +658,15 @@ const SAMPLE_DATA = {
     {id:"sagawa",  name:"相澤一葉",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"}
   ],
   relations: [
-    {from:"riri",    to:"yume",    type:"シュッツエンゲル", spoiler:false},
-    {from:"riri",    to:"kaede",   type:"シュッツエンゲル", spoiler:false},
-    {from:"riri",    to:"ninae",   type:"親友・友人",       spoiler:false},
-    {from:"riri",    to:"juri",    type:"親友・友人",       spoiler:false},
-    {from:"riri",    to:"kuo",     type:"親友・友人",       spoiler:false},
-    {from:"riri",    to:"ando",    type:"先輩・後輩",       spoiler:false},
-    {from:"riri",    to:"miriam",  type:"先輩・後輩",       spoiler:false},
-    {from:"riri",    to:"kanau",   type:"先輩・後輩",       spoiler:false},
-    {from:"miriam",  to:"ou",      type:"ライバル・対立",   spoiler:false},
-    {from:"miriam",  to:"hatsuka", type:"同レギオン",       spoiler:false},
-    {from:"kanau",   to:"sagawa",  type:"同レギオン",       spoiler:false},
-    {from:"hatsuka", to:"iijima",  type:"先輩・後輩",       spoiler:false},
-    {from:"hatsuka", to:"sasaki",  type:"先輩・後輩",       spoiler:false},
-    {from:"yume",    to:"kaede",   type:"シュッツエンゲル", spoiler:true}
+    {from:"riri",    to:"yume",    type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"yume",    type:"シュッツエンゲル", spoiler:true},
+    {from:"riri",    to:"kaede",   type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"ninae",   type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"juri",    type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"kuo",     type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"ando",    type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"miriam",  type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"kanau",   type:"同レギオン",       spoiler:false}
   ]
 };
 
