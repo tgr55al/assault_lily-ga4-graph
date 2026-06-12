@@ -174,7 +174,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 
   <div id="toolbar">
     <span class="tb-label">表示階層:</span>
-    <input id="depth-input" type="number" min="1" max="30" value="2" title="表示する関係の深さ（1〜30）">
+    <input id="depth-input" type="number" min="1" max="30" value="1" title="表示する関係の深さ（1〜30）">
     <button id="btn-redraw">再描画</button>
     <button id="btn-all">全展開</button>
     <span class="tb-sep">|</span>
@@ -379,7 +379,7 @@ function render() {
         highlight: { background: "#ffffff", border: "#111" },
         hover: { background: "#ffffff", border: col }
       },
-      font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus, vadjust: 10 },
+      font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus, vadjust: 5 },
       borderWidth: isFocus ? 5 : 3,
       size: baseSize,
       // 選択時に少し大きくなるよう内部パラメータを設定
