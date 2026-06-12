@@ -1415,6 +1415,1973 @@
       "school": "神庭女子藝術高校",
       "wiki": "定盛姫歌",
       "image": "https://i.gyazo.com/7a1a185fb3339d70edb78d6543e50d5a.jpg"
+    },
+    {
+      "id": "c0203",
+      "name": "宮崎 火刈",
+      "school": "鎌倉府立桜ノ杜女子高等学校",
+      "wiki": "宮崎火刈",
+      "image": null
+    },
+    {
+      "id": "c0204",
+      "name": "勝谷 芙蓉",
+      "school": "鎌倉府立桜ノ杜女子高等学校",
+      "wiki": "勝谷芙蓉",
+      "image": null
+    },
+    {
+      "id": "c0205",
+      "name": "岡田 詩穂",
+      "school": "鎌倉府立桜ノ杜女子高等学校",
+      "wiki": "岡田詩穂",
+      "image": null
+    },
+    {
+      "id": "c0206",
+      "name": "東 宝子",
+      "school": "鎌倉府立桜ノ杜女子高等学校",
+      "wiki": "東宝子",
+      "image": null
+    },
+    {
+      "id": "c0207",
+      "name": "町山 夕奏",
+      "school": "鎌倉府立桜ノ杜女子高等学校",
+      "wiki": "町山夕奏",
+      "image": null
+    },
+    {
+      "id": "c0208",
+      "name": "富本 眞魚",
+      "school": "鎌倉府立桜ノ杜女子高等学校",
+      "wiki": "富本眞魚",
+      "image": null
+    },
+    {
+      "id": "c0209",
+      "name": "茂木 瀬織",
+      "school": "鎌倉府立桜ノ杜女子高等学校",
+      "wiki": "茂木瀬織",
+      "image": null
+    },
+    {
+      "id": "c0210",
+      "name": "深井 紫野",
+      "school": "鎌倉府立桜ノ杜女子高等学校",
+      "wiki": "深井紫野",
+      "image": null
+    },
+    {
+      "id": "c0211",
+      "name": "金藍玉",
+      "school": "シエルリント女学薗",
+      "wiki": "金藍玉",
+      "image": null
+    },
+    {
+      "id": "c0212",
+      "name": "銀藍玉",
+      "school": "シエルリント女学薗",
+      "wiki": "銀藍玉",
+      "image": null
+    },
+    {
+      "id": "c0213",
+      "name": "黒百合ノ君",
+      "school": "シエルリント女学薗",
+      "wiki": "黒百合ノ君",
+      "image": null
+    },
+    {
+      "id": "c0214",
+      "name": "蓬莱玉",
+      "school": "シエルリント女学薗",
+      "wiki": "蓬莱玉",
+      "image": null
+    },
+    {
+      "id": "c0215",
+      "name": "道川 深顯",
+      "school": "シエルリント女学薗",
+      "wiki": "道川深顯",
+      "image": null
+    },
+    {
+      "id": "c0216",
+      "name": "片倉 紫苑",
+      "school": "相模女子高等学館",
+      "wiki": "片倉紫苑",
+      "image": null
+    },
+    {
+      "id": "c0217",
+      "name": "伊達 降瑠",
+      "school": "相模女子高等学館",
+      "wiki": "伊達降瑠",
+      "image": null
+    },
+    {
+      "id": "c0218",
+      "name": "石川 葵",
+      "school": "相模女子高等学館",
+      "wiki": "石川葵",
+      "image": null
+    },
+    {
+      "id": "c0219",
+      "name": "松永 遊糸",
+      "school": "相模女子高等学館",
+      "wiki": "松永遊糸",
+      "image": null
+    },
+    {
+      "id": "c0220",
+      "name": "結城 鈴瑪",
+      "school": "相模女子高等学館",
+      "wiki": "結城鈴瑪",
+      "image": null
+    },
+    {
+      "id": "c0221",
+      "name": "小早川 潤",
+      "school": "相模女子高等学館",
+      "wiki": "小早川潤",
+      "image": null
+    },
+    {
+      "id": "c0222",
+      "name": "九鬼 初芽",
+      "school": "相模女子高等学館",
+      "wiki": "九鬼初芽",
+      "image": null
+    },
+    {
+      "id": "c0223",
+      "name": "滝川 美羅",
+      "school": "相模女子高等学館",
+      "wiki": "滝川美羅",
+      "image": null
+    },
+    {
+      "id": "c0224",
+      "name": "伊東 苗陽",
+      "school": "相模女子高等学館",
+      "wiki": "伊東苗陽",
+      "image": null
+    },
+    {
+      "id": "c0225",
+      "name": "立花 梨絵乃",
+      "school": "相模女子高等学館",
+      "wiki": "立花梨絵乃",
+      "image": null
+    },
+    {
+      "id": "c0226",
+      "name": "竜造寺 麻耶",
+      "school": "相模女子高等学館",
+      "wiki": "竜造寺麻耶",
+      "image": null
+    },
+    {
+      "id": "c0227",
+      "name": "北野 文妙",
+      "school": "アルケミラ女学館",
+      "wiki": "北野文妙",
+      "image": null
+    },
+    {
+      "id": "c0228",
+      "name": "高畑 聖咲",
+      "school": "アルケミラ女学館",
+      "wiki": "高畑聖咲",
+      "image": null
+    },
+    {
+      "id": "c0229",
+      "name": "久富木 玲奈",
+      "school": "アルケミラ女学館",
+      "wiki": "久富木玲奈",
+      "image": null
+    },
+    {
+      "id": "c0230",
+      "name": "新海 千景",
+      "school": "アルケミラ女学館",
+      "wiki": "新海千景",
+      "image": null
+    },
+    {
+      "id": "c0231",
+      "name": "伊丹 桜織",
+      "school": "アルケミラ女学館",
+      "wiki": "伊丹桜織",
+      "image": null
+    },
+    {
+      "id": "c0232",
+      "name": "小津一 二三",
+      "school": "アルケミラ女学館",
+      "wiki": "小津一二三",
+      "image": null
+    },
+    {
+      "id": "c0233",
+      "name": "水島 勇綺",
+      "school": "アルケミラ女学館",
+      "wiki": "水島勇綺",
+      "image": null
+    },
+    {
+      "id": "c0234",
+      "name": "那須 穂乃香",
+      "school": "アルケミラ女学館",
+      "wiki": "那須穂乃香",
+      "image": null
+    },
+    {
+      "id": "c0235",
+      "name": "朝永 苺",
+      "school": "城ヶ島工科女子高等学校",
+      "wiki": "朝永苺",
+      "image": null
+    },
+    {
+      "id": "c0236",
+      "name": "益川 雅樂",
+      "school": "城ヶ島工科女子高等学校",
+      "wiki": "益川雅樂",
+      "image": null
+    },
+    {
+      "id": "c0237",
+      "name": "小柴 瑛深",
+      "school": "城ヶ島工科女子高等学校",
+      "wiki": "小柴瑛深",
+      "image": null
+    },
+    {
+      "id": "c0238",
+      "name": "湯川 満月",
+      "school": "城ヶ島工科女子高等学校",
+      "wiki": "湯川満月",
+      "image": null
+    },
+    {
+      "id": "c0239",
+      "name": "利根川 悠",
+      "school": "城ヶ島工科女子高等学校",
+      "wiki": "利根川悠",
+      "image": null
+    },
+    {
+      "id": "c0240",
+      "name": "鉄川 玉",
+      "school": "逗子国際女子高等学校",
+      "wiki": "鉄川玉",
+      "image": null
+    },
+    {
+      "id": "c0241",
+      "name": "川久保 織禾",
+      "school": "江ノ島臨海女学校",
+      "wiki": "川久保織禾",
+      "image": null
+    },
+    {
+      "id": "c0242",
+      "name": "山本 桔梗",
+      "school": "江ノ島臨海女学校",
+      "wiki": "山本桔梗",
+      "image": null
+    },
+    {
+      "id": "c0243",
+      "name": "三宅 彩栄",
+      "school": "江ノ島臨海女学校",
+      "wiki": "三宅彩栄",
+      "image": null
+    },
+    {
+      "id": "c0244",
+      "name": "高橋 美散",
+      "school": "江ノ島臨海女学校",
+      "wiki": "高橋美散",
+      "image": null
+    },
+    {
+      "id": "c0245",
+      "name": "竹久 央",
+      "school": "御台場女学校",
+      "wiki": "竹久央",
+      "image": null
+    },
+    {
+      "id": "c0246",
+      "name": "河鍋 薺",
+      "school": "御台場女学校",
+      "wiki": "河鍋薺",
+      "image": null
+    },
+    {
+      "id": "c0247",
+      "name": "川村 楪",
+      "school": "御台場女学校",
+      "wiki": "川村楪",
+      "image": null
+    },
+    {
+      "id": "c0248",
+      "name": "月岡 椛",
+      "school": "御台場女学校",
+      "wiki": "月岡椛",
+      "image": null
+    },
+    {
+      "id": "c0249",
+      "name": "速水 桂",
+      "school": "御台場女学校",
+      "wiki": "速水桂",
+      "image": null
+    },
+    {
+      "id": "c0250",
+      "name": "西郷 紅",
+      "school": "御台場女学校",
+      "wiki": "西郷紅",
+      "image": null
+    },
+    {
+      "id": "c0251",
+      "name": "鈴木 因",
+      "school": "御台場女学校",
+      "wiki": "鈴木因",
+      "image": null
+    },
+    {
+      "id": "c0252",
+      "name": "横山 梓",
+      "school": "御台場女学校",
+      "wiki": "横山梓",
+      "image": null
+    },
+    {
+      "id": "c0253",
+      "name": "菱田 治",
+      "school": "御台場女学校",
+      "wiki": "菱田治",
+      "image": null
+    },
+    {
+      "id": "c0254",
+      "name": "円山 周",
+      "school": "御台場女学校",
+      "wiki": "円山周",
+      "image": null
+    },
+    {
+      "id": "c0255",
+      "name": "尾竹 廉",
+      "school": "御台場女学校",
+      "wiki": "尾竹廉",
+      "image": null
+    },
+    {
+      "id": "c0256",
+      "name": "上村 蕨",
+      "school": "御台場女学校",
+      "wiki": "上村蕨",
+      "image": null
+    },
+    {
+      "id": "c0257",
+      "name": "伊藤 麗",
+      "school": "御台場女学校",
+      "wiki": "伊藤麗",
+      "image": null
+    },
+    {
+      "id": "c0258",
+      "name": "船田 純",
+      "school": "御台場女学校",
+      "wiki": "船田純",
+      "image": null
+    },
+    {
+      "id": "c0259",
+      "name": "船田 初",
+      "school": "御台場女学校",
+      "wiki": "船田初",
+      "image": null
+    },
+    {
+      "id": "c0260",
+      "name": "長沢 雪",
+      "school": "御台場女学校",
+      "wiki": "長沢雪",
+      "image": null
+    },
+    {
+      "id": "c0261",
+      "name": "司馬 燈",
+      "school": "御台場女学校",
+      "wiki": "司馬燈",
+      "image": null
+    },
+    {
+      "id": "c0262",
+      "name": "梢・ウェスト",
+      "school": "御台場女学校",
+      "wiki": "梢・ウェスト",
+      "image": null
+    },
+    {
+      "id": "c0263",
+      "name": "川端 蛍",
+      "school": "御台場女学校",
+      "wiki": "川端蛍",
+      "image": null
+    },
+    {
+      "id": "c0264",
+      "name": "井草 昴",
+      "school": "御台場女学校",
+      "wiki": "井草昴",
+      "image": null
+    },
+    {
+      "id": "c0265",
+      "name": "藤田 槿",
+      "school": "御台場女学校",
+      "wiki": "藤田槿",
+      "image": null
+    },
+    {
+      "id": "c0266",
+      "name": "今村 紫",
+      "school": "御台場女学校",
+      "wiki": "今村紫",
+      "image": null
+    },
+    {
+      "id": "c0267",
+      "name": "駒井 菫",
+      "school": "御台場女学校",
+      "wiki": "駒井菫",
+      "image": null
+    },
+    {
+      "id": "c0268",
+      "name": "弘瀬 湊",
+      "school": "御台場女学校",
+      "wiki": "弘瀬湊",
+      "image": null
+    },
+    {
+      "id": "c0269",
+      "name": "曽我 菘",
+      "school": "御台場女学校",
+      "wiki": "曽我菘",
+      "image": null
+    },
+    {
+      "id": "c0270",
+      "name": "岸田 英",
+      "school": "御台場女学校",
+      "wiki": "岸田英",
+      "image": null
+    },
+    {
+      "id": "c0271",
+      "name": "棟方 潮",
+      "school": "御台場女学校",
+      "wiki": "棟方潮",
+      "image": null
+    },
+    {
+      "id": "c0272",
+      "name": "棟方 蕾",
+      "school": "御台場女学校",
+      "wiki": "棟方蕾",
+      "image": null
+    },
+    {
+      "id": "c0273",
+      "name": "木藤 鈴",
+      "school": "御台場女学校",
+      "wiki": "木藤鈴",
+      "image": null
+    },
+    {
+      "id": "c0274",
+      "name": "福嶋 律",
+      "school": "御台場女学校",
+      "wiki": "福嶋律",
+      "image": null
+    },
+    {
+      "id": "c0275",
+      "name": "今村 咲魅",
+      "school": "御台場女学校",
+      "wiki": "今村咲魅",
+      "image": null
+    },
+    {
+      "id": "c0276",
+      "name": "アキラ・ブラントン",
+      "school": "御台場女学校",
+      "wiki": "アキラ・ブラントン",
+      "image": null
+    },
+    {
+      "id": "c0277",
+      "name": "中原・メアリィ・倫夜",
+      "school": "御台場女学校",
+      "wiki": "中原・メアリィ・倫夜",
+      "image": null
+    },
+    {
+      "id": "c0278",
+      "name": "稲葉 檀",
+      "school": "御台場女学校",
+      "wiki": "稲葉檀",
+      "image": null
+    },
+    {
+      "id": "c0279",
+      "name": "手島 恋町",
+      "school": "イルマ女子美術高校",
+      "wiki": "手島恋町",
+      "image": null
+    },
+    {
+      "id": "c0280",
+      "name": "西川 御巴留",
+      "school": "イルマ女子美術高校",
+      "wiki": "西川御巴留",
+      "image": null
+    },
+    {
+      "id": "c0281",
+      "name": "日比野 羽来",
+      "school": "イルマ女子美術高校",
+      "wiki": "日比野羽来",
+      "image": null
+    },
+    {
+      "id": "c0282",
+      "name": "比田井 美夜受",
+      "school": "イルマ女子美術高校",
+      "wiki": "比田井美夜受",
+      "image": null
+    },
+    {
+      "id": "c0283",
+      "name": "中林 海七",
+      "school": "イルマ女子美術高校",
+      "wiki": "中林海七",
+      "image": null
+    },
+    {
+      "id": "c0284",
+      "name": "宮本 煌椋",
+      "school": "イルマ女子美術高校",
+      "wiki": "宮本煌椋",
+      "image": null
+    },
+    {
+      "id": "c0285",
+      "name": "巌谷 紅々李",
+      "school": "イルマ女子美術高校",
+      "wiki": "巌谷紅々李",
+      "image": null
+    },
+    {
+      "id": "c0286",
+      "name": "日下部 蓮月",
+      "school": "イルマ女子美術高校",
+      "wiki": "日下部蓮月",
+      "image": null
+    },
+    {
+      "id": "c0287",
+      "name": "日下部 叢雨",
+      "school": "イルマ女子美術高校",
+      "wiki": "日下部叢雨",
+      "image": null
+    },
+    {
+      "id": "c0288",
+      "name": "吉井 霞子",
+      "school": "イルマ女子美術高校",
+      "wiki": "吉井霞子",
+      "image": null
+    },
+    {
+      "id": "c0289",
+      "name": "上田 伊万里",
+      "school": "イルマ女子美術高校",
+      "wiki": "上田伊万里",
+      "image": null
+    },
+    {
+      "id": "c0290",
+      "name": "神郡 鞠萠",
+      "school": "イルマ女子美術高校",
+      "wiki": "神郡鞠萠",
+      "image": null
+    },
+    {
+      "id": "c0291",
+      "name": "東久世 徳子",
+      "school": "イルマ女子美術高校",
+      "wiki": "東久世徳子",
+      "image": null
+    },
+    {
+      "id": "c0292",
+      "name": "廣津 夕星",
+      "school": "イルマ女子美術高校",
+      "wiki": "廣津夕星",
+      "image": null
+    },
+    {
+      "id": "c0293",
+      "name": "續木 姫翠",
+      "school": "イルマ女子美術高校",
+      "wiki": "續木姫翠",
+      "image": null
+    },
+    {
+      "id": "c0294",
+      "name": "諸井 佐保",
+      "school": "イルマ女子美術高校",
+      "wiki": "諸井佐保",
+      "image": null
+    },
+    {
+      "id": "c0295",
+      "name": "三輪田 俐翔",
+      "school": "イルマ女子美術高校",
+      "wiki": "三輪田俐翔",
+      "image": null
+    },
+    {
+      "id": "c0296",
+      "name": "辻本 勇渚",
+      "school": "イルマ女子美術高校",
+      "wiki": "辻本勇渚",
+      "image": null
+    },
+    {
+      "id": "c0297",
+      "name": "田代 歩結",
+      "school": "イルマ女子美術高校",
+      "wiki": "田代歩結",
+      "image": null
+    },
+    {
+      "id": "c0298",
+      "name": "篠田 澪瑚",
+      "school": "イルマ女子美術高校",
+      "wiki": "篠田澪瑚",
+      "image": null
+    },
+    {
+      "id": "c0299",
+      "name": "三条 涼香",
+      "school": "イルマ女子美術高校",
+      "wiki": "三条涼香",
+      "image": null
+    },
+    {
+      "id": "c0300",
+      "name": "岸本・ルチア・来夢",
+      "school": "私立ルドビコ女学院",
+      "wiki": "岸本・ルチア・来夢",
+      "image": null
+    },
+    {
+      "id": "c0301",
+      "name": "天宮・ソフィア・聖恋",
+      "school": "私立ルドビコ女学院",
+      "wiki": "天宮・ソフィア・聖恋",
+      "image": null
+    },
+    {
+      "id": "c0302",
+      "name": "福山・ジャンヌ・幸恵",
+      "school": "私立ルドビコ女学院",
+      "wiki": "福山・ジャンヌ・幸恵",
+      "image": null
+    },
+    {
+      "id": "c0303",
+      "name": "一之宮・ミカエラ・日葵",
+      "school": "私立ルドビコ女学院",
+      "wiki": "一之宮・ミカエラ・日葵",
+      "image": null
+    },
+    {
+      "id": "c0304",
+      "name": "松永・ブリジッタ・佳世",
+      "school": "私立ルドビコ女学院",
+      "wiki": "松永・ブリジッタ・佳世",
+      "image": null
+    },
+    {
+      "id": "c0305",
+      "name": "黒木・フランシスカ・百合亜",
+      "school": "私立ルドビコ女学院",
+      "wiki": "黒木・フランシスカ・百合亜",
+      "image": null
+    },
+    {
+      "id": "c0306",
+      "name": "瀬戸・ベロニカ・いちか",
+      "school": "私立ルドビコ女学院",
+      "wiki": "瀬戸・ベロニカ・いちか",
+      "image": null
+    },
+    {
+      "id": "c0307",
+      "name": "佐野・マチルダ・こころ",
+      "school": "私立ルドビコ女学院",
+      "wiki": "佐野・マチルダ・こころ",
+      "image": null
+    },
+    {
+      "id": "c0308",
+      "name": "鳴海・クララ・優子",
+      "school": "私立ルドビコ女学院",
+      "wiki": "鳴海・クララ・優子",
+      "image": null
+    },
+    {
+      "id": "c0309",
+      "name": "長谷川・ガブリエラ・つぐみ",
+      "school": "私立ルドビコ女学院",
+      "wiki": "長谷川・ガブリエラ・つぐみ",
+      "image": null
+    },
+    {
+      "id": "c0310",
+      "name": "宝城・モニカ・朝妃",
+      "school": "私立ルドビコ女学院",
+      "wiki": "宝城・モニカ・朝妃",
+      "image": null
+    },
+    {
+      "id": "c0311",
+      "name": "羽田・カタリナ・芽衣",
+      "school": "私立ルドビコ女学院",
+      "wiki": "羽田・カタリナ・芽衣",
+      "image": null
+    },
+    {
+      "id": "c0312",
+      "name": "花丘・アンジェラ・萌",
+      "school": "私立ルドビコ女学院",
+      "wiki": "花丘・アンジェラ・萌",
+      "image": null
+    },
+    {
+      "id": "c0313",
+      "name": "佐伯・ジュリア・花蓮",
+      "school": "私立ルドビコ女学院",
+      "wiki": "佐伯・ジュリア・花蓮",
+      "image": null
+    },
+    {
+      "id": "c0314",
+      "name": "永瀬・マルタ・のの花",
+      "school": "私立ルドビコ女学院",
+      "wiki": "永瀬・マルタ・のの花",
+      "image": null
+    },
+    {
+      "id": "c0315",
+      "name": "高取・ナタリー・永遠",
+      "school": "私立ルドビコ女学院",
+      "wiki": "高取・ナタリー・永遠",
+      "image": null
+    },
+    {
+      "id": "c0316",
+      "name": "李・クリスティーナ・思思",
+      "school": "私立ルドビコ女学院",
+      "wiki": "李・クリスティーナ・思思",
+      "image": null
+    },
+    {
+      "id": "c0317",
+      "name": "野坂・ジャクリーヌ・風音",
+      "school": "私立ルドビコ女学院",
+      "wiki": "野坂・ジャクリーヌ・風音",
+      "image": null
+    },
+    {
+      "id": "c0318",
+      "name": "岸本・マリア・未来",
+      "school": "私立ルドビコ女学院",
+      "wiki": "岸本・マリア・未来",
+      "image": null
+    },
+    {
+      "id": "c0319",
+      "name": "戸田・エウラリア・琴陽",
+      "school": "私立ルドビコ女学院",
+      "wiki": "戸田・エウラリア・琴陽",
+      "image": null
+    },
+    {
+      "id": "c0320",
+      "name": "鈴城・カタリナ・雅",
+      "school": "私立ルドビコ女学院",
+      "wiki": "鈴城・カタリナ・雅",
+      "image": null
+    },
+    {
+      "id": "c0321",
+      "name": "夏目・エリザベス・恵真",
+      "school": "私立ルドビコ女学院",
+      "wiki": "夏目・エリザベス・恵真",
+      "image": null
+    },
+    {
+      "id": "c0322",
+      "name": "矢神・カタリナ・真尋",
+      "school": "私立ルドビコ女学院",
+      "wiki": "矢神・カタリナ・真尋",
+      "image": null
+    },
+    {
+      "id": "c0323",
+      "name": "仁科・エリザベス・音羽",
+      "school": "私立ルドビコ女学院",
+      "wiki": "仁科・エリザベス・音羽",
+      "image": null
+    },
+    {
+      "id": "c0324",
+      "name": "朝比奈・アグネス・風花",
+      "school": "私立ルドビコ女学院",
+      "wiki": "朝比奈・アグネス・風花",
+      "image": null
+    },
+    {
+      "id": "c0325",
+      "name": "山吹・エリザベス・恵都",
+      "school": "私立ルドビコ女学院",
+      "wiki": "山吹・エリザベス・恵都",
+      "image": null
+    },
+    {
+      "id": "c0326",
+      "name": "加賀美・アグネス・未央",
+      "school": "私立ルドビコ女学院",
+      "wiki": "加賀美・アグネス・未央",
+      "image": null
+    },
+    {
+      "id": "c0327",
+      "name": "五十嵐・ベルナデッタ・すみれ",
+      "school": "私立ルドビコ女学院",
+      "wiki": "五十嵐・ベルナデッタ・すみれ",
+      "image": null
+    },
+    {
+      "id": "c0328",
+      "name": "堀江・アガタ・雪乃",
+      "school": "私立ルドビコ女学院",
+      "wiki": "堀江・アガタ・雪乃",
+      "image": null
+    },
+    {
+      "id": "c0329",
+      "name": "宇佐美・キンバリー・瑠衣",
+      "school": "私立ルドビコ女学院",
+      "wiki": "宇佐美・キンバリー・瑠衣",
+      "image": null
+    },
+    {
+      "id": "c0330",
+      "name": "矢崎・ロジーナ・真弓",
+      "school": "私立ルドビコ女学院",
+      "wiki": "矢崎・ロジーナ・真弓",
+      "image": null
+    },
+    {
+      "id": "c0331",
+      "name": "鈴内・レア・里佳子",
+      "school": "私立ルドビコ女学院",
+      "wiki": "鈴内・レア・里佳子",
+      "image": null
+    },
+    {
+      "id": "c0332",
+      "name": "海堂・キーラ・千秋",
+      "school": "私立ルドビコ女学院",
+      "wiki": "海堂・キーラ・千秋",
+      "image": null
+    },
+    {
+      "id": "c0333",
+      "name": "江原・ヨハンナ・結乃",
+      "school": "私立ルドビコ女学院",
+      "wiki": "江原・ヨハンナ・結乃",
+      "image": null
+    },
+    {
+      "id": "c0334",
+      "name": "平野・リドヴィナ・小春",
+      "school": "私立ルドビコ女学院",
+      "wiki": "平野・リドヴィナ・小春",
+      "image": null
+    },
+    {
+      "id": "c0335",
+      "name": "藤元・バルビナ・乙女",
+      "school": "私立ルドビコ女学院",
+      "wiki": "藤元・バルビナ・乙女",
+      "image": null
+    },
+    {
+      "id": "c0336",
+      "name": "栗山・コレッタ・綾菜",
+      "school": "私立ルドビコ女学院",
+      "wiki": "栗山・コレッタ・綾菜",
+      "image": null
+    },
+    {
+      "id": "c0337",
+      "name": "神楽坂・タチアナ・琴子",
+      "school": "私立ルドビコ女学院",
+      "wiki": "神楽坂・タチアナ・琴子",
+      "image": null
+    },
+    {
+      "id": "c0338",
+      "name": "源・アガタ・真珠",
+      "school": "私立ルドビコ女学院",
+      "wiki": "源・アガタ・真珠",
+      "image": null
+    },
+    {
+      "id": "c0339",
+      "name": "清水・ベルナデッタ・日和",
+      "school": "私立ルドビコ女学院",
+      "wiki": "清水・ベルナデッタ・日和",
+      "image": null
+    },
+    {
+      "id": "c0340",
+      "name": "寺崎・ジータ・玲央奈",
+      "school": "私立ルドビコ女学院",
+      "wiki": "寺崎・ジータ・玲央奈",
+      "image": null
+    },
+    {
+      "id": "c0341",
+      "name": "渡瀬・オリーブ・小百合",
+      "school": "私立ルドビコ女学院",
+      "wiki": "渡瀬・オリーブ・小百合",
+      "image": null
+    },
+    {
+      "id": "c0342",
+      "name": "近藤・パウラ・夏希",
+      "school": "私立ルドビコ女学院",
+      "wiki": "近藤・パウラ・夏希",
+      "image": null
+    },
+    {
+      "id": "c0343",
+      "name": "菊池・ゲルトルート・杏",
+      "school": "私立ルドビコ女学院",
+      "wiki": "菊池・ゲルトルート・杏",
+      "image": null
+    },
+    {
+      "id": "c0344",
+      "name": "辻浦・プリスカ・美々",
+      "school": "私立ルドビコ女学院",
+      "wiki": "辻浦・プリスカ・美々",
+      "image": null
+    },
+    {
+      "id": "c0345",
+      "name": "茜・マルガリータ・理紬",
+      "school": "私立ルドビコ女学院",
+      "wiki": "茜・マルガリータ・理紬",
+      "image": null
+    },
+    {
+      "id": "c0346",
+      "name": "水川・キャロル・花",
+      "school": "私立ルドビコ女学院",
+      "wiki": "水川・キャロル・花",
+      "image": null
+    },
+    {
+      "id": "c0347",
+      "name": "島・イレーヌ・真白",
+      "school": "私立ルドビコ女学院",
+      "wiki": "島・イレーヌ・真白",
+      "image": null
+    },
+    {
+      "id": "c0348",
+      "name": "的場・シビル・木葉",
+      "school": "私立ルドビコ女学院",
+      "wiki": "的場・シビル・木葉",
+      "image": null
+    },
+    {
+      "id": "c0349",
+      "name": "富士野・テオドラ・美都",
+      "school": "私立ルドビコ女学院",
+      "wiki": "富士野・テオドラ・美都",
+      "image": null
+    },
+    {
+      "id": "c0350",
+      "name": "小早川・ヘレナ・佳子",
+      "school": "私立ルドビコ女学院",
+      "wiki": "小早川・ヘレナ・佳子",
+      "image": null
+    },
+    {
+      "id": "c0351",
+      "name": "小阪・アナスタシア・涼子",
+      "school": "私立ルドビコ女学院",
+      "wiki": "小阪・アナスタシア・涼子",
+      "image": null
+    },
+    {
+      "id": "c0352",
+      "name": "泉・ローザ・莉奈",
+      "school": "私立ルドビコ女学院",
+      "wiki": "泉・ローザ・莉奈",
+      "image": null
+    },
+    {
+      "id": "c0353",
+      "name": "真壁・メラニア・小夜子",
+      "school": "私立ルドビコ女学院",
+      "wiki": "真壁・メラニア・小夜子",
+      "image": null
+    },
+    {
+      "id": "c0354",
+      "name": "取手・スザンヌ・麗香",
+      "school": "私立ルドビコ女学院",
+      "wiki": "取手・スザンヌ・麗香",
+      "image": null
+    },
+    {
+      "id": "c0355",
+      "name": "海堂・ベアトリス・千春",
+      "school": "私立ルドビコ女学院",
+      "wiki": "海堂・ベアトリス・千春",
+      "image": null
+    },
+    {
+      "id": "c0356",
+      "name": "清川・エスター・詩織",
+      "school": "私立ルドビコ女学院",
+      "wiki": "清川・エスター・詩織",
+      "image": null
+    },
+    {
+      "id": "c0357",
+      "name": "佐和田・フィディウス・杏華",
+      "school": "私立ルドビコ女学院",
+      "wiki": "佐和田・フィディウス・杏華",
+      "image": null
+    },
+    {
+      "id": "c0358",
+      "name": "あくつ・ルシファ・魔妖",
+      "school": "私立ルドビコ女学院",
+      "wiki": "あくつ・ルシファ・魔妖",
+      "image": null
+    },
+    {
+      "id": "c0359",
+      "name": "松村 優珂",
+      "school": "エレンスゲ女学園",
+      "wiki": "松村優珂",
+      "image": null
+    },
+    {
+      "id": "c0360",
+      "name": "牧野 美岳",
+      "school": "エレンスゲ女学園",
+      "wiki": "牧野美岳",
+      "image": null
+    },
+    {
+      "id": "c0361",
+      "name": "賀川 蒔菜",
+      "school": "エレンスゲ女学園",
+      "wiki": "賀川蒔菜",
+      "image": null
+    },
+    {
+      "id": "c0362",
+      "name": "森本 結爾",
+      "school": "エレンスゲ女学園",
+      "wiki": "森本結爾",
+      "image": null
+    },
+    {
+      "id": "c0363",
+      "name": "苅谷 緋紅",
+      "school": "エレンスゲ女学園",
+      "wiki": "苅谷緋紅",
+      "image": null
+    },
+    {
+      "id": "c0364",
+      "name": "坪井 七保",
+      "school": "エレンスゲ女学園",
+      "wiki": "坪井七保",
+      "image": null
+    },
+    {
+      "id": "c0365",
+      "name": "山内 昇依",
+      "school": "エレンスゲ女学園",
+      "wiki": "山内昇依",
+      "image": null
+    },
+    {
+      "id": "c0366",
+      "name": "大里 菜子",
+      "school": "エレンスゲ女学園",
+      "wiki": "大里菜子",
+      "image": null
+    },
+    {
+      "id": "c0367",
+      "name": "大塚 雨琉",
+      "school": "エレンスゲ女学園",
+      "wiki": "大塚雨琉",
+      "image": null
+    },
+    {
+      "id": "c0368",
+      "name": "柴田 竜胆",
+      "school": "エレンスゲ女学園",
+      "wiki": "柴田竜胆",
+      "image": null
+    },
+    {
+      "id": "c0369",
+      "name": "田沢 椿月",
+      "school": "エレンスゲ女学園",
+      "wiki": "田沢椿月",
+      "image": null
+    },
+    {
+      "id": "c0370",
+      "name": "大場 出海",
+      "school": "エレンスゲ女学園",
+      "wiki": "大場出海",
+      "image": null
+    },
+    {
+      "id": "c0371",
+      "name": "森山 平凛",
+      "school": "エレンスゲ女学園",
+      "wiki": "森山平凛",
+      "image": null
+    },
+    {
+      "id": "c0372",
+      "name": "江坂 雫月",
+      "school": "エレンスゲ女学園",
+      "wiki": "江坂雫月",
+      "image": null
+    },
+    {
+      "id": "c0373",
+      "name": "金関 虎凛",
+      "school": "エレンスゲ女学園",
+      "wiki": "金関虎凛",
+      "image": null
+    },
+    {
+      "id": "c0374",
+      "name": "鳥居 美歩",
+      "school": "エレンスゲ女学園",
+      "wiki": "鳥居美歩",
+      "image": null
+    },
+    {
+      "id": "c0375",
+      "name": "高島 八雲",
+      "school": "エレンスゲ女学園",
+      "wiki": "高島八雲",
+      "image": null
+    },
+    {
+      "id": "c0376",
+      "name": "西村 乃恵美",
+      "school": "エレンスゲ女学園",
+      "wiki": "西村乃恵美",
+      "image": null
+    },
+    {
+      "id": "c0377",
+      "name": "本間 秋日",
+      "school": "神庭女子藝術高校",
+      "wiki": "本間秋日",
+      "image": null
+    },
+    {
+      "id": "c0378",
+      "name": "横田 悠夏",
+      "school": "神庭女子藝術高校",
+      "wiki": "横田悠夏",
+      "image": null
+    },
+    {
+      "id": "c0379",
+      "name": "塩崎 鈴夢",
+      "school": "神庭女子藝術高校",
+      "wiki": "塩崎鈴夢",
+      "image": null
+    },
+    {
+      "id": "c0380",
+      "name": "石塚 藤乃",
+      "school": "神庭女子藝術高校",
+      "wiki": "石塚藤乃",
+      "image": null
+    },
+    {
+      "id": "c0381",
+      "name": "外崎 杏花",
+      "school": "神庭女子藝術高校",
+      "wiki": "外崎杏花",
+      "image": null
+    },
+    {
+      "id": "c0382",
+      "name": "安孫子 比呂美",
+      "school": "神庭女子藝術高校",
+      "wiki": "安孫子比呂美",
+      "image": null
+    },
+    {
+      "id": "c0383",
+      "name": "村元 庵珠",
+      "school": "神庭女子藝術高校",
+      "wiki": "村元庵珠",
+      "image": null
+    },
+    {
+      "id": "c0384",
+      "name": "澁川 智英",
+      "school": "神庭女子藝術高校",
+      "wiki": "澁川智英",
+      "image": null
+    },
+    {
+      "id": "c0385",
+      "name": "桑田 一乙",
+      "school": "神庭女子藝術高校",
+      "wiki": "桑田一乙",
+      "image": null
+    },
+    {
+      "id": "c0386",
+      "name": "九鬼 縫雪花",
+      "school": "聖橋大学附属女子高等学校",
+      "wiki": "九鬼縫雪花",
+      "image": null
+    },
+    {
+      "id": "c0387",
+      "name": "岩下 桐子",
+      "school": "聖橋大学附属女子高等学校",
+      "wiki": "岩下桐子",
+      "image": null
+    },
+    {
+      "id": "c0388",
+      "name": "澤瀉 布",
+      "school": "聖橋大学附属女子高等学校",
+      "wiki": "澤瀉布",
+      "image": null
+    },
+    {
+      "id": "c0389",
+      "name": "柄谷 愛鈴",
+      "school": "聖橋大学附属女子高等学校",
+      "wiki": "柄谷愛鈴",
+      "image": null
+    },
+    {
+      "id": "c0390",
+      "name": "中島 緋彩",
+      "school": "聖橋大学附属女子高等学校",
+      "wiki": "中島緋彩",
+      "image": null
+    },
+    {
+      "id": "c0391",
+      "name": "和辻 椋",
+      "school": "聖橋大学附属女子高等学校",
+      "wiki": "和辻椋",
+      "image": null
+    },
+    {
+      "id": "c0392",
+      "name": "夢野 花音",
+      "school": "甲斐聖山女子高等学校",
+      "wiki": "夢野花音",
+      "image": null
+    },
+    {
+      "id": "c0393",
+      "name": "種田 正奈",
+      "school": "甲斐聖山女子高等学校",
+      "wiki": "種田正奈",
+      "image": null
+    },
+    {
+      "id": "c0394",
+      "name": "六角 瀬名",
+      "school": "甲斐聖山女子高等学校",
+      "wiki": "六角瀬名",
+      "image": null
+    },
+    {
+      "id": "c0395",
+      "name": "山川 真琴",
+      "school": "甲斐聖山女子高等学校",
+      "wiki": "山川真琴",
+      "image": null
+    },
+    {
+      "id": "c0396",
+      "name": "佐々木 靖奈",
+      "school": "那賀大串女学園",
+      "wiki": "佐々木靖奈",
+      "image": null
+    },
+    {
+      "id": "c0397",
+      "name": "野口 志奈乃",
+      "school": "那賀大串女学園",
+      "wiki": "野口志奈乃",
+      "image": null
+    },
+    {
+      "id": "c0398",
+      "name": "千田 昊苺",
+      "school": "那賀大串女学園",
+      "wiki": "千田昊苺",
+      "image": null
+    },
+    {
+      "id": "c0399",
+      "name": "団塚 英里彩",
+      "school": "那賀大串女学園",
+      "wiki": "団塚英里彩",
+      "image": null
+    },
+    {
+      "id": "c0400",
+      "name": "吉岡 朋芭",
+      "school": "幕張科学技術女子高等学校",
+      "wiki": "吉岡朋芭",
+      "image": null
+    },
+    {
+      "id": "c0401",
+      "name": "天津 麻嶺",
+      "school": "柳都女学館",
+      "wiki": "天津麻嶺",
+      "image": null
+    },
+    {
+      "id": "c0402",
+      "name": "千子 夕七",
+      "school": "柳都女学館",
+      "wiki": "千子夕七",
+      "image": null
+    },
+    {
+      "id": "c0403",
+      "name": "岡崎 神那",
+      "school": "柳都女学館",
+      "wiki": "岡崎神那",
+      "image": null
+    },
+    {
+      "id": "c0404",
+      "name": "宮入 風舞姫",
+      "school": "柳都女学館",
+      "wiki": "宮入風舞姫",
+      "image": null
+    },
+    {
+      "id": "c0405",
+      "name": "吉原 菜乃葉",
+      "school": "柳都女学館",
+      "wiki": "吉原菜乃葉",
+      "image": null
+    },
+    {
+      "id": "c0406",
+      "name": "青江 珠緒",
+      "school": "柳都女学館",
+      "wiki": "青江珠緒",
+      "image": null
+    },
+    {
+      "id": "c0407",
+      "name": "隅谷 水晶",
+      "school": "柳都女学館",
+      "wiki": "隅谷水晶",
+      "image": null
+    },
+    {
+      "id": "c0408",
+      "name": "榎本 瑚桃",
+      "school": "柳都女学館",
+      "wiki": "榎本瑚桃",
+      "image": null
+    },
+    {
+      "id": "c0409",
+      "name": "今泉 吏園",
+      "school": "柳都女学館",
+      "wiki": "今泉吏園",
+      "image": null
+    },
+    {
+      "id": "c0410",
+      "name": "八鍬 白蓮",
+      "school": "柳都女学館",
+      "wiki": "八鍬白蓮",
+      "image": null
+    },
+    {
+      "id": "c0411",
+      "name": "高見 明日香",
+      "school": "柳都女学館",
+      "wiki": "高見明日香",
+      "image": null
+    },
+    {
+      "id": "c0412",
+      "name": "天田 花心",
+      "school": "柳都女学館",
+      "wiki": "天田花心",
+      "image": null
+    },
+    {
+      "id": "c0413",
+      "name": "岩崎 行那",
+      "school": "柳都女学館",
+      "wiki": "岩崎行那",
+      "image": null
+    },
+    {
+      "id": "c0414",
+      "name": "榎本 椰々",
+      "school": "柳都女学館",
+      "wiki": "榎本椰々",
+      "image": null
+    },
+    {
+      "id": "c0415",
+      "name": "栗原 真紘",
+      "school": "柳都女学館",
+      "wiki": "栗原真紘",
+      "image": null
+    },
+    {
+      "id": "c0416",
+      "name": "猪口 登未",
+      "school": "アンブロシア女学苑高等學校",
+      "wiki": "猪口登未",
+      "image": null
+    },
+    {
+      "id": "c0417",
+      "name": "平賀 東子",
+      "school": "アンブロシア女学苑高等學校",
+      "wiki": "平賀東子",
+      "image": null
+    },
+    {
+      "id": "c0418",
+      "name": "森下 雅枇",
+      "school": "アンブロシア女学苑高等學校",
+      "wiki": "森下雅枇",
+      "image": null
+    },
+    {
+      "id": "c0419",
+      "name": "小栗 氷高",
+      "school": "アンブロシア女学苑高等學校",
+      "wiki": "小栗氷高",
+      "image": null
+    },
+    {
+      "id": "c0420",
+      "name": "月岡 千乃",
+      "school": "アンブロシア女学苑高等學校",
+      "wiki": "月岡千乃",
+      "image": null
+    },
+    {
+      "id": "c0421",
+      "name": "海田 檜",
+      "school": "九嶺女学園",
+      "wiki": "海田檜",
+      "image": null
+    },
+    {
+      "id": "c0422",
+      "name": "多々良 卯乃",
+      "school": "九嶺女学園",
+      "wiki": "多々良卯乃",
+      "image": null
+    },
+    {
+      "id": "c0423",
+      "name": "佐藤 智佐",
+      "school": "鞍馬山環境女子高等学校",
+      "wiki": "佐藤智佐",
+      "image": null
+    },
+    {
+      "id": "c0424",
+      "name": "仲村 倭子",
+      "school": "鞍馬山環境女子高等学校",
+      "wiki": "仲村倭子",
+      "image": null
+    },
+    {
+      "id": "c0425",
+      "name": "加藤 菖蒲",
+      "school": "鞍馬山環境女子高等学校",
+      "wiki": "加藤菖蒲",
+      "image": null
+    },
+    {
+      "id": "c0426",
+      "name": "斎藤 素湖",
+      "school": "鞍馬山環境女子高等学校",
+      "wiki": "斎藤素湖",
+      "image": null
+    },
+    {
+      "id": "c0427",
+      "name": "古田 八重",
+      "school": "鞍馬山環境女子高等学校",
+      "wiki": "古田八重",
+      "image": null
+    },
+    {
+      "id": "c0428",
+      "name": "東野 志津香",
+      "school": "鞍馬山環境女子高等学校",
+      "wiki": "東野志津香",
+      "image": null
+    },
+    {
+      "id": "c0429",
+      "name": "飛鳥井 翼彩",
+      "school": "鹿野苑高等女学園",
+      "wiki": "飛鳥井翼彩",
+      "image": null
+    },
+    {
+      "id": "c0430",
+      "name": "一条 蒼泉",
+      "school": "鹿野苑高等女学園",
+      "wiki": "一条蒼泉",
+      "image": null
+    },
+    {
+      "id": "c0431",
+      "name": "与謝野ほのほ",
+      "school": "鹿野苑高等女学園",
+      "wiki": "与謝野ほのほ",
+      "image": null
+    },
+    {
+      "id": "c0432",
+      "name": "茅野 調",
+      "school": "鹿野苑高等女学園",
+      "wiki": "茅野調",
+      "image": null
+    },
+    {
+      "id": "c0433",
+      "name": "西園寺 香流",
+      "school": "鹿野苑高等女学園",
+      "wiki": "西園寺香流",
+      "image": null
+    },
+    {
+      "id": "c0434",
+      "name": "紀 甘魅",
+      "school": "鹿野苑高等女学園",
+      "wiki": "紀甘魅",
+      "image": null
+    },
+    {
+      "id": "c0435",
+      "name": "春道 麻子",
+      "school": "鹿野苑高等女学園",
+      "wiki": "春道麻子",
+      "image": null
+    },
+    {
+      "id": "c0436",
+      "name": "アリューニャ・レスコー・沖",
+      "school": "鹿野苑高等女学園",
+      "wiki": "アリューニャ・レスコー・沖",
+      "image": null
+    },
+    {
+      "id": "c0437",
+      "name": "壬生 輝凛",
+      "school": "鹿野苑高等女学園",
+      "wiki": "壬生輝凛",
+      "image": null
+    },
+    {
+      "id": "c0438",
+      "name": "大中臣 千春",
+      "school": "鹿野苑高等女学園",
+      "wiki": "大中臣千春",
+      "image": null
+    },
+    {
+      "id": "c0439",
+      "name": "高階 円",
+      "school": "鹿野苑高等女学園",
+      "wiki": "高階円",
+      "image": null
+    },
+    {
+      "id": "c0440",
+      "name": "布宮 志げ",
+      "school": "その他・不明",
+      "wiki": "布宮志げ",
+      "image": null
+    },
+    {
+      "id": "c0441",
+      "name": "二戸 晶良",
+      "school": "その他・不明",
+      "wiki": "二戸晶良",
+      "image": null
+    },
+    {
+      "id": "c0442",
+      "name": "立花・テレジア・渚",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "立花・テレジア・渚",
+      "image": null
+    },
+    {
+      "id": "c0443",
+      "name": "王 瑞希",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "王瑞希",
+      "image": null
+    },
+    {
+      "id": "c0444",
+      "name": "王 莉芬",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "王莉芬",
+      "image": null
+    },
+    {
+      "id": "c0445",
+      "name": "オイフェミア・フェーン",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "オイフェミア・フェーン",
+      "image": null
+    },
+    {
+      "id": "c0446",
+      "name": "ターニャ・ラーセン",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "ターニャ・ラーセン",
+      "image": null
+    },
+    {
+      "id": "c0447",
+      "name": "愛永・ウツソン",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "愛永・ウツソン",
+      "image": null
+    },
+    {
+      "id": "c0448",
+      "name": "ラケル・スプレッケルセン",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "ラケル・スプレッケルセン",
+      "image": null
+    },
+    {
+      "id": "c0449",
+      "name": "此花・エストベリ",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "此花・エストベリ",
+      "image": null
+    },
+    {
+      "id": "c0450",
+      "name": "ヒルシュフェルト",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "ヒルシュフェルト",
+      "image": null
+    },
+    {
+      "id": "c0451",
+      "name": "レヴェレンツ",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "レヴェレンツ",
+      "image": null
+    },
+    {
+      "id": "c0452",
+      "name": "スバイエ",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "スバイエ",
+      "image": null
+    },
+    {
+      "id": "c0453",
+      "name": "朋美・ヌーベル",
+      "school": "ヘイムスクリングラトレードゴード",
+      "wiki": "朋美・ヌーベル",
+      "image": null
+    },
+    {
+      "id": "c0454",
+      "name": "佐野 桜花",
+      "school": "G.E.H.E.N.A.",
+      "wiki": "佐野桜花",
+      "image": null
+    },
+    {
+      "id": "c0455",
+      "name": "中澤 久実",
+      "school": "G.E.H.E.N.A.",
+      "wiki": "中澤久実",
+      "image": null
+    },
+    {
+      "id": "c0456",
+      "name": "駒井 咲々良",
+      "school": "G.E.H.E.N.A.",
+      "wiki": "駒井咲々良",
+      "image": null
+    },
+    {
+      "id": "c0457",
+      "name": "御前",
+      "school": "その他・不明",
+      "wiki": "御前",
+      "image": null
+    },
+    {
+      "id": "c0458",
+      "name": "L",
+      "school": "その他・不明",
+      "wiki": "L",
+      "image": null
+    },
+    {
+      "id": "c0459",
+      "name": "ロヴィーサ",
+      "school": "その他・不明",
+      "wiki": "ロヴィーサ",
+      "image": null
+    },
+    {
+      "id": "c0460",
+      "name": "巫",
+      "school": "その他・不明",
+      "wiki": "巫",
+      "image": null
+    },
+    {
+      "id": "c0461",
+      "name": "白雪",
+      "school": "その他・不明",
+      "wiki": "白雪",
+      "image": null
+    },
+    {
+      "id": "c0462",
+      "name": "御典医",
+      "school": "G.E.H.E.N.A.",
+      "wiki": "御典医",
+      "image": null
+    },
+    {
+      "id": "c0463",
+      "name": "石川 精衛",
+      "school": "国防軍",
+      "wiki": "石川精衛",
+      "image": null
+    },
+    {
+      "id": "c0464",
+      "name": "ラウラ・インゲルス",
+      "school": "その他・不明",
+      "wiki": "ラウラ・インゲルス",
+      "image": null
+    },
+    {
+      "id": "c0465",
+      "name": "アーニャ・ヘルツォーク",
+      "school": "その他・不明",
+      "wiki": "アーニャ・ヘルツォーク",
+      "image": null
+    },
+    {
+      "id": "c0466",
+      "name": "安藤 総逸",
+      "school": "その他・不明",
+      "wiki": "安藤総逸",
+      "image": null
+    },
+    {
+      "id": "c0467",
+      "name": "ローター・v・グロピウス",
+      "school": "その他・不明",
+      "wiki": "ローター・v・グロピウス",
+      "image": null
+    },
+    {
+      "id": "c0468",
+      "name": "ミシェル・ヌーベル",
+      "school": "その他・不明",
+      "wiki": "ミシェル・ヌーベル",
+      "image": null
+    },
+    {
+      "id": "c0469",
+      "name": "浜口 和夕",
+      "school": "その他・不明",
+      "wiki": "浜口和夕",
+      "image": null
+    },
+    {
+      "id": "c0470",
+      "name": "岩井 絵未",
+      "school": "その他・不明",
+      "wiki": "岩井絵未",
+      "image": null
+    },
+    {
+      "id": "c0471",
+      "name": "片平 七海",
+      "school": "その他・不明",
+      "wiki": "片平七海",
+      "image": null
+    },
+    {
+      "id": "c0472",
+      "name": "インキュナブラ",
+      "school": "その他・不明",
+      "wiki": "インキュナブラ",
+      "image": null
+    },
+    {
+      "id": "c0473",
+      "name": "六角 潮季",
+      "school": "その他・不明",
+      "wiki": "六角潮季",
+      "image": null
+    },
+    {
+      "id": "c0474",
+      "name": "ルサルカ",
+      "school": "その他・不明",
+      "wiki": "ルサルカ",
+      "image": null
+    },
+    {
+      "id": "c0475",
+      "name": "甲の花",
+      "school": "その他・不明",
+      "wiki": "甲の花",
+      "image": null
+    },
+    {
+      "id": "c0476",
+      "name": "乙の花",
+      "school": "その他・不明",
+      "wiki": "乙の花",
+      "image": null
+    },
+    {
+      "id": "c0477",
+      "name": "丙の花",
+      "school": "その他・不明",
+      "wiki": "丙の花",
+      "image": null
+    },
+    {
+      "id": "c0478",
+      "name": "丁の花",
+      "school": "その他・不明",
+      "wiki": "丁の花",
+      "image": null
+    },
+    {
+      "id": "c0479",
+      "name": "戊の花",
+      "school": "その他・不明",
+      "wiki": "戊の花",
+      "image": null
+    },
+    {
+      "id": "c0480",
+      "name": "己の花",
+      "school": "その他・不明",
+      "wiki": "己の花",
+      "image": null
+    },
+    {
+      "id": "c0481",
+      "name": "庚の花",
+      "school": "その他・不明",
+      "wiki": "庚の花",
+      "image": null
+    },
+    {
+      "id": "c0482",
+      "name": "辛の花",
+      "school": "その他・不明",
+      "wiki": "辛の花",
+      "image": null
+    },
+    {
+      "id": "c0483",
+      "name": "壬の花",
+      "school": "その他・不明",
+      "wiki": "壬の花",
+      "image": null
     }
   ],
 
@@ -1428,6 +3395,13 @@
     { "from": "riri",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
+    { "from": "yuyu",   "to": "kaede",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuyu",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
+    { "from": "yuyu",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
+    { "from": "yuyu",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
+    { "from": "yuyu",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
+    { "from": "yuyu",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
+    { "from": "yuyu",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "kanaho", "type": "隊長仲間",            "spoiler": false },
     { "from": "riri",   "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
     { "from": "kaede",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
