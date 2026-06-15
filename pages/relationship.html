@@ -447,11 +447,11 @@ function render() {
     physics: {
       enabled: true,
       barnesHut: {
-        gravitationalConstant: allMode ? -3000 : -5500,
-        springLength: 150,
+        gravitationalConstant: -5500,
+        springLength: 200,
         damping: 0.5
       },
-      stabilization: { iterations: allMode ? 100 : 200 }
+      stabilization: { iterations: 200 }
     },
     nodes: {
       font: { face: "Hiragino Sans, Meiryo, sans-serif" }
