@@ -470,12 +470,6 @@ function render() {
   } else {
     network = new vis.Network(container, { nodes: vNodes, edges: vEdges }, opts);
 
-    network.stabilize();
-
-    network.once("stabilizationIterationsDone", () => {
-      network.setOptions({ physics: { enabled: false } });
-    });
-
     // クリック: フォーカス変更 + アイコンサイズ変更処理
     network.on("click", params => {
       if (!params.nodes.length) {
