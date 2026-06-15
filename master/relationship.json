@@ -339,7 +339,7 @@
       "image": null
     },
     {
-      "id": "mako",
+      "id": "mako_nishizawa",
       "name": "西澤 眞子",
       "school": "百合ヶ丘女学院",
       "wiki": "西澤眞子",
@@ -787,7 +787,7 @@
       "image": null
     },
     {
-      "id": "siera",
+      "id": "shiera_tada",
       "name": "多田 紫恵楽",
       "school": "百合ヶ丘女学院",
       "wiki": "多田紫恵楽",
@@ -1074,14 +1074,14 @@
       "image": "https://i.gyazo.com/897074fde6775bd2eb13bb112d2302d4.jpg"
     },
     {
-      "id": "giera",
+      "id": "shiera_takamatsu",
       "name": "高松 祇恵良",
       "school": "百合ヶ丘女学院",
       "wiki": "高松祇恵良",
       "image": "https://i.gyazo.com/e324e3af70f8d28a1286bb1cbac4f74c.jpg"
     },
     {
-      "id": "koutsuki",
+      "id": "kougetsu",
       "name": "高松 咬月",
       "school": "百合ヶ丘女学院",
       "wiki": "高松咬月",
@@ -1417,56 +1417,56 @@
       "image": "https://i.gyazo.com/7a1a185fb3339d70edb78d6543e50d5a.jpg"
     },
     {
-      "id": "c0203",
+      "id": "hikari",
       "name": "宮崎 火刈",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "宮崎火刈",
       "image": "https://i.gyazo.com/a4d42827c92e698d9a1a96c61ebc222b.jpg"
     },
     {
-      "id": "c0204",
+      "id": "fuyo",
       "name": "勝谷 芙蓉",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "勝谷芙蓉",
       "image": "https://i.gyazo.com/f90ad8417b32a54edfd2bc8b5c97f4ca.jpg"
     },
     {
-      "id": "c0205",
+      "id": "shiho",
       "name": "岡田 詩穂",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "岡田詩穂",
       "image": null
     },
     {
-      "id": "c0206",
+      "id": "takarako",
       "name": "東 宝子",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "東宝子",
       "image": null
     },
     {
-      "id": "c0207",
+      "id": "yukana",
       "name": "町山 夕奏",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "町山夕奏",
       "image": null
     },
     {
-      "id": "c0208",
+      "id": "mao_tomimoto",
       "name": "富本 眞魚",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "富本眞魚",
       "image": null
     },
     {
-      "id": "c0209",
+      "id": "seori",
       "name": "茂木 瀬織",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "茂木瀬織",
       "image": null
     },
     {
-      "id": "c0210",
+      "id": "shino",
       "name": "深井 紫野",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "深井紫野",
@@ -1648,7 +1648,7 @@
       "image": "https://i.gyazo.com/976a1cfe6c0f2b6252bfd76766cfec4d.jpg"
     },
     {
-      "id": "uta",
+      "id": "uta_masukawa",
       "name": "益川 雅樂",
       "school": "城ヶ島工科女子高等学校",
       "wiki": "益川雅樂",
@@ -2236,273 +2236,273 @@
       "image": "https://i.gyazo.com/d795abb800e5dbb7d1b4e582daf2f0ec.jpg"
     },
     {
-      "id": "c0320",
+      "id": "miyabi_suzushiro",
       "name": "鈴城・カタリナ・雅",
       "school": "私立ルドビコ女学院",
       "wiki": "鈴城・カタリナ・雅",
       "image": null
     },
     {
-      "id": "c0321",
+      "id": "ema",
       "name": "夏目・エリザベス・恵真",
       "school": "私立ルドビコ女学院",
       "wiki": "夏目・エリザベス・恵真",
       "image": null
     },
     {
-      "id": "c0322",
+      "id": "mahiro_yagami",
       "name": "矢神・カタリナ・真尋",
       "school": "私立ルドビコ女学院",
       "wiki": "矢神・カタリナ・真尋",
       "image": null
     },
     {
-      "id": "c0323",
+      "id": "otoha",
       "name": "仁科・エリザベス・音羽",
       "school": "私立ルドビコ女学院",
       "wiki": "仁科・エリザベス・音羽",
       "image": null
     },
     {
-      "id": "c0324",
+      "id": "fuka_asahina",
       "name": "朝比奈・アグネス・風花",
       "school": "私立ルドビコ女学院",
       "wiki": "朝比奈・アグネス・風花",
       "image": null
     },
     {
-      "id": "c0325",
+      "id": "keito",
       "name": "山吹・エリザベス・恵都",
       "school": "私立ルドビコ女学院",
       "wiki": "山吹・エリザベス・恵都",
       "image": null
     },
     {
-      "id": "c0326",
+      "id": "mio_kagami",
       "name": "加賀美・アグネス・未央",
       "school": "私立ルドビコ女学院",
       "wiki": "加賀美・アグネス・未央",
       "image": null
     },
     {
-      "id": "c0327",
+      "id": "sumire_igarashi",
       "name": "五十嵐・ベルナデッタ・すみれ",
       "school": "私立ルドビコ女学院",
       "wiki": "五十嵐・ベルナデッタ・すみれ",
       "image": null
     },
     {
-      "id": "c0328",
+      "id": "yukino",
       "name": "堀江・アガタ・雪乃",
       "school": "私立ルドビコ女学院",
       "wiki": "堀江・アガタ・雪乃",
       "image": null
     },
     {
-      "id": "c0329",
+      "id": "rui",
       "name": "宇佐美・キンバリー・瑠衣",
       "school": "私立ルドビコ女学院",
       "wiki": "宇佐美・キンバリー・瑠衣",
       "image": null
     },
     {
-      "id": "c0330",
+      "id": "mayumi_yazaki",
       "name": "矢崎・ロジーナ・真弓",
       "school": "私立ルドビコ女学院",
       "wiki": "矢崎・ロジーナ・真弓",
       "image": null
     },
     {
-      "id": "c0331",
+      "id": "rikako",
       "name": "鈴内・レア・里佳子",
       "school": "私立ルドビコ女学院",
       "wiki": "鈴内・レア・里佳子",
       "image": null
     },
     {
-      "id": "c0332",
+      "id": "chiaki",
       "name": "海堂・キーラ・千秋",
       "school": "私立ルドビコ女学院",
       "wiki": "海堂・キーラ・千秋",
       "image": null
     },
     {
-      "id": "c0333",
+      "id": "yuino",
       "name": "江原・ヨハンナ・結乃",
       "school": "私立ルドビコ女学院",
       "wiki": "江原・ヨハンナ・結乃",
       "image": null
     },
     {
-      "id": "c0334",
+      "id": "koharu_hirano",
       "name": "平野・リドヴィナ・小春",
       "school": "私立ルドビコ女学院",
       "wiki": "平野・リドヴィナ・小春",
       "image": null
     },
     {
-      "id": "c0335",
+      "id": "otome",
       "name": "藤元・バルビナ・乙女",
       "school": "私立ルドビコ女学院",
       "wiki": "藤元・バルビナ・乙女",
       "image": null
     },
     {
-      "id": "c0336",
+      "id": "ayana",
       "name": "栗山・コレッタ・綾菜",
       "school": "私立ルドビコ女学院",
       "wiki": "栗山・コレッタ・綾菜",
       "image": null
     },
     {
-      "id": "c0337",
+      "id": "kotoko_kagurazaka",
       "name": "神楽坂・タチアナ・琴子",
       "school": "私立ルドビコ女学院",
       "wiki": "神楽坂・タチアナ・琴子",
       "image": null
     },
     {
-      "id": "c0338",
+      "id": "shinju",
       "name": "源・アガタ・真珠",
       "school": "私立ルドビコ女学院",
       "wiki": "源・アガタ・真珠",
       "image": null
     },
     {
-      "id": "c0339",
+      "id": "hiyori",
       "name": "清水・ベルナデッタ・日和",
       "school": "私立ルドビコ女学院",
       "wiki": "清水・ベルナデッタ・日和",
       "image": null
     },
     {
-      "id": "c0340",
+      "id": "reona",
       "name": "寺崎・ジータ・玲央奈",
       "school": "私立ルドビコ女学院",
       "wiki": "寺崎・ジータ・玲央奈",
       "image": null
     },
     {
-      "id": "c0341",
+      "id": "sayuri_watase",
       "name": "渡瀬・オリーブ・小百合",
       "school": "私立ルドビコ女学院",
       "wiki": "渡瀬・オリーブ・小百合",
       "image": null
     },
     {
-      "id": "c0342",
+      "id": "natsuki_kondo",
       "name": "近藤・パウラ・夏希",
       "school": "私立ルドビコ女学院",
       "wiki": "近藤・パウラ・夏希",
       "image": null
     },
     {
-      "id": "c0343",
+      "id": "an",
       "name": "菊池・ゲルトルート・杏",
       "school": "私立ルドビコ女学院",
       "wiki": "菊池・ゲルトルート・杏",
       "image": null
     },
     {
-      "id": "c0344",
+      "id": "mimi_tsujiura",
       "name": "辻浦・プリスカ・美々",
       "school": "私立ルドビコ女学院",
       "wiki": "辻浦・プリスカ・美々",
       "image": null
     },
     {
-      "id": "c0345",
+      "id": "rizumu_akane",
       "name": "茜・マルガリータ・理紬",
       "school": "私立ルドビコ女学院",
       "wiki": "茜・マルガリータ・理紬",
       "image": null
     },
     {
-      "id": "c0346",
+      "id": "hannna_hikawa",
       "name": "水川・キャロル・花",
       "school": "私立ルドビコ女学院",
       "wiki": "水川・キャロル・花",
       "image": null
     },
     {
-      "id": "c0347",
+      "id": "mashiro_shima",
       "name": "島・イレーヌ・真白",
       "school": "私立ルドビコ女学院",
       "wiki": "島・イレーヌ・真白",
       "image": null
     },
     {
-      "id": "c0348",
+      "id": "konoha",
       "name": "的場・シビル・木葉",
       "school": "私立ルドビコ女学院",
       "wiki": "的場・シビル・木葉",
       "image": null
     },
     {
-      "id": "c0349",
+      "id": "mito",
       "name": "富士野・テオドラ・美都",
       "school": "私立ルドビコ女学院",
       "wiki": "富士野・テオドラ・美都",
       "image": null
     },
     {
-      "id": "c0350",
+      "id": "kako",
       "name": "小早川・ヘレナ・佳子",
       "school": "私立ルドビコ女学院",
       "wiki": "小早川・ヘレナ・佳子",
       "image": null
     },
     {
-      "id": "c0351",
+      "id": "ryoko",
       "name": "小阪・アナスタシア・涼子",
       "school": "私立ルドビコ女学院",
       "wiki": "小阪・アナスタシア・涼子",
       "image": "https://i.gyazo.com/c939ff8d2554ea0892fed7e2cbf86aed.jpg"
     },
     {
-      "id": "c0352",
+      "id": "rina",
       "name": "泉・ローザ・莉奈",
       "school": "私立ルドビコ女学院",
       "wiki": "泉・ローザ・莉奈",
       "image": "https://i.gyazo.com/c8e31e832721be276dbdeab4d2a6a0e5.jpg"
     },
     {
-      "id": "c0353",
+      "id": "sayoko",
       "name": "真壁・メラニア・小夜子",
       "school": "私立ルドビコ女学院",
       "wiki": "真壁・メラニア・小夜子",
       "image": "https://i.gyazo.com/bb8fa875695f84fde3066c2c7540e8ce.jpg"
     },
     {
-      "id": "c0354",
+      "id": "reika",
       "name": "取手・スザンヌ・麗香",
       "school": "私立ルドビコ女学院",
       "wiki": "取手・スザンヌ・麗香",
       "image": "https://i.gyazo.com/8b5d0898c9fbdb48172eb2c782feee2e.jpg"
     },
     {
-      "id": "c0355",
+      "id": "chiharu",
       "name": "海堂・ベアトリス・千春",
       "school": "私立ルドビコ女学院",
       "wiki": "海堂・ベアトリス・千春",
       "image": "https://i.gyazo.com/e84821127470f54a7776540865e63744.jpg"
     },
     {
-      "id": "c0356",
+      "id": "shiori_kiyokawa",
       "name": "清川・エスター・詩織",
       "school": "私立ルドビコ女学院",
       "wiki": "清川・エスター・詩織",
       "image": null
     },
     {
-      "id": "c0357",
+      "id": "kyouka",
       "name": "佐和田・フィディウス・杏華",
       "school": "私立ルドビコ女学院",
       "wiki": "佐和田・フィディウス・杏華",
       "image": null
     },
     {
-      "id": "c0358",
+      "id": "maya_akutsu",
       "name": "あくつ・ルシファ・魔妖",
       "school": "私立ルドビコ女学院",
       "wiki": "あくつ・ルシファ・魔妖",
@@ -2600,7 +2600,7 @@
       "image": null
     },
     {
-      "id": "shizuku",
+      "id": "shizuku_esaka",
       "name": "江坂 雫月",
       "school": "エレンスゲ女学園",
       "wiki": "江坂雫月",
@@ -2733,7 +2733,7 @@
       "image": null
     },
     {
-      "id": "ryo",
+      "id": "ryo_watsuji",
       "name": "和辻 椋",
       "school": "聖橋大学附属女子高等学校",
       "wiki": "和辻椋",
@@ -2796,7 +2796,7 @@
       "image": "https://i.gyazo.com/a4338a4a86326d8aacbd5421077a23ac.jpg"
     },
     {
-      "id": "c0400",
+      "id": "tomoha",
       "name": "吉岡 朋芭",
       "school": "幕張科学技術女子高等学校",
       "wiki": "吉岡朋芭",
@@ -2908,14 +2908,14 @@
       "image": null
     },
     {
-      "id": "c0416",
+      "id": "tomi",
       "name": "猪口 登未",
       "school": "アンブロシア女学苑高等學校",
       "wiki": "猪口登未",
       "image": null
     },
     {
-      "id": "c0417",
+      "id": "touko",
       "name": "平賀 東子",
       "school": "アンブロシア女学苑高等學校",
       "wiki": "平賀東子",
@@ -2929,7 +2929,7 @@
       "image": "https://i.gyazo.com/6fee0af8f87aa66fe76a3da1c524efb1.jpg"
     },
     {
-      "id": "c0419",
+      "id": "hidaka",
       "name": "小栗 氷高",
       "school": "アンブロシア女学苑高等學校",
       "wiki": "小栗氷高",
@@ -2943,56 +2943,56 @@
       "image": "https://i.gyazo.com/9f1cbeaf1b7aa9fec0ddda43ccaf441a.jpg"
     },
     {
-      "id": "c0421",
+      "id": "hinoki",
       "name": "海田 檜",
       "school": "九嶺女学園",
       "wiki": "海田檜",
       "image": null
     },
     {
-      "id": "c0422",
+      "id": "uno",
       "name": "多々良 卯乃",
       "school": "九嶺女学園",
       "wiki": "多々良卯乃",
       "image": null
     },
     {
-      "id": "c0423",
+      "id": "chisa",
       "name": "佐藤 智佐",
       "school": "鞍馬山環境女子高等学校",
       "wiki": "佐藤智佐",
       "image": null
     },
     {
-      "id": "c0424",
+      "id": "wako",
       "name": "仲村 倭子",
       "school": "鞍馬山環境女子高等学校",
       "wiki": "仲村倭子",
       "image": null
     },
     {
-      "id": "c0425",
+      "id": "ayame",
       "name": "加藤 菖蒲",
       "school": "鞍馬山環境女子高等学校",
       "wiki": "加藤菖蒲",
       "image": null
     },
     {
-      "id": "c0426",
+      "id": "motoko",
       "name": "斎藤 素湖",
       "school": "鞍馬山環境女子高等学校",
       "wiki": "斎藤素湖",
       "image": null
     },
     {
-      "id": "c0427",
+      "id": "yae",
       "name": "古田 八重",
       "school": "鞍馬山環境女子高等学校",
       "wiki": "古田八重",
       "image": null
     },
     {
-      "id": "c0428",
+      "id": "shizuka",
       "name": "東野 志津香",
       "school": "鞍馬山環境女子高等学校",
       "wiki": "東野志津香",
@@ -3041,7 +3041,7 @@
       "image": "https://i.gyazo.com/12dfaadbf4a19228de226dac43a28336.jpg"
     },
     {
-      "id": "mako",
+      "id": "mako_harumichi",
       "name": "春道 麻子",
       "school": "鹿野苑高等女学園",
       "wiki": "春道麻子",
@@ -3055,35 +3055,35 @@
       "image": "https://i.gyazo.com/2a5b44b888901796a8ad91ae002e2284.jpg"
     },
     {
-      "id": "c0437",
+      "id": "kirin",
       "name": "壬生 輝凛",
       "school": "鹿野苑高等女学園",
       "wiki": "壬生輝凛",
       "image": null
     },
     {
-      "id": "c0438",
+      "id": "chiharu_oonakatomi",
       "name": "大中臣 千春",
       "school": "鹿野苑高等女学園",
       "wiki": "大中臣千春",
       "image": null
     },
     {
-      "id": "c0439",
+      "id": "madoka",
       "name": "高階 円",
       "school": "鹿野苑高等女学園",
       "wiki": "高階円",
       "image": null
     },
     {
-      "id": "c0440",
+      "id": "shige",
       "name": "布宮 志げ",
       "school": "その他・不明",
       "wiki": "布宮志げ",
       "image": null
     },
     {
-      "id": "c0441",
+      "id": "akira_nitobe",
       "name": "二戸 晶良",
       "school": "その他・不明",
       "wiki": "二戸晶良",
@@ -3167,28 +3167,28 @@
       "image": null
     },
     {
-      "id": "c0453",
+      "id": "tomomi",
       "name": "朋美・ヌーベル",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "朋美・ヌーベル",
       "image": null
     },
     {
-      "id": "c0454",
+      "id": "ouka_sano",
       "name": "佐野 桜花",
       "school": "G.E.H.E.N.A.",
       "wiki": "佐野桜花",
       "image": "https://i.gyazo.com/8ddd8c54e10a0e6114ccb89775a4eb40.jpg"
     },
     {
-      "id": "c0455",
+      "id": "kumi",
       "name": "中澤 久実",
       "school": "G.E.H.E.N.A.",
       "wiki": "中澤久実",
       "image": null
     },
     {
-      "id": "c0456",
+      "id": "sasara",
       "name": "駒井 咲々良",
       "school": "G.E.H.E.N.A.",
       "wiki": "駒井咲々良",
@@ -3202,77 +3202,77 @@
       "image": "https://i.gyazo.com/37366484c45dbb7e7b1b7d023e099e40.jpg"
     },
     {
-      "id": "c0458",
+      "id": "eru",
       "name": "L",
       "school": "その他・不明",
       "wiki": "L",
       "image": null
     },
     {
-      "id": "c0459",
+      "id": "rovisa",
       "name": "ロヴィーサ",
       "school": "その他・不明",
       "wiki": "ロヴィーサ",
       "image": "https://i.gyazo.com/3975338fda3772023a27402951b9d753.jpg"
     },
     {
-      "id": "c0460",
+      "id": "kannnagi",
       "name": "巫",
       "school": "その他・不明",
       "wiki": "巫",
       "image": "https://i.gyazo.com/152da2c4da006a853e4439b305521535.jpg"
     },
     {
-      "id": "c0461",
+      "id": "shirayuki",
       "name": "白雪",
       "school": "その他・不明",
       "wiki": "白雪",
       "image": "https://i.gyazo.com/22ec9557d14898e4b2efbc9676610a98.jpg"
     },
     {
-      "id": "c0462",
+      "id": "goteni",
       "name": "御典医",
       "school": "G.E.H.E.N.A.",
       "wiki": "御典医",
       "image": "https://i.gyazo.com/ebe11917c4e1196a487aeb97e8038190.jpg"
     },
     {
-      "id": "c0463",
+      "id": "seiei",
       "name": "石川 精衛",
       "school": "その他・不明",
       "wiki": "石川精衛",
       "image": "https://i.gyazo.com/c616caea4c469fe0322a7b5a136b2cd4.jpg"
     },
     {
-      "id": "c0464",
+      "id": "raura",
       "name": "ラウラ・インゲルス",
       "school": "その他・不明",
       "wiki": "ラウラ・インゲルス",
       "image": null
     },
     {
-      "id": "c0465",
+      "id": "anja",
       "name": "アーニャ・ヘルツォーク",
       "school": "その他・不明",
       "wiki": "アーニャ・ヘルツォーク",
       "image": null
     },
     {
-      "id": "c0466",
+      "id": "souitsu",
       "name": "安藤 総逸",
       "school": "その他・不明",
       "wiki": "安藤総逸",
       "image": null
     },
     {
-      "id": "c0467",
+      "id": "rota",
       "name": "ローター・v・グロピウス",
       "school": "その他・不明",
       "wiki": "ローター・v・グロピウス",
       "image": null
     },
     {
-      "id": "c0468",
+      "id": "mishel",
       "name": "ミシェル・ヌーベル",
       "school": "その他・不明",
       "wiki": "ミシェル・ヌーベル",
@@ -3286,98 +3286,98 @@
       "image": null
     },
     {
-      "id": "c0470",
+      "id": "emi",
       "name": "岩井 絵未",
       "school": "その他・不明",
       "wiki": "岩井絵未",
       "image": null
     },
     {
-      "id": "c0471",
+      "id": "nanami",
       "name": "片平 七海",
       "school": "その他・不明",
       "wiki": "片平七海",
       "image": "https://i.gyazo.com/6a0027360018afa6d5ac83134d7d4f91.jpg"
     },
     {
-      "id": "c0472",
+      "id": "inqu",
       "name": "インキュナブラ",
       "school": "その他・不明",
       "wiki": "インキュナブラ",
       "image": "https://i.gyazo.com/219190946370d55f34860e3f1a7bc500.jpg"
     },
     {
-      "id": "c0473",
+      "id": "shiki",
       "name": "六角 潮季",
       "school": "その他・不明",
       "wiki": "六角潮季",
       "image": "https://i.gyazo.com/4904dad8b973ceeb4897c7f0a6409029.jpg"
     },
     {
-      "id": "c0474",
+      "id": "rusaruka",
       "name": "ルサルカ",
       "school": "その他・不明",
       "wiki": "ルサルカ",
       "image": "https://i.gyazo.com/0f3e96d0524b63787a2e8576328a4a62.jpg"
     },
     {
-      "id": "c0475",
+      "id": "konohana",
       "name": "甲の花",
       "school": "その他・不明",
       "wiki": "甲の花",
       "image": "https://i.gyazo.com/dcd854dcdfec4b4d81b0860e65afb0ab.jpg"
     },
     {
-      "id": "c0476",
+      "id": "otsunohana",
       "name": "乙の花",
       "school": "その他・不明",
       "wiki": "乙の花",
       "image": "https://i.gyazo.com/e8c70d673af6d93a645dbb3bbafec1e7.jpg"
     },
     {
-      "id": "c0477",
+      "id": "heinohana",
       "name": "丙の花",
       "school": "その他・不明",
       "wiki": "丙の花",
       "image": "https://i.gyazo.com/a15db5d1b32c598b83e58e80f3ffca9f.jpg"
     },
     {
-      "id": "c0478",
+      "id": "teinohana",
       "name": "丁の花",
       "school": "その他・不明",
       "wiki": "丁の花",
       "image": "https://i.gyazo.com/681c487182ae404a2933efd1bd05f5c3.jpg"
     },
     {
-      "id": "c0479",
+      "id": "bonohana",
       "name": "戊の花",
       "school": "その他・不明",
       "wiki": "戊の花",
       "image": "https://i.gyazo.com/368e731a513584f7e2328ba6fa938b0d.jpg"
     },
     {
-      "id": "c0480",
+      "id": "kinohana",
       "name": "己の花",
       "school": "その他・不明",
       "wiki": "己の花",
       "image": "https://i.gyazo.com/73718e050469cf4acff457cf881d2bd4.jpg"
     },
     {
-      "id": "c0481",
+      "id": "konohana2",
       "name": "庚の花",
       "school": "その他・不明",
       "wiki": "庚の花",
       "image": "https://i.gyazo.com/c7ce3f1359f0cae160d0c7a70da89844.jpg"
     },
     {
-      "id": "c0482",
+      "id": "shinnohana",
       "name": "辛の花",
       "school": "その他・不明",
       "wiki": "辛の花",
       "image": "https://i.gyazo.com/211ccfb26e91cedb2e27d8683110cdeb.jpg"
     },
     {
-      "id": "c0483",
+      "id": "jinnohana",
       "name": "壬の花",
       "school": "その他・不明",
       "wiki": "壬の花",
@@ -3774,7 +3774,7 @@
     { "from": "kaho",   "to": "sayu",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kaho",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaho",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
@@ -3785,7 +3785,7 @@
     { "from": "hiromu",   "to": "sayu",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hiromu",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hiromu",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
@@ -3795,7 +3795,7 @@
     { "from": "yukiyo",   "to": "sayu",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yukiyo",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yukiyo",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
@@ -3804,7 +3804,7 @@
 
     { "from": "sayu",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sayu",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sayu",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
@@ -3812,25 +3812,25 @@
     { "from": "sayu",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "himiko",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
-    { "from": "himiko",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "himiko",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "kaya",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaya",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "mako",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mako",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mako",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mako",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mako",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mako_nishizawa",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mako_nishizawa",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mako_nishizawa",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mako_nishizawa",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mako_nishizawa",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "chihana",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "chihana",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
@@ -4033,12 +4033,12 @@
 
     { "from": "keine",   "to": "kohaku",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "ayane",   "to": "siera",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ayane",   "to": "shiera_tada",  "type": "同レギオン",    "spoiler": false },
     { "from": "ayane",   "to": "gyokuyo",  "type": "同レギオン",    "spoiler": false },
     { "from": "ayane",   "to": "miu",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "siera",   "to": "gyokuyo",  "type": "同レギオン",    "spoiler": false },
-    { "from": "siera",   "to": "miu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shiera_tada",   "to": "gyokuyo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shiera_tada",   "to": "miu",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "gyokuyo",   "to": "miu",  "type": "同レギオン",    "spoiler": false },
 
@@ -4790,35 +4790,35 @@
     { "from": "tsubasa",   "to": "shirabe",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsubasa",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsubasa",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tsubasa",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubasa",   "to": "mako_harumichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsubasa",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "mizumi",   "to": "honoho",  "type": "同レギオン",    "spoiler": false },
     { "from": "mizumi",   "to": "shirabe",  "type": "同レギオン",    "spoiler": false },
     { "from": "mizumi",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
     { "from": "mizumi",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mizumi",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mizumi",   "to": "mako_harumichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "mizumi",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "honoho",   "to": "shirabe",  "type": "同レギオン",    "spoiler": false },
     { "from": "honoho",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
     { "from": "honoho",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
-    { "from": "honoho",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "honoho",   "to": "mako_harumichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "honoho",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "shirabe",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
     { "from": "shirabe",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shirabe",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shirabe",   "to": "mako_harumichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "shirabe",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "kaoru_saionji",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kaoru_saionji",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaoru_saionji",   "to": "mako_harumichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaoru_saionji",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "amami",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "amami",   "to": "mako_harumichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "amami",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "mako",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mako_harumichi",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "lushi",   "to": "oife",  "type": "同レギオン",    "spoiler": false },
     { "from": "lushi",   "to": "tanya",  "type": "同レギオン",    "spoiler": false },
@@ -4862,6 +4862,10 @@
     { "from": "hirushu",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
     { "from": "hirushu",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "reve",   "to": "subaie",  "type": "同レギオン",    "spoiler": false }
+    { "from": "reve",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉・弟",    "spoiler": false },
+
+    { "from": "nanami",   "to": "inqu",  "type": "所有者・所有物",    "spoiler": false }
   ]
 }
