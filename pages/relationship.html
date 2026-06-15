@@ -445,35 +445,6 @@ function render() {
     });
   });
 
-  // 部隊メンバー間に不可視の引力エッジを追加（物理的に引き寄せる）
-  let regionEdgeId = 900000;
-  if (data.regions && showRegions) {
-    data.regions.forEach(region => {
-        const allMembers = [
-          ...(region.members || []),
-          ...(showSpoiler ? (region.spoiler_members || []) : [])
-        ].filter(id => id in visIds);
-        const members = allMembers;
-      // メンバー全ペアに不可視エッジを追加
-      for (let a = 0; a < members.length; a++) {
-        for (let b = a + 1; b < members.length; b++) {
-          edges.push({
-            id: regionEdgeId++,
-            from: members[a],
-            to: members[b],
-            color: { opacity: 0 },   // 完全透明
-            width: 0,
-            label: "",
-            arrows: "",
-            physics: true,
-            length: 80,              // 短い距離に引き寄せる
-            hidden: true
-          });
-        }
-      }
-    });
-  }
-
   const vNodes = new vis.DataSet(nodes);
   const vEdges = new vis.DataSet(edges);
   const container = document.getElementById("network");
@@ -507,6 +478,7 @@ function render() {
 
     network.once("stabilizationIterationsDone", () => {
       network.setOptions({ physics: { enabled: false } });
+      if (showRegions && data.regions) repositionRegionMembers();
     });
 
     // クリック: フォーカス変更 + アイコンサイズ変更処理
@@ -657,6 +629,48 @@ function buildLegend() {
   spRow.style.cssText = "width:100%;font-size:10px;color:#888;margin-top:6px";
   spRow.textContent = "破線エッジ = ネタバレ関係（ネタバレONで表示）";
   lg.appendChild(spRow);
+}
+
+// ============================================================
+// レギオンメンバーをグリッド状に整列させる（stabilize後に呼ぶ）
+// ============================================================
+function repositionRegionMembers() {
+  if (!data.regions) return;
+  const positions = network.getPositions();
+
+  data.regions.forEach(region => {
+    const members = [
+      ...(region.members || []),
+      ...(showSpoiler ? (region.spoiler_members || []) : [])
+    ].filter(id => id in positions);
+    if (members.length < 2) return;
+
+    // メンバーの重心を求める
+    let cx = 0, cy = 0;
+    members.forEach(id => { cx += positions[id].x; cy += positions[id].y; });
+    cx /= members.length;
+    cy /= members.length;
+
+    // グリッド間隔（ノードサイズの約2倍）
+    const spacing = 70;
+    const cols = Math.ceil(Math.sqrt(members.length));
+
+    const newPos = {};
+    members.forEach((id, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const totalW = (cols - 1) * spacing;
+      const totalH = (Math.ceil(members.length / cols) - 1) * spacing;
+      newPos[id] = {
+        x: cx - totalW / 2 + col * spacing,
+        y: cy - totalH / 2 + row * spacing
+      };
+    });
+
+    network.moveNode && members.forEach(id => {
+      network.moveNode(id, newPos[id].x, newPos[id].y);
+    });
+  });
 }
 
 // ============================================================
