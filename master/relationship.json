@@ -3097,70 +3097,70 @@
       "image": "https://i.gyazo.com/61f49d30ca936dd9e73e5d3ccf7adc91.jpg"
     },
     {
-      "id": "c0443",
+      "id": "lushi",
       "name": "王 瑞希",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "王瑞希",
       "image": "https://i.gyazo.com/6c07098d1340a06c2592c838f176a4e8.jpg"
     },
     {
-      "id": "c0444",
+      "id": "rifen",
       "name": "王 莉芬",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "王莉芬",
       "image": "https://i.gyazo.com/e1cf707d2b2f98f17d74e4e535eaf8dd.jpg"
     },
     {
-      "id": "c0445",
+      "id": "oife",
       "name": "オイフェミア・フェーン",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "オイフェミア・フェーン",
       "image": null
     },
     {
-      "id": "c0446",
+      "id": "tanya",
       "name": "ターニャ・ラーセン",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "ターニャ・ラーセン",
       "image": null
     },
     {
-      "id": "c0447",
+      "id": "nana",
       "name": "愛永・ウツソン",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "愛永・ウツソン",
       "image": null
     },
     {
-      "id": "c0448",
+      "id": "rakeru",
       "name": "ラケル・スプレッケルセン",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "ラケル・スプレッケルセン",
       "image": null
     },
     {
-      "id": "c0449",
+      "id": "konoka",
       "name": "此花・エストベリ",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "此花・エストベリ",
       "image": null
     },
     {
-      "id": "c0450",
+      "id": "hirushu",
       "name": "ヒルシュフェルト",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "ヒルシュフェルト",
       "image": null
     },
     {
-      "id": "c0451",
+      "id": "reve",
       "name": "レヴェレンツ",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "レヴェレンツ",
       "image": null
     },
     {
-      "id": "c0452",
+      "id": "subaie",
       "name": "スバイエ",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "スバイエ",
@@ -4806,6 +4806,50 @@
     { "from": "amami",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
     { "from": "amami",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "mako",   "to": "oki",  "type": "同レギオン",    "spoiler": false }
+    { "from": "mako",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "lushi",   "to": "oife",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lushi",   "to": "tanya",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lushi",   "to": "nana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lushi",   "to": "rakeru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lushi",   "to": "konoka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lushi",   "to": "hirushu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lushi",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lushi",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "oife",   "to": "tanya",  "type": "同レギオン",    "spoiler": false },
+    { "from": "oife",   "to": "nana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "oife",   "to": "rakeru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "oife",   "to": "konoka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "oife",   "to": "hirushu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "oife",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
+    { "from": "oife",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "tanya",   "to": "nana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tanya",   "to": "rakeru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tanya",   "to": "konoka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tanya",   "to": "hirushu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tanya",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tanya",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "nana",   "to": "rakeru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nana",   "to": "konoka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nana",   "to": "hirushu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nana",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nana",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "rakeru",   "to": "konoka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "rakeru",   "to": "hirushu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "rakeru",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
+    { "from": "rakeru",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "konoka",   "to": "hirushu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konoka",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konoka",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "hirushu",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hirushu",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "reve",   "to": "subaie",  "type": "同レギオン",    "spoiler": false }
   ]
 }
