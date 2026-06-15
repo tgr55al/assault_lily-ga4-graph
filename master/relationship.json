@@ -3400,7 +3400,7 @@
   ],
 
   "relations": [
-    { "from": "riri",   "to": "yuyu",   "type": "憧れ・後輩",          "spoiler": false },
+    { "from": "riri",   "to": "yuyu",   "type": "憧れ",          "spoiler": false },
     { "from": "riri",   "to": "yuyu",   "type": "シュッツエンゲル",    "spoiler": true  },
     { "from": "riri",   "to": "kaede",  "type": "同レギオン",    "spoiler": false },
     { "from": "riri",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
@@ -3491,7 +3491,7 @@
 
     { "from": "renka", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
     { "from": "renka", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
-    { "from": "renka",     "to": "yo",  "type": "同レギオン・友人",    "spoiler": false },
+    { "from": "renka",     "to": "yo",  "type": "友人",    "spoiler": false },
 
     { "from": "yo", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
     { "from": "yo", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
@@ -4878,8 +4878,8 @@
 
     { "from": "reve",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉・弟",    "spoiler": false },
+    { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉弟",    "spoiler": false },
 
-    { "from": "nanami",   "to": "inqu",  "type": "所有者・所有物",    "spoiler": false }
+    { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
 }

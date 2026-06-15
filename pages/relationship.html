@@ -375,6 +375,19 @@ function render() {
     if (schoolFilter[sch] !== false) visIds[id] = reachable[id];
   }
 
+  // ネタバレON時: regions の spoiler_members も visIds に強制追加
+  if (showRegions && showSpoiler && data.regions) {
+    data.regions.forEach(region => {
+      (region.spoiler_members || []).forEach(id => {
+        if (charMap[id] && !(id in visIds)) {
+          const c = charMap[id];
+          const sch = c?.school || "その他・不明";
+          if (schoolFilter[sch] !== false) visIds[id] = 999; // 末端扱い
+        }
+      });
+    });
+  }
+
   // ノード
   const nodes = Object.keys(visIds).map(id => {
     const c = charMap[id];
@@ -436,10 +449,11 @@ function render() {
   let regionEdgeId = 900000;
   if (data.regions && showRegions) {
     data.regions.forEach(region => {
-      const members = (region.members || []).filter(id => id in visIds)
-        .concat(
-          showSpoiler ? (region.spoiler_members || []).filter(id => id in visIds) : []
-        );
+        const allMembers = [
+          ...(region.members || []),
+          ...(showSpoiler ? (region.spoiler_members || []) : [])
+        ].filter(id => id in visIds);
+        const members = allMembers;
       // メンバー全ペアに不可視エッジを追加
       for (let a = 0; a < members.length; a++) {
         for (let b = a + 1; b < members.length; b++) {
@@ -652,11 +666,10 @@ function drawRegions(ctx, visIds) {
   if (!data.regions) return;
   data.regions.forEach(region => {
     // 表示中のノードに絞る
-    const members = (region.members || []).filter(id => {
-      if (!(id in visIds)) return false;
-      if (!showSpoiler && region.spoiler_members && region.spoiler_members.includes(id)) return false;
-      return true;
-    });
+    const members = [
+      ...(region.members || []),
+      ...(showSpoiler ? (region.spoiler_members || []) : [])
+    ].filter(id => id in visIds);
     if (members.length === 0) return;
 
     // 各ノードのCanvas座標を取得
@@ -707,7 +720,7 @@ function drawRegions(ctx, visIds) {
     ctx.fill();
 
     // 部隊名ラベル（左上）
-    const fontSize = 15;
+    const fontSize = 18;
     ctx.font = `bold ${fontSize}px "Hiragino Sans", Meiryo, sans-serif`;
     ctx.fillStyle = col;
     const label = region.name || "";
