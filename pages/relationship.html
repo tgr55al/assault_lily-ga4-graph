@@ -395,6 +395,7 @@ function render() {
       image: c?.image || DEFAULT_IMAGE,
       color: {
         background: "#ffffff",
+        highlight: { background: "#ffffff", border: col },
         border: col
       },
       font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus, vadjust: 5 },
@@ -488,12 +489,7 @@ function render() {
       // すべてのノードの大きさを一度リセットし、選択されたノードだけ大きくする
       const allNodes = vNodes.get();
       allNodes.forEach(n => {
-        const isFocus = n.id === id; // 新しいフォーカス対象か
-        if (isFocus) {
-          n.size = (id === focusId) ? 45 : 35; // 選択したら拡大
-        } else {
-          n.size = (n.id === focusId) ? 35 : 25;
-        }
+        n.size = (n.id === id) ? 45 : 25;
       });
       vNodes.update(allNodes);
 
