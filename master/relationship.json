@@ -3741,6 +3741,7 @@
     { "from": "tomoyo_seike",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "hinoki",  "type": "幼馴染",    "spoiler": false },
 
     { "from": "hibari",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -4721,13 +4722,13 @@
     { "from": "suzume",   "to": "fujino",  "type": "同レギオン",    "spoiler": false },
     { "from": "suzume",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "nuyuna",   "to": "kiriko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nuyuna",   "to": "kiriko",  "type": "幼馴染",    "spoiler": false },
     { "from": "nuyuna",   "to": "tae",  "type": "同レギオン",    "spoiler": false },
     { "from": "nuyuna",   "to": "merin",  "type": "同レギオン",    "spoiler": false },
     { "from": "nuyuna",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "kiriko",   "to": "tae",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kiriko",   "to": "merin",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiriko",   "to": "merin",  "type": "意気投合",    "spoiler": false },
     { "from": "kiriko",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "tae",   "to": "merin",  "type": "同レギオン",    "spoiler": false },
