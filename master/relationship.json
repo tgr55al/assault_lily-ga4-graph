@@ -4766,7 +4766,7 @@
     { "from": "marei",   "to": "yuna",  "type": "同レギオン",    "spoiler": false },
     { "from": "marei",   "to": "kanna",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "yuna",   "to": "kanna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuna",   "to": "kanna",  "type": "ライバル",    "spoiler": false },
 
     { "from": "nanoha",   "to": "tamao",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "nanoha",   "to": "komomo",  "type": "",    "spoiler": false },
@@ -4778,6 +4778,8 @@
     { "from": "miki",   "to": "yaya",  "type": "金鷄冠の誓い",    "spoiler": false },
 	{ "from": "miki",   "to": "komomo",  "type": "険悪",    "spoiler": false },
     { "from": "miki",   "to": "komomo",  "type": "金鷄冠の誓い",    "spoiler": true },
+
+    { "from": "yaya",   "to": "komomo",  "type": "姉妹",    "spoiler": false },
 
     { "from": "hanako",   "to": "annna",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanako",   "to": "mahiro",  "type": "金鷄冠の誓い",    "spoiler": false },
