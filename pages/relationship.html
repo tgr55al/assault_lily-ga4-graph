@@ -432,6 +432,34 @@ function render() {
     });
   });
 
+  // 部隊メンバー間に不可視の引力エッジを追加（物理的に引き寄せる）
+  let regionEdgeId = 900000;
+  if (data.regions && showRegions) {
+    data.regions.forEach(region => {
+      const members = (region.members || []).filter(id => id in visIds)
+        .concat(
+          showSpoiler ? (region.spoiler_members || []).filter(id => id in visIds) : []
+        );
+      // メンバー全ペアに不可視エッジを追加
+      for (let a = 0; a < members.length; a++) {
+        for (let b = a + 1; b < members.length; b++) {
+          edges.push({
+            id: regionEdgeId++,
+            from: members[a],
+            to: members[b],
+            color: { opacity: 0 },   // 完全透明
+            width: 0,
+            label: "",
+            arrows: "",
+            physics: true,
+            length: 80,              // 短い距離に引き寄せる
+            hidden: true
+          });
+        }
+      }
+    });
+  }
+
   const vNodes = new vis.DataSet(nodes);
   const vEdges = new vis.DataSet(edges);
   const container = document.getElementById("network");
@@ -644,7 +672,7 @@ function drawRegions(ctx, visIds) {
       maxY = Math.max(maxY, p.y + pad);
     });
 
-    const col = region.color || "#607d8b";
+    const col = region.color || "#f8f8f8";
     const r = 12; // 角丸半径
 
     // DOMからCanvasの変換行列を逆算してCanvasピクセル座標に戻す
@@ -679,7 +707,7 @@ function drawRegions(ctx, visIds) {
     ctx.fill();
 
     // 部隊名ラベル（左上）
-    const fontSize = 11;
+    const fontSize = 15;
     ctx.font = `bold ${fontSize}px "Hiragino Sans", Meiryo, sans-serif`;
     ctx.fillStyle = col;
     const label = region.name || "";
