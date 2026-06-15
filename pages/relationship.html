@@ -324,7 +324,7 @@ function applyData(json) {
     }
   }
 
-  if (!focusId && data.characters.length) focusId = initialFocusId;
+  if (!focusId && data.characters.length) focusId = data.characters[0].id;
 
   buildSchoolFilter();
   buildLegend();
@@ -663,7 +663,7 @@ document.getElementById("btn-spoiler").addEventListener("click", () => {
 
 document.getElementById("btn-reset-focus").addEventListener("click", () => {
   if (data.characters.length) {
-    focusId = data.characters[0].id;
+    focusId = initialFocusId;
     allMode = false;
     document.getElementById("btn-all").classList.remove("active-purple");
     updateFocusLabel();
