@@ -367,7 +367,7 @@
       "image": null
     },
     {
-      "id": "kaoru",
+      "id": "kaoru_hayashi",
       "name": "林 薫",
       "school": "百合ヶ丘女学院",
       "wiki": "林薫",
@@ -416,7 +416,7 @@
       "image": "https://i.gyazo.com/f55da5b8ed20b5f61f948e28216fbe87.jpg"
     },
     {
-      "id": "tomoyo",
+      "id": "tomoyo_seike",
       "name": "清家 知世",
       "school": "百合ヶ丘女学院",
       "wiki": "清家知世",
@@ -605,7 +605,7 @@
       "image": null
     },
     {
-      "id": "kokoro",
+      "id": "kokoro_murano",
       "name": "村野 心",
       "school": "百合ヶ丘女学院",
       "wiki": "村野心",
@@ -815,7 +815,7 @@
       "image": "https://i.gyazo.com/f743bc7cdcdf9dab93dfd80011a08faf.jpg"
     },
     {
-      "id": "hifumi",
+      "id": "hifumi_horiguchi",
       "name": "堀口 一二三",
       "school": "百合ヶ丘女学院",
       "wiki": "堀口一二三",
@@ -829,7 +829,7 @@
       "image": null
     },
     {
-      "id": "sunao",
+      "id": "sunao_ikeda",
       "name": "池田 好吟",
       "school": "百合ヶ丘女学院",
       "wiki": "池田好吟",
@@ -1060,7 +1060,7 @@
       "image": null
     },
     {
-      "id": "nagisa",
+      "id": "nagisa_yoshizaka",
       "name": "吉阪 凪沙",
       "school": "百合ヶ丘女学院",
       "wiki": "吉阪凪沙",
@@ -1473,763 +1473,763 @@
       "image": null
     },
     {
-      "id": "c0211",
+      "id": "kinrangyoku",
       "name": "金藍玉",
       "school": "シエルリント女学薗",
       "wiki": "金藍玉",
       "image": "https://i.gyazo.com/28ba9e5df2667d617f6c3c5f133dd76b.jpg"
     },
     {
-      "id": "c0212",
+      "id": "ginrangyoku",
       "name": "銀藍玉",
       "school": "シエルリント女学薗",
       "wiki": "銀藍玉",
       "image": "https://i.gyazo.com/c13cec5fa9f78e25a94ca9e159d372c7.jpg"
     },
     {
-      "id": "c0213",
+      "id": "kuroyurinokimi",
       "name": "黒百合ノ君",
       "school": "シエルリント女学薗",
       "wiki": "黒百合ノ君",
       "image": null
     },
     {
-      "id": "c0214",
+      "id": "houraigyoku",
       "name": "蓬莱玉",
       "school": "シエルリント女学薗",
       "wiki": "蓬莱玉",
       "image": null
     },
     {
-      "id": "c0215",
+      "id": "miaki",
       "name": "道川 深顯",
       "school": "シエルリント女学薗",
       "wiki": "道川深顯",
       "image": "https://i.gyazo.com/b32b1d8089190d6450859093bac1b9ff.jpg"
     },
     {
-      "id": "c0216",
+      "id": "shion",
       "name": "片倉 紫苑",
       "school": "相模女子高等学館",
       "wiki": "片倉紫苑",
       "image": "https://i.gyazo.com/cfef19b4eb809ce0b21f635e007bd4cd.jpg"
     },
     {
-      "id": "c0217",
+      "id": "furiru",
       "name": "伊達 降瑠",
       "school": "相模女子高等学館",
       "wiki": "伊達降瑠",
       "image": "https://i.gyazo.com/947414b824ed0e05d910f24813493da7.jpg"
     },
     {
-      "id": "c0218",
+      "id": "aoi",
       "name": "石川 葵",
       "school": "相模女子高等学館",
       "wiki": "石川葵",
       "image": "https://i.gyazo.com/28df624ceffea592adfd6e48776eabc6.jpg"
     },
     {
-      "id": "c0219",
+      "id": "yui",
       "name": "松永 遊糸",
       "school": "相模女子高等学館",
       "wiki": "松永遊糸",
       "image": "https://i.gyazo.com/fe014fa280be40ad3d1677a3cd60316e.jpg"
     },
     {
-      "id": "c0220",
+      "id": "yuma",
       "name": "結城 鈴瑪",
       "school": "相模女子高等学館",
       "wiki": "結城鈴瑪",
       "image": "https://i.gyazo.com/2a7e2010df861b120e38cce8fa7ede2f.png"
     },
     {
-      "id": "c0221",
+      "id": "jun",
       "name": "小早川 潤",
       "school": "相模女子高等学館",
       "wiki": "小早川潤",
       "image": "https://i.gyazo.com/4b34000df2503518991ab0306c758195.png"
     },
     {
-      "id": "c0222",
+      "id": "hatsume",
       "name": "九鬼 初芽",
       "school": "相模女子高等学館",
       "wiki": "九鬼初芽",
       "image": "https://i.gyazo.com/a2f533410b3ea080e0667df94ea0b7e2.png"
     },
     {
-      "id": "c0223",
+      "id": "mira",
       "name": "滝川 美羅",
       "school": "相模女子高等学館",
       "wiki": "滝川美羅",
       "image": "https://i.gyazo.com/fc9eee683aa0c4a20566f9d655250b6b.png"
     },
     {
-      "id": "c0224",
+      "id": "naehi",
       "name": "伊東 苗陽",
       "school": "相模女子高等学館",
       "wiki": "伊東苗陽",
       "image": "https://i.gyazo.com/3571d27cf330e3bba54a9445a828484c.jpg"
     },
     {
-      "id": "c0225",
+      "id": "rieno",
       "name": "立花 梨絵乃",
       "school": "相模女子高等学館",
       "wiki": "立花梨絵乃",
       "image": null
     },
     {
-      "id": "c0226",
+      "id": "maya",
       "name": "竜造寺 麻耶",
       "school": "相模女子高等学館",
       "wiki": "竜造寺麻耶",
       "image": null
     },
     {
-      "id": "c0227",
+      "id": "futae",
       "name": "北野 文妙",
       "school": "アルケミラ女学館",
       "wiki": "北野文妙",
       "image": "https://i.gyazo.com/4e961cee5a34664a7b3ac306423dafb9.jpg"
     },
     {
-      "id": "c0228",
+      "id": "masaki",
       "name": "高畑 聖咲",
       "school": "アルケミラ女学館",
       "wiki": "高畑聖咲",
       "image": "https://i.gyazo.com/c5a59fdf13cff4b3b859a1bbf1954fbb.jpg"
     },
     {
-      "id": "c0229",
+      "id": "reina",
       "name": "久富木 玲奈",
       "school": "アルケミラ女学館",
       "wiki": "久富木玲奈",
       "image": "https://i.gyazo.com/ad20b2a3c5c790c1566b6bb1caad9431.jpg"
     },
     {
-      "id": "c0230",
+      "id": "chikage",
       "name": "新海 千景",
       "school": "アルケミラ女学館",
       "wiki": "新海千景",
       "image": "https://i.gyazo.com/bd09e1d2d185176f2ed199823ac9e6d7.jpg"
     },
     {
-      "id": "c0231",
+      "id": "saori",
       "name": "伊丹 桜織",
       "school": "アルケミラ女学館",
       "wiki": "伊丹桜織",
       "image": null
     },
     {
-      "id": "c0232",
-      "name": "小津一 二三",
+      "id": "hifumi_ozu",
+      "name": "小津 一二三",
       "school": "アルケミラ女学館",
       "wiki": "小津一二三",
       "image": null
     },
     {
-      "id": "c0233",
+      "id": "isaki",
       "name": "水島 勇綺",
       "school": "アルケミラ女学館",
       "wiki": "水島勇綺",
       "image": null
     },
     {
-      "id": "c0234",
+      "id": "honoka",
       "name": "那須 穂乃香",
       "school": "アルケミラ女学館",
       "wiki": "那須穂乃香",
       "image": null
     },
     {
-      "id": "c0235",
+      "id": "ichigo",
       "name": "朝永 苺",
       "school": "城ヶ島工科女子高等学校",
       "wiki": "朝永苺",
       "image": "https://i.gyazo.com/976a1cfe6c0f2b6252bfd76766cfec4d.jpg"
     },
     {
-      "id": "c0236",
+      "id": "uta",
       "name": "益川 雅樂",
       "school": "城ヶ島工科女子高等学校",
       "wiki": "益川雅樂",
       "image": "https://i.gyazo.com/4feecf27804df74a8bf82b6a2aa13bde.jpg"
     },
     {
-      "id": "c0237",
+      "id": "eishin",
       "name": "小柴 瑛深",
       "school": "城ヶ島工科女子高等学校",
       "wiki": "小柴瑛深",
       "image": "https://i.gyazo.com/41910c937da043da8781f196a8c7bd45.png"
     },
     {
-      "id": "c0238",
+      "id": "mitsuki",
       "name": "湯川 満月",
       "school": "城ヶ島工科女子高等学校",
       "wiki": "湯川満月",
       "image": null
     },
     {
-      "id": "c0239",
+      "id": "yu",
       "name": "利根川 悠",
       "school": "城ヶ島工科女子高等学校",
       "wiki": "利根川悠",
       "image": null
     },
     {
-      "id": "c0240",
+      "id": "kiyo",
       "name": "鉄川 玉",
       "school": "逗子国際女子高等学校",
       "wiki": "鉄川玉",
       "image": null
     },
     {
-      "id": "c0241",
+      "id": "orika",
       "name": "川久保 織禾",
       "school": "江ノ島臨海女学校",
       "wiki": "川久保織禾",
       "image": "https://i.gyazo.com/532049436986189c31b473e44f327499.jpg"
     },
     {
-      "id": "c0242",
+      "id": "kikyo",
       "name": "山本 桔梗",
       "school": "江ノ島臨海女学校",
       "wiki": "山本桔梗",
       "image": "https://i.gyazo.com/36c42d84346ac19f6085e09c11a86ed2.jpg"
     },
     {
-      "id": "c0243",
+      "id": "sae",
       "name": "三宅 彩栄",
       "school": "江ノ島臨海女学校",
       "wiki": "三宅彩栄",
       "image": "https://i.gyazo.com/c6a2810763c140aea2391701476141bd.jpg"
     },
     {
-      "id": "c0244",
+      "id": "michiru",
       "name": "高橋 美散",
       "school": "江ノ島臨海女学校",
       "wiki": "高橋美散",
       "image": null
     },
     {
-      "id": "c0245",
+      "id": "nakaba",
       "name": "竹久 央",
       "school": "御台場女学校",
       "wiki": "竹久央",
       "image": "https://i.gyazo.com/82703ef404a21f9035f752beb6109afe.jpg"
     },
     {
-      "id": "c0246",
+      "id": "nazuna",
       "name": "河鍋 薺",
       "school": "御台場女学校",
       "wiki": "河鍋薺",
       "image": "https://i.gyazo.com/9d9caa84a3f88bc0cb7ada0529e6e656.jpg"
     },
     {
-      "id": "c0247",
+      "id": "yuzuriha",
       "name": "川村 楪",
       "school": "御台場女学校",
       "wiki": "川村楪",
       "image": "https://i.gyazo.com/1f27b8c74d0d03207dc2a0e126d81ba9.jpg"
     },
     {
-      "id": "c0248",
+      "id": "momiji",
       "name": "月岡 椛",
       "school": "御台場女学校",
       "wiki": "月岡椛",
       "image": "https://i.gyazo.com/2acdc53b338c908aa1a2934738d6ae20.jpg"
     },
     {
-      "id": "c0249",
+      "id": "katsura",
       "name": "速水 桂",
       "school": "御台場女学校",
       "wiki": "速水桂",
       "image": "https://i.gyazo.com/2cf17f0718cb5530028883ecde977b39.jpg"
     },
     {
-      "id": "c0250",
+      "id": "kurena",
       "name": "西郷 紅",
       "school": "御台場女学校",
       "wiki": "西郷紅",
       "image": "https://i.gyazo.com/33d6836fd6e619f366f581fc03d6e262.jpg"
     },
     {
-      "id": "c0251",
+      "id": "chinami",
       "name": "鈴木 因",
       "school": "御台場女学校",
       "wiki": "鈴木因",
       "image": "https://i.gyazo.com/3ee5568046926a75486f7c76fe5c383b.jpg"
     },
     {
-      "id": "c0252",
+      "id": "azusa",
       "name": "横山 梓",
       "school": "御台場女学校",
       "wiki": "横山梓",
       "image": "https://i.gyazo.com/8369cf8e7b15ea5a141ca44ac8d9d421.jpg"
     },
     {
-      "id": "c0253",
+      "id": "haru",
       "name": "菱田 治",
       "school": "御台場女学校",
       "wiki": "菱田治",
       "image": "https://i.gyazo.com/57c040ae49f324bd1809cf46217a2d23.jpg"
     },
     {
-      "id": "c0254",
+      "id": "amane",
       "name": "円山 周",
       "school": "御台場女学校",
       "wiki": "円山周",
       "image": "https://i.gyazo.com/ecb6802fd3ad77f57ceb97eea40be6a0.jpg"
     },
     {
-      "id": "c0255",
+      "id": "sunao_otake",
       "name": "尾竹 廉",
       "school": "御台場女学校",
       "wiki": "尾竹廉",
       "image": "https://i.gyazo.com/378eb6402ea67f4811eb4d71c219cf4a.jpg"
     },
     {
-      "id": "c0256",
+      "id": "warabi",
       "name": "上村 蕨",
       "school": "御台場女学校",
       "wiki": "上村蕨",
       "image": null
     },
     {
-      "id": "c0257",
+      "id": "urara",
       "name": "伊藤 麗",
       "school": "御台場女学校",
       "wiki": "伊藤麗",
       "image": null
     },
     {
-      "id": "c0258",
+      "id": "kiito",
       "name": "船田 純",
       "school": "御台場女学校",
       "wiki": "船田純",
       "image": "https://i.gyazo.com/6a6f2cd3290f7234029e9fc348af5e71.jpg"
     },
     {
-      "id": "c0259",
+      "id": "ui",
       "name": "船田 初",
       "school": "御台場女学校",
       "wiki": "船田初",
       "image": "https://i.gyazo.com/5ab4e6c5d697204d55eeb56be7d4b6d8.jpg"
     },
     {
-      "id": "c0260",
+      "id": "yuki",
       "name": "長沢 雪",
       "school": "御台場女学校",
       "wiki": "長沢雪",
       "image": "https://i.gyazo.com/259d02eaedce1efc13c9055dc8c9cc08.jpg"
     },
     {
-      "id": "c0261",
+      "id": "tomoshibi",
       "name": "司馬 燈",
       "school": "御台場女学校",
       "wiki": "司馬燈",
       "image": "https://i.gyazo.com/8011a42dab9e785ae61bacd708e9d2d6.jpg"
     },
     {
-      "id": "c0262",
+      "id": "kozue",
       "name": "梢・ウェスト",
       "school": "御台場女学校",
       "wiki": "梢・ウェスト",
       "image": "https://i.gyazo.com/459c4032c366b05bb6b1450858e61229.jpg"
     },
     {
-      "id": "c0263",
+      "id": "hotaru",
       "name": "川端 蛍",
       "school": "御台場女学校",
       "wiki": "川端蛍",
       "image": "https://i.gyazo.com/d31d063c6e8bf1ec824c4962a76e885f.jpg"
     },
     {
-      "id": "c0264",
+      "id": "subaru",
       "name": "井草 昴",
       "school": "御台場女学校",
       "wiki": "井草昴",
       "image": "https://i.gyazo.com/8c848ea0e82078af01ce20b71acf08cd.jpg"
     },
     {
-      "id": "c0265",
+      "id": "asagao",
       "name": "藤田 槿",
       "school": "御台場女学校",
       "wiki": "藤田槿",
       "image": "https://i.gyazo.com/80f754f267e54d1d33a84de2c64fd1af.jpg"
     },
     {
-      "id": "c0266",
+      "id": "yukari",
       "name": "今村 紫",
       "school": "御台場女学校",
       "wiki": "今村紫",
       "image": "https://i.gyazo.com/297c2c948ddd015cc6c0f06ca260e4e4.jpg"
     },
     {
-      "id": "c0267",
+      "id": "sumire",
       "name": "駒井 菫",
       "school": "御台場女学校",
       "wiki": "駒井菫",
       "image": "https://i.gyazo.com/897bb2a402d598bf61459bc4d720c2f3.jpg"
     },
     {
-      "id": "c0268",
+      "id": "minato",
       "name": "弘瀬 湊",
       "school": "御台場女学校",
       "wiki": "弘瀬湊",
       "image": "https://i.gyazo.com/34f05255dea97e43a81447ad2131c7ce.jpg"
     },
     {
-      "id": "c0269",
+      "id": "suzuna",
       "name": "曽我 菘",
       "school": "御台場女学校",
       "wiki": "曽我菘",
       "image": "https://i.gyazo.com/d4822f0e30cd8b6b47e9306d1137556e.jpg"
     },
     {
-      "id": "c0270",
+      "id": "hanabusa",
       "name": "岸田 英",
       "school": "御台場女学校",
       "wiki": "岸田英",
       "image": "https://i.gyazo.com/ed33c6f265326de345d12b0be9600d2d.jpg"
     },
     {
-      "id": "c0271",
+      "id": "ushio",
       "name": "棟方 潮",
       "school": "御台場女学校",
       "wiki": "棟方潮",
       "image": null
     },
     {
-      "id": "c0272",
+      "id": "tsubomi",
       "name": "棟方 蕾",
       "school": "御台場女学校",
       "wiki": "棟方蕾",
       "image": null
     },
     {
-      "id": "c0273",
+      "id": "suzu",
       "name": "木藤 鈴",
       "school": "御台場女学校",
       "wiki": "木藤鈴",
       "image": "https://i.gyazo.com/b2c3cd28ef487020290fcaab761c3fb0.jpg"
     },
     {
-      "id": "c0274",
+      "id": "ritu",
       "name": "福嶋 律",
       "school": "御台場女学校",
       "wiki": "福嶋律",
       "image": "https://i.gyazo.com/ae950576ac3b05e1e518eb4194deaa4b.jpg"
     },
     {
-      "id": "c0275",
+      "id": "sakumi",
       "name": "今村 咲魅",
       "school": "御台場女学校",
       "wiki": "今村咲魅",
       "image": "https://i.gyazo.com/4be068fbea14d33ff838a7f26a81a702.jpg"
     },
     {
-      "id": "c0276",
+      "id": "akira",
       "name": "アキラ・ブラントン",
       "school": "御台場女学校",
       "wiki": "アキラ・ブラントン",
       "image": "https://i.gyazo.com/560d09ebce94d3468c8fb25a26c80fba.jpg"
     },
     {
-      "id": "c0277",
+      "id": "tomoyo_nakahara",
       "name": "中原・メアリィ・倫夜",
       "school": "御台場女学校",
       "wiki": "中原・メアリィ・倫夜",
       "image": "https://i.gyazo.com/eea9b68a67bd4ca7b769a4e7b970c7b1.jpg"
     },
     {
-      "id": "c0278",
+      "id": "mayumi",
       "name": "稲葉 檀",
       "school": "御台場女学校",
       "wiki": "稲葉檀",
       "image": "https://i.gyazo.com/9c3a7b91cee15c86a996afc1eb374258.jpg"
     },
     {
-      "id": "c0279",
+      "id": "komachi",
       "name": "手島 恋町",
       "school": "イルマ女子美術高校",
       "wiki": "手島恋町",
       "image": "https://i.gyazo.com/dce07d3465c14fb0c007e6d0459dc950.jpg"
     },
     {
-      "id": "c0280",
+      "id": "miharu",
       "name": "西川 御巴留",
       "school": "イルマ女子美術高校",
       "wiki": "西川御巴留",
       "image": "https://i.gyazo.com/cd586004a43685b339863bf8a3f64084.jpg"
     },
     {
-      "id": "c0281",
+      "id": "waku",
       "name": "日比野 羽来",
       "school": "イルマ女子美術高校",
       "wiki": "日比野羽来",
       "image": "https://i.gyazo.com/18ac74353db8cd64ccdf772153f49c31.jpg"
     },
     {
-      "id": "c0282",
+      "id": "miyazu",
       "name": "比田井 美夜受",
       "school": "イルマ女子美術高校",
       "wiki": "比田井美夜受",
       "image": "https://i.gyazo.com/7bd528d4166295bffebb40e2962c55e2.jpg"
     },
     {
-      "id": "c0283",
+      "id": "kaina",
       "name": "中林 海七",
       "school": "イルマ女子美術高校",
       "wiki": "中林海七",
       "image": "https://i.gyazo.com/1e10281360a0bc58790d278c755a25a5.jpg"
     },
     {
-      "id": "c0284",
+      "id": "komuku",
       "name": "宮本 煌椋",
       "school": "イルマ女子美術高校",
       "wiki": "宮本煌椋",
       "image": "https://i.gyazo.com/8ad0362229edfa6256479f49d3e6058a.jpg"
     },
     {
-      "id": "c0285",
+      "id": "kukuri",
       "name": "巌谷 紅々李",
       "school": "イルマ女子美術高校",
       "wiki": "巌谷紅々李",
       "image": "https://i.gyazo.com/2f32ef25d2baaff5b02a481ab26b126b.jpg"
     },
     {
-      "id": "c0286",
+      "id": "rengetsu",
       "name": "日下部 蓮月",
       "school": "イルマ女子美術高校",
       "wiki": "日下部蓮月",
       "image": "https://i.gyazo.com/28a4736d40ef47bff21dd0078d9b6427.jpg"
     },
     {
-      "id": "c0287",
+      "id": "murasame",
       "name": "日下部 叢雨",
       "school": "イルマ女子美術高校",
       "wiki": "日下部叢雨",
       "image": "https://i.gyazo.com/08e540294c7562aeb5569a3cca2ee9f3.jpg"
     },
     {
-      "id": "c0288",
+      "id": "kasumiko",
       "name": "吉井 霞子",
       "school": "イルマ女子美術高校",
       "wiki": "吉井霞子",
       "image": "https://i.gyazo.com/3b5e1fdbcc94c7d9af913785d8a6170f.jpg"
     },
     {
-      "id": "c0289",
+      "id": "imari",
       "name": "上田 伊万里",
       "school": "イルマ女子美術高校",
       "wiki": "上田伊万里",
       "image": "https://i.gyazo.com/0390999ee1aff8298196a1427c259a7c.jpg"
     },
     {
-      "id": "c0290",
+      "id": "marimo",
       "name": "神郡 鞠萠",
       "school": "イルマ女子美術高校",
       "wiki": "神郡鞠萠",
       "image": "https://i.gyazo.com/975cc410c0903c3a648c83018b9ad69a.jpg"
     },
     {
-      "id": "c0291",
+      "id": "tokuko",
       "name": "東久世 徳子",
       "school": "イルマ女子美術高校",
       "wiki": "東久世徳子",
       "image": "https://i.gyazo.com/2e0acb7201650febd80adbf17f968c58.jpg"
     },
     {
-      "id": "c0292",
+      "id": "yuzutsu",
       "name": "廣津 夕星",
       "school": "イルマ女子美術高校",
       "wiki": "廣津夕星",
       "image": "https://i.gyazo.com/f4d9cf7040e3abecf4560c971f4e4fba.jpg"
     },
     {
-      "id": "c0293",
+      "id": "hisui",
       "name": "續木 姫翠",
       "school": "イルマ女子美術高校",
       "wiki": "續木姫翠",
       "image": "https://i.gyazo.com/00e95881141eb35ad1ecd311535c3bfc.jpg"
     },
     {
-      "id": "c0294",
+      "id": "saho",
       "name": "諸井 佐保",
       "school": "イルマ女子美術高校",
       "wiki": "諸井佐保",
       "image": "https://i.gyazo.com/3a6432c6589fdb8ea02e99068a60fb14.jpg"
     },
     {
-      "id": "c0295",
+      "id": "rito",
       "name": "三輪田 俐翔",
       "school": "イルマ女子美術高校",
       "wiki": "三輪田俐翔",
       "image": "https://i.gyazo.com/9ab41df8198b0b047324d181a7299476.jpg"
     },
     {
-      "id": "c0296",
+      "id": "yuunagi",
       "name": "辻本 勇渚",
       "school": "イルマ女子美術高校",
       "wiki": "辻本勇渚",
       "image": "https://i.gyazo.com/36add9f4ef2569af1b646a4849efa64b.jpg"
     },
     {
-      "id": "c0297",
+      "id": "ayumu",
       "name": "田代 歩結",
       "school": "イルマ女子美術高校",
       "wiki": "田代歩結",
       "image": "https://i.gyazo.com/1f98427eff996fa858b1e20ca900b21f.jpg"
     },
     {
-      "id": "c0298",
+      "id": "mioko",
       "name": "篠田 澪瑚",
       "school": "イルマ女子美術高校",
       "wiki": "篠田澪瑚",
       "image": "https://i.gyazo.com/782aa599edc38bacf450ffa1210edbea.jpg"
     },
     {
-      "id": "c0299",
+      "id": "ryouka",
       "name": "三条 涼香",
       "school": "イルマ女子美術高校",
       "wiki": "三条涼香",
       "image": null
     },
     {
-      "id": "c0300",
+      "id": "raimu",
       "name": "岸本・ルチア・来夢",
       "school": "私立ルドビコ女学院",
       "wiki": "岸本・ルチア・来夢",
       "image": "https://i.gyazo.com/8e5e91372b0defca7e9ba6193c1390bc.jpg"
     },
     {
-      "id": "c0301",
+      "id": "seren",
       "name": "天宮・ソフィア・聖恋",
       "school": "私立ルドビコ女学院",
       "wiki": "天宮・ソフィア・聖恋",
       "image": "https://i.gyazo.com/b59766cf6da7d1f2f1d9599a83aa9f32.jpg"
     },
     {
-      "id": "c0302",
+      "id": "sachie",
       "name": "福山・ジャンヌ・幸恵",
       "school": "私立ルドビコ女学院",
       "wiki": "福山・ジャンヌ・幸恵",
       "image": "https://i.gyazo.com/7c96b0260c1b980e6cac2fd350554e6f.jpg"
     },
     {
-      "id": "c0303",
+      "id": "himari",
       "name": "一之宮・ミカエラ・日葵",
       "school": "私立ルドビコ女学院",
       "wiki": "一之宮・ミカエラ・日葵",
       "image": "https://i.gyazo.com/690fc14a12f3aa95f865afc68da8cfb3.jpg"
     },
     {
-      "id": "c0304",
+      "id": "kayo",
       "name": "松永・ブリジッタ・佳世",
       "school": "私立ルドビコ女学院",
       "wiki": "松永・ブリジッタ・佳世",
       "image": "https://i.gyazo.com/6a2f24873a58fdfc1a1dc1f97c1dcf36.jpg"
     },
     {
-      "id": "c0305",
+      "id": "yuria",
       "name": "黒木・フランシスカ・百合亜",
       "school": "私立ルドビコ女学院",
       "wiki": "黒木・フランシスカ・百合亜",
       "image": "https://i.gyazo.com/874ea185cca80cd4470d39750aee9e66.jpg"
     },
     {
-      "id": "c0306",
+      "id": "ichika",
       "name": "瀬戸・ベロニカ・いちか",
       "school": "私立ルドビコ女学院",
       "wiki": "瀬戸・ベロニカ・いちか",
       "image": "https://i.gyazo.com/fbabcc2d6790c893ddd95bc108855aa8.jpg"
     },
     {
-      "id": "c0307",
+      "id": "kokoro_sano",
       "name": "佐野・マチルダ・こころ",
       "school": "私立ルドビコ女学院",
       "wiki": "佐野・マチルダ・こころ",
       "image": "https://i.gyazo.com/96704705cc6940aab74e43663de3f8ae.jpg"
     },
     {
-      "id": "c0308",
+      "id": "yuko",
       "name": "鳴海・クララ・優子",
       "school": "私立ルドビコ女学院",
       "wiki": "鳴海・クララ・優子",
       "image": "https://i.gyazo.com/865716af04ae87de755a6599a741cbf8.jpg"
     },
     {
-      "id": "c0309",
+      "id": "tsugumi",
       "name": "長谷川・ガブリエラ・つぐみ",
       "school": "私立ルドビコ女学院",
       "wiki": "長谷川・ガブリエラ・つぐみ",
       "image": "https://i.gyazo.com/788c3ab1da4d214daa64e06c96a778c9.jpg"
     },
     {
-      "id": "c0310",
+      "id": "asahi",
       "name": "宝城・モニカ・朝妃",
       "school": "私立ルドビコ女学院",
       "wiki": "宝城・モニカ・朝妃",
       "image": "https://i.gyazo.com/0dcbd4ce574ade21897897ede390acc3.jpg"
     },
     {
-      "id": "c0311",
+      "id": "mei",
       "name": "羽田・カタリナ・芽衣",
       "school": "私立ルドビコ女学院",
       "wiki": "羽田・カタリナ・芽衣",
       "image": "https://i.gyazo.com/d2f7ed144daed2e558dbdefd4caa3216.jpg"
     },
     {
-      "id": "c0312",
+      "id": "moe",
       "name": "花丘・アンジェラ・萌",
       "school": "私立ルドビコ女学院",
       "wiki": "花丘・アンジェラ・萌",
       "image": "https://i.gyazo.com/b310f095e15893fd92932339e2bf360e.jpg"
     },
     {
-      "id": "c0313",
+      "id": "karen",
       "name": "佐伯・ジュリア・花蓮",
       "school": "私立ルドビコ女学院",
       "wiki": "佐伯・ジュリア・花蓮",
       "image": "https://i.gyazo.com/32c425ddde84da19f98216824e2b0a43.jpg"
     },
     {
-      "id": "c0314",
+      "id": "nonoka",
       "name": "永瀬・マルタ・のの花",
       "school": "私立ルドビコ女学院",
       "wiki": "永瀬・マルタ・のの花",
       "image": "https://i.gyazo.com/f3e9608a6b81406b56120283e8fe7c1c.jpg"
     },
     {
-      "id": "c0315",
+      "id": "towa",
       "name": "高取・ナタリー・永遠",
       "school": "私立ルドビコ女学院",
       "wiki": "高取・ナタリー・永遠",
       "image": "https://i.gyazo.com/80237294d76339c9c54a8369b63d34e2.jpg"
     },
     {
-      "id": "c0316",
+      "id": "susu",
       "name": "李・クリスティーナ・思思",
       "school": "私立ルドビコ女学院",
       "wiki": "李・クリスティーナ・思思",
       "image": "https://i.gyazo.com/1258b1fc6a11cf80ec46033231cc38e9.jpg"
     },
     {
-      "id": "c0317",
+      "id": "kazane",
       "name": "野坂・ジャクリーヌ・風音",
       "school": "私立ルドビコ女学院",
       "wiki": "野坂・ジャクリーヌ・風音",
       "image": "https://i.gyazo.com/6a70a070509d98a3b83adba0e6a51747.jpg"
     },
     {
-      "id": "c0318",
+      "id": "mirai",
       "name": "岸本・マリア・未来",
       "school": "私立ルドビコ女学院",
       "wiki": "岸本・マリア・未来",
       "image": "https://i.gyazo.com/7fb95660afe83ba4f800c28a51b7ff57.jpg"
     },
     {
-      "id": "c0319",
+      "id": "kotohi",
       "name": "戸田・エウラリア・琴陽",
       "school": "私立ルドビコ女学院",
       "wiki": "戸田・エウラリア・琴陽",
@@ -2509,287 +2509,287 @@
       "image": "https://i.gyazo.com/4dad963f4e975dfe0a3bae577e7a9b08.jpg"
     },
     {
-      "id": "c0359",
+      "id": "fuka",
       "name": "松村 優珂",
       "school": "エレンスゲ女学園",
       "wiki": "松村優珂",
       "image": "https://i.gyazo.com/d3e935183d0ff0d7f0b95b77e1ae2f0b.jpg"
     },
     {
-      "id": "c0360",
+      "id": "mitake",
       "name": "牧野 美岳",
       "school": "エレンスゲ女学園",
       "wiki": "牧野美岳",
       "image": "https://i.gyazo.com/1b23ae11b4bccb534c8d2c830469000d.jpg"
     },
     {
-      "id": "c0361",
+      "id": "makina",
       "name": "賀川 蒔菜",
       "school": "エレンスゲ女学園",
       "wiki": "賀川蒔菜",
       "image": "https://i.gyazo.com/d3bf7fed742880c9121ab6b5bb5ab227.jpg"
     },
     {
-      "id": "c0362",
+      "id": "yuni",
       "name": "森本 結爾",
       "school": "エレンスゲ女学園",
       "wiki": "森本結爾",
       "image": "https://i.gyazo.com/442766e4b3976dee27df43c05b4f1917.jpg"
     },
     {
-      "id": "c0363",
+      "id": "higure",
       "name": "苅谷 緋紅",
       "school": "エレンスゲ女学園",
       "wiki": "苅谷緋紅",
       "image": "https://i.gyazo.com/977ce58e3dcb109f88b84da4dc32367c.jpg"
     },
     {
-      "id": "c0364",
+      "id": "nanaho",
       "name": "坪井 七保",
       "school": "エレンスゲ女学園",
       "wiki": "坪井七保",
       "image": "https://i.gyazo.com/70f38102261e847411f98b39b70a540a.jpg"
     },
     {
-      "id": "c0365",
+      "id": "noi",
       "name": "山内 昇依",
       "school": "エレンスゲ女学園",
       "wiki": "山内昇依",
       "image": null
     },
     {
-      "id": "c0366",
+      "id": "nako",
       "name": "大里 菜子",
       "school": "エレンスゲ女学園",
       "wiki": "大里菜子",
       "image": null
     },
     {
-      "id": "c0367",
+      "id": "uru",
       "name": "大塚 雨琉",
       "school": "エレンスゲ女学園",
       "wiki": "大塚雨琉",
       "image": null
     },
     {
-      "id": "c0368",
+      "id": "rindo",
       "name": "柴田 竜胆",
       "school": "エレンスゲ女学園",
       "wiki": "柴田竜胆",
       "image": null
     },
     {
-      "id": "c0369",
+      "id": "tsubaki",
       "name": "田沢 椿月",
       "school": "エレンスゲ女学園",
       "wiki": "田沢椿月",
       "image": null
     },
     {
-      "id": "c0370",
+      "id": "izumi",
       "name": "大場 出海",
       "school": "エレンスゲ女学園",
       "wiki": "大場出海",
       "image": null
     },
     {
-      "id": "c0371",
+      "id": "hirari",
       "name": "森山 平凛",
       "school": "エレンスゲ女学園",
       "wiki": "森山平凛",
       "image": null
     },
     {
-      "id": "c0372",
+      "id": "shizuku",
       "name": "江坂 雫月",
       "school": "エレンスゲ女学園",
       "wiki": "江坂雫月",
       "image": "https://i.gyazo.com/f4ce9e2924f9bf8ed573359ed545c3a4.jpg"
     },
     {
-      "id": "c0373",
+      "id": "korin",
       "name": "金関 虎凛",
       "school": "エレンスゲ女学園",
       "wiki": "金関虎凛",
       "image": null
     },
     {
-      "id": "c0374",
+      "id": "miho",
       "name": "鳥居 美歩",
       "school": "エレンスゲ女学園",
       "wiki": "鳥居美歩",
       "image": "https://i.gyazo.com/ae980760269ca4afcae3b29be13a76f4.jpg"
     },
     {
-      "id": "c0375",
+      "id": "yakumo",
       "name": "高島 八雲",
       "school": "エレンスゲ女学園",
       "wiki": "高島八雲",
       "image": "https://i.gyazo.com/9ba3a0435061cfa2f0db96eeb9d616f4.jpg"
     },
     {
-      "id": "c0376",
+      "id": "noemi",
       "name": "西村 乃恵美",
       "school": "エレンスゲ女学園",
       "wiki": "西村乃恵美",
       "image": "https://i.gyazo.com/3612a85edb0d58b3d4a626e5d9398531.png"
     },
     {
-      "id": "c0377",
+      "id": "akehi",
       "name": "本間 秋日",
       "school": "神庭女子藝術高校",
       "wiki": "本間秋日",
       "image": "https://i.gyazo.com/32ae974978882d778fded503232887a3.jpg"
     },
     {
-      "id": "c0378",
+      "id": "haruna",
       "name": "横田 悠夏",
       "school": "神庭女子藝術高校",
       "wiki": "横田悠夏",
       "image": "https://i.gyazo.com/b53d2857efeda22b5a5297f15c0a7f69.jpg"
     },
     {
-      "id": "c0379",
+      "id": "suzume",
       "name": "塩崎 鈴夢",
       "school": "神庭女子藝術高校",
       "wiki": "塩崎鈴夢",
       "image": "https://i.gyazo.com/37077bbd22155564a94939c4bc6f3525.jpg"
     },
     {
-      "id": "c0380",
+      "id": "fujino",
       "name": "石塚 藤乃",
       "school": "神庭女子藝術高校",
       "wiki": "石塚藤乃",
       "image": "https://i.gyazo.com/96e15b0513d2ca7a06c12849e0b3042b.jpg"
     },
     {
-      "id": "c0381",
+      "id": "moka",
       "name": "外崎 杏花",
       "school": "神庭女子藝術高校",
       "wiki": "外崎杏花",
       "image": "https://i.gyazo.com/8b51c54a7f0f7739e182f0ebf8a84f51.jpg"
     },
     {
-      "id": "c0382",
+      "id": "hiromi",
       "name": "安孫子 比呂美",
       "school": "神庭女子藝術高校",
       "wiki": "安孫子比呂美",
       "image": "https://i.gyazo.com/e543dce0b3c48f1aa5adb659ff819f7c.jpg"
     },
     {
-      "id": "c0383",
+      "id": "anzu",
       "name": "村元 庵珠",
       "school": "神庭女子藝術高校",
       "wiki": "村元庵珠",
       "image": "https://i.gyazo.com/92fe1748de833dcc9cad28470b9b7178.jpg"
     },
     {
-      "id": "c0384",
+      "id": "chie",
       "name": "澁川 智英",
       "school": "神庭女子藝術高校",
       "wiki": "澁川智英",
       "image": "https://i.gyazo.com/5548ac9d7191d68c9168f83f3b33f481.jpg"
     },
     {
-      "id": "c0385",
+      "id": "io",
       "name": "桑田 一乙",
       "school": "神庭女子藝術高校",
       "wiki": "桑田一乙",
       "image": "https://i.gyazo.com/5ac8ea9ef6502c7a71bd7f0e90bb2698.jpg"
     },
     {
-      "id": "c0386",
+      "id": "nuyuna",
       "name": "九鬼 縫雪花",
       "school": "聖橋大学附属女子高等学校",
       "wiki": "九鬼縫雪花",
       "image": "https://i.gyazo.com/168679f9d8b7bb2f6f795172a8c4f0fd.jpg"
     },
     {
-      "id": "c0387",
+      "id": "kiriko",
       "name": "岩下 桐子",
       "school": "聖橋大学附属女子高等学校",
       "wiki": "岩下桐子",
       "image": "https://i.gyazo.com/cc6f4cfe56997f3c740b44e600048447.jpg"
     },
     {
-      "id": "c0388",
+      "id": "tae",
       "name": "澤瀉 布",
       "school": "聖橋大学附属女子高等学校",
       "wiki": "澤瀉布",
       "image": "https://i.gyazo.com/37894accb43ba995ff23951443d749b6.jpg"
     },
     {
-      "id": "c0389",
+      "id": "merin",
       "name": "柄谷 愛鈴",
       "school": "聖橋大学附属女子高等学校",
       "wiki": "柄谷愛鈴",
       "image": null
     },
     {
-      "id": "c0390",
+      "id": "hiiro",
       "name": "中島 緋彩",
       "school": "聖橋大学附属女子高等学校",
       "wiki": "中島緋彩",
       "image": null
     },
     {
-      "id": "c0391",
+      "id": "ryo",
       "name": "和辻 椋",
       "school": "聖橋大学附属女子高等学校",
       "wiki": "和辻椋",
       "image": null
     },
     {
-      "id": "c0392",
+      "id": "kanon",
       "name": "夢野 花音",
       "school": "甲斐聖山女子高等学校",
       "wiki": "夢野花音",
       "image": "https://i.gyazo.com/8e5a074a3397137c16d3b6b17d712e42.jpg"
     },
     {
-      "id": "c0393",
+      "id": "seina",
       "name": "種田 正奈",
       "school": "甲斐聖山女子高等学校",
       "wiki": "種田正奈",
       "image": "https://i.gyazo.com/9d97c1c4f239baf57a85648f69691dbd.jpg"
     },
     {
-      "id": "c0394",
+      "id": "sena",
       "name": "六角 瀬名",
       "school": "甲斐聖山女子高等学校",
       "wiki": "六角瀬名",
       "image": null
     },
     {
-      "id": "c0395",
+      "id": "makoto",
       "name": "山川 真琴",
       "school": "甲斐聖山女子高等学校",
       "wiki": "山川真琴",
       "image": null
     },
     {
-      "id": "c0396",
+      "id": "yasuna",
       "name": "佐々木 靖奈",
       "school": "那賀大串女学園",
       "wiki": "佐々木靖奈",
       "image": "https://i.gyazo.com/b9b1181bd65177422c10753642246943.jpg"
     },
     {
-      "id": "c0397",
+      "id": "shinano",
       "name": "野口 志奈乃",
       "school": "那賀大串女学園",
       "wiki": "野口志奈乃",
       "image": "https://i.gyazo.com/645857884554a77eb37d89a4fb7f6d59.png"
     },
     {
-      "id": "c0398",
+      "id": "koume",
       "name": "千田 昊苺",
       "school": "那賀大串女学園",
       "wiki": "千田昊苺",
       "image": "https://i.gyazo.com/15791a171d280eddec253dd8cbcf92cb.jpg"
     },
     {
-      "id": "c0399",
+      "id": "erisa",
       "name": "団塚 英里彩",
       "school": "那賀大串女学園",
       "wiki": "団塚英里彩",
@@ -2803,98 +2803,98 @@
       "image": null
     },
     {
-      "id": "c0401",
+      "id": "marei",
       "name": "天津 麻嶺",
       "school": "柳都女学館",
       "wiki": "天津麻嶺",
       "image": "https://i.gyazo.com/491caae2c63d438c84c925fdc75600f0.jpg"
     },
     {
-      "id": "c0402",
+      "id": "yuna",
       "name": "千子 夕七",
       "school": "柳都女学館",
       "wiki": "千子夕七",
       "image": "https://i.gyazo.com/76f97c70c864065313784e6937f0a4b2.jpg"
     },
     {
-      "id": "c0403",
+      "id": "kanna",
       "name": "岡崎 神那",
       "school": "柳都女学館",
       "wiki": "岡崎神那",
       "image": null
     },
     {
-      "id": "c0404",
+      "id": "fubuki",
       "name": "宮入 風舞姫",
       "school": "柳都女学館",
       "wiki": "宮入風舞姫",
       "image": "https://i.gyazo.com/d6ce60fff08ce1464487c5c0910078b9.jpg"
     },
     {
-      "id": "c0405",
+      "id": "nanoha",
       "name": "吉原 菜乃葉",
       "school": "柳都女学館",
       "wiki": "吉原菜乃葉",
       "image": "https://i.gyazo.com/2cf7180f13188f1124a1775f3d18d3bf.jpg"
     },
     {
-      "id": "c0406",
+      "id": "tamao",
       "name": "青江 珠緒",
       "school": "柳都女学館",
       "wiki": "青江珠緒",
       "image": null
     },
     {
-      "id": "c0407",
+      "id": "miki",
       "name": "隅谷 水晶",
       "school": "柳都女学館",
       "wiki": "隅谷水晶",
       "image": "https://i.gyazo.com/598276d174c9a6c72eeebee2e67f643c.jpg"
     },
     {
-      "id": "c0408",
+      "id": "komomo",
       "name": "榎本 瑚桃",
       "school": "柳都女学館",
       "wiki": "榎本瑚桃",
       "image": "https://i.gyazo.com/57e235e7d25e5565475d5dd547c96395.jpg"
     },
     {
-      "id": "c0409",
+      "id": "rion",
       "name": "今泉 吏園",
       "school": "柳都女学館",
       "wiki": "今泉吏園",
       "image": "https://i.gyazo.com/94bb1b2504271cda4b7f052b7bf0021a.jpg"
     },
     {
-      "id": "c0410",
+      "id": "byakuren",
       "name": "八鍬 白蓮",
       "school": "柳都女学館",
       "wiki": "八鍬白蓮",
       "image": null
     },
     {
-      "id": "c0411",
+      "id": "asuka",
       "name": "高見 明日香",
       "school": "柳都女学館",
       "wiki": "高見明日香",
       "image": null
     },
     {
-      "id": "c0412",
+      "id": "hanako",
       "name": "天田 花心",
       "school": "柳都女学館",
       "wiki": "天田花心",
       "image": "https://i.gyazo.com/3f4493eba52afc2c84e8403d3e20571d.jpg"
     },
     {
-      "id": "c0413",
+      "id": "annna",
       "name": "岩崎 行那",
       "school": "柳都女学館",
       "wiki": "岩崎行那",
       "image": null
     },
     {
-      "id": "c0414",
+      "id": "yaya",
       "name": "榎本 椰々",
       "school": "柳都女学館",
       "wiki": "榎本椰々",
@@ -2922,7 +2922,7 @@
       "image": "https://i.gyazo.com/fd695d3920ad569b2af0a986a85af2df.jpg"
     },
     {
-      "id": "c0418",
+      "id": "miyabi",
       "name": "森下 雅枇",
       "school": "アンブロシア女学苑高等學校",
       "wiki": "森下雅枇",
@@ -2936,7 +2936,7 @@
       "image": "https://i.gyazo.com/cdaa5c85399ad8f950695d1adfac67a1.jpg"
     },
     {
-      "id": "c0420",
+      "id": "chino",
       "name": "月岡 千乃",
       "school": "アンブロシア女学苑高等學校",
       "wiki": "月岡千乃",
@@ -2999,56 +2999,56 @@
       "image": null
     },
     {
-      "id": "c0429",
+      "id": "tsubasa",
       "name": "飛鳥井 翼彩",
       "school": "鹿野苑高等女学園",
       "wiki": "飛鳥井翼彩",
       "image": "https://i.gyazo.com/dd4029c313be8445a766481ea319fb3e.jpg"
     },
     {
-      "id": "c0430",
+      "id": "mizumi",
       "name": "一条 蒼泉",
       "school": "鹿野苑高等女学園",
       "wiki": "一条蒼泉",
       "image": "https://i.gyazo.com/efc4dda7335641fa5f0b4310b877d077.jpg"
     },
     {
-      "id": "c0431",
+      "id": "honoho",
       "name": "与謝野ほのほ",
       "school": "鹿野苑高等女学園",
       "wiki": "与謝野ほのほ",
       "image": "https://i.gyazo.com/78461db45e52a1f7eb779a27d74a5cbe.jpg"
     },
     {
-      "id": "c0432",
+      "id": "shirabe",
       "name": "茅野 調",
       "school": "鹿野苑高等女学園",
       "wiki": "茅野調",
       "image": "https://i.gyazo.com/a83c679caf124a5e702a38a746cd17e0.jpg"
     },
     {
-      "id": "c0433",
+      "id": "kaoru_saionji",
       "name": "西園寺 香流",
       "school": "鹿野苑高等女学園",
       "wiki": "西園寺香流",
       "image": "https://i.gyazo.com/75933f64d9e809208a302eebf133f60d.jpg"
     },
     {
-      "id": "c0434",
+      "id": "amami",
       "name": "紀 甘魅",
       "school": "鹿野苑高等女学園",
       "wiki": "紀甘魅",
       "image": "https://i.gyazo.com/12dfaadbf4a19228de226dac43a28336.jpg"
     },
     {
-      "id": "c0435",
+      "id": "mako",
       "name": "春道 麻子",
       "school": "鹿野苑高等女学園",
       "wiki": "春道麻子",
       "image": "https://i.gyazo.com/03285001d2d5658265effe89ebd5c2db.jpg"
     },
     {
-      "id": "c0436",
+      "id": "oki",
       "name": "アリューニャ・レスコー・沖",
       "school": "鹿野苑高等女学園",
       "wiki": "アリューニャ・レスコー・沖",
@@ -3090,7 +3090,7 @@
       "image": null
     },
     {
-      "id": "c0442",
+      "id": "nagisa_tachibana",
       "name": "立花・テレジア・渚",
       "school": "ヘイムスクリングラトレードゴード",
       "wiki": "立花・テレジア・渚",
@@ -3195,7 +3195,7 @@
       "image": null
     },
     {
-      "id": "c0457",
+      "id": "gozen",
       "name": "御前",
       "school": "その他・不明",
       "wiki": "御前",
@@ -3415,6 +3415,10 @@
     { "from": "yuyu",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "yuyu",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
+    { "from": "yuyu",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
+    { "from": "yuyu",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
+    { "from": "yuyu",   "to": "shin", "type": "同レギオン",          "spoiler": true },
+
     { "from": "kaede",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
     { "from": "kaede",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
     { "from": "kaede",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
@@ -3422,25 +3426,49 @@
     { "from": "kaede",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "kaede",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
+    { "from": "kaede",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
+    { "from": "kaede",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
+    { "from": "kaede",   "to": "shin", "type": "同レギオン",          "spoiler": true },
+
     { "from": "fumi",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
+    { "from": "fumi",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
+    { "from": "fumi",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
+    { "from": "fumi",   "to": "shin", "type": "同レギオン",          "spoiler": true },
+
     { "from": "mai",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
     { "from": "mai",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "mai",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "mai",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
+    { "from": "mai",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
+    { "from": "mai",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
+    { "from": "mai",   "to": "shin", "type": "同レギオン",          "spoiler": true },
+
     { "from": "kuo",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "kuo",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "kuo",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
+    { "from": "kuo",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
+    { "from": "kuo",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
+    { "from": "kuo",   "to": "shin", "type": "同レギオン",          "spoiler": true },
+
     { "from": "tazusa",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "tazusa",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
+    { "from": "tazusa",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
+    { "from": "tazusa",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
+    { "from": "tazusa",   "to": "shin", "type": "同レギオン",          "spoiler": true },
+
     { "from": "miriam", "to": "yujia",  "type": "同レギオン",          "spoiler": false },
+
+    { "from": "miriam",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
+    { "from": "miriam",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
+    { "from": "miriam",   "to": "shin", "type": "同レギオン",          "spoiler": true },
 
     { "from": "kazuha", "to": "renka",     "type": "同レギオン",          "spoiler": false },
     { "from": "kazuha", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
@@ -3651,26 +3679,11 @@
 
     { "from": "sayuri",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "kanaho",   "to": "takane",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kanaho",   "to": "kureha",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kanaho",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kanaho",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kanaho", "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
-
-    { "from": "takane",   "to": "kureha",  "type": "同レギオン",    "spoiler": false },
-    { "from": "takane",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
-    { "from": "takane",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "kureha",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kureha",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "akari",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
-
     { "from": "misaka",   "to": "tohka",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "totori",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "homare",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "misaka",   "to": "tomoyo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "misaka",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -3682,7 +3695,7 @@
     { "from": "tohka",   "to": "totori",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "homare",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tohka",   "to": "tomoyo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tohka",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -3693,7 +3706,7 @@
 
     { "from": "totori",   "to": "homare",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "totori",   "to": "tomoyo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "totori",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -3703,7 +3716,7 @@
     { "from": "totori",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "homare",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "homare",   "to": "tomoyo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "homare",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -3712,7 +3725,7 @@
     { "from": "homare",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "tokiwa",   "to": "tomoyo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tokiwa",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -3721,13 +3734,13 @@
     { "from": "tokiwa",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "tomoyo",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "hibari",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -3765,7 +3778,7 @@
     { "from": "kaho",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kaho",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaho",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "hiromu",   "to": "yukiyo",  "type": "同レギオン",    "spoiler": false },
@@ -3776,7 +3789,7 @@
     { "from": "hiromu",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hiromu",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hiromu",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "yukiyo",   "to": "sayu",  "type": "同レギオン",    "spoiler": false },
@@ -3786,7 +3799,7 @@
     { "from": "yukiyo",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yukiyo",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yukiyo",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "sayu",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
@@ -3795,7 +3808,7 @@
     { "from": "sayu",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sayu",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sayu",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "himiko",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
@@ -3803,35 +3816,35 @@
     { "from": "himiko",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "himiko",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "himiko",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "kaya",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kaya",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaya",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "mako",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "mako",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "mako",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mako",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mako",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "mako",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "chihana",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "chihana",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "chihana",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chihana",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "chihana",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "naru",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "naru",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "naru",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "naru",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "hozumi",   "to": "kaoru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hozumi",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "hozumi",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "kaoru",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaoru_hayashi",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "meika",   "to": "ayako",  "type": "同レギオン",    "spoiler": false },
     { "from": "meika",   "to": "hitomi",  "type": "同レギオン",    "spoiler": false },
@@ -3884,7 +3897,7 @@
     { "from": "mayuri",   "to": "sara",  "type": "同レギオン",    "spoiler": false },
     { "from": "mayuri",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "mayuri",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mayuri",   "to": "kokoro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mayuri",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "kotoko",   "to": "kina",  "type": "同レギオン",    "spoiler": false },
     { "from": "kotoko",   "to": "yayori",  "type": "同レギオン",    "spoiler": false },
@@ -3892,34 +3905,34 @@
     { "from": "kotoko",   "to": "sara",  "type": "同レギオン",    "spoiler": false },
     { "from": "kotoko",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "kotoko",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kotoko",   "to": "kokoro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kotoko",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "kina",   "to": "yayori",  "type": "同レギオン",    "spoiler": false },
     { "from": "kina",   "to": "shizu",  "type": "同レギオン",    "spoiler": false },
     { "from": "kina",   "to": "sara",  "type": "同レギオン",    "spoiler": false },
     { "from": "kina",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "kina",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kina",   "to": "kokoro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kina",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "yayori",   "to": "shizu",  "type": "同レギオン",    "spoiler": false },
     { "from": "yayori",   "to": "sara",  "type": "同レギオン",    "spoiler": false },
     { "from": "yayori",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "yayori",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yayori",   "to": "kokoro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yayori",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "shizu",   "to": "sara",  "type": "同レギオン",    "spoiler": false },
     { "from": "shizu",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "shizu",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shizu",   "to": "kokoro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shizu",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "sara",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "sara",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sara",   "to": "kokoro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sara",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "mirei",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mirei",   "to": "kokoro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mirei",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "noriko",   "to": "kokoro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "noriko",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "rosalinde",   "to": "inori",  "type": "同レギオン",    "spoiler": false },
     { "from": "rosalinde",   "to": "mio",  "type": "同レギオン",    "spoiler": false },
@@ -4029,27 +4042,27 @@
 
     { "from": "gyokuyo",   "to": "miu",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "ageha",   "to": "hifumi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ageha",   "to": "hifumi_horiguchi",  "type": "同レギオン",    "spoiler": false },
     { "from": "ageha",   "to": "kuon",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ageha",   "to": "sunao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ageha",   "to": "sunao_ikeda",  "type": "同レギオン",    "spoiler": false },
     { "from": "ageha",   "to": "satori",  "type": "同レギオン",    "spoiler": false },
     { "from": "ageha",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
     { "from": "ageha",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "hifumi",   "to": "kuon",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hifumi",   "to": "sunao",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hifumi",   "to": "satori",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hifumi",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hifumi",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hifumi_horiguchi",   "to": "kuon",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hifumi_horiguchi",   "to": "sunao_ikeda",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hifumi_horiguchi",   "to": "satori",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hifumi_horiguchi",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hifumi_horiguchi",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "kuon",   "to": "sunao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kuon",   "to": "sunao_ikeda",  "type": "同レギオン",    "spoiler": false },
     { "from": "kuon",   "to": "satori",  "type": "同レギオン",    "spoiler": false },
     { "from": "kuon",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
     { "from": "kuon",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "sunao",   "to": "satori",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sunao",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sunao",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sunao_ikeda",   "to": "satori",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sunao_ikeda",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sunao_ikeda",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "satori",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
     { "from": "satori",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
@@ -4181,6 +4194,618 @@
 
     { "from": "catrinel",   "to": "cynthia",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "plum",   "to": "felicia",  "type": "同レギオン",    "spoiler": false }
+    { "from": "plum",   "to": "felicia",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kinrangyoku",   "to": "ginrangyoku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kinrangyoku",   "to": "kuroyurinokimi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kinrangyoku",   "to": "houraigyoku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kinrangyoku",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kinrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "ginrangyoku",   "to": "kuroyurinokimi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ginrangyoku",   "to": "houraigyoku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ginrangyoku",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ginrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "kuroyurinokimi",   "to": "houraigyoku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kuroyurinokimi",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kuroyurinokimi",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "houraigyoku",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "houraigyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "gozen",   "to": "kotohi",  "type": "主従関係",    "spoiler": true },
+
+    { "from": "shion",   "to": "furiru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "furiru",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "aoi",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yui",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yui",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yui",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yui",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yuma",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuma",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuma",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "jun",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "jun",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "hatsume",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "shion",   "to": "furiru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "furiru",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "aoi",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yui",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yui",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yui",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yui",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yuma",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuma",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuma",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "jun",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "jun",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "hatsume",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "futae",   "to": "masaki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "futae",   "to": "reina",  "type": "同レギオン",    "spoiler": false },
+    { "from": "futae",   "to": "chikage",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "masaki",   "to": "reina",  "type": "同レギオン",    "spoiler": false },
+    { "from": "masaki",   "to": "chikage",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "reina",   "to": "chikage",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "nakaba",   "to": "nazuna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "yuzuriha",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "momiji",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "nazuna",   "to": "yuzuriha",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "momiji",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yuzuriha",   "to": "momiji",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "momiji",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "katsura",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
+    { "from": "katsura",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "katsura",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "katsura",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "katsura",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "katsura",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "katsura",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "katsura",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kurena",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kurena",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kurena",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kurena",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kurena",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kurena",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kurena",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "chinami",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chinami",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chinami",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chinami",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chinami",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chinami",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "azusa",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "azusa",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "azusa",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "azusa",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "azusa",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "haru",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "haru",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "haru",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "haru",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "amane",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "amane",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "amane",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "sunao_otake",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sunao_otake",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "warabi",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kiito",   "to": "ui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "yuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "tomoshibi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "kozue",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "ui",   "to": "yuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ui",   "to": "tomoshibi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ui",   "to": "kozue",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ui",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ui",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ui",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ui",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ui",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "yuki",   "to": "tomoshibi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuki",   "to": "kozue",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuki",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuki",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuki",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuki",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuki",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "tomoshibi",   "to": "kozue",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoshibi",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoshibi",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoshibi",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoshibi",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoshibi",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "kozue",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kozue",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kozue",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kozue",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kozue",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "hotaru",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hotaru",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hotaru",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hotaru",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "subaru",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
+    { "from": "subaru",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "subaru",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "asagao",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "asagao",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "yukari",   "to": "sumire",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "minato",   "to": "suzuna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "minato",   "to": "hanabusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "minato",   "to": "ushio",  "type": "同レギオン",    "spoiler": false },
+    { "from": "minato",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "suzuna",   "to": "hanabusa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "suzuna",   "to": "ushio",  "type": "同レギオン",    "spoiler": false },
+    { "from": "suzuna",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "hanabusa",   "to": "ushio",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hanabusa",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "ushio",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "komachi",   "to": "miharu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "waku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "miyazu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "miharu",   "to": "waku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "miyazu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "waku",   "to": "miyazu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "waku",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
+    { "from": "waku",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "waku",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
+    { "from": "waku",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "waku",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
+    { "from": "waku",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "waku",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "miyazu",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kaina",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaina",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaina",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaina",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaina",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaina",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "komuku",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komuku",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komuku",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komuku",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komuku",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kukuri",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kukuri",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kukuri",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kukuri",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "rengetsu",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
+    { "from": "rengetsu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "rengetsu",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "murasame",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "murasame",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kasumiko",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "imari",   "to": "marimo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "imari",   "to": "tokuko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "imari",   "to": "yuzutsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "imari",   "to": "hisui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "imari",   "to": "saho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "imari",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
+    { "from": "imari",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "imari",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "marimo",   "to": "tokuko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marimo",   "to": "yuzutsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marimo",   "to": "hisui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marimo",   "to": "saho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marimo",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marimo",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marimo",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "tokuko",   "to": "yuzutsu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tokuko",   "to": "hisui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tokuko",   "to": "saho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tokuko",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tokuko",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tokuko",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yuzutsu",   "to": "hisui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzutsu",   "to": "saho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzutsu",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzutsu",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuzutsu",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "hisui",   "to": "saho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hisui",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hisui",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hisui",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "saho",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
+    { "from": "saho",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "saho",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "rito",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "rito",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yuunagi",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "mirai",   "to": "kazane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mirai",   "to": "susu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mirai",   "to": "towa",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kazane",   "to": "susu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kazane",   "to": "towa",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "susu",   "to": "towa",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "raimu",   "to": "seren",  "type": "同レギオン",    "spoiler": false },
+    { "from": "raimu",   "to": "sachie",  "type": "同レギオン",    "spoiler": false },
+    { "from": "raimu",   "to": "himari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "raimu",   "to": "kayo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "raimu",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
+    { "from": "raimu",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
+    { "from": "raimu",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "raimu",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "raimu",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "raimu",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "raimu",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "raimu",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "seren",   "to": "sachie",  "type": "同レギオン",    "spoiler": false },
+    { "from": "seren",   "to": "himari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "seren",   "to": "kayo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "seren",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
+    { "from": "seren",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
+    { "from": "seren",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "seren",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "seren",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "seren",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "seren",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "seren",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "sachie",   "to": "himari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sachie",   "to": "kayo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sachie",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sachie",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sachie",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sachie",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "sachie",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "sachie",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "sachie",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "sachie",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "himari",   "to": "kayo",  "type": "同レギオン",    "spoiler": false },
+    { "from": "himari",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
+    { "from": "himari",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
+    { "from": "himari",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "himari",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "himari",   "to": "asahi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "himari",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
+    { "from": "himari",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": true },
+    { "from": "himari",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "himari",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "kayo",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kayo",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kayo",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kayo",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kayo",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kayo",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kayo",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kayo",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "yuria",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuria",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuria",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yuria",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yuria",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yuria",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yuria",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "ichika",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ichika",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "ichika",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ichika",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ichika",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ichika",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "kokoro_sano",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kokoro_sano",   "to": "asahi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kokoro_sano",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kokoro_sano",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kokoro_sano",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "asahi",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
+    { "from": "asahi",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "asahi",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "mei",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "mei",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "nagisa_tachibana",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "fuka",   "to": "mitake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "fuka",   "to": "makina",  "type": "同レギオン",    "spoiler": false },
+    { "from": "fuka",   "to": "yuni",  "type": "同レギオン",    "spoiler": false },
+    { "from": "fuka",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "mitake",   "to": "makina",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mitake",   "to": "yuni",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mitake",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "makina",   "to": "yuni",  "type": "同レギオン",    "spoiler": false },
+    { "from": "makina",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yuni",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "nanaho",   "to": "noi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nanaho",   "to": "nako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nanaho",   "to": "uru",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "noi",   "to": "nako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "noi",   "to": "uru",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "nako",   "to": "uru",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kanaho",   "to": "takane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kanaho",   "to": "kureha",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kanaho",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kanaho",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kanaho", "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
+
+    { "from": "kanaho",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kanaho",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kanaho",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kanaho",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kanaho",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "takane",   "to": "kureha",  "type": "同レギオン",    "spoiler": false },
+    { "from": "takane",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "takane",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "takane",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "takane",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
+    { "from": "takane",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
+    { "from": "takane",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
+    { "from": "takane",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "kureha",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kureha",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kureha",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kureha",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kureha",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kureha",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kureha",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "akari",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "akari",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "akari",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
+    { "from": "akari",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
+    { "from": "akari",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
+    { "from": "akari",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "akehi",   "to": "haruna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "akehi",   "to": "suzume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "akehi",   "to": "fujino",  "type": "同レギオン",    "spoiler": false },
+    { "from": "akehi",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "haruna",   "to": "suzume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "haruna",   "to": "fujino",  "type": "同レギオン",    "spoiler": false },
+    { "from": "haruna",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "suzume",   "to": "fujino",  "type": "同レギオン",    "spoiler": false },
+    { "from": "suzume",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "nuyuna",   "to": "kiriko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nuyuna",   "to": "tae",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nuyuna",   "to": "merin",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nuyuna",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kiriko",   "to": "tae",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiriko",   "to": "merin",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiriko",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "tae",   "to": "merin",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tae",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "merin",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yasuna",   "to": "shinano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yasuna",   "to": "koume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yasuna",   "to": "erisa",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "shinano",   "to": "koume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shinano",   "to": "erisa",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "koume",   "to": "erisa",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "marei",   "to": "yuna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marei",   "to": "kanna",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "yuna",   "to": "kanna",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "nanoha",   "to": "tamao",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "hanako",   "to": "annna",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "miyabi",   "to": "chino",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "tsubasa",   "to": "mizumi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubasa",   "to": "honoho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubasa",   "to": "shirabe",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubasa",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubasa",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubasa",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubasa",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "mizumi",   "to": "honoho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mizumi",   "to": "shirabe",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mizumi",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mizumi",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mizumi",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mizumi",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "honoho",   "to": "shirabe",  "type": "同レギオン",    "spoiler": false },
+    { "from": "honoho",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
+    { "from": "honoho",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "honoho",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "honoho",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "shirabe",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shirabe",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shirabe",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shirabe",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kaoru_saionji",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaoru_saionji",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaoru_saionji",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "amami",   "to": "mako",  "type": "同レギオン",    "spoiler": false },
+    { "from": "amami",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "mako",   "to": "oki",  "type": "同レギオン",    "spoiler": false }
   ]
 }
