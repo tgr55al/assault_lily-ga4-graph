@@ -4754,13 +4754,14 @@
     { "from": "merin",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "yasuna",   "to": "shinano",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yasuna",   "to": "koume",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yasuna",   "to": "koume",  "type": "親友",    "spoiler": false },
     { "from": "yasuna",   "to": "erisa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "shinano",   "to": "koume",  "type": "同レギオン",    "spoiler": false },
     { "from": "shinano",   "to": "erisa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shinano",   "to": "mai",  "type": "盟友",    "spoiler": false },
 
-    { "from": "koume",   "to": "erisa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "koume",   "to": "erisa",  "type": "盟友",    "spoiler": false },
 
     { "from": "marei",   "to": "yuna",  "type": "同レギオン",    "spoiler": false },
     { "from": "marei",   "to": "kanna",  "type": "同レギオン",    "spoiler": false },
