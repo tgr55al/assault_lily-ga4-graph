@@ -4871,6 +4871,7 @@
     { "from": "orika",   "to": "kikyo",  "type": "幼馴染",    "spoiler": false },
     { "from": "orika",   "to": "sae",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "orika",   "to": "michiru",  "type": "友人",    "spoiler": false },
+    { "from": "orika",   "to": "fumi",  "type": "リリィオタク仲間",    "spoiler": false },
 
     { "from": "sae",   "to": "kikyo",  "type": "織禾を巡るライバル",    "spoiler": false },
 
