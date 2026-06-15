@@ -277,6 +277,7 @@ let data = { characters: [], relations: [] };
 let charMap = {};
 let schoolFilter = {};   // school(正式名称) -> bool
 let focusId = null;
+let initialFocusId = null;
 let depth = 1;
 let allMode = false;
 let showSpoiler = false;
@@ -316,9 +317,14 @@ function applyData(json) {
     const found = data.characters.find(c =>
       c.name === charaParam || c.id === charaParam || (c.wiki && c.wiki === charaParam)
     );
-    if (found) focusId = found.id;
+
+    if (found) {
+      focusId = found.id;
+      initialFocusId = found.id;
+    }
   }
-  if (!focusId && data.characters.length) focusId = data.characters[0].id;
+
+  if (!focusId && data.characters.length) focusId = initialFocusId;
 
   buildSchoolFilter();
   buildLegend();
