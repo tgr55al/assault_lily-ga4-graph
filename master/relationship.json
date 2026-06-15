@@ -4231,16 +4231,21 @@
     { "from": "furiru",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
     { "from": "furiru",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "aoi",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "yui",  "type": "姉妹分",    "spoiler": false },
     { "from": "aoi",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
     { "from": "aoi",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
     { "from": "aoi",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
     { "from": "aoi",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aoi",   "to": "kaede",  "type": "親友",    "spoiler": false },
+    { "from": "aoi",   "to": "kusumi",  "type": "友人",    "spoiler": false },
 
     { "from": "yui",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
     { "from": "yui",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
     { "from": "yui",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
     { "from": "yui",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yui",   "to": "hikaru",  "type": "友人",    "spoiler": false },
+    { "from": "yui",   "to": "matsuri",  "type": "友人",    "spoiler": false },
+    { "from": "yui",   "to": "mimi",  "type": "苦手",    "spoiler": false },
 
     { "from": "yuma",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuma",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
