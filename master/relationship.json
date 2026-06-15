@@ -4733,6 +4733,10 @@
 
     { "from": "tae",   "to": "merin",  "type": "同レギオン",    "spoiler": false },
     { "from": "tae",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tae",   "to": "hazuki",  "type": "親友",    "spoiler": false },
+    { "from": "tae",   "to": "matsuri",  "type": "親しい間柄",    "spoiler": false },
+    { "from": "tae",   "to": "mimi",  "type": "とても気が合う",    "spoiler": false },
+    { "from": "tae",   "to": "kazuha",  "type": "闘星塾時代の同期",    "spoiler": false },
 
     { "from": "merin",   "to": "hiiro",  "type": "同レギオン",    "spoiler": false },
 
