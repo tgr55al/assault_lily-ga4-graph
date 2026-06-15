@@ -80,8 +80,20 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 #focus-link:hover { text-decoration: underline; }
 
 /* ── ガーデンフィルター ── */
+#school-filter-bar {
+  padding: 3px 10px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  font-size: 11px;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+#school-filter-bar:hover { background: #f2f2f2; }
+
 #school-filter {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   align-items: center;
   gap: 5px;
@@ -90,6 +102,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   border-bottom: 1px solid #eee;
   flex-shrink: 0;
 }
+#school-filter.open { display: flex; }
 
 .school-chip {
   display: inline-flex;
@@ -186,6 +199,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     <a id="focus-link" href="#" target="_blank" style="display:none">[Wikiへ]</a>
   </div>
 
+  <div id="school-filter-bar" onclick="toggleSchoolFilter()">▶ 所属ガーデンで絞り込む</div>
   <div id="school-filter">
     <span class="tb-label">所属ガーデン:</span>
   </div>
@@ -263,7 +277,7 @@ let data = { characters: [], relations: [] };
 let charMap = {};
 let schoolFilter = {};   // school(正式名称) -> bool
 let focusId = null;
-let depth = 2;
+let depth = 1;
 let allMode = false;
 let showSpoiler = false;
 let network = null;
@@ -597,6 +611,13 @@ function toggleLegend() {
   const bar = document.getElementById("legend-toggle-bar");
   const open = lg.classList.toggle("open");
   bar.textContent = open ? "▼ 凡例を隠す" : "▶ 凡例を表示";
+}
+
+function toggleSchoolFilter() {
+  const sf  = document.getElementById("school-filter");
+  const bar = document.getElementById("school-filter-bar");
+  const open = sf.classList.toggle("open");
+  bar.textContent = open ? "▼ 所属ガーデンで絞り込む" : "▶ 所属ガーデンで絞り込む";
 }
 
 // ============================================================
