@@ -3924,6 +3924,7 @@
     { "from": "shizu",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "shizu",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
     { "from": "shizu",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shizu",   "to": "naehi",  "type": "異母姉妹",    "spoiler": false },
 
     { "from": "sara",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "sara",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
