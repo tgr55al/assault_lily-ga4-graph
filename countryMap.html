@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>アサルトリリィwiki プロポーショナルサークル世界地図</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body, html { margin:0; padding:0; height:100%; }
+        #map { width:100%; height:100vh; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // 初期設定: 日本を見た目上中央にして世界地図を表示
+        const DEFAULT_CENTER = [36.0, 138.0]; // 日本中心付近
+        const DEFAULT_ZOOM = 1;
+
+        const map = L.map('map', {
+            center: DEFAULT_CENTER,
+            zoom: DEFAULT_ZOOM,
+            minZoom: 1,
+            maxZoom: 5,
+            worldCopyJump: true,
+            maxBoundsViscosity: 0.5
+        });
+
+        // タイルレイヤー（横ラップ許可）
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            noWrap: false
+        }).addTo(map);
+
+        // レイヤグループ：すべての描画マーカーをここで管理
+        const markersGroup = L.layerGroup().addTo(map);
+
+        // 候補経度（元, ±360）を返す
+        function lngCandidates(lng) {
+            return [lng - 360, lng, lng + 360];
+        }
+
+        // 候補経度のうち bounds に入るものだけ返す
+        function visibleLngCandidates(lng, bounds) {
+            const cands = lngCandidates(lng);
+            return cands.filter(candidateLng => {
+                // Leaflet の bounds は経度ラップを考慮しないため、
+                // 緯度はそのまま、経度は candidateLng をそのまま使って判定
+                // ここでは簡単に LatLngBounds.contains を使うために
+                // 候補を LatLng にして判定する
+                return bounds.contains(L.latLng(0, candidateLng)); // 緯度0で経度が範囲内か確認
+            });
+        }
+
+        // より正確な判定：指定緯度で判定（feature の緯度を使う）
+        function visibleLngCandidatesAtLat(lat, lng, bounds) {
+            const cands = lngCandidates(lng);
+            return cands.filter(candidateLng => bounds.contains(L.latLng(lat, candidateLng)));
+        }
+
+        // GeoJSON を読み込んで世界地図上にサークルを配置（左右コピー対応）
+        let originalData = null;
+
+        function drawAllMarkers(data) {
+            // 既存マーカーをクリア
+            markersGroup.clearLayers();
+
+            const bounds = map.getBounds();
+
+            // 各 feature を処理
+            data.features.forEach(feature => {
+                const lat = feature.geometry.coordinates[1];
+                const lng = feature.geometry.coordinates[0];
+                // 候補経度のうち現在の表示範囲に入るものを選ぶ
+                const visibleCands = visibleLngCandidatesAtLat(lat, lng, bounds);
+
+                // もしどれも見えない場合、近接判定で左右どちらかに表示したいなら
+                // center に近い候補を 1 つだけ描画する（オプション）
+                if (visibleCands.length === 0) {
+                    // 中心経度に最も近い候補を選ぶ
+                    const centerLng = map.getCenter().lng;
+                    const candidates = lngCandidates(lng);
+                    candidates.sort((a, b) => Math.abs(a - centerLng) - Math.abs(b - centerLng));
+                    visibleCands.push(candidates[0]);
+                }
+
+                // 各可視候補にマーカーを追加
+                visibleCands.forEach(candidateLng => {
+                    const adjLatLng = L.latLng(lat, candidateLng);
+                    const value = feature.properties.value || 0;
+                    // 値に応じた半径（世界地図表示でも見やすいようにスケール調整）
+                    // 日本のポイントだけ少し小さくする例
+                    const isJapan = (feature.properties.country === 'JP' || feature.properties.name === '日本');
+                    const baseScale = isJapan ? 4.0 : 6.0;
+                    const radius = Math.max(4, Math.log10(value + 1) * baseScale);
+
+                    const marker = L.circleMarker(adjLatLng, {
+                        radius: radius,
+                        fillColor: '#3388ff',
+                        color: '#1e4a8a',
+                        weight: 1,
+                        fillOpacity: 0.6
+                    });
+
+                    const name = feature.properties && feature.properties.name ? feature.properties.name : '不明';
+                    // ポップアップ（クリックで表示）
+                    marker.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong> (viewers)`);
+
+                    markersGroup.addLayer(marker);
+                });
+            });
+        }
+
+        // 初回読み込み
+        fetch('ga4_map.geojson?' + Date.now())
+            .then(r => r.json())
+            .then(data => {
+                originalData = data;
+                drawAllMarkers(originalData);
+            })
+            .catch(err => {
+                console.error('GeoJSON の読み込みに失敗しました:', err);
+            });
+
+        // 地図が移動／ズームされたら再描画（デバウンス）
+        let redrawTimer = null;
+        function scheduleRedraw() {
+            if (!originalData) return;
+            if (redrawTimer) clearTimeout(redrawTimer);
+            redrawTimer = setTimeout(() => {
+                drawAllMarkers(originalData);
+                redrawTimer = null;
+            }, 150);
+        }
+        map.on('moveend', scheduleRedraw);
+        map.on('zoomend', scheduleRedraw);
+
+    </script>
+</body>
+</html>

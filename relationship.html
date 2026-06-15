@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アサルトリリィ 相関図</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Hiragino Sans", "Meiryo", sans-serif;
+  font-size: 13px;
+  background: #f8f8f8;
+  color: #222;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 480px;
+}
+
+/* ── ツールバー ── */
+#toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+.tb-label {
+  font-size: 12px;
+  color: #555;
+  white-space: nowrap;
+}
+
+.tb-sep {
+  color: #ccc;
+  font-size: 14px;
+}
+
+#depth-input {
+  width: 52px;
+  padding: 3px 6px;
+  font-size: 13px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  text-align: center;
+}
+
+button {
+  padding: 4px 10px;
+  font-size: 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #333;
+  transition: background 0.15s, color 0.15s;
+}
+button:hover { background: #f0f0f0; }
+
+button.active-blue  { background: #1565c0; color: #fff; border-color: #1565c0; }
+button.active-purple{ background: #6a1b9a; color: #fff; border-color: #6a1b9a; }
+button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
+
+#focus-label {
+  font-size: 12px;
+  color: #333;
+  margin-left: 4px;
+}
+#focus-label b { color: #1565c0; }
+#focus-link { font-size: 11px; color: #888; margin-left: 4px; text-decoration: none; }
+#focus-link:hover { text-decoration: underline; }
+
+/* ── ガーデンフィルター ── */
+#school-filter-bar {
+  padding: 3px 10px;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  font-size: 11px;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+#school-filter-bar:hover { background: #f2f2f2; }
+
+#school-filter {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+#school-filter.open { display: flex; }
+
+.school-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 12px;
+  border: 1.5px solid;
+  font-size: 11px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.15s;
+}
+.school-chip.off { opacity: 0.35; }
+.school-chip input { margin: 0; cursor: pointer; }
+
+/* ── グラフ本体 ── */
+#network {
+  flex: 1;
+  min-height: 0;
+  background: #fafafa;
+}
+
+/* ── ステータスバー ── */
+#statusbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  font-size: 11px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+/* ── 凡例ドロワー ── */
+#legend-toggle-bar {
+  padding: 3px 10px;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  font-size: 11px;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+#legend-toggle-bar:hover { background: #f2f2f2; }
+
+#legend {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 6px 10px;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+#legend.open { display: flex; }
+
+.leg-row { display: flex; align-items: center; gap: 3px; color: #444; }
+.leg-line { display: inline-block; width: 18px; height: 3px; border-radius: 2px; }
+.leg-dot  { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── ローディング ── */
+#loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248,248,248,0.85);
+  font-size: 14px;
+  color: #555;
+  z-index: 50;
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <div id="toolbar">
+    <span class="tb-label">表示階層:</span>
+    <input id="depth-input" type="number" min="1" max="30" value="1" title="表示する関係の深さ（1〜30）">
+    <button id="btn-redraw">再描画</button>
+    <button id="btn-all">全展開</button>
+    <span class="tb-sep">|</span>
+    <button id="btn-spoiler">ネタバレ OFF</button>
+    <span class="tb-sep">|</span>
+    <button id="btn-reset-focus">フォーカスリセット</button>
+    <span class="tb-sep">|</span>
+    <span id="focus-label">選択: <b id="focus-name">読み込み中…</b></span>
+    <a id="focus-link" href="#" target="_blank" style="display:none">[Wikiへ]</a>
+  </div>
+
+  <div id="school-filter-bar" onclick="toggleSchoolFilter()">▶ 所属ガーデンで絞り込む</div>
+  <div id="school-filter">
+    <span class="tb-label">所属ガーデン:</span>
+  </div>
+
+  <div id="network" style="position:relative">
+    <div id="loading">データを読み込んでいます…</div>
+  </div>
+
+  <div id="legend-toggle-bar" onclick="toggleLegend()">▶ 凡例を表示</div>
+  <div id="legend"></div>
+
+  <div id="statusbar">
+    <span id="status-text">—</span>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<script>
+// ============================================================
+// 設定
+// ============================================================
+const WIKI_BASE = "https://w.atwiki.jp/assault_lily/?page=";
+
+// data.json の場所（GitHub Pages上では同ディレクトリ）
+const DATA_URL = "./relationship.json";
+
+// イラストがない場合のデフォルトダミー画像
+const DEFAULT_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'><circle cx='25' cy='25' r='20' fill='%23ccc'/></svg>";
+
+const REL_COLORS = {
+  "シュッツエンゲル": "#e91e8c",
+  "親友・友人":       "#4caf50",
+  "ライバル・対立":   "#f44336",
+  "先輩・後輩":       "#2196f3",
+  "同レギオン":       "#9c27b0",
+  "師弟・教え子":     "#00acc1",
+  "家族・血縁":       "#ff9800",
+  "その他":           "#9e9e9e"
+};
+
+const SCHOOL_COLORS = {
+  "百合ヶ丘女学院":   "#e91e8c",
+  "御台場女学校":     "#ff9800",
+  "私立ルドビコ女学院":                       "#4caf50",
+  "エレンスゲ女学園":                         "#2196f3",
+  "神庭女子藝術高校":                         "#8e24aa",
+  "聖メルクリウスインターナショナルスクール": "#1a237e",
+  "その他・不明":     "#9e9e9e"
+};
+
+// ガーデンの正式名称からチェックボックス表示名へのマッピング用関数
+function getSchoolShortName(fullName) {
+  if (fullName === "その他・不明") return fullName;
+  return fullName.replace(/(私立ルドビコ女学院)$/, "ルド女")
+  .replace(/(聖メルクリウスインターナショナルスクール)$/, "メルクリウス")
+  .replace(/(鎌倉府立桜ノ杜女子高等学校)$/, "桜ノ杜")
+  .replace(/(城ヶ島工科女子高等学校)$/, "城ヶ島")
+  .replace(/(江ノ島臨海女学校)$/, "江ノ島")
+  .replace(/(聖橋大学附属女子高等学校)$/, "聖橋")
+  .replace(/(甲斐聖山女子高等学校)$/, "甲斐聖山")
+  .replace(/(アンブロシア女学苑高等學校)$/, "アンブロシア")
+  .replace(/(鞍馬山環境女子高等学校)$/, "鞍馬山")
+  .replace(/(鹿野苑高等女学園)$/, "鹿野苑")
+  .replace(/(ヘイムスクリングラトレードゴード)$/, "ヘイムスクリングラ")
+  .replace(/(逗子国際女子高等学校)$/, "逗子女")
+  .replace(/(幕張科学技術女子高等学校)$/, "幕張女子")
+  .replace(/(女学院|女学園|女子藝術高校|女学薗|女学館|女学校|女子美術高校|高等学館)$/, "");
+}
+
+// ============================================================
+// 状態
+// ============================================================
+let data = { characters: [], relations: [] };
+let charMap = {};
+let schoolFilter = {};   // school(正式名称) -> bool
+let focusId = null;
+let initialFocusId = null;
+let depth = 1;
+let allMode = false;
+let showSpoiler = false;
+let network = null;
+
+// ============================================================
+// データ読み込み
+// ============================================================
+async function loadData() {
+  try {
+    const res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+    applyData(json);
+  } catch (e) {
+    // data.json が取得できない場合はサンプルデータで起動
+    console.warn("data.json 読み込み失敗、サンプルデータを使用:", e.message);
+    applyData(SAMPLE_DATA);
+  }
+  document.getElementById("loading").style.display = "none";
+}
+
+function applyData(json) {
+  data = json;
+  charMap = {};
+  schoolFilter = {};
+  data.characters.forEach(c => {
+    charMap[c.id] = c;
+    const s = c.school || "その他・不明";
+    if (!(s in schoolFilter)) schoolFilter[s] = true;
+  });
+
+  // URLパラメータ chara= からフォーカス指定
+  const params = new URLSearchParams(location.search);
+  const charaParam = params.get("chara");
+  if (charaParam) {
+    const found = data.characters.find(c =>
+      c.name === charaParam || c.id === charaParam || (c.wiki && c.wiki === charaParam)
+    );
+
+    if (found) {
+      focusId = found.id;
+      initialFocusId = found.id;
+    }
+  }
+
+  if (!focusId && data.characters.length) focusId = data.characters[0].id;
+
+  buildSchoolFilter();
+  buildLegend();
+  updateFocusLabel();
+  render();
+}
+
+// ============================================================
+// BFS — フォーカスから depth 以内のノードIDを列挙
+// ============================================================
+function bfs(fid, maxDepth) {
+  const visited = { [fid]: 0 };
+  const queue = [{ id: fid, d: 0 }];
+  const rels = data.relations.filter(r => showSpoiler || !r.spoiler);
+  while (queue.length) {
+    const { id, d } = queue.shift();
+    if (d >= maxDepth) continue;
+    for (const r of rels) {
+      let nxt = null;
+      if (r.from === id) nxt = r.to;
+      else if (r.to === id) nxt = r.from;
+      if (nxt && !(nxt in visited)) {
+        visited[nxt] = d + 1;
+        queue.push({ id: nxt, d: d + 1 });
+      }
+    }
+  }
+  return visited;
+}
+
+// ============================================================
+// 描画
+// ============================================================
+function render() {
+  if (!focusId) return;
+
+  // 表示ノード決定
+  let reachable;
+  if (allMode) {
+    reachable = {};
+    data.characters.forEach(c => { reachable[c.id] = 0; });
+  } else {
+    reachable = bfs(focusId, depth);
+  }
+
+  // 学校フィルター
+  const visIds = {};
+  for (const id in reachable) {
+    const c = charMap[id];
+    const sch = c?.school || "その他・不明";
+    if (schoolFilter[sch] !== false) visIds[id] = reachable[id];
+  }
+
+  // ノード
+  const nodes = Object.keys(visIds).map(id => {
+    const c = charMap[id];
+    const isFocus = id === focusId;
+    const school = c?.school || "その他・不明";
+    const col = SCHOOL_COLORS[school] || "#9e9e9e";
+
+    // 選択ノードかそれ以外かでベースサイズを切り替え
+    const baseSize = isFocus ? 35 : 25;
+
+    return {
+      id,
+      label: c?.name ?? id,
+      shape: "circularImage",
+      image: c?.image || DEFAULT_IMAGE,
+      color: {
+        background: "#ffffff",
+        border: col,
+        highlight: { background: "#ffffff", border: "#111" },
+        hover: { background: "#ffffff", border: col }
+      },
+      font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus, vadjust: 5 },
+      borderWidth: isFocus ? 5 : 3,
+      size: baseSize,
+      // 選択時に少し大きくなるよう内部パラメータを設定
+      scaling: {
+        min: baseSize,
+        max: baseSize * 1.3
+      }
+    };
+  });
+
+  // エッジ
+  const edges = [];
+  data.relations.forEach((r, i) => {
+    if (!showSpoiler && r.spoiler) return;
+    if (!(r.from in visIds) || !(r.to in visIds)) return;
+    // allMode以外: 少なくとも片方が (depth-1) 以内でなければスキップ
+    if (!allMode) {
+      const dFrom = visIds[r.from] ?? Infinity;
+      const dTo   = visIds[r.to]   ?? Infinity;
+      if (dFrom > depth - 1 && dTo > depth - 1) return;
+    }
+    const col = REL_COLORS[r.type] || "#9e9e9e";
+    edges.push({
+      id: i,
+      from: r.from,
+      to: r.to,
+      label: r.type,
+      color: { color: col, opacity: 0.82, highlight: col, hover: col },
+      font: { face: "Hiragino Sans, Meiryo, sans-serif", size: 10, color: col, strokeWidth: 3, strokeColor: "#fff" },
+      width: 2,
+      dashes: r.spoiler ? [6, 3] : false,
+      arrows: ""
+    });
+  });
+
+  const vNodes = new vis.DataSet(nodes);
+  const vEdges = new vis.DataSet(edges);
+  const container = document.getElementById("network");
+
+  const opts = {
+    physics: {
+      enabled: true,
+      barnesHut: {
+        gravitationalConstant: allMode ? -3000 : -5500,
+        springLength: allMode ? 140 : 200,
+        damping: 0.5
+      },
+      stabilization: { iterations: allMode ? 100 : 200 }
+    },
+    nodes: {
+      font: { face: "Hiragino Sans, Meiryo, sans-serif" }
+    },
+    edges: {
+      smooth: { type: "continuous" },
+      font: { face: "Hiragino Sans, Meiryo, sans-serif", align: "middle" }
+    },
+    // hover: false に変更し、選択時の挙動を設定
+    interaction: { hover: false, tooltipDelay: 3600000, navigationButtons: false }
+  };
+
+  if (network) {
+    network.setOptions(opts);
+    network.setData({ nodes: vNodes, edges: vEdges });
+  } else {
+    network = new vis.Network(container, { nodes: vNodes, edges: vEdges }, opts);
+
+    network.once("stabilizationIterationsDone", () => {
+      network.setOptions({ physics: { enabled: false } });
+    });
+
+    // クリック: フォーカス変更 + アイコンサイズ変更処理
+    network.on("click", params => {
+      if (!params.nodes.length) {
+        // 何もないところをクリックした時はサイズを元に戻す
+        const allNodes = vNodes.get();
+        allNodes.forEach(n => {
+          const isFocus = n.id === focusId;
+          n.size = isFocus ? 35 : 25;
+        });
+        vNodes.update(allNodes);
+        return;
+      }
+
+      const id = params.nodes[0];
+      const c = charMap[id];
+      if (!c) return;
+
+      // すべてのノードの大きさを一度リセットし、選択されたノードだけ大きくする
+      const allNodes = vNodes.get();
+      allNodes.forEach(n => {
+        const isFocus = n.id === id; // 新しいフォーカス対象か
+        if (isFocus) {
+          n.size = (id === focusId) ? 45 : 35; // 選択したら拡大
+        } else {
+          n.size = (n.id === focusId) ? 35 : 25;
+        }
+      });
+      vNodes.update(allNodes);
+
+      focusId = id;
+      updateFocusLabel();
+      setStatus(`${c.name} をフォーカスしました。「再描画」で表示を更新できます。`);
+    });
+
+    // ダブルクリック: Wikiへ
+    network.on("doubleClick", params => {
+      if (!params.nodes.length) return;
+      const c = charMap[params.nodes[0]];
+      if (!c) return;
+      const page = c.wiki || c.name;
+      window.open(WIKI_BASE + encodeURIComponent(page), "_blank");
+    });
+  }
+
+  const nodeCnt = Object.keys(visIds).length;
+  const edgeCnt = edges.length;
+  setStatus(`表示中: ${nodeCnt}人 / 全${data.characters.length}人、関係: ${edgeCnt}件`
+    + (allMode ? "　【全展開モード】" : `　【${depth}階層】`)
+    + (showSpoiler ? "　⚠ネタバレON" : ""));
+}
+
+// ============================================================
+// ステータスバー
+// ============================================================
+function setStatus(msg) {
+  document.getElementById("status-text").textContent = msg;
+}
+
+// ============================================================
+// フォーカスラベル更新
+// ============================================================
+function updateFocusLabel() {
+  const c = charMap[focusId];
+  if (!c) return;
+  document.getElementById("focus-name").textContent = c.name;
+  const link = document.getElementById("focus-link");
+  const page = c.wiki || c.name;
+  link.href = WIKI_BASE + encodeURIComponent(page);
+  link.style.display = "";
+}
+
+// ============================================================
+// 学校フィルター
+// ============================================================
+function buildSchoolFilter() {
+  const sf = document.getElementById("school-filter");
+  // ラベルだけ残して再構築
+  while (sf.children.length > 1) sf.removeChild(sf.lastChild);
+
+  Object.keys(schoolFilter).forEach(school => {
+    const col = SCHOOL_COLORS[school] || "#9e9e9e";
+    const chip = document.createElement("label");
+    chip.className = "school-chip";
+    chip.style.borderColor = col;
+    chip.style.color = col;
+
+    const chk = document.createElement("input");
+    chk.type = "checkbox";
+    chk.checked = true;
+    chk.addEventListener("change", () => {
+      schoolFilter[school] = chk.checked;
+      chip.classList.toggle("off", !chk.checked);
+      render();
+    });
+
+    chip.appendChild(chk);
+    // getSchoolShortName を使って、後ろの「女学院」などをカットした名前を表示
+    chip.appendChild(document.createTextNode(getSchoolShortName(school)));
+    sf.appendChild(chip);
+  });
+}
+
+// ============================================================
+// 凡例
+// ============================================================
+function buildLegend() {
+  const lg = document.getElementById("legend");
+  lg.innerHTML = "";
+
+  // 関係種別
+  const relTitle = document.createElement("div");
+  relTitle.style.cssText = "width:100%;font-size:10px;color:#888;margin-bottom:2px";
+  relTitle.textContent = "── 関係の種類";
+  lg.appendChild(relTitle);
+
+  Object.entries(REL_COLORS).forEach(([type, col]) => {
+    const row = document.createElement("div");
+    row.className = "leg-row";
+    row.innerHTML = `<span class="leg-line" style="background:${col}"></span>${type}`;
+    lg.appendChild(row);
+  });
+
+  // 所属校
+  const schTitle = document.createElement("div");
+  schTitle.style.cssText = "width:100%;font-size:10px;color:#888;margin-top:6px;margin-bottom:2px";
+  schTitle.textContent = "── 所属校（アイコン枠線色）";
+  lg.appendChild(schTitle);
+
+  Object.entries(SCHOOL_COLORS).forEach(([school, col]) => {
+    const row = document.createElement("div");
+    row.className = "leg-row";
+    row.innerHTML = `<span class="leg-dot" style="background:${col}"></span>${school}`;
+    lg.appendChild(row);
+  });
+
+  // ネタバレ説明
+  const spRow = document.createElement("div");
+  spRow.style.cssText = "width:100%;font-size:10px;color:#888;margin-top:6px";
+  spRow.textContent = "破線エッジ = ネタバレ関係（ネタバレONで表示）";
+  lg.appendChild(spRow);
+}
+
+function toggleLegend() {
+  const lg = document.getElementById("legend");
+  const bar = document.getElementById("legend-toggle-bar");
+  const open = lg.classList.toggle("open");
+  bar.textContent = open ? "▼ 凡例を隠す" : "▶ 凡例を表示";
+}
+
+function toggleSchoolFilter() {
+  const sf  = document.getElementById("school-filter");
+  const bar = document.getElementById("school-filter-bar");
+  const open = sf.classList.toggle("open");
+  bar.textContent = open ? "▼ 所属ガーデンで絞り込む" : "▶ 所属ガーデンで絞り込む";
+}
+
+// ============================================================
+// ツールバーボタンのイベント
+// ============================================================
+document.getElementById("btn-redraw").addEventListener("click", () => {
+  const v = parseInt(document.getElementById("depth-input").value, 10);
+  depth = isNaN(v) || v < 1 ? 1 : Math.min(v, 30);
+  document.getElementById("depth-input").value = depth;
+  allMode = false;
+  document.getElementById("btn-all").classList.remove("active-purple");
+  render();
+});
+
+document.getElementById("depth-input").addEventListener("keydown", e => {
+  if (e.key === "Enter") document.getElementById("btn-redraw").click();
+});
+
+document.getElementById("btn-all").addEventListener("click", () => {
+  allMode = !allMode;
+  document.getElementById("btn-all").classList.toggle("active-purple", allMode);
+  render();
+});
+
+document.getElementById("btn-spoiler").addEventListener("click", () => {
+  showSpoiler = !showSpoiler;
+  const btn = document.getElementById("btn-spoiler");
+  if (showSpoiler) {
+    btn.textContent = "ネタバレ ON ⚠";
+    btn.classList.add("active-amber");
+  } else {
+    btn.textContent = "ネタバレ OFF";
+    btn.classList.remove("active-amber");
+  }
+  render();
+});
+
+document.getElementById("btn-reset-focus").addEventListener("click", () => {
+  if (data.characters.length) {
+    focusId = initialFocusId;
+    allMode = false;
+    document.getElementById("btn-all").classList.remove("active-purple");
+    updateFocusLabel();
+    render();
+  }
+});
+
+// ============================================================
+// サンプルデータ（data.json 読み込み失敗時のフォールバック）
+// ============================================================
+const SAMPLE_DATA = {
+  characters: [
+    {id:"riri",    name:"一柳梨璃",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/9064c75abec22b6aac7c20cce7433294.jpg"},
+    {id:"yume",    name:"白井夢結",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/afec4f915006648530d08c7dc346e99d.jpg"},
+    {id:"kaede",   name:"楓・J・ヌーベル", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/c2e125c766e6b83a37e47f3b819f5804.jpg"},
+    {id:"ninae",   name:"二川二水",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/19e333b25a80b724068cef2574e2c0b1.jpg"},
+    {id:"juri",    name:"吉村・Thi・梅", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/97309cc4cef2824867350ef1db845ca8.jpg"},
+    {id:"kuo",     name:"郭神琳",      school:"百合ヶ丘女学院", image:"https://i.gyazo.com/f571c4c99747806e205b69092844f53b.jpg"},
+    {id:"miriam",  name:"ミリアム・ヒルデガルド・v・グロピウス", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/3dec05c31e27e596e7f00f5d774a3aa4.jpg"},
+    {id:"ando",    name:"安藤鶴紗",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/48ef6f97d7d1dce089e17accf9f9cc66.jpg"},
+    {id:"ou",      name:"王雨嘉",      school:"百合ヶ丘女学院", image:"https://i.gyazo.com/ad3ae42ed54fa05079d06f03578c9e06.jpg"},
+    {id:"kanau",   name:"今叶星",      school:"神庭女子藝術高校", image:"https://i.gyazo.com/fca68209eee3c0b540408aa441da1328.jpg"},
+    {id:"hatsuka", name:"初鹿野瑤",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/ee670dee01a4026a93f141e95fac5b98.jpg"},
+    {id:"iijima",  name:"飯島恋花",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/0b03c6905871a6c09aa875809310de07.jpg"},
+    {id:"sasaki",  name:"佐々木藍",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/585dc7e87f3c5fcb75c0f98886d72fa7.jpg"},
+    {id:"sagawa",  name:"相澤一葉",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"}
+  ],
+  relations: [
+    {from:"riri",    to:"yume",    type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"yume",    type:"シュッツエンゲル", spoiler:true},
+    {from:"riri",    to:"kaede",   type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"ninae",   type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"juri",    type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"kuo",     type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"ando",    type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"miriam",  type:"同レギオン",       spoiler:false},
+    {from:"riri",    to:"kanau",   type:"同レギオン",       spoiler:false}
+  ]
+};
+
+// ============================================================
+// 起動
+// ============================================================
+loadData();
+</script>
+</body>
+</html>
