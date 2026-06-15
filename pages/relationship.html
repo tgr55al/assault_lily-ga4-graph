@@ -282,6 +282,8 @@ let depth = 1;
 let allMode = false;
 let showSpoiler = false;
 let network = null;
+let vNodes = null;
+let vEdges = null;
 
 // ============================================================
 // データ読み込み
@@ -324,7 +326,10 @@ function applyData(json) {
     }
   }
 
-  if (!focusId && data.characters.length) focusId = data.characters[0].id;
+  if (!focusId && data.characters.length) {
+    focusId = data.characters[0].id;
+    initialFocusId = focusId;
+  }
 
   buildSchoolFilter();
   buildLegend();
@@ -434,8 +439,8 @@ function render() {
     });
   });
 
-  const vNodes = new vis.DataSet(nodes);
-  const vEdges = new vis.DataSet(edges);
+  vNodes = new vis.DataSet(nodes);
+  vEdges = new vis.DataSet(edges);
   const container = document.getElementById("network");
 
   const opts = {
@@ -489,7 +494,7 @@ function render() {
       // すべてのノードの大きさを一度リセットし、選択されたノードだけ大きくする
       const allNodes = vNodes.get();
       allNodes.forEach(n => {
-        n.size = (n.id === id) ? 45 : 25;
+        n.size = (n.id === id) ? 35 : 25;
       });
       vNodes.update(allNodes);
 
