@@ -1417,7 +1417,7 @@
       "image": "https://i.gyazo.com/7a1a185fb3339d70edb78d6543e50d5a.jpg"
     },
     {
-      "id": "hikari",
+      "id": "hikaru",
       "name": "宮崎 火刈",
       "school": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "宮崎火刈",
@@ -4216,7 +4216,7 @@
 
     { "from": "gozen",   "to": "kotohi",  "type": "主従関係",    "spoiler": true },
 
-    { "from": "shion",   "to": "furiru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shion",   "to": "furiru",  "type": "姉妹分",    "spoiler": false },
     { "from": "shion",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
     { "from": "shion",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
     { "from": "shion",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
@@ -4224,42 +4224,7 @@
     { "from": "shion",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
     { "from": "shion",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "furiru",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "furiru",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
-    { "from": "furiru",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
-    { "from": "furiru",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
-    { "from": "furiru",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
-    { "from": "furiru",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "aoi",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
-    { "from": "aoi",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
-    { "from": "aoi",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
-    { "from": "aoi",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
-    { "from": "aoi",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "yui",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yui",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yui",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yui",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "yuma",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yuma",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yuma",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "jun",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
-    { "from": "jun",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "hatsume",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "shion",   "to": "furiru",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shion",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shion",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shion",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shion",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shion",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shion",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
-
-    { "from": "furiru",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "furiru",   "to": "aoi",  "type": "友人",    "spoiler": false },
     { "from": "furiru",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
     { "from": "furiru",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
     { "from": "furiru",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
@@ -4885,6 +4850,10 @@
 
     { "from": "tomoha",   "to": "marei",  "type": "友人",    "spoiler": false },
     { "from": "tomoha",   "to": "yuki",  "type": "友人",    "spoiler": false },
+
+    { "from": "rieno",   "to": "yui",  "type": "盟友",    "spoiler": false },
+    { "from": "rieno",   "to": "maya",  "type": "生徒会",    "spoiler": false },
+    { "from": "rieno",   "to": "hikaru",  "type": "友人",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
