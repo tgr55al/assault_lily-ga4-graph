@@ -4774,6 +4774,11 @@
 
     { "from": "tamao",   "to": "himeka",  "type": "交流あり？",    "spoiler": false },
 
+    { "from": "miki",   "to": "rion",  "type": "親友",    "spoiler": false },
+    { "from": "miki",   "to": "yaya",  "type": "金鷄冠の誓い",    "spoiler": false },
+	{ "from": "miki",   "to": "komomo",  "type": "険悪",    "spoiler": false },
+    { "from": "miki",   "to": "komomo",  "type": "金鷄冠の誓い",    "spoiler": true },
+
     { "from": "hanako",   "to": "annna",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanako",   "to": "mahiro",  "type": "金鷄冠の誓い",    "spoiler": false },
     { "from": "hanako",   "to": "fubuki",  "type": "",    "spoiler": false },
@@ -4875,6 +4880,9 @@
     { "from": "orika",   "to": "fumi",  "type": "リリィオタク仲間",    "spoiler": false },
 
     { "from": "sae",   "to": "kikyo",  "type": "織禾を巡るライバル",    "spoiler": false },
+
+    { "from": "tomoha",   "to": "marei",  "type": "友人",    "spoiler": false },
+    { "from": "tomoha",   "to": "yuki",  "type": "友人",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
