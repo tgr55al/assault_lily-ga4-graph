@@ -3385,6 +3385,20 @@
     }
   ],
 
+  "regions": [
+    {
+      "name": "一柳隊",
+      "color": "",
+      "members": ["riri", "yuyu", "kaede", "fumi", "mai", "kuo", "tazusa", "miriam", "yujia"],
+      "spoiler_members": ["yuri", "yahiro", "shin"]
+    },
+    {
+      "name": "ヘルヴォル",
+      "color": "",
+      "members": ["yo", "renka", "sasaki", "kazuha", "chikaru"]
+    }
+  ],
+
   "relations": [
     { "from": "riri",   "to": "yuyu",   "type": "憧れ・後輩",          "spoiler": false },
     { "from": "riri",   "to": "yuyu",   "type": "シュッツエンゲル",    "spoiler": true  },

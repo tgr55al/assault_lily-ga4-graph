@@ -195,6 +195,8 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     <span class="tb-sep">|</span>
     <button id="btn-reset-focus">フォーカスリセット</button>
     <span class="tb-sep">|</span>
+    <button id="btn-regions">レギオン枠 ON</button>
+    <span class="tb-sep">|</span>
     <span id="focus-label">選択: <b id="focus-name">読み込み中…</b></span>
     <a id="focus-link" href="#" target="_blank" style="display:none">[Wikiへ]</a>
   </div>
@@ -281,6 +283,7 @@ let depth = 1;
 let allMode = false;
 let showSpoiler = false;
 let network = null;
+let showRegions = true;
 
 // ============================================================
 // データ読み込み
@@ -513,6 +516,14 @@ function render() {
   setStatus(`表示中: ${nodeCnt}人 / 全${data.characters.length}人、関係: ${edgeCnt}件`
     + (allMode ? "　【全展開モード】" : `　【${depth}階層】`)
     + (showSpoiler ? "　⚠ネタバレON" : ""));
+
+    // レギオン枠描画：stabilize完了後に呼ぶ
+    if (network) {
+      network.off("afterDrawing");  // 重複登録防止
+      if (showRegions && data.regions && data.regions.length) {
+        network.on("afterDrawing", ctx => drawRegions(ctx, visIds));
+      }
+    }
 }
 
 // ============================================================
@@ -606,6 +617,83 @@ function buildLegend() {
   lg.appendChild(spRow);
 }
 
+// ============================================================
+// レギオン枠描画（Canvas afterDrawing コールバック）
+// ============================================================
+function drawRegions(ctx, visIds) {
+  if (!data.regions) return;
+  data.regions.forEach(region => {
+    // 表示中のノードに絞る
+    const members = (region.members || []).filter(id => {
+      if (!(id in visIds)) return false;
+      if (!showSpoiler && region.spoiler_members && region.spoiler_members.includes(id)) return false;
+      return true;
+    });
+    if (members.length === 0) return;
+
+    // 各ノードのCanvas座標を取得
+    const positions = members.map(id => network.canvasToDOM(network.getPosition(id)));
+
+    // バウンディングボックスを求める（ノードの半径分だけ広げる）
+    const pad = 40;
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    positions.forEach(p => {
+      minX = Math.min(minX, p.x - pad);
+      minY = Math.min(minY, p.y - pad);
+      maxX = Math.max(maxX, p.x + pad);
+      maxY = Math.max(maxY, p.y + pad);
+    });
+
+    const col = region.color || "#607d8b";
+    const r = 12; // 角丸半径
+
+    // DOMからCanvasの変換行列を逆算してCanvasピクセル座標に戻す
+    const domToCanvas = p => network.DOMtoCanvas(p);
+    const tl = domToCanvas({ x: minX, y: minY });
+    const br = domToCanvas({ x: maxX, y: maxY });
+    const w = br.x - tl.x;
+    const h = br.y - tl.y;
+
+    // 角丸矩形
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(tl.x + r, tl.y);
+    ctx.lineTo(br.x - r, tl.y);
+    ctx.arcTo(br.x, tl.y, br.x, tl.y + r, r);
+    ctx.lineTo(br.x, br.y - r);
+    ctx.arcTo(br.x, br.y, br.x - r, br.y, r);
+    ctx.lineTo(tl.x + r, br.y);
+    ctx.arcTo(tl.x, br.y, tl.x, br.y - r, r);
+    ctx.lineTo(tl.x, tl.y + r);
+    ctx.arcTo(tl.x, tl.y, tl.x + r, tl.y, r);
+    ctx.closePath();
+
+    ctx.strokeStyle = col;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([6, 3]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // 背景を薄く塗る
+    ctx.fillStyle = col + "18";  // 約10%透過
+    ctx.fill();
+
+    // 部隊名ラベル（左上）
+    const fontSize = 11;
+    ctx.font = `bold ${fontSize}px "Hiragino Sans", Meiryo, sans-serif`;
+    ctx.fillStyle = col;
+    const label = region.name || "";
+    const tw = ctx.measureText(label).width;
+    // ラベル背景
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(tl.x + 6, tl.y - fontSize - 2, tw + 8, fontSize + 4);
+    ctx.fillStyle = col;
+    ctx.fillText(label, tl.x + 10, tl.y - 3);
+
+    ctx.restore();
+  });
+}
+
 function toggleLegend() {
   const lg = document.getElementById("legend");
   const bar = document.getElementById("legend-toggle-bar");
@@ -661,6 +749,27 @@ document.getElementById("btn-reset-focus").addEventListener("click", () => {
     allMode = false;
     document.getElementById("btn-all").classList.remove("active-purple");
     updateFocusLabel();
+    render();
+  }
+});
+
+// レギオン枠ボタン
+document.getElementById("btn-regions").addEventListener("click", () => {
+  showRegions = !showRegions;
+  const btn = document.getElementById("btn-regions");
+  if (showRegions) {
+    btn.textContent = "レギオン枠 ON";
+    btn.classList.remove("active-blue");
+  } else {
+    btn.textContent = "レギオン枠 OFF";
+    btn.classList.add("active-blue");
+  }
+  // afterDrawingを付け外しして再描画
+  if (network) {
+    network.off("afterDrawing");
+    if (showRegions && data.regions && data.regions.length) {
+      // visIdsが必要なので再renderで登録し直す
+    }
     render();
   }
 });
