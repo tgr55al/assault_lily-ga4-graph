@@ -2901,7 +2901,7 @@
       "image": null
     },
     {
-      "id": "c0415",
+      "id": "mahiro",
       "name": "栗原 真紘",
       "school": "柳都女学館",
       "wiki": "栗原真紘",
@@ -4770,6 +4770,14 @@
     { "from": "nanoha",   "to": "tamao",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "hanako",   "to": "annna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hanako",   "to": "mahiro",  "type": "金鷄冠の誓い",    "spoiler": false },
+    { "from": "hanako",   "to": "fubuki",  "type": "",    "spoiler": false },
+    { "from": "hanako",   "to": "kiito",  "type": "意気投合",    "spoiler": false },
+    { "from": "hanako",   "to": "ui",  "type": "意気投合",    "spoiler": false },
+
+    { "from": "fubuki",   "to": "nanoha",  "type": "金鷄冠の誓い",    "spoiler": false },
+    { "from": "fubuki",   "to": "wakana",  "type": "友人",    "spoiler": false },
+    { "from": "fubuki",   "to": "himeka",  "type": "面識あり",    "spoiler": false },
 
     { "from": "miyabi",   "to": "chino",  "type": "同レギオン",    "spoiler": false },
 
