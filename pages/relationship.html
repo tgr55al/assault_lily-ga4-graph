@@ -498,6 +498,10 @@ function render() {
       updateFocusLabel();
     });
 
+    network.on("dragStart", () => {
+      network.startSimulation();
+    });
+
     // ダブルクリック: ページを開く
     network.on("doubleClick", params => {
       if (!params.nodes.length) return;
