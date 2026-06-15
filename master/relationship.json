@@ -983,7 +983,7 @@
       "image": "https://i.gyazo.com/ee51b19c765ed599a09071d3dae33adb.jpg"
     },
     {
-      "id": "moyuyu",
+      "id": "moyu",
       "name": "真島 百由",
       "school": "百合ヶ丘女学院",
       "wiki": "真島百由",
@@ -4865,6 +4865,14 @@
     { "from": "reve",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉弟",    "spoiler": false },
+
+    { "from": "moyu",   "to": "shoko",  "type": "従姉妹",    "spoiler": false },
+
+    { "from": "orika",   "to": "kikyo",  "type": "幼馴染",    "spoiler": false },
+    { "from": "orika",   "to": "sae",  "type": "姉妹のような関係",    "spoiler": false },
+    { "from": "orika",   "to": "michiru",  "type": "友人",    "spoiler": false },
+
+    { "from": "sae",   "to": "kikyo",  "type": "織禾を巡るライバル",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]

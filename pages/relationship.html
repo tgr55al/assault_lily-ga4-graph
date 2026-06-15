@@ -434,7 +434,7 @@ function render() {
       color: { color: col, opacity: 0.82, highlight: col, hover: col },
       font: { face: "Hiragino Sans, Meiryo, sans-serif", size: 10, color: col, strokeWidth: 3, strokeColor: "#fff" },
       width: 2,
-      dashes: r.spoiler ? [6, 3] : false,
+      dashes: false,
       arrows: ""
     });
   });
@@ -602,12 +602,6 @@ function buildLegend() {
     row.innerHTML = `<span class="leg-dot" style="background:${col}"></span>${school}`;
     lg.appendChild(row);
   });
-
-  // ネタバレ説明
-  const spRow = document.createElement("div");
-  spRow.style.cssText = "width:100%;font-size:10px;color:#888;margin-top:6px";
-  spRow.textContent = "破線エッジ = ネタバレ関係（ネタバレONで表示）";
-  lg.appendChild(spRow);
 }
 
 function toggleLegend() {
