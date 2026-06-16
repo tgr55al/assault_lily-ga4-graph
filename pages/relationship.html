@@ -228,7 +228,7 @@ const WIKI_BASE = "https://w.atwiki.jp/assault_lily/?page=";
 const DATA_URL = "./relationship.json";
 
 // イラストがない場合のデフォルトダミー画像
-const DEFAULT_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'></svg>";
+const DEFAULT_IMAGE = "data:image/svg+xml;utf8," + encodeURIComponent( <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <circle cx="50" cy="30" r="18" fill="#b0b0b0"/> <path d=" M15 90 C15 65,30 50,50 50 C70 50,85 65,85 90 Z" fill="#b0b0b0"/> </svg> );
 
 const REL_COLORS = {
   "シュッツエンゲル": "#e91e8c",
@@ -479,6 +479,7 @@ function render() {
     const faded = dist >= 2;
     const garden = c?.garden || "その他・不明";
     const col = GARDEN_MASTER[garden]?.color || "#9e9e9e";
+	const fadedColor = col + "66";
 
     // 選択ノードかそれ以外かでベースサイズを切り替え
 	const baseSize =
@@ -492,7 +493,7 @@ function render() {
       image: c?.image || DEFAULT_IMAGE,
       color: {
         highlight: { background: "#ffffff", border: col },
-        border: faded ? "#bdbdbd" : col
+        border: faded ? fadedColor : col
       },
       font: {
         size: isFocus ? 14 : 12,
@@ -667,7 +668,7 @@ function buildGardenFilter() {
   // ラベルだけ残して再構築
   while (sf.children.length > 1) sf.removeChild(sf.lastChild);
 
-  Object.keys(gardenFilter).forEach(garden => {
+  Object.keys(GARDEN_MASTER).filter(garden => garden in gardenFilter).forEach(garden => {
     const col = GARDEN_MASTER[garden]?.color || "#9e9e9e";
     const chip = document.createElement("label");
     chip.className = "garden-chip";
