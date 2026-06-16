@@ -80,7 +80,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 #focus-link:hover { text-decoration: underline; }
 
 /* ── ガーデンフィルター ── */
-#school-filter-bar {
+#garden-filter-bar {
   padding: 3px 10px;
   background: #fafafa;
   border-bottom: 1px solid #eee;
@@ -90,9 +90,9 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   user-select: none;
   flex-shrink: 0;
 }
-#school-filter-bar:hover { background: #f2f2f2; }
+#garden-filter-bar:hover { background: #f2f2f2; }
 
-#school-filter {
+#garden-filter {
   display: none;
   flex-wrap: wrap;
   align-items: center;
@@ -102,9 +102,9 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   border-bottom: 1px solid #eee;
   flex-shrink: 0;
 }
-#school-filter.open { display: flex; }
+#garden-filter.open { display: flex; }
 
-.school-chip {
+.garden-chip {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -116,8 +116,8 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   user-select: none;
   transition: opacity 0.15s;
 }
-.school-chip.off { opacity: 0.35; }
-.school-chip input { margin: 0; cursor: pointer; }
+.garden-chip.off { opacity: 0.35; }
+.garden-chip input { margin: 0; cursor: pointer; }
 
 /* ── グラフ本体 ── */
 #network {
@@ -199,8 +199,8 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     <a id="focus-link" href="#" target="_blank" style="display:none">[ページを開く]</a>
   </div>
 
-  <div id="school-filter-bar" onclick="toggleSchoolFilter()">▶ 所属ガーデンで絞り込む</div>
-  <div id="school-filter">
+  <div id="garden-filter-bar" onclick="toggleGardenFilter()">▶ 所属ガーデンで絞り込む</div>
+  <div id="garden-filter">
     <span class="tb-label">所属ガーデン:</span>
   </div>
 
@@ -241,18 +241,18 @@ const REL_COLORS = {
   "その他":           "#9e9e9e"
 };
 
-const SCHOOL_COLORS = {
-  "百合ヶ丘女学院":   "#e91e8c",
-  "御台場女学校":     "#ff9800",
+const GARDEN_COLORS = {
+  "百合ヶ丘女学院":                           "#e91e8c",
+  "御台場女学校":                             "#ff9800",
   "私立ルドビコ女学院":                       "#4caf50",
   "エレンスゲ女学園":                         "#2196f3",
   "神庭女子藝術高校":                         "#8e24aa",
   "聖メルクリウスインターナショナルスクール": "#1a237e",
-  "その他・不明":     "#9e9e9e"
+  "その他・不明":                             "#9e9e9e"
 };
 
 // ガーデンの正式名称からチェックボックス表示名へのマッピング用関数
-function getSchoolShortName(fullName) {
+function getGardenShortName(fullName) {
   if (fullName === "その他・不明") return fullName;
   return fullName.replace(/(私立ルドビコ女学院)$/, "ルド女")
   .replace(/(聖メルクリウスインターナショナルスクール)$/, "メルクリウス")
@@ -275,7 +275,7 @@ function getSchoolShortName(fullName) {
 // ============================================================
 let data = { characters: [], relations: [] };
 let charMap = {};
-let schoolFilter = {};   // school(正式名称) -> bool
+let gardenFilter = {};   // garden(正式名称) -> bool
 let focusId = null;
 let initialFocusId = null;
 let depth = 1;
@@ -305,11 +305,11 @@ async function loadData() {
 function applyData(json) {
   data = json;
   charMap = {};
-  schoolFilter = {};
+  gardenFilter = {};
   data.characters.forEach(c => {
     charMap[c.id] = c;
-    const s = c.school || "その他・不明";
-    if (!(s in schoolFilter)) schoolFilter[s] = true;
+    const s = c.garden || "その他・不明";
+    if (!(s in gardenFilter)) gardenFilter[s] = true;
   });
 
   // URLパラメータ chara= からフォーカス指定
@@ -331,7 +331,7 @@ function applyData(json) {
     initialFocusId = focusId;
   }
 
-  buildSchoolFilter();
+  buildGardenFilter();
   buildLegend();
   updateFocusLabel();
   render();
@@ -375,20 +375,27 @@ function render() {
     reachable = bfs(focusId, depth);
   }
 
-  // 学校フィルター
+  // ガーデンフィルター
   const visIds = {};
   for (const id in reachable) {
     const c = charMap[id];
-    const sch = c?.school || "その他・不明";
-    if (schoolFilter[sch] !== false) visIds[id] = reachable[id];
+    const sch = c?.garden || "その他・不明";
+	// フォーカス中キャラだけは常に表示
+    if (id === focusId) {
+      visIds[id] = reachable[id];
+      continue;
+    }
+    if (gardenFilter[sch] !== false) visIds[id] = reachable[id];
   }
 
   // ノード
   const nodes = Object.keys(visIds).map(id => {
     const c = charMap[id];
     const isFocus = id === focusId;
-    const school = c?.school || "その他・不明";
-    const col = SCHOOL_COLORS[school] || "#9e9e9e";
+    const dist = visIds[id];
+    const faded = dist >= 2;
+    const garden = c?.garden || "その他・不明";
+    const col = GARDEN_COLORS[garden] || "#9e9e9e";
 
     // 選択ノードかそれ以外かでベースサイズを切り替え
     const baseSize = isFocus ? 50 : 25;
@@ -399,11 +406,16 @@ function render() {
       shape: "circularImage",
       image: c?.image || DEFAULT_IMAGE,
       color: {
-        background: "#ffffff",
+        background: faded ? "rgba(255,255,255,0.35)" : "#ffffff",
         highlight: { background: "#ffffff", border: col },
         border: col
       },
-      font: { size: isFocus ? 14 : 12, color: "#111", bold: isFocus, vadjust: 5 },
+      font: {
+        size: isFocus ? 14 : 12,
+        color: faded ? "rgba(17,17,17,0.4)" : "#111",
+        bold: isFocus,
+        vadjust: 5
+      },
       borderWidth: 3,
       size: baseSize,
       // 選択時に少し大きくなるよう内部パラメータを設定
@@ -426,12 +438,23 @@ function render() {
       if (dFrom > depth - 1 && dTo > depth - 1) return;
     }
     const col = REL_COLORS[r.type] || "#9e9e9e";
-    edges.push({
+    const dFrom = visIds[r.from] ?? Infinity;
+    const dTo   = visIds[r.to] ?? Infinity;
+
+    const faded =
+      Math.min(dFrom, dTo) >= 2;
+
+	      edges.push({
       id: i,
       from: r.from,
       to: r.to,
-      label: r.type,
-      color: { color: col, opacity: 0.82, highlight: col, hover: col },
+      label: r.type === "同レギオン" ? "" : r.type,
+      color: {
+        color: col,
+        opacity: faded ? 0.18 : 0.82,
+        highlight: col,
+        hover: col
+      },
       font: { face: "Hiragino Sans, Meiryo, sans-serif", size: 10, color: col, strokeWidth: 3, strokeColor: "#fff" },
       width: 2,
       dashes: false,
@@ -540,17 +563,17 @@ function updateFocusLabel() {
 }
 
 // ============================================================
-// 学校フィルター
+// ガーデンフィルター
 // ============================================================
-function buildSchoolFilter() {
-  const sf = document.getElementById("school-filter");
+function buildGardenFilter() {
+  const sf = document.getElementById("garden-filter");
   // ラベルだけ残して再構築
   while (sf.children.length > 1) sf.removeChild(sf.lastChild);
 
-  Object.keys(schoolFilter).forEach(school => {
-    const col = SCHOOL_COLORS[school] || "#9e9e9e";
+  Object.keys(gardenFilter).forEach(garden => {
+    const col = GARDEN_COLORS[garden] || "#9e9e9e";
     const chip = document.createElement("label");
-    chip.className = "school-chip";
+    chip.className = "garden-chip";
     chip.style.borderColor = col;
     chip.style.color = col;
 
@@ -558,14 +581,14 @@ function buildSchoolFilter() {
     chk.type = "checkbox";
     chk.checked = true;
     chk.addEventListener("change", () => {
-      schoolFilter[school] = chk.checked;
+      gardenFilter[garden] = chk.checked;
       chip.classList.toggle("off", !chk.checked);
       render();
     });
 
     chip.appendChild(chk);
-    // getSchoolShortName を使って、後ろの「女学院」などをカットした名前を表示
-    chip.appendChild(document.createTextNode(getSchoolShortName(school)));
+    // getGardenShortName を使って、後ろの「女学院」などをカットした名前を表示
+    chip.appendChild(document.createTextNode(getGardenShortName(garden)));
     sf.appendChild(chip);
   });
 }
@@ -593,13 +616,14 @@ function buildLegend() {
   // 所属ガーデン
   const schTitle = document.createElement("div");
   schTitle.style.cssText = "width:100%;font-size:10px;color:#888;margin-top:6px;margin-bottom:2px";
-  schTitle.textContent = "── 所属校（アイコン枠線色）";
+  schTitle.textContent = "── 所属ガーデン（アイコン枠線色）";
   lg.appendChild(schTitle);
 
-  Object.entries(SCHOOL_COLORS).forEach(([school, col]) => {
+  Object.entries(GARDEN_COLORS).forEach(([garden, col]) => {
     const row = document.createElement("div");
     row.className = "leg-row";
-    row.innerHTML = `<span class="leg-dot" style="background:${col}"></span>${school}`;
+    row.innerHTML =
+      `<span class="leg-dot" style="background:${col}"></span>${getGardenShortName(garden)}`;
     lg.appendChild(row);
   });
 }
@@ -611,9 +635,9 @@ function toggleLegend() {
   bar.textContent = open ? "▼ 凡例を隠す" : "▶ 凡例を表示";
 }
 
-function toggleSchoolFilter() {
-  const sf  = document.getElementById("school-filter");
-  const bar = document.getElementById("school-filter-bar");
+function toggleGardenFilter() {
+  const sf  = document.getElementById("garden-filter");
+  const bar = document.getElementById("garden-filter-bar");
   const open = sf.classList.toggle("open");
   bar.textContent = open ? "▼ 所属ガーデンで絞り込む" : "▶ 所属ガーデンで絞り込む";
 }
@@ -668,20 +692,20 @@ document.getElementById("btn-reset-focus").addEventListener("click", () => {
 // ============================================================
 const SAMPLE_DATA = {
   characters: [
-    {id:"riri",    name:"一柳梨璃",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/9064c75abec22b6aac7c20cce7433294.jpg"},
-    {id:"yume",    name:"白井夢結",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/afec4f915006648530d08c7dc346e99d.jpg"},
-    {id:"kaede",   name:"楓・J・ヌーベル", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/c2e125c766e6b83a37e47f3b819f5804.jpg"},
-    {id:"ninae",   name:"二川二水",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/19e333b25a80b724068cef2574e2c0b1.jpg"},
-    {id:"juri",    name:"吉村・Thi・梅", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/97309cc4cef2824867350ef1db845ca8.jpg"},
-    {id:"kuo",     name:"郭神琳",      school:"百合ヶ丘女学院", image:"https://i.gyazo.com/f571c4c99747806e205b69092844f53b.jpg"},
-    {id:"miriam",  name:"ミリアム・ヒルデガルド・v・グロピウス", school:"百合ヶ丘女学院", image:"https://i.gyazo.com/3dec05c31e27e596e7f00f5d774a3aa4.jpg"},
-    {id:"ando",    name:"安藤鶴紗",    school:"百合ヶ丘女学院", image:"https://i.gyazo.com/48ef6f97d7d1dce089e17accf9f9cc66.jpg"},
-    {id:"ou",      name:"王雨嘉",      school:"百合ヶ丘女学院", image:"https://i.gyazo.com/ad3ae42ed54fa05079d06f03578c9e06.jpg"},
-    {id:"kanau",   name:"今叶星",      school:"神庭女子藝術高校", image:"https://i.gyazo.com/fca68209eee3c0b540408aa441da1328.jpg"},
-    {id:"hatsuka", name:"初鹿野瑤",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/ee670dee01a4026a93f141e95fac5b98.jpg"},
-    {id:"iijima",  name:"飯島恋花",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/0b03c6905871a6c09aa875809310de07.jpg"},
-    {id:"sasaki",  name:"佐々木藍",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/585dc7e87f3c5fcb75c0f98886d72fa7.jpg"},
-    {id:"sagawa",  name:"相澤一葉",    school:"エレンスゲ女学園", image:"https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"}
+    {id:"riri",    name:"一柳梨璃",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/9064c75abec22b6aac7c20cce7433294.jpg"},
+    {id:"yume",    name:"白井夢結",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/afec4f915006648530d08c7dc346e99d.jpg"},
+    {id:"kaede",   name:"楓・J・ヌーベル", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/c2e125c766e6b83a37e47f3b819f5804.jpg"},
+    {id:"ninae",   name:"二川二水",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/19e333b25a80b724068cef2574e2c0b1.jpg"},
+    {id:"juri",    name:"吉村・Thi・梅", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/97309cc4cef2824867350ef1db845ca8.jpg"},
+    {id:"kuo",     name:"郭神琳",      garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/f571c4c99747806e205b69092844f53b.jpg"},
+    {id:"miriam",  name:"ミリアム・ヒルデガルド・v・グロピウス", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/3dec05c31e27e596e7f00f5d774a3aa4.jpg"},
+    {id:"ando",    name:"安藤鶴紗",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/48ef6f97d7d1dce089e17accf9f9cc66.jpg"},
+    {id:"ou",      name:"王雨嘉",      garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/ad3ae42ed54fa05079d06f03578c9e06.jpg"},
+    {id:"kanau",   name:"今叶星",      garden:"神庭女子藝術高校", image:"https://i.gyazo.com/fca68209eee3c0b540408aa441da1328.jpg"},
+    {id:"hatsuka", name:"初鹿野瑤",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/ee670dee01a4026a93f141e95fac5b98.jpg"},
+    {id:"iijima",  name:"飯島恋花",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/0b03c6905871a6c09aa875809310de07.jpg"},
+    {id:"sasaki",  name:"佐々木藍",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/585dc7e87f3c5fcb75c0f98886d72fa7.jpg"},
+    {id:"sagawa",  name:"相澤一葉",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"}
   ],
   relations: [
     {from:"riri",    to:"yume",    type:"同レギオン",       spoiler:false},
