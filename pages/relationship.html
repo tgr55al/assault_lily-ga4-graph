@@ -228,7 +228,16 @@ const WIKI_BASE = "https://w.atwiki.jp/assault_lily/?page=";
 const DATA_URL = "./relationship.json";
 
 // イラストがない場合のデフォルトダミー画像
-const DEFAULT_IMAGE = "data:image/svg+xml;utf8," + encodeURIComponent( <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <circle cx="50" cy="30" r="18" fill="#b0b0b0"/> <path d=" M15 90 C15 65,30 50,50 50 C70 50,85 65,85 90 Z" fill="#b0b0b0"/> </svg> );
+const DEFAULT_IMAGE =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+  <circle cx="50" cy="28" r="16" fill="#b0b0b0"/>
+  <rect x="44" y="42" width="12" height="10" fill="#b0b0b0"/>
+  <path d="M20 88 C20 65,35 52,50 52 C65 52,80 65,80 88 Z"
+        fill="#b0b0b0"/>
+</svg>
+`);
 
 const REL_COLORS = {
   "シュッツエンゲル": "#e91e8c",
@@ -554,8 +563,9 @@ function render() {
     physics: {
       enabled: true,
       barnesHut: {
-        gravitationalConstant: -5500,
-        springLength: 200,
+        gravitationalConstant: -4000,
+        centralGravity: 0.02,
+        springLength: 300,
         damping: 0.5
       },
       stabilization: { iterations: 200 }
