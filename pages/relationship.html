@@ -228,7 +228,7 @@ const WIKI_BASE = "https://w.atwiki.jp/assault_lily/?page=";
 const DATA_URL = "./relationship.json";
 
 // イラストがない場合のデフォルトダミー画像
-const DEFAULT_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'><circle cx='25' cy='25' r='20' fill='%23ccc'/></svg>";
+const DEFAULT_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'></svg>";
 
 const REL_COLORS = {
   "シュッツエンゲル": "#e91e8c",
@@ -241,33 +241,116 @@ const REL_COLORS = {
   "その他":           "#9e9e9e"
 };
 
-const GARDEN_COLORS = {
-  "百合ヶ丘女学院":                           "#e91e8c",
-  "御台場女学校":                             "#ff9800",
-  "私立ルドビコ女学院":                       "#4caf50",
-  "エレンスゲ女学園":                         "#2196f3",
-  "神庭女子藝術高校":                         "#8e24aa",
-  "聖メルクリウスインターナショナルスクール": "#1a237e",
-  "その他・不明":                             "#9e9e9e"
+const GARDEN_MASTER = {
+  "百合ヶ丘女学院": {
+    short: "百合ヶ丘",
+    color: "#e91e63"
+  },
+  "私立ルドビコ女学院": {
+    short: "ルド女",
+    color: "#4caf50"
+  },
+  "御台場女学校": {
+    short: "御台場",
+    color: "#ff9800"
+  },
+  "イルマ女子美術高校": {
+    short: "イルマ",
+    color: "#ec407a"
+  },
+  "エレンスゲ女学園": {
+    short: "エレンスゲ",
+    color: "#2196f3"
+  },
+  "神庭女子藝術高校": {
+    short: "神庭",
+    color: "#8e24aa"
+  },
+  "聖メルクリウスインターナショナルスクール": {
+    short: "メルクリウス",
+    color: "#1a237e"
+  },
+  "相模女子高等学館": {
+    short: "サガ女",
+    color: "#00acc1"
+  },
+  "江ノ島臨海女学校": {
+    short: "江ノ島",
+    color: "#26c6da"
+  },
+  "鎌倉府立桜ノ杜女子高等学校": {
+    short: "桜ノ杜",
+    color: "#f06292"
+  },
+  "聖橋大学附属女子高等学校": {
+    short: "聖橋",
+    color: "#5c6bc0"
+  },
+  "甲斐聖山女子高等学校": {
+    short: "甲斐聖山",
+    color: "#8d6e63"
+  },
+  "鹿野苑高等女学園": {
+    short: "鹿野苑",
+    color: "#6d4c41"
+  },
+  "柳都女学館": {
+    short: "柳都",
+    color: "#26a69a"
+  },
+  "アルケミラ女学館": {
+    short: "アルケミラ",
+    color: "#7e57c2"
+  },
+  "アンブロシア女学苑高等學校": {
+    short: "アンブロシア",
+    color: "#3949ab"
+  },
+  "シエルリント女学薗": {
+    short: "シエルリント",
+    color: "#039be5"
+  },
+  "鞍馬山環境女子高等学校": {
+    short: "鞍馬山",
+    color: "#689f38"
+  },
+  "那賀大串女学園": {
+    short: "那賀大串",
+    color: "#43a047"
+  },
+  "城ヶ島工科女子高等学校": {
+    short: "城ヶ島",
+    color: "#607d8b"
+  },
+  "九嶺女学園": {
+    short: "九嶺",
+    color: "#ab47bc"
+  },
+  "幕張科学技術女子高等学校": {
+    short: "幕張女子",
+    color: "#546e7a"
+  },
+  "逗子国際女子高等学校": {
+    short: "逗子女",
+    color: "#00897b"
+  },
+  "ヘイムスクリングラトレードゴード": {
+    short: "ヘイムスクリングラ",
+    color: "#ff7043"
+  },
+  "G.E.H.E.N.A.": {
+    short: "G.E.H.E.N.A.",
+    color: "#c62828"
+  },
+  "その他・不明": {
+    short: "その他・不明",
+    color: "#9e9e9e"
+  }
 };
 
 // ガーデンの正式名称からチェックボックス表示名へのマッピング用関数
 function getGardenShortName(fullName) {
-  if (fullName === "その他・不明") return fullName;
-  return fullName.replace(/(私立ルドビコ女学院)$/, "ルド女")
-  .replace(/(聖メルクリウスインターナショナルスクール)$/, "メルクリウス")
-  .replace(/(鎌倉府立桜ノ杜女子高等学校)$/, "桜ノ杜")
-  .replace(/(城ヶ島工科女子高等学校)$/, "城ヶ島")
-  .replace(/(江ノ島臨海女学校)$/, "江ノ島")
-  .replace(/(聖橋大学附属女子高等学校)$/, "聖橋")
-  .replace(/(甲斐聖山女子高等学校)$/, "甲斐聖山")
-  .replace(/(アンブロシア女学苑高等學校)$/, "アンブロシア")
-  .replace(/(鞍馬山環境女子高等学校)$/, "鞍馬山")
-  .replace(/(鹿野苑高等女学園)$/, "鹿野苑")
-  .replace(/(ヘイムスクリングラトレードゴード)$/, "ヘイムスクリングラ")
-  .replace(/(逗子国際女子高等学校)$/, "逗子女")
-  .replace(/(幕張科学技術女子高等学校)$/, "幕張女子")
-  .replace(/(女学院|女学園|女子藝術高校|女学薗|女学館|女学校|女子美術高校|高等学館)$/, "");
+  return GARDEN_MASTER[fullName]?.short || fullName;
 }
 
 // ============================================================
@@ -395,7 +478,7 @@ function render() {
     const dist = visIds[id];
     const faded = dist >= 2;
     const garden = c?.garden || "その他・不明";
-    const col = GARDEN_COLORS[garden] || "#9e9e9e";
+    const col = GARDEN_MASTER[garden]?.color || "#9e9e9e";
 
     // 選択ノードかそれ以外かでベースサイズを切り替え
     const baseSize = isFocus ? 50 : 25;
@@ -519,6 +602,7 @@ function render() {
 
       focusId = id;
       updateFocusLabel();
+      render();
     });
 
     network.on("dragStart", () => {
@@ -571,7 +655,7 @@ function buildGardenFilter() {
   while (sf.children.length > 1) sf.removeChild(sf.lastChild);
 
   Object.keys(gardenFilter).forEach(garden => {
-    const col = GARDEN_COLORS[garden] || "#9e9e9e";
+    const col = GARDEN_MASTER[garden]?.color || "#9e9e9e";
     const chip = document.createElement("label");
     chip.className = "garden-chip";
     chip.style.borderColor = col;
@@ -619,11 +703,11 @@ function buildLegend() {
   schTitle.textContent = "── 所属ガーデン（アイコン枠線色）";
   lg.appendChild(schTitle);
 
-  Object.entries(GARDEN_COLORS).forEach(([garden, col]) => {
+  Object.entries(GARDEN_MASTER).forEach(([garden, info]) => {
     const row = document.createElement("div");
     row.className = "leg-row";
     row.innerHTML =
-      `<span class="leg-dot" style="background:${col}"></span>${getGardenShortName(garden)}`;
+      `<span class="leg-dot" style="background:${info.color}"></span>${info.short}`;
     lg.appendChild(row);
   });
 }
