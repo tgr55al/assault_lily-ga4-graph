@@ -4877,6 +4877,19 @@
     { "from": "rieno",   "to": "maya",  "type": "生徒会",    "spoiler": false },
     { "from": "rieno",   "to": "hikaru",  "type": "友人",    "spoiler": false },
 
+    { "from": "kiyo",   "to": "toa",  "type": "姉妹",    "spoiler": false },
+    { "from": "kiyo",   "to": "kotoko",  "type": "",    "spoiler": false },
+
+    { "from": "mitsuki",   "to": "totori",  "type": "意気投合",    "spoiler": false },
+
+    { "from": "ichigo",   "to": "eishin",  "type": "チーム",    "spoiler": false },
+    { "from": "ichigo",   "to": "uta",  "type": "チーム",    "spoiler": false },
+    { "from": "ichigo",   "to": "misora",  "type": "友人",    "spoiler": false },
+    { "from": "ichigo",   "to": "katsura",  "type": "友人",    "spoiler": false },
+
+    { "from": "eishin",   "to": "uta",  "type": "チーム",    "spoiler": false },
+    { "from": "eishin",   "to": "cherice",  "type": "憧れ",    "spoiler": false },
+
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
 }
