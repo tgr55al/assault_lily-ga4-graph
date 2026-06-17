@@ -4908,6 +4908,15 @@
     { "from": "eishin",   "to": "uta_masukawa",  "type": "チーム",    "spoiler": false },
     { "from": "eishin",   "to": "cherice",  "type": "憧れ",    "spoiler": false },
 
+    { "from": "hikaru",   "to": "fuyo",  "type": "姉妹のような関係",    "spoiler": false },
+    { "from": "hikaru",   "to": "shiho",  "type": "幼馴染",    "spoiler": false },
+    { "from": "hikaru",   "to": "yukana",  "type": "",    "spoiler": false },
+    { "from": "hikaru",   "to": "shinobu",  "type": "友人",    "spoiler": false },
+    { "from": "hikaru",   "to": "kozue",  "type": "水墨画仲間",    "spoiler": false },
+
+    { "from": "fuyo",   "to": "yukana",  "type": "ライバル",    "spoiler": false },
+    { "from": "fuyo",   "to": "takarako",  "type": "ライバル",    "spoiler": false },
+
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
 }
