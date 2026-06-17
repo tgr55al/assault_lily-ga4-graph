@@ -773,7 +773,7 @@ function render() {
     const dist = visIds[id];
     const faded = dist >= 2;
     const garden = c?.garden || "その他・不明";
-    const col = getRelColor(r.type);
+    const col = GARDEN_MASTER[garden]?.color || "#9e9e9e";
     const fadedColor = col + "66";
 
     // 選択ノードかそれ以外かでベースサイズを切り替え
