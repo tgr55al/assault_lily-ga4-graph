@@ -555,9 +555,7 @@ function render() {
     const fadedColor = col + "66";
 
     // 選択ノードかそれ以外かでベースサイズを切り替え
-    const baseSize =
-      isFocus ? 50 :
-      faded ? 20 : 25;
+    const baseSize = isFocus ? 40 : faded ? 20 : 25;
 
     return {
       id,
@@ -707,7 +705,7 @@ function updateFade() {
 
     return {
       id: n.id,
-      size: n.id === focusId ? 50 : (faded ? 20 : 25),
+      size: n.id === focusId ? 40 : (faded ? 20 : 25),
       borderWidth: faded ? 1 : 2,
       color: {
         border: faded ? fadedColor : col
