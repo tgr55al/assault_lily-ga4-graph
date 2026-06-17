@@ -552,12 +552,12 @@ function render() {
     const faded = dist >= 2;
     const garden = c?.garden || "その他・不明";
     const col = GARDEN_MASTER[garden]?.color || "#9e9e9e";
-	const fadedColor = col + "66";
+    const fadedColor = col + "66";
 
     // 選択ノードかそれ以外かでベースサイズを切り替え
-	const baseSize =
-	  isFocus ? 50 :
-	  faded ? 20 : 25;
+    const baseSize =
+      isFocus ? 50 :
+      faded ? 20 : 25;
 
     return {
       id,
@@ -597,11 +597,12 @@ function render() {
       if (dFrom > depth - 1 && dTo > depth - 1) return;
     }
     const col = REL_COLORS[r.type] || "#9e9e9e";
+	const fadedColor = col + "66";
     const dFrom = visIds[r.from] ?? Infinity;
     const dTo   = visIds[r.to] ?? Infinity;
 
     const faded =
-      dFrom >= 2 || dTo >= 2;
+      dFrom >= 2 && dTo >= 2;
 
 	      edges.push({
       id: i,
@@ -609,7 +610,7 @@ function render() {
       to: r.to,
       label: r.type === "同レギオン" ? "" : r.type,
       color: {
-        color: faded ? "#d6d6d6" : col,
+        color: faded ? fadedColor : col,
         highlight: col,
         hover: col
       },
