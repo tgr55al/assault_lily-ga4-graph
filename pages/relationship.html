@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>アサルトリリィ 相関図</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -12,12 +12,14 @@ body {
   font-size: 13px;
   background: #f8f8f8;
   color: #222;
+  overflow: hidden;
 }
 
 #app {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100vw;
   min-height: 480px;
 }
 
@@ -31,6 +33,8 @@ body {
   background: #fff;
   border-bottom: 1px solid #ddd;
   flex-shrink: 0;
+  overflow-y: auto;
+  max-height: 80px;
 }
 
 .tb-label {
@@ -63,8 +67,13 @@ button {
   white-space: nowrap;
   color: #333;
   transition: background 0.15s, color 0.15s;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
 }
+
 button:hover { background: #f0f0f0; }
+button:active { background: #e0e0e0; }
 
 button.active-blue  { background: #1565c0; color: #fff; border-color: #1565c0; }
 button.active-purple{ background: #6a1b9a; color: #fff; border-color: #6a1b9a; }
@@ -89,6 +98,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   cursor: pointer;
   user-select: none;
   flex-shrink: 0;
+  transition: background 0.15s;
 }
 #garden-filter-bar:hover { background: #f2f2f2; }
 
@@ -101,6 +111,8 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   background: #fff;
   border-bottom: 1px solid #eee;
   flex-shrink: 0;
+  overflow-y: auto;
+  max-height: 120px;
 }
 #garden-filter.open { display: flex; }
 
@@ -115,6 +127,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   cursor: pointer;
   user-select: none;
   transition: opacity 0.15s;
+  -webkit-user-select: none;
 }
 .garden-chip.off { opacity: 0.35; }
 .garden-chip input { margin: 0; cursor: pointer; }
@@ -124,6 +137,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   flex: 1;
   min-height: 0;
   background: #fafafa;
+  position: relative;
 }
 
 /* ── ステータスバー ── */
@@ -137,6 +151,9 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   font-size: 11px;
   color: #666;
   flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ── 凡例ドロワー ── */
@@ -149,6 +166,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   cursor: pointer;
   user-select: none;
   flex-shrink: 0;
+  transition: background 0.15s;
 }
 #legend-toggle-bar:hover { background: #f2f2f2; }
 
@@ -161,6 +179,8 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   border-top: 1px solid #eee;
   font-size: 11px;
   flex-shrink: 0;
+  overflow-y: auto;
+  max-height: 150px;
 }
 #legend.open { display: flex; }
 
@@ -179,6 +199,122 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   font-size: 14px;
   color: #555;
   z-index: 50;
+}
+
+/* ── モバイル対応 ── */
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  #toolbar {
+    max-height: 100px;
+    gap: 4px;
+    padding: 4px 6px;
+  }
+
+  .tb-label {
+    font-size: 11px;
+  }
+
+  #depth-input {
+    width: 45px;
+    padding: 2px 4px;
+    font-size: 11px;
+  }
+
+  button {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  #focus-label {
+    font-size: 11px;
+    margin-left: 2px;
+  }
+
+  #focus-link {
+    font-size: 10px;
+    margin-left: 2px;
+  }
+
+  #garden-filter-bar,
+  #legend-toggle-bar {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  #garden-filter,
+  #legend {
+    max-height: 100px;
+    gap: 4px 8px;
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+
+  .garden-chip {
+    padding: 1px 5px;
+    font-size: 10px;
+    gap: 2px;
+  }
+
+  .garden-chip input {
+    width: 14px;
+    height: 14px;
+  }
+
+  #statusbar {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .leg-row {
+    gap: 2px;
+  }
+
+  .leg-line {
+    width: 14px;
+    height: 2px;
+  }
+
+  .leg-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  #toolbar {
+    max-height: 120px;
+  }
+
+  button {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  #depth-input {
+    width: 40px;
+    padding: 2px 3px;
+    font-size: 10px;
+  }
+
+  .tb-sep {
+    display: none;
+  }
+
+  #focus-label {
+    display: none;
+  }
+
+  #focus-link {
+    display: none;
+  }
+
+  #garden-filter,
+  #legend {
+    max-height: 80px;
+  }
 }
 </style>
 </head>
@@ -595,14 +731,14 @@ function render() {
       if (dFrom > depth - 1 && dTo > depth - 1) return;
     }
     const col = REL_COLORS[r.type] || "#9e9e9e";
-	const fadedColor = col + "66";
+    const fadedColor = col + "66";
     const dFrom = visIds[r.from] ?? Infinity;
     const dTo   = visIds[r.to] ?? Infinity;
 
     const faded =
       dFrom === 0 || dTo === 0;
 
-          edges.push({
+    edges.push({
       id: i,
       from: r.from,
       to: r.to,
