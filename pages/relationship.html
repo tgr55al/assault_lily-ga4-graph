@@ -303,14 +303,6 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     display: none;
   }
 
-  #focus-label {
-    display: none;
-  }
-
-  #focus-link {
-    display: none;
-  }
-
   #garden-filter,
   #legend {
     max-height: 80px;
@@ -542,6 +534,7 @@ let showSpoiler = false;
 let network = null;
 let vNodes = null;
 let vEdges = null;
+let isHighlighting = false;
 
 // ============================================================
 // データ読み込み
@@ -640,6 +633,65 @@ function bfs(fid, maxDepth) {
 }
 
 // ============================================================
+// ハイライト処理
+// ============================================================
+function applyHighlight(focusNodeId) {
+  if (!network || !vNodes) return;
+
+  // focusNodeId から1階層以内のノードを取得
+  const connectedIds = new Set([focusNodeId]);
+  const rels = data.relations.filter(r => showSpoiler || !r.spoiler);
+
+  for (const r of rels) {
+    if (r.from === focusNodeId) connectedIds.add(r.to);
+    else if (r.to === focusNodeId) connectedIds.add(r.from);
+  }
+
+  // ノードの透明度を更新
+  const updates = vNodes.get().map(n => {
+    const isConnected = connectedIds.has(n.id);
+    return {
+      id: n.id,
+      opacity: isConnected ? 1.0 : 0.2
+    };
+  });
+
+  vNodes.update(updates);
+
+  // エッジの透明度も更新
+  const edgeUpdates = vEdges.get().map(e => {
+    const isConnected = connectedIds.has(e.from) && connectedIds.has(e.to);
+    return {
+      id: e.id,
+      opacity: isConnected ? 1.0 : 0.15
+    };
+  });
+
+  vEdges.update(edgeUpdates);
+
+  isHighlighting = true;
+}
+
+function clearHighlight() {
+  if (!network || !vNodes) return;
+
+  // すべてのノードとエッジの透明度をリセット
+  const nodeUpdates = vNodes.get().map(n => ({
+    id: n.id,
+    opacity: 1.0
+  }));
+  vNodes.update(nodeUpdates);
+
+  const edgeUpdates = vEdges.get().map(e => ({
+    id: e.id,
+    opacity: 1.0
+  }));
+  vEdges.update(edgeUpdates);
+
+  isHighlighting = false;
+}
+
+// ============================================================
 // 描画処理
 //
 // このファイルの中心となる関数。
@@ -715,7 +767,8 @@ function render() {
       scaling: {
         min: baseSize,
         max: baseSize * 1.3
-      }
+      },
+      opacity: 1.0
     };
   });
 
@@ -735,8 +788,7 @@ function render() {
     const dFrom = visIds[r.from] ?? Infinity;
     const dTo   = visIds[r.to] ?? Infinity;
 
-    const faded =
-      dFrom === 0 || dTo === 0;
+    const faded = dFrom === 0 || dTo === 0;
 
     edges.push({
       id: i,
@@ -751,7 +803,8 @@ function render() {
       font: { face: "Hiragino Sans, Meiryo, sans-serif", size: 10, color: col, strokeWidth: 3, strokeColor: "#fff" },
       width: faded ? 2 : 1,
       dashes: false,
-      arrows: ""
+      arrows: "",
+      opacity: 1.0
     });
   });
 
@@ -790,6 +843,7 @@ function render() {
     // クリック: フォーカス変更 + アイコンサイズ変更処理
     network.on("click", params => {
       if (!params.nodes.length) {
+        clearHighlight();
         return;
       }
 
@@ -800,6 +854,9 @@ function render() {
       focusId = id;
       updateFocusLabel();
       updateFade();
+
+      // ハイライトを適用
+      applyHighlight(id);
     });
 
     network.on("dragStart", () => {
@@ -896,6 +953,7 @@ function buildGardenFilter() {
     chk.addEventListener("change", () => {
       gardenFilter[garden] = chk.checked;
       chip.classList.toggle("off", !chk.checked);
+      clearHighlight();
       render();
     });
 
@@ -964,6 +1022,7 @@ document.getElementById("btn-redraw").addEventListener("click", () => {
   document.getElementById("depth-input").value = depth;
   allMode = false;
   document.getElementById("btn-all").classList.remove("active-purple");
+  clearHighlight();
   render();
 });
 
@@ -974,6 +1033,7 @@ document.getElementById("depth-input").addEventListener("keydown", e => {
 document.getElementById("btn-all").addEventListener("click", () => {
   allMode = !allMode;
   document.getElementById("btn-all").classList.toggle("active-purple", allMode);
+  clearHighlight();
   render();
 });
 
@@ -987,6 +1047,7 @@ document.getElementById("btn-spoiler").addEventListener("click", () => {
     btn.textContent = "ネタバレ OFF";
     btn.classList.remove("active-amber");
   }
+  clearHighlight();
   render();
 });
 
@@ -996,6 +1057,7 @@ document.getElementById("btn-reset-focus").addEventListener("click", () => {
     allMode = false;
     document.getElementById("btn-all").classList.remove("active-purple");
     updateFocusLabel();
+    clearHighlight();
     render();
   }
 });
