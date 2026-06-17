@@ -602,9 +602,9 @@ function render() {
     const dTo   = visIds[r.to] ?? Infinity;
 
     const faded =
-      dFrom >= 2 && dTo >= 2;
+      dFrom >= 2 || dTo >= 2;
 
-	      edges.push({
+          edges.push({
       id: i,
       from: r.from,
       to: r.to,
