@@ -4437,7 +4437,7 @@
 
     { "from": "yukari",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "minato",   "to": "suzuna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "minato",   "to": "suzuna",  "type": "盟友",    "spoiler": false },
     { "from": "minato",   "to": "hanabusa",  "type": "同レギオン",    "spoiler": false },
     { "from": "minato",   "to": "ushio",  "type": "同レギオン",    "spoiler": false },
     { "from": "minato",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
@@ -4445,6 +4445,9 @@
     { "from": "suzuna",   "to": "hanabusa",  "type": "同レギオン",    "spoiler": false },
     { "from": "suzuna",   "to": "ushio",  "type": "同レギオン",    "spoiler": false },
     { "from": "suzuna",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "suzuna",   "to": "kurena",  "type": "親友",    "spoiler": false },
+    { "from": "suzuna",   "to": "kiito",  "type": "",    "spoiler": false },
+    { "from": "suzuna",   "to": "subaru",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "hanabusa",   "to": "ushio",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanabusa",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
