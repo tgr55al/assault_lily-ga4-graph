@@ -899,12 +899,7 @@ function render() {
     });
 
     network.on("dragStart", () => {
-      network.physics.barnesHut.enabled = true;
       network.startSimulation();
-    });
-
-    network.on("dragEnd", () => {
-      network.physics.barnesHut.enabled = true;
     });
 
 	// ダブルクリック: ページを開く
