@@ -3402,7 +3402,7 @@
 
     { "from": "riri",   "to": "shizu",   "type": "ルームメイト",          "spoiler": false },
     { "from": "riri",   "to": "matsuri",   "type": "師弟関係",          "spoiler": false },
-    { "from": "riri",   "to": "yayori",   "type": "友人",          "spoiler": false },
+    { "from": "riri",   "to": "yayori",   "type": "仲が良い",          "spoiler": false },
     { "from": "riri",   "to": "kayuu",   "type": "幼馴染",          "spoiler": false },
     { "from": "riri",   "to": "kanaho", "type": "隊長仲間",            "spoiler": false },
     { "from": "riri",   "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
@@ -3477,7 +3477,8 @@
 
     { "from": "renka", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
     { "from": "renka", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
-    { "from": "renka",     "to": "yo",  "type": "友人",    "spoiler": false },
+    { "from": "renka",     "to": "yo",  "type": "親友",    "spoiler": false },
+    { "from": "renka",     "to": "akehi",  "type": "友人",    "spoiler": false },
 
     { "from": "yo", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
     { "from": "yo", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
@@ -4226,7 +4227,7 @@
     { "from": "shion",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
     { "from": "shion",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "furiru",   "to": "aoi",  "type": "友人",    "spoiler": false },
+    { "from": "furiru",   "to": "aoi",  "type": "仲が良い",    "spoiler": false },
     { "from": "furiru",   "to": "yui",  "type": "同レギオン",    "spoiler": false },
     { "from": "furiru",   "to": "yuma",  "type": "同レギオン",    "spoiler": false },
     { "from": "furiru",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
@@ -4239,7 +4240,7 @@
     { "from": "aoi",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
     { "from": "aoi",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
     { "from": "aoi",   "to": "kaede",  "type": "親友（恋人のような関係）",    "spoiler": false },
-    { "from": "aoi",   "to": "kusumi",  "type": "友人",    "spoiler": false },
+    { "from": "aoi",   "to": "kusumi",  "type": "仲が良い",    "spoiler": false },
     { "from": "aoi",   "to": "seiei",  "type": "親子",    "spoiler": false },
     { "from": "aoi",   "to": "cemil",  "type": "友人",    "spoiler": false },
     { "from": "aoi",   "to": "luludis",  "type": "友人",    "spoiler": false },
@@ -4278,7 +4279,7 @@
 
     { "from": "reina",   "to": "chikage",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "nakaba",   "to": "nazuna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nakaba",   "to": "nazuna",  "type": "親友",    "spoiler": false },
     { "from": "nakaba",   "to": "yuzuriha",  "type": "同レギオン",    "spoiler": false },
     { "from": "nakaba",   "to": "momiji",  "type": "同レギオン",    "spoiler": false },
     { "from": "nakaba",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
@@ -4291,17 +4292,25 @@
     { "from": "nakaba",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "nakaba",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
 
-    { "from": "nazuna",   "to": "yuzuriha",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "yuzuriha",  "type": "仲が良い",    "spoiler": false },
     { "from": "nazuna",   "to": "momiji",  "type": "同レギオン",    "spoiler": false },
-    { "from": "nazuna",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "katsura",  "type": "友人",    "spoiler": false },
     { "from": "nazuna",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
-    { "from": "nazuna",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "chinami",  "type": "嫉妬・仲が良い",    "spoiler": false },
     { "from": "nazuna",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "nazuna",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "haru",  "type": "親しい",    "spoiler": false },
     { "from": "nazuna",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
     { "from": "nazuna",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
     { "from": "nazuna",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "nazuna",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nazuna",   "to": "tomoshibi",  "type": "ハーブティー仲間",    "spoiler": false },
+    { "from": "nazuna",   "to": "yukari",  "type": "",    "spoiler": false },
+    { "from": "nazuna",   "to": "kozue",  "type": "",    "spoiler": false },
+    { "from": "nazuna",   "to": "cemil",  "type": "仲が良い",    "spoiler": false },
+    { "from": "nazuna",   "to": "natasha",  "type": "親しい",    "spoiler": false },
+    { "from": "nazuna",   "to": "misaka",  "type": "",    "spoiler": false },
+    { "from": "nazuna",   "to": "tohka",  "type": "",    "spoiler": false },
+    { "from": "nazuna",   "to": "higure",  "type": "昔の知り合い",    "spoiler": false },
 
     { "from": "yuzuriha",   "to": "momiji",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuzuriha",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
@@ -4342,9 +4351,9 @@
     { "from": "kurena",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "chinami",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "chinami",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chinami",   "to": "haru",  "type": "親しい",    "spoiler": false },
     { "from": "chinami",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
-    { "from": "chinami",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chinami",   "to": "sunao_otake",  "type": "親友",    "spoiler": false },
     { "from": "chinami",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "chinami",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
 
@@ -4357,7 +4366,7 @@
     { "from": "haru",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
     { "from": "haru",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
     { "from": "haru",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "haru",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
+    { "from": "haru",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "amane",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
     { "from": "amane",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
@@ -4371,7 +4380,6 @@
     { "from": "urara",   "to": "minato",  "type": "気が合う",    "spoiler": false },
     { "from": "urara",   "to": "subaru",  "type": "気が合う",    "spoiler": false },
     { "from": "urara",   "to": "kiito",  "type": "仲が良い",    "spoiler": false },
-    { "from": "urara",   "to": "haru",  "type": "仲が良い",    "spoiler": false },
     { "from": "urara",   "to": "kozue",  "type": "懇意にしている",    "spoiler": false },
     { "from": "urara",   "to": "kureha",  "type": "友人",    "spoiler": false },
 
@@ -4878,7 +4886,7 @@
     { "from": "sae",   "to": "kikyo",  "type": "織禾を巡るライバル",    "spoiler": false },
 
     { "from": "tomoha",   "to": "marei",  "type": "友人",    "spoiler": false },
-    { "from": "tomoha",   "to": "yuki",  "type": "友人",    "spoiler": false },
+    { "from": "tomoha",   "to": "yuki",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "rieno",   "to": "yui",  "type": "盟友",    "spoiler": false },
     { "from": "rieno",   "to": "maya",  "type": "生徒会",    "spoiler": false },
