@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アサルトリリィ 相関図 - 高機能版</title>
+    <!-- Tailwind CSS for modern UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Vis-network -->
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        
+        :root {
+            --primary: #1565c0;
+            --primary-hover: #0d47a1;
+            --bg-main: #f8fafc;
+            --panel-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-main);
+            overflow: hidden;
+        }
+
+        #network-container {
+            width: 100%;
+            height: 100vh;
+            outline: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Glassmorphism Panels */
+        .glass-panel {
+            background: var(--panel-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .garden-chip {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .garden-chip:hover {
+            transform: translateY(-1px);
+        }
+        .garden-chip.inactive {
+            opacity: 0.4;
+            filter: grayscale(0.5);
+        }
+
+        /* Loading Spinner */
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Tooltip style */
+        .vis-tooltip {
+            position: absolute;
+            visibility: hidden;
+            padding: 8px 12px;
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 100;
+            pointer-events: none;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header / Toolbar -->
+    <header class="fixed top-4 left-4 right-4 z-40 flex flex-wrap gap-3 items-center">
+        <div class="glass-panel rounded-2xl px-4 py-2 flex items-center gap-4">
+            <h1 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <i data-lucide="share-2" class="w-4 h-4 text-blue-600"></i>
+                アサルトリリィ 相関図
+            </h1>
+            <div class="h-4 w-px bg-slate-200"></div>
+            <div class="flex items-center gap-2">
+                <label for="depth-input" class="text-xs font-medium text-slate-500">階層:</label>
+                <input id="depth-input" type="number" min="1" max="10" value="1" 
+                    class="w-12 px-2 py-1 text-xs border border-slate-200 rounded-md focus:ring-2 focus:ring-blue-500 outline-none">
+                <button id="btn-redraw" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+                    <i data-lucide="refresh-cw" class="w-3 h-3"></i> 再描画
+                </button>
+            </div>
+        </div>
+
+        <div class="glass-panel rounded-2xl px-2 py-1.5 flex items-center gap-1">
+            <button id="btn-all" class="px-3 py-1 text-xs font-medium rounded-xl transition-all hover:bg-slate-100 flex items-center gap-1.5">
+                <i data-lucide="layout" class="w-3.5 h-3.5"></i> 全展開
+            </button>
+            <button id="btn-spoiler" class="px-3 py-1 text-xs font-medium rounded-xl transition-all hover:bg-slate-100 flex items-center gap-1.5">
+                <i data-lucide="eye-off" class="w-3.5 h-3.5"></i> ネタバレ
+            </button>
+            <button id="btn-reset-focus" class="px-3 py-1 text-xs font-medium rounded-xl transition-all hover:bg-slate-100 flex items-center gap-1.5">
+                <i data-lucide="target" class="w-3.5 h-3.5"></i> リセット
+            </button>
+        </div>
+
+        <div id="focus-panel" class="glass-panel rounded-2xl px-4 py-2 hidden items-center gap-3 animate-in fade-in slide-in-from-top-2">
+            <span class="text-xs text-slate-500">選択中:</span>
+            <span id="focus-name" class="text-sm font-bold text-blue-600"></span>
+            <a id="focus-link" href="#" target="_blank" class="text-slate-400 hover:text-blue-500 transition-colors">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sidebar: Garden Filter -->
+    <aside class="fixed left-4 top-20 bottom-4 w-64 z-30 flex flex-col gap-4">
+        <div class="glass-panel rounded-2xl p-4 flex flex-col h-full overflow-hidden">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                    <i data-lucide="filter" class="w-3.5 h-3.5"></i>
+                    Garden Filter
+                </h2>
+                <button id="btn-toggle-all-gardens" class="text-[10px] text-blue-500 hover:underline">全て切替</button>
+            </div>
+            <div id="garden-filter" class="flex flex-col gap-1.5 overflow-y-auto pr-2">
+                <!-- Chips generated by JS -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Legend Panel (Bottom Right) -->
+    <div class="fixed right-4 bottom-4 z-30">
+        <button id="btn-legend-toggle" class="glass-panel rounded-full p-3 text-slate-500 hover:text-blue-600 transition-all mb-3 float-right">
+            <i data-lucide="info" class="w-5 h-5"></i>
+        </button>
+        <div id="legend-panel" class="glass-panel rounded-2xl p-4 w-64 hidden clear-both">
+            <h3 class="text-xs font-bold text-slate-400 mb-3 uppercase tracking-wider">関係の種類</h3>
+            <div id="rel-legend" class="grid grid-cols-1 gap-2">
+                <!-- Legend items generated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Bar (Bottom Center) -->
+    <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-30">
+        <div id="statusbar" class="glass-panel rounded-full px-4 py-1.5 text-[10px] font-medium text-slate-500 whitespace-nowrap">
+            データを読み込み中...
+        </div>
+    </div>
+
+    <!-- Main Network Canvas -->
+    <main id="network-container">
+        <div id="loading-overlay" class="absolute inset-0 z-50 flex flex-col items-center justify-center bg-slate-50/80 backdrop-blur-sm">
+            <div class="loader mb-4"></div>
+            <p class="text-sm font-medium text-slate-600">データを構築しています...</p>
+        </div>
+    </main>
+
+    <script>
+        // --- Configuration ---
+        const WIKI_BASE = "https://w.atwiki.jp/assault_lily/?page=";
+        const DATA_URL = "./relationship.json";
+        const DEFAULT_IMAGE = "data:image/svg+xml;utf8," + encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                <rect width="100" height="100" fill="#e2e8f0"/>
+                <path d="M50 30c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm0 36c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z" fill="#94a3b8"/>
+                <path d="M50 40c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z" fill="#94a3b8"/>
+            </svg>
+        `);
+
+        const REL_COLORS = {
+            "シュッツエンゲル": "#f43f5e", // Rose 500
+            "親友・友人":       "#10b981", // Emerald 500
+            "ライバル・対立":   "#ef4444", // Red 500
+            "先輩・後輩":       "#3b82f6", // Blue 500
+            "同レギオン":       "#8b5cf6", // Violet 500
+            "師弟・教え子":     "#06b6d4", // Cyan 500
+            "家族・血縁":       "#f59e0b", // Amber 500
+            "その他":           "#64748b"  // Slate 500
+        };
+
+        const GARDEN_MASTER = {
+            "百合ヶ丘女学院": { short: "百合ヶ丘", color: "#1e293b" },
+            "私立ルドビコ女学院": { short: "ルド女", color: "#db2777" },
+            "御台場女学校": { short: "御台場", color: "#1e3a8a" },
+            "イルマ女子美術高校": { short: "イルマ", color: "#059669" },
+            "エレンスゲ女学園": { short: "エレンスゲ", color: "#2563eb" },
+            "神庭女子藝術高校": { short: "神庭", color: "#d97706" },
+            "聖メルクリウスインターナショナルスクール": { short: "メルクリウス", color: "#312e81" },
+            "相模女子高等学館": { short: "サガ女", color: "#0891b2" },
+            "江ノ島臨海女学校": { short: "江ノ島", color: "#06b6d4" },
+            "鎌倉府立桜ノ杜女子高等学校": { short: "桜ノ杜", color: "#e11d48" },
+            "聖橋大学附属女子高等学校": { short: "聖橋", color: "#3f51b5" },
+            "甲斐聖山女子高等学校": { short: "甲斐聖山", color: "#795548" },
+            "鹿野苑高等女学園": { short: "鹿野苑", color: "#5d4037" },
+            "柳都女学館": { short: "柳都", color: "#00897b" },
+            "アルケミラ女学館": { short: "アルケミラ", color: "#673ab7" },
+            "アンブロシア女学苑高等學校": { short: "アンブロシア", color: "#303f9f" },
+            "シエルリント女学薗": { short: "シエルリント", color: "#0288d1" },
+            "鞍馬山環境女子高等学校": { short: "鞍馬山", color: "#558b2f" },
+            "那賀大串女学園": { short: "那賀大串", color: "#2e7d32" },
+            "城ヶ島工科女子高等学校": { short: "城ヶ島", color: "#455a64" },
+            "九嶺女学園": { short: "九嶺", color: "#8e24aa" },
+            "幕張科学技術女子高等学校": { short: "幕張女子", color: "#37474f" },
+            "逗子国際女子高等学校": { short: "逗子女", color: "#00695c" },
+            "ヘイムスクリングラトレードゴード": { short: "ヘイムスクリングラ", color: "#d84315" },
+            "G.E.H.E.N.A.": { short: "G.E.H.E.N.A.", color: "#b91c1c" },
+            "その他・不明": { short: "その他・不明", color: "#64748b" }
+        };
+
+        // --- State Management ---
+        let appData = { characters: [], relations: [] };
+        let charMap = {};
+        let gardenFilter = {};
+        let focusId = null;
+        let initialFocusId = null;
+        let currentDepth = 1;
+        let isAllMode = false;
+        let isShowSpoiler = false;
+        let network = null;
+        let vNodes = null;
+        let vEdges = null;
+
+        // --- Core Functions ---
+        async function init() {
+            lucide.createIcons();
+            setupEventListeners();
+            await loadData();
+            buildRelLegend();
+        }
+
+        async function loadData() {
+            try {
+                const res = await fetch(DATA_URL);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const json = await res.json();
+                processData(json);
+            } catch (e) {
+                console.warn("Falling back to sample data:", e);
+                // In a real environment, you'd have sample data or a more robust error UI
+                processData(SAMPLE_DATA); 
+            }
+            document.getElementById("loading-overlay").classList.add("hidden");
+        }
+
+        function processData(json) {
+            appData = json;
+            charMap = {};
+            gardenFilter = {};
+            
+            appData.characters.forEach(c => {
+                charMap[c.id] = c;
+                const garden = c.garden || "その他・不明";
+                if (!(garden in gardenFilter)) gardenFilter[garden] = true;
+            });
+
+            // Handle URL parameters
+            const params = new URLSearchParams(location.search);
+            const charaParam = params.get("chara");
+            if (charaParam) {
+                const found = appData.characters.find(c => 
+                    c.name === charaParam || c.id === charaParam || c.wiki === charaParam
+                );
+                if (found) {
+                    focusId = found.id;
+                    initialFocusId = found.id;
+                }
+            }
+
+            if (!focusId && appData.characters.length) {
+                focusId = appData.characters[0].id;
+                initialFocusId = focusId;
+            }
+
+            buildGardenFilterUI();
+            updateFocusUI();
+            renderNetwork();
+        }
+
+        function bfs(startId, maxDepth) {
+            const visited = { [startId]: 0 };
+            const queue = [{ id: startId, d: 0 }];
+            const rels = appData.relations.filter(r => isShowSpoiler || !r.spoiler);
+            
+            let head = 0;
+            while (head < queue.length) {
+                const { id, d } = queue[head++];
+                if (d >= maxDepth) continue;
+                
+                for (const r of rels) {
+                    let nextId = null;
+                    if (r.from === id) nextId = r.to;
+                    else if (r.to === id) nextId = r.from;
+                    
+                    if (nextId && !(nextId in visited)) {
+                        visited[nextId] = d + 1;
+                        queue.push({ id: nextId, d: d + 1 });
+                    }
+                }
+            }
+            return visited;
+        }
+
+        function renderNetwork() {
+            if (!focusId) return;
+
+            const reachable = isAllMode ? 
+                Object.fromEntries(appData.characters.map(c => [c.id, 0])) : 
+                bfs(focusId, currentDepth);
+
+            const visibleIds = {};
+            for (const id in reachable) {
+                const c = charMap[id];
+                const garden = c?.garden || "その他・不明";
+                if (id === focusId || gardenFilter[garden] !== false) {
+                    visibleIds[id] = reachable[id];
+                }
+            }
+
+            // Create Nodes
+            const nodes = Object.keys(visibleIds).map(id => {
+                const c = charMap[id];
+                const isFocused = id === focusId;
+                const dist = visibleIds[id];
+                const garden = c?.garden || "その他・不明";
+                const color = GARDEN_MASTER[garden]?.color || "#64748b";
+                
+                return {
+                    id,
+                    label: c?.name ?? id,
+                    shape: "circularImage",
+                    image: c?.image || DEFAULT_IMAGE,
+                    size: isFocused ? 45 : 30,
+                    borderWidth: isFocused ? 4 : 2,
+                    color: {
+                        border: color,
+                        background: "#ffffff",
+                        highlight: { border: color, background: "#ffffff" }
+                    },
+                    font: {
+                        size: isFocused ? 14 : 12,
+                        color: "#1e293b",
+                        strokeWidth: 2,
+                        strokeColor: "#ffffff",
+                        face: 'Inter, "Noto Sans JP"'
+                    }
+                };
+            });
+
+            // Create Edges
+            const edges = [];
+            appData.relations.forEach((r, idx) => {
+                if (!isShowSpoiler && r.spoiler) return;
+                if (!(r.from in visibleIds) || !(r.to in visibleIds)) return;
+                
+                if (!isAllMode) {
+                    const dFrom = visibleIds[r.from] ?? Infinity;
+                    const dTo = visibleIds[r.to] ?? Infinity;
+                    if (dFrom > currentDepth - 1 && dTo > currentDepth - 1) return;
+                }
+
+                const color = REL_COLORS[r.type] || "#64748b";
+                edges.push({
+                    id: `e${idx}`,
+                    from: r.from,
+                    to: r.to,
+                    label: r.type === "同レギオン" ? "" : r.type,
+                    color: { color: color, highlight: color, hover: color, opacity: 0.8 },
+                    font: { size: 10, color: color, strokeWidth: 3, strokeColor: "#ffffff", align: 'middle' },
+                    width: 1.5,
+                    smooth: { type: 'continuous', roundness: 0.5 }
+                });
+            });
+
+            vNodes = new vis.DataSet(nodes);
+            vEdges = new vis.DataSet(edges);
+            
+            const container = document.getElementById("network-container");
+            const options = {
+                physics: {
+                    forceAtlas2Based: {
+                        gravitationalConstant: -80,
+                        centralGravity: 0.005,
+                        springLength: 150,
+                        springConstant: 0.18
+                    },
+                    maxVelocity: 146,
+                    solver: 'forceAtlas2Based',
+                    timestep: 0.35,
+                    stabilization: { iterations: 150 }
+                },
+                interaction: {
+                    hover: true,
+                    tooltipDelay: 200,
+                    hideEdgesOnDrag: true,
+                    navigationButtons: false
+                }
+            };
+
+            if (network) {
+                network.setData({ nodes: vNodes, edges: vEdges });
+            } else {
+                network = new vis.Network(container, { nodes: vNodes, edges: vEdges }, options);
+                
+                network.on("click", params => {
+                    if (params.nodes.length) {
+                        focusId = params.nodes[0];
+                        updateFocusUI();
+                        highlightConnected(focusId);
+                    } else {
+                        resetHighlight();
+                    }
+                });
+
+                network.on("doubleClick", params => {
+                    if (params.nodes.length) {
+                        const c = charMap[params.nodes[0]];
+                        if (c) window.open(WIKI_BASE + encodeURIComponent(c.wiki || c.name), "_blank");
+                    }
+                });
+            }
+
+            updateStatus(Object.keys(visibleIds).length, edges.length);
+        }
+
+        function highlightConnected(id) {
+            const connectedNodes = network.getConnectedNodes(id);
+            const allNodes = vNodes.get();
+            
+            const updates = allNodes.map(n => {
+                const isRelated = n.id === id || connectedNodes.includes(n.id);
+                return {
+                    id: n.id,
+                    opacity: isRelated ? 1 : 0.2
+                };
+            });
+            vNodes.update(updates);
+        }
+
+        function resetHighlight() {
+            const allNodes = vNodes.get();
+            vNodes.update(allNodes.map(n => ({ id: n.id, opacity: 1 })));
+        }
+
+        // --- UI Helpers ---
+        function updateFocusUI() {
+            const c = charMap[focusId];
+            const panel = document.getElementById("focus-panel");
+            if (c) {
+                panel.classList.remove("hidden");
+                panel.classList.add("flex");
+                document.getElementById("focus-name").textContent = c.name;
+                document.getElementById("focus-link").href = WIKI_BASE + encodeURIComponent(c.wiki || c.name);
+            }
+        }
+
+        function updateStatus(nodeCount, edgeCount) {
+            const modeText = isAllMode ? "全展開" : `${currentDepth}階層`;
+            const spoilerText = isShowSpoiler ? " | ⚠ ネタバレ表示中" : "";
+            document.getElementById("statusbar").innerHTML = 
+                `<span class="text-blue-600 font-bold">${nodeCount}</span> 人を表示中 / 関係 <span class="text-blue-600 font-bold">${edgeCount}</span> 件 (${modeText}${spoilerText})`;
+        }
+
+        function buildGardenFilterUI() {
+            const container = document.getElementById("garden-filter");
+            container.innerHTML = "";
+            
+            Object.keys(GARDEN_MASTER).forEach(garden => {
+                if (!(garden in gardenFilter)) return;
+                
+                const info = GARDEN_MASTER[garden];
+                const chip = document.createElement("button");
+                chip.className = `garden-chip flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] font-medium border text-left transition-all`;
+                chip.style.borderColor = info.color + "40";
+                chip.style.backgroundColor = info.color + "10";
+                chip.style.color = info.color;
+                
+                chip.innerHTML = `
+                    <span class="w-2 h-2 rounded-full" style="background-color: ${info.color}"></span>
+                    <span class="flex-1 truncate">${info.short}</span>
+                `;
+                
+                chip.onclick = () => {
+                    gardenFilter[garden] = !gardenFilter[garden];
+                    chip.classList.toggle("inactive", !gardenFilter[garden]);
+                    renderNetwork();
+                };
+                
+                container.appendChild(chip);
+            });
+        }
+
+        function buildRelLegend() {
+            const container = document.getElementById("rel-legend");
+            Object.entries(REL_COLORS).forEach(([type, color]) => {
+                const item = document.createElement("div");
+                item.className = "flex items-center gap-2 text-[11px] text-slate-600";
+                item.innerHTML = `
+                    <span class="w-6 h-1 rounded-full" style="background-color: ${color}"></span>
+                    <span>${type}</span>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function setupEventListeners() {
+            document.getElementById("btn-redraw").onclick = () => {
+                const val = parseInt(document.getElementById("depth-input").value);
+                currentDepth = isNaN(val) ? 1 : Math.max(1, Math.min(val, 10));
+                isAllMode = false;
+                document.getElementById("btn-all").classList.remove("bg-blue-50", "text-blue-600");
+                renderNetwork();
+            };
+
+            document.getElementById("btn-all").onclick = function() {
+                isAllMode = !isAllMode;
+                this.classList.toggle("bg-blue-50", isAllMode);
+                this.classList.toggle("text-blue-600", isAllMode);
+                renderNetwork();
+            };
+
+            document.getElementById("btn-spoiler").onclick = function() {
+                isShowSpoiler = !isShowSpoiler;
+                this.classList.toggle("bg-amber-50", isShowSpoiler);
+                this.classList.toggle("text-amber-600", isShowSpoiler);
+                this.querySelector('i').setAttribute('data-lucide', isShowSpoiler ? 'eye' : 'eye-off');
+                lucide.createIcons();
+                renderNetwork();
+            };
+
+            document.getElementById("btn-reset-focus").onclick = () => {
+                focusId = initialFocusId;
+                isAllMode = false;
+                document.getElementById("btn-all").classList.remove("bg-blue-50", "text-blue-600");
+                updateFocusUI();
+                renderNetwork();
+                if (network) network.fit();
+            };
+
+            document.getElementById("btn-legend-toggle").onclick = () => {
+                const panel = document.getElementById("legend-panel");
+                panel.classList.toggle("hidden");
+            };
+
+            document.getElementById("btn-toggle-all-gardens").onclick = () => {
+                const keys = Object.keys(gardenFilter);
+                const firstVal = gardenFilter[keys[0]];
+                keys.forEach(k => gardenFilter[k] = !firstVal);
+                
+                document.querySelectorAll(".garden-chip").forEach(chip => {
+                    chip.classList.toggle("inactive", firstVal);
+                });
+                renderNetwork();
+            };
+        }
+
+        // --- Fallback Sample Data ---
+        const SAMPLE_DATA = {
+            characters: [
+                {id:"riri",    name:"一柳梨璃",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/9064c75abec22b6aac7c20cce7433294.jpg"},
+                {id:"yume",    name:"白井夢結",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/afec4f915006648530d08c7dc346e99d.jpg"},
+                {id:"kaede",   name:"楓・J・ヌーベル", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/c2e125c766e6b83a37e47f3b819f5804.jpg"},
+                {id:"ninae",   name:"二川二水",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/19e333b25a80b724068cef2574e2c0b1.jpg"},
+                {id:"kanau",   name:"今叶星",      garden:"神庭女子藝術高校", image:"https://i.gyazo.com/fca68209eee3c0b540408aa441da1328.jpg"}
+            ],
+            relations: [
+                {from:"riri",    to:"yume",    type:"シュッツエンゲル", spoiler:false},
+                {from:"riri",    to:"kaede",   type:"同レギオン",       spoiler:false},
+                {from:"riri",    to:"ninae",   type:"同レギオン",       spoiler:false},
+                {from:"riri",    to:"kanau",   type:"同レギオン",       spoiler:false}
+            ]
+        };
+
+        // Start the app
+        init();
+    </script>
+</body>
+</html>
