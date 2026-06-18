@@ -3400,6 +3400,13 @@
       "garden": "その他・不明",
       "wiki": "壬の花",
       "image": "https://i.gyazo.com/8076a7c970bfe512c4bcd8c1cc8bd2f4.jpg"
+    },
+    {
+      "id": "tekeriri",
+      "name": "テケリ・リ",
+      "garden": "その他・不明",
+      "wiki": "テケリ・リ",
+      "image": "https://i.gyazo.com/531051620be5d834d1f56a8991258c30.jpg"
     }
   ],
 
@@ -5006,6 +5013,7 @@
     { "from": "konohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "konohana",   "to": "otsunohana",  "type": "友人",    "spoiler": true },
+    { "from": "konohana",   "to": "tekeriri",  "type": "大切な友達・相棒",    "spoiler": true },
 
     { "from": "otsunohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "otsunohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
