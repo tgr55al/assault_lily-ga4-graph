@@ -4983,7 +4983,7 @@
     { "from": "fuyo",   "to": "yukana",  "type": "ライバル",    "spoiler": false },
     { "from": "fuyo",   "to": "takarako",  "type": "ライバル",    "spoiler": false },
 
-    { "from": "konohana",   "to": "otsunohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "otsunohana",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "konohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "konohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "konohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
@@ -4992,13 +4992,22 @@
     { "from": "konohana",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "konohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "otsunohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "otsunohana",  "type": "友人",    "spoiler": true },
+
+    { "from": "otsunohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "otsunohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "otsunohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "otsunohana",   "to": "kinohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "otsunohana",   "to": "konohana2",  "type": "同レギオン",    "spoiler": false },
     { "from": "otsunohana",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "otsunohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "otsunohana",   "to": "heinohana",  "type": "親しい",    "spoiler": true },
+    { "from": "otsunohana",   "to": "misaka",  "type": "友人",    "spoiler": true },
+    { "from": "otsunohana",   "to": "chihana",  "type": "親しい",    "spoiler": true },
+    { "from": "otsunohana",   "to": "mayuri",  "type": "親しい",    "spoiler": true },
+    { "from": "otsunohana",   "to": "tohka",  "type": "仲が良い",    "spoiler": true },
+    { "from": "otsunohana",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": true },
 
     { "from": "heinohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "heinohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
@@ -5033,6 +5042,13 @@
     { "from": "shinnohana",   "to": "makina",  "type": "仲が良い",    "spoiler": true },
 
     { "from": "jinnohana",   "to": "makina",  "type": "仲が良い",    "spoiler": true },
+
+    { "from": "hekiru",   "to": "chihiro",  "type": "友人",    "spoiler": false },
+    { "from": "hekiru",   "to": "misaka",  "type": "友人",    "spoiler": false },
+    { "from": "hekiru",   "to": "chihana",  "type": "親しい",    "spoiler": false },
+    { "from": "hekiru",   "to": "mayuri",  "type": "親しい",    "spoiler": false },
+    { "from": "hekiru",   "to": "tohka",  "type": "仲が良い",    "spoiler": false },
+    { "from": "hekiru",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": false },
 
     { "from": "wako",   "to": "chisa",  "type": "仲が良い",    "spoiler": false },
 
