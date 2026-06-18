@@ -810,13 +810,16 @@ function render() {
   const edges = [];
   data.relations.forEach((r, i) => {
     if (!showSpoiler && r.spoiler) return;
+    if (showSpoiler && r.hideWhenSpoiler) return;
     if (!(r.from in visIds) || !(r.to in visIds)) return;
+
     // allMode以外: 少なくとも片方が (depth-1) 以内でなければスキップ
     if (!allMode) {
       const dFrom = visIds[r.from] ?? Infinity;
       const dTo   = visIds[r.to]   ?? Infinity;
       if (dFrom > depth - 1 && dTo > depth - 1) return;
     }
+
     const col = getRelColor(r.type);
 
     edges.push({
@@ -851,9 +854,17 @@ function render() {
         springConstant: 0.08,
         damping: 0.4
       },
+      forceAtlas2Based: {
+        gravitationalConstant: -80,
+        centralGravity: 0.005,
+        springLength: 150,
+        springConstant: 0.18
+      },
       stabilization: { iterations: 200 },
       maxVelocity: 50,
-      solver: "barnesHut",
+      solver: allMode
+        ? "barnesHut"
+        : "forceAtlas2Based",
       timestep: 0.5,
       adaptiveTimestep: true
     },
