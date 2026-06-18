@@ -3645,7 +3645,7 @@
     { "from": "nayuru",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "nayuru",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "mika",   "to": "watsuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mika",   "to": "watsuki",  "type": "仲が良い",    "spoiler": false },
     { "from": "mika",   "to": "nagi",  "type": "同レギオン",    "spoiler": false },
     { "from": "mika",   "to": "diana",  "type": "同レギオン",    "spoiler": false },
     { "from": "mika",   "to": "mitsune",  "type": "同レギオン",    "spoiler": false },
@@ -4116,14 +4116,14 @@
 
     { "from": "tokiha",   "to": "koharu",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "mao",   "to": "shuko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mao",   "to": "kaname",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mao",   "to": "shuko",  "type": "ノルン",    "spoiler": false },
+    { "from": "mao",   "to": "kaname",  "type": "ノルン",    "spoiler": false },
     { "from": "mao",   "to": "yoko",  "type": "同レギオン",    "spoiler": false },
     { "from": "mao",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "mao",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
     { "from": "mao",   "to": "non",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "shuko",   "to": "kaname",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shuko",   "to": "kaname",  "type": "ノルン",    "spoiler": false },
     { "from": "shuko",   "to": "yoko",  "type": "同レギオン",    "spoiler": false },
     { "from": "shuko",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "shuko",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
@@ -4133,6 +4133,7 @@
     { "from": "kaname",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaname",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaname",   "to": "non",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaname",   "to": "tokiwa",  "type": "友人",    "spoiler": false },
 
     { "from": "yoko",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "yoko",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
@@ -4403,7 +4404,7 @@
     { "from": "kiito",   "to": "miyabi",  "type": "",    "spoiler": false },
     { "from": "kiito",   "to": "chino",  "type": "仲が悪い",    "spoiler": false },
 
-    { "from": "ui",   "to": "yuki",  "type": "姉妹のような関係",    "spoiler": false },
+    { "from": "ui",   "to": "yuki",  "type": "姉妹のような関係",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "ui",   "to": "tomoshibi",  "type": "同レギオン",    "spoiler": false },
     { "from": "ui",   "to": "kozue",  "type": "同レギオン",    "spoiler": false },
     { "from": "ui",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
