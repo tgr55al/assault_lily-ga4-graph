@@ -1158,18 +1158,20 @@
       "image": null
     },
     {
-      "id": "mileru",
+      "id": "hekiru",
       "name": "塚本 碧琉",
       "garden": "百合ヶ丘女学院",
       "wiki": "塚本碧琉",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "chihiro",
       "name": "山口 千尋",
       "garden": "百合ヶ丘女学院",
       "wiki": "山口千尋",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "aiko",
@@ -2737,7 +2739,8 @@
       "name": "和辻 椋",
       "garden": "聖橋大学附属女子高等学校",
       "wiki": "和辻椋",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "kanon",
@@ -2912,7 +2915,8 @@
       "name": "猪口 登未",
       "garden": "アンブロシア女学苑高等學校",
       "wiki": "猪口登未",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "touko",
@@ -2954,35 +2958,40 @@
       "name": "多々良 卯乃",
       "garden": "九嶺女学園",
       "wiki": "多々良卯乃",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "chisa",
       "name": "佐藤 智佐",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "佐藤智佐",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "wako",
       "name": "仲村 倭子",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "仲村倭子",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "ayame",
       "name": "加藤 菖蒲",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "加藤菖蒲",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "motoko",
       "name": "斎藤 素湖",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "斎藤素湖",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "yae",
@@ -3323,6 +3332,7 @@
     {
       "id": "konohana",
       "name": "甲の花",
+      "spoilerName": "山口 千尋（甲の花）",
       "garden": "その他・不明",
       "wiki": "甲の花",
       "image": "https://i.gyazo.com/dcd854dcdfec4b4d81b0860e65afb0ab.jpg"
@@ -3330,6 +3340,7 @@
     {
       "id": "otsunohana",
       "name": "乙の花",
+      "spoilerName": "塚本 碧琉（乙の花）",
       "garden": "その他・不明",
       "wiki": "乙の花",
       "image": "https://i.gyazo.com/e8c70d673af6d93a645dbb3bbafec1e7.jpg"
@@ -3337,6 +3348,7 @@
     {
       "id": "heinohana",
       "name": "丙の花",
+      "spoilerName": "猪口 登未（丙の花）",
       "garden": "その他・不明",
       "wiki": "丙の花",
       "image": "https://i.gyazo.com/a15db5d1b32c598b83e58e80f3ffca9f.jpg"
@@ -3344,6 +3356,7 @@
     {
       "id": "teinohana",
       "name": "丁の花",
+      "spoilerName": "和辻 椋（丁の花）",
       "garden": "その他・不明",
       "wiki": "丁の花",
       "image": "https://i.gyazo.com/681c487182ae404a2933efd1bd05f5c3.jpg"
@@ -3351,6 +3364,7 @@
     {
       "id": "bonohana",
       "name": "戊の花",
+      "spoilerName": "多々良 卯乃（戊の花）",
       "garden": "その他・不明",
       "wiki": "戊の花",
       "image": "https://i.gyazo.com/368e731a513584f7e2328ba6fa938b0d.jpg"
@@ -3358,6 +3372,7 @@
     {
       "id": "kinohana",
       "name": "己の花",
+      "spoilerName": "佐藤 智佐（己の花）",
       "garden": "その他・不明",
       "wiki": "己の花",
       "image": "https://i.gyazo.com/73718e050469cf4acff457cf881d2bd4.jpg"
@@ -3365,6 +3380,7 @@
     {
       "id": "konohana2",
       "name": "庚の花",
+      "spoilerName": "仲村 倭子（庚の花）",
       "garden": "その他・不明",
       "wiki": "庚の花",
       "image": "https://i.gyazo.com/c7ce3f1359f0cae160d0c7a70da89844.jpg"
@@ -3372,6 +3388,7 @@
     {
       "id": "shinnohana",
       "name": "辛の花",
+      "spoilerName": "加藤 菖蒲（辛の花）",
       "garden": "その他・不明",
       "wiki": "辛の花",
       "image": "https://i.gyazo.com/211ccfb26e91cedb2e27d8683110cdeb.jpg"
@@ -3379,6 +3396,7 @@
     {
       "id": "jinnohana",
       "name": "壬の花",
+      "spoilerName": "斎藤 素湖（壬の花）",
       "garden": "その他・不明",
       "wiki": "壬の花",
       "image": "https://i.gyazo.com/8076a7c970bfe512c4bcd8c1cc8bd2f4.jpg"
@@ -3691,7 +3709,9 @@
     { "from": "misaka",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "misaka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "misaka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "misaka",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "misaka",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "tohka",   "to": "totori",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "homare",  "type": "同レギオン",    "spoiler": false },
@@ -3703,7 +3723,9 @@
     { "from": "tohka",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tohka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tohka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "tohka",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tohka",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "totori",   "to": "homare",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
@@ -3714,7 +3736,9 @@
     { "from": "totori",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "totori",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "totori",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "totori",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "totori",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "homare",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
@@ -3724,7 +3748,9 @@
     { "from": "homare",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "homare",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "homare",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "homare",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "homare",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "tokiwa",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
@@ -3733,7 +3759,9 @@
     { "from": "tokiwa",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tokiwa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tokiwa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "tokiwa",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tokiwa",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "tomoyo_seike",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
@@ -3741,35 +3769,51 @@
     { "from": "tomoyo_seike",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo_seike",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "tomoyo_seike",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "tomoyo_seike",   "to": "hinoki",  "type": "幼馴染",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "hibari",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hibari",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hibari",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "hibari",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hibari",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "hanna",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanna",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanna",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanna",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hanna",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hanna",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "hanna",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hanna",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "luise",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "luise",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "luise",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "luise",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "luise",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "luise",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "luise",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "toa",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "toa",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "toa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "toa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "toa",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "toa",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "seira",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "seira",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "seira",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "seira",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "seira",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "maho",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
+    { "from": "maho",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "maho",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "maho",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "chihiro",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "kaho",   "to": "hiromu",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "yukiyo",  "type": "同レギオン",    "spoiler": false },
@@ -4901,6 +4945,7 @@
     { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉弟",    "spoiler": false },
 
     { "from": "moyu",   "to": "shoko",  "type": "従姉妹",    "spoiler": false },
+    { "from": "moyu",   "to": "miriam",  "type": "シュッツエンゲル",    "spoiler": true },
 
     { "from": "orika",   "to": "kikyo",  "type": "幼馴染",    "spoiler": false },
     { "from": "orika",   "to": "sae",  "type": "姉妹のような関係",    "spoiler": false },
@@ -4937,6 +4982,94 @@
 
     { "from": "fuyo",   "to": "yukana",  "type": "ライバル",    "spoiler": false },
     { "from": "fuyo",   "to": "takarako",  "type": "ライバル",    "spoiler": false },
+
+    { "from": "konohana",   "to": "otsunohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "kinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "konohana2",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "otsunohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "otsunohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "otsunohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "otsunohana",   "to": "kinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "otsunohana",   "to": "konohana2",  "type": "同レギオン",    "spoiler": false },
+    { "from": "otsunohana",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "otsunohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "heinohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "heinohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "heinohana",   "to": "kinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "heinohana",   "to": "konohana2",  "type": "同レギオン",    "spoiler": false },
+    { "from": "heinohana",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "heinohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "teinohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "teinohana",   "to": "kinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "teinohana",   "to": "konohana2",  "type": "同レギオン",    "spoiler": false },
+    { "from": "teinohana",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "teinohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "bonohana",   "to": "kinohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "bonohana",   "to": "konohana2",  "type": "同レギオン",    "spoiler": false },
+    { "from": "bonohana",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "bonohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "kinohana",   "to": "konohana2",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kinohana",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kinohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "konohana2",   "to": "shinnohana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "konohana2",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "shinnohana",   "to": "jinnohana",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "chihiro",   "to": "hekiru",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chihiro",   "to": "tomi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chihiro",   "to": "ryo_watsuji",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chihiro",   "to": "uno",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chihiro",   "to": "chisa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chihiro",   "to": "wako",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chihiro",   "to": "ayame",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chihiro",   "to": "motoko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "hekiru",   "to": "tomi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hekiru",   "to": "ryo_watsuji",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hekiru",   "to": "uno",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hekiru",   "to": "chisa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hekiru",   "to": "wako",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hekiru",   "to": "ayame",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hekiru",   "to": "motoko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "tomi",   "to": "ryo_watsuji",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tomi",   "to": "uno",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tomi",   "to": "chisa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tomi",   "to": "wako",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tomi",   "to": "ayame",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tomi",   "to": "motoko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "ryo_watsuji",   "to": "uno",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ryo_watsuji",   "to": "chisa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ryo_watsuji",   "to": "wako",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ryo_watsuji",   "to": "ayame",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ryo_watsuji",   "to": "motoko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "uno",   "to": "chisa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "uno",   "to": "wako",  "type": "同レギオン",    "spoiler": true },
+    { "from": "uno",   "to": "ayame",  "type": "同レギオン",    "spoiler": true },
+    { "from": "uno",   "to": "motoko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "chisa",   "to": "wako",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chisa",   "to": "ayame",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chisa",   "to": "motoko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "wako",   "to": "ayame",  "type": "同レギオン",    "spoiler": true },
+    { "from": "wako",   "to": "motoko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "ayame",   "to": "motoko",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]

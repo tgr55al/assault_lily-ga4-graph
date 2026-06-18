@@ -763,7 +763,13 @@ function render() {
   for (const id in reachable) {
     const c = charMap[id];
     const sch = c?.garden || "その他・不明";
-	// フォーカス中キャラだけは常に表示
+
+    // ネタバレありの場合、ネタバレなしのみキャラは非表示
+    if (showSpoiler && c?.hideWhenSpoiler) {
+      continue;
+    }
+
+    // フォーカス中キャラだけは常に表示
     if (id === focusId) {
       visIds[id] = reachable[id];
       continue;
@@ -786,7 +792,10 @@ function render() {
 
     return {
       id,
-      label: c?.name ?? id,
+      label:
+        (showSpoiler && c?.spoilerName)
+          ? c.spoilerName
+          : (c?.name ?? id),
       shape: "circularImage",
       image: c?.image || DEFAULT_IMAGE,
       color: {
@@ -966,7 +975,10 @@ function setStatus(msg) {
 function updateFocusLabel() {
   const c = charMap[focusId];
   if (!c) return;
-  document.getElementById("focus-name").textContent = c.name;
+  document.getElementById("focus-name").textContent =
+    (showSpoiler && c.spoilerName)
+      ? c.spoilerName
+      : c.name;
   const link = document.getElementById("focus-link");
   const page = c.wiki || c.name;
   link.href = WIKI_BASE + encodeURIComponent(page);
