@@ -3747,6 +3747,7 @@
     { "from": "tohka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "tohka",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "tohka",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tohka",   "to": "tekeriri",  "type": "怖い",    "spoiler": true },
 
     { "from": "totori",   "to": "homare",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
@@ -4690,7 +4691,6 @@
     { "from": "sachie",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "sachie",   "to": "yuko",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
 
-	{ "from": "sachie",   "to": "kayo",  "type": "同レギオン",    "spoiler": true },
     { "from": "sachie",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
     { "from": "sachie",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
     { "from": "sachie",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
@@ -4716,6 +4716,8 @@
     { "from": "kayo",   "to": "tsugumi",  "type": "シュッツエンゲル",    "spoiler": true },
     { "from": "kayo",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
     { "from": "kayo",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kayo",   "to": "yuria",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kayo",   "to": "ichika",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "yuria",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuria",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
@@ -4750,6 +4752,18 @@
     { "from": "mei",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "nagisa_tachibana",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "tsugumi",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tsugumi",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tsugumi",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "karen",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
+    { "from": "karen",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "yuko",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yuko",   "to": "asahi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yuko",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yuko",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "fuka",   "to": "mitake",  "type": "同レギオン",    "spoiler": false },
     { "from": "fuka",   "to": "makina",  "type": "同レギオン",    "spoiler": false },
@@ -5014,6 +5028,8 @@
 
     { "from": "konohana",   "to": "otsunohana",  "type": "友人",    "spoiler": true },
     { "from": "konohana",   "to": "tekeriri",  "type": "大切な友達・相棒",    "spoiler": true },
+    { "from": "konohana",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": true },
+    { "from": "konohana",   "to": "tohka",  "type": "犬猿の仲",    "spoiler": true },
 
     { "from": "otsunohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "otsunohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
