@@ -4376,7 +4376,7 @@
     { "from": "nazuna",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "nazuna",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
     { "from": "nazuna",   "to": "tomoshibi",  "type": "ハーブティー仲間",    "spoiler": false },
-    { "from": "nazuna",   "to": "yukari",  "type": "",    "spoiler": false },
+    { "from": "nazuna",   "to": "yukari",  "type": "友人",    "spoiler": false },
     { "from": "nazuna",   "to": "kozue",  "type": "",    "spoiler": false },
     { "from": "nazuna",   "to": "cemil",  "type": "仲が良い",    "spoiler": false },
     { "from": "nazuna",   "to": "natasha",  "type": "親しい",    "spoiler": false },
@@ -4508,7 +4508,7 @@
     { "from": "kozue",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
     { "from": "kozue",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
     { "from": "kozue",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kozue",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kozue",   "to": "yukari",  "type": "友人",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "kozue",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "hotaru",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
@@ -4517,13 +4517,23 @@
     { "from": "hotaru",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "subaru",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
-    { "from": "subaru",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "subaru",   "to": "yukari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "subaru",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "asagao",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "asagao",   "to": "yukari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "asagao",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "yukari",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yukari",   "to": "sakumi",  "type": "姉妹",    "spoiler": false },
+    { "from": "yukari",   "to": "azusa",  "type": "幼馴染",    "spoiler": false },
+    { "from": "yukari",   "to": "haru",  "type": "幼馴染",    "spoiler": false },
+    { "from": "yukari",   "to": "subaru",  "type": "血誓の儀",    "spoiler": true },
+    { "from": "yukari",   "to": "kozue",  "type": "血誓の儀",    "spoiler": true },
+    { "from": "yukari",   "to": "asagao",  "type": "血誓の儀",    "spoiler": true },
+
+    { "from": "sakumi",   "to": "azusa",  "type": "幼馴染",    "spoiler": false },
+    { "from": "sakumi",   "to": "haru",  "type": "幼馴染",    "spoiler": false },
+    { "from": "sakumi",   "to": "yuzuriha",  "type": "友人",    "spoiler": false },
 
     { "from": "minato",   "to": "suzuna",  "type": "盟友",    "spoiler": false },
     { "from": "minato",   "to": "hanabusa",  "type": "同レギオン",    "spoiler": false },
@@ -5110,6 +5120,14 @@
     { "from": "hidaka",   "to": "miyabi",  "type": "友人",    "spoiler": false },
     { "from": "hidaka",   "to": "momiji",  "type": "幼馴染",    "spoiler": false },
     { "from": "hidaka",   "to": "yuzuriha",  "type": "仲が良い",    "spoiler": false },
+
+    { "from": "miyabi",   "to": "momiji",  "type": "",    "spoiler": false },
+    { "from": "miyabi",   "to": "sumire_komai",  "type": "",    "spoiler": false },
+    { "from": "miyabi",   "to": "mayuri",  "type": "懇意にしている",    "spoiler": false },
+    { "from": "miyabi",   "to": "rosalinde",  "type": "懇意にしている",    "spoiler": false },
+    { "from": "miyabi",   "to": "chihana",  "type": "懇意にしている",    "spoiler": false },
+
+    { "from": "chino",   "to": "sumire_komai",  "type": "",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
