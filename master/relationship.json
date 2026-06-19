@@ -3601,7 +3601,6 @@
     { "from": "shiori",   "to": "konomi",  "type": "同レギオン",    "spoiler": false },
     { "from": "shiori",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "shiori",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
-
     { "from": "shiori",   "to": "rosalinde",  "type": "そうさく倶楽部",    "spoiler": false },
     { "from": "shiori",   "to": "meika",  "type": "そうさく倶楽部",    "spoiler": false },
     { "from": "shiori",   "to": "shizuku",  "type": "そうさく倶楽部",    "spoiler": false },
@@ -3614,6 +3613,7 @@
     { "from": "shiori",   "to": "kaede",  "type": "ちょっかいを出している",    "spoiler": false },
     { "from": "shiori",   "to": "asagao",  "type": "",    "spoiler": false },
     { "from": "shiori",   "to": "kanon",  "type": "牙の姉妹",    "spoiler": false },
+    { "from": "shiori",   "to": "sena",  "type": "姉妹",    "spoiler": false },
 
     { "from": "hijiri",   "to": "nodoka",  "type": "同レギオン",    "spoiler": false },
     { "from": "hijiri",   "to": "botan",  "type": "同レギオン",    "spoiler": false },
@@ -4245,18 +4245,15 @@
 
     { "from": "beatrice",   "to": "kuroe",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "ticia",   "to": "liaridel",  "type": "同レギオン",    "spoiler": false },
     { "from": "ticia",   "to": "catalina",  "type": "同レギオン",    "spoiler": false },
     { "from": "ticia",   "to": "natasha",  "type": "同レギオン",    "spoiler": false },
     { "from": "ticia",   "to": "christa",  "type": "同レギオン",    "spoiler": false },
     { "from": "ticia",   "to": "catrinel",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ticia",   "to": "cynthia",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "liaridel",   "to": "catalina",  "type": "同レギオン",    "spoiler": false },
     { "from": "liaridel",   "to": "natasha",  "type": "同レギオン",    "spoiler": false },
     { "from": "liaridel",   "to": "christa",  "type": "同レギオン",    "spoiler": false },
     { "from": "liaridel",   "to": "catrinel",  "type": "同レギオン",    "spoiler": false },
-    { "from": "liaridel",   "to": "cynthia",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "catalina",   "to": "natasha",  "type": "同レギオン",    "spoiler": false },
     { "from": "catalina",   "to": "christa",  "type": "同レギオン",    "spoiler": false },
@@ -5165,6 +5162,11 @@
     { "from": "cynthia",   "to": "liaridel",  "type": "とても良い関係",    "spoiler": false },
 
     { "from": "liaridel",   "to": "ticia",  "type": "側近",    "spoiler": false },
+
+    { "from": "yae",   "to": "momiji",  "type": "旧知の仲",    "spoiler": false },
+
+    { "from": "shiki",   "to": "shiori",  "type": "？",    "spoiler": false },
+    { "from": "shiki",   "to": "sena",  "type": "？",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
