@@ -4338,11 +4338,16 @@
     { "from": "hatsume",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "futae",   "to": "masaki",  "type": "同レギオン",    "spoiler": false },
-    { "from": "futae",   "to": "reina",  "type": "同レギオン",    "spoiler": false },
-    { "from": "futae",   "to": "chikage",  "type": "同レギオン",    "spoiler": false },
+    { "from": "futae",   "to": "reina",  "type": "懐いている",    "spoiler": false },
+    { "from": "futae",   "to": "chikage",  "type": "気にかけている",    "spoiler": false },
 
     { "from": "masaki",   "to": "reina",  "type": "同レギオン",    "spoiler": false },
     { "from": "masaki",   "to": "chikage",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "masaki",   "to": "yuyu",  "type": "シュッツエンゲル候補",    "spoiler": false },
+    { "from": "masaki",   "to": "tazusa",  "type": "仲が良い",    "spoiler": false },
+    { "from": "masaki",   "to": "ichi",  "type": "仲が良い",    "spoiler": false },
+    { "from": "masaki",   "to": "moyu",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "reina",   "to": "chikage",  "type": "同レギオン",    "spoiler": false },
 
@@ -5097,11 +5102,14 @@
     { "from": "suzu",   "to": "ritsu",  "type": "レギオン結成を目指している",    "spoiler": false },
 
     { "from": "chikage",   "to": "honoka",  "type": "ヴォルヴァの血盟",    "spoiler": false },
-    { "from": "chikage",   "to": "futae",  "type": "気にかけている",    "spoiler": false },
     { "from": "chikage",   "to": "hifumi_ozu",  "type": "仲が良い",    "spoiler": false },
     { "from": "chikage",   "to": "saori",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "hifumi_ozu",   "to": "saori",  "type": "仲が良い",    "spoiler": false },
+
+    { "from": "hidaka",   "to": "miyabi",  "type": "友人",    "spoiler": false },
+    { "from": "hidaka",   "to": "momiji",  "type": "幼馴染",    "spoiler": false },
+    { "from": "hidaka",   "to": "yuzuriha",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
