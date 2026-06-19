@@ -4408,7 +4408,7 @@
     { "from": "momiji",   "to": "azusa",  "type": "固い絆",    "spoiler": false },
     { "from": "momiji",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
     { "from": "momiji",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
-    { "from": "momiji",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "sunao_otake",  "type": "慕っている",    "spoiler": false },
     { "from": "momiji",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "momiji",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
 
@@ -4417,7 +4417,7 @@
     { "from": "katsura",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
     { "from": "katsura",   "to": "haru",  "type": "同レギオン",    "spoiler": false },
     { "from": "katsura",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
-    { "from": "katsura",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
+    { "from": "katsura",   "to": "sunao_otake",  "type": "ライバル",    "spoiler": false },
     { "from": "katsura",   "to": "warabi",  "type": "仲が良い",    "spoiler": false },
     { "from": "katsura",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
 
@@ -4521,6 +4521,7 @@
     { "from": "hotaru",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
     { "from": "hotaru",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
     { "from": "hotaru",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hotaru",   "to": "mai",  "type": "友人",    "spoiler": false },
     { "from": "hotaru",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "subaru",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
@@ -4560,7 +4561,9 @@
     { "from": "hanabusa",   "to": "ushio",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanabusa",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "ushio",   "to": "tsubomi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ushio",   "to": "tsubomi",  "type": "従姉妹",    "spoiler": false },
+    { "from": "ushio",   "to": "yuki",  "type": "固い絆",    "spoiler": false },
+    { "from": "ushio",   "to": "amane",  "type": "固い絆",    "spoiler": false },
 
     { "from": "komachi",   "to": "miharu",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "waku",  "type": "同レギオン",    "spoiler": false },
