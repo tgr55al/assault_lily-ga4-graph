@@ -3917,10 +3917,10 @@
     { "from": "meika",   "to": "hitomi",  "type": "同レギオン",    "spoiler": false },
     { "from": "meika",   "to": "kanatsuki",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "ayako",   "to": "hitomi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ayako",   "to": "hitomi",  "type": "ルームメイト",    "spoiler": false },
     { "from": "ayako",   "to": "kanatsuki",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "hitomi",   "to": "kanatsuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hitomi",   "to": "kanatsuki",  "type": "付きまとっている",    "spoiler": false },
 
     { "from": "shinobu",   "to": "ataru",  "type": "同レギオン",    "spoiler": false },
     { "from": "shinobu",   "to": "tsubame",  "type": "同レギオン",    "spoiler": false },
@@ -5167,6 +5167,11 @@
 
     { "from": "shiki",   "to": "shiori",  "type": "？",    "spoiler": false },
     { "from": "shiki",   "to": "sena",  "type": "？",    "spoiler": false },
+
+    { "from": "tsubaki",   "to": "izumi",  "type": "カップル",    "spoiler": false },
+    { "from": "tsubaki",   "to": "rindo",  "type": "仲が良くない",    "spoiler": false },
+
+    { "from": "fuka",   "to": "rindo",  "type": "入魂の仲",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
