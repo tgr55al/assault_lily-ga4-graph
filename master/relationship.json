@@ -4216,14 +4216,22 @@
     { "from": "cemil",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
     { "from": "cemil",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "luludis",   "to": "althea",  "type": "同レギオン",    "spoiler": false },
+    { "from": "luludis",   "to": "althea",  "type": "腹心の部下",    "spoiler": false },
     { "from": "luludis",   "to": "lemie",  "type": "同レギオン",    "spoiler": false },
     { "from": "luludis",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
-    { "from": "luludis",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "althea",   "to": "lemie",  "type": "同レギオン",    "spoiler": false },
+    { "from": "althea",   "to": "lemie",  "type": "姉妹",    "spoiler": false },
     { "from": "althea",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
-    { "from": "althea",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
+    { "from": "althea",   "to": "yuyu",  "type": "ライバル",    "spoiler": false },
+    { "from": "althea",   "to": "soraha",  "type": "友人",    "spoiler": false },
+    { "from": "althea",   "to": "tohka",  "type": "友人",    "spoiler": false },
+    { "from": "althea",   "to": "komachi",  "type": "友人",    "spoiler": false },
+    { "from": "althea",   "to": "ichika",  "type": "友人",    "spoiler": false },
+    { "from": "althea",   "to": "kaede",  "type": "",    "spoiler": false },
+    { "from": "althea",   "to": "katsura",  "type": "",    "spoiler": false },
+    { "from": "althea",   "to": "misaka",  "type": "戦友",    "spoiler": false },
+    { "from": "althea",   "to": "momiji",  "type": "カップルと言ってもいい間柄",    "spoiler": false },
+    { "from": "althea",   "to": "ticia",  "type": "盟友",    "spoiler": false },
 
     { "from": "lemie",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
     { "from": "lemie",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
@@ -5144,6 +5152,9 @@
 
     { "from": "kuroe",   "to": "kaede",  "type": "ライバル",    "spoiler": false },
     { "from": "kuroe",   "to": "alexia",  "type": "幼馴染",    "spoiler": false },
+
+    { "from": "nyx",   "to": "luludis",  "type": "尊敬",    "spoiler": false },
+    { "from": "nyx",   "to": "althea",  "type": "懇意にしている",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
