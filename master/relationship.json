@@ -1095,7 +1095,7 @@
       "image": "https://i.gyazo.com/a92cb2916bc49d89478c1f4cb5eacc6e.jpg"
     },
     {
-      "id": "aika",
+      "id": "manaka",
       "name": "明石 愛華",
       "garden": "百合ヶ丘女学院",
       "wiki": "明石愛華",
@@ -5155,6 +5155,16 @@
 
     { "from": "nyx",   "to": "luludis",  "type": "尊敬",    "spoiler": false },
     { "from": "nyx",   "to": "althea",  "type": "懇意にしている",    "spoiler": false },
+
+    { "from": "manaka",   "to": "hijiri",  "type": "相棒",    "spoiler": false },
+    { "from": "manaka",   "to": "kaya",  "type": "シュッツエンゲル候補",    "spoiler": false },
+    { "from": "manaka",   "to": "chihana",  "type": "信頼",    "spoiler": false },
+    { "from": "manaka",   "to": "tohka",  "type": "嫉妬",    "spoiler": false },
+
+    { "from": "cynthia",   "to": "ticia",  "type": "同志",    "spoiler": false },
+    { "from": "cynthia",   "to": "liaridel",  "type": "とても良い関係",    "spoiler": false },
+
+    { "from": "liaridel",   "to": "ticia",  "type": "側近",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
