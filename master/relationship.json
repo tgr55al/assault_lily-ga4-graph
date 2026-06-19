@@ -4452,7 +4452,7 @@
     { "from": "azusa",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "azusa",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "haru",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "haru",   "to": "amane",  "type": "気にかけている",    "spoiler": false },
     { "from": "haru",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
     { "from": "haru",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "haru",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
@@ -4462,6 +4462,7 @@
     { "from": "haru",   "to": "chihana",  "type": "仲が良い",    "spoiler": false },
     { "from": "haru",   "to": "misaka",  "type": "仲が良い",    "spoiler": false },
     { "from": "haru",   "to": "tohka",  "type": "親密",    "spoiler": false },
+    { "from": "haru",   "to": "akira",  "type": "神宿りを伝授",    "spoiler": false },
 
     { "from": "amane",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
     { "from": "amane",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
@@ -4550,7 +4551,7 @@
     { "from": "hotaru",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "subaru",   "to": "asagao",  "type": "ルームメイト",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "subaru",   "to": "asagao",  "type": "血誓の儀",    "spoiler": false },
+    { "from": "subaru",   "to": "asagao",  "type": "血誓の儀",    "spoiler": true },
     { "from": "subaru",   "to": "yukari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "subaru",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
