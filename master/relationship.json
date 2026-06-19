@@ -4230,7 +4230,7 @@
 
     { "from": "stella",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "lelia",   "to": "mirabelle",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lelia",   "to": "mirabelle",  "type": "姉妹",    "spoiler": false },
     { "from": "lelia",   "to": "nino",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "mirabelle",   "to": "nino",  "type": "同レギオン",    "spoiler": false },
@@ -4399,6 +4399,7 @@
     { "from": "yuzuriha",   "to": "cemil",  "type": "仲が良い",    "spoiler": false },
     { "from": "yuzuriha",   "to": "waku",  "type": "友人",    "spoiler": false },
     { "from": "yuzuriha",   "to": "sachie",  "type": "友人",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "mai",  "type": "友人",    "spoiler": false },
     { "from": "yuzuriha",   "to": "yuunagi",  "type": "憧れ",    "spoiler": false },
 
     { "from": "momiji",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
@@ -5137,6 +5138,9 @@
     { "from": "miyabi",   "to": "chihana",  "type": "懇意にしている",    "spoiler": false },
 
     { "from": "chino",   "to": "sumire_komai",  "type": "",    "spoiler": false },
+
+    { "from": "kuroe",   "to": "kaede",  "type": "ライバル",    "spoiler": false },
+    { "from": "kuroe",   "to": "alexia",  "type": "幼馴染",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
