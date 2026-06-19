@@ -3730,7 +3730,7 @@
     { "from": "misaka",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "misaka",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "misaka",   "to": "chihiro",  "type": "親友",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "misaka",   "to": "chihiro",  "type": "親友",    "spoiler": false },
     { "from": "misaka",   "to": "konohana",  "type": "親友",    "spoiler": true },
     { "from": "misaka",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
@@ -3744,7 +3744,7 @@
     { "from": "tohka",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tohka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "tohka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
     { "from": "tohka",   "to": "tekeriri",  "type": "怖い",    "spoiler": true },
 
@@ -3757,7 +3757,6 @@
     { "from": "totori",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "totori",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "totori",   "to": "konohana",  "type": "レギオン結成の誓い",    "spoiler": true },
     { "from": "totori",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
@@ -3769,7 +3768,6 @@
     { "from": "homare",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "homare",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "homare",   "to": "konohana",  "type": "レギオン結成の誓い",    "spoiler": true },
     { "from": "homare",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
@@ -3780,7 +3778,6 @@
     { "from": "tokiwa",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tokiwa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "tokiwa",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "tokiwa",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
@@ -3790,7 +3787,7 @@
     { "from": "tomoyo_seike",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo_seike",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "tomoyo_seike",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "tomoyo_seike",   "to": "hinoki",  "type": "幼馴染",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
@@ -3800,7 +3797,7 @@
     { "from": "hibari",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hibari",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "hibari",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "hibari",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
@@ -3808,28 +3805,26 @@
     { "from": "hanna",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanna",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanna",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hanna",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "hanna",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanna",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "hanna",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "luise",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "luise",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "luise",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "luise",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "luise",   "to": "konohana",  "type": "強く慕われている",    "spoiler": true },
+    { "from": "luise",   "to": "konohana",  "type": "強く慕っている",    "spoiler": true },
     { "from": "luise",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "toa",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "toa",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "toa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "toa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "toa",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "toa",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "seira",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "seira",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "seira",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "maho",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "maho",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "maho",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "maho",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
@@ -5100,6 +5095,13 @@
     { "from": "motoko",   "to": "makina",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "suzu",   "to": "ritsu",  "type": "レギオン結成を目指している",    "spoiler": false },
+
+    { "from": "chikage",   "to": "honoka",  "type": "ヴォルヴァの血盟",    "spoiler": false },
+    { "from": "chikage",   "to": "futae",  "type": "気にかけている",    "spoiler": false },
+    { "from": "chikage",   "to": "hifumi_ozu",  "type": "仲が良い",    "spoiler": false },
+    { "from": "chikage",   "to": "saori",  "type": "仲が良い",    "spoiler": false },
+
+    { "from": "hifumi_ozu",   "to": "saori",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
