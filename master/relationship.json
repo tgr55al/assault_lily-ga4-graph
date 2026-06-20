@@ -4425,7 +4425,7 @@
     { "from": "yuzuriha",   "to": "mai",  "type": "友人",    "spoiler": false },
     { "from": "yuzuriha",   "to": "yuunagi",  "type": "憧れ",    "spoiler": false },
 
-    { "from": "momiji",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
+    { "from": "momiji",   "to": "katsura",  "type": "気にかけている",    "spoiler": false },
     { "from": "momiji",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
     { "from": "momiji",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
     { "from": "momiji",   "to": "azusa",  "type": "固い絆",    "spoiler": false },
@@ -4434,6 +4434,9 @@
     { "from": "momiji",   "to": "sunao_otake",  "type": "慕っている",    "spoiler": false },
     { "from": "momiji",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "momiji",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
+    { "from": "momiji",   "to": "soraha",  "type": "仲が良い",    "spoiler": false },
+    { "from": "momiji",   "to": "kukuri",  "type": "懇意にしている",    "spoiler": false },
+    { "from": "momiji",   "to": "lemie",  "type": "懐かれている",    "spoiler": false },
 
     { "from": "katsura",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
     { "from": "katsura",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
@@ -4444,6 +4447,11 @@
     { "from": "katsura",   "to": "warabi",  "type": "仲が良い",    "spoiler": false },
     { "from": "katsura",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
     { "from": "katsura",   "to": "emi",  "type": "仲が良い",    "spoiler": false },
+    { "from": "katsura",   "to": "nadeshiko",  "type": "",    "spoiler": false },
+    { "from": "katsura",   "to": "kuo",  "type": "",    "spoiler": false },
+    { "from": "katsura",   "to": "luise",  "type": "懇意にした",    "spoiler": false },
+    { "from": "katsura",   "to": "ichi",  "type": "気が合う",    "spoiler": false },
+    { "from": "katsura",   "to": "misora",  "type": "友人",    "spoiler": false },
 
     { "from": "kurena",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
     { "from": "kurena",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
@@ -5254,7 +5262,7 @@
 
     { "from": "katsura",   "to": "sui",  "type": "盟友",    "spoiler": false },
     { "from": "katsura",   "to": "akiko",  "type": "盟友",    "spoiler": false },
-    { "from": "katsura",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
+    { "from": "katsura",   "to": "ayako_yamashita",  "type": "親友",    "spoiler": false },
 
     { "from": "sui",   "to": "akiko",  "type": "盟友",    "spoiler": false },
     { "from": "sui",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
@@ -5281,7 +5289,6 @@
 
     { "from": "ayu",   "to": "yuyu",  "type": "親子",    "spoiler": false },
 
-    { "from": "gozen",   "to": "kotohi",  "type": "主従関係",    "spoiler": true },
     { "from": "gozen",   "to": "ouka_sano",  "type": "ライバル（現役時代）",    "spoiler": true },
     { "from": "gozen",   "to": "misaka",  "type": "憧れ",    "spoiler": true },
     { "from": "gozen",   "to": "tomoshibi",  "type": "",    "spoiler": true },
