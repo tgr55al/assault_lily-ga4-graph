@@ -129,7 +129,9 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   transition: opacity 0.15s;
   -webkit-user-select: none;
 }
-.garden-chip.off { opacity: 0.35; }
+/* 視認性向上のため、OFF時の透明度を調整し、ホバーエフェクトを追加 */
+.garden-chip:hover { transform: translateY(-1px); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.garden-chip.off { opacity: 0.3; background: #fafafa !important; border-color: #ccc !important; color: #888 !important; }
 .garden-chip input { margin: 0; cursor: pointer; }
 
 /* ── グラフ本体 ── */
@@ -714,6 +716,12 @@ function applyHighlight(focusNodeId) {
   vEdges.update(edgeUpdates);
 
   isHighlighting = true;
+
+  // クリックしたキャラを滑らかに中心へ移動
+  network.focus(focusNodeId, {
+    scale: Math.max(network.getScale(), 0.8),
+    animation: { duration: 400, easingFunction: "easeOutQuad" }
+  });
 }
 
 function clearHighlight() {
