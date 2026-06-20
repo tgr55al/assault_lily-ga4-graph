@@ -573,14 +573,26 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     const queue = [{ id: fid, d: 0 }];
     const rels = data.relations.filter(r => showSpoiler || !r.spoiler);
     let head = 0;
+
     while (head < queue.length) {
       const { id, d } = queue[head++];
       if (d >= maxDepth) continue;
+
       for (const r of rels) {
         let nxt = null;
         if (r.from === id) nxt = r.to;
         else if (r.to === id) nxt = r.from;
+
         if (nxt && !(nxt in visited)) {
+          // 移動先キャラクターのガーデンフィルター状態をチェック
+          const nxtChar = charMap[nxt];
+          const nxtGarden = nxtChar?.garden || "その他・不明";
+
+          // フォーカス中キャラ(fid)以外で、フィルターがOFFになっているガーデンは探索をスキップ
+          if (nxt !== focusId && gardenFilter[nxtGarden] === false) {
+            continue;
+          }
+
           visited[nxt] = d + 1;
           queue.push({ id: nxt, d: d + 1 });
         }
@@ -748,12 +760,16 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
       // ネタバレありの場合、ネタバレなしのみキャラは非表示
       if (showSpoiler && c?.hideWhenSpoiler) continue;
 
-	        // フォーカス中キャラだけは常に表示
-      if (id === focusId) {
+      if (allMode) {
+        // フォーカス中キャラだけは常に表示
+        // 全展開モードの時は、純粋にチェックボックスのON/OFFだけで判定
+        if (id === focusId || gardenFilter[sch] !== false) {
+          visIds[id] = reachable[id];
+        }
+      } else {
+        // 通常の階層探索時は、すでにbfs()側でフィルターが考慮されているため、そのまま代入
         visIds[id] = reachable[id];
-        continue;
       }
-      if (gardenFilter[sch] !== false) visIds[id] = reachable[id];
     }
 
     // ノード
@@ -1128,33 +1144,33 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   // サンプルデータ（data.json 読み込み失敗時のフォールバック）
   // ============================================================
   const SAMPLE_DATA = {
-  characters: [
-    {id:"riri",    name:"一柳梨璃",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/9064c75abec22b6aac7c20cce7433294.jpg"},
-    {id:"yume",    name:"白井夢結",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/afec4f915006648530d08c7dc346e99d.jpg"},
-    {id:"kaede",   name:"楓・J・ヌーベル", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/c2e125c766e6b83a37e47f3b819f5804.jpg"},
-    {id:"ninae",   name:"二川二水",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/19e333b25a80b724068cef2574e2c0b1.jpg"},
-    {id:"juri",    name:"吉村・Thi・梅", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/97309cc4cef2824867350ef1db845ca8.jpg"},
-    {id:"kuo",     name:"郭神琳",      garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/f571c4c99747806e205b69092844f53b.jpg"},
-    {id:"miriam",  name:"ミリアム・ヒルデガルド・v・グロピウス", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/3dec05c31e27e596e7f00f5d774a3aa4.jpg"},
-    {id:"ando",    name:"安藤鶴紗",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/48ef6f97d7d1dce089e17accf9f9cc66.jpg"},
-    {id:"ou",      name:"王雨嘉",      garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/ad3ae42ed54fa05079d06f03578c9e06.jpg"},
-    {id:"kanau",   name:"今叶星",      garden:"神庭女子藝術高校", image:"https://i.gyazo.com/fca68209eee3c0b540408aa441da1328.jpg"},
-    {id:"hatsuka", name:"初鹿野瑤",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/ee670dee01a4026a93f141e95fac5b98.jpg"},
-    {id:"iijima",  name:"飯島恋花",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/0b03c6905871a6c09aa875809310de07.jpg"},
-    {id:"sasaki",  name:"佐々木藍",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/585dc7e87f3c5fcb75c0f98886d72fa7.jpg"},
-    {id:"sagawa",  name:"相澤一葉",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"}
-	],
-  relations: [
-    {from:"riri",    to:"yume",    type:"同レギオン",       spoiler:false},
-    {from:"riri",    to:"yume",    type:"シュッツエンゲル", spoiler:true},
-    {from:"riri",    to:"kaede",   type:"同レギオン",       spoiler:false},
-    {from:"riri",    to:"ninae",   type:"同レギオン",       spoiler:false},
-    {from:"riri",    to:"juri",    type:"同レギオン",       spoiler:false},
-    {from:"riri",    to:"kuo",     type:"同レギオン",       spoiler:false},
-    {from:"riri",    to:"ando",    type:"同レギオン",       spoiler:false},
-    {from:"riri",    to:"miriam",  type:"同レギオン",       spoiler:false},
-    {from:"riri",    to:"kanau",   type:"同レギオン",       spoiler:false}
-	]
+    characters: [
+      {id:"riri",    name:"一柳梨璃",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/9064c75abec22b6aac7c20cce7433294.jpg"},
+      {id:"yume",    name:"白井夢結",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/afec4f915006648530d08c7dc346e99d.jpg"},
+      {id:"kaede",   name:"楓・J・ヌーベル", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/c2e125c766e6b83a37e47f3b819f5804.jpg"},
+      {id:"ninae",   name:"二川二水",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/19e333b25a80b724068cef2574e2c0b1.jpg"},
+      {id:"juri",    name:"吉村・Thi・梅", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/97309cc4cef2824867350ef1db845ca8.jpg"},
+      {id:"kuo",     name:"郭神琳",      garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/f571c4c99747806e205b69092844f53b.jpg"},
+      {id:"miriam",  name:"ミリアム・ヒルデガルド・v・グロピウス", garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/3dec05c31e27e596e7f00f5d774a3aa4.jpg"},
+      {id:"ando",    name:"安藤鶴紗",    garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/48ef6f97d7d1dce089e17accf9f9cc66.jpg"},
+      {id:"ou",      name:"王雨嘉",      garden:"百合ヶ丘女学院", image:"https://i.gyazo.com/ad3ae42ed54fa05079d06f03578c9e06.jpg"},
+      {id:"kanau",   name:"今叶星",      garden:"神庭女子藝術高校", image:"https://i.gyazo.com/fca68209eee3c0b540408aa441da1328.jpg"},
+      {id:"hatsuka", name:"初鹿野瑤",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/ee670dee01a4026a93f141e95fac5b98.jpg"},
+      {id:"iijima",  name:"飯島恋花",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/0b03c6905871a6c09aa875809310de07.jpg"},
+      {id:"sasaki",  name:"佐々木藍",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/585dc7e87f3c5fcb75c0f98886d72fa7.jpg"},
+      {id:"sagawa",  name:"相澤一葉",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"}
+    ],
+    relations: [
+      {from:"riri",    to:"yume",    type:"同レギオン",       spoiler:false},
+      {from:"riri",    to:"yume",    type:"シュッツエンゲル", spoiler:true},
+      {from:"riri",    to:"kaede",   type:"同レギオン",       spoiler:false},
+      {from:"riri",    to:"ninae",   type:"同レギオン",       spoiler:false},
+      {from:"riri",    to:"juri",    type:"同レギオン",       spoiler:false},
+      {from:"riri",    to:"kuo",     type:"同レギオン",       spoiler:false},
+      {from:"riri",    to:"ando",    type:"同レギオン",       spoiler:false},
+      {from:"riri",    to:"miriam",  type:"同レギオン",       spoiler:false},
+      {from:"riri",    to:"kanau",   type:"同レギオン",       spoiler:false}
+    ]
   };
 })();
 </script>
