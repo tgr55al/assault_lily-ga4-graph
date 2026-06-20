@@ -4235,14 +4235,17 @@
 
     { "from": "ameri",   "to": "non",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "cemil",   "to": "luludis",  "type": "同レギオン",    "spoiler": false },
+    { "from": "cemil",   "to": "luludis",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "cemil",   "to": "althea",  "type": "同レギオン",    "spoiler": false },
     { "from": "cemil",   "to": "lemie",  "type": "同レギオン",    "spoiler": false },
     { "from": "cemil",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
     { "from": "cemil",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
+    { "from": "cemil",   "to": "kaede",  "type": "友人",    "spoiler": false },
+    { "from": "cemil",   "to": "fumi",  "type": "仲が良い",    "spoiler": false },
+    { "from": "lemie",   "to": "cemil",  "type": "嫉妬",    "spoiler": false },
 
     { "from": "luludis",   "to": "althea",  "type": "腹心の部下",    "spoiler": false },
-    { "from": "luludis",   "to": "lemie",  "type": "同レギオン",    "spoiler": false },
+    { "from": "luludis",   "to": "lemie",  "type": "依存",    "spoiler": false },
     { "from": "luludis",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "althea",   "to": "lemie",  "type": "姉妹",    "spoiler": false },
@@ -4260,6 +4263,9 @@
 
     { "from": "lemie",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
     { "from": "lemie",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
+    { "from": "lemie",   "to": "aoi",  "type": "仲が良い",    "spoiler": false },
+    { "from": "lemie",   "to": "kaede",  "type": "仲が良い",    "spoiler": false },
+    { "from": "lemie",   "to": "ticia",  "type": "意気投合",    "spoiler": false },
 
     { "from": "stella",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
 
@@ -5064,6 +5070,7 @@
     { "from": "tanya",   "to": "hirushu",  "type": "同レギオン",    "spoiler": false },
     { "from": "tanya",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
     { "from": "tanya",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tanya",   "to": "yujia",  "type": "友人",    "spoiler": false },
 
     { "from": "nana",   "to": "rakeru",  "type": "同レギオン",    "spoiler": false },
     { "from": "nana",   "to": "konoka",  "type": "同レギオン",    "spoiler": false },
@@ -5083,6 +5090,11 @@
     { "from": "konoka",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
     { "from": "konoka",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
     { "from": "konoka",   "to": "rifen",  "type": "仲が良い",    "spoiler": false },
+
+    { "from": "rifen",   "to": "fumi",  "type": "仲が良い",    "spoiler": true },
+
+    { "from": "rifen",   "to": "lushi",  "type": "姉妹",    "spoiler": false },
+    { "from": "yujia",   "to": "lushi",  "type": "姉妹",    "spoiler": false },
 
     { "from": "hirushu",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
     { "from": "hirushu",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
