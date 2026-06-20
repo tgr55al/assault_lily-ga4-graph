@@ -3218,7 +3218,7 @@
       "spoilerImage": "https://i.gyazo.com/1f75fc6b5f433119fe236391ff7d322c.jpg"
     },
     {
-      "id": "eru",
+      "id": "l",
       "name": "L",
       "garden": "その他・不明",
       "wiki": "L",
@@ -4462,6 +4462,7 @@
     { "from": "kurena",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
     { "from": "kurena",   "to": "homare",  "type": "親交が深い",    "spoiler": false },
     { "from": "kurena",   "to": "hibari",  "type": "親交が深い",    "spoiler": false },
+    { "from": "kurena",   "to": "suzume",  "type": "友人（ツガイ）",    "spoiler": true },
 
     { "from": "chinami",   "to": "azusa",  "type": "同レギオン",    "spoiler": false },
     { "from": "chinami",   "to": "haru",  "type": "親しい",    "spoiler": false },
@@ -5277,7 +5278,7 @@
     { "from": "seori",   "to": "shino",  "type": "教導官・教え子",    "spoiler": false },
 
     { "from": "kannnagi",   "to": "shirayuki",  "type": "行動をともにしている",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "kannnagi",   "to": "shirayuki",  "type": "教導官・教え子",    "spoiler": true },
+    { "from": "kannnagi",   "to": "shirayuki",  "type": "教導官・教え子（ツガイ）",    "spoiler": true },
     { "from": "kannnagi",   "to": "gozen",  "type": "知り合い",    "spoiler": true },
 
     { "from": "shirayuki",   "to": "gozen",  "type": "知り合い",    "spoiler": true },
@@ -5302,6 +5303,11 @@
     { "from": "amane",   "to": "mirai",  "type": "友人",    "spoiler": false },
     { "from": "amane",   "to": "shinobu",  "type": "友人",    "spoiler": false },
     { "from": "amane",   "to": "kasumiko",  "type": "友人",    "spoiler": false },
+
+    { "from": "l",   "to": "misuzu",  "type": "コピー",    "spoiler": true },
+    { "from": "l",   "to": "gozen",  "type": "主従関係",    "spoiler": true },
+
+    { "from": "sumire_igarashi",   "to": "asahi",  "type": "友人",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
