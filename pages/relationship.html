@@ -78,7 +78,6 @@ button:active { background: #e0e0e0; }
 button.active-blue  { background: #1565c0; color: #fff; border-color: #1565c0; }
 button.active-purple{ background: #6a1b9a; color: #fff; border-color: #6a1b9a; }
 button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
-button.active-green { background: #2e7d32; color: #fff; border-color: #2e7d32; }
 
 #focus-label {
   font-size: 12px;
@@ -324,8 +323,6 @@ button.active-green { background: #2e7d32; color: #fff; border-color: #2e7d32; }
     <button id="btn-all">全展開</button>
     <span class="tb-sep">|</span>
     <button id="btn-spoiler">⚠ネタバレ OFF</button>
-    <span class="tb-sep">|</span>
-    <button id="btn-fullscreen">全画面表示</button>
     <span class="tb-sep">|</span>
     <button id="btn-reset-focus">リセット</button>
     <span class="tb-sep">|</span>
@@ -1105,22 +1102,6 @@ button.active-green { background: #2e7d32; color: #fff; border-color: #2e7d32; }
         }
         clearHighlight();
         render();
-      });
-    }
-
-    const btnFullscreen = document.getElementById("btn-fullscreen");
-    if (btnFullscreen) {
-      btnFullscreen.addEventListener("click", () => {
-        if (!document.fullscreenElement) {
-          const container = document.getElementById("app");
-          container.requestFullscreen();
-          btnFullscreen.textContent = "全画面表示解除";
-          btnFullscreen.classList.add("active-green");
-        } else {
-          document.exitFullscreen();
-          btnFullscreen.textContent = "全画面表示";
-          btnFullscreen.classList.remove("active-green");
-        }
       });
     }
 
