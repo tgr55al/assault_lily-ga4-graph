@@ -5294,6 +5294,15 @@
     { "from": "gozen",   "to": "tomoshibi",  "type": "",    "spoiler": true },
     { "from": "gozen",   "to": "goteni",  "type": "敵対",    "spoiler": true },
 
+    { "from": "akira",   "to": "shiera_takamatsu",  "type": "旧知の仲",    "spoiler": false },
+    { "from": "akira",   "to": "nagisa_yoshizaka",  "type": "友人",    "spoiler": false },
+    { "from": "akira",   "to": "mioko",  "type": "",    "spoiler": false },
+    { "from": "akira",   "to": "yakumo",  "type": "血誓の儀",    "spoiler": false },
+
+    { "from": "amane",   "to": "mirai",  "type": "友人",    "spoiler": false },
+    { "from": "amane",   "to": "shinobu",  "type": "友人",    "spoiler": false },
+    { "from": "amane",   "to": "kasumiko",  "type": "友人",    "spoiler": false },
+
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
 }
