@@ -470,6 +470,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   let vNodes = null;
   let vEdges = null;
   let isHighlighting = false;
+  let adjacency = {};
 
   // ============================================================
   // データ読み込み
@@ -524,6 +525,29 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     buildGardenFilter();
     buildLegend();
     updateFocusLabel();
+
+    // 隣接リスト作成
+    adjacency = {};
+
+    data.relations.forEach((r, idx) => {
+
+      if (!adjacency[r.from]) adjacency[r.from] = [];
+      if (!adjacency[r.to]) adjacency[r.to] = [];
+
+      adjacency[r.from].push({
+        edgeId: idx,
+        other: r.to,
+        relation: r
+      });
+
+      adjacency[r.to].push({
+        edgeId: idx,
+        other: r.from,
+        relation: r
+      });
+
+    });
+
     render();
   }
 
@@ -569,72 +593,121 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
   // ハイライト処理
   // ============================================================
   function applyHighlight(focusNodeId) {
-    if (!network || !vNodes) return;
+    if (!network || !vNodes || !vEdges) return;
 
-    // focusNodeId から1階層以内のノードを取得
+    // 1. フォーカスキャラからの距離（階層）を1回のBFSで計算
+    const distMap = bfs(focusNodeId, 999);
+
+    // 2. 直接の隣接ノードとエッジのIDを高速検索用にSet化
     const connectedIds = new Set([focusNodeId]);
     const connectedEdgeIds = new Set();
-    const rels = data.relations.filter(r => showSpoiler || !r.spoiler);
+    const neighbors = adjacency[focusNodeId] || [];
 
-    for (let i = 0; i < rels.length; i++) {
-      const r = rels[i];
-      if (r.from === focusNodeId) {
-        connectedIds.add(r.to);
-        connectedEdgeIds.add(i);
-      } else if (r.to === focusNodeId) {
-        connectedIds.add(r.from);
-        connectedEdgeIds.add(i);
-      }
+    for (const item of neighbors) {
+      if (!showSpoiler && item.relation.spoiler) continue;
+      connectedIds.add(item.other);
+      connectedEdgeIds.add(item.edgeId);
     }
 
-    // ノードの透明度を更新
-    const updates = vNodes.get().map(n => {
-      const isConnected = connectedIds.has(n.id);
-      return { id: n.id, opacity: isConnected ? 1.0 : 0.2 };
-    });
-    vNodes.update(updates);
+    // 3. ノードの一括更新（updateFadeの処理もここに集約して1ループで処理）
+    const allNodes = vNodes.get(); // 1回だけ取得
+    const nodeUpdates = [];
 
-    // エッジの透明度も更新
-    const edgeUpdates = vEdges.get().map(e => {
+    for (let i = 0; i < allNodes.length; i++) {
+      const n = allNodes[i];
+      const id = n.id;
+      const isConnected = connectedIds.has(id);
+
+      // updateFade のロジック
+      const c = charMap[id];
+      const garden = c?.garden || "その他・不明";
+      const col = GARDEN_MASTER[garden]?.color || "#9e9e9e";
+      const dist = distMap[id] ?? Infinity;
+      const faded = dist >= 2;
+
+      nodeUpdates.push({
+        id: id,
+        opacity: isConnected ? 1.0 : 0.2, // ハイライト透過
+        size: id === focusNodeId ? 40 : (faded ? 20 : 25),
+        borderWidth: faded ? 1 : 2,
+        color: { border: faded ? (col + "66") : col },
+        font: { color: faded ? "#999" : "#111" }
+      });
+    }
+    vNodes.update(nodeUpdates); // 一括反映
+
+    // 4. エッジの一括更新
+    const allEdges = vEdges.get(); // 1回だけ取得
+    const edgeUpdates = [];
+
+    for (let i = 0; i < allEdges.length; i++) {
+      const e = allEdges[i];
       const isConnected = connectedEdgeIds.has(e.id);
-      return {
+
+      // カラーコードのキャッシュまたは単純結合
+      const edgeColor = isConnected ? e.baseColor : (e.baseColor + "33");
+
+      edgeUpdates.push({
         id: e.id,
         width: isConnected ? 2 : 1,
         color: {
-          color: isConnected ? e.baseColor : e.baseColor + "33",
+          color: edgeColor,
           highlight: e.baseColor,
           hover: e.baseColor
         }
-      };
-    });
-    vEdges.update(edgeUpdates);
+      });
+    }
+    vEdges.update(edgeUpdates); // 一括反映
 
     isHighlighting = true;
 
-    const fitNodes = [...connectedIds].filter(id =>
-      vNodes.get(id)
-    );
-
-    // クリックしたキャラを滑らかに中心へ移動
+    // ズームフィット処理
+    const fitNodes = [...connectedIds].filter(id => vNodes.get(id));
     network.fit({
       nodes: fitNodes,
-      animation: { duration: 400, easingFunction: "easeOutQuad" }
+      animation: { duration: 800, easingFunction: "easeOutQuad" }
     });
   }
 
   function clearHighlight() {
-    if (!network || !vNodes) return;
-    // すべてのノードとエッジの透明度をリセット
-    const nodeUpdates = vNodes.get().map(n => ({ id: n.id, opacity: 1.0 }));
+    if (!network || !vNodes || !vEdges) return;
+
+    const distMap = bfs(focusId, 999);
+    const allNodes = vNodes.get();
+    const nodeUpdates = [];
+
+    for (let i = 0; i < allNodes.length; i++) {
+      const n = allNodes[i];
+      const id = n.id;
+      const c = charMap[id];
+      const garden = c?.garden || "その他・不明";
+      const col = GARDEN_MASTER[garden]?.color || "#9e9e9e";
+      const dist = distMap[id] ?? Infinity;
+      const faded = dist >= 2;
+
+      nodeUpdates.push({
+        id: id,
+        opacity: 1.0,
+        size: id === focusId ? 40 : (faded ? 20 : 25),
+        borderWidth: faded ? 1 : 2,
+        color: { border: faded ? (col + "66") : col },
+        font: { color: faded ? "#999" : "#111" }
+      });
+    }
     vNodes.update(nodeUpdates);
 
-    const edgeUpdates = vEdges.get().map(e => ({
-      id: e.id,
-      opacity: 1.0,
-      width: 1,
-      color: { color: e.baseColor, highlight: e.baseColor, hover: e.baseColor }
-    }));
+    const allEdges = vEdges.get();
+    const edgeUpdates = [];
+    for (let i = 0; i < allEdges.length; i++) {
+      const e = allEdges[i];
+      edgeUpdates.push({
+        id: e.id,
+        width: 1,
+        color: { color: e.baseColor, highlight: e.baseColor, hover: e.baseColor }
+      });
+    }
     vEdges.update(edgeUpdates);
+
     isHighlighting = false;
   }
 
@@ -788,7 +861,6 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 
         focusId = id;
         updateFocusLabel();
-        updateFade();
 
         // ハイライトを適用
         applyHighlight(id);
