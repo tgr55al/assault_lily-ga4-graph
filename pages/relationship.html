@@ -785,11 +785,16 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
       // 選択ノードかそれ以外かでベースサイズを切り替え
       const baseSize = isFocus ? 40 : faded ? 20 : 25;
 
+      let nodeImage = c?.image || DEFAULT_IMAGE;
+      if (showSpoiler && c?.spoilerImage) {
+        nodeImage = c.spoilerImage;
+      }
+
       return {
         id,
         label: (showSpoiler && c?.spoilerName) ? c.spoilerName : (c?.name ?? id),
         shape: "circularImage",
-        image: c?.image || DEFAULT_IMAGE,
+        image: nodeImage,
         color: {
           background: "#ffffff",
           highlight: { background: "#ffffff", border: col },
