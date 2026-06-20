@@ -4237,7 +4237,6 @@
 
     { "from": "cemil",   "to": "luludis",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "cemil",   "to": "althea",  "type": "同レギオン",    "spoiler": false },
-    { "from": "cemil",   "to": "lemie",  "type": "同レギオン",    "spoiler": false },
     { "from": "cemil",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
     { "from": "cemil",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
     { "from": "cemil",   "to": "kaede",  "type": "友人",    "spoiler": false },
@@ -4247,6 +4246,8 @@
     { "from": "luludis",   "to": "althea",  "type": "腹心の部下",    "spoiler": false },
     { "from": "luludis",   "to": "lemie",  "type": "依存",    "spoiler": false },
     { "from": "luludis",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
+    { "from": "luludis",   "to": "shiori",  "type": "仲が良い",    "spoiler": false },
+    { "from": "luludis",   "to": "kaede",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "althea",   "to": "lemie",  "type": "姉妹",    "spoiler": false },
     { "from": "althea",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
@@ -4280,6 +4281,9 @@
     { "from": "ticia",   "to": "natasha",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "ticia",   "to": "christa",  "type": "同レギオン",    "spoiler": false },
     { "from": "ticia",   "to": "catrinel",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ticia",   "to": "houraigyoku",  "type": "友人",    "spoiler": false },
+    { "from": "ticia",   "to": "shinobu",  "type": "友人",    "spoiler": false },
+    { "from": "ticia",   "to": "inori",  "type": "親交が深い",    "spoiler": false },
 
     { "from": "liaridel",   "to": "catalina",  "type": "同レギオン",    "spoiler": false },
     { "from": "liaridel",   "to": "natasha",  "type": "同レギオン",    "spoiler": false },
@@ -5095,6 +5099,7 @@
 
     { "from": "rifen",   "to": "lushi",  "type": "姉妹",    "spoiler": false },
     { "from": "yujia",   "to": "lushi",  "type": "姉妹",    "spoiler": false },
+    { "from": "yujia",   "to": "rifen",  "type": "姉妹",    "spoiler": false },
 
     { "from": "hirushu",   "to": "reve",  "type": "同レギオン",    "spoiler": false },
     { "from": "hirushu",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
