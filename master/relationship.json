@@ -1116,11 +1116,12 @@
       "image": null
     },
     {
-      "id": "chiho",
+      "id": "saya",
       "name": "白井 咲朱",
       "garden": "その他・不明",
       "wiki": "白井咲朱",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "koto_kanefuji",
@@ -1130,7 +1131,7 @@
       "image": null
     },
     {
-      "id": "muyu",
+      "id": "ayu",
       "name": "白井 朱結",
       "garden": "その他・不明",
       "wiki": "白井朱結",
@@ -1465,14 +1466,16 @@
       "name": "茂木 瀬織",
       "garden": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "茂木瀬織",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "shino",
       "name": "深井 紫野",
       "garden": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "深井紫野",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "kinrangyoku",
@@ -2233,6 +2236,7 @@
     {
       "id": "kotohi",
       "name": "戸田・エウラリア・琴陽",
+      "spoilerName": "戸田 琴陽",
       "garden": "私立ルドビコ女学院",
       "wiki": "戸田・エウラリア・琴陽",
       "image": "https://i.gyazo.com/d795abb800e5dbb7d1b4e582daf2f0ec.jpg"
@@ -3206,6 +3210,7 @@
     {
       "id": "gozen",
       "name": "御前",
+      "spoilerName": "白井 咲朱（御前）",
       "garden": "その他・不明",
       "wiki": "御前",
       "image": "https://i.gyazo.com/37366484c45dbb7e7b1b7d023e099e40.jpg"
@@ -3220,6 +3225,7 @@
     {
       "id": "rovisa",
       "name": "ロヴィーサ",
+      "spoilerName": "アーニャ・ヘルツォーク（ロヴィーサ）",
       "garden": "その他・不明",
       "wiki": "ロヴィーサ",
       "image": "https://i.gyazo.com/3975338fda3772023a27402951b9d753.jpg"
@@ -3227,6 +3233,7 @@
     {
       "id": "kannnagi",
       "name": "巫",
+      "spoilerName": "茂木 瀬織（巫）",
       "garden": "その他・不明",
       "wiki": "巫",
       "image": "https://i.gyazo.com/152da2c4da006a853e4439b305521535.jpg"
@@ -3234,6 +3241,7 @@
     {
       "id": "shirayuki",
       "name": "白雪",
+      "spoilerName": "深井 紫野（白雪）",
       "garden": "その他・不明",
       "wiki": "白雪",
       "image": "https://i.gyazo.com/22ec9557d14898e4b2efbc9676610a98.jpg"
@@ -3264,7 +3272,8 @@
       "name": "アーニャ・ヘルツォーク",
       "garden": "その他・不明",
       "wiki": "アーニャ・ヘルツォーク",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "souitsu",
@@ -5251,6 +5260,29 @@
 
     { "from": "seina",   "to": "kanon",  "type": "ルームメイト",    "spoiler": false },
     { "from": "seina",   "to": "shiori",  "type": "嫉妬",    "spoiler": false },
+
+    { "from": "seori",   "to": "shino",  "type": "教導官・教え子",    "spoiler": false },
+
+    { "from": "kannnagi",   "to": "shirayuki",  "type": "行動をともにしている",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "kannnagi",   "to": "shirayuki",  "type": "教導官・教え子",    "spoiler": true },
+    { "from": "kannnagi",   "to": "gozen",  "type": "知り合い",    "spoiler": true },
+
+    { "from": "shirayuki",   "to": "gozen",  "type": "知り合い",    "spoiler": true },
+
+    { "from": "saya",   "to": "yuyu",  "type": "姉妹",    "spoiler": false },
+    { "from": "saya",   "to": "ayu",  "type": "親子",    "spoiler": false },
+    { "from": "saya",   "to": "ouka_sano",  "type": "ライバル（現役時代）",    "spoiler": false },
+    { "from": "saya",   "to": "misaka",  "type": "憧れ",    "spoiler": false },
+
+    { "from": "ayu",   "to": "yuyu",  "type": "親子",    "spoiler": false },
+
+    { "from": "gozen",   "to": "kotohi",  "type": "主従関係",    "spoiler": true },
+    { "from": "gozen",   "to": "ouka_sano",  "type": "ライバル（現役時代）",    "spoiler": true },
+    { "from": "gozen",   "to": "misaka",  "type": "憧れ",    "spoiler": true },
+    { "from": "gozen",   "to": "tomoshibi",  "type": "",    "spoiler": true },
+    { "from": "gozen",   "to": "kinrangyoku",  "type": "",    "spoiler": true },
+    { "from": "gozen",   "to": "ginrangyoku",  "type": "",    "spoiler": true },
+    { "from": "gozen",   "to": "goteni",  "type": "敵対",    "spoiler": true },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
