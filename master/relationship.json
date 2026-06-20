@@ -4930,8 +4930,13 @@
 
     { "from": "koume",   "to": "erisa",  "type": "盟友",    "spoiler": false },
 
-    { "from": "marei",   "to": "yuna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marei",   "to": "yuna",  "type": "親友",    "spoiler": false },
     { "from": "marei",   "to": "kanna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marei",   "to": "soraha",  "type": "友人",    "spoiler": false },
+    { "from": "marei",   "to": "katsura",  "type": "",    "spoiler": false },
+    { "from": "marei",   "to": "ena",  "type": "仲が良い",    "spoiler": false },
+    { "from": "marei",   "to": "mayuri",  "type": "仲が良い",    "spoiler": false },
+    { "from": "marei",   "to": "moyu",  "type": "友人",    "spoiler": false },
 
     { "from": "yuna",   "to": "kanna",  "type": "ライバル",    "spoiler": false },
 
@@ -5040,6 +5045,8 @@
     { "from": "reve",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉弟",    "spoiler": false },
+
+    { "from": "kougetsu",   "to": "nadeshiko",  "type": "",    "spoiler": false },
 
     { "from": "moyu",   "to": "shoko",  "type": "従姉妹",    "spoiler": false },
     { "from": "moyu",   "to": "miriam",  "type": "シュッツエンゲル",    "spoiler": true },
@@ -5209,6 +5216,8 @@
 
     { "from": "souitsu",   "to": "tazusa",  "type": "親子",    "spoiler": false },
     { "from": "souitsu",   "to": "shiera_takamatsu",  "type": "昔の上司・部下",    "spoiler": false },
+
+    { "from": "miu",   "to": "matsuri",  "type": "尊敬",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
