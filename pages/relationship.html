@@ -611,9 +611,13 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 
     isHighlighting = true;
 
+    const fitNodes = [...connectedIds].filter(id =>
+      vNodes.get(id)
+    );
+
     // クリックしたキャラを滑らかに中心へ移動
-    network.focus(focusNodeId, {
-      scale: Math.max(network.getScale(), 0.8),
+    network.fit({
+      nodes: fitNodes,
       animation: { duration: 400, easingFunction: "easeOutQuad" }
     });
   }
