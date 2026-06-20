@@ -3977,8 +3977,8 @@
     { "from": "kotoko",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "kina",   "to": "yayori",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kina",   "to": "shizu",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kina",   "to": "sara",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kina",   "to": "shizu",  "type": "幼馴染",    "spoiler": false },
+    { "from": "kina",   "to": "sara",  "type": "友人",    "spoiler": false },
     { "from": "kina",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "kina",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
     { "from": "kina",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
@@ -3989,7 +3989,7 @@
     { "from": "yayori",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
     { "from": "yayori",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "shizu",   "to": "sara",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shizu",   "to": "sara",  "type": "友人",    "spoiler": false },
     { "from": "shizu",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "shizu",   "to": "noriko",  "type": "同レギオン",    "spoiler": false },
     { "from": "shizu",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
@@ -4184,14 +4184,14 @@
 
     { "from": "tokiha",   "to": "koharu",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "mao",   "to": "shuko",  "type": "ノルン",    "spoiler": false },
-    { "from": "mao",   "to": "kaname",  "type": "ノルン",    "spoiler": false },
+    { "from": "mao",   "to": "shuko",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
+    { "from": "mao",   "to": "kaname",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "mao",   "to": "yoko",  "type": "同レギオン",    "spoiler": false },
     { "from": "mao",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "mao",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
     { "from": "mao",   "to": "non",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "shuko",   "to": "kaname",  "type": "ノルン",    "spoiler": false },
+    { "from": "shuko",   "to": "kaname",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "shuko",   "to": "yoko",  "type": "同レギオン",    "spoiler": false },
     { "from": "shuko",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "shuko",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
@@ -4939,6 +4939,7 @@
     { "from": "marei",   "to": "moyu",  "type": "友人",    "spoiler": false },
 
     { "from": "yuna",   "to": "kanna",  "type": "ライバル",    "spoiler": false },
+    { "from": "yuna",   "to": "soraha",  "type": "友人",    "spoiler": false },
 
     { "from": "nanoha",   "to": "tamao",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "nanoha",   "to": "komomo",  "type": "",    "spoiler": false },
@@ -5218,6 +5219,13 @@
     { "from": "souitsu",   "to": "shiera_takamatsu",  "type": "昔の上司・部下",    "spoiler": false },
 
     { "from": "miu",   "to": "matsuri",  "type": "尊敬",    "spoiler": false },
+
+    { "from": "mishel",   "to": "kaede",  "type": "親子",    "spoiler": false },
+    { "from": "mishel",   "to": "tomomi",  "type": "夫婦",    "spoiler": false },
+
+    { "from": "tomomi",   "to": "kaede",  "type": "親子",    "spoiler": false },
+
+    { "from": "aisa",   "to": "yoko",  "type": "シュッツエンゲル",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
