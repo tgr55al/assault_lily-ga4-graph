@@ -1137,7 +1137,7 @@
       "image": null
     },
     {
-      "id": "akisa",
+      "id": "aisa",
       "name": "柄沢 秋早",
       "garden": "百合ヶ丘女学院",
       "wiki": "柄沢秋早",
@@ -1181,7 +1181,7 @@
       "image": null
     },
     {
-      "id": "ayako2",
+      "id": "ayako_yamashita",
       "name": "山下 絢子",
       "garden": "百合ヶ丘女学院",
       "wiki": "山下絢子",
@@ -1195,7 +1195,7 @@
       "image": null
     },
     {
-      "id": "midori2",
+      "id": "sui",
       "name": "北原 翆",
       "garden": "百合ヶ丘女学院",
       "wiki": "北原翆",
@@ -5226,6 +5226,22 @@
     { "from": "tomomi",   "to": "kaede",  "type": "親子",    "spoiler": false },
 
     { "from": "aisa",   "to": "yoko",  "type": "シュッツエンゲル",    "spoiler": false },
+
+    { "from": "koto",   "to": "meika",  "type": "シュッツエンゲル",    "spoiler": false },
+
+    { "from": "shie",   "to": "katsura",  "type": "盟友",    "spoiler": false },
+    { "from": "shie",   "to": "sui",  "type": "盟友",    "spoiler": false },
+    { "from": "shie",   "to": "akiko",  "type": "盟友",    "spoiler": false },
+    { "from": "shie",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
+
+    { "from": "katsura",   "to": "sui",  "type": "盟友",    "spoiler": false },
+    { "from": "katsura",   "to": "akiko",  "type": "盟友",    "spoiler": false },
+    { "from": "katsura",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
+
+    { "from": "sui",   "to": "akiko",  "type": "盟友",    "spoiler": false },
+    { "from": "sui",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
+
+    { "from": "akiko",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]

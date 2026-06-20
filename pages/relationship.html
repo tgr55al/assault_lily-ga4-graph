@@ -321,7 +321,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     </button>
     <button id="btn-all">全展開</button>
     <span class="tb-sep">|</span>
-    <button id="btn-spoiler">ネタバレ OFF</button>
+    <button id="btn-spoiler">⚠ ネタバレ OFF</button>
     <span class="tb-sep">|</span>
     <button id="btn-reset-focus">リセット</button>
     <span class="tb-sep">|</span>
@@ -393,7 +393,7 @@ const DEFAULT_IMAGE =
 const REL_LEGEND = {
   "特別な関係": "#e91e8c", // ピンク
   "仲が良い":   "#4caf50", // 緑
-  "仲が悪い":   "#fd1111", // 赤
+  "仲が悪い":   "#ff0000", // 赤
   "ライバル":   "#0070ff", // 青
   "同レギオン": "#8b5cf6", // 紫
   "家族・血縁": "#ff9900", // オレンジ
@@ -407,7 +407,7 @@ const REL_ALIASES = {
   "仲が悪い": ["仲が悪い", "犬猿の仲", "犬猿の仲（女狐・死に損ない）", "険悪", "怖い", "苦手", "嫉妬", "仲が良くない"],
   "ライバル": ["ライバル", "織禾を巡るライバル"],
   "同レギオン": ["同レギオン", "チーム"],
-  "家族・血縁": ["姉妹", "親子", "従姉妹", "姉弟", "異母姉妹", "双子の姉妹", "養母娘"],
+  "家族・血縁": ["姉妹", "親子", "従姉妹", "姉弟", "異母姉妹", "双子の姉妹", "養母娘", "夫婦"],
   "その他": ["その他"]
 };
 
@@ -1119,10 +1119,10 @@ document.getElementById("btn-spoiler").addEventListener("click", () => {
   showSpoiler = !showSpoiler;
   const btn = document.getElementById("btn-spoiler");
   if (showSpoiler) {
-    btn.textContent = "ネタバレ ON ⚠";
+    btn.textContent = "⚠ ネタバレ ON";
     btn.classList.add("active-amber");
   } else {
-    btn.textContent = "ネタバレ OFF";
+    btn.textContent = "⚠ ネタバレ OFF";
     btn.classList.remove("active-amber");
   }
   clearHighlight();
@@ -1141,6 +1141,13 @@ document.getElementById("btn-reset-focus").addEventListener("click", () => {
     // 全展開OFF
     allMode = false;
     document.getElementById("btn-all").classList.remove("active-purple");
+
+    // ネタバレOFF
+    showSpoiler = false;
+
+    const spoilerBtn = document.getElementById("btn-spoiler");
+    spoilerBtn.textContent = "⚠ ネタバレ OFF";
+    spoilerBtn.classList.remove("active-amber");
 
     // ガーデン絞り込み全解除（＝全てON）
     Object.keys(gardenFilter).forEach(g => {
