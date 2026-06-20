@@ -1377,7 +1377,7 @@
       "image": "https://i.gyazo.com/5e6be6e8311f59dc149fc418f3f76fc3.png"
     },
     {
-      "id": "ronja",
+      "id": "roniya",
       "name": "ロニヤ・ミリング",
       "garden": "聖メルクリウスインターナショナルスクール",
       "wiki": "ロニヤ・ミリング",
@@ -4248,7 +4248,7 @@
     { "from": "beatrice",   "to": "kuroe",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "ticia",   "to": "catalina",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ticia",   "to": "natasha",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ticia",   "to": "natasha",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "ticia",   "to": "christa",  "type": "同レギオン",    "spoiler": false },
     { "from": "ticia",   "to": "catrinel",  "type": "同レギオン",    "spoiler": false },
 
@@ -4265,6 +4265,8 @@
     { "from": "natasha",   "to": "christa",  "type": "同レギオン",    "spoiler": false },
     { "from": "natasha",   "to": "catrinel",  "type": "同レギオン",    "spoiler": false },
     { "from": "natasha",   "to": "cynthia",  "type": "同レギオン",    "spoiler": false },
+    { "from": "natasha",   "to": "lemie",  "type": "仲が良い",    "spoiler": false },
+    { "from": "natasha",   "to": "kaede",  "type": "相性が良い",    "spoiler": false },
 
     { "from": "christa",   "to": "catrinel",  "type": "同レギオン",    "spoiler": false },
     { "from": "christa",   "to": "cynthia",  "type": "同レギオン",    "spoiler": false },
@@ -4389,7 +4391,7 @@
     { "from": "nazuna",   "to": "yukari",  "type": "友人",    "spoiler": false },
     { "from": "nazuna",   "to": "kozue",  "type": "",    "spoiler": false },
     { "from": "nazuna",   "to": "cemil",  "type": "仲が良い",    "spoiler": false },
-    { "from": "nazuna",   "to": "natasha",  "type": "親しい",    "spoiler": false },
+    { "from": "nazuna",   "to": "natasha",  "type": "親しい間柄",    "spoiler": false },
     { "from": "nazuna",   "to": "misaka",  "type": "",    "spoiler": false },
     { "from": "nazuna",   "to": "tohka",  "type": "",    "spoiler": false },
     { "from": "nazuna",   "to": "higure",  "type": "昔の知り合い",    "spoiler": false },
@@ -4487,7 +4489,7 @@
     { "from": "kiito",   "to": "tomoshibi",  "type": "強く慕っている",    "spoiler": false },
     { "from": "kiito",   "to": "kozue",  "type": "同レギオン",    "spoiler": false },
     { "from": "kiito",   "to": "hotaru",  "type": "友人",    "spoiler": false },
-    { "from": "kiito",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kiito",   "to": "subaru",  "type": "同志",    "spoiler": false },
     { "from": "kiito",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
     { "from": "kiito",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
     { "from": "kiito",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
@@ -4506,7 +4508,7 @@
     { "from": "ui",   "to": "tomoshibi",  "type": "同レギオン",    "spoiler": false },
     { "from": "ui",   "to": "kozue",  "type": "同レギオン",    "spoiler": false },
     { "from": "ui",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ui",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ui",   "to": "subaru",  "type": "同志",    "spoiler": false },
     { "from": "ui",   "to": "asagao",  "type": "仲が良い",    "spoiler": false },
     { "from": "ui",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
     { "from": "ui",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
@@ -4555,7 +4557,9 @@
 
     { "from": "subaru",   "to": "asagao",  "type": "ルームメイト",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "subaru",   "to": "asagao",  "type": "血誓の儀",    "spoiler": true },
-    { "from": "subaru",   "to": "yukari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "subaru",   "to": "yukari",  "type": "可愛がっている",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "subaru",   "to": "katsura",  "type": "思想が近い",    "spoiler": false },
+    { "from": "subaru",   "to": "komuku",  "type": "意気投合",    "spoiler": false },
     { "from": "subaru",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "asagao",   "to": "yukari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
@@ -5227,7 +5231,7 @@
 
     { "from": "aisa",   "to": "yoko",  "type": "シュッツエンゲル",    "spoiler": false },
 
-    { "from": "koto",   "to": "meika",  "type": "シュッツエンゲル",    "spoiler": false },
+    { "from": "koto_kanefuji",   "to": "meika",  "type": "シュッツエンゲル",    "spoiler": false },
 
     { "from": "shie",   "to": "katsura",  "type": "盟友",    "spoiler": false },
     { "from": "shie",   "to": "sui",  "type": "盟友",    "spoiler": false },
@@ -5242,6 +5246,8 @@
     { "from": "sui",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
 
     { "from": "akiko",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
+
+    { "from": "roniya",   "to": "luludis",  "type": "ライバルかつ親友",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
