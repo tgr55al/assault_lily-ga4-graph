@@ -325,7 +325,7 @@ button.active-green { background: #2e7d32; color: #fff; border-color: #2e7d32; }
     <span class="tb-sep">|</span>
     <button id="btn-spoiler">⚠ネタバレ OFF</button>
     <span class="tb-sep">|</span>
-    <button id="btn-fullscreen">全画面</button>
+    <button id="btn-fullscreen">全画面表示</button>
     <span class="tb-sep">|</span>
     <button id="btn-reset-focus">リセット</button>
     <span class="tb-sep">|</span>
@@ -1114,11 +1114,11 @@ button.active-green { background: #2e7d32; color: #fff; border-color: #2e7d32; }
         if (!document.fullscreenElement) {
           const container = document.getElementById("app");
           container.requestFullscreen();
-          btnFullscreen.textContent = "全画面解除";
+          btnFullscreen.textContent = "全画面表示解除";
           btnFullscreen.classList.add("active-green");
         } else {
           document.exitFullscreen();
-          btnFullscreen.textContent = "全画面";
+          btnFullscreen.textContent = "全画面表示";
           btnFullscreen.classList.remove("active-green");
         }
       });
