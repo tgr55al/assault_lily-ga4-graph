@@ -4398,7 +4398,7 @@
     { "from": "nazuna",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
     { "from": "nazuna",   "to": "tomoshibi",  "type": "ハーブティー仲間",    "spoiler": false },
     { "from": "nazuna",   "to": "yukari",  "type": "友人",    "spoiler": false },
-    { "from": "nazuna",   "to": "kozue",  "type": "",    "spoiler": false },
+    { "from": "nazuna",   "to": "kozue",  "type": "友人",    "spoiler": false },
     { "from": "nazuna",   "to": "cemil",  "type": "仲が良い",    "spoiler": false },
     { "from": "nazuna",   "to": "natasha",  "type": "親しい間柄",    "spoiler": false },
     { "from": "nazuna",   "to": "misaka",  "type": "",    "spoiler": false },
@@ -4557,6 +4557,9 @@
     { "from": "kozue",   "to": "asagao",  "type": "血誓の儀",    "spoiler": true },
     { "from": "kozue",   "to": "yukari",  "type": "友人",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "kozue",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kozue",   "to": "waku",  "type": "友人",    "spoiler": false },
+    { "from": "kozue",   "to": "akari",  "type": "友人",    "spoiler": false },
+    { "from": "kozue",   "to": "nakaba",  "type": "友人",    "spoiler": false },
 
     { "from": "hotaru",   "to": "subaru",  "type": "同レギオン",    "spoiler": false },
     { "from": "hotaru",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
@@ -5280,8 +5283,6 @@
     { "from": "gozen",   "to": "ouka_sano",  "type": "ライバル（現役時代）",    "spoiler": true },
     { "from": "gozen",   "to": "misaka",  "type": "憧れ",    "spoiler": true },
     { "from": "gozen",   "to": "tomoshibi",  "type": "",    "spoiler": true },
-    { "from": "gozen",   "to": "kinrangyoku",  "type": "",    "spoiler": true },
-    { "from": "gozen",   "to": "ginrangyoku",  "type": "",    "spoiler": true },
     { "from": "gozen",   "to": "goteni",  "type": "敵対",    "spoiler": true },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
