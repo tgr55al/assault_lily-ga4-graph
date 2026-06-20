@@ -1123,7 +1123,7 @@
       "image": null
     },
     {
-      "id": "koto2",
+      "id": "koto_kanefuji",
       "name": "兼藤 瑚采",
       "garden": "その他・不明",
       "wiki": "兼藤瑚采",
@@ -5248,6 +5248,9 @@
     { "from": "akiko",   "to": "ayako_yamashita",  "type": "盟友",    "spoiler": false },
 
     { "from": "roniya",   "to": "luludis",  "type": "ライバルかつ親友",    "spoiler": false },
+
+    { "from": "seina",   "to": "kanon",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "seina",   "to": "shiori",  "type": "嫉妬",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
