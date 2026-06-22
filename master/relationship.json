@@ -3860,7 +3860,9 @@
     { "from": "chihiro",   "to": "luise",  "type": "慕っていた",    "spoiler": false },
     { "from": "chihiro",   "to": "seira",  "type": "強く慕っていた",    "spoiler": false },
 
-    { "from": "kaho",   "to": "hiromu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "aiko",   "to": "nadeshiko",  "type": "教導官・教え子",    "spoiler": false },
+
+    { "from": "kaho",   "to": "hiromu",  "type": "シュッツエンゲル",    "spoiler": false },
     { "from": "kaho",   "to": "yukiyo",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "sayu",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
@@ -3872,16 +3874,17 @@
     { "from": "kaho",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "hiromu",   "to": "yukiyo",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hiromu",   "to": "sayu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hiromu",   "to": "yukiyo",  "type": "友人",    "spoiler": false },
+    { "from": "hiromu",   "to": "sayu",  "type": "友人",    "spoiler": false },
     { "from": "hiromu",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
-    { "from": "hiromu",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hiromu",   "to": "mako_nishizawa",  "type": "喧嘩・仲が良い",    "spoiler": false },
     { "from": "hiromu",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hiromu",   "to": "maho",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "yukiyo",   "to": "sayu",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
@@ -3955,7 +3958,7 @@
     { "from": "shinobu",   "to": "ataru",  "type": "同レギオン",    "spoiler": false },
     { "from": "shinobu",   "to": "tsubame",  "type": "同レギオン",    "spoiler": false },
     { "from": "shinobu",   "to": "hime",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shinobu",   "to": "tamaka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shinobu",   "to": "tamaka",  "type": "シュッツエンゲル候補",    "spoiler": false },
     { "from": "shinobu",   "to": "alicia",  "type": "同レギオン",    "spoiler": false },
     { "from": "shinobu",   "to": "ko",  "type": "同レギオン",    "spoiler": false },
     { "from": "shinobu",   "to": "shizuku",  "type": "同レギオン",    "spoiler": false },
@@ -3967,11 +3970,12 @@
     { "from": "ataru",   "to": "ko",  "type": "同レギオン",    "spoiler": false },
     { "from": "ataru",   "to": "shizuku",  "type": "ルームメイト",    "spoiler": false },
 
-    { "from": "tsubame",   "to": "hime",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubame",   "to": "hime",  "type": "ルームメイト",    "spoiler": false },
     { "from": "tsubame",   "to": "tamaka",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsubame",   "to": "alicia",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsubame",   "to": "ko",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsubame",   "to": "shizuku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsubame",   "to": "yuyu",  "type": "ライバル",    "spoiler": false },
 
     { "from": "hime",   "to": "tamaka",  "type": "同レギオン",    "spoiler": false },
     { "from": "hime",   "to": "alicia",  "type": "同レギオン",    "spoiler": false },
@@ -3981,6 +3985,7 @@
     { "from": "tamaka",   "to": "alicia",  "type": "同レギオン",    "spoiler": false },
     { "from": "tamaka",   "to": "ko",  "type": "同レギオン",    "spoiler": false },
     { "from": "tamaka",   "to": "shizuku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tamaka",   "to": "fumi",  "type": "リリィオタク仲間",    "spoiler": false },
 
     { "from": "alicia",   "to": "ko",  "type": "同レギオン",    "spoiler": false },
     { "from": "alicia",   "to": "shizuku",  "type": "同レギオン",    "spoiler": false },
