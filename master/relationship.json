@@ -1145,7 +1145,7 @@
       "image": null
     },
     {
-      "id": "mitsutoshi",
+      "id": "mitsune_ishimoto",
       "name": "石本 光稔",
       "garden": "百合ヶ丘女学院",
       "wiki": "石本光稔",
@@ -3901,6 +3901,10 @@
     { "from": "sayu",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sayu",   "to": "mitsune_ishimoto",  "type": "盟友",    "spoiler": false },
+    { "from": "sayu",   "to": "yukiko",  "type": "盟友",    "spoiler": false },
+
+    { "from": "mitsune_ishimoto",   "to": "yukiko",  "type": "ルームメイトの約束",    "spoiler": false },
 
     { "from": "himiko",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
@@ -4122,13 +4126,13 @@
 
     { "from": "rinka",   "to": "honori",  "type": "親友",    "spoiler": false },
     { "from": "rinka",   "to": "keine",  "type": "同レギオン",    "spoiler": false },
-    { "from": "rinka",   "to": "kohaku",  "type": "親しい",    "spoiler": false },
-    { "from": "rinka",   "to": "meika",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "rinka",   "to": "kohaku",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "honori",   "to": "keine",  "type": "同レギオン",    "spoiler": false },
     { "from": "honori",   "to": "kohaku",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "keine",   "to": "kohaku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "keine",   "to": "kohaku",  "type": "親しい",    "spoiler": false },
+    { "from": "keine",   "to": "meika",  "type": "ルームメイト",    "spoiler": false },
 
     { "from": "ayane",   "to": "shiera_tada",  "type": "同レギオン",    "spoiler": false },
     { "from": "ayane",   "to": "gyokuyo",  "type": "同レギオン",    "spoiler": false },
