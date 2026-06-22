@@ -320,11 +320,16 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     <button id="btn-redraw">
       <i data-lucide="refresh-cw" width="12" height="12" style="position:relative; top:2px;"></i> 再描画
     </button>
-    <button id="btn-all">全展開</button>
+    <button id="btn-all">
+      <i data-lucide="expand" width="12" height="12" style="position:relative; top:2px;"></i> 全展開
+    </button>
     <span class="tb-sep">|</span>
-    <button id="btn-spoiler">⚠ネタバレ OFF</button>
+    <button id="btn-spoiler">
+      <i data-lucide="triangle-alert" width="12" height="12" style="position:relative; top:2px;"></i><span id="btn-spoiler-text"> ネタバレ OFF</span>
+    </button>
     <span class="tb-sep">|</span>
-    <button id="btn-reset-focus">リセット</button>
+    <button id="btn-reset-focus">
+      <i data-lucide="rotate-ccw" width="12" height="12" style="position:relative; top:2px;"></i><span id="btn-spoiler-text"> リセット</button>
     <span class="tb-sep">|</span>
     <span id="focus-label">選択: <b id="focus-name">読み込み中…</b></span>
     <a id="focus-link" href="#" target="_blank" style="display:none">[ページを開く]</a>
@@ -1090,14 +1095,15 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
     }
 
     const btnSpoiler = document.getElementById("btn-spoiler");
+    const btnSpoilerText = document.getElementById("btn-spoiler-text");
     if (btnSpoiler) {
       btnSpoiler.addEventListener("click", () => {
         showSpoiler = !showSpoiler;
         if (showSpoiler) {
-          btnSpoiler.textContent = "⚠ネタバレ ON";
+          btnSpoilerText.textContent = " ネタバレ ON";
           btnSpoiler.classList.add("active-amber");
         } else {
-          btnSpoiler.textContent = "⚠ネタバレ OFF";
+          btnSpoilerText.textContent = " ネタバレ OFF";
           btnSpoiler.classList.remove("active-amber");
         }
         clearHighlight();
@@ -1123,7 +1129,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
           // ネタバレOFF
           showSpoiler = false;
           if (btnSpoiler) {
-            btnSpoiler.textContent = "⚠ネタバレ OFF";
+            btnSpoilerText.textContent = " ネタバレ OFF";
             btnSpoiler.classList.remove("active-amber");
           }
           Object.keys(gardenFilter).forEach(g => { gardenFilter[g] = true; });
