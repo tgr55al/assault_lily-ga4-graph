@@ -3564,6 +3564,7 @@
     { "from": "tsukushi",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsukushi",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsukushi",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tsukushi",   "to": "chigusa",  "type": "ルームメイト",    "spoiler": false },
 
     { "from": "ichi",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
     { "from": "ichi",   "to": "akane",  "type": "同レギオン",    "spoiler": false },
@@ -3725,7 +3726,7 @@
 
     { "from": "mitsune",   "to": "konomi",  "type": "同レギオン",    "spoiler": false },
     { "from": "mitsune",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mitsune",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mitsune",   "to": "natose",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "konomi",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "konomi",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
@@ -4039,7 +4040,7 @@
     { "from": "inori",   "to": "mio",  "type": "同レギオン",    "spoiler": false },
     { "from": "inori",   "to": "samidori",  "type": "同レギオン",    "spoiler": false },
     { "from": "inori",   "to": "akiho",  "type": "同レギオン",    "spoiler": false },
-    { "from": "inori",   "to": "sato",  "type": "同レギオン",    "spoiler": false },
+    { "from": "inori",   "to": "sato",  "type": "ルームメイト",    "spoiler": false },
     { "from": "inori",   "to": "ryo",  "type": "同レギオン",    "spoiler": false },
     { "from": "inori",   "to": "suiren",  "type": "同レギオン",    "spoiler": false },
     { "from": "inori",   "to": "sakura",  "type": "同レギオン",    "spoiler": false },
@@ -4065,6 +4066,7 @@
     { "from": "sato",   "to": "ryo",  "type": "同レギオン",    "spoiler": false },
     { "from": "sato",   "to": "suiren",  "type": "同レギオン",    "spoiler": false },
     { "from": "sato",   "to": "sakura",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sato",   "to": "shizu",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "ryo",   "to": "suiren",  "type": "同レギオン",    "spoiler": false },
     { "from": "ryo",   "to": "sakura",  "type": "同レギオン",    "spoiler": false },
@@ -4115,11 +4117,13 @@
 
     { "from": "rachel",   "to": "mimi",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "natsuki",   "to": "azuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "natsuki",   "to": "azuki",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "natsuki",   "to": "soraha",  "type": "仲が良い",    "spoiler": false },
 
-    { "from": "rinka",   "to": "honori",  "type": "同レギオン",    "spoiler": false },
+    { "from": "rinka",   "to": "honori",  "type": "親友",    "spoiler": false },
     { "from": "rinka",   "to": "keine",  "type": "同レギオン",    "spoiler": false },
-    { "from": "rinka",   "to": "kohaku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "rinka",   "to": "kohaku",  "type": "親しい",    "spoiler": false },
+    { "from": "rinka",   "to": "meika",  "type": "ルームメイト",    "spoiler": false },
 
     { "from": "honori",   "to": "keine",  "type": "同レギオン",    "spoiler": false },
     { "from": "honori",   "to": "kohaku",  "type": "同レギオン",    "spoiler": false },
@@ -4156,6 +4160,7 @@
     { "from": "sunao_ikeda",   "to": "satori",  "type": "同レギオン",    "spoiler": false },
     { "from": "sunao_ikeda",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
     { "from": "sunao_ikeda",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sunao_ikeda",   "to": "soraha",  "type": "ライバル",    "spoiler": false },
 
     { "from": "satori",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
     { "from": "satori",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
@@ -4213,6 +4218,7 @@
     { "from": "mao",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "mao",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
     { "from": "mao",   "to": "non",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mao",   "to": "misaka",  "type": "同志",    "spoiler": false },
 
     { "from": "shuko",   "to": "kaname",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "shuko",   "to": "yoko",  "type": "同レギオン",    "spoiler": false },
