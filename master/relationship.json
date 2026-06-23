@@ -3720,7 +3720,7 @@
     { "from": "nagi",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "diana",   "to": "mitsune",  "type": "同レギオン",    "spoiler": false },
-    { "from": "diana",   "to": "konomi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "diana",   "to": "konomi",  "type": "シュッツエンゲル候補",    "spoiler": false },
     { "from": "diana",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "diana",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
 
@@ -3960,7 +3960,7 @@
     { "from": "shinobu",   "to": "hime",  "type": "同レギオン",    "spoiler": false },
     { "from": "shinobu",   "to": "tamaka",  "type": "シュッツエンゲル候補",    "spoiler": false },
     { "from": "shinobu",   "to": "alicia",  "type": "同レギオン",    "spoiler": false },
-    { "from": "shinobu",   "to": "ko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shinobu",   "to": "ko",  "type": "ルームメイト",    "spoiler": false },
     { "from": "shinobu",   "to": "shizuku",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "ataru",   "to": "tsubame",  "type": "同レギオン",    "spoiler": false },
@@ -3991,6 +3991,9 @@
     { "from": "alicia",   "to": "shizuku",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "ko",   "to": "shizuku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ko",   "to": "ayako",  "type": "関係は悪くない",    "spoiler": false },
+    { "from": "ko",   "to": "noa",  "type": "シュッツエンゲル候補",    "spoiler": false },
+    { "from": "ko",   "to": "nagi",  "type": "互いのことを想っている",    "spoiler": false },
 
     { "from": "mayuri",   "to": "kotoko",  "type": "同レギオン",    "spoiler": false },
     { "from": "mayuri",   "to": "kina",  "type": "同レギオン",    "spoiler": false },
@@ -4946,13 +4949,15 @@
     { "from": "kureha",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
     { "from": "kureha",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "akari",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "akari",   "to": "himeka",  "type": "ルームメイト",    "spoiler": false },
+
+    { "from": "himeka",   "to": "kuo",  "type": "ライバル",    "spoiler": false },
 
     { "from": "akari",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
     { "from": "akari",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
     { "from": "akari",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
     { "from": "akari",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
-    { "from": "akari",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+    { "from": "akari",   "to": "moka",  "type": "友人",    "spoiler": true },
 
     { "from": "akehi",   "to": "haruna",  "type": "同レギオン",    "spoiler": false },
     { "from": "akehi",   "to": "suzume",  "type": "同レギオン",    "spoiler": false },
@@ -5154,6 +5159,10 @@
 
     { "from": "eishin",   "to": "uta_masukawa",  "type": "チーム",    "spoiler": false },
     { "from": "eishin",   "to": "cherice",  "type": "憧れ",    "spoiler": false },
+
+    { "from": "cherice",   "to": "nagisa_yoshizaka",  "type": "戦友",    "spoiler": false },
+    { "from": "cherice",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
+    { "from": "cherice",   "to": "seiei",  "type": "元教官・元上官",    "spoiler": false },
 
     { "from": "hikaru",   "to": "fuyo",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "hikaru",   "to": "shiho",  "type": "幼馴染",    "spoiler": false },
