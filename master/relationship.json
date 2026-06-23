@@ -3886,15 +3886,16 @@
     { "from": "hiromu",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
     { "from": "hiromu",   "to": "maho",  "type": "仲が良い",    "spoiler": false },
 
-    { "from": "yukiyo",   "to": "sayu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yukiyo",   "to": "sayu",  "type": "ルームメイト",    "spoiler": false },
     { "from": "yukiyo",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
-    { "from": "yukiyo",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yukiyo",   "to": "naru",  "type": "シュッツエンゲル候補",    "spoiler": false },
     { "from": "yukiyo",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "yukiyo",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yukiyo",   "to": "ageha",  "type": "",    "spoiler": false },
 
     { "from": "sayu",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
@@ -3909,7 +3910,7 @@
 
     { "from": "mitsune_ishimoto",   "to": "yukiko",  "type": "ルームメイトの約束",    "spoiler": false },
 
-    { "from": "himiko",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
+    { "from": "himiko",   "to": "kaya",  "type": "一目惚れ・逃げている",    "spoiler": false },
     { "from": "himiko",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "himiko",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
@@ -3923,6 +3924,7 @@
     { "from": "kaya",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaya",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaya",   "to": "hijiri",  "type": "親交がある",    "spoiler": false },
 
     { "from": "mako_nishizawa",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
     { "from": "mako_nishizawa",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
@@ -3949,6 +3951,7 @@
     { "from": "meika",   "to": "ayako",  "type": "同レギオン",    "spoiler": false },
     { "from": "meika",   "to": "hitomi",  "type": "同レギオン",    "spoiler": false },
     { "from": "meika",   "to": "kanatsuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "meika",   "to": "shinobu",  "type": "元シュッツエンゲル",    "spoiler": false },
 
     { "from": "ayako",   "to": "hitomi",  "type": "ルームメイト",    "spoiler": false },
     { "from": "ayako",   "to": "kanatsuki",  "type": "同レギオン",    "spoiler": false },
@@ -4395,7 +4398,7 @@
     { "from": "yui",   "to": "mira",  "type": "同レギオン",    "spoiler": false },
     { "from": "yui",   "to": "hikaru",  "type": "友人",    "spoiler": false },
     { "from": "yui",   "to": "matsuri",  "type": "友人",    "spoiler": false },
-    { "from": "yui",   "to": "mimi",  "type": "苦手",    "spoiler": false },
+    { "from": "yui",   "to": "mimi",  "type": "警戒・苦手",    "spoiler": false },
 
     { "from": "yuma",   "to": "jun",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuma",   "to": "hatsume",  "type": "同レギオン",    "spoiler": false },
@@ -5381,6 +5384,9 @@
 
     { "from": "l",   "to": "misuzu",  "type": "コピー",    "spoiler": true },
     { "from": "l",   "to": "gozen",  "type": "主従関係",    "spoiler": true },
+
+    { "from": "misuzu",   "to": "yuyu",  "type": "シュッツエンゲル",    "spoiler": false },
+    { "from": "misuzu",   "to": "kaoru_hayashi",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "sumire_igarashi",   "to": "asahi",  "type": "友人",    "spoiler": false },
 
