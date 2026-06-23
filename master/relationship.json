@@ -5182,6 +5182,9 @@
     { "from": "cherice",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
     { "from": "cherice",   "to": "seiei",  "type": "元教官・元上官",    "spoiler": false },
 
+    { "from": "nagisa_yoshizaka",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
+    { "from": "nagisa_yoshizaka",   "to": "seiei",  "type": "師匠・元上司",    "spoiler": false },
+
     { "from": "hikaru",   "to": "fuyo",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "hikaru",   "to": "shiho",  "type": "幼馴染",    "spoiler": false },
     { "from": "hikaru",   "to": "yukana",  "type": "",    "spoiler": false },
