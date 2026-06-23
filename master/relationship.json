@@ -4085,6 +4085,12 @@
 
     { "from": "suiren",   "to": "sakura",  "type": "同レギオン",    "spoiler": false },
 
+    { "from": "sakura",   "to": "chihana",  "type": "仲が良い",    "spoiler": false },
+    { "from": "sakura",   "to": "tohka",  "type": "仲が良い",    "spoiler": false },
+    { "from": "sakura",   "to": "ena",  "type": "仲が良い",    "spoiler": false },
+    { "from": "sakura",   "to": "akane",  "type": "仲が良い",    "spoiler": false },
+    { "from": "sakura",   "to": "luise",  "type": "仲が良い",    "spoiler": false },
+
     { "from": "matsuri",   "to": "kazuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "matsuri",   "to": "sumire_takasaki",  "type": "同レギオン",    "spoiler": false },
     { "from": "matsuri",   "to": "hanano",  "type": "同レギオン",    "spoiler": false },
@@ -4102,23 +4108,25 @@
     { "from": "kazuki",   "to": "rachel",  "type": "同レギオン",    "spoiler": false },
     { "from": "kazuki",   "to": "mimi",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "sumire_takasaki",   "to": "hanano",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sumire_takasaki",   "to": "ryuka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sumire_takasaki",   "to": "hanano",  "type": "仲が良い（AZ3人衆）",    "spoiler": false },
+    { "from": "sumire_takasaki",   "to": "ryuka",  "type": "仲が良い（AZ3人衆）",    "spoiler": false },
     { "from": "sumire_takasaki",   "to": "monica",  "type": "同レギオン",    "spoiler": false },
     { "from": "sumire_takasaki",   "to": "hazuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "sumire_takasaki",   "to": "rachel",  "type": "同レギオン",    "spoiler": false },
     { "from": "sumire_takasaki",   "to": "mimi",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "hanano",   "to": "ryuka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hanano",   "to": "ryuka",  "type": "仲が良い（AZ3人衆）",    "spoiler": false },
     { "from": "hanano",   "to": "monica",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanano",   "to": "hazuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanano",   "to": "rachel",  "type": "同レギオン",    "spoiler": false },
     { "from": "hanano",   "to": "mimi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hanano",   "to": "maho",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "ryuka",   "to": "monica",  "type": "同レギオン",    "spoiler": false },
     { "from": "ryuka",   "to": "hazuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "ryuka",   "to": "rachel",  "type": "同レギオン",    "spoiler": false },
     { "from": "ryuka",   "to": "mimi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ryuka",   "to": "maho",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "monica",   "to": "hazuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "monica",   "to": "rachel",  "type": "同レギオン",    "spoiler": false },
@@ -4237,6 +4245,7 @@
     { "from": "shuko",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "shuko",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
     { "from": "shuko",   "to": "non",  "type": "同レギオン",    "spoiler": false },
+    { "from": "shuko",   "to": "mimi",  "type": "",    "spoiler": false },
 
     { "from": "kaname",   "to": "yoko",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaname",   "to": "risuko",  "type": "同レギオン",    "spoiler": false },
