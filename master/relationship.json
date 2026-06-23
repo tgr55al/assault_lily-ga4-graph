@@ -4950,14 +4950,20 @@
     { "from": "kureha",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "akari",   "to": "himeka",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "akari",   "to": "moka",  "type": "友人",    "spoiler": false },
 
     { "from": "himeka",   "to": "kuo",  "type": "ライバル",    "spoiler": false },
+
+    { "from": "himeka",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "himeka",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
+    { "from": "himeka",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
+    { "from": "himeka",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
+    { "from": "himeka",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "akari",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
     { "from": "akari",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
     { "from": "akari",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
     { "from": "akari",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
-    { "from": "akari",   "to": "moka",  "type": "友人",    "spoiler": true },
 
     { "from": "akehi",   "to": "haruna",  "type": "同レギオン",    "spoiler": false },
     { "from": "akehi",   "to": "suzume",  "type": "同レギオン",    "spoiler": false },
