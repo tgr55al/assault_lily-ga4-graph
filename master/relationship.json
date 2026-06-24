@@ -2425,7 +2425,7 @@
       "image": null
     },
     {
-      "id": "hannna_hikawa",
+      "id": "hanna_hikawa",
       "name": "水川・キャロル・花",
       "garden": "私立ルドビコ女学院",
       "wiki": "水川・キャロル・花",
@@ -3661,7 +3661,7 @@
     { "from": "nodoka",   "to": "watsuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "nodoka",   "to": "nagi",  "type": "同レギオン",    "spoiler": false },
     { "from": "nodoka",   "to": "diana",  "type": "同レギオン",    "spoiler": false },
-    { "from": "nodoka",   "to": "mitsune",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nodoka",   "to": "mitsune",  "type": "シュッツエンゲル候補",    "spoiler": false },
     { "from": "nodoka",   "to": "konomi",  "type": "同レギオン",    "spoiler": false },
     { "from": "nodoka",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "nodoka",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
@@ -3737,6 +3737,7 @@
     { "from": "mitsune",   "to": "konomi",  "type": "同レギオン",    "spoiler": false },
     { "from": "mitsune",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "mitsune",   "to": "natose",  "type": "仲が良い",    "spoiler": false },
+    { "from": "mitsune",   "to": "fumi",  "type": "アニメを薦めるくらいの仲",    "spoiler": false },
 
     { "from": "konomi",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "konomi",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
@@ -4083,7 +4084,7 @@
     { "from": "inori",   "to": "ryo",  "type": "同レギオン",    "spoiler": false },
     { "from": "inori",   "to": "suiren",  "type": "同レギオン",    "spoiler": false },
     { "from": "inori",   "to": "sakura",  "type": "同レギオン",    "spoiler": false },
-    { "from": "inori",   "to": "hannna",  "type": "姉妹のような関係",    "spoiler": false },
+    { "from": "inori",   "to": "hanna",  "type": "姉妹のような関係",    "spoiler": false },
 
     { "from": "mio",   "to": "samidori",  "type": "同レギオン",    "spoiler": false },
     { "from": "mio",   "to": "akiho",  "type": "同レギオン",    "spoiler": false },
@@ -4095,7 +4096,7 @@
     { "from": "mio",   "to": "wakana",  "type": "告白したが玉砕",    "spoiler": false },
     { "from": "mio",   "to": "kaoru_hayashi",  "type": "千華に敗北",    "spoiler": false },
     { "from": "mio",   "to": "hijiri",  "type": "仲が良い",    "spoiler": false },
-    { "from": "mio",   "to": "hannna",  "type": "姉妹のような関係",    "spoiler": false },
+    { "from": "mio",   "to": "hanna",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "mio",   "to": "kazuki",  "type": "",    "spoiler": false },
     { "from": "mio",   "to": "tohka",  "type": "",    "spoiler": false },
     { "from": "mio",   "to": "mimi",  "type": "仲が超悪い",    "spoiler": false },
