@@ -2665,6 +2665,7 @@
     {
       "id": "fujino",
       "name": "石塚 藤乃",
+      "spoilerName": "石塚 藤乃（東野 志津香）",
       "garden": "神庭女子藝術高校",
       "wiki": "石塚藤乃",
       "image": "https://i.gyazo.com/96e15b0513d2ca7a06c12849e0b3042b.jpg"
@@ -3010,7 +3011,8 @@
       "name": "東野 志津香",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "東野志津香",
-      "image": null
+      "image": null,
+      "hideWhenSpoiler": true
     },
     {
       "id": "tsubasa",
@@ -4384,18 +4386,21 @@
 
     { "from": "plum",   "to": "felicia",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "kinrangyoku",   "to": "ginrangyoku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kinrangyoku",   "to": "ginrangyoku",  "type": "姉妹",    "spoiler": false },
     { "from": "kinrangyoku",   "to": "kuroyurinokimi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kinrangyoku",   "to": "houraigyoku",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kinrangyoku",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kinrangyoku",   "to": "houraigyoku",  "type": "信頼",    "spoiler": false },
+    { "from": "kinrangyoku",   "to": "gozen",  "type": "従っているふりをしている",    "spoiler": true },
+    { "from": "kinrangyoku",   "to": "goteni",  "type": "従っているふりをしている",    "spoiler": true },
     { "from": "kinrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "ginrangyoku",   "to": "kuroyurinokimi",  "type": "同レギオン",    "spoiler": false },
     { "from": "ginrangyoku",   "to": "houraigyoku",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ginrangyoku",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ginrangyoku",   "to": "gozen",  "type": "従っているふりをしている",    "spoiler": true },
+    { "from": "ginrangyoku",   "to": "goteni",  "type": "従っているふりをしている",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "ginrangyoku",   "to": "miaki",  "type": "",    "spoiler": true },
 
-    { "from": "kuroyurinokimi",   "to": "houraigyoku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kuroyurinokimi",   "to": "houraigyoku",  "type": "仲が良い",    "spoiler": false },
     { "from": "kuroyurinokimi",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
     { "from": "kuroyurinokimi",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
 
@@ -5025,7 +5030,7 @@
 
     { "from": "akehi",   "to": "haruna",  "type": "同レギオン",    "spoiler": false },
     { "from": "akehi",   "to": "suzume",  "type": "同レギオン",    "spoiler": false },
-    { "from": "akehi",   "to": "fujino",  "type": "同レギオン",    "spoiler": false },
+    { "from": "akehi",   "to": "fujino",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "akehi",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "haruna",   "to": "suzume",  "type": "同レギオン",    "spoiler": false },
@@ -5439,6 +5444,12 @@
     { "from": "misuzu",   "to": "kaoru_hayashi",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "sumire_igarashi",   "to": "asahi",  "type": "友人",    "spoiler": false },
+
+    { "from": "shizuka",   "to": "akehi",  "type": "幼馴染",    "spoiler": false },
+    { "from": "shizuka",   "to": "moka",  "type": "幼馴染",    "spoiler": false },
+
+    { "from": "fujino",   "to": "akehi",  "type": "幼馴染",    "spoiler": true },
+    { "from": "fujino",   "to": "moka",  "type": "幼馴染",    "spoiler": true },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
