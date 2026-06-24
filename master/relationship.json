@@ -4398,7 +4398,7 @@
     { "from": "ginrangyoku",   "to": "gozen",  "type": "従っているふりをしている",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "goteni",  "type": "従っているふりをしている",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
-    { "from": "ginrangyoku",   "to": "miaki",  "type": "",    "spoiler": true },
+    { "from": "ginrangyoku",   "to": "miaki",  "type": "",    "spoiler": false },
 
     { "from": "kuroyurinokimi",   "to": "houraigyoku",  "type": "仲が良い",    "spoiler": false },
     { "from": "kuroyurinokimi",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
