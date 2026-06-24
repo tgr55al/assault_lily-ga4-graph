@@ -3432,7 +3432,6 @@
     { "from": "riri",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "riri",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
-    { "from": "riri",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
     { "from": "riri",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
     { "from": "riri",   "to": "shin", "type": "同レギオン",          "spoiler": true },
 
@@ -3452,8 +3451,6 @@
     { "from": "yuyu",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
     { "from": "yuyu",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
-    { "from": "yuyu",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
-    { "from": "yuyu",   "to": "shin", "type": "同レギオン",          "spoiler": true },
 
     { "from": "kaede",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
     { "from": "kaede",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
@@ -3462,7 +3459,6 @@
     { "from": "kaede",   "to": "miriam", "type": "幼馴染・ライバル",          "spoiler": false },
     { "from": "kaede",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
-    { "from": "kaede",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
     { "from": "kaede",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
     { "from": "kaede",   "to": "shin", "type": "同レギオン",          "spoiler": true },
 
@@ -3483,8 +3479,6 @@
     { "from": "mai",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
 
     { "from": "mai",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
-    { "from": "mai",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
-    { "from": "mai",   "to": "shin", "type": "同レギオン",          "spoiler": true },
 
     { "from": "kuo",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "kuo",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
@@ -3511,6 +3505,16 @@
 
     { "from": "yuri", "to": "riri",  "type": "大好き",          "spoiler": false },
     { "from": "yuri", "to": "kaede",  "type": "ルームメイト",          "spoiler": false },
+
+    { "from": "shin",   "to": "yahiro", "type": "ルームメイト",          "spoiler": false },
+    { "from": "shin",   "to": "yuyu", "type": "気に入っている",          "spoiler": false },
+    { "from": "shin",   "to": "mai", "type": "気が合う",          "spoiler": false },
+    { "from": "shin",   "to": "mimi", "type": "微妙",          "spoiler": false },
+    { "from": "shin",   "to": "shinobu", "type": "冗談で煽りあう仲",          "spoiler": false },
+
+    { "from": "yahiro",   "to": "yuyu", "type": "友人",          "spoiler": false },
+    { "from": "yahiro",   "to": "mai", "type": "友人",          "spoiler": false },
+    { "from": "yahiro",   "to": "mimi", "type": "微妙",          "spoiler": false },
 
     { "from": "kazuha", "to": "renka",     "type": "同レギオン",          "spoiler": false },
     { "from": "kazuha", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
@@ -3874,11 +3878,14 @@
     { "from": "kaho",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kaho",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaho",   "to": "chihana",  "type": "ルームメイト",    "spoiler": false },
     { "from": "kaho",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaho",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaho",   "to": "hijiri",  "type": "ライバル",    "spoiler": false },
+    { "from": "kaho",   "to": "akane",  "type": "",    "spoiler": false },
+    { "from": "kaho",   "to": "tohka",  "type": "嫉妬",    "spoiler": false },
 
     { "from": "hiromu",   "to": "yukiyo",  "type": "友人",    "spoiler": false },
     { "from": "hiromu",   "to": "sayu",  "type": "友人",    "spoiler": false },
@@ -4084,6 +4091,14 @@
     { "from": "mio",   "to": "ryo",  "type": "同レギオン",    "spoiler": false },
     { "from": "mio",   "to": "suiren",  "type": "同レギオン",    "spoiler": false },
     { "from": "mio",   "to": "sakura",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mio",   "to": "chihana",  "type": "ライバル",    "spoiler": false },
+    { "from": "mio",   "to": "wakana",  "type": "告白したが玉砕",    "spoiler": false },
+    { "from": "mio",   "to": "kaoru_hayashi",  "type": "千華に敗北",    "spoiler": false },
+    { "from": "mio",   "to": "hijiri",  "type": "仲が良い",    "spoiler": false },
+    { "from": "mio",   "to": "hannna",  "type": "姉妹のような関係",    "spoiler": false },
+    { "from": "mio",   "to": "kazuki",  "type": "",    "spoiler": false },
+    { "from": "mio",   "to": "tohka",  "type": "",    "spoiler": false },
+    { "from": "mio",   "to": "mimi",  "type": "仲が超悪い",    "spoiler": false },
 
     { "from": "samidori",   "to": "akiho",  "type": "同レギオン",    "spoiler": false },
     { "from": "samidori",   "to": "sato",  "type": "同レギオン",    "spoiler": false },
@@ -4156,7 +4171,7 @@
     { "from": "monica",   "to": "uta",  "type": "",    "spoiler": false },
 
     { "from": "hazuki",   "to": "rachel",  "type": "仲が良い",    "spoiler": false },
-    { "from": "hazuki",   "to": "mimi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hazuki",   "to": "mimi",  "type": "慕っている・信頼している",    "spoiler": false },
 
     { "from": "rachel",   "to": "mimi",  "type": "同レギオン",    "spoiler": false },
     { "from": "rachel",   "to": "kaede",  "type": "旧知の仲",    "spoiler": false },
