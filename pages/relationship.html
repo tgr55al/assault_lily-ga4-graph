@@ -370,7 +370,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
       </button>
 
       <button id="btn-toggle-help" type="button">
-        <i data-lucide="help-circle" width="12" height="12" style="position:relative; top:2px;"></i> 使い方
+        <i data-lucide="help-circle" width="12" height="12" style="position:relative; top:2px;"></i>
       </button>
     </div>
 
@@ -975,54 +975,9 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
       // ズーム: 最大・最小 縮尺を設定
       network.on("zoom", params => {
         const scale = network.getScale();
-        let needsReset = false;
-        let targetScale = scale;
-
-        // 縮尺の上限・下限のチェック（リセット要否判定）
-        if (scale > 2.5)  { targetScale = 2.5;  needsReset = true; }
-        if (scale < 0.06) { targetScale = 0.06; needsReset = true; }
-
-        if (needsReset) {
-          // 強制リセット時にパン（ドラッグ）座標のバグを打ち消すため、
-          // 画面の中心位置を現在のビューの中心（あるいは原点付近）に維持させてmoveToを実行
-          const currentCenter = network.getViewPosition();
-          network.moveTo({
-            position: currentCenter,
-            scale: targetScale
-          });
-        }
+        if (scale > 2.5)  network.moveTo({ scale: 2.5 });
+        if (scale < 0.06) network.moveTo({ scale: 0.06 });
       });
-
-      // ─── 座標限界（バウンディングボックス）による行方不明の二重防衛線 ───
-      // ドラッグ中、または物理演算による移動が走るたびに、座標が画面外数万ピクセルに吹っ飛ぶのを防止
-      network.on("interactionHandlerModification", function() {}); // イベントキャッシュ用
-
-      const checkBounds = () => {
-        if (!network) return;
-        const pos = network.getViewPosition();
-        const LIMIT = 1500; // 移動を許容する最大半径（ピクセル）。相関図のサイズに合わせて調整
-        let extX = pos.x;
-        let extY = pos.y;
-        let changed = false;
-
-        if (pos.x > LIMIT)  { extX = LIMIT;  changed = true; }
-        if (pos.x < -LIMIT) { extX = -LIMIT; changed = true; }
-        if (pos.y > LIMIT)  { extY = LIMIT;  changed = true; }
-        if (pos.y < -LIMIT) { extY = -LIMIT; changed = true; }
-
-        if (changed) {
-          // 限界座標を超えていた場合は強制的に引き戻す（アニメーションなしで即座にロック）
-          network.moveTo({
-            position: { x: extX, y: extY },
-            keepCoordSystem: true
-          });
-        }
-      };
-
-      network.on("dragEnd", checkBounds);
-      network.on("animationFinished", checkBounds);
-      // 物理シミュレーションが落ち着く直前にもチェックを入れる
-      network.on("stabilized", checkBounds);
     }
 
     const nodeCnt = Object.keys(visIds).length;
