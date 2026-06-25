@@ -5277,8 +5277,8 @@
     { "from": "konohana",   "to": "otsunohana",  "type": "友人",    "spoiler": true },
     { "from": "konohana",   "to": "tekeriri",  "type": "大切な友達・相棒",    "spoiler": true },
     { "from": "konohana",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": true },
-    { "from": "konohana",   "to": "tohka",  "type": "薄汚い女狐",    "spoiler": true },
-    { "from": "tohka",   "to": "konohana",  "type": "死に損ない",    "spoiler": true },
+    { "from": "konohana",   "to": "tohka",  "type": "薄汚い女狐", "arrows": "to",    "spoiler": true },
+    { "from": "tohka",   "to": "konohana",  "type": "死に損ない", "arrows": "to",    "spoiler": true },
     { "from": "konohana",   "to": "seira",  "type": "シュッツエンゲル",    "spoiler": true },
 
     { "from": "otsunohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
