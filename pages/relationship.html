@@ -398,13 +398,13 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
 
   // 凡例に表示する関係タイプと色
   const REL_LEGEND = {
-    "特別な関係": "#e91e8c", // ピンク
-    "仲が良い":   "#4caf50", // 緑
+    "特別な関係": "#ff1493", // ピンク
+    "仲が良い":   "#00a651", // 緑
     "仲が悪い":   "#ff0000", // 赤
-    "ライバル":   "#0070ff", // 青
+    "ライバル":   "#00bcd4", // シアン
     "同レギオン": "#8b5cf6", // 紫
-    "家族・血縁": "#ff9900", // オレンジ
-    "その他":     "#9e9e9e"  // グレー
+    "家族・血縁": "#ff9800", // オレンジ
+    "その他":     "#607d8b"  // 青灰色
   };
 
   // 関係タイプの別名マッピング（複数の名前を同じ色にマッピング）
@@ -1170,7 +1170,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
       {id:"iijima",  name:"飯島恋花",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/0b03c6905871a6c09aa875809310de07.jpg"},
       {id:"sasaki",  name:"佐々木藍",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/585dc7e87f3c5fcb75c0f98886d72fa7.jpg"},
       {id:"sagawa",  name:"相澤一葉",    garden:"エレンスゲ女学園", image:"https://i.gyazo.com/de878f4c1097fe221ed27d28d51026cf.jpg"}
-    ],
+	],
     relations: [
       {from:"riri",    to:"yume",    type:"同レギオン",       spoiler:false},
       {from:"riri",    to:"yume",    type:"シュッツエンゲル", spoiler:true},
@@ -1181,7 +1181,7 @@ button.active-amber { background: #e65100; color: #fff; border-color: #e65100; }
       {from:"riri",    to:"ando",    type:"同レギオン",       spoiler:false},
       {from:"riri",    to:"miriam",  type:"同レギオン",       spoiler:false},
       {from:"riri",    to:"kanau",   type:"同レギオン",       spoiler:false}
-    ]
+	]
   };
 })();
 </script>

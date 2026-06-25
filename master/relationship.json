@@ -4389,13 +4389,13 @@
     { "from": "kinrangyoku",   "to": "ginrangyoku",  "type": "姉妹",    "spoiler": false },
     { "from": "kinrangyoku",   "to": "kuroyurinokimi",  "type": "同レギオン",    "spoiler": false },
     { "from": "kinrangyoku",   "to": "houraigyoku",  "type": "信頼",    "spoiler": false },
-    { "from": "kinrangyoku",   "to": "gozen",  "type": "従っているふりをしている",    "spoiler": true },
+    { "from": "kinrangyoku",   "to": "gozen",  "type": "敵対",    "spoiler": true },
     { "from": "kinrangyoku",   "to": "goteni",  "type": "従っているふりをしている",    "spoiler": true },
     { "from": "kinrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "ginrangyoku",   "to": "kuroyurinokimi",  "type": "同レギオン",    "spoiler": false },
     { "from": "ginrangyoku",   "to": "houraigyoku",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ginrangyoku",   "to": "gozen",  "type": "従っているふりをしている",    "spoiler": true },
+    { "from": "ginrangyoku",   "to": "gozen",  "type": "敵対",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "goteni",  "type": "従っているふりをしている",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "miaki",  "type": "",    "spoiler": false },
@@ -4550,7 +4550,7 @@
     { "from": "katsura",   "to": "warabi",  "type": "仲が良い",    "spoiler": false },
     { "from": "katsura",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
     { "from": "katsura",   "to": "emi",  "type": "仲が良い",    "spoiler": false },
-    { "from": "katsura",   "to": "nadeshiko",  "type": "",    "spoiler": false },
+    { "from": "katsura",   "to": "nadeshiko",  "type": "懇意にしていた",    "spoiler": false },
     { "from": "katsura",   "to": "kuo",  "type": "",    "spoiler": false },
     { "from": "katsura",   "to": "luise",  "type": "懇意にした",    "spoiler": false },
     { "from": "katsura",   "to": "ichi",  "type": "気が合う",    "spoiler": false },
@@ -5201,6 +5201,7 @@
     { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉弟",    "spoiler": false },
     { "from": "shiera_takamatsu",   "to": "nadeshiko",  "type": "同志",    "spoiler": false },
     { "from": "shiera_takamatsu",   "to": "mioko",  "type": "懇意にしている",    "spoiler": false },
+    { "from": "shiera_takamatsu",   "to": "shiera_tada",  "type": "同じ実験施設に居た？",    "spoiler": false },
 
     { "from": "kougetsu",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
     { "from": "kougetsu",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
@@ -5483,6 +5484,11 @@
     { "from": "raura",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
     { "from": "raura",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
     { "from": "raura",   "to": "luise",  "type": "クローン",    "spoiler": true },
+
+    { "from": "nadeshiko",   "to": "mimi",  "type": "",    "spoiler": false },
+    { "from": "nadeshiko",   "to": "natsumi",  "type": "",    "spoiler": false },
+    { "from": "nadeshiko",   "to": "ouka",  "type": "秘蔵っ子",    "spoiler": false },
+    { "from": "nadeshiko",   "to": "goteni",  "type": "親友・同級生",    "spoiler": true },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
