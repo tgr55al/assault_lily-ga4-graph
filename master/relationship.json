@@ -5510,11 +5510,12 @@
     { "from": "kumi",   "to": "sasara",  "type": "友人",    "spoiler": false },
     { "from": "kumi",   "to": "sumire_komai",  "type": "信頼",    "spoiler": false },
     { "from": "kumi",   "to": "mayumi",  "type": "上司・部下",    "spoiler": true },
+    { "from": "sasara",   "to": "mayumi",  "type": "上司・部下",    "spoiler": true },
 
     { "from": "tomoyo_nakahara",   "to": "akira",  "type": "",    "spoiler": false },
     { "from": "tomoyo_nakahara",   "to": "mayumi",  "type": "旧知の仲",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "tomoyo_nakahara",   "to": "mayumi",  "type": "敵対",    "spoiler": false },
-    { "from": "tomoyo_nakahara",   "to": "nadeshiko",  "type": "敵対",    "spoiler": false },
+    { "from": "tomoyo_nakahara",   "to": "mayumi",  "type": "敵対",    "spoiler": true },
+    { "from": "tomoyo_nakahara",   "to": "nadeshiko",  "type": "敵対",    "spoiler": true },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
