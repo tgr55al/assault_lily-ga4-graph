@@ -3769,7 +3769,8 @@
     { "from": "misaka",   "to": "mai",  "type": "仲が良い",    "spoiler": false },
     { "from": "misaka",   "to": "chihana",  "type": "大切な友人",    "spoiler": false },
     { "from": "misaka",   "to": "matsuri",  "type": "",    "spoiler": false },
-    { "from": "misaka",   "to": "mimi",  "type": "強く敵視",    "spoiler": false },
+    { "from": "misaka",   "to": "mimi",  "type": "衝突", "arrows": "to",    "spoiler": false },
+    { "from": "mimi",   "to": "misaka",  "type": "強く敵視", "arrows": "to",    "spoiler": false },
     { "from": "misaka",   "to": "meika",  "type": "高く評価",    "spoiler": false },
 
     { "from": "tohka",   "to": "totori",  "type": "同レギオン",    "spoiler": false },
@@ -5506,6 +5507,10 @@
 
     { "from": "mayumi",   "to": "nadeshiko",  "type": "尊敬", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "mayumi",  "type": "辛辣に評価", "arrows": "to",    "spoiler": true },
+
+    { "from": "mayumi",   "to": "tomoshibi",  "type": "作品", "arrows": "to",    "spoiler": true },
+    { "from": "mayumi",   "to": "sumire_komai",  "type": "作品", "arrows": "to",    "spoiler": true },
+    { "from": "tomoshibi",   "to": "mayumi",  "type": "強く敵視", "arrows": "to",    "spoiler": true },
 
     { "from": "kumi",   "to": "sasara",  "type": "友人",    "spoiler": false },
     { "from": "kumi",   "to": "sumire_komai",  "type": "信頼",    "spoiler": false },
