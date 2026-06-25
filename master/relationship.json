@@ -5489,6 +5489,8 @@
     { "from": "nadeshiko",   "to": "natsumi",  "type": "",    "spoiler": false },
     { "from": "nadeshiko",   "to": "ouka_sano",  "type": "秘蔵っ子",    "spoiler": false },
     { "from": "nadeshiko",   "to": "goteni",  "type": "親友・同級生",    "spoiler": true },
+    { "from": "nadeshiko",   "to": "mayumi",  "type": "嫌っている", "arrows": "to",    "spoiler": true },
+    { "from": "nadeshiko",   "to": "mayumi",  "type": "尊敬", "arrows": "from",    "spoiler": true },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
