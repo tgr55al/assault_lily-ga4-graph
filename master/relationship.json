@@ -3990,6 +3990,11 @@
     { "from": "ataru",   "to": "alicia",  "type": "同レギオン",    "spoiler": false },
     { "from": "ataru",   "to": "ko",  "type": "同レギオン",    "spoiler": false },
     { "from": "ataru",   "to": "shizuku",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "ataru",   "to": "noa",  "type": "シュッツエンゲル候補",    "spoiler": false },
+    { "from": "ataru",   "to": "hibari",  "type": "仲が良い",    "spoiler": false },
+    { "from": "ataru",   "to": "misora",  "type": "リリィオタク仲間",    "spoiler": false },
+    { "from": "ataru",   "to": "fumi",  "type": "リリィオタク仲間",    "spoiler": false },
+    { "from": "ataru",   "to": "kikyo",  "type": "懇意にしていた",    "spoiler": false },
 
     { "from": "tsubame",   "to": "hime",  "type": "ルームメイト",    "spoiler": false },
     { "from": "tsubame",   "to": "tamaka",  "type": "同レギオン",    "spoiler": false },
@@ -4690,6 +4695,7 @@
     { "from": "subaru",   "to": "asagao",  "type": "ルームメイト",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "subaru",   "to": "asagao",  "type": "血誓の儀",    "spoiler": true },
     { "from": "subaru",   "to": "yukari",  "type": "可愛がっている", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "yukari",   "to": "subaru",  "type": "慕っている", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "subaru",   "to": "katsura",  "type": "思想が近い",    "spoiler": false },
     { "from": "subaru",   "to": "komuku",  "type": "意気投合",    "spoiler": false },
     { "from": "subaru",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
@@ -5271,7 +5277,8 @@
     { "from": "konohana",   "to": "otsunohana",  "type": "友人",    "spoiler": true },
     { "from": "konohana",   "to": "tekeriri",  "type": "大切な友達・相棒",    "spoiler": true },
     { "from": "konohana",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": true },
-    { "from": "konohana",   "to": "tohka",  "type": "犬猿の仲（女狐・死に損ない）",    "spoiler": true },
+    { "from": "konohana",   "to": "tohka",  "type": "薄汚い女狐",    "spoiler": true },
+    { "from": "tohka",   "to": "konohana",  "type": "死に損ない",    "spoiler": true },
     { "from": "konohana",   "to": "seira",  "type": "シュッツエンゲル",    "spoiler": true },
 
     { "from": "otsunohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
@@ -5496,7 +5503,18 @@
     { "from": "nadeshiko",   "to": "ouka_sano",  "type": "秘蔵っ子",    "spoiler": false },
     { "from": "nadeshiko",   "to": "goteni",  "type": "親友・同級生",    "spoiler": true },
     { "from": "nadeshiko",   "to": "mayumi",  "type": "嫌っている", "arrows": "to",    "spoiler": true },
+
     { "from": "mayumi",   "to": "nadeshiko",  "type": "尊敬", "arrows": "to",    "spoiler": true },
+    { "from": "goteni",   "to": "mayumi",  "type": "辛辣に評価", "arrows": "to",    "spoiler": true },
+
+    { "from": "kumi",   "to": "sasara",  "type": "友人",    "spoiler": false },
+    { "from": "kumi",   "to": "sumire_komai",  "type": "信頼",    "spoiler": false },
+    { "from": "kumi",   "to": "mayumi",  "type": "上司・部下",    "spoiler": true },
+
+    { "from": "tomoyo_nakahara",   "to": "akira",  "type": "",    "spoiler": false },
+    { "from": "tomoyo_nakahara",   "to": "mayumi",  "type": "旧知の仲",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "tomoyo_nakahara",   "to": "mayumi",  "type": "敵対",    "spoiler": false },
+    { "from": "tomoyo_nakahara",   "to": "nadeshiko",  "type": "敵対",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
