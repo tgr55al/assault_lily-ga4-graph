@@ -5199,6 +5199,8 @@
     { "from": "reve",   "to": "subaie",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉弟",    "spoiler": false },
+    { "from": "shiera_takamatsu",   "to": "nadeshiko",  "type": "同志",    "spoiler": false },
+    { "from": "shiera_takamatsu",   "to": "mioko",  "type": "懇意にしている",    "spoiler": false },
 
     { "from": "kougetsu",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
     { "from": "kougetsu",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
@@ -5382,6 +5384,7 @@
 
     { "from": "souitsu",   "to": "tazusa",  "type": "親子",    "spoiler": false },
     { "from": "souitsu",   "to": "shiera_takamatsu",  "type": "昔の上司・部下",    "spoiler": false },
+    { "from": "souitsu",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
 
     { "from": "miu",   "to": "matsuri",  "type": "尊敬",    "spoiler": false },
 
@@ -5479,7 +5482,7 @@
     { "from": "raura",   "to": "rota",  "type": "戦友",    "spoiler": false },
     { "from": "raura",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
     { "from": "raura",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
-    { "from": "raura",   "to": "luise",  "type": "クローン",    "spoiler": false },
+    { "from": "raura",   "to": "luise",  "type": "クローン",    "spoiler": true },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
