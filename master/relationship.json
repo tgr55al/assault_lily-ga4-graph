@@ -5029,9 +5029,12 @@
     { "from": "akari",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "akehi",   "to": "haruna",  "type": "同レギオン",    "spoiler": false },
-    { "from": "akehi",   "to": "suzume",  "type": "同レギオン",    "spoiler": false },
-    { "from": "akehi",   "to": "fujino",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "akehi",   "to": "suzume",  "type": "仲が良い",    "spoiler": false },
+    { "from": "akehi",   "to": "fujino",  "type": "信頼",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "akehi",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+    { "from": "akehi",   "to": "nanaho",  "type": "",    "spoiler": false },
+    { "from": "akehi",   "to": "miho",  "type": "",    "spoiler": false },
+    { "from": "akehi",   "to": "hibari",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "haruna",   "to": "suzume",  "type": "同レギオン",    "spoiler": false },
     { "from": "haruna",   "to": "fujino",  "type": "同レギオン",    "spoiler": false },
@@ -5197,7 +5200,8 @@
 
     { "from": "shiera_takamatsu",   "to": "kougetsu",  "type": "姉弟",    "spoiler": false },
 
-    { "from": "kougetsu",   "to": "nadeshiko",  "type": "",    "spoiler": false },
+    { "from": "kougetsu",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
+    { "from": "kougetsu",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
 
     { "from": "moyu",   "to": "shoko",  "type": "従姉妹",    "spoiler": false },
     { "from": "moyu",   "to": "miriam",  "type": "憧れ",    "spoiler": false, "hideWhenSpoiler": true },
@@ -5372,6 +5376,9 @@
 
     { "from": "rota",   "to": "miriam",  "type": "親子",    "spoiler": false },
     { "from": "rota",   "to": "shiera_takamatsu",  "type": "信頼",    "spoiler": false },
+    { "from": "rota",   "to": "kougetsu",  "type": "戦友",    "spoiler": false },
+    { "from": "rota",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
+    { "from": "rota",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
 
     { "from": "souitsu",   "to": "tazusa",  "type": "親子",    "spoiler": false },
     { "from": "souitsu",   "to": "shiera_takamatsu",  "type": "昔の上司・部下",    "spoiler": false },
@@ -5450,6 +5457,29 @@
 
     { "from": "fujino",   "to": "akehi",  "type": "幼馴染",    "spoiler": true },
     { "from": "fujino",   "to": "moka",  "type": "幼馴染",    "spoiler": true },
+
+    { "from": "anja",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
+    { "from": "anja",   "to": "kougetsu",  "type": "戦友",    "spoiler": false },
+    { "from": "anja",   "to": "raura",  "type": "戦友",    "spoiler": false },
+    { "from": "anja",   "to": "rota",  "type": "戦友",    "spoiler": false },
+    { "from": "anja",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
+    { "from": "anja",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
+
+    { "from": "rovisa",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": true },
+    { "from": "rovisa",   "to": "kougetsu",  "type": "戦友",    "spoiler": true },
+    { "from": "rovisa",   "to": "raura",  "type": "戦友",    "spoiler": true },
+    { "from": "rovisa",   "to": "rota",  "type": "戦友",    "spoiler": true },
+    { "from": "rovisa",   "to": "nadeshiko",  "type": "戦友",    "spoiler": true },
+    { "from": "rovisa",   "to": "souitsu",  "type": "戦友",    "spoiler": true },
+    { "from": "rovisa",   "to": "gozen",  "type": "敵対",    "spoiler": true },
+    { "from": "rovisa",   "to": "goteni",  "type": "敵対",    "spoiler": true },
+
+    { "from": "raura",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
+    { "from": "raura",   "to": "kougetsu",  "type": "戦友",    "spoiler": false },
+    { "from": "raura",   "to": "rota",  "type": "戦友",    "spoiler": false },
+    { "from": "raura",   "to": "nadeshiko",  "type": "戦友",    "spoiler": false },
+    { "from": "raura",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
+    { "from": "raura",   "to": "luise",  "type": "クローン",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
