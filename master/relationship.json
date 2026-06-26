@@ -3800,7 +3800,7 @@
     { "from": "totori",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "homare",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "homare",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
+    { "from": "homare",   "to": "tomoyo_seike",  "type": "シュッツエンゲル",    "spoiler": false },
     { "from": "homare",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -3824,12 +3824,14 @@
     { "from": "tomoyo_seike",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo_seike",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tomoyo_seike",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "seira",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "maho",  "type": "仲が良い",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "tomoyo_seike",   "to": "hinoki",  "type": "幼馴染",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tomoyo_seike",   "to": "araya",  "type": "仲が良い",    "spoiler": false },
+    { "from": "tomoyo_seike",   "to": "sayu",  "type": "友人",    "spoiler": false },
 
     { "from": "hibari",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
@@ -4187,6 +4189,8 @@
     { "from": "monica",   "to": "yuyu",  "type": "慕っている", "arrows": "to",    "spoiler": false },
     { "from": "monica",   "to": "uta",  "type": "",    "spoiler": false },
 
+    { "from": "uta",   "to": "matsuri",  "type": "シュッツエンゲル候補",    "spoiler": false },
+
     { "from": "hazuki",   "to": "rachel",  "type": "仲が良い",    "spoiler": false },
     { "from": "hazuki",   "to": "mimi",  "type": "慕っている", "arrows": "to",    "spoiler": false },
     { "from": "mimi",   "to": "hazuki",  "type": "信頼", "arrows": "to",    "spoiler": false },
@@ -4206,6 +4210,9 @@
 
     { "from": "keine",   "to": "kohaku",  "type": "親しい",    "spoiler": false },
     { "from": "keine",   "to": "meika",  "type": "ルームメイト",    "spoiler": false },
+
+    { "from": "kohaku",   "to": "matsuri",  "type": "悪くない関係",    "spoiler": false },
+    { "from": "kohaku",   "to": "mimi",  "type": "懇意にしている",    "spoiler": false },
 
     { "from": "ayane",   "to": "shiera_tada",  "type": "ルームメイト",    "spoiler": false },
     { "from": "ayane",   "to": "gyokuyo",  "type": "同レギオン",    "spoiler": false },
@@ -4408,6 +4415,10 @@
     { "from": "ginrangyoku",   "to": "goteni",  "type": "従っているふりをしている", "arrows": "to",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "miaki",  "type": "",    "spoiler": false },
+
+    { "from": "goteni",   "to": "kinrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
+    { "from": "goteni",   "to": "ginrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
+    { "from": "goteni",   "to": "tomoyo_nakahara",  "type": "評価", "arrows": "to",    "spoiler": true },
 
     { "from": "kuroyurinokimi",   "to": "houraigyoku",  "type": "仲が良い",    "spoiler": false },
     { "from": "kuroyurinokimi",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
@@ -5501,7 +5512,8 @@
 
     { "from": "nadeshiko",   "to": "mimi",  "type": "",    "spoiler": false },
     { "from": "nadeshiko",   "to": "natsumi",  "type": "",    "spoiler": false },
-    { "from": "nadeshiko",   "to": "ouka_sano",  "type": "秘蔵っ子",    "spoiler": false },
+    { "from": "nadeshiko",   "to": "ouka_sano",  "type": "秘蔵っ子", "arrows": "to",    "spoiler": false },
+    { "from": "ouka_sano",   "to": "nadeshiko",  "type": "慕っていた", "arrows": "to",    "spoiler": false },
     { "from": "nadeshiko",   "to": "goteni",  "type": "親友・同級生",    "spoiler": true },
     { "from": "nadeshiko",   "to": "mayumi",  "type": "嫌っている", "arrows": "to",    "spoiler": true },
 
