@@ -3791,7 +3791,7 @@
     { "from": "tohka",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
     { "from": "tohka",   "to": "tekeriri",  "type": "怖い",    "spoiler": true },
 
-    { "from": "totori",   "to": "homare",  "type": "レギオン結成の誓い",    "spoiler": false },
+    { "from": "totori",   "to": "homare",  "type": "ルームメイト",    "spoiler": false },
     { "from": "totori",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
@@ -3799,7 +3799,9 @@
     { "from": "totori",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "totori",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
-    { "from": "totori",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "totori",   "to": "maho",  "type": "よく叱っている", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "maho",   "to": "totori",  "type": "よく絡んでいる", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "totori",   "to": "maho",  "type": "シュッツエンゲル",    "spoiler": true },
     { "from": "totori",   "to": "konohana",  "type": "レギオン結成の誓い",    "spoiler": true },
     { "from": "totori",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
 
@@ -4121,7 +4123,7 @@
     { "from": "mio",   "to": "kaoru_hayashi",  "type": "千華に敗北", "arrows": "to",    "spoiler": false },
     { "from": "mio",   "to": "hijiri",  "type": "仲が良い",    "spoiler": false },
     { "from": "mio",   "to": "hanna",  "type": "姉妹のような関係",    "spoiler": false },
-    { "from": "mio",   "to": "kazuki",  "type": "",    "spoiler": false },
+    { "from": "mio",   "to": "kazuki",  "type": "悪くない関係",    "spoiler": false },
     { "from": "mio",   "to": "tohka",  "type": "",    "spoiler": false },
     { "from": "mio",   "to": "mimi",  "type": "仲が超悪い",    "spoiler": false },
 
@@ -4152,7 +4154,8 @@
     { "from": "sakura",   "to": "akane",  "type": "仲が良い",    "spoiler": false },
     { "from": "sakura",   "to": "luise",  "type": "仲が良い",    "spoiler": false },
 
-    { "from": "kazuki",   "to": "matsuri",  "type": "強く慕っている", "arrows": "to",    "spoiler": false },
+    { "from": "kazuki",   "to": "matsuri",  "type": "命を捧げる覚悟", "arrows": "to",    "spoiler": false },
+    { "from": "matsuri",   "to": "kazuki",  "type": "命を救った", "arrows": "to",    "spoiler": false },
     { "from": "matsuri",   "to": "sumire_takasaki",  "type": "同レギオン",    "spoiler": false },
     { "from": "matsuri",   "to": "hanano",  "type": "同レギオン",    "spoiler": false },
     { "from": "matsuri",   "to": "ryuka",  "type": "同レギオン",    "spoiler": false },
