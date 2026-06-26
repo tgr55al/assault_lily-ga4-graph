@@ -1109,7 +1109,7 @@
       "image": "https://i.gyazo.com/21ab5f1ccc679e4b8f898d5a80331e77.jpg"
     },
     {
-      "id": "sawa",
+      "id": "saeka",
       "name": "板垣 冴和",
       "garden": "百合ヶ丘女学院",
       "wiki": "板垣冴和",
@@ -3568,6 +3568,7 @@
     { "from": "ena",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ena",   "to": "saeka",  "type": "親友",    "spoiler": false },
 
     { "from": "tsukushi",   "to": "ichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "tsukushi",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
@@ -3642,7 +3643,7 @@
     { "from": "shiori",   "to": "kanon",  "type": "牙の姉妹",    "spoiler": false },
     { "from": "shiori",   "to": "sena",  "type": "姉妹",    "spoiler": false },
 
-    { "from": "hijiri",   "to": "nodoka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hijiri",   "to": "nodoka",  "type": "ルームメイト",    "spoiler": false },
     { "from": "botan",   "to": "hijiri",  "type": "自称ライバル", "arrows": "to",    "spoiler": false },
     { "from": "hijiri",   "to": "sakua",  "type": "同レギオン",    "spoiler": false },
     { "from": "hijiri",   "to": "midori",  "type": "同レギオン",    "spoiler": false },
@@ -3923,13 +3924,15 @@
     { "from": "sayu",   "to": "himiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "kaya",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "mako_nishizawa",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sayu",   "to": "chihana",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sayu",   "to": "chihana",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "sayu",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sayu",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "sayu",   "to": "kaoru_hayashi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "sayu",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "mitsune_ishimoto",  "type": "盟友",    "spoiler": false },
     { "from": "sayu",   "to": "yukiko",  "type": "盟友",    "spoiler": false },
+    { "from": "sayu",   "to": "kaede",  "type": "ライバル",    "spoiler": false },
+    { "from": "sayu",   "to": "ichi",  "type": "",    "spoiler": false },
 
     { "from": "mitsune_ishimoto",   "to": "yukiko",  "type": "ルームメイトの約束",    "spoiler": false },
 
@@ -3958,7 +3961,7 @@
 
     { "from": "chihana",   "to": "naru",  "type": "同レギオン",    "spoiler": false },
     { "from": "chihana",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "chihana",   "to": "kaoru_hayashi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "chihana",   "to": "kaoru_hayashi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "chihana",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "naru",   "to": "hozumi",  "type": "同レギオン",    "spoiler": false },
@@ -4149,7 +4152,7 @@
     { "from": "sakura",   "to": "akane",  "type": "仲が良い",    "spoiler": false },
     { "from": "sakura",   "to": "luise",  "type": "仲が良い",    "spoiler": false },
 
-    { "from": "kazuki",   "to": "matsuri",  "type": "強く慕われている", "arrows": "to",    "spoiler": false },
+    { "from": "kazuki",   "to": "matsuri",  "type": "強く慕っている", "arrows": "to",    "spoiler": false },
     { "from": "matsuri",   "to": "sumire_takasaki",  "type": "同レギオン",    "spoiler": false },
     { "from": "matsuri",   "to": "hanano",  "type": "同レギオン",    "spoiler": false },
     { "from": "matsuri",   "to": "ryuka",  "type": "同レギオン",    "spoiler": false },
@@ -4159,7 +4162,7 @@
     { "from": "matsuri",   "to": "mimi",  "type": "信頼", "arrows": "to",    "spoiler": false },
     { "from": "mimi",   "to": "matsuri",  "type": "全てを捧げる覚悟", "arrows": "to",    "spoiler": false },
     { "from": "matsuri",   "to": "yuyu",  "type": "ルームメイト",    "spoiler": false },
-    { "from": "matsuri",   "to": "chinaha",  "type": "絶縁",    "spoiler": false },
+    { "from": "matsuri",   "to": "chihana",  "type": "絶縁",    "spoiler": false },
 
     { "from": "kazuki",   "to": "sumire_takasaki",  "type": "同レギオン",    "spoiler": false },
     { "from": "kazuki",   "to": "hanano",  "type": "同レギオン",    "spoiler": false },
