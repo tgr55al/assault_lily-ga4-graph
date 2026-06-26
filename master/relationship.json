@@ -4173,7 +4173,7 @@
     { "from": "kazuki",   "to": "monica",  "type": "同レギオン",    "spoiler": false },
     { "from": "kazuki",   "to": "hazuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "kazuki",   "to": "rachel",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kazuki",   "to": "mimi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kazuki",   "to": "mimi",  "type": "ルームメイト",    "spoiler": false },
 
     { "from": "sumire_takasaki",   "to": "hanano",  "type": "仲が良い（AZ3人衆）",    "spoiler": false },
     { "from": "sumire_takasaki",   "to": "ryuka",  "type": "仲が良い（AZ3人衆）",    "spoiler": false },
