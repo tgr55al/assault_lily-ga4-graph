@@ -3590,7 +3590,7 @@
     { "from": "tsukushi",   "to": "fumi",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "ichi",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ichi",   "to": "akane",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ichi",   "to": "akane",  "type": "伍人組",    "spoiler": false },
     { "from": "ichi",   "to": "misora",  "type": "伍人組",    "spoiler": false },
     { "from": "ichi",   "to": "tatsuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "ichi",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
@@ -3616,6 +3616,9 @@
     { "from": "akane",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
     { "from": "akane",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
     { "from": "akane",   "to": "noa",  "type": "幼馴染",    "spoiler": false },
+    { "from": "akane",   "to": "hibari",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "akane",   "to": "nagi",  "type": "",    "spoiler": false },
+    { "from": "akane",   "to": "miharu",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "misora",   "to": "tatsuki",  "type": "仲が良い",    "spoiler": false },
     { "from": "misora",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
@@ -3686,6 +3689,10 @@
     { "from": "hijiri",   "to": "konomi",  "type": "同レギオン",    "spoiler": false },
     { "from": "hijiri",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "hijiri",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hijiri",   "to": "yuyu",  "type": "元ルームメイト",    "spoiler": false },
+    { "from": "hijiri",   "to": "akane",  "type": "仲が良い",    "spoiler": false },
+    { "from": "hijiri",   "to": "waku",  "type": "友人",    "spoiler": false },
+    { "from": "hijiri",   "to": "sachie",  "type": "友人",    "spoiler": false },
 
     { "from": "nodoka",   "to": "botan",  "type": "同レギオン",    "spoiler": false },
     { "from": "nodoka",   "to": "sakua",  "type": "同レギオン",    "spoiler": false },
@@ -3908,6 +3915,8 @@
     { "from": "toa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "toa",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "toa",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "toa",   "to": "tatsuki",  "type": "",    "spoiler": true },
+    { "from": "toa",   "to": "mimi",  "type": "",    "spoiler": true },
 
     { "from": "seira",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
     { "from": "seira",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
@@ -4415,6 +4424,7 @@
     { "from": "risuko",   "to": "non",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "ameri",   "to": "non",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ameri",   "to": "mimi",  "type": "評価", "arrows": "to",    "spoiler": false },
 
     { "from": "cemil",   "to": "luludis",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "cemil",   "to": "althea",  "type": "同レギオン",    "spoiler": false },
