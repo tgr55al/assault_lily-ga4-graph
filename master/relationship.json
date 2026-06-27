@@ -3555,6 +3555,7 @@
     { "from": "soraha",   "to": "komachi",  "type": "仲が良い",    "spoiler": false },
     { "from": "soraha",   "to": "ichika",  "type": "指導した", "arrows": "to",    "spoiler": false },
     { "from": "soraha",   "to": "chihana",  "type": "親友",    "spoiler": false },
+    { "from": "soraha",   "to": "shiori",  "type": "",    "spoiler": false },
 
     { "from": "kusumi",   "to": "ena",  "type": "同レギオン",    "spoiler": false },
     { "from": "kusumi",   "to": "tsukushi",  "type": "伍人組",    "spoiler": false },
