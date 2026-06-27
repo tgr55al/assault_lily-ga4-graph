@@ -4297,7 +4297,7 @@
     { "from": "shiera_tada",   "to": "tatsuki",  "type": "親密",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "shiera_tada",   "to": "tatsuki",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
     { "from": "gyokuyo",   "to": "tatsuki",  "type": "仲良くしたい", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "tatsuki",   "to": "gyokuyo",  "type": "怖がっている", "arrows": "to",    "spoiler": false },
+    { "from": "tatsuki",   "to": "gyokuyo",  "type": "怖がっている", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "tatsuki",   "to": "gyokuyo",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
     { "from": "shiera_tada",   "to": "miu",  "type": "同レギオン",    "spoiler": false },
     { "from": "shiera_tada",   "to": "ena",  "type": "友人",    "spoiler": false },
