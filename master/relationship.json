@@ -3551,7 +3551,7 @@
     { "from": "soraha",   "to": "tatsuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "soraha",   "to": "wakana",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "soraha",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
-    { "from": "soraha",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "soraha",   "to": "noa",  "type": "親友",    "spoiler": false },
 
     { "from": "kusumi",   "to": "ena",  "type": "同レギオン",    "spoiler": false },
     { "from": "kusumi",   "to": "tsukushi",  "type": "伍人組",    "spoiler": false },
@@ -3615,7 +3615,7 @@
     { "from": "akane",   "to": "tatsuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "akane",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
     { "from": "akane",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
-    { "from": "akane",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "akane",   "to": "noa",  "type": "幼馴染",    "spoiler": false },
 
     { "from": "misora",   "to": "tatsuki",  "type": "仲が良い",    "spoiler": false },
     { "from": "misora",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
@@ -3631,6 +3631,8 @@
 
     { "from": "wakana",   "to": "kisara",  "type": "ルームメイト",    "spoiler": false },
     { "from": "wakana",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "wakana",   "to": "shinobu",  "type": "仲が良い",    "spoiler": false },
+    { "from": "wakana",   "to": "gyokuyo",  "type": "",    "spoiler": false },
 
     { "from": "kisara",   "to": "noa",  "type": "仲が良い",    "spoiler": false },
     { "from": "kisara",   "to": "mimi",  "type": "バチバチに仲が悪い",    "spoiler": false },
@@ -3638,6 +3640,9 @@
     { "from": "kisara",   "to": "homare",  "type": "親交がある",    "spoiler": false },
     { "from": "kisara",   "to": "hibari",  "type": "親交がある",    "spoiler": false },
     { "from": "kisara",   "to": "gyokuyo",  "type": "",    "spoiler": false },
+
+    { "from": "noa",   "to": "hibari",  "type": "幼馴染",    "spoiler": false },
+    { "from": "noa",   "to": "waku",  "type": "腕輪を交換",    "spoiler": false },
 
     { "from": "shiori",   "to": "hijiri",  "type": "シュッツエンゲル",    "spoiler": false },
     { "from": "shiori",   "to": "nodoka",  "type": "同レギオン",    "spoiler": false },
@@ -3899,7 +3904,7 @@
     { "from": "luise",   "to": "moyu",  "type": "良好な関係",    "spoiler": false },
 
     { "from": "toa",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
-    { "from": "toa",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "toa",   "to": "maho",  "type": "ルームメイト",    "spoiler": false },
     { "from": "toa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "toa",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "toa",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
@@ -3911,6 +3916,9 @@
     { "from": "maho",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "maho",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "maho",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "maho",   "to": "misora",  "type": "SNSの炎上を楽しんでいる",    "spoiler": true },
+    { "from": "maho",   "to": "kukuri",  "type": "SNSの炎上を楽しんでいる",    "spoiler": true },
+    { "from": "maho",   "to": "tatsuki",  "type": "",    "spoiler": true },
 
     { "from": "konohana",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
     { "from": "chihiro",   "to": "katsura",  "type": "",    "spoiler": false },
@@ -5409,9 +5417,9 @@
 
     { "from": "hekiru",   "to": "chihiro",  "type": "友人",    "spoiler": false },
     { "from": "hekiru",   "to": "misaka",  "type": "友人",    "spoiler": false },
-    { "from": "hekiru",   "to": "chihana",  "type": "親しい",    "spoiler": false },
-    { "from": "hekiru",   "to": "mayuri",  "type": "親しい",    "spoiler": false },
-    { "from": "hekiru",   "to": "tohka",  "type": "仲が良い",    "spoiler": false },
+    { "from": "hekiru",   "to": "chihana",  "type": "親しかった",    "spoiler": false },
+    { "from": "hekiru",   "to": "mayuri",  "type": "親しかった",    "spoiler": false },
+    { "from": "hekiru",   "to": "tohka",  "type": "仲が良かった",    "spoiler": false },
     { "from": "hekiru",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": false },
 
     { "from": "wako",   "to": "chisa",  "type": "仲が良い",    "spoiler": false },
