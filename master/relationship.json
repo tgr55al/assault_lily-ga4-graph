@@ -3837,6 +3837,8 @@
     { "from": "tohka",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "tekeriri",  "type": "怖い", "arrows": "to",    "spoiler": true },
+    { "from": "tohka",   "to": "nadeshiko",  "type": "敬愛していた",    "spoiler": false },
+    { "from": "tohka",   "to": "komachi",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "totori",   "to": "homare",  "type": "ルームメイト",    "spoiler": false },
     { "from": "totori",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
@@ -3903,6 +3905,16 @@
     { "from": "hibari",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "hibari",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "hibari",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hibari",   "to": "ayako",  "type": "元シュッツエンゲル",    "spoiler": false, "arrows": "to", "hideWhenSpoiler": true },
+    { "from": "ayako",   "to": "hibari",  "type": "シュッツエンゲル解消",    "spoiler": false, "arrows": "to", "hideWhenSpoiler": true },
+    { "from": "hibari",   "to": "ayako",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
+    { "from": "hibari",   "to": "fumi",  "type": "リリィオタク仲間",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "hibari",   "to": "fumi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
+    { "from": "hibari",   "to": "kaede",  "type": "芸術について話が合う",    "spoiler": false },
+    { "from": "hibari",   "to": "mimi",  "type": "仲が悪い",    "spoiler": false },
+    { "from": "hibari",   "to": "fuka",  "type": "",    "spoiler": false },
+    { "from": "hibari",   "to": "yuria",  "type": "",    "spoiler": false },
+    { "from": "hibari",   "to": "fujino",  "type": "",    "spoiler": false },
 
     { "from": "hanna",   "to": "luise",  "type": "ルームメイト",    "spoiler": false },
     { "from": "hanna",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
@@ -4055,6 +4067,7 @@
 
     { "from": "ayako",   "to": "hitomi",  "type": "ルームメイト",    "spoiler": false },
     { "from": "ayako",   "to": "kanatsuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ayako",   "to": "mimi",  "type": "特に低く評価（凡夫）",    "spoiler": false },
 
     { "from": "kanatsuki",   "to": "hitomi",  "type": "付きまとっている", "arrows": "to",    "spoiler": false },
 
