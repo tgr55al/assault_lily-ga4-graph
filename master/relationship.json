@@ -3447,7 +3447,7 @@
     { "from": "yuyu",   "to": "kaede",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuyu",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
     { "from": "yuyu",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
-    { "from": "yuyu",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
+    { "from": "yuyu",   "to": "kuo",    "type": "良好な関係",          "spoiler": false },
     { "from": "yuyu",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "yuyu",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "yuyu",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
@@ -3484,7 +3484,8 @@
 
     { "from": "kuo",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "kuo",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
-    { "from": "kuo",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
+    { "from": "kuo",   "to": "yujia", "type": "ルームメイト（朋友）",          "spoiler": false },
+    { "from": "akane",   "to": "kuo", "type": "ジャストガードを伝授", "arrows": "to",          "spoiler": false },
 
     { "from": "kuo",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
     { "from": "kuo",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
@@ -3504,6 +3505,8 @@
     { "from": "miriam",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
     { "from": "miriam",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
     { "from": "miriam",   "to": "shin", "type": "同レギオン",          "spoiler": true },
+
+    { "from": "yujia", "to": "nagisa_tachibana",  "type": "",          "spoiler": false },
 
     { "from": "yuri", "to": "riri",  "type": "大好き",          "spoiler": false },
     { "from": "yuri", "to": "kaede",  "type": "ルームメイト",          "spoiler": false },
@@ -3560,13 +3563,15 @@
     { "from": "kusumi",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "ena",   "to": "tsukushi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ena",   "to": "ichi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ena",   "to": "ichi",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "ena",   "to": "ichi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
     { "from": "ena",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "akane",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "misora",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "tatsuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ena",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ena",   "to": "kisara",  "type": "シュッツエンゲル",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "ena",   "to": "kisara",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
     { "from": "ena",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "saeka",  "type": "親友",    "spoiler": false },
 
@@ -3585,15 +3590,22 @@
     { "from": "ichi",   "to": "misora",  "type": "同レギオン",    "spoiler": false },
     { "from": "ichi",   "to": "tatsuki",  "type": "同レギオン",    "spoiler": false },
     { "from": "ichi",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ichi",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ichi",   "to": "kisara",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "ichi",   "to": "kisara",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
     { "from": "ichi",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "araya",   "to": "akane",  "type": "同レギオン",    "spoiler": false },
     { "from": "araya",   "to": "misora",  "type": "同レギオン",    "spoiler": false },
-    { "from": "araya",   "to": "tatsuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "araya",   "to": "tatsuki",  "type": "ルームメイト",    "spoiler": false },
     { "from": "araya",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
-    { "from": "araya",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
+    { "from": "araya",   "to": "kisara",  "type": "仲が良い",    "spoiler": false },
     { "from": "araya",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "araya",   "to": "seira",  "type": "仲が良い",    "spoiler": false },
+    { "from": "araya",   "to": "homare",  "type": "仲が良い",    "spoiler": false },
+    { "from": "araya",   "to": "maho",  "type": "仲が良い",    "spoiler": false },
+    { "from": "araya",   "to": "toa",  "type": "切磋琢磨する仲",    "spoiler": false },
+    { "from": "araya",   "to": "ichi",  "type": "狙っている", "arrows": "to",    "spoiler": false },
+    { "from": "ichi",   "to": "araya",  "type": "一目置いている", "arrows": "to",    "spoiler": false },
 
     { "from": "akane",   "to": "misora",  "type": "同レギオン",    "spoiler": false },
     { "from": "akane",   "to": "tatsuki",  "type": "同レギオン",    "spoiler": false },
@@ -3610,10 +3622,15 @@
     { "from": "tatsuki",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
     { "from": "tatsuki",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "wakana",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
+    { "from": "wakana",   "to": "kisara",  "type": "ルームメイト",    "spoiler": false },
     { "from": "wakana",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "kisara",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kisara",   "to": "noa",  "type": "仲が良い",    "spoiler": false },
+    { "from": "kisara",   "to": "mimi",  "type": "バチバチに仲が悪い",    "spoiler": false },
+    { "from": "kisara",   "to": "mayuri",  "type": "親交がある",    "spoiler": false },
+    { "from": "kisara",   "to": "homare",  "type": "親交がある",    "spoiler": false },
+    { "from": "kisara",   "to": "hibari",  "type": "親交がある",    "spoiler": false },
+    { "from": "kisara",   "to": "gyokuyo",  "type": "",    "spoiler": false },
 
     { "from": "shiori",   "to": "hijiri",  "type": "シュッツエンゲル",    "spoiler": false },
     { "from": "shiori",   "to": "nodoka",  "type": "同レギオン",    "spoiler": false },
@@ -5051,7 +5068,7 @@
     { "from": "akari",   "to": "himeka",  "type": "ルームメイト",    "spoiler": false },
     { "from": "akari",   "to": "moka",  "type": "友人",    "spoiler": false },
 
-    { "from": "himeka",   "to": "kuo",  "type": "ライバル",    "spoiler": false },
+    { "from": "himeka",   "to": "kuo",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
 
     { "from": "himeka",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
     { "from": "himeka",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
