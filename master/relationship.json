@@ -3592,11 +3592,14 @@
     { "from": "ichi",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
     { "from": "ichi",   "to": "akane",  "type": "伍人組",    "spoiler": false },
     { "from": "ichi",   "to": "misora",  "type": "伍人組",    "spoiler": false },
-    { "from": "ichi",   "to": "tatsuki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ichi",   "to": "tatsuki",  "type": "仲が良い",    "spoiler": false },
     { "from": "ichi",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
     { "from": "ichi",   "to": "kisara",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "ichi",   "to": "kisara",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
     { "from": "ichi",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "ayumu",   "to": "ichi",  "type": "尊敬", "arrows": "to",    "spoiler": false },
+    { "from": "ichi",   "to": "shizu",  "type": "高く評価（複雑な思い）", "arrows": "to",    "spoiler": false },
+    { "from": "shizu",   "to": "ichi",  "type": "高く評価", "arrows": "to",    "spoiler": false },
 
     { "from": "araya",   "to": "akane",  "type": "同レギオン",    "spoiler": false },
     { "from": "araya",   "to": "misora",  "type": "同レギオン",    "spoiler": false },
@@ -3631,6 +3634,7 @@
     { "from": "tatsuki",   "to": "wakana",  "type": "同レギオン",    "spoiler": false },
     { "from": "tatsuki",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
     { "from": "tatsuki",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tatsuki",   "to": "moyu",  "type": "尊敬", "arrows": "to",    "spoiler": false },
 
     { "from": "wakana",   "to": "kisara",  "type": "ルームメイト",    "spoiler": false },
     { "from": "wakana",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
@@ -5336,8 +5340,10 @@
     { "from": "kougetsu",   "to": "souitsu",  "type": "戦友",    "spoiler": false },
 
     { "from": "moyu",   "to": "shoko",  "type": "従姉妹",    "spoiler": false },
-    { "from": "moyu",   "to": "miriam",  "type": "憧れ",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "miriam",   "to": "moyu",  "type": "憧れ", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "moyu",   "to": "miriam",  "type": "シュッツエンゲル",    "spoiler": true },
+    { "from": "moyu",   "to": "tohka",  "type": "親友",    "spoiler": false },
+    { "from": "moyu",   "to": "soraha",  "type": "友人",    "spoiler": false },
 
     { "from": "orika",   "to": "kikyo",  "type": "幼馴染",    "spoiler": false },
     { "from": "orika",   "to": "sae",  "type": "姉妹のような関係",    "spoiler": false },
