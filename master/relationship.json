@@ -3552,6 +3552,9 @@
     { "from": "soraha",   "to": "wakana",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "soraha",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
     { "from": "soraha",   "to": "noa",  "type": "親友",    "spoiler": false },
+    { "from": "soraha",   "to": "komachi",  "type": "仲が良い",    "spoiler": false },
+    { "from": "soraha",   "to": "ichika",  "type": "指導した", "arrows": "to",    "spoiler": false },
+    { "from": "soraha",   "to": "chihana",  "type": "親友",    "spoiler": false },
 
     { "from": "kusumi",   "to": "ena",  "type": "同レギオン",    "spoiler": false },
     { "from": "kusumi",   "to": "tsukushi",  "type": "伍人組",    "spoiler": false },
@@ -3778,6 +3781,7 @@
     { "from": "nagi",   "to": "konomi",  "type": "同レギオン",    "spoiler": false },
     { "from": "nagi",   "to": "sayuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "nagi",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
+    { "from": "nagi",   "to": "ayako",  "type": "距離を置いている",    "spoiler": false },
 
     { "from": "diana",   "to": "mitsune",  "type": "同レギオン",    "spoiler": false },
     { "from": "diana",   "to": "konomi",  "type": "シュッツエンゲル候補",    "spoiler": false },
@@ -4349,7 +4353,7 @@
     { "from": "sunao_ikeda",   "to": "satori",  "type": "同レギオン",    "spoiler": false },
     { "from": "sunao_ikeda",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
     { "from": "sunao_ikeda",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sunao_ikeda",   "to": "soraha",  "type": "ライバル",    "spoiler": false },
+    { "from": "sunao_ikeda",   "to": "soraha",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
 
     { "from": "satori",   "to": "ouka",  "type": "同レギオン",    "spoiler": false },
     { "from": "satori",   "to": "teruka",  "type": "同レギオン",    "spoiler": false },
