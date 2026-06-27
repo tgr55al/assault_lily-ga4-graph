@@ -3842,7 +3842,6 @@
     { "from": "homare",   "to": "maho",  "type": "仲が良い",    "spoiler": false },
     { "from": "homare",   "to": "konohana",  "type": "レギオン結成の誓い",    "spoiler": true },
     { "from": "homare",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
-    { "from": "homare",   "to": "kurena",  "type": "親交が深い",    "spoiler": false },
     { "from": "homare",   "to": "mimi",  "type": "衝突",    "spoiler": false },
 
     { "from": "tokiwa",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
@@ -3907,7 +3906,7 @@
 
     { "from": "seira",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
     { "from": "seira",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
-    { "from": "seira",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "seira",   "to": "imari",  "type": "",    "spoiler": false },
 
     { "from": "maho",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "maho",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
@@ -4081,6 +4080,11 @@
     { "from": "mayuri",   "to": "mirei",  "type": "同レギオン",    "spoiler": false },
     { "from": "mayuri",   "to": "noriko",  "type": "ルームメイト",    "spoiler": false },
     { "from": "mayuri",   "to": "kokoro_murano",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mayuri",   "to": "hibari",  "type": "親友",    "spoiler": false },
+    { "from": "mayuri",   "to": "natsumi",  "type": "気が合う",    "spoiler": false },
+    { "from": "mayuri",   "to": "fumi",  "type": "",    "spoiler": false },
+    { "from": "mayuri",   "to": "tohka",  "type": "",    "spoiler": false },
+    { "from": "mayuri",   "to": "mimi",  "type": "",    "spoiler": false },
 
     { "from": "kotoko",   "to": "kina",  "type": "同レギオン",    "spoiler": false },
     { "from": "kotoko",   "to": "yayori",  "type": "同レギオン",    "spoiler": false },
