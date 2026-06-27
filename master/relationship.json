@@ -4265,6 +4265,9 @@
     { "from": "matsuri",   "to": "yuyu",  "type": "ルームメイト",    "spoiler": false },
     { "from": "matsuri",   "to": "chihana",  "type": "絶縁",    "spoiler": false },
 
+    { "from": "mimi",   "to": "kaede",  "type": "",    "spoiler": false },
+    { "from": "mimi",   "to": "fumi",  "type": "警戒", "arrows": "to",    "spoiler": false },
+
     { "from": "kazuki",   "to": "sumire_takasaki",  "type": "同レギオン",    "spoiler": false },
     { "from": "kazuki",   "to": "hanano",  "type": "同レギオン",    "spoiler": false },
     { "from": "kazuki",   "to": "ryuka",  "type": "同レギオン",    "spoiler": false },
