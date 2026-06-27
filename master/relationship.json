@@ -3805,7 +3805,7 @@
     { "from": "misaka",   "to": "meika",  "type": "高く評価",    "spoiler": false },
 
     { "from": "tohka",   "to": "totori",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tohka",   "to": "homare",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tohka",   "to": "homare",  "type": "友人",    "spoiler": false },
     { "from": "tohka",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
@@ -3839,9 +3839,11 @@
     { "from": "homare",   "to": "luise",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "homare",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
-    { "from": "homare",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "homare",   "to": "maho",  "type": "仲が良い",    "spoiler": false },
     { "from": "homare",   "to": "konohana",  "type": "レギオン結成の誓い",    "spoiler": true },
     { "from": "homare",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "homare",   "to": "kurena",  "type": "親交が深い",    "spoiler": false },
+    { "from": "homare",   "to": "mimi",  "type": "衝突",    "spoiler": false },
 
     { "from": "tokiwa",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
@@ -3850,8 +3852,16 @@
     { "from": "tokiwa",   "to": "toa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "tokiwa",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
     { "from": "tokiwa",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tokiwa",   "to": "wakana",  "type": "仲が良い",    "spoiler": false },
+    { "from": "tokiwa",   "to": "natsumi",  "type": "支えている", "arrows": "to",    "spoiler": false },
+    { "from": "tokiwa",   "to": "nagi",  "type": "仲が良い",    "spoiler": false },
+    { "from": "tokiwa",   "to": "gyokuyo",  "type": "仲が良い",    "spoiler": false },
+    { "from": "tokiwa",   "to": "shinobu",  "type": "仲が良い",    "spoiler": false },
+    { "from": "tokiwa",   "to": "kikyo",  "type": "",    "spoiler": false },
+    { "from": "tokiwa",   "to": "fujino",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "tomoyo_seike",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoyo_seike",   "to": "hanna",  "type": "同レギオン",    "spoiler": false },
@@ -3897,6 +3907,7 @@
 
     { "from": "seira",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
     { "from": "seira",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "seira",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "maho",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
     { "from": "maho",   "to": "konohana",  "type": "同レギオン",    "spoiler": true },
@@ -4005,6 +4016,7 @@
     { "from": "maasa",   "to": "misora",  "type": "良きライバル",    "spoiler": false },
 
     { "from": "kaoru_hayashi",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaoru_hayashi",   "to": "tohka",  "type": "師弟関係",    "spoiler": false },
 
     { "from": "meika",   "to": "ayako",  "type": "同レギオン",    "spoiler": false },
     { "from": "meika",   "to": "hitomi",  "type": "同レギオン",    "spoiler": false },
