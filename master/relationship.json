@@ -3836,7 +3836,7 @@
     { "from": "tohka",   "to": "seira",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "maho",  "type": "同レギオン",    "spoiler": false },
     { "from": "tohka",   "to": "chihiro",  "type": "同レギオン",    "spoiler": false },
-    { "from": "tohka",   "to": "tekeriri",  "type": "怖い",    "spoiler": true },
+    { "from": "tohka",   "to": "tekeriri",  "type": "怖い", "arrows": "to",    "spoiler": true },
 
     { "from": "totori",   "to": "homare",  "type": "ルームメイト",    "spoiler": false },
     { "from": "totori",   "to": "tokiwa",  "type": "同レギオン",    "spoiler": false },
