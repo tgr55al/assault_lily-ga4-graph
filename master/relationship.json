@@ -4067,7 +4067,7 @@
 
     { "from": "ayako",   "to": "hitomi",  "type": "ルームメイト",    "spoiler": false },
     { "from": "ayako",   "to": "kanatsuki",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ayako",   "to": "mimi",  "type": "特に低く評価（凡夫）",    "spoiler": false },
+    { "from": "ayako",   "to": "mimi",  "type": "特に低く評価（凡夫）", "arrows": "to",    "spoiler": false },
     { "from": "ayako",   "to": "fumi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
 
     { "from": "kanatsuki",   "to": "hitomi",  "type": "付きまとっている", "arrows": "to",    "spoiler": false },
