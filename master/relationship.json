@@ -3424,7 +3424,7 @@
   ],
 
   "relations": [
-    { "from": "riri",   "to": "yuyu",   "type": "憧れ",          "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "riri",   "to": "yuyu",   "type": "憧れ", "arrows": "to",          "spoiler": false, "hideWhenSpoiler": true },
     { "from": "riri",   "to": "yuyu",   "type": "シュッツエンゲル",    "spoiler": true  },
     { "from": "riri",   "to": "kaede",  "type": "同レギオン",    "spoiler": false },
     { "from": "riri",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
@@ -3451,6 +3451,11 @@
     { "from": "yuyu",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "yuyu",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "yuyu",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
+    { "from": "yuyu",   "to": "waku", "type": "好き",          "spoiler": false },
+    { "from": "waku",   "to": "yuyu", "type": "「ゆーゆ」と呼んでいる",          "spoiler": false },
+    { "from": "yuyu",   "to": "himari", "type": "指導した", "arrows": "to",          "spoiler": false },
+    { "from": "yuyu",   "to": "sachie", "type": "指導した", "arrows": "to",          "spoiler": false },
+    { "from": "yuyu",   "to": "monica", "type": "稽古をつけている", "arrows": "to",          "spoiler": false },
 
     { "from": "yuyu",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
 
@@ -3471,7 +3476,7 @@
     { "from": "fumi",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "fuka", "type": "",          "spoiler": false },
     { "from": "fumi",   "to": "kureha", "type": "ソウルフレンド",          "spoiler": false },
-    { "from": "fumi",   "to": "ena", "type": "ソウルフレンド",          "spoiler": false },
+    { "from": "fumi",   "to": "ena", "type": "コスプレ友達",          "spoiler": false },
     { "from": "fumi",   "to": "shiori", "type": "仲が良い",          "spoiler": false },
 
     { "from": "fumi",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
@@ -3546,7 +3551,7 @@
     { "from": "chikaru", "to": "makoto",     "type": "親友",          "spoiler": false },
 
     { "from": "soraha",   "to": "kusumi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
-    { "from": "soraha",   "to": "ena",  "type": "同レギオン",    "spoiler": false },
+    { "from": "soraha",   "to": "ena",  "type": "ルームメイト",    "spoiler": false },
     { "from": "soraha",   "to": "tsukushi",  "type": "同レギオン",    "spoiler": false },
     { "from": "soraha",   "to": "ichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "soraha",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
@@ -3574,7 +3579,7 @@
     { "from": "kusumi",   "to": "hanna",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "ena",   "to": "tsukushi",  "type": "同レギオン",    "spoiler": false },
-    { "from": "ena",   "to": "ichi",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "ena",   "to": "ichi",  "type": "シュッツエンゲル候補",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "ena",   "to": "ichi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
     { "from": "ena",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "akane",  "type": "同レギオン",    "spoiler": false },
@@ -3585,6 +3590,9 @@
     { "from": "ena",   "to": "kisara",  "type": "シュッツエンゲル（ノルン）",    "spoiler": true },
     { "from": "ena",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
     { "from": "ena",   "to": "saeka",  "type": "親友",    "spoiler": false },
+    { "from": "ena",   "to": "miharu",  "type": "仲が良い",    "spoiler": false },
+    { "from": "ena",   "to": "chikaru",  "type": "熱烈に勧誘", "arrows": "to",    "spoiler": false },
+    { "from": "chikaru",   "to": "ena",  "type": "敬愛", "arrows": "to",    "spoiler": false },
 
     { "from": "tsukushi",   "to": "ichi",  "type": "伍人組",    "spoiler": false },
     { "from": "tsukushi",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
@@ -4682,7 +4690,7 @@
     { "from": "yuzuriha",   "to": "waku",  "type": "友人",    "spoiler": false },
     { "from": "yuzuriha",   "to": "sachie",  "type": "友人",    "spoiler": false },
     { "from": "yuzuriha",   "to": "mai",  "type": "友人",    "spoiler": false },
-    { "from": "yuzuriha",   "to": "yuunagi",  "type": "憧れ",    "spoiler": false },
+    { "from": "yuunagi",   "to": "yuzuriha",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "momiji",   "to": "katsura",  "type": "気にかけている", "arrows": "to",    "spoiler": false },
     { "from": "katsura",   "to": "momiji",  "type": "尊敬", "arrows": "to",    "spoiler": false },
@@ -5242,7 +5250,7 @@
 
     { "from": "nanoha",   "to": "tamao",  "type": "姉妹のような関係",    "spoiler": false },
     { "from": "nanoha",   "to": "komomo",  "type": "",    "spoiler": false },
-    { "from": "nanoha",   "to": "ena",  "type": "ライバル",    "spoiler": false },
+    { "from": "nanoha",   "to": "ena",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
 
     { "from": "tamao",   "to": "himeka",  "type": "交流あり？",    "spoiler": false },
 
@@ -5399,7 +5407,7 @@
     { "from": "ichigo",   "to": "katsura",  "type": "友人",    "spoiler": false },
 
     { "from": "eishin",   "to": "uta_masukawa",  "type": "チーム",    "spoiler": false },
-    { "from": "eishin",   "to": "cherice",  "type": "憧れ",    "spoiler": false },
+    { "from": "eishin",   "to": "cherice",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "cherice",   "to": "nagisa_yoshizaka",  "type": "戦友",    "spoiler": false },
     { "from": "cherice",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
@@ -5593,14 +5601,14 @@
     { "from": "saya",   "to": "yuyu",  "type": "姉妹",    "spoiler": false },
     { "from": "saya",   "to": "ayu",  "type": "親子",    "spoiler": false },
     { "from": "saya",   "to": "ouka_sano",  "type": "ライバル（現役時代）",    "spoiler": false },
-    { "from": "saya",   "to": "misaka",  "type": "憧れ",    "spoiler": false },
+    { "from": "misaka",   "to": "saya",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "ayu",   "to": "yuyu",  "type": "親子",    "spoiler": false },
     { "from": "ayu",   "to": "gozen",  "type": "親子",    "spoiler": true },
     { "from": "yuyu",   "to": "gozen",  "type": "姉妹",    "spoiler": true },
 
     { "from": "gozen",   "to": "ouka_sano",  "type": "ライバル（現役時代）",    "spoiler": true },
-    { "from": "gozen",   "to": "misaka",  "type": "憧れ",    "spoiler": true },
+    { "from": "misaka",   "to": "gozen",  "type": "憧れ", "arrows": "to",    "spoiler": true },
     { "from": "gozen",   "to": "tomoshibi",  "type": "",    "spoiler": true },
     { "from": "gozen",   "to": "goteni",  "type": "敵対",    "spoiler": true },
 
