@@ -3469,7 +3469,7 @@
     { "from": "fumi",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
-    { "from": "fumi",   "to": "fumi", "type": "",          "spoiler": false },
+    { "from": "fumi",   "to": "fuka", "type": "",          "spoiler": false },
     { "from": "fumi",   "to": "kureha", "type": "ソウルフレンド",          "spoiler": false },
     { "from": "fumi",   "to": "ena", "type": "ソウルフレンド",          "spoiler": false },
     { "from": "fumi",   "to": "shiori", "type": "仲が良い",          "spoiler": false },
