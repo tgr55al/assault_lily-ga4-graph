@@ -5161,19 +5161,19 @@
 
     { "from": "nako",   "to": "uru",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "kanaho",   "to": "takane",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kanaho",   "to": "kureha",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kanaho",   "to": "takane",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "kureha",   "to": "kanaho",  "type": "尊い…", "arrows": "to",    "spoiler": false },
     { "from": "kanaho",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
     { "from": "kanaho",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
     { "from": "kanaho", "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
 
-    { "from": "kanaho",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kanaho",   "to": "akehi",  "type": "同志",    "spoiler": false },
     { "from": "kanaho",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
     { "from": "kanaho",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
     { "from": "kanaho",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
     { "from": "kanaho",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "takane",   "to": "kureha",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kureha",   "to": "takane",  "type": "尊い…", "arrows": "to",    "spoiler": false },
     { "from": "takane",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
     { "from": "takane",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
 
@@ -5185,6 +5185,7 @@
 
     { "from": "kureha",   "to": "akari",  "type": "同レギオン",    "spoiler": false },
     { "from": "kureha",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kureha",   "to": "hozumi",  "type": "注目", "arrows": "to",    "spoiler": false },
 
     { "from": "kureha",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
     { "from": "kureha",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
