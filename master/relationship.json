@@ -3451,8 +3451,8 @@
     { "from": "yuyu",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "yuyu",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "yuyu",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
-    { "from": "yuyu",   "to": "waku", "type": "好き",          "spoiler": false },
-    { "from": "waku",   "to": "yuyu", "type": "「ゆーゆ」と呼んでいる",          "spoiler": false },
+    { "from": "yuyu",   "to": "waku", "type": "好み", "arrows": "to",          "spoiler": false },
+    { "from": "waku",   "to": "yuyu", "type": "「ゆーゆ」と呼んでいる", "arrows": "to",          "spoiler": false },
     { "from": "yuyu",   "to": "himari", "type": "指導した", "arrows": "to",          "spoiler": false },
     { "from": "yuyu",   "to": "sachie", "type": "指導した", "arrows": "to",          "spoiler": false },
     { "from": "yuyu",   "to": "monica", "type": "稽古をつけている", "arrows": "to",          "spoiler": false },
@@ -3465,6 +3465,7 @@
     { "from": "kaede",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "kaede",   "to": "miriam", "type": "幼馴染・ライバル",          "spoiler": false },
     { "from": "kaede",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
+    { "from": "kaede",   "to": "imari", "type": "友人",          "spoiler": false },
 
     { "from": "kaede",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
     { "from": "kaede",   "to": "shin", "type": "同レギオン",          "spoiler": true },
@@ -3520,7 +3521,7 @@
     { "from": "yujia", "to": "nagisa_tachibana",  "type": "",          "spoiler": false },
 
     { "from": "yuri", "to": "riri",  "type": "大好き",          "spoiler": false },
-    { "from": "yuri", "to": "kaede",  "type": "ルームメイト",          "spoiler": false },
+    { "from": "yuri", "to": "kaede",  "type": "ルームメイト",          "spoiler": true },
 
     { "from": "shin",   "to": "yahiro", "type": "ルームメイト",          "spoiler": false },
     { "from": "shin",   "to": "yuyu", "type": "気に入っている", "arrows": "to",          "spoiler": false },
@@ -4019,7 +4020,7 @@
     { "from": "sayu",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
     { "from": "sayu",   "to": "mitsune_ishimoto",  "type": "盟友",    "spoiler": false },
     { "from": "sayu",   "to": "yukiko",  "type": "盟友",    "spoiler": false },
-    { "from": "sayu",   "to": "kaede",  "type": "ライバル",    "spoiler": false },
+    { "from": "sayu",   "to": "kaede",  "type": "良きライバル",    "spoiler": false },
     { "from": "sayu",   "to": "ichi",  "type": "",    "spoiler": false },
 
     { "from": "mitsune_ishimoto",   "to": "yukiko",  "type": "ルームメイトの約束",    "spoiler": false },
