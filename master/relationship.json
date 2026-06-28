@@ -3594,6 +3594,8 @@
     { "from": "ena",   "to": "miharu",  "type": "仲が良い",    "spoiler": false },
     { "from": "ena",   "to": "chikaru",  "type": "熱烈に勧誘", "arrows": "to",    "spoiler": false },
     { "from": "chikaru",   "to": "ena",  "type": "敬愛", "arrows": "to",    "spoiler": false },
+    { "from": "ena",   "to": "hibari",  "type": "親交がある",    "spoiler": false },
+    { "from": "ena",   "to": "moyu",  "type": "友人",    "spoiler": false },
 
     { "from": "tsukushi",   "to": "ichi",  "type": "伍人組",    "spoiler": false },
     { "from": "tsukushi",   "to": "araya",  "type": "同レギオン",    "spoiler": false },
@@ -5024,6 +5026,9 @@
     { "from": "raimu",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "raimu",   "to": "yuko",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
 
+    { "from": "raimu",   "to": "miyabi_suzushiro",  "type": "友人",    "spoiler": false },
+    { "from": "raimu",   "to": "mahiro_yagami",  "type": "友人",    "spoiler": false },
+
     { "from": "raimu",   "to": "sachie",  "type": "シュベスター",    "spoiler": true },
 	{ "from": "raimu",   "to": "kayo",  "type": "同レギオン",    "spoiler": true },
     { "from": "raimu",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
@@ -5107,11 +5112,16 @@
     { "from": "asahi",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
     { "from": "asahi",   "to": "nagisa_tachibana",  "type": "シュベスター",    "spoiler": true },
     { "from": "asahi",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+    { "from": "asahi",   "to": "yukino",  "type": "友人",    "spoiler": false },
+    { "from": "sumire_igarashi",   "to": "yukino",  "type": "友人",    "spoiler": false },
 
     { "from": "mei",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
     { "from": "mei",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "nagisa_tachibana",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+    { "from": "nagisa_tachibana",   "to": "sachie",  "type": "親友",    "spoiler": false },
+    { "from": "nagisa_tachibana",   "to": "ichika",  "type": "親友",    "spoiler": false },
+    { "from": "nagisa_tachibana",   "to": "kazane",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "tsugumi",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
     { "from": "tsugumi",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
@@ -5124,6 +5134,9 @@
     { "from": "yuko",   "to": "asahi",  "type": "同レギオン",    "spoiler": true },
     { "from": "yuko",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
     { "from": "yuko",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yuko",   "to": "fuka_asahina",  "type": "友人",    "spoiler": false },
+    { "from": "yuko",   "to": "otoha",  "type": "友人",    "spoiler": false },
+    { "from": "fuka_asahina",   "to": "otoha",  "type": "友人",    "spoiler": false },
 
     { "from": "fuka",   "to": "mitake",  "type": "同レギオン",    "spoiler": false },
     { "from": "fuka",   "to": "makina",  "type": "同レギオン",    "spoiler": false },
@@ -5196,7 +5209,8 @@
     { "from": "akari",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "akehi",   "to": "haruna",  "type": "同レギオン",    "spoiler": false },
-    { "from": "akehi",   "to": "suzume",  "type": "仲が良い",    "spoiler": false },
+    { "from": "akehi",   "to": "suzume",  "type": "仲が良い", "arrows": "to",    "spoiler": false },
+    { "from": "suzume",   "to": "akehi",  "type": "慕っている", "arrows": "to",    "spoiler": false },
     { "from": "akehi",   "to": "fujino",  "type": "信頼",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "akehi",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
     { "from": "akehi",   "to": "nanaho",  "type": "",    "spoiler": false },
