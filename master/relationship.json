@@ -5168,7 +5168,8 @@
     { "from": "kanaho", "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
 
     { "from": "kanaho",   "to": "akehi",  "type": "同志",    "spoiler": false },
-    { "from": "kanaho",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kanaho",   "to": "haruna",  "type": "幼馴染", "arrows": "to",    "spoiler": false },
+    { "from": "haruna",   "to": "kanaho",  "type": "幼馴染・憧れ", "arrows": "to",    "spoiler": false },
     { "from": "kanaho",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
     { "from": "kanaho",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
     { "from": "kanaho",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
@@ -5178,7 +5179,8 @@
     { "from": "takane",   "to": "himeka",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "takane",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
-    { "from": "takane",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
+    { "from": "takane",   "to": "haruna",  "type": "従姉妹", "arrows": "to",    "spoiler": false },
+    { "from": "haruna",   "to": "takane",  "type": "従姉妹・憧れ", "arrows": "to",    "spoiler": false },
     { "from": "takane",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
     { "from": "takane",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
     { "from": "takane",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
@@ -5209,11 +5211,11 @@
     { "from": "akari",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
     { "from": "akari",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "akehi",   "to": "haruna",  "type": "同レギオン",    "spoiler": false },
+    { "from": "haruna",   "to": "akehi",  "type": "憧れ", "arrows": "to",    "spoiler": false },
     { "from": "akehi",   "to": "suzume",  "type": "仲が良い", "arrows": "to",    "spoiler": false },
     { "from": "suzume",   "to": "akehi",  "type": "慕っている", "arrows": "to",    "spoiler": false },
     { "from": "akehi",   "to": "fujino",  "type": "信頼",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "akehi",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
+    { "from": "akehi",   "to": "moka",  "type": "幼馴染",    "spoiler": false },
     { "from": "akehi",   "to": "nanaho",  "type": "",    "spoiler": false },
     { "from": "akehi",   "to": "miho",  "type": "",    "spoiler": false },
     { "from": "akehi",   "to": "hibari",  "type": "仲が良い",    "spoiler": false },
@@ -5650,6 +5652,10 @@
 
     { "from": "fujino",   "to": "akehi",  "type": "幼馴染",    "spoiler": true },
     { "from": "fujino",   "to": "moka",  "type": "幼馴染",    "spoiler": true },
+    { "from": "fujino",   "to": "renka",  "type": "",    "spoiler": false },
+    { "from": "fujino",   "to": "yo",  "type": "",    "spoiler": false },
+    { "from": "fujino",   "to": "kasumiko",  "type": "懇意にしている",    "spoiler": false },
+    { "from": "miyazu",   "to": "fujino",  "type": "警戒", "arrows": "to",    "spoiler": false },
 
     { "from": "anja",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
     { "from": "anja",   "to": "kougetsu",  "type": "戦友",    "spoiler": false },
