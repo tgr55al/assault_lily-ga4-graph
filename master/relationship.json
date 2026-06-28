@@ -5710,6 +5710,15 @@
     { "from": "tomoyo_nakahara",   "to": "mayumi",  "type": "敵対",    "spoiler": true },
     { "from": "tomoyo_nakahara",   "to": "nadeshiko",  "type": "敵対",    "spoiler": true },
 
+    { "from": "hiromi",   "to": "anzu",  "type": "レギオン結成を目指している",    "spoiler": false },
+    { "from": "hiromi",   "to": "chie",  "type": "レギオン結成を目指している",    "spoiler": false },
+    { "from": "anzu",   "to": "chie",  "type": "レギオン結成を目指している",    "spoiler": false },
+
+    { "from": "io",   "to": "mioko",  "type": "冠輝の誓い",    "spoiler": false },
+    { "from": "io",   "to": "yakumo",  "type": "",    "spoiler": false },
+
+    { "from": "mioko",   "to": "yakumo",  "type": "",    "spoiler": false },
+
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
 }
