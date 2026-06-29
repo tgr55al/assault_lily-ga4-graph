@@ -4677,7 +4677,7 @@
     { "from": "nazuna",   "to": "tohka",  "type": "",    "spoiler": false },
     { "from": "nazuna",   "to": "higure",  "type": "昔の知り合い",    "spoiler": false },
 
-    { "from": "yuzuriha",   "to": "momiji",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "momiji",  "type": "血誓の儀・ルームメイト",    "spoiler": false },
     { "from": "yuzuriha",   "to": "katsura",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuzuriha",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuzuriha",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
@@ -5733,6 +5733,9 @@
     { "from": "io",   "to": "yakumo",  "type": "",    "spoiler": false },
 
     { "from": "mioko",   "to": "yakumo",  "type": "",    "spoiler": false },
+
+    { "from": "ryouka",   "to": "komuku",  "type": "冠輝の誓いを約束",    "spoiler": false },
+    { "from": "kaina",   "to": "ryouka",  "type": "惹かれていた", "arrows": "to",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
