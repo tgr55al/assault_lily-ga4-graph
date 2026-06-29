@@ -4915,7 +4915,7 @@
     { "from": "miharu",   "to": "miyazu",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
-    { "from": "miharu",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kukuri",   "to": "miharu",  "type": "怒り", "arrows": "to",    "spoiler": false },
     { "from": "miharu",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
@@ -4939,8 +4939,8 @@
     { "from": "miyazu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "miyazu",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "kaina",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
-    { "from": "kaina",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kaina",   "to": "komuku",  "type": "ルームメイト・理想のカップル",    "spoiler": false },
+    { "from": "kaina",   "to": "kukuri",  "type": "良好な関係",    "spoiler": false },
     { "from": "kaina",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaina",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaina",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
@@ -4956,6 +4956,7 @@
     { "from": "kukuri",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
     { "from": "kukuri",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "kukuri",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kukuri",   "to": "saho",  "type": "尊敬", "arrows": "to",    "spoiler": false },
 
     { "from": "rengetsu",   "to": "murasame",  "type": "姉妹",    "spoiler": false },
     { "from": "rengetsu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
@@ -4985,7 +4986,7 @@
     { "from": "marimo",   "to": "tokuko",  "type": "同レギオン",    "spoiler": false },
     { "from": "marimo",   "to": "yuzutsu",  "type": "同レギオン",    "spoiler": false },
     { "from": "marimo",   "to": "hisui",  "type": "同レギオン",    "spoiler": false },
-    { "from": "marimo",   "to": "saho",  "type": "同レギオン",    "spoiler": false },
+    { "from": "marimo",   "to": "saho",  "type": "仲が良い",    "spoiler": false },
     { "from": "marimo",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
     { "from": "marimo",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
     { "from": "marimo",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
@@ -4998,7 +4999,7 @@
     { "from": "tokuko",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
     { "from": "komuku",   "to": "tokuko",  "type": "問題視", "arrows": "to",    "spoiler": false },
 
-    { "from": "yuzutsu",   "to": "hisui",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hisui",   "to": "yuzutsu",  "type": "気にかけている", "arrows": "to",    "spoiler": false },
     { "from": "yuzutsu",   "to": "saho",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuzutsu",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuzutsu",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
@@ -5012,6 +5013,7 @@
     { "from": "saho",   "to": "rito",  "type": "同レギオン",    "spoiler": false },
     { "from": "saho",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
     { "from": "saho",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "saho",   "to": "himari",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
 
     { "from": "rito",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
     { "from": "rito",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
