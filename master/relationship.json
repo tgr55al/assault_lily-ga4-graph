@@ -4912,7 +4912,7 @@
     { "from": "komachi",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "miharu",   "to": "waku",  "type": "同レギオン",    "spoiler": false },
-    { "from": "miharu",   "to": "miyazu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "miyazu",  "type": "友人",    "spoiler": false },
     { "from": "miharu",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
     { "from": "kukuri",   "to": "miharu",  "type": "怒り", "arrows": "to",    "spoiler": false },
@@ -4921,7 +4921,7 @@
     { "from": "miharu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "waku",   "to": "miyazu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "waku",  "type": "評価", "arrows": "to",    "spoiler": false },
     { "from": "waku",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
     { "from": "waku",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
     { "from": "waku",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
@@ -4936,8 +4936,9 @@
     { "from": "miyazu",   "to": "kukuri",  "type": "同レギオン",    "spoiler": false },
     { "from": "miyazu",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
     { "from": "murasame",   "to": "miyazu",  "type": "怖がっている", "arrows": "to",    "spoiler": false },
-    { "from": "miyazu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "kasumiko",  "type": "仲が良い",    "spoiler": false },
     { "from": "miyazu",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miyazu",   "to": "hisui",  "type": "仲が悪い",    "spoiler": false },
 
     { "from": "kaina",   "to": "komuku",  "type": "ルームメイト・理想のカップル",    "spoiler": false },
     { "from": "kaina",   "to": "kukuri",  "type": "良好な関係",    "spoiler": false },
@@ -5018,7 +5019,7 @@
     { "from": "rito",   "to": "yuunagi",  "type": "同レギオン",    "spoiler": false },
     { "from": "rito",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "yuunagi",   "to": "ayumu",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuunagi",   "to": "ayumu",  "type": "元パートナー",    "spoiler": false },
 
     { "from": "mirai",   "to": "kazane",  "type": "同レギオン",    "spoiler": false },
     { "from": "mirai",   "to": "susu",  "type": "同レギオン",    "spoiler": false },
