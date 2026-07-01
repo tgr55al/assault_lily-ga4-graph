@@ -5073,8 +5073,9 @@
 
     { "from": "raimu",   "to": "sachie",  "type": "シュベスター",    "spoiler": true },
 	{ "from": "raimu",   "to": "kayo",  "type": "同レギオン",    "spoiler": true },
-    { "from": "raimu",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
-    { "from": "raimu",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "raimu",   "to": "karen",  "type": "友人",    "spoiler": false },
+    { "from": "raimu",   "to": "mei",  "type": "友人",    "spoiler": false },
+    { "from": "raimu",   "to": "tsugumi",  "type": "友人",    "spoiler": false },
     { "from": "raimu",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
     { "from": "raimu",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
 
@@ -5087,8 +5088,8 @@
 
     { "from": "seren",   "to": "yuria",  "type": "シュベスター",    "spoiler": true },
 	{ "from": "seren",   "to": "kayo",  "type": "同レギオン",    "spoiler": true },
-    { "from": "seren",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
-    { "from": "seren",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "seren",   "to": "karen",  "type": "友人",    "spoiler": false },
+    { "from": "seren",   "to": "tsugumi",  "type": "友人",    "spoiler": false },
     { "from": "seren",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
     { "from": "seren",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
 
@@ -5129,6 +5130,7 @@
     { "from": "yuria",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuria",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "yuria",   "to": "yuko",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "yuria",   "to": "marei",  "type": "友人",    "spoiler": false },
 
     { "from": "yuria",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
     { "from": "yuria",   "to": "tsugumi",  "type": "同レギオン",    "spoiler": true },
@@ -5167,6 +5169,7 @@
     { "from": "nagisa_tachibana",   "to": "ichika",  "type": "親友",    "spoiler": false },
     { "from": "nagisa_tachibana",   "to": "kazane",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
+    { "from": "tsugumi",   "to": "mei",  "type": "友人",    "spoiler": false },
     { "from": "tsugumi",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
     { "from": "tsugumi",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
     { "from": "tsugumi",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
