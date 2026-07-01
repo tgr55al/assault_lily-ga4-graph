@@ -4103,6 +4103,8 @@
     { "from": "shinobu",   "to": "nanaho",  "type": "",    "spoiler": false },
     { "from": "shinobu",   "to": "korin",  "type": "仲が良かった",    "spoiler": false },
 
+    { "from": "korin",   "to": "nanaho",  "type": "楯の乙女候補",    "spoiler": false },
+
     { "from": "ataru",   "to": "tsubame",  "type": "同レギオン",    "spoiler": false },
     { "from": "ataru",   "to": "hime",  "type": "同レギオン",    "spoiler": false },
     { "from": "ataru",   "to": "tamaka",  "type": "同レギオン",    "spoiler": false },
@@ -4902,7 +4904,7 @@
 
     { "from": "komachi",   "to": "miharu",  "type": "イルマ四天王",    "spoiler": false },
     { "from": "komachi",   "to": "waku",  "type": "幼馴染（イルマ四天王）",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "komachi",   "to": "waku",  "type": "冠輝の誓い",    "spoiler": true },
+    { "from": "komachi",   "to": "waku",  "type": "冠輝の誓い（イルマ四天王）",    "spoiler": true },
     { "from": "komachi",   "to": "miyazu",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
@@ -4910,8 +4912,8 @@
     { "from": "komachi",   "to": "rengetsu",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
-    { "from": "komachi",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
-    { "from": "komachi",   "to": "imari",  "type": "友人（イルマ四天王）",    "spoiler": false },
+    { "from": "komachi",   "to": "himari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "himari",  "type": "友人（イルマ四天王）",    "spoiler": false },
 
     { "from": "miharu",   "to": "waku",  "type": "イルマ四天王",    "spoiler": false },
     { "from": "miharu",   "to": "miyazu",  "type": "友人",    "spoiler": false },
@@ -5754,6 +5756,16 @@
 
     { "from": "ryouka",   "to": "komuku",  "type": "冠輝の誓いを約束",    "spoiler": false },
     { "from": "kaina",   "to": "ryouka",  "type": "惹かれていた", "arrows": "to",    "spoiler": false },
+
+    { "from": "shizuku_esaka",   "to": "ran",  "type": "旧知の仲",    "spoiler": false },
+
+    { "from": "fuka",   "to": "hirari",  "type": "ひどく嫌っている", "arrows": "to",    "spoiler": false },
+
+    { "from": "nako",   "to": "nanaho",  "type": "憧れ", "arrows": "to",    "spoiler": false },
+
+    { "from": "uru",   "to": "nanaho",  "type": "憧れ", "arrows": "to",    "spoiler": false },
+
+    { "from": "noi",   "to": "nanaho",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
