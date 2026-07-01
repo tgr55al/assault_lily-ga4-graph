@@ -5149,6 +5149,7 @@
     { "from": "kokoro_sano",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
     { "from": "kokoro_sano",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
 
+    { "from": "asahi",   "to": "yuko",  "type": "ライバル",    "spoiler": false },
     { "from": "asahi",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
     { "from": "asahi",   "to": "nagisa_tachibana",  "type": "シュベスター",    "spoiler": true },
     { "from": "asahi",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
@@ -5171,7 +5172,6 @@
     { "from": "karen",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "yuko",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
-    { "from": "yuko",   "to": "asahi",  "type": "同レギオン",    "spoiler": true },
     { "from": "yuko",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
     { "from": "yuko",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
     { "from": "yuko",   "to": "fuka_asahina",  "type": "友人",    "spoiler": false },
