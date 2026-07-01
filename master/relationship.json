@@ -3549,11 +3549,11 @@
 
     { "from": "yo", "to": "sasaki",     "type": "可愛い", "arrows": "to",          "spoiler": false },
     { "from": "sasaki", "to": "yo",     "type": "おふとん", "arrows": "to",          "spoiler": false },
-    { "from": "yo", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
     { "from": "yo", "to": "nanaho",     "type": "",          "spoiler": false },
 
     { "from": "sasaki", "to": "chikaru",     "type": "ごはん", "arrows": "to",          "spoiler": false },
     { "from": "chikaru", "to": "yo",     "type": "可愛い", "arrows": "to",          "spoiler": false },
+    { "from": "yo", "to": "chikaru",     "type": "実力を認めている", "arrows": "to",          "spoiler": false },
 
     { "from": "chikaru", "to": "makoto",     "type": "親友",          "spoiler": false },
     { "from": "chikaru", "to": "mai",     "type": "友人",          "spoiler": false },
@@ -5189,6 +5189,9 @@
     { "from": "makina",   "to": "higure",  "type": "慕っている", "arrows": "to",    "spoiler": false },
 
     { "from": "yuni",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
+    { "from": "yuni",   "to": "kusumi",  "type": "狙っている",    "spoiler": false },
+    { "from": "yuni",   "to": "sasaki",  "type": "狙っている",    "spoiler": false },
+    { "from": "yuni",   "to": "nanaho",  "type": "狙っている",    "spoiler": false },
 
     { "from": "chikaru",   "to": "higure",  "type": "手料理を振舞っている", "arrows": "to",    "spoiler": true },
     { "from": "higure",   "to": "chikaru",  "type": "高く評価", "arrows": "to",    "spoiler": true },
@@ -5774,6 +5777,8 @@
     { "from": "uru",   "to": "nanaho",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "noi",   "to": "nanaho",  "type": "憧れ", "arrows": "to",    "spoiler": false },
+
+    { "from": "nanaho",   "to": "kazuha",  "type": "助けている", "arrows": "to",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
