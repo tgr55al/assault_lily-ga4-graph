@@ -5060,7 +5060,8 @@
 
     { "from": "susu",   "to": "towa",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "raimu",   "to": "seren",  "type": "同レギオン",    "spoiler": false },
+    { "from": "raimu",   "to": "seren",  "type": "幼馴染", "arrows": "to",    "spoiler": false },
+    { "from": "seren",   "to": "raimu",  "type": "幼馴染（秘めた想い）", "arrows": "to",    "spoiler": false },
     { "from": "raimu",   "to": "sachie",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "raimu",   "to": "himari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "raimu",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
@@ -5079,6 +5080,7 @@
     { "from": "raimu",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
     { "from": "raimu",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
 
+    { "from": "seren",   "to": "mei",  "type": "友人",    "spoiler": false },
     { "from": "seren",   "to": "sachie",  "type": "同レギオン",    "spoiler": false },
     { "from": "seren",   "to": "himari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "seren",   "to": "yuria",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
@@ -5163,6 +5165,7 @@
 
     { "from": "mei",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
     { "from": "mei",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+    { "from": "mei",   "to": "karen",  "type": "友人",    "spoiler": false },
 
     { "from": "nagisa_tachibana",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
     { "from": "nagisa_tachibana",   "to": "sachie",  "type": "親友",    "spoiler": false },
@@ -5170,7 +5173,7 @@
     { "from": "nagisa_tachibana",   "to": "kazane",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "tsugumi",   "to": "mei",  "type": "友人",    "spoiler": false },
-    { "from": "tsugumi",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tsugumi",   "to": "karen",  "type": "友人",    "spoiler": false },
     { "from": "tsugumi",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
     { "from": "tsugumi",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
 
