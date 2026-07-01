@@ -5793,7 +5793,7 @@
     { "from": "noemi",   "to": "rina",  "type": "同世代",    "spoiler": false },
     { "from": "noemi",   "to": "ryoko",  "type": "同世代",    "spoiler": false },
     { "from": "noemi",   "to": "yakumo",  "type": "敵対",    "spoiler": false },
-    { "from": "noemi",   "to": "kazuha",  "type": "支援", "arrows": "to",    "spoiler": false },
+    { "from": "noemi",   "to": "kazuha",  "type": "支援", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "noemi",   "to": "kazuha",  "type": "利用・支配", "arrows": "to",    "spoiler": true },
 
     { "from": "reika",   "to": "sayoko",  "type": "",    "spoiler": false },
@@ -5804,7 +5804,7 @@
     { "from": "sayoko",   "to": "rina",  "type": "",    "spoiler": false },
     { "from": "sayoko",   "to": "ryoko",  "type": "",    "spoiler": false },
     { "from": "sayoko",   "to": "chiharu",  "type": "",    "spoiler": false },
-    { "from": "sayoko",   "to": "mei",  "type": "お友達",    "spoiler": false },
+    { "from": "sayoko",   "to": "mei",  "type": "お友達",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "sayoko",   "to": "mei",  "type": "お友達ごっこ",    "spoiler": true },
 
     { "from": "rina",   "to": "ryoko",  "type": "親友",    "spoiler": false },
