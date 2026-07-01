@@ -4583,7 +4583,8 @@
     { "from": "houraigyoku",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
     { "from": "houraigyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "gozen",   "to": "kotohi",  "type": "主従関係",    "spoiler": true },
+    { "from": "kotohi",   "to": "gozen",  "type": "慕っている", "arrows": "to",    "spoiler": true },
+    { "from": "gozen",   "to": "kotohi",  "type": "従えている", "arrows": "to",    "spoiler": true },
 
     { "from": "shion",   "to": "furiru",  "type": "姉妹分",    "spoiler": false },
     { "from": "shion",   "to": "aoi",  "type": "同レギオン",    "spoiler": false },
@@ -5143,6 +5144,7 @@
     { "from": "kokoro_sano",   "to": "yuko",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "kokoro_sano",   "to": "asahi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kokoro_sano",   "to": "mei",  "type": "師弟関係",    "spoiler": true, "hideWhenSpoiler": true },
     { "from": "kokoro_sano",   "to": "mei",  "type": "シュベスター",    "spoiler": true },
     { "from": "kokoro_sano",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
     { "from": "kokoro_sano",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
@@ -5687,7 +5689,7 @@
     { "from": "amane",   "to": "shinobu",  "type": "友人",    "spoiler": false },
     { "from": "amane",   "to": "kasumiko",  "type": "友人",    "spoiler": false },
 
-    { "from": "l",   "to": "misuzu",  "type": "コピー",    "spoiler": true },
+    { "from": "l",   "to": "misuzu",  "type": "コピー", "arrows": "to",    "spoiler": true },
     { "from": "l",   "to": "gozen",  "type": "主従関係",    "spoiler": true },
 
     { "from": "misuzu",   "to": "yuyu",  "type": "シュッツエンゲル",    "spoiler": false },
@@ -5809,6 +5811,7 @@
 
     { "from": "rina",   "to": "ryoko",  "type": "親友",    "spoiler": false },
     { "from": "chiharu",   "to": "rina",  "type": "憧れ", "arrows": "to",    "spoiler": false },
+    { "from": "chiharu",   "to": "chiaki",  "type": "？",    "spoiler": false },
 
     { "from": "ryoko",   "to": "chiharu",  "type": "",    "spoiler": false },
     { "from": "ryoko",   "to": "nonoka",  "type": "応援団",    "spoiler": false },
