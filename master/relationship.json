@@ -3534,22 +3534,31 @@
     { "from": "yahiro",   "to": "mai", "type": "友人",          "spoiler": false },
     { "from": "yahiro",   "to": "mimi", "type": "微妙",          "spoiler": false },
 
-    { "from": "kazuha", "to": "renka",     "type": "同レギオン",          "spoiler": false },
-    { "from": "kazuha", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
-    { "from": "kazuha", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
-    { "from": "kazuha", "to": "yo",     "type": "同レギオン",          "spoiler": false },
+    { "from": "kazuha", "to": "renka",     "type": "信頼",          "spoiler": false },
+    { "from": "sasaki", "to": "kazuha",     "type": "なついてる", "arrows": "to",          "spoiler": false },
+    { "from": "kazuha", "to": "sasaki",     "type": "面倒を見ている", "arrows": "to",          "spoiler": false },
+    { "from": "kazuha", "to": "chikaru",     "type": "信頼", "arrows": "to",          "spoiler": false },
+    { "from": "kazuha", "to": "yo",     "type": "信頼",          "spoiler": false },
 
-    { "from": "renka", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
-    { "from": "renka", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
+    { "from": "renka", "to": "sasaki",     "type": "ちょっかい", "arrows": "to",          "spoiler": false },
+    { "from": "sasaki", "to": "renka",     "type": "いじわる", "arrows": "to",          "spoiler": false },
+    { "from": "renka", "to": "chikaru",     "type": "ママ", "arrows": "to",          "spoiler": false },
     { "from": "renka",     "to": "yo",  "type": "親友",    "spoiler": false },
     { "from": "renka",     "to": "akehi",  "type": "友人",    "spoiler": false },
+    { "from": "renka",     "to": "nanaho",  "type": "友人",    "spoiler": false },
 
-    { "from": "yo", "to": "sasaki",     "type": "同レギオン",          "spoiler": false },
+    { "from": "yo", "to": "sasaki",     "type": "可愛い", "arrows": "to",          "spoiler": false },
+    { "from": "sasaki", "to": "yo",     "type": "おふとん", "arrows": "to",          "spoiler": false },
     { "from": "yo", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
+    { "from": "yo", "to": "nanaho",     "type": "",          "spoiler": false },
 
-    { "from": "sasaki", "to": "chikaru",     "type": "同レギオン",          "spoiler": false },
+    { "from": "sasaki", "to": "chikaru",     "type": "ごはん", "arrows": "to",          "spoiler": false },
+    { "from": "chikaru", "to": "yo",     "type": "可愛い", "arrows": "to",          "spoiler": false },
 
     { "from": "chikaru", "to": "makoto",     "type": "親友",          "spoiler": false },
+    { "from": "chikaru", "to": "mai",     "type": "友人",          "spoiler": false },
+    { "from": "chikaru", "to": "kazuha",     "type": "崇拝", "arrows": "to",          "spoiler": false },
+    { "from": "chikaru", "to": "sasaki",     "type": "可愛い", "arrows": "to",          "spoiler": false },
 
     { "from": "soraha",   "to": "kusumi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "soraha",   "to": "ena",  "type": "ルームメイト",    "spoiler": false },
@@ -5176,10 +5185,13 @@
     { "from": "mitake",   "to": "yuni",  "type": "同レギオン",    "spoiler": false },
     { "from": "mitake",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "makina",   "to": "yuni",  "type": "同レギオン",    "spoiler": false },
-    { "from": "makina",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
+    { "from": "makina",   "to": "yuni",  "type": "ルームメイト",    "spoiler": false },
+    { "from": "makina",   "to": "higure",  "type": "慕っている", "arrows": "to",    "spoiler": false },
 
     { "from": "yuni",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
+
+    { "from": "chikaru",   "to": "higure",  "type": "手料理を振舞っている", "arrows": "to",    "spoiler": true },
+    { "from": "higure",   "to": "chikaru",  "type": "高く評価", "arrows": "to",    "spoiler": true },
 
     { "from": "noi",   "to": "nako",  "type": "同レギオン",    "spoiler": false },
     { "from": "noi",   "to": "uru",  "type": "同レギオン",    "spoiler": false },
