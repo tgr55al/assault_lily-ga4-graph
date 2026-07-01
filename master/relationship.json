@@ -5050,7 +5050,7 @@
 
     { "from": "mirai",   "to": "kazane",  "type": "同レギオン",    "spoiler": false },
     { "from": "mirai",   "to": "susu",  "type": "同レギオン",    "spoiler": false },
-    { "from": "mirai",   "to": "towa",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mirai",   "to": "towa",  "type": "友人",    "spoiler": false },
 
     { "from": "kazane",   "to": "susu",  "type": "同レギオン",    "spoiler": false },
     { "from": "kazane",   "to": "towa",  "type": "同レギオン",    "spoiler": false },
@@ -5080,7 +5080,7 @@
     { "from": "seren",   "to": "yuria",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "seren",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
     { "from": "seren",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "seren",   "to": "yuko",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "yuko",   "to": "seren",  "type": "好きで付きまとっている", "arrows": "to",    "spoiler": false },
 
     { "from": "seren",   "to": "yuria",  "type": "シュベスター",    "spoiler": true },
 	{ "from": "seren",   "to": "kayo",  "type": "同レギオン",    "spoiler": true },
@@ -5110,7 +5110,7 @@
     { "from": "himari",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
     { "from": "himari",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": true },
     { "from": "himari",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
-    { "from": "moe",   "to": "himari",  "type": "憧れ", "arrows": "to",    "spoiler": true },
+    { "from": "moe",   "to": "himari",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "kayo",   "to": "sachie",  "type": "友人",    "spoiler": false },
     { "from": "kayo",   "to": "kokoro_sano",  "type": "友人",    "spoiler": false },
@@ -5820,6 +5820,8 @@
 
     { "from": "ryoko",   "to": "chiharu",  "type": "",    "spoiler": false },
     { "from": "ryoko",   "to": "nonoka",  "type": "応援団",    "spoiler": false },
+
+    { "from": "raimu",   "to": "ema",  "type": "友人",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
