@@ -5788,6 +5788,27 @@
 
     { "from": "nanaho",   "to": "kazuha",  "type": "助けている", "arrows": "to",    "spoiler": false },
 
+    { "from": "noemi",   "to": "mayumi",  "type": "", "arrows": "to",    "spoiler": false },
+    { "from": "noemi",   "to": "reika",  "type": "慕っていた", "arrows": "to",    "spoiler": false },
+    { "from": "noemi",   "to": "rina",  "type": "同世代",    "spoiler": false },
+    { "from": "noemi",   "to": "ryoko",  "type": "同世代",    "spoiler": false },
+    { "from": "noemi",   "to": "yakumo",  "type": "敵対",    "spoiler": false },
+
+    { "from": "reika",   "to": "sayoko",  "type": "",    "spoiler": false },
+    { "from": "reika",   "to": "rina",  "type": "",    "spoiler": false },
+    { "from": "reika",   "to": "ryoko",  "type": "",    "spoiler": false },
+    { "from": "reika",   "to": "chiharu",  "type": "",    "spoiler": false },
+
+    { "from": "sayoko",   "to": "rina",  "type": "",    "spoiler": false },
+    { "from": "sayoko",   "to": "ryoko",  "type": "",    "spoiler": false },
+    { "from": "sayoko",   "to": "chiharu",  "type": "",    "spoiler": false },
+
+    { "from": "rina",   "to": "ryoko",  "type": "親友",    "spoiler": false },
+    { "from": "chiharu",   "to": "rina",  "type": "憧れ", "arrows": "to",    "spoiler": false },
+
+    { "from": "ryoko",   "to": "chiharu",  "type": "",    "spoiler": false },
+    { "from": "ryoko",   "to": "nonoka",  "type": "応援団",    "spoiler": false },
+
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
 }
