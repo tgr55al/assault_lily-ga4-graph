@@ -5048,9 +5048,12 @@
 
     { "from": "yuunagi",   "to": "ayumu",  "type": "元パートナー",    "spoiler": false },
 
+    { "from": "mirai",   "to": "raimu",  "type": "姉妹",    "spoiler": false },
     { "from": "mirai",   "to": "kazane",  "type": "同レギオン",    "spoiler": false },
     { "from": "mirai",   "to": "susu",  "type": "同レギオン",    "spoiler": false },
     { "from": "mirai",   "to": "towa",  "type": "友人",    "spoiler": false },
+    { "from": "mirai",   "to": "seren",  "type": "幼馴染",    "spoiler": false },
+    { "from": "mirai",   "to": "sachie",  "type": "シュベスター",    "spoiler": false },
 
     { "from": "kazane",   "to": "susu",  "type": "同レギオン",    "spoiler": false },
     { "from": "kazane",   "to": "towa",  "type": "同レギオン",    "spoiler": false },
@@ -5089,10 +5092,10 @@
     { "from": "seren",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
     { "from": "seren",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
 
-    { "from": "sachie",   "to": "himari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "himari",   "to": "sachie",  "type": "自由で華麗な戦い", "arrows": "to",    "spoiler": false },
     { "from": "sachie",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sachie",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
-    { "from": "sachie",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "sachie",   "to": "ichika",  "type": "親友",    "spoiler": false },
+    { "from": "sachie",   "to": "kokoro_sano",  "type": "友人",    "spoiler": false },
     { "from": "sachie",   "to": "yuko",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
 
     { "from": "sachie",   "to": "karen",  "type": "同レギオン",    "spoiler": true },
