@@ -4900,8 +4900,9 @@
     { "from": "ushio",   "to": "yuki",  "type": "固い絆",    "spoiler": false },
     { "from": "ushio",   "to": "amane",  "type": "固い絆",    "spoiler": false },
 
-    { "from": "komachi",   "to": "miharu",  "type": "同レギオン",    "spoiler": false },
-    { "from": "komachi",   "to": "waku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "miharu",  "type": "イルマ四天王",    "spoiler": false },
+    { "from": "komachi",   "to": "waku",  "type": "幼馴染（イルマ四天王）",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "komachi",   "to": "waku",  "type": "冠輝の誓い",    "spoiler": true },
     { "from": "komachi",   "to": "miyazu",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
@@ -4910,8 +4911,9 @@
     { "from": "komachi",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "komachi",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "komachi",   "to": "imari",  "type": "友人（イルマ四天王）",    "spoiler": false },
 
-    { "from": "miharu",   "to": "waku",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "waku",  "type": "イルマ四天王",    "spoiler": false },
     { "from": "miharu",   "to": "miyazu",  "type": "友人",    "spoiler": false },
     { "from": "miharu",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
@@ -4920,6 +4922,8 @@
     { "from": "miharu",   "to": "murasame",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "miharu",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
+    { "from": "miharu",   "to": "himari",  "type": "良きライバル（イルマ四天王）",    "spoiler": false },
+    { "from": "miharu",   "to": "karen",  "type": "文通する仲",    "spoiler": true },
 
     { "from": "miyazu",   "to": "waku",  "type": "評価", "arrows": "to",    "spoiler": false },
     { "from": "waku",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
@@ -4930,6 +4934,8 @@
     { "from": "waku",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "waku",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
     { "from": "waku",   "to": "tokuko",  "type": "気に入っている", "arrows": "to",    "spoiler": false },
+    { "from": "waku",   "to": "himari",  "type": "親友（イルマ四天王）",    "spoiler": false },
+    { "from": "waku",   "to": "sachie",  "type": "友人",    "spoiler": false },
 
     { "from": "miyazu",   "to": "kaina",  "type": "同レギオン",    "spoiler": false },
     { "from": "miyazu",   "to": "komuku",  "type": "同レギオン",    "spoiler": false },
