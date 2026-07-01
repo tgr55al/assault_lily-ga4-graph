@@ -5110,7 +5110,7 @@
     { "from": "himari",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
     { "from": "himari",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": true },
     { "from": "himari",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
-    { "from": "himari",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+    { "from": "moe",   "to": "himari",  "type": "憧れ", "arrows": "to",    "spoiler": true },
 
     { "from": "kayo",   "to": "sachie",  "type": "友人",    "spoiler": false },
     { "from": "kayo",   "to": "kokoro_sano",  "type": "友人",    "spoiler": false },
@@ -5172,7 +5172,7 @@
     { "from": "karen",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "yuko",   "to": "nagisa_tachibana",  "type": "同レギオン",    "spoiler": true },
-    { "from": "yuko",   "to": "moe",  "type": "同レギオン",    "spoiler": true },
+    { "from": "yuko",   "to": "moe",  "type": "友人",    "spoiler": false },
     { "from": "yuko",   "to": "mei",  "type": "同レギオン",    "spoiler": true },
     { "from": "yuko",   "to": "fuka_asahina",  "type": "友人",    "spoiler": false },
     { "from": "yuko",   "to": "otoha",  "type": "友人",    "spoiler": false },
@@ -5180,6 +5180,8 @@
     { "from": "yuko",   "to": "mio_kagami",  "type": "友人",    "spoiler": false },
     { "from": "nonoka",   "to": "mio_kagami",  "type": "友人",    "spoiler": false },
     { "from": "yuko",   "to": "nonoka",  "type": "友人",    "spoiler": false },
+
+    { "from": "moe",   "to": "nonoka",  "type": "友人",    "spoiler": false },
 
     { "from": "fuka",   "to": "mitake",  "type": "同レギオン",    "spoiler": false },
     { "from": "fuka",   "to": "makina",  "type": "同レギオン",    "spoiler": false },
