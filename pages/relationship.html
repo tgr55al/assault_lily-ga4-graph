@@ -431,6 +431,11 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     "その他・不明": { short: "その他・不明", color: "#9e9e9e" }
   };
 
+  const SOLVER_NAMES = {
+    forceAtlas2Based: "デフォルト",
+    hierarchicalRepulsion: "均等配置"
+  };
+
   // ============================================================
   // 有効な物理演算一覧と各物理演算固有のパラメータ定義
   //
@@ -845,7 +850,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       `表示中: ${nodeCnt}人 / 全${data.characters.length}人、関係: ${edges.length}件`
       + (allMode ? " 【全展開モード】" : ` 【${depth}階層】`)
       + (showSpoiler ? " ⚠ ネタバレON" : "")
-      + ` [${currentSolver}]`
+      + ` [${SOLVER_NAMES[currentSolver]}]`
     );
 
     updateEdgeLabels();
@@ -1030,7 +1035,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       }
       // ステータスバーの物理演算名を書き換え
       const el = document.getElementById("status-text");
-      el.textContent = el.textContent.replace(/\s*\[.*?\]$/, "") + ` [${currentSolver}]`;
+      el.textContent = el.textContent.replace(/\s*\[.*?\]$/, "") + ` [${SOLVER_NAMES[currentSolver]}]`;
     });
     // ─────────────────────────────────────────────────────
 
