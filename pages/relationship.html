@@ -477,6 +477,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   let vEdges = null;
   let isHighlighting = false;
   let adjacency = {};
+  let gardenParam = null;
 
   // ============================================================
   // 物理演算オプション生成
@@ -536,11 +537,20 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     // URLパラメータ chara= からフォーカス指定
     const params = new URLSearchParams(location.search);
     const charaParam = params.get("chara");
+    gardenParam = params.get("garden");
     if (charaParam) {
       const found = data.characters.find(c =>
         c.name === charaParam || c.id === charaParam || (c.wiki && c.wiki === charaParam)
       );
       if (found) { focusId = found.id; initialFocusId = found.id; }
+    }
+
+    if (gardenParam) {
+        Object.keys(gardenFilter).forEach(g => {
+            gardenFilter[g] = (g === gardenParam);
+        });
+        allMode = true;
+        document.getElementById("btn-all").classList.add("active-purple");
     }
 
     if (!focusId && data.characters.length) {
@@ -917,7 +927,9 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
 
       const chk = document.createElement("input");
       chk.type = "checkbox";
-      chk.checked = true;
+      chk.value = garden;
+      chk.checked = gardenFilter[garden];
+      chip.classList.toggle("off", !chk.checked);
       chk.addEventListener("change", () => {
         gardenFilter[garden] = chk.checked;
         chip.classList.toggle("off", !chk.checked);
@@ -1047,8 +1059,12 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       depth = 1;
       document.getElementById("depth-input").value = 1;
 
-      allMode = false;
-      btnAll?.classList.remove("active-purple");
+      allMode = !!gardenParam;
+      if (allMode) {
+          btnAll?.classList.add("active-purple");
+      } else {
+          btnAll?.classList.remove("active-purple");
+      }
 
       showSpoiler = false;
       if (btnSpoilerText) btnSpoilerText.textContent = " ネタバレ OFF";
@@ -1058,10 +1074,12 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       currentSolver = "forceAtlas2Based";
       if (solverSelect) solverSelect.value = "forceAtlas2Based";
 
-      Object.keys(gardenFilter).forEach(g => { gardenFilter[g] = true; });
+      Object.keys(gardenFilter).forEach(g => {
+        gardenFilter[g] = !gardenParam || g === gardenParam;
+      });
       document.querySelectorAll("#garden-filter input[type=checkbox]").forEach(chk => {
-        chk.checked = true;
-        chk.parentElement.classList.remove("off");
+        chk.checked = gardenFilter[chk.value];
+        chk.parentElement.classList.toggle("off", !chk.checked);
       });
 
       updateFocusLabel();
