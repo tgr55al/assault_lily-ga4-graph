@@ -3459,11 +3459,13 @@
 
     { "from": "yuyu",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
 
-    { "from": "kaede",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
+    { "from": "kaede",   "to": "fumi",   "type": "ちびっこ1号", "arrows": "to",          "spoiler": false },
+    { "from": "fumi",   "to": "kaede",   "type": "理想のリリィ", "arrows": "to",          "spoiler": false },
     { "from": "kaede",   "to": "mai",    "type": "同レギオン",          "spoiler": false },
     { "from": "kaede",   "to": "kuo",    "type": "同レギオン",          "spoiler": false },
     { "from": "kaede",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
-    { "from": "kaede",   "to": "miriam", "type": "幼馴染・ライバル",          "spoiler": false },
+    { "from": "kaede",   "to": "miriam", "type": "ちびっこ2号", "arrows": "to",          "spoiler": false },
+    { "from": "miriam",   "to": "kaede", "type": "幼馴染・ライバル", "arrows": "to",          "spoiler": false },
     { "from": "kaede",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
     { "from": "kaede",   "to": "imari", "type": "友人",          "spoiler": false },
 
