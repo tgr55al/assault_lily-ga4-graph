@@ -5857,6 +5857,7 @@
 
     { "from": "rizumu_akane",   "to": "otome",  "type": "親友",    "spoiler": false },
     { "from": "rizumu_akane",   "to": "kako",  "type": "親友",    "spoiler": false },
+    { "from": "otome",   "to": "kako",  "type": "親友",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
