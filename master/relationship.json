@@ -5859,6 +5859,9 @@
     { "from": "rizumu_akane",   "to": "kako",  "type": "親友",    "spoiler": false },
     { "from": "otome",   "to": "kako",  "type": "親友",    "spoiler": false },
 
+    { "from": "mashiro_shima",   "to": "kotoko_kagurazaka",  "type": "良きライバル",    "spoiler": false },
+
+
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
 }
