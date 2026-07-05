@@ -5855,6 +5855,8 @@
 
     { "from": "raimu",   "to": "ema",  "type": "友人",    "spoiler": false },
 
+    { "from": "rizumu_akane",   "to": "otome",  "type": "仲が良い",    "spoiler": false },
+
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]
 }
