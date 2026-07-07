@@ -5647,6 +5647,7 @@
     { "from": "liaridel",   "to": "ticia",  "type": "側近",    "spoiler": false },
 
     { "from": "yae",   "to": "momiji",  "type": "旧知の仲",    "spoiler": false },
+    { "from": "yae",   "to": "marimo",  "type": "友人",    "spoiler": false },
 
     { "from": "shiki",   "to": "shiori",  "type": "？",    "spoiler": false },
     { "from": "shiki",   "to": "sena",  "type": "？",    "spoiler": false },
