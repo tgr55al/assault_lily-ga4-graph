@@ -3515,6 +3515,7 @@
     { "from": "kuo",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "kuo",   "to": "yujia", "type": "ルームメイト（朋友）",          "spoiler": false },
     { "from": "akane",   "to": "kuo", "type": "ジャストガードを伝授", "arrows": "to",          "spoiler": false },
+    { "from": "kuo",   "to": "seren", "type": "聖恋のモノマネが上手い", "arrows": "to",          "spoiler": false },
 
     { "from": "kuo",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
     { "from": "kuo",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
@@ -4824,6 +4825,8 @@
     { "from": "kiito",   "to": "sayu",  "type": "",    "spoiler": false },
     { "from": "kiito",   "to": "miyabi",  "type": "",    "spoiler": false },
     { "from": "kiito",   "to": "chino",  "type": "仲が悪い",    "spoiler": false },
+    { "from": "kiito",   "to": "nagisa_tachibana",  "type": "何故か他人のような気がしない", "arrows": "to",    "spoiler": false },
+    { "from": "nagisa_tachibana",   "to": "kiito",  "type": "電話をする仲", "arrows": "to",    "spoiler": false },
 
     { "from": "ui",   "to": "yuki",  "type": "姉妹のような関係",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "ui",   "to": "tomoshibi",  "type": "同レギオン",    "spoiler": false },
