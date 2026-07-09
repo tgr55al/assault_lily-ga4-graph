@@ -4725,6 +4725,7 @@
     { "from": "yuzuriha",   "to": "sachie",  "type": "友人",    "spoiler": false },
     { "from": "yuzuriha",   "to": "mai",  "type": "友人",    "spoiler": false },
     { "from": "yuunagi",   "to": "yuzuriha",  "type": "憧れ", "arrows": "to",    "spoiler": false },
+    { "from": "yuzuriha",   "to": "raimu",  "type": "親近感", "arrows": "to",    "spoiler": false },
 
     { "from": "momiji",   "to": "katsura",  "type": "特に可愛がっている", "arrows": "to",    "spoiler": false },
     { "from": "katsura",   "to": "momiji",  "type": "尊敬", "arrows": "to",    "spoiler": false },
