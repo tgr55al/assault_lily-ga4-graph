@@ -452,7 +452,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     },
     hierarchicalRepulsion: {
       nodeDistance: 190,
-      centralGravity: 0.5,
+      centralGravity: 2,
       springLength: 200,
       springConstant: 0.01,
       damping: 0.4,
@@ -774,7 +774,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
           highlight: { background: "#ffffff", border: col },
           border: faded ? (col + "66") : col
         },
-        font: { size: isFocus ? 14 : 12, color: faded ? "#999" : "#111", bold: isFocus, vadjust: 5 },
+        font: { size: isFocus ? 14 : 12, color: faded ? "#999" : "#111", bold: isFocus, vadjust: 0 },
         borderWidth: faded ? 1 : 2,
         size: baseSize,
         scaling: { min: baseSize, max: baseSize * 1.3 },
@@ -805,6 +805,34 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       });
     });
 
+    // ── ペア（ノードの組み合わせ）ごとのエッジ本数に応じてsmoothを設定 ──
+    // 1本のみ：直線（smooth無効）
+    // 2本以上：曲線（CW/CCWを交互に振り分けて重ならないようにする）
+    {
+      const pairGroups = {};
+      edges.forEach(e => {
+        const key = [e.from, e.to].sort().join("__");
+        if (!pairGroups[key]) pairGroups[key] = [];
+        pairGroups[key].push(e);
+      });
+      Object.values(pairGroups).forEach(group => {
+        if (group.length <= 1) {
+          group.forEach(e => { e.smooth = false; });
+        } else {
+          // ペア内でのノード順を統一した基準（ソート済み）を作り、
+          // 各エッジの実際のfrom/toがその基準と逆向きの場合は
+          // CW/CCWを反転させることで、見た目の曲がる方向を揃える（重なり防止）。
+          const canonicalOrder = [group[0].from, group[0].to].slice().sort();
+          group.forEach((e, idx) => {
+            const desiredCW = idx % 2 === 0; // ペア基準での希望方向
+            const isReversed = e.from !== canonicalOrder[0]; // このエッジの向きが基準と逆か
+            const useCW = isReversed ? !desiredCW : desiredCW;
+            e.smooth = { enabled: true, type: useCW ? "curvedCW" : "curvedCCW", roundness: 0.1 + Math.floor(idx / 2) * 0.15 };
+          });
+        }
+      });
+    }
+
     if (!vNodes) { vNodes = new vis.DataSet(nodes); } else { vNodes.clear(); vNodes.add(nodes); }
     if (!vEdges) { vEdges = new vis.DataSet(edges); } else { vEdges.clear(); vEdges.add(edges); }
 
@@ -813,7 +841,9 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       physics: buildPhysicsOpts(),
       nodes: { font: { face: "Hiragino Sans, Meiryo, sans-serif" } },
       edges: {
-        smooth: { type: "curvedCW", roundness: 0.1 },
+        // 個々のエッジに設定したsmooth（本数に応じた直線/曲線）が優先される。
+        // ここはフォールバック用のデフォルト値。
+        smooth: false,
         font: { face: "Hiragino Sans, Meiryo, sans-serif", align: "middle" }
       },
       interaction: { hover: false, tooltipDelay: 3600000, navigationButtons: false }
