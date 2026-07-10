@@ -805,6 +805,13 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       });
     });
 
+    // ── エッジが1本も繋がらないノードは非表示にする ──
+    // （ネタバレON/OFFの切り替えでエッジだけが消えるケースがあるため、
+    //   フォーカスノード以外で孤立したノードは描画対象から除外する）
+    const connectedNodeIds = new Set([focusId]);
+    edges.forEach(e => { connectedNodeIds.add(e.from); connectedNodeIds.add(e.to); });
+    const visibleNodes = nodes.filter(n => connectedNodeIds.has(n.id));
+
     // ── ペア（ノードの組み合わせ）ごとのエッジ本数に応じてsmoothを設定 ──
     // 1本のみ：直線（smooth無効）
     // 2本以上：曲線（CW/CCWを交互に振り分けて重ならないようにする）
@@ -833,7 +840,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       });
     }
 
-    if (!vNodes) { vNodes = new vis.DataSet(nodes); } else { vNodes.clear(); vNodes.add(nodes); }
+    if (!vNodes) { vNodes = new vis.DataSet(visibleNodes); } else { vNodes.clear(); vNodes.add(visibleNodes); }
     if (!vEdges) { vEdges = new vis.DataSet(edges); } else { vEdges.clear(); vEdges.add(edges); }
 
     const container = document.getElementById("network");
