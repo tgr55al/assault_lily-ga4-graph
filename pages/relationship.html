@@ -811,7 +811,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     //   フォーカスノード以外で孤立したノードは描画対象から除外する）
     const connectedNodeIds = new Set([focusId]);
     edges.forEach(e => { connectedNodeIds.add(e.from); connectedNodeIds.add(e.to); });
-    const visibleNodes = nodes.filter(n => connectedNodeIds.has(n.id));
+    const visibleNodes = allMode ? nodes : nodes.filter(n => connectedNodeIds.has(n.id));
 
     // ── ペア（ノードの組み合わせ）ごとのエッジ本数に応じてsmoothを設定 ──
     // 1本のみ：直線（smooth無効）
