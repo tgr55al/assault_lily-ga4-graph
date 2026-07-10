@@ -594,7 +594,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   function bfs(fid, maxDepth) {
     const visited = { [fid]: 0 };
     const queue = [{ id: fid, d: 0 }];
-    const rels = data.relations.filter(r => showSpoiler || !r.spoiler);
+    const rels = data.relations.filter(r => (showSpoiler || !r.spoiler) && !(showSpoiler && r.hideWhenSpoiler));
     let head = 0;
 
     while (head < queue.length) {
@@ -633,6 +633,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     const connectedEdgeIds = new Set();
     for (const item of (adjacency[focusId] || [])) {
       if (!showSpoiler && item.relation.spoiler) continue;
+      if (showSpoiler && item.relation.hideWhenSpoiler) continue;
       connectedIds.add(item.other);
       connectedEdgeIds.add(item.edgeId);
     }
