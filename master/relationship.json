@@ -1124,6 +1124,7 @@
     },
     {
       "id": "saya",
+      "samePerson": "saya",
       "name": "白井 咲朱",
       "garden": "その他・不明",
       "wiki": "白井咲朱",
@@ -1167,6 +1168,7 @@
     },
     {
       "id": "hekiru",
+      "samePerson": "hekiru",
       "name": "塚本 碧琉",
       "garden": "百合ヶ丘女学院",
       "wiki": "塚本碧琉",
@@ -1175,6 +1177,7 @@
     },
     {
       "id": "chihiro",
+      "samePerson": "chihiro",
       "name": "山口 千尋",
       "garden": "百合ヶ丘女学院",
       "wiki": "山口千尋",
@@ -1470,6 +1473,7 @@
     },
     {
       "id": "seori",
+      "samePerson": "seori",
       "name": "茂木 瀬織",
       "garden": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "茂木瀬織",
@@ -1478,6 +1482,7 @@
     },
     {
       "id": "shino",
+      "samePerson": "shino",
       "name": "深井 紫野",
       "garden": "鎌倉府立桜ノ杜女子高等学校",
       "wiki": "深井紫野",
@@ -2685,6 +2690,7 @@
     },
     {
       "id": "fujino",
+      "samePerson": "shizuka",
       "name": "石塚 藤乃",
       "spoilerName": "石塚 藤乃（東野 志津香）",
       "garden": "神庭女子藝術高校",
@@ -2763,6 +2769,7 @@
     },
     {
       "id": "ryo_watsuji",
+      "samePerson": "ryo_watsuji",
       "name": "和辻 椋",
       "garden": "聖橋大学附属女子高等学校",
       "wiki": "和辻椋",
@@ -2939,6 +2946,7 @@
     },
     {
       "id": "tomi",
+      "samePerson": "tomi",
       "name": "猪口 登未",
       "garden": "アンブロシア女学苑高等學校",
       "wiki": "猪口登未",
@@ -2982,6 +2990,7 @@
     },
     {
       "id": "uno",
+      "samePerson": "uno",
       "name": "多々良 卯乃",
       "garden": "九嶺女学園",
       "wiki": "多々良卯乃",
@@ -2990,6 +2999,7 @@
     },
     {
       "id": "chisa",
+      "samePerson": "chisa",
       "name": "佐藤 智佐",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "佐藤智佐",
@@ -2998,6 +3008,7 @@
     },
     {
       "id": "wako",
+      "samePerson": "wako",
       "name": "仲村 倭子",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "仲村倭子",
@@ -3006,6 +3017,7 @@
     },
     {
       "id": "ayame",
+      "samePerson": "ayame",
       "name": "加藤 菖蒲",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "加藤菖蒲",
@@ -3014,6 +3026,7 @@
     },
     {
       "id": "motoko",
+      "samePerson": "motoko",
       "name": "斎藤 素湖",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "斎藤素湖",
@@ -3029,6 +3042,7 @@
     },
     {
       "id": "shizuka",
+      "samePerson": "shizuka",
       "name": "東野 志津香",
       "garden": "鞍馬山環境女子高等学校",
       "wiki": "東野志津香",
@@ -3233,6 +3247,7 @@
     },
     {
       "id": "gozen",
+      "samePerson": "saya",
       "name": "御前",
       "spoilerName": "白井 咲朱（御前）",
       "garden": "その他・不明",
@@ -3249,6 +3264,7 @@
     },
     {
       "id": "rovisa",
+      "samePerson": "anja",
       "name": "ロヴィーサ",
       "spoilerName": "アーニャ・ヘルツォーク（ロヴィーサ）",
       "garden": "その他・不明",
@@ -3257,6 +3273,7 @@
     },
     {
       "id": "kannnagi",
+      "samePerson": "seori",
       "name": "巫",
       "spoilerName": "茂木 瀬織（巫）",
       "garden": "その他・不明",
@@ -3265,6 +3282,7 @@
     },
     {
       "id": "shirayuki",
+      "samePerson": "shino",
       "name": "白雪",
       "spoilerName": "深井 紫野（白雪）",
       "garden": "その他・不明",
@@ -3294,6 +3312,7 @@
     },
     {
       "id": "anja",
+      "samePerson": "anja",
       "name": "アーニャ・ヘルツォーク",
       "garden": "その他・不明",
       "wiki": "アーニャ・ヘルツォーク",
@@ -3365,6 +3384,7 @@
     },
     {
       "id": "konohana",
+      "samePerson": "chihiro",
       "name": "甲の花",
       "spoilerName": "山口 千尋（甲の花）",
       "garden": "その他・不明",
@@ -3373,6 +3393,7 @@
     },
     {
       "id": "otsunohana",
+      "samePerson": "hekiru",
       "name": "乙の花",
       "spoilerName": "塚本 碧琉（乙の花）",
       "garden": "その他・不明",
@@ -3381,6 +3402,7 @@
     },
     {
       "id": "heinohana",
+      "samePerson": "tomi",
       "name": "丙の花",
       "spoilerName": "猪口 登未（丙の花）",
       "garden": "その他・不明",
@@ -3389,6 +3411,7 @@
     },
     {
       "id": "teinohana",
+      "samePerson": "ryo_watsuji",
       "name": "丁の花",
       "spoilerName": "和辻 椋（丁の花）",
       "garden": "その他・不明",
@@ -3397,6 +3420,7 @@
     },
     {
       "id": "bonohana",
+      "samePerson": "uno",
       "name": "戊の花",
       "spoilerName": "多々良 卯乃（戊の花）",
       "garden": "その他・不明",
@@ -3405,6 +3429,7 @@
     },
     {
       "id": "kinohana",
+      "samePerson": "chisa",
       "name": "己の花",
       "spoilerName": "佐藤 智佐（己の花）",
       "garden": "その他・不明",
@@ -3413,6 +3438,7 @@
     },
     {
       "id": "konohana2",
+      "samePerson": "wako",
       "name": "庚の花",
       "spoilerName": "仲村 倭子（庚の花）",
       "garden": "その他・不明",
@@ -3421,6 +3447,7 @@
     },
     {
       "id": "shinnohana",
+      "samePerson": "ayame",
       "name": "辛の花",
       "spoilerName": "加藤 菖蒲（辛の花）",
       "garden": "その他・不明",
@@ -3429,6 +3456,7 @@
     },
     {
       "id": "jinnohana",
+      "samePerson": "motoko",
       "name": "壬の花",
       "spoilerName": "斎藤 素湖（壬の花）",
       "garden": "その他・不明",
@@ -5878,7 +5906,6 @@
     { "from": "otome",   "to": "kako",  "type": "親友",    "spoiler": false },
 
     { "from": "mashiro_shima",   "to": "kotoko_kagurazaka",  "type": "良きライバル",    "spoiler": false },
-
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ]

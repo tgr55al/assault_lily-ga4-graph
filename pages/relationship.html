@@ -1061,6 +1061,20 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       btnSpoilerText.textContent = showSpoiler ? " ネタバレ ON" : " ネタバレ OFF";
       btnSpoiler.classList.toggle("active-amber", showSpoiler);
       clearHighlight();
+
+      const current = charMap[focusId];
+      if (current?.hideWhenSpoiler && current?.samePerson) {
+        const replacement = data.characters.find(c =>
+          c.samePerson === current.samePerson &&
+          c.hideWhenSpoiler !== current.hideWhenSpoiler
+        );
+
+        if (replacement) {
+          focusId = replacement.id;
+          updateFocusLabel();
+        }
+      }
+
       render();
     });
 
