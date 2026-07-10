@@ -4804,7 +4804,7 @@
     { "from": "haru",   "to": "akira",  "type": "神宿りを伝授",    "spoiler": false },
 
     { "from": "amane",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
-    { "from": "amane",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
+    { "from": "amane",   "to": "warabi",  "type": "高く評価", "arrows": "to",    "spoiler": false },
     { "from": "amane",   "to": "urara",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "sunao_otake",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
