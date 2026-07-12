@@ -477,6 +477,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   let vEdges = null;
   let isHighlighting = false;
   let adjacency = {};
+  let legionGroups = []; // 「同レギオン」で繋がったノード群（枠描画用）
   let gardenParam = null;
 
   // ============================================================
@@ -841,6 +842,34 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       });
     }
 
+    // ── レギオン所属データ(JSON)を元に、現在表示中のグループを算出 ──
+    // ネタバレOFF/ONで所属メンバーが変わる場合があるため、その都度切り替える。
+    // 実際に画面に表示されている（connectedNodeIdsに含まれる）メンバーのみを対象にする。
+    legionGroups = (data.legions || []).map(legion => {
+      const memberIds = (showSpoiler ? legion.membersSpoiler : legion.membersNoSpoiler) || [];
+      const ids = memberIds.filter(id => connectedNodeIds.has(id));
+      return { id: legion.id, name: legion.name, ids };
+    }).filter(g => g.ids.length >= 2); // 2人以上表示されているレギオンのみ枠を描く
+
+    // ── レギオンメンバーを物理演算上で引き寄せるための非表示エッジ ──
+    // （枠外に非メンバーが入り込まないよう、メンバー同士を強く・短く結びつけて密集させる）
+    legionGroups.forEach(group => {
+      const [head, ...rest] = group.ids;
+      rest.forEach((id, i) => {
+        edges.push({
+          id: `legion-phys-${group.id}-${i}`,
+          from: head, to: id,
+          physicsOnly: true,
+          hidden: true,
+          physics: true,
+          length: 70,
+          smooth: false,
+          color: { color: "rgba(0,0,0,0)", highlight: "rgba(0,0,0,0)", hover: "rgba(0,0,0,0)" },
+          width: 0, arrows: ""
+        });
+      });
+    });
+
     if (!vNodes) { vNodes = new vis.DataSet(visibleNodes); } else { vNodes.clear(); vNodes.add(visibleNodes); }
     if (!vEdges) { vEdges = new vis.DataSet(edges); } else { vEdges.clear(); vEdges.add(edges); }
 
@@ -862,6 +891,86 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       network.setData({ nodes: vNodes, edges: vEdges });
     } else {
       network = new vis.Network(container, { nodes: vNodes, edges: vEdges }, opts);
+
+      // 「レギオン」グループを囲う枠を、ノードより下のレイヤーに描画
+      network.on("beforeDrawing", ctx => {
+        if (!legionGroups || !legionGroups.length || !vNodes) return;
+
+        // 全ノードの現在位置をまとめて取得（判定・押し出し処理で使い回す）
+        const allIds = vNodes.getIds();
+        const allPositions = network.getPositions(allIds);
+
+        legionGroups.forEach(group => {
+          // 現在も表示中のノードのみを対象にする
+          const ids = group.ids.filter(id => vNodes.get(id));
+          if (ids.length < 2) return;
+
+          let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+          ids.forEach(id => {
+            const p = allPositions[id];
+            const nodeData = vNodes.get(id);
+            const r = (nodeData?.size || 25) + 10; // ノード半径分の余白
+            minX = Math.min(minX, p.x - r);
+            maxX = Math.max(maxX, p.x + r);
+            minY = Math.min(minY, p.y - r);
+            maxY = Math.max(maxY, p.y + r);
+          });
+
+          const pad = 16;
+          minX -= pad; minY -= pad; maxX += pad; maxY += pad;
+
+          // ── 非メンバーが枠内に入り込んでいたら、毎フレーム強制的に枠外へ押し出す ──
+          // （物理演算による引き寄せだけでは確率的にしか防げないため、
+          //   判定→補正を毎フレーム行うことで確実に「枠内に非メンバーがいない」状態を保証する）
+          const memberSet = new Set(ids);
+          allIds.forEach(id => {
+            if (memberSet.has(id)) return;
+            const p = allPositions[id];
+            const nodeData = vNodes.get(id);
+            const r = (nodeData?.size || 20) + 6; // ノード自身の半径分もマージンに含める
+            const bx0 = minX - r, by0 = minY - r, bx1 = maxX + r, by1 = maxY + r;
+            if (p.x <= bx0 || p.x >= bx1 || p.y <= by0 || p.y >= by1) return; // 枠外なら何もしない
+
+            // 枠の中心から見て、最も近い辺の外側へ押し出す
+            const distLeft = p.x - bx0, distRight = bx1 - p.x;
+            const distTop = p.y - by0, distBottom = by1 - p.y;
+            const minDist = Math.min(distLeft, distRight, distTop, distBottom);
+            let nx = p.x, ny = p.y;
+            if (minDist === distLeft) nx = bx0 - 2;
+            else if (minDist === distRight) nx = bx1 + 2;
+            else if (minDist === distTop) ny = by0 - 2;
+            else ny = by1 + 2;
+
+            network.moveNode(id, nx, ny);
+            allPositions[id] = { x: nx, y: ny }; // 同フレーム内の以降の判定・描画にも反映
+          });
+
+          const radius = Math.min(20, (maxX - minX) / 2, (maxY - minY) / 2);
+
+          ctx.save();
+          ctx.beginPath();
+          ctx.moveTo(minX + radius, minY);
+          ctx.arcTo(maxX, minY, maxX, maxY, radius);
+          ctx.arcTo(maxX, maxY, minX, maxY, radius);
+          ctx.arcTo(minX, maxY, minX, minY, radius);
+          ctx.arcTo(minX, minY, maxX, minY, radius);
+          ctx.closePath();
+          ctx.fillStyle = "rgba(139, 92, 246, 0.08)";
+          ctx.fill();
+          ctx.setLineDash([6, 4]);
+          ctx.lineWidth = 1.5;
+          ctx.strokeStyle = "rgba(139, 92, 246, 0.55)";
+          ctx.stroke();
+          ctx.setLineDash([]);
+
+          // グループ名ラベル（レギオン名）
+          ctx.font = "11px 'Hiragino Sans', Meiryo, sans-serif";
+          ctx.fillStyle = "rgba(139, 92, 246, 0.85)";
+          ctx.textBaseline = "bottom";
+          ctx.fillText(group.name || "レギオン", minX + 8, minY - 4);
+          ctx.restore();
+        });
+      });
 
       // クリック: フォーカス変更 + アイコンサイズ変更処理
       network.on("click", params => {
@@ -907,7 +1016,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   function updateEdgeLabels() {
     const ids = vEdges.getIds();
     const updated = vEdges.get(ids).map(edge => {
-      const show = edge.type !== "同レギオン" && (edge.from === focusId || edge.to === focusId);
+      const show = !edge.physicsOnly && edge.type !== "同レギオン" && (edge.from === focusId || edge.to === focusId);
       return { ...edge, label: show ? edge.type : "" };
     });
 
@@ -1173,6 +1282,14 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       {from:"riri",    to:"ando",    type:"同レギオン",       spoiler:false},
       {from:"riri",    to:"miriam",  type:"同レギオン",       spoiler:false},
       {from:"riri",    to:"kanau",   type:"同レギオン",       spoiler:false}
+    ],
+    legions: [
+      {
+        id: "larzgriese",
+        name: "ラーズグリーズ",
+        membersNoSpoiler: ["riri", "yume", "kaede", "ninae", "juri", "kuo", "ando", "miriam", "kanau"],
+        membersSpoiler:   ["riri", "yume", "kaede", "ninae", "juri", "kuo", "ando", "miriam", "kanau"]
+      }
     ]
   };
 })();
