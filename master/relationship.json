@@ -5136,7 +5136,7 @@
     { "from": "raimu",   "to": "mahiro_yagami",  "type": "友人",    "spoiler": false },
 
     { "from": "raimu",   "to": "sachie",  "type": "シュベスター",    "spoiler": true },
-	{ "from": "raimu",   "to": "kayo",  "type": "同レギオン",    "spoiler": true },
+	{ "from": "raimu",   "to": "kayo",  "type": "同レギオン",    "spoiler": false },
     { "from": "raimu",   "to": "karen",  "type": "友人",    "spoiler": false },
     { "from": "raimu",   "to": "mei",  "type": "友人",    "spoiler": false },
     { "from": "raimu",   "to": "tsugumi",  "type": "友人",    "spoiler": false },
@@ -5153,7 +5153,7 @@
     { "from": "yuko",   "to": "seren",  "type": "好きで付きまとっている", "arrows": "to",    "spoiler": false },
 
     { "from": "seren",   "to": "yuria",  "type": "シュベスター",    "spoiler": true },
-	{ "from": "seren",   "to": "kayo",  "type": "同レギオン",    "spoiler": true },
+	{ "from": "seren",   "to": "kayo",  "type": "同レギオン",    "spoiler": false },
     { "from": "seren",   "to": "karen",  "type": "友人",    "spoiler": false },
     { "from": "seren",   "to": "tsugumi",  "type": "友人",    "spoiler": false },
     { "from": "seren",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
@@ -5190,8 +5190,11 @@
     { "from": "kayo",   "to": "tsugumi",  "type": "シュッツエンゲル",    "spoiler": true },
     { "from": "kayo",   "to": "towa",  "type": "同レギオン",    "spoiler": true },
     { "from": "kayo",   "to": "susu",  "type": "同レギオン",    "spoiler": true },
-    { "from": "kayo",   "to": "yuria",  "type": "同レギオン",    "spoiler": true },
-    { "from": "kayo",   "to": "ichika",  "type": "同レギオン",    "spoiler": true },
+    { "from": "kayo",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kayo",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
+    { "from": "kayo",   "to": "yuko",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "kayo",   "to": "yuria",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "kayo",   "to": "himari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
 
     { "from": "yuria",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuria",   "to": "kokoro_sano",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
@@ -5909,5 +5912,319 @@
     { "from": "mashiro_shima",   "to": "kotoko_kagurazaka",  "type": "良きライバル",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
+  ],
+
+  "legions": [
+    {
+      "id": "larzgriese",
+      "name": "ラーズグリーズ（一柳隊）",
+      "membersNoSpoiler": ["riri", "yuyu", "kaede", "fumi", "mai", "kuo", "miriam", "tazusa", "yujia"],
+      "membersSpoiler":   ["riri", "yuyu", "kaede", "fumi", "mai", "kuo", "miriam", "tazusa", "yujia", "yuri", "yahiro", "shin"]
+    },
+    {
+      "id": "alfheim",
+      "name": "アールヴヘイム（第2代・壱盤隊）",
+      "membersNoSpoiler": ["soraha", "kusumi", "ena", "tsukushi", "ichi", "araya", "akane", "misora", "tatsuki", "wakana", "kisara", "noa"]
+    },
+    {
+      "id": "reginleif",
+      "name": "レギンレイヴ（水夕会）",
+      "membersNoSpoiler": ["shiori", "hijiri", "nodoka", "botan", "sakua", "midori", "nayuru", "mika", "watsuki", "nagi", "diana", "mitsune", "konomi", "sayuri", "natose"]
+    },
+    {
+      "id": "sanngrthr",
+      "name": "サングリーズル",
+      "membersNoSpoiler": ["misaka", "tohka", "totori", "homare", "tokiwa", "tomoyo_seike", "hibari", "hanna", "luise", "toa", "seira", "maho", "chihiro"],
+      "membersSpoiler": ["misaka", "tohka", "totori", "homare", "tokiwa", "tomoyo_seike", "hibari", "hanna", "luise", "toa", "seira", "maho", "konohana", "moyu"]
+    },
+    {
+      "id": "lohengrin",
+      "name": "ローエングリン",
+      "membersNoSpoiler": ["kaho", "hiromu", "yukiyo", "sayu", "himiko", "kaya", "mako_nishizawa", "chihana", "naru", "hozumi", "kaoru_hayashi", "maasa"]
+    },
+    {
+      "id": "schwartz_grail",
+      "name": "シュバルツグレイル",
+      "membersNoSpoiler": ["mayuri", "kotoko", "kina", "yayori", "shizu", "sara", "mirei", "noriko", "kokoro_murano"]
+    },
+    {
+      "id": "brynhildr_line",
+      "name": "ブリュンヒルデライン",
+      "membersNoSpoiler": ["shinobu", "ataru", "tsubame", "hime", "tamaka", "alicia", "ko", "shizuku"]
+    },
+    {
+      "id": "vingolf",
+      "name": "ヴィーンゴールヴ",
+      "membersNoSpoiler": ["meika", "ayako", "hitomi", "kanatsuki"]
+    },
+    {
+      "id": "herfjotur",
+      "name": "ヘルフィヨトゥル",
+      "membersNoSpoiler": ["ageha", "hifumi_horiguchi", "kuon", "sunao_ikeda", "satori", "ouka", "teruka"]
+    },
+    {
+      "id": "eir",
+      "name": "エイル（秦祀隊）",
+      "membersNoSpoiler": ["matsuri", "kazuki", "sumire_takasaki", "hanano", "ryuka", "monica", "hazuki", "rachel", "mimi"]
+    },
+    {
+      "id": "sigrdrifa",
+      "name": "シグルドリーヴァ",
+      "membersNoSpoiler": ["natsuki", "azuki"]
+    },
+    {
+      "id": "rossweisse",
+      "name": "ロスヴァイセ",
+      "membersNoSpoiler": ["rosalinde", "inori", "mio", "samidori", "akiho", "sato", "ryo", "suiren", "sakura"]
+    },
+    {
+      "id": "schwertleite",
+      "name": "シュヴェルトライテ",
+      "membersNoSpoiler": ["ayane", "shiera_tada", "gyokuyo", "miu"]
+    },
+    {
+      "id": "geiravor",
+      "name": "ゲイラヴォル",
+      "membersNoSpoiler": ["rinka", "honori", "keine", "kohaku", "shoko_suzuki"]
+    },
+    {
+      "id": "vidofnir",
+      "name": "ヴィゾーヴニル",
+      "membersNoSpoiler": ["nayuki", "rikka", "tsukishiro", "mashiro", "remon", "sumi", "rizumu", "tokiha", "koharu"]
+    },
+    {
+      "id": "ginnungagap",
+      "name": "ギンヌンガガプ",
+      "membersNoSpoiler": ["mao", "shuko", "kaname", "yoko", "risuko", "ameri", "non"]
+    },
+    {
+      "id": "michael",
+      "name": "第1飛空艇団ミカエル",
+      "membersNoSpoiler": ["cemil", "luludis", "althea", "lemie", "stella", "nyx"]
+    },
+    {
+      "id": "gabriel",
+      "name": "第2飛空艇団ガブリエル",
+      "membersNoSpoiler": ["lelia", "mirabelle", "nino"]
+    },
+    {
+      "id": "raphael",
+      "name": "第3飛空艇団ラファエル",
+      "membersNoSpoiler": ["beatrice", "kuroe"]
+    },
+    {
+      "id": "uriel",
+      "name": "第4飛空艇団ウリエル",
+      "membersNoSpoiler": ["charlotta"]
+    },
+    {
+      "id": "raguel",
+      "name": "第5飛空艇団ラグエル",
+      "membersNoSpoiler": ["ticia", "liaridel", "catalina", "natasha", "christa", "catrinel", "cynthia"]
+    },
+    {
+      "id": "zachariel",
+      "name": "第6飛空艇団ゼラキエル",
+      "membersNoSpoiler": ["shizuki"]
+    },
+    {
+      "id": "remiel",
+      "name": "第7飛空艇団レミエル",
+      "membersNoSpoiler": ["plum", "felicia"]
+    },
+    {
+      "id": "rosenheim",
+      "name": "ローゼンハイム",
+      "membersNoSpoiler": ["kinrangyoku", "ginrangyoku", "kuroyurinokimi", "houraigyoku"],
+      "membersSpoiler": ["kinrangyoku", "ginrangyoku", "kuroyurinokimi", "houraigyoku", "kotohi", "gozen"]
+    },
+    {
+      "id": "sagami_student_council_special_team",
+      "name": "相模女子生徒会特選隊",
+      "membersNoSpoiler": ["shion", "furiru", "aoi", "yui", "yuma", "jun", "hatsume", "mira"]
+    },
+    {
+      "id": "sagami_special_operations_task_force",
+      "name": "相模女子特命遊撃隊",
+      "membersNoSpoiler": ["naehi"]
+    },
+    {
+      "id": "kitano_futae_legion",
+      "name": "北野文妙のレギオン（名称未開示）",
+      "membersNoSpoiler": ["futae", "chikage", "saori", "hifumi_ozu"]
+    },
+    {
+      "id": "heorot_saints",
+      "name": "ヘオロットセインツ",
+      "membersNoSpoiler": ["nakaba", "nazuna", "yuzuriha", "momiji", "katsura", "kurena", "chinami", "azusa", "haru", "amane", "sunao_otake", "warabi", "urara"]
+    },
+    {
+      "id": "hronesness",
+      "name": "ロネスネス",
+      "membersNoSpoiler": ["kiito", "ui", "yuki", "tomoshibi", "kozue", "hotaru", "subaru", "asagao", "yukari"],
+      "membersSpoiler": ["kiito", "ui", "yuki", "tomoshibi", "kozue", "hotaru", "subaru", "asagao", "yukari", "sumire_komai"]
+    },
+    {
+      "id": "coast_guard",
+      "name": "コーストガード",
+      "membersNoSpoiler": ["minato", "suzuna", "hanabusa", "ushio", "tsubomi"]
+    },
+    {
+      "id": "iruminshines",
+      "name": "イルミンシャイネス",
+      "membersNoSpoiler": ["komachi", "miharu", "waku", "miyazu", "kaina", "komuku", "kukuri", "rengetsu", "murasame", "kasumiko", "imari"]
+    },
+    {
+      "id": "hakolberand",
+      "name": "ハコルベランド",
+      "membersNoSpoiler": ["imari", "marimo", "tokuko", "yuzutsu", "hisui", "saho", "rito", "yuunagi", "ayumu"]
+    },
+    {
+      "id": "temple_legion",
+      "name": "テンプルレギオン",
+      "membersNoSpoiler": ["himari", "yuko", "kokoro_sano", "raimu", "seren", "sachie", "yuria", "ichika", "kayo"],
+      "membersSpoiler": ["himari", "yuko", "kokoro_sano", "nagisa_tachibana", "asahi", "moe", "mei"]
+    },
+    {
+      "id": "ironside",
+      "name": "アイアンサイド",
+      "membersSpoiler": ["raimu", "seren", "sachie", "kayo", "yuria", "ichika", "tsugumi", "karen", "towa", "susu"]
+    },
+    {
+      "id": "roencrusade",
+      "name": "ローゼンクルセイド",
+      "membersNoSpoiler": null
+    },
+    {
+      "id": "hervarar",
+      "name": "ヘルヴォル",
+      "membersNoSpoiler": ["kazuha", "yo", "renka", "sasaki", "chikaru"]
+    },
+    {
+      "id": "cuelebre",
+      "name": "クエレブレ",
+      "membersNoSpoiler": ["fuka", "mitake", "makina", "yuni", "higure"]
+    },
+    {
+      "id": "basa-andre",
+      "name": "バシャンドレ",
+      "membersNoSpoiler": ["nanaho", "noi", "nako", "uru"]
+    },
+    {
+      "id": "olentzaro",
+      "name": "オレンツァロ",
+      "membersNoSpoiler": ["rindo"]
+    },
+    {
+      "id": "galtzagorri",
+      "name": "ガルチャゴリ",
+      "membersNoSpoiler": ["tsubaki"]
+    },
+    {
+      "id": "tartalo",
+      "name": "タルタロ",
+      "membersNoSpoiler": ["izumi"]
+    },
+    {
+      "id": "txarrantxa",
+      "name": "シャランチャ",
+      "membersNoSpoiler": ["hirari"]
+    },
+    {
+      "id": "gran_eple",
+      "name": "グラン・エプレ",
+      "membersNoSpoiler": ["kanaho", "takane", "kureha", "akari", "himeka"],
+      "membersSpoiler": ["kanaho", "takane", "kureha", "akari", "himeka", "akehi", "haruna", "suzume", "fujino"]
+    },
+    {
+      "id": "kamba_student_council_defense_force",
+      "name": "神庭生徒会防衛隊",
+      "membersNoSpoiler": ["akehi", "haruna", "suzume", "fujino"]
+    },
+    {
+      "id": "sekkadan",
+      "name": "雪花団",
+      "membersNoSpoiler": ["nuyuna", "kiriko", "tae", "merin", "hiiro"]
+    },
+    {
+      "id": "thrymheim",
+      "name": "スリュムヘイム",
+      "membersNoSpoiler": ["yasuna", "shinano", "koume", "erisa"]
+    },
+    {
+      "id": "gladsheim",
+      "name": "グラズヘイム",
+      "membersNoSpoiler": ["tomoha"]
+    },
+    {
+      "id": "himinglaeva",
+      "name": "ヒミングレーヴァ",
+      "membersNoSpoiler": ["marei", "yuna", "kanna"]
+    },
+    {
+      "id": "dufa",
+      "name": "ドゥーヴァ",
+      "membersNoSpoiler": ["miki"]
+    },
+    {
+      "id": "blooughadda",
+      "name": "ブローズグハッダ",
+      "membersNoSpoiler": ["fubuki"]
+    },
+    {
+      "id": "hefring",
+      "name": "ヘヴリング",
+      "membersNoSpoiler": ["nanoha", "tamao"]
+    },
+    {
+      "id": "uor",
+      "name": "ウズ",
+      "membersNoSpoiler": ["rion"]
+    },
+    {
+      "id": "hronn",
+      "name": "フレン",
+      "membersNoSpoiler": ["komomo"]
+    },
+    {
+      "id": "byrgja",
+      "name": "ビュルギャ",
+      "membersNoSpoiler": ["byakuren"]
+    },
+    {
+      "id": "bara",
+      "name": "バーラ",
+      "membersNoSpoiler": ["asuka"]
+    },
+    {
+      "id": "kolga",
+      "name": "コールガ",
+      "membersNoSpoiler": ["hanako", "annna"]
+    },
+    {
+      "id": "amphitrite",
+      "name": "アンピトリテ",
+      "membersNoSpoiler": ["miyabi", "chino"]
+    },
+    {
+      "id": "enrantai",
+      "name": "焔蘭隊",
+      "membersNoSpoiler": ["tsubasa", "mizumi", "honoho", "shirabe", "kaoru_saionji", "amami", "mako_harumichi", "oki"]
+    },
+    {
+      "id": "kirintai",
+      "name": "輝凛隊",
+      "membersNoSpoiler": ["kirin"]
+    },
+    {
+      "id": "heimskringla",
+      "name": "ヘイムスクリングラ代表",
+      "membersNoSpoiler": ["lushi", "oife", "tanya", "nana", "rakeru", "konoka", "hirushu", "reve", "subaie"]
+    },
+    {
+      "id": "saihate",
+      "name": "最果ての花々",
+      "membersNoSpoiler": ["konohana", "otsunohana", "heinohana", "teinohana", "bonohana", "kinohana", "konohana2", "shinnohana", "jinnohana"]
+    }
   ]
 }
