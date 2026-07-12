@@ -6139,7 +6139,8 @@
     {
       "id": "kamba_student_council_defense_force",
       "name": "神庭生徒会防衛隊",
-      "membersNoSpoiler": ["akehi", "haruna", "suzume", "fujino"]
+      "membersNoSpoiler": ["akehi", "haruna", "suzume", "fujino"],
+      "hideWhenSpoiler": true
     },
     {
       "id": "sekkadan",

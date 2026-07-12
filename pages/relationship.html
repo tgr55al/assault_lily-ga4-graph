@@ -853,11 +853,13 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     // ── レギオン所属データ(JSON)を元に、現在表示中のグループを算出 ──
     // ネタバレOFF/ONで所属メンバーが変わる場合があるため、その都度切り替える。
     // 実際に画面に表示されている（connectedNodeIdsに含まれる）メンバーのみを対象にする。
-    legionGroups = (data.legions || []).map(legion => {
-      const memberIds = ((showSpoiler && legion.membersSpoiler) ? legion.membersSpoiler : (!showSpoiler && legion.membersNoSpoiler) ? legion.membersNoSpoiler : null) || [];
-      const ids = memberIds.filter(id => connectedNodeIds.has(id));
-      return { id: legion.id, name: legion.name, ids };
-    }).filter(g => g.ids.length >= 2); // 2人以上表示されているレギオンのみ枠を描く
+    legionGroups = (data.legions || [])
+      .filter(legion => !(showSpoiler && legion.hideWhenSpoiler)) // ネタバレONで消したいレギオンを除外
+      .map(legion => {
+        const memberIds = ((showSpoiler && legion.membersSpoiler) ? legion.membersSpoiler : (!showSpoiler && legion.membersNoSpoiler) ? legion.membersNoSpoiler : null) || [];
+        const ids = memberIds.filter(id => connectedNodeIds.has(id));
+        return { id: legion.id, name: legion.name, ids };
+      }).filter(g => g.ids.length >= 2); // 2人以上表示されているレギオンのみ枠を描く
 
     // ── レギオン枠表示時、同じレギオンのメンバー同士を結ぶ実エッジは距離を短くする ──
     // （通常のエッジ長の8割程度に短縮し、メンバー同士が寄り集まって見えるようにする）
