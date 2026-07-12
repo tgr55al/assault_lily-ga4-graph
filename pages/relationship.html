@@ -326,6 +326,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       <li><strong>表示階層</strong>：数値を変更して［再描画］を押すと、指定した階層分の関係を表示します。</li>
       <li><strong>全展開</strong>：登録されているすべてのキャラクターを一括表示します。</li>
       <li><strong>ネタバレ OFF/ON</strong>：ネタバレを含む関係の表示・非表示を切り替えます。</li>
+      <li><strong>レギオン枠 OFF/ON</strong>：同じレギオンに所属するキャラクターを枠で囲んで表示します。表示階層1・全展開OFFのときのみ使用できます（それ以外では自動的にOFF・非表示になります）。</li>
       <li><strong>物理演算</strong>：物理演算エンジンの種類を切り替えます。レイアウトの雰囲気が変わります（再描画は不要、即反映）。</li>
       <li><strong>所属ガーデンで絞り込む</strong>：ガーデン単位でノードの表示・非表示を切り替えます。</li>
     </ul>
@@ -731,6 +732,8 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   function render() {
     if (!focusId) return;
 
+    updateLegionFrameAvailability(); // 全展開時・2階層目以降ではレギオン枠を強制OFF・非表示に
+
     // 表示ノード決定
     let reachable;
     if (allMode) {
@@ -855,6 +858,21 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       const ids = memberIds.filter(id => connectedNodeIds.has(id));
       return { id: legion.id, name: legion.name, ids };
     }).filter(g => g.ids.length >= 2); // 2人以上表示されているレギオンのみ枠を描く
+
+    // ── レギオン枠表示時、同じレギオンのメンバー同士を結ぶ実エッジは距離を短くする ──
+    // （通常のエッジ長の8割程度に短縮し、メンバー同士が寄り集まって見えるようにする）
+    if (showLegionFrames && legionGroups.length) {
+      const memberLegionIndex = {};
+      legionGroups.forEach((g, gi) => { g.ids.forEach(id => { memberLegionIndex[id] = gi; }); });
+      const baseLen = currentSolver === "hierarchicalRepulsion" ? 200 : 180;
+      const shortLen = Math.round(baseLen * 0.8);
+      edges.forEach(e => {
+        if (e.physicsOnly) return;
+        if (memberLegionIndex[e.from] !== undefined && memberLegionIndex[e.from] === memberLegionIndex[e.to]) {
+          e.length = shortLen;
+        }
+      });
+    }
 
     // ── レギオンメンバーを物理演算上で引き寄せるための非表示エッジ ──
     // （枠外に非メンバーが入り込まないよう、メンバー同士を強く・短く結びつけて密集させる）
@@ -1030,6 +1048,30 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
 
     vEdges.remove(ids);
     vEdges.add(updated);
+  }
+
+  // ============================================================
+  // レギオン枠ボタンの利用可否制御
+  //
+  // 全展開モード、または表示階層が2以上のときは、
+  // ノードの物理配置がとんでもない挙動になるため、
+  // レギオン枠を強制的にOFF・非表示にする。
+  // ============================================================
+  function updateLegionFrameAvailability() {
+    const btn = document.getElementById("btn-legion-frame");
+    if (!btn) return;
+    const available = !allMode && depth === 1;
+    if (!available) {
+      if (showLegionFrames) {
+        showLegionFrames = false;
+        const text = document.getElementById("btn-legion-frame-text");
+        if (text) text.textContent = " レギオン枠 OFF";
+        btn.classList.remove("active-amber");
+      }
+      btn.style.display = "none";
+    } else {
+      btn.style.display = "";
+    }
   }
 
   // ============================================================
