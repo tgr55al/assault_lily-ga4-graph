@@ -1729,6 +1729,13 @@
       "image": null
     },
     {
+      "id": "himeko",
+      "name": "高田 姫子",
+      "garden": "江ノ島臨海女学校",
+      "wiki": "高田姫子",
+      "image": null
+    },
+    {
       "id": "nakaba",
       "name": "竹久 央",
       "garden": "御台場女学校",
@@ -4167,6 +4174,7 @@
     { "from": "shinobu",   "to": "renka",  "type": "仲が良い",    "spoiler": false },
     { "from": "shinobu",   "to": "nanaho",  "type": "",    "spoiler": false },
     { "from": "shinobu",   "to": "korin",  "type": "仲が良かった",    "spoiler": false },
+    { "from": "shinobu",   "to": "himeko",  "type": "恋人のような関係",    "spoiler": false },
 
     { "from": "korin",   "to": "nanaho",  "type": "楯の乙女候補",    "spoiler": false },
 
