@@ -856,7 +856,11 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     legionGroups = (data.legions || [])
       .filter(legion => !(showSpoiler && legion.hideWhenSpoiler)) // ネタバレONで消したいレギオンを除外
       .map(legion => {
-        const memberIds = ((showSpoiler && legion.membersSpoiler) ? legion.membersSpoiler : (!showSpoiler && legion.membersNoSpoiler) ? legion.membersNoSpoiler : null) || [];
+        // membersSpoiler が未設定の場合は membersNoSpoiler をそのまま使う
+        // （ネタバレONでもメンバー構成が変わらないレギオンは片方だけ書けばよい）
+        const memberIds = (showSpoiler && legion.membersSpoiler)
+          ? (legion.membersSpoiler || legion.membersNoSpoiler || [])
+          : (legion.membersNoSpoiler || []);
         const ids = memberIds.filter(id => connectedNodeIds.has(id));
         return { id: legion.id, name: legion.name, ids };
       }).filter(g => g.ids.length >= 2); // 2人以上表示されているレギオンのみ枠を描く
