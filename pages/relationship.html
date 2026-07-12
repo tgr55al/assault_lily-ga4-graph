@@ -293,6 +293,10 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
         <i data-lucide="triangle-alert" width="12" height="12" style="position:relative; top:2px;"></i><span id="btn-spoiler-text"> ネタバレ OFF</span>
       </button>
       <span class="tb-sep">|</span>
+      <button id="btn-legion-frame">
+        <i data-lucide="square-dashed" width="12" height="12" style="position:relative; top:2px;"></i><span id="btn-legion-frame-text"> レギオン枠 OFF</span>
+      </button>
+      <span class="tb-sep">|</span>
       <button id="btn-reset-focus">
         <i data-lucide="rotate-ccw" width="12" height="12" style="position:relative; top:2px;"></i> リセット
       </button>
@@ -478,6 +482,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   let isHighlighting = false;
   let adjacency = {};
   let legionGroups = []; // 「同レギオン」で繋がったノード群（枠描画用）
+  let showLegionFrames = false; // レギオン枠の表示/非表示（デフォルト非表示）
   let gardenParam = null;
 
   // ============================================================
@@ -846,29 +851,32 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     // ネタバレOFF/ONで所属メンバーが変わる場合があるため、その都度切り替える。
     // 実際に画面に表示されている（connectedNodeIdsに含まれる）メンバーのみを対象にする。
     legionGroups = (data.legions || []).map(legion => {
-      const memberIds = (showSpoiler ? legion.membersSpoiler : legion.membersNoSpoiler) || [];
+      const memberIds = ((showSpoiler && legion.membersSpoiler) ? legion.membersSpoiler : legion.membersNoSpoiler) || [];
       const ids = memberIds.filter(id => connectedNodeIds.has(id));
       return { id: legion.id, name: legion.name, ids };
     }).filter(g => g.ids.length >= 2); // 2人以上表示されているレギオンのみ枠を描く
 
     // ── レギオンメンバーを物理演算上で引き寄せるための非表示エッジ ──
     // （枠外に非メンバーが入り込まないよう、メンバー同士を強く・短く結びつけて密集させる）
-    legionGroups.forEach(group => {
-      const [head, ...rest] = group.ids;
-      rest.forEach((id, i) => {
-        edges.push({
-          id: `legion-phys-${group.id}-${i}`,
-          from: head, to: id,
-          physicsOnly: true,
-          hidden: true,
-          physics: true,
-          length: 70,
-          smooth: false,
-          color: { color: "rgba(0,0,0,0)", highlight: "rgba(0,0,0,0)", hover: "rgba(0,0,0,0)" },
-          width: 0, arrows: ""
+    // レギオン枠がOFFのときはノードの接近判定も含めて元通りの挙動に戻す。
+    if (showLegionFrames) {
+      legionGroups.forEach(group => {
+        const [head, ...rest] = group.ids;
+        rest.forEach((id, i) => {
+          edges.push({
+            id: `legion-phys-${group.id}-${i}`,
+            from: head, to: id,
+            physicsOnly: true,
+            hidden: true,
+            physics: true,
+            length: 70,
+            smooth: false,
+            color: { color: "rgba(0,0,0,0)", highlight: "rgba(0,0,0,0)", hover: "rgba(0,0,0,0)" },
+            width: 0, arrows: ""
+          });
         });
       });
-    });
+    }
 
     if (!vNodes) { vNodes = new vis.DataSet(visibleNodes); } else { vNodes.clear(); vNodes.add(visibleNodes); }
     if (!vEdges) { vEdges = new vis.DataSet(edges); } else { vEdges.clear(); vEdges.add(edges); }
@@ -894,7 +902,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
 
       // 「レギオン」グループを囲う枠を、ノードより下のレイヤーに描画
       network.on("beforeDrawing", ctx => {
-        if (!legionGroups || !legionGroups.length || !vNodes) return;
+        if (!showLegionFrames || !legionGroups || !legionGroups.length || !vNodes) return;
 
         // 全ノードの現在位置をまとめて取得（判定・押し出し処理で使い回す）
         const allIds = vNodes.getIds();
@@ -1195,6 +1203,15 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       render();
     });
 
+    const btnLegionFrame = document.getElementById("btn-legion-frame");
+    const btnLegionFrameText = document.getElementById("btn-legion-frame-text");
+    btnLegionFrame?.addEventListener("click", () => {
+      showLegionFrames = !showLegionFrames;
+      btnLegionFrameText.textContent = showLegionFrames ? " レギオン枠 ON" : " レギオン枠 OFF";
+      btnLegionFrame.classList.toggle("active-amber", showLegionFrames);
+      render(); // OFF時は物理演算用エッジも取り除き、接近判定を元に戻す
+    });
+
     // ── 物理演算切り替え ──────────────────────────────────
     // セレクト変更だけで即反映。再描画（setData）は不要。
     // network.setOptions() で物理演算を差し替え、
@@ -1230,6 +1247,10 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       showSpoiler = false;
       if (btnSpoilerText) btnSpoilerText.textContent = " ネタバレ OFF";
       btnSpoiler?.classList.remove("active-amber");
+
+      showLegionFrames = false;
+      if (btnLegionFrameText) btnLegionFrameText.textContent = " レギオン枠 OFF";
+      btnLegionFrame?.classList.remove("active-amber");
 
       // 物理演算をデフォルトに戻す
       currentSolver = "forceAtlas2Based";
