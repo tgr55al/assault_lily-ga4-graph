@@ -5193,7 +5193,6 @@
     { "from": "kayo",   "to": "yuria",  "type": "同レギオン",    "spoiler": false },
     { "from": "kayo",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
     { "from": "kayo",   "to": "yuko",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
-    { "from": "kayo",   "to": "yuria",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "kayo",   "to": "himari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
 
     { "from": "yuria",   "to": "ichika",  "type": "同レギオン",    "spoiler": false },
