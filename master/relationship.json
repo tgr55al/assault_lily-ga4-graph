@@ -5427,6 +5427,8 @@
     { "from": "hanako",   "to": "fubuki",  "type": "",    "spoiler": false },
     { "from": "hanako",   "to": "kiito",  "type": "意気投合",    "spoiler": false },
     { "from": "hanako",   "to": "ui",  "type": "意気投合",    "spoiler": false },
+    { "from": "nanoha",   "to": "hanako",  "type": "嫉妬", "arrows": "to",    "spoiler": false },
+    { "from": "nanoha",   "to": "yuna",  "type": "対抗心", "arrows": "to",    "spoiler": false },
 
     { "from": "fubuki",   "to": "nanoha",  "type": "金鷄冠の誓い",    "spoiler": false },
     { "from": "fubuki",   "to": "wakana",  "type": "友人",    "spoiler": false },
