@@ -4823,7 +4823,7 @@
     { "from": "chinami",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
     { "from": "chinami",   "to": "urara",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "azusa",   "to": "haru",  "type": "幼馴染",    "spoiler": false },
+    { "from": "azusa",   "to": "haru",  "type": "血誓の儀",    "spoiler": false },
     { "from": "azusa",   "to": "amane",  "type": "同レギオン",    "spoiler": false },
     { "from": "azusa",   "to": "sunao_otake",  "type": "同レギオン",    "spoiler": false },
     { "from": "azusa",   "to": "warabi",  "type": "同レギオン",    "spoiler": false },
@@ -5427,7 +5427,7 @@
     { "from": "hanako",   "to": "fubuki",  "type": "",    "spoiler": false },
     { "from": "hanako",   "to": "kiito",  "type": "意気投合",    "spoiler": false },
     { "from": "hanako",   "to": "ui",  "type": "意気投合",    "spoiler": false },
-    { "from": "nanoha",   "to": "hanako",  "type": "嫉妬", "arrows": "to",    "spoiler": false },
+    { "from": "nanoha",   "to": "hanako",  "type": "嫉妬・警戒", "arrows": "to",    "spoiler": false },
     { "from": "nanoha",   "to": "yuna",  "type": "対抗心", "arrows": "to",    "spoiler": false },
 
     { "from": "fubuki",   "to": "nanoha",  "type": "金鷄冠の誓い",    "spoiler": false },
