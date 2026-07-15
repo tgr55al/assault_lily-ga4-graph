@@ -3616,6 +3616,8 @@
     { "from": "sasaki", "to": "chikaru",     "type": "ごはん", "arrows": "to",          "spoiler": false },
     { "from": "chikaru", "to": "yo",     "type": "可愛い", "arrows": "to",          "spoiler": false },
     { "from": "yo", "to": "chikaru",     "type": "実力を認めている", "arrows": "to",          "spoiler": false },
+    { "from": "sasaki", "to": "kiito",     "type": "きいたん", "arrows": "to",          "spoiler": false },
+    { "from": "sasaki", "to": "ui",     "type": "ういたん", "arrows": "to",          "spoiler": false },
 
     { "from": "chikaru", "to": "makoto",     "type": "親友",          "spoiler": false },
     { "from": "chikaru", "to": "mai",     "type": "友人",          "spoiler": false },
