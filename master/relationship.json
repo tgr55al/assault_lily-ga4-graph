@@ -4871,6 +4871,7 @@
     { "from": "kiito",   "to": "yuzuriha",  "type": "犬猿の仲",    "spoiler": false },
     { "from": "kiito",   "to": "minato",  "type": "仲が良い",    "spoiler": false },
     { "from": "kiito",   "to": "komuku",  "type": "仲が良い",    "spoiler": false },
+    { "from": "kiito",   "to": "haru",  "type": "仲が良い",    "spoiler": false },
     { "from": "kiito",   "to": "yuki",  "type": "血誓の儀",    "spoiler": true },
     { "from": "kiito",   "to": "kurena",  "type": "仲が良い",    "spoiler": false },
     { "from": "kiito",   "to": "haruna",  "type": "",    "spoiler": false },
