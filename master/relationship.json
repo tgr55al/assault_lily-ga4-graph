@@ -3305,6 +3305,27 @@
       "image": "https://i.gyazo.com/ebe11917c4e1196a487aeb97e8038190.jpg"
     },
     {
+      "id": "toriyama",
+      "name": "鳥山 真赭",
+      "garden": "G.E.H.E.N.A.",
+      "wiki": "鳥山真赭",
+      "image": null
+    },
+    {
+      "id": "kitahaba",
+      "name": "喜多幅 玉緒",
+      "garden": "G.E.H.E.N.A.",
+      "wiki": "喜多幅玉緒",
+      "image": null
+    },
+    {
+      "id": "akiyama",
+      "name": "秋山 玉響",
+      "garden": "G.E.H.E.N.A.",
+      "wiki": "秋山玉響",
+      "image": null
+    },
+    {
       "id": "seiei",
       "name": "石川 精衛",
       "garden": "その他・不明",
@@ -4646,6 +4667,14 @@
     { "from": "goteni",   "to": "kinrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "ginrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "tomoyo_nakahara",  "type": "評価", "arrows": "to",    "spoiler": true },
+    { "from": "goteni",   "to": "toriyama",  "type": "同研究チーム",    "spoiler": false },
+    { "from": "goteni",   "to": "kitahaba",  "type": "同研究チーム",    "spoiler": false },
+    { "from": "goteni",   "to": "akiyama",  "type": "同研究チーム",    "spoiler": false },
+
+    { "from": "toriyama",   "to": "kitahaba",  "type": "同研究チーム",    "spoiler": false },
+    { "from": "toriyama",   "to": "akiyama",  "type": "同研究チーム",    "spoiler": false },
+
+    { "from": "kitahaba",   "to": "akiyama",  "type": "同研究チーム",    "spoiler": false },
 
     { "from": "kuroyurinokimi",   "to": "houraigyoku",  "type": "仲が良い",    "spoiler": false },
     { "from": "kuroyurinokimi",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
