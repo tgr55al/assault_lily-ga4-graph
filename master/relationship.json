@@ -5953,6 +5953,8 @@
 
     { "from": "mashiro_shima",   "to": "kotoko_kagurazaka",  "type": "良きライバル",    "spoiler": false },
 
+    { "from": "rusaruka",   "to": "manaka",  "type": "妹（リュミ）", "arrows": "to",    "spoiler": true },
+
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ],
 
