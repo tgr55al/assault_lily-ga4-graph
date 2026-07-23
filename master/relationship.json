@@ -5894,6 +5894,8 @@
     { "from": "tomoyo_nakahara",   "to": "mayumi",  "type": "旧知の仲",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "tomoyo_nakahara",   "to": "mayumi",  "type": "敵対",    "spoiler": true },
     { "from": "tomoyo_nakahara",   "to": "nadeshiko",  "type": "敵対",    "spoiler": true },
+    { "from": "tomoyo_nakahara",   "to": "kotohi",  "type": "使い捨ての駒", "arrows": "to",    "spoiler": true },
+    { "from": "kotohi",   "to": "tomoyo_nakahara",  "type": "決別", "arrows": "to",    "spoiler": true },
 
     { "from": "hiromi",   "to": "anzu",  "type": "レギオン結成を目指している",    "spoiler": false },
     { "from": "hiromi",   "to": "chie",  "type": "レギオン結成を目指している",    "spoiler": false },
