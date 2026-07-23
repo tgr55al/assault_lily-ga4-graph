@@ -4683,6 +4683,7 @@
     { "from": "houraigyoku",   "to": "gozen",  "type": "同レギオン",    "spoiler": true },
     { "from": "houraigyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
 
+    { "from": "sasaki",   "to": "kotohi",  "type": "ことぴ！", "arrows": "to",    "spoiler": false },
     { "from": "kotohi",   "to": "gozen",  "type": "慕っている", "arrows": "to",    "spoiler": true },
     { "from": "gozen",   "to": "kotohi",  "type": "従えている", "arrows": "to",    "spoiler": true },
 
