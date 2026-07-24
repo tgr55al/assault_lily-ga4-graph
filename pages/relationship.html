@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>アサルトリリィ 相関図</title>
+
+<!-- ========================
+     Google Analytics 4 (GA4)
+     ======================== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C293L0EWGL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag("js", new Date());
+  gtag("config", "G-C293L0EWGL");
+</script>
+
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -569,6 +581,12 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     buildLegend();
     updateFocusLabel();
 
+    gaEvent("relmap_select_character", {
+      character_id: focusId,
+      character_name: charMap[focusId]?.name,
+      method: "initial_load"
+    });
+
     // 隣接リスト作成
     adjacency = {};
     data.relations.forEach((r, idx) => {
@@ -1014,6 +1032,11 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
 
         // ハイライトを適用
         applyHighlight();
+
+        gaEvent("relmap_select_character", {
+          character_id: id,
+          character_name: charMap[id].name
+        });
       });
 
       network.on("dragStart", () => { network.startSimulation(); });
@@ -1024,6 +1047,11 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
         const c = charMap[params.nodes[0]];
         if (!c) return;
         window.open(WIKI_BASE + encodeURIComponent(c.wiki || c.name), "_blank");
+        gaEvent("relmap_open_character_page", {
+          character_id: params.nodes[0],
+          character_name: c.name,
+          method: "double_click"
+        });
       });
 
       // ズーム: 最大・最小 縮尺を設定
@@ -1081,6 +1109,18 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   }
 
   // ============================================================
+  // GA4 イベント送信ヘルパー
+  //
+  // gtag が読み込まれていない環境（広告ブロッカー等）でもエラーにならないようガード。
+  // params には character_id / character_name / value など、GA4で集計したい値を渡す。
+  // ============================================================
+  function gaEvent(name, params) {
+    if (typeof gtag === "function") {
+      gtag("event", name, params || {});
+    }
+  }
+
+  // ============================================================
   // ステータスバー
   // ============================================================
   function setStatus(msg) {
@@ -1097,6 +1137,13 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     const link = document.getElementById("focus-link");
     link.href = WIKI_BASE + encodeURIComponent(c.wiki || c.name);
     link.style.display = "";
+    link.onclick = () => {
+      gaEvent("relmap_open_character_page", {
+        character_id: focusId,
+        character_name: c.name,
+        method: "link_click"
+      });
+    };
   }
 
   function getRelLegendKey(relType) {
@@ -1138,6 +1185,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
         chip.classList.toggle("off", !chk.checked);
         clearHighlight();
         render();
+        gaEvent("relmap_filter_garden", { garden_name: garden, state: chk.checked ? "on" : "off" });
       });
 
       chip.appendChild(chk);
@@ -1183,13 +1231,17 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   function toggleLegend() {
     const lg = document.getElementById("legend");
     const bar = document.getElementById("legend-toggle-bar");
-    bar.textContent = lg.classList.toggle("open") ? "▼ 凡例を隠す" : "▶ 凡例を表示";
+    const open = lg.classList.toggle("open");
+    bar.textContent = open ? "▼ 凡例を隠す" : "▶ 凡例を表示";
+    gaEvent("relmap_toggle_legend", { state: open ? "open" : "close" });
   }
 
   function toggleGardenFilter() {
     const sf = document.getElementById("garden-filter");
     const bar = document.getElementById("garden-filter-bar");
-    bar.textContent = sf.classList.toggle("open") ? "▼ 所属ガーデンで絞り込む" : "▶ 所属ガーデンで絞り込む";
+    const open = sf.classList.toggle("open");
+    bar.textContent = open ? "▼ 所属ガーデンで絞り込む" : "▶ 所属ガーデンで絞り込む";
+    gaEvent("relmap_toggle_garden_filter_panel", { state: open ? "open" : "close" });
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -1202,6 +1254,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       const open = helpArea.style.display !== "block";
       helpArea.style.display = open ? "block" : "none";
       btnToggleHelp.classList.toggle("active-blue", open);
+      gaEvent("relmap_toggle_help", { state: open ? "open" : "close" });
     });
 
     const btnRedraw = document.getElementById("btn-redraw");
@@ -1213,6 +1266,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       document.getElementById("btn-all").classList.remove("active-purple");
       clearHighlight();
       render();
+      gaEvent("relmap_change_depth", { depth_value: depth });
     });
 
     document.getElementById("depth-input")?.addEventListener("keydown", e => {
@@ -1225,6 +1279,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       btnAll.classList.toggle("active-purple", allMode);
       clearHighlight();
       render();
+      gaEvent("relmap_toggle_all_mode", { state: allMode ? "on" : "off" });
     });
 
     const btnSpoiler = document.getElementById("btn-spoiler");
@@ -1249,6 +1304,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       }
 
       render();
+      gaEvent("relmap_toggle_spoiler", { state: showSpoiler ? "on" : "off" });
     });
 
     const btnLegionFrame = document.getElementById("btn-legion-frame");
@@ -1258,6 +1314,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       btnLegionFrameText.textContent = showLegionFrames ? " レギオン枠 ON" : " レギオン枠 OFF";
       btnLegionFrame.classList.toggle("active-amber", showLegionFrames);
       render(); // OFF時は物理演算用エッジも取り除き、接近判定を元に戻す
+      gaEvent("relmap_toggle_legion_frame", { state: showLegionFrames ? "on" : "off" });
     });
 
     // ── 物理演算切り替え ──────────────────────────────────
@@ -1274,6 +1331,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       // ステータスバーの物理演算名を書き換え
       const el = document.getElementById("status-text");
       el.textContent = el.textContent.replace(/\s*\[.*?\]$/, "") + ` [${SOLVER_NAMES[currentSolver]}]`;
+      gaEvent("relmap_change_physics_solver", { solver_name: currentSolver });
     });
     // ─────────────────────────────────────────────────────
 
@@ -1315,6 +1373,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       updateFocusLabel();
       clearHighlight();
       render();
+      gaEvent("relmap_reset_view", {});
     });
 
     loadData();
