@@ -5374,6 +5374,7 @@
 
     { "from": "akari",   "to": "himeka",  "type": "ルームメイト",    "spoiler": false },
     { "from": "akari",   "to": "moka",  "type": "友人",    "spoiler": false },
+    { "from": "akari",   "to": "asagao",  "type": "がおがお先輩", "arrows": "to",    "spoiler": false },
 
     { "from": "himeka",   "to": "kuo",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
 
