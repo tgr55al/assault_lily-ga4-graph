@@ -5092,6 +5092,7 @@
     { "from": "mioko",   "to": "rengetsu",  "type": "お気に入り", "arrows": "to",    "spoiler": false },
     { "from": "mioko",   "to": "waku",  "type": "お気に入り", "arrows": "to",    "spoiler": false },
     { "from": "mioko",   "to": "kaina",  "type": "お気に入り", "arrows": "to",    "spoiler": false },
+    { "from": "mioko",   "to": "imari",  "type": "お気に入り", "arrows": "to",    "spoiler": false },
     { "from": "komachi",   "to": "mioko",  "type": "警戒", "arrows": "to",    "spoiler": false },
     { "from": "komuku",   "to": "mioko",  "type": "警戒", "arrows": "to",    "spoiler": false },
 
