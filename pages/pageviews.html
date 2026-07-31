@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>閲覧数推移</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   :root{
     --ink:#1f2536;
     --paper:#fbfaf7;
     --line:#e4e1d8;
-    --accent:#b3486b;   /* リリィを想起させる深めのローズ */
-    --accent-soft:#e9c4d2;
+    --accent:#3388ff;   /* 日別閲覧者数グラフと統一した青 */
+    --accent-soft:#cfe1ff;
     --sub:#6b7280;
     --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     --sans: "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", sans-serif;
@@ -87,6 +87,28 @@
   </div>
 
 <script>
+const verticalLinePlugin = {
+  id: 'verticalLinePlugin',
+  afterDraw(chart) {
+    const { ctx, chartArea, tooltip } = chart;
+
+    if (!tooltip || !tooltip._active || !tooltip._active.length) return;
+
+    const activePoint = tooltip._active[0].element;
+    const x = activePoint.x;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(x, chartArea.top);
+    ctx.lineTo(x, chartArea.bottom);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+    ctx.stroke();
+    ctx.restore();
+  }
+};
+Chart.register(verticalLinePlugin);
+
 // ── 設定 ──────────────────────────────────────────
 // pageviews_by_page.json の場所（同一リポジトリのGitHub Pages上）
 const DATA_URL = "./pageviews_by_page.json";
@@ -165,12 +187,12 @@ async function main() {
       labels,
       datasets: [{
         data: recentValues,
-        borderColor: "#b3486b",
-        backgroundColor: "rgba(179,72,107,0.12)",
+        borderColor: "#3388ff",
+        backgroundColor: "rgba(51, 136, 255, 0.1)",
         borderWidth: 2,
         pointRadius: 0,
-        pointHoverRadius: 3,
-        tension: 0.25,
+        pointHoverRadius: 0,
+        tension: 0,
         fill: true,
       }]
     },
@@ -180,20 +202,31 @@ async function main() {
       interaction: { intersect: false, mode: "index" },
       plugins: {
         legend: { display: false },
+        title: { display: false },
         tooltip: {
+          backgroundColor: 'rgba(255,255,255,0.95)',
+          titleColor: '#000',
+          bodyColor: '#000',
+          borderWidth: 0,
+          usePointStyle: false,
+          displayColors: false,
+          intersect: false,
+          mode: 'index',
           callbacks: {
             title: (items) => recentDates[items[0].dataIndex],
-            label: (item) => `${item.parsed.y.toLocaleString()} views`
+            label: (item) => `閲覧数: ${item.formattedValue} (views)`
           }
         }
       },
       scales: {
         x: {
+          title: { display: false },
           ticks: { font: { size: 9 }, color: "#6b7280", maxRotation: 0, autoSkip: true, maxTicksLimit: 6 },
           grid: { display: false }
         },
         y: {
           beginAtZero: true,
+          title: { display: false },
           ticks: { font: { size: 9 }, color: "#6b7280", maxTicksLimit: 4 },
           grid: { color: "#e4e1d8" }
         }
