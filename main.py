@@ -6,6 +6,7 @@ from ga4.country_report import fetch_country_30days
 from ga4.region_japan import fetch_region_japan
 from ga4.daily_activeUsers_log import update_daily_activeUsers_log
 from ga4.daily_screenPageViews_log import update_daily_screenPageViews_log
+from ga4.pageviews_by_page import update_pageviews_by_page
 
 from maps.world_map import main as world_map_main
 from maps.japan_map import main as japan_map_main
@@ -20,6 +21,7 @@ def main():
     fetch_region_japan(client)
     update_daily_activeUsers_log(client)
     update_daily_screenPageViews_log(client)
+    update_pageviews_by_page(client)
 
     print("✅ GA4 データ処理完了")
 

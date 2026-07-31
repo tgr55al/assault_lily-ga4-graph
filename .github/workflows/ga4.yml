@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 * * * *"   # 1時間に1回（毎時0分）
   workflow_dispatch:       # 手動実行も可能
+    inputs:
+      backfill:
+        description: "ページ別閲覧数の過去データを一括バックフィルする"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -31,6 +37,14 @@ jobs:
           GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
         run: python main.py
 
+      # ページ別閲覧数の過去データを一括取得したいときだけ、
+      # 「Run workflow」実行時に backfill: true を指定して手動実行する。
+      - name: ページ別閲覧数バックフィル（初回・任意）
+        if: ${{ inputs.backfill == true }}
+        env:
+          GA4_SERVICE_KEY: ${{ secrets.GA4_SERVICE_KEY }}
+        run: python backfill.py
+
       - name: Commit daily_activeUsers.csv
         run: |
           git config user.name "github-actions"
@@ -47,6 +61,14 @@ jobs:
           git commit -m "Update daily_screenPageViews.csv" || echo "No changes to commit"
           git push || echo "No changes to push"
 
+      - name: Commit pageviews_by_page.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add ga4Data/pageviews_by_page.json
+          git commit -m "Update pageviews_by_page.json" || echo "No changes to commit"
+          git push || echo "No changes to push"
+
       - name: Commit coords.csv
         run: |
           git config user.name "github-actions"
@@ -61,6 +83,7 @@ jobs:
           cp pages/*.html public/
           cp geojson/*.geojson public/
           cp ga4Data/*.csv public/
+          cp ga4Data/pageviews_by_page.json public/
           cp master/japan_map.csv public/
           cp master/country_map.csv public/
           cp master/terms.json public/
