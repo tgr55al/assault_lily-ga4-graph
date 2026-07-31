@@ -5,7 +5,7 @@ from ga4.date_utils import get_today, get_yesterday
 
 PROPERTY_ID = "530080930"
 
-# 閲覧数として集計しない管理系・機能系URL（前方一致で判定）
+# 閲覧者数として集計しない管理系・機能系URL（前方一致で判定）
 EXCLUDE_PREFIXES = [
     "/assault_lily/tag/",
     "/assault_lily/upload/",
@@ -70,7 +70,7 @@ def update_pageviews_by_page(client):
       ...
     }
     """
-    print("::group::ページ別閲覧数の差分更新")
+    print("::group::ページ別閲覧者数の差分更新")
 
     os.makedirs("ga4Data", exist_ok=True)
     json_path = "ga4Data/pageviews_by_page.json"
