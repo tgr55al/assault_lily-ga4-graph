@@ -5644,6 +5644,9 @@
     { "from": "tohka",   "to": "konohana",  "type": "死に損ない", "arrows": "to",    "spoiler": true },
     { "from": "konohana",   "to": "seira",  "type": "シュッツエンゲル",    "spoiler": true },
 
+    { "from": "tekeriri",   "to": "goteni",  "type": "ママ", "arrows": "to",    "spoiler": true },
+    { "from": "goteni",   "to": "tekeriri",  "type": "製作", "arrows": "to",    "spoiler": true },
+
     { "from": "otsunohana",   "to": "heinohana",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "otsunohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "otsunohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
