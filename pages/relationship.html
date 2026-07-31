@@ -1046,7 +1046,9 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
         if (!params.nodes.length) return;
         const c = charMap[params.nodes[0]];
         if (!c) return;
-        window.open(WIKI_BASE + encodeURIComponent(c.wiki || c.name), "_blank");
+        const url = buildWikiUrl(c);
+        if (url === null) return; // wikiがnull指定のキャラクターはページ遷移を無効化
+        window.open(url, "_blank");
         gaEvent("relmap_open_character_page", {
           character_id: params.nodes[0],
           character_name: c.name,
@@ -1128,6 +1130,21 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
   }
 
   // ============================================================
+  // wikiリンクURL生成
+  //
+  // c.wiki === null              → リンク無効（nullを返す）
+  // c.wiki が http(s) で始まる文字列 → そのままフルURLとして使用
+  // それ以外（未設定 or ページ名文字列）→ WIKI_BASE + ページ名 (c.wiki || c.name)
+  // ============================================================
+  function buildWikiUrl(c) {
+    if (!c || c.wiki === null) return null;
+    if (typeof c.wiki === "string" && /^https?:\/\//i.test(c.wiki)) {
+      return c.wiki;
+    }
+    return WIKI_BASE + encodeURIComponent(c.wiki || c.name);
+  }
+
+  // ============================================================
   // フォーカスラベル更新
   // ============================================================
   function updateFocusLabel() {
@@ -1135,7 +1152,15 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
     if (!c) return;
     document.getElementById("focus-name").textContent = (showSpoiler && c.spoilerName) ? c.spoilerName : c.name;
     const link = document.getElementById("focus-link");
-    link.href = WIKI_BASE + encodeURIComponent(c.wiki || c.name);
+    const url = buildWikiUrl(c);
+    if (url === null) {
+      // wikiがnull指定のキャラクターは［ページを開く］リンクを非表示にする
+      link.style.display = "none";
+      link.removeAttribute("href");
+      link.onclick = null;
+      return;
+    }
+    link.href = url;
     link.style.display = "";
     link.onclick = () => {
       gaEvent("relmap_open_character_page", {
