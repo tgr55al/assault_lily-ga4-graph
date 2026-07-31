@@ -43,8 +43,6 @@
         // ── 設定 ──────────────────────────────────────────
         // pageviews_by_page.json の場所（同一リポジトリのGitHub Pages上）
         const DATA_URL = 'pageviews_by_page.json';
-        // 直近何日分をグラフに出すか
-        const RECENT_DAYS = 30;
         // ─────────────────────────────────────────────────
 
         function normalizePath(p) {
@@ -94,13 +92,12 @@
                     }
 
                     const dates = Object.keys(series).sort();
-                    const recentDates = dates.slice(-RECENT_DAYS);
                     const values = recentDates.map(d => series[d]);
 
                     new Chart(document.getElementById('chart'), {
                       type: 'line',
                       data: {
-                        labels: recentDates,
+                        labels: dates,
                         datasets: [{
                           label: '閲覧者数',
                           data: values,
@@ -137,7 +134,7 @@
                               },
                               label: function(context) {
                                 const value = context.formattedValue ?? (context.parsed && context.parsed.y) ?? context.raw;
-                                return `閲覧者数: ${value} (views)`;
+                                return `閲覧者数: ${value} (viewers)`;
                               }
                             }
                           }
