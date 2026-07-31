@@ -92,7 +92,7 @@
                     }
 
                     const dates = Object.keys(series).sort();
-                    const values = recentDates.map(d => series[d]);
+                    const values = dates.map(d => series[d]);
 
                     new Chart(document.getElementById('chart'), {
                       type: 'line',
