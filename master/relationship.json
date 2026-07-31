@@ -3412,6 +3412,13 @@
       "image": "https://i.gyazo.com/0f3e96d0524b63787a2e8576328a4a62.jpg"
     },
     {
+      "id": "karibu",
+      "name": "カリブディス",
+      "garden": "その他・不明",
+      "wiki": null,
+      "image": "https://i.gyazo.com/21a990ad20af10857ee94461b1192891.jpg"
+    },
+    {
       "id": "konohana",
       "samePerson": "chihiro",
       "name": "甲の花",
@@ -5968,6 +5975,7 @@
     { "from": "mashiro_shima",   "to": "kotoko_kagurazaka",  "type": "良きライバル",    "spoiler": false },
 
     { "from": "rusaruka",   "to": "manaka",  "type": "妹（リュミ）", "arrows": "to",    "spoiler": true },
+    { "from": "rusaruka",   "to": "karibu",  "type": "親子",    "spoiler": false },
 
     { "from": "nanami",   "to": "inqu",  "type": "所有関係",    "spoiler": false }
   ],
