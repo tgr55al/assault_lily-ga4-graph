@@ -5,6 +5,44 @@ from ga4.date_utils import get_today, get_yesterday
 
 PROPERTY_ID = "530080930"
 
+# 閲覧数として集計しない管理系・機能系URL（前方一致で判定）
+EXCLUDE_PREFIXES = [
+    "/assault_lily/tag/",
+    "/assault_lily/upload/",
+    "/assault_lily/search/",
+    "/assault_lily/renamex/",
+    "/assault_lily/popular_list",
+    "/assault_lily/pedit/",
+    "/assault_lily/page_operate_history/",
+    "/assault_lily/page_comment/",
+    "/assault_lily/new",
+    "/assault_lily/forum",
+    "/assault_lily/editx/",
+    "/assault_lily/editxx/",
+    "/assault_lily/diffx/",
+    "/assault_lily/copy2/",
+    "/assault_lily/chmod/",
+    "/assault_lily/contact",
+    "/assault_lily/contributor",
+    "/assault_lily/child/",
+    "/assault_lily/backupx/",
+    "/assault_lily/attach_backup/",
+    "/assault_lily/chkind/"
+]
+# 末尾スラッシュの有無に関わらず判定できるよう、正規化しておく
+_EXCLUDE_PREFIXES_NORMALIZED = [p.rstrip("/") for p in EXCLUDE_PREFIXES]
+
+
+def is_excluded(path: str) -> bool:
+    """
+    集計対象外の管理系・機能系URLかどうかを判定する。
+    完全一致、または「/prefix/」配下（サブパス）にも一致する。
+    """
+    for prefix in _EXCLUDE_PREFIXES_NORMALIZED:
+        if path == prefix or path.startswith(prefix + "/"):
+            return True
+    return False
+
 
 def normalize_path(raw_path: str) -> str:
     """
@@ -62,6 +100,8 @@ def update_pageviews_by_page(client):
         for row in response.rows:
             raw_path = row.dimension_values[0].value
             path = normalize_path(raw_path)
+            if is_excluded(path):
+                continue
             views = int(row.metric_values[0].value)
             day_totals[path] = day_totals.get(path, 0) + views
 
