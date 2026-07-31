@@ -5817,7 +5817,8 @@
     { "from": "gozen",   "to": "ouka_sano",  "type": "ライバル（現役時代）",    "spoiler": true },
     { "from": "misaka",   "to": "gozen",  "type": "憧れ", "arrows": "to",    "spoiler": true },
     { "from": "gozen",   "to": "tomoshibi",  "type": "",    "spoiler": true },
-    { "from": "gozen",   "to": "goteni",  "type": "敵対",    "spoiler": true },
+    { "from": "gozen",   "to": "goteni",  "type": "敵対", "arrows": "to",    "spoiler": true },
+    { "from": "goteni",   "to": "gozen",  "type": "実験体", "arrows": "to",    "spoiler": true },
 
     { "from": "akira",   "to": "shiera_takamatsu",  "type": "旧知の仲",    "spoiler": false },
     { "from": "akira",   "to": "nagisa_yoshizaka",  "type": "友人",    "spoiler": false },
@@ -5860,7 +5861,8 @@
     { "from": "rovisa",   "to": "nadeshiko",  "type": "戦友",    "spoiler": true },
     { "from": "rovisa",   "to": "souitsu",  "type": "戦友",    "spoiler": true },
     { "from": "rovisa",   "to": "gozen",  "type": "敵対",    "spoiler": true },
-    { "from": "rovisa",   "to": "goteni",  "type": "敵対",    "spoiler": true },
+    { "from": "rovisa",   "to": "goteni",  "type": "敵対", "arrows": "to",    "spoiler": true },
+    { "from": "goteni",   "to": "rovisa",  "type": "実験体", "arrows": "to",    "spoiler": true },
 
     { "from": "raura",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
     { "from": "raura",   "to": "kougetsu",  "type": "戦友",    "spoiler": false },
