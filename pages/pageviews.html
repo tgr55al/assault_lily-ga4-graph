@@ -158,7 +158,8 @@
                                 return tooltipItems[0]?.label ?? "";
                               },
                               label: function(context) {
-                                const value = context.formattedValue ?? (context.parsed && context.parsed.y) ?? context.raw;
+                                const raw = context.parsed && context.parsed.y != null ? context.parsed.y : context.raw;
+                                const value = Math.round(raw);
                                 return `閲覧者数: ${value} (viewers)`;
                               }
                             }
@@ -166,7 +167,7 @@
                         },
                         scales: {
                           x: { title: { display: false }, grid: { display: false } },
-                          y: { beginAtZero: true, title: { display: false } }
+                          y: { beginAtZero: true, title: { display: false }, ticks: { precision: 0 } }
                         }
                       }
                     });
