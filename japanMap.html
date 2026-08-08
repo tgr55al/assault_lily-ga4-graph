@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>アサルトリリィwiki プロポーショナルサークル日本地図</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body, html { margin:0; padding:0; height:100%; }
+        #map { width:100%; height:100vh; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // --- 北海道＋本州＋沖縄 用の矩形境界
+        const southWest = L.latLng(25.0, 124.0); // 南西（沖縄を含む）
+        const northEast = L.latLng(46.0, 148.0); // 北東（北海道を含む）
+        const japanBoundsHonshuOkinawa = L.latLngBounds(southWest, northEast);
+
+        // 表示制御の定数
+        const DEFAULT_CENTER = [34.5, 136.0];
+        const DEFAULT_ZOOM = 5;
+
+        // マップ初期化（初期は基本境界を設定）
+        const map = L.map('map', {
+            center: DEFAULT_CENTER,
+            zoom: DEFAULT_ZOOM,
+            minZoom: 5,
+            maxZoom: 8,
+            worldCopyJump: false,
+            maxBounds: japanBoundsHonshuOkinawa,
+            maxBoundsViscosity: 1.0
+        });
+
+        // タイルレイヤー
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // マーカー管理用レイヤー
+        const markersGroup = L.layerGroup().addTo(map);
+
+        // 元データを保持
+        let originalData = null;
+
+        // GeoJSON の features から bounds を計算するユーティリティ
+        function computeBoundsFromFeatures(features) {
+            if (!features || features.length === 0) return null;
+            let minLat = Infinity, minLng = Infinity, maxLat = -Infinity, maxLng = -Infinity;
+            features.forEach(f => {
+                if (!f || !f.geometry || !Array.isArray(f.geometry.coordinates)) return;
+                const lng = Number(f.geometry.coordinates[0]);
+                const lat = Number(f.geometry.coordinates[1]);
+                if (!isFinite(lat) || !isFinite(lng)) return;
+                minLat = Math.min(minLat, lat);
+                minLng = Math.min(minLng, lng);
+                maxLat = Math.max(maxLat, lat);
+                maxLng = Math.max(maxLng, lng);
+            });
+            if (minLat === Infinity) return null;
+            return L.latLngBounds(L.latLng(minLat, minLng), L.latLng(maxLat, maxLng));
+        }
+
+        function drawAllMarkers(data) {
+            // 既存マーカーをクリア
+            markersGroup.clearLayers();
+            if (!data || !data.features || data.features.length === 0) return;
+
+            data.features.forEach(feature => {
+                if (!feature || !feature.geometry || !Array.isArray(feature.geometry.coordinates)) return;
+                const lng = Number(feature.geometry.coordinates[0]);
+                const lat = Number(feature.geometry.coordinates[1]);
+                if (!isFinite(lat) || !isFinite(lng)) return;
+
+                const value = feature.properties && feature.properties.value ? Number(feature.properties.value) : 0;
+                const radius = Math.max(6, Math.log10(value + 1) * 7);
+
+                const marker = L.circleMarker([lat, lng], {
+                    radius: radius,
+                    fillColor: '#3388ff',
+                    color: '#1e4a8a',
+                    weight: 2,
+                    fillOpacity: 0.55
+                });
+
+                const name = feature.properties && feature.properties.name ? feature.properties.name : '不明';
+                // ポップアップ（クリックで表示）
+                marker.bindPopup(`<strong>${name}</strong><br>閲覧者数: <strong>${value}</strong> (viewers)`);
+
+                markersGroup.addLayer(marker);
+            });
+        }
+
+        // GeoJSON を読み込んで円マーカーを追加し、表示範囲を調整する（drawAllMarkers を利用）
+        fetch('ga4_map_japan.geojson?' + Date.now())
+            .then(r => {
+                if (!r.ok) throw new Error('HTTP error ' + r.status);
+                return r.json();
+            })
+            .then(data => {
+                originalData = data;
+
+                // マーカーを描画
+                drawAllMarkers(originalData);
+            })
+            .catch(err => {
+                console.error('GeoJSON の読み込みに失敗しました:', err);
+                map.invalidateSize();
+            });
+
+        // フォールバック: moveend で境界外なら押し戻す
+        map.on('moveend', () => {
+            const mb = map.options.maxBounds;
+            if (mb && !mb.contains(map.getCenter())) {
+                map.panInsideBounds(mb, { animate: true });
+            }
+        });
+
+        // ウィンドウリサイズ時に再計算
+        window.addEventListener('resize', () => {
+            map.invalidateSize();
+        });
+    </script>
+</body>
+</html>
