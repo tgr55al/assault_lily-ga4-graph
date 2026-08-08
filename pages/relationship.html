@@ -1035,7 +1035,8 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
 
         gaEvent("relmap_select_character", {
           character_id: id,
-          character_name: charMap[id].name
+          character_name: charMap[id].name,
+          method: "node_click"
         });
       });
 
