@@ -5829,7 +5829,6 @@
 
     { "from": "gozen",   "to": "ouka_sano",  "type": "ライバル（現役時代）",    "spoiler": true },
     { "from": "misaka",   "to": "gozen",  "type": "憧れ", "arrows": "to",    "spoiler": true },
-    { "from": "gozen",   "to": "tomoshibi",  "type": "",    "spoiler": true },
     { "from": "gozen",   "to": "goteni",  "type": "敵対", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "gozen",  "type": "実験体", "arrows": "to",    "spoiler": true },
 
