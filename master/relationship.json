@@ -3114,7 +3114,7 @@
       "image": "https://i.gyazo.com/2a5b44b888901796a8ad91ae002e2284.jpg"
     },
     {
-      "id": "kirin",
+      "id": "kirari",
       "name": "壬生 輝凛",
       "garden": "鹿野苑高等女学園",
       "wiki": "https://w.atwiki.jp/assault_lily/pages/514.html",
@@ -5509,6 +5509,7 @@
     { "from": "honoho",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
     { "from": "honoho",   "to": "mako_harumichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "honoho",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "honoho",   "to": "kirari",  "type": "気が合う",    "spoiler": false },
 
     { "from": "shirabe",   "to": "kaoru_saionji",  "type": "同レギオン",    "spoiler": false },
     { "from": "shirabe",   "to": "amami",  "type": "同レギオン",    "spoiler": false },
@@ -5522,7 +5523,7 @@
     { "from": "amami",   "to": "mako_harumichi",  "type": "同レギオン",    "spoiler": false },
     { "from": "amami",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
 
-    { "from": "mako_harumichi",   "to": "oki",  "type": "同レギオン",    "spoiler": false },
+    { "from": "mako_harumichi",   "to": "oki",  "type": "アイドルデビューを約束",    "spoiler": false },
 
     { "from": "lushi",   "to": "oife",  "type": "同レギオン",    "spoiler": false },
     { "from": "lushi",   "to": "tanya",  "type": "同レギオン",    "spoiler": false },
