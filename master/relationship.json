@@ -4959,6 +4959,9 @@
     { "from": "tomoshibi",   "to": "asagao",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoshibi",   "to": "yukari",  "type": "同レギオン",    "spoiler": false },
     { "from": "tomoshibi",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
+    { "from": "tomoshibi",   "to": "makina",  "type": "仲が良かった",    "spoiler": true },
+    { "from": "tomoshibi",   "to": "jinnohana",  "type": "仲が良かった",    "spoiler": true },
+    { "from": "tomoshibi",   "to": "shinnohana",  "type": "仲が良かった",    "spoiler": true },
 
     { "from": "kozue",   "to": "hotaru",  "type": "同レギオン",    "spoiler": false },
     { "from": "kozue",   "to": "subaru",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
