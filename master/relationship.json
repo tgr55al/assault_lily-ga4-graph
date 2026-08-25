@@ -2596,7 +2596,7 @@
       "name": "山内 昇依",
       "garden": "エレンスゲ女学園",
       "wiki": "https://w.atwiki.jp/assault_lily/pages/951.html",
-      "image": null
+      "image": "https://i.gyazo.com/4564449e48959900029491d50966a077.jpg"
     },
     {
       "id": "nako",
@@ -5943,7 +5943,8 @@
 
     { "from": "uru",   "to": "nanaho",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
-    { "from": "noi",   "to": "nanaho",  "type": "憧れ", "arrows": "to",    "spoiler": false },
+    { "from": "noi",   "to": "nanaho",  "type": "敬愛", "arrows": "to",    "spoiler": false },
+    { "from": "noi",   "to": "fuka",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
 
     { "from": "nanaho",   "to": "kazuha",  "type": "助けている", "arrows": "to",    "spoiler": false },
 
