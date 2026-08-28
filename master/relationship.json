@@ -4387,6 +4387,7 @@
     { "from": "matsuri",   "to": "chihana",  "type": "絶縁",    "spoiler": false },
 
     { "from": "mimi",   "to": "kaede",  "type": "",    "spoiler": false },
+    { "from": "mimi",   "to": "tokiwa",  "type": "",    "spoiler": false },
     { "from": "mimi",   "to": "fumi",  "type": "警戒", "arrows": "to",    "spoiler": false },
 
     { "from": "kazuki",   "to": "sumire_takasaki",  "type": "同レギオン",    "spoiler": false },
@@ -5324,7 +5325,6 @@
 
     { "from": "moe",   "to": "nonoka",  "type": "友人",    "spoiler": false },
 
-    { "from": "fuka",   "to": "mitake",  "type": "同レギオン",    "spoiler": false },
     { "from": "fuka",   "to": "makina",  "type": "同レギオン",    "spoiler": false },
     { "from": "fuka",   "to": "yuni",  "type": "同レギオン",    "spoiler": false },
     { "from": "fuka",   "to": "higure",  "type": "同レギオン",    "spoiler": false },
