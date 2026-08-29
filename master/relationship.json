@@ -5743,7 +5743,10 @@
     { "from": "miyabi",   "to": "rosalinde",  "type": "懇意にしている",    "spoiler": false },
     { "from": "miyabi",   "to": "chihana",  "type": "懇意にしている",    "spoiler": false },
 
-    { "from": "chino",   "to": "sumire_komai",  "type": "",    "spoiler": false },
+    { "from": "chino",   "to": "sumire_komai",  "type": "懇意にしていた",    "spoiler": false },
+    { "from": "chino",   "to": "althea",  "type": "高く評価", "arrows": "to",    "spoiler": false },
+    { "from": "chino",   "to": "miyabi",  "type": "尊敬", "arrows": "to",    "spoiler": false },
+    { "from": "chino",   "to": "touko",  "type": "良い関係",    "spoiler": false },
 
     { "from": "kuroe",   "to": "kaede",  "type": "ライバル",    "spoiler": false },
     { "from": "kuroe",   "to": "alexia",  "type": "幼馴染",    "spoiler": false },
