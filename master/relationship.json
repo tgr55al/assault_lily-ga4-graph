@@ -5758,6 +5758,7 @@
     { "from": "manaka",   "to": "kaya",  "type": "シュッツエンゲル候補",    "spoiler": false },
     { "from": "manaka",   "to": "chihana",  "type": "信頼",    "spoiler": false },
     { "from": "tohka",   "to": "manaka",  "type": "嫉妬", "arrows": "to",    "spoiler": false },
+    { "from": "manaka",   "to": "misaka",  "type": "懇意にしていた",    "spoiler": false },
 
     { "from": "cynthia",   "to": "ticia",  "type": "同志",    "spoiler": false },
     { "from": "cynthia",   "to": "liaridel",  "type": "とても良い関係",    "spoiler": false },
