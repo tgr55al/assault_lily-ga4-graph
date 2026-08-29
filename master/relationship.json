@@ -5488,7 +5488,7 @@
     { "from": "fubuki",   "to": "wakana",  "type": "友人",    "spoiler": false },
     { "from": "fubuki",   "to": "himeka",  "type": "面識あり",    "spoiler": false },
 
-    { "from": "miyabi",   "to": "chino",  "type": "同レギオン",    "spoiler": false },
+    { "from": "hidaka",   "to": "chino",  "type": "同レギオン",    "spoiler": false },
 
     { "from": "tsubasa",   "to": "mizumi",  "type": "阿吽の陣",    "spoiler": false },
     { "from": "tsubasa",   "to": "honoho",  "type": "同レギオン",    "spoiler": false },
