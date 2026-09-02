@@ -3505,6 +3505,13 @@
       "garden": "その他・不明",
       "wiki": "https://w.atwiki.jp/assault_lily/pages/657.html",
       "image": "https://i.gyazo.com/531051620be5d834d1f56a8991258c30.jpg"
+    },
+    {
+      "id": "god",
+      "name": "尾花沢 軒栄",
+      "garden": "その他・不明",
+      "wiki": "https://w.atwiki.jp/assault_lily/pages/716.html#尾花沢軒栄",
+      "image": "https://i.gyazo.com/2b6227667c36e297cd05094cb1e149ec.png"
     }
   ],
 
@@ -3568,6 +3575,9 @@
     { "from": "fumi",   "to": "ena", "type": "コスプレ友達",          "spoiler": false },
     { "from": "fumi",   "to": "shiori", "type": "天使", "arrows": "to",          "spoiler": false },
     { "from": "shiori",   "to": "fumi", "type": "仲が良い", "arrows": "to",          "spoiler": false },
+
+    { "from": "fumi",   "to": "god", "type": "知人",          "spoiler": false },
+    { "from": "god",   "to": "shiori", "type": "お気に入り", "arrows": "to",          "spoiler": false },
 
     { "from": "fumi",   "to": "yuri", "type": "同レギオン",          "spoiler": true },
     { "from": "fumi",   "to": "yahiro", "type": "同レギオン",          "spoiler": true },
