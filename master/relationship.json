@@ -3661,6 +3661,7 @@
     { "from": "chikaru", "to": "mai",     "type": "友人",          "spoiler": false },
     { "from": "chikaru", "to": "kazuha",     "type": "崇拝", "arrows": "to",          "spoiler": false },
     { "from": "chikaru", "to": "sasaki",     "type": "可愛い", "arrows": "to",          "spoiler": false },
+    { "from": "chikaru", "to": "shiori",     "type": "",          "spoiler": false },
 
     { "from": "soraha",   "to": "kusumi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "soraha",   "to": "ena",  "type": "ルームメイト",    "spoiler": false },
