@@ -4690,6 +4690,8 @@
     { "from": "ginrangyoku",   "to": "goteni",  "type": "従っているふりをしている", "arrows": "to",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "kotohi",  "type": "同レギオン",    "spoiler": true },
     { "from": "ginrangyoku",   "to": "miaki",  "type": "",    "spoiler": false },
+    { "from": "ginrangyoku",   "to": "kisara",  "type": "",    "spoiler": false },
+    { "from": "ginrangyoku",   "to": "natsumi",  "type": "ファン", "arrows": "to",    "spoiler": false },
 
     { "from": "goteni",   "to": "kinrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "ginrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
@@ -5652,6 +5654,7 @@
     { "from": "cherice",   "to": "nagisa_yoshizaka",  "type": "戦友",    "spoiler": false },
     { "from": "cherice",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
     { "from": "cherice",   "to": "seiei",  "type": "元教官・元上官",    "spoiler": false },
+    { "from": "cherice",   "to": "saya",  "type": "",    "spoiler": false },
 
     { "from": "nagisa_yoshizaka",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
     { "from": "nagisa_yoshizaka",   "to": "seiei",  "type": "師匠・元上司",    "spoiler": false },
