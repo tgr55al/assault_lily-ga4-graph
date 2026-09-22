@@ -37,7 +37,6 @@
     z-index: 50;
     background: rgba(255,252,253,.97);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #eadfe6;
     padding: 10px 12px;
     box-shadow: 0 3px 18px rgba(112,73,101,.06);
   }
@@ -149,7 +148,7 @@
     width: 100%;
     max-width: 1180px;
     margin: 0 auto;
-    padding: 10px 4px 10px;
+    padding: 0px 4px 0px;
   }
 
   .timeline {
@@ -159,16 +158,20 @@
     background: rgba(255,255,255,.96);
     border: 1px solid #e5dce5;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 4px 18px rgba(104,76,98,.08);
+
+    /* スクロール領域をタイムライン枠内に限定する設定 */
+    max-height: 80vh; /* 画面高さの80%に収める（お好みで70vh〜90vh等に調整可能） */
+    overflow-y: auto;  /* 枠内のみ縦スクロールできるようにする */
   }
 
   .header {
-    position: relative;
-    z-index: 20;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: grid;
     background: #fff;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid #e5dce5;
   }
 
   .header > div {
@@ -459,14 +462,18 @@
   .lane.other { --type-color: var(--other); background: rgba(138,138,150,.05); }
 
   .legend {
-    position: relative;
-    z-index: 1;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    background: #ffffff; /* 下のカードが透けないように白背景を指定 */
+    border-top: 1px solid #e5dce5; /* 上部に境界線を入れてくっきり表示 */
+    
+    /* 元の設定を維持 */
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 10px 4px 0;
-    color: #817681;
+    gap: 16px;
+    padding: 10px 14px;
     font-size: 11px;
+    color: #817681;
   }
 
   .legend-item {
@@ -622,14 +629,13 @@
       <div class="year-label"></div>
     </div>
     <div id="body" class="body"></div>
-  </div>
-
-  <div class="legend">
-    <span class="legend-item"><i class="dot" style="background:var(--stage)"></i>舞台</span>
-    <span class="legend-item"><i class="dot" style="background:var(--anime)"></i>アニメ</span>
-    <span class="legend-item"><i class="dot" style="background:var(--game)"></i>ゲーム</span>
-    <span class="legend-item"><i class="dot" style="background:var(--book)"></i>書籍</span>
-    <span class="legend-item"><i class="dot" style="background:var(--other)"></i>その他</span>
+    <div class="legend">
+      <span class="legend-item"><i class="dot" style="background:var(--stage)"></i>舞台</span>
+      <span class="legend-item"><i class="dot" style="background:var(--anime)"></i>アニメ</span>
+      <span class="legend-item"><i class="dot" style="background:var(--game)"></i>ゲーム</span>
+      <span class="legend-item"><i class="dot" style="background:var(--book)"></i>書籍</span>
+      <span class="legend-item"><i class="dot" style="background:var(--other)"></i>その他</span>
+    </div>
   </div>
 </main>
 
