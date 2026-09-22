@@ -271,6 +271,7 @@
     position: absolute;
     left: 2px;
     right: 2px;
+    max-width: 320px;
     z-index: 3;
     padding: 3px 3px 4px;
     border: 1px solid #ddd4de;
@@ -308,12 +309,13 @@
 
    /* 拡大時に枠からはみ出さないようラッパー要素を調整 */
    .work-image-wrapper {
-     flex: 1;
-     min-width: 0;
-     height: 38px;
-     overflow: hidden; /* 拡大した画像を枠内で切り抜き */
-     border-radius: 3px;
-     position: relative;
+    flex: 1;
+    min-width: 0;
+    aspect-ratio: 16 / 7;
+    max-height: 80px;
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
   }
 
   .work-image {
@@ -572,7 +574,7 @@ const FALLBACK_WORKS = [
   "description": "シュベスターの祈り（再演版）、シュベスターの祈り（リリプロ版）と基本的には同じ",
   "url": "https://w.atwiki.jp/assault_lily/pages/173.html",
   "image": "https://stage-image.corich.jp/img_stage/l/582/stage58294_1.jpg",
-  "imagePosition": "center 97%"
+  "imagePosition": "bottom"
 },
 {
   "id": "stage-2016-002",
@@ -592,7 +594,7 @@ const FALLBACK_WORKS = [
   "description": "シュベスターの祈り（初演版）とシュベスターの秘密（初演版）をまとめた総集編・完全版",
   "url": "https://w.atwiki.jp/assault_lily/pages/171.html",
   "image": "https://stage-image.corich.jp/img_stage/l/659/stage_65949.jpg",
-  "imagePosition": "center 18%"
+  "imagePosition": "center 7%"
 },
 {
   "id": "novel-2018-001",
@@ -612,7 +614,7 @@ const FALLBACK_WORKS = [
   "description": "ストーリーはほぼ無いので気にしなくてよい",
   "url": "https://w.atwiki.jp/assault_lily/pages/116.html",
   "image": "https://pbs.twimg.com/media/DSLLDaYUIAA5dAU.jpg",
-  "imagePosition": "center 22%"
+  "imagePosition": "center 10%"
 },
 {
   "id": "stage-2018-001",
@@ -622,7 +624,7 @@ const FALLBACK_WORKS = [
   "description": "約束の行方（再演版）と基本的には同じ",
   "url": "https://w.atwiki.jp/assault_lily/pages/114.html",
   "image": "https://pbs.twimg.com/media/Dj52vLNUUAAnNTP.jpg",
-  "imagePosition": "center 93%"
+  "imagePosition": "center 98%"
 },
 {
   "id": "stage-other-2019-001",
@@ -1104,20 +1106,18 @@ function estimateCardHeight(work) {
   const isMobile = window.innerWidth <= 480;
   const hasImg = !!(work.cardImage || work.image);
 
-  // スマホ表示では画像高さ30px（CSSの指定に合わせる）
-  const baseImgHeight = hasImg ? (isMobile ? 32 : 40) : 0;
+  // アスペクト比に応じた画像の推定高さ
+  const baseImgHeight = hasImg ? (isMobile ? 35 : 50) : 0;
 
-  // タイトルの長さから折り返し行数を推定
-  // スマホの狭いレーン幅では1行あたり6〜8文字程度で折り返されるため条件分岐
   const titleLength = work.title ? work.title.length : 0;
-  const charsPerLine = isMobile ? 7 : 12;
+  const charsPerLine = isMobile ? 8 : 14;
   const lines = Math.max(1, Math.ceil(titleLength / charsPerLine));
 
-  const titleLineHeight = isMobile ? 11 : 12;
+  const titleLineHeight = isMobile ? 11 : 13;
   const titleHeight = lines * titleLineHeight;
 
-  const dateHeight = isMobile ? 9 : 11; // 日付の高さ
-  const padding = isMobile ? 8 : 10;    // パディング＋余白
+  const dateHeight = isMobile ? 9 : 11;
+  const padding = isMobile ? 8 : 10;
 
   return baseImgHeight + titleHeight + dateHeight + padding;
 }
