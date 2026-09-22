@@ -306,15 +306,23 @@
     margin-bottom: 2px;
   }
 
+   /* 拡大時に枠からはみ出さないようラッパー要素を調整 */
+   .work-image-wrapper {
+     flex: 1;
+     min-width: 0;
+     height: 38px;
+     overflow: hidden; /* 拡大した画像を枠内で切り抜き */
+     border-radius: 3px;
+     position: relative;
+  }
+
   .work-image {
     display: block;
     width: 100%;
-    height: 38px;
+    height: 100%;
     object-fit: cover;
     object-position: top;
-    border-radius: 3px;
-    flex: 1;
-    min-width: 0;
+    transition: transform .15s ease;
   }
 
   .work-date {
@@ -686,7 +694,7 @@ const FALLBACK_WORKS = [
   "url": "https://w.atwiki.jp/assault_lily/pages/345.html",
   "image": "https://assaultlily.jp/wp-content/themes/assaultlily/image/ogp/ogp.png",
   "cardImage": "https://www.assaultlily.com/wp/wp-content/uploads/2020/03/bnr_007.jpg",
-  "imagePosition": "center 47%"
+  "imagePosition": "right 60%"
 },
 {
   "id": "stage-2021-001",
@@ -717,7 +725,8 @@ const FALLBACK_WORKS = [
   "url": "https://w.atwiki.jp/assault_lily/pages/427.html",
   "image": "https://anime.assaultlily-pj.com/wp-content/themes/anime-assaultlily-pj/assets/images/pc/fruits/img_kv.png",
   "cardImage": "https://anime.assaultlily-pj.com/wp-content/themes/anime-assaultlily-pj/assets/images/sp/fruits/img_logo.png",
-  "imagePosition": "center 50%"
+  "imagePosition": "center 50%",
+  "imageScale": 0.99
 },
 {
   "id": "stage-2021-002",
@@ -1227,22 +1236,41 @@ function render() {
           const displayImg1 = work.cardImage || work.image;
           const displayImg2 = work.cardImage2 || work.image2;
 
-          // 作品ごとの画像位置設定（未指定なら 'top'）
-          const imgPos = work.imagePosition ? escapeHtml(work.imagePosition) : 'top';
+          // 画像位置（未指定なら 'center'）
+          const imgPos1 = work.imagePosition ? escapeHtml(work.imagePosition) : 'center';
+          const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos1;
+
+          // 縮尺・倍率（未指定なら 1）
+          const imgScale = work.imageScale ? Number(work.imageScale) : 1;
+
+          // 1.5 → 150%（拡大・寄りの絵）, 0.8 → 80%（縮小・引いた絵で文字を全体表示）
+          const imgWidthPct = (100 * imgScale).toFixed(2);
+          const imgHeightPct = (100 * imgScale).toFixed(2);
+
+          // 縮小指定(1未満)の時は見切れを防ぐため contain に切替
+          const fitMode = imgScale < 1 ? 'contain' : 'cover';
+
+          const style1 = `width: ${imgWidthPct}%; height: ${imgHeightPct}%; object-fit: ${fitMode}; object-position: ${imgPos1};`;
+          const style2 = `width: ${imgWidthPct}%; height: ${imgHeightPct}%; object-fit: ${fitMode}; object-position: ${imgPos2};`;
 
           let imgHtml = "";
           if (displayImg1) {
             if (displayImg2) {
-              const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos;
               imgHtml = `
                 <div class="work-images-container">
-                  <img class="work-image" src="${escapeHtml(displayImg1)}" style="object-position: ${imgPos};" alt="" loading="lazy">
-                  <img class="work-image" src="${escapeHtml(displayImg2)}" style="object-position: ${imgPos2};" alt="" loading="lazy">
+                  <div class="work-image-wrapper">
+                    <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
+                  </div>
+                  <div class="work-image-wrapper">
+                    <img class="work-image" src="${escapeHtml(displayImg2)}" style="${style2}" alt="" loading="lazy">
+                  </div>
                 </div>`;
             } else {
               imgHtml = `
                 <div class="work-images-container">
-                  <img class="work-image" src="${escapeHtml(displayImg1)}" style="object-position: ${imgPos};" alt="" loading="lazy">
+                  <div class="work-image-wrapper">
+                    <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
+                  </div>
                 </div>`;
             }
           }
