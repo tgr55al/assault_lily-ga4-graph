@@ -286,7 +286,6 @@
     position: relative;
     display: grid;
     align-items: stretch;
-    min-height: 96px;
     border-bottom: 1px solid #e8e1e8;
   }
 
@@ -306,35 +305,32 @@
   }
 
   .lane {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px 10px;
+    position: relative; /* 絶対配置の基準にする */
+    padding: 10px;
     border-right: 1px solid #eee7ee;
     min-width: 0;
   }
 
   .work {
-    position: relative;
+    position: absolute; /* 絶対配置に変更 */
+    left: 50%;
+    transform: translateX(-50%); /* 中央寄せ */
     z-index: 3;
-    width: 100%;
+    width: calc(100% - 20px);
     max-width: 210px;
     padding: 9px 11px 10px;
     border: 1px solid #ddd4de;
     border-left: 4px solid var(--type-color);
     border-radius: 9px;
-    background: linear-gradient(135deg,#fff,#fffafd);
+    background: #fff;
     box-shadow: 0 3px 10px rgba(93,70,91,.10);
     cursor: pointer;
     text-align: left;
-    transition: transform .12s, box-shadow .12s, opacity .15s;
+    transition: transform .12s, box-shadow .12s, opacity .15s, top .2s;
   }
 
   .work:hover {
-    transform: scale(1.035);
+    transform: translateX(-50%) scale(1.035); /* 移動用のtranslateXを維持 */
     box-shadow: 0 7px 18px rgba(93,70,91,.16);
     z-index: 10;
   }
@@ -346,6 +342,20 @@
     color: #4e4650;
   }
 
+  .work-image {
+    display: block;
+    width: 100%;
+    max-height: 58px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  .work-image + .work-date {
+    margin-top: 0;
+  }
+
   .work-date {
     margin-top: 4px;
     font-family: Georgia, "Times New Roman", serif;
@@ -354,11 +364,28 @@
     letter-spacing: .04em;
   }
 
-  .work.stage { --type-color: var(--stage); }
-  .work.anime { --type-color: var(--anime); }
-  .work.game { --type-color: var(--game); }
-  .work.novel { --type-color: var(--novel); }
-  .work.other { --type-color: var(--other); }
+  /* ヘッダー色をかなり薄くしたカード背景 */
+  /* 各ライン（表の列）の背景色。要素カードは白のまま */
+  .lane.stage {
+    --type-color: var(--stage);
+    background: rgba(224,86,143,.07);
+  }
+  .lane.anime {
+    --type-color: var(--anime);
+    background: rgba(84,114,211,.07);
+  }
+  .lane.game {
+    --type-color: var(--game);
+    background: rgba(43,158,138,.07);
+  }
+  .lane.novel {
+    --type-color: var(--novel);
+    background: rgba(217,138,61,.07);
+  }
+  .lane.other {
+    --type-color: var(--other);
+    background: rgba(138,138,150,.07);
+  }
 
   .hidden-type { display: none; }
 
@@ -422,10 +449,32 @@
     font-size: 19px;
   }
 
-  .modal .meta {
-    color: #777;
-    font-size: 13px;
+  .modal .modal-image-wrap {
+    margin: 12px 0 14px;
+    text-align: center;
+  }
+
+  .modal .modal-image {
+    display: block;
+    max-width: 100%;
+    max-height: 300px;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .modal .modal-date {
     margin-bottom: 14px;
+    color: #777;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+  }
+
+  .modal .note-label {
+    margin-bottom: 4px;
+    color: #8d7185;
+    font-size: 12px;
+    font-weight: 800;
   }
 
   .modal .description {
@@ -500,11 +549,15 @@
 <div id="modalBackdrop" class="modal-backdrop">
   <div class="modal">
     <h2 id="modalTitle"></h2>
-    <div id="modalMeta" class="meta"></div>
+    <div id="modalImageWrap" class="modal-image-wrap" style="display:none;">
+      <img id="modalImage" class="modal-image" alt="">
+    </div>
+    <div id="modalDate" class="modal-date"></div>
+    <div class="note-label">備考</div>
     <div id="modalDescription" class="description"></div>
     <div class="modal-actions">
       <button class="close-btn" id="closeModal">閉じる</button>
-      <a class="wiki-btn" id="wikiButton" target="_blank" rel="noopener">Wikiページを開く</a>
+      <a class="wiki-btn" id="wikiButton" target="_blank" rel="noopener">ページを開く</a>
     </div>
   </div>
 </div>
@@ -533,134 +586,134 @@ const DATA_URL = "release_timeline.json";
  * 試作中はこの配列を直接編集できます。
  */
 const FALLBACK_WORKS = [
-  {
-    id: "stage-2015",
-    title: "アサルトリリィ × 私立ルドビコ女学院（仮）",
-    type: "stage",
-    date: "2015年10月",
-    description: "プロトタイプ用の仮データです。実際の初期舞台作品の情報に差し替えてください。",
-    url: ""
-  },
-  {
-    id: "stage-2016",
-    title: "舞台作品サンプル 2016",
-    type: "stage",
-    date: "2016年8月",
-    description: "舞台ラインの配置確認用サンプル。",
-    url: ""
-  },
-  {
-    id: "stage-2018",
-    title: "舞台作品サンプル 2018",
-    type: "stage",
-    date: "2018年2月",
-    description: "同じ年に複数作品を配置できることを確認するサンプル。",
-    url: ""
-  },
-  {
-    id: "stage-2019",
-    title: "舞台作品サンプル 2019",
-    type: "stage",
-    date: "2019年9月",
-    description: "クリックすると詳細ダイアログが開きます。",
-    url: ""
-  },
-  {
-    id: "anime-2020",
-    title: "アサルトリリィ BOUQUET",
-    type: "anime",
-    date: "2020年10月",
-    description: "アニメラインのサンプル作品。",
-    url: ""
-  },
-  {
-    id: "anime-2024",
-    title: "アニメ作品サンプル 2024",
-    type: "anime",
-    date: "2024年1月",
-    description: "後年のアニメ作品を配置する場合のサンプル。",
-    url: ""
-  },
-  {
-    id: "game-2020",
-    title: "アサルトリリィ Last Bullet",
-    type: "game",
-    date: "2021年1月",
-    description: "ゲームラインのサンプル作品。",
-    url: ""
-  },
-  {
-    id: "game-2023",
-    title: "ゲーム作品サンプル 2023",
-    type: "game",
-    date: "2023年6月",
-    description: "ゲーム作品の追加例。",
-    url: ""
-  },
-  {
-    id: "novel-2015",
-    title: "ノベル作品サンプル 2015",
-    type: "novel",
-    date: "2015年6月",
-    description: "ノベルラインのサンプル作品。",
-    url: ""
-  },
-  {
-    id: "novel-2017",
-    title: "ノベル作品サンプル 2017",
-    type: "novel",
-    date: "2017年4月",
-    description: "ノベル作品の追加例。",
-    url: ""
-  },
-  {
-    id: "novel-2022",
-    title: "ノベル作品サンプル 2022",
-    type: "novel",
-    date: "2022年11月",
-    description: "2022年のサンプル作品。",
-    url: ""
-  },
-  {
-    id: "stage-2022-a",
-    title: "舞台作品サンプル 2022 A",
-    type: "stage",
-    date: "2022年4月",
-    description: "同一年に複数作品があるケース。",
-    url: ""
-  },
-  {
-    id: "stage-2022-b",
-    title: "舞台作品サンプル 2022 B",
-    type: "stage",
-    date: "2022年10月",
-    description: "同一年に複数作品があるケース。",
-    url: ""
-  },
-  {
-    id: "game-2025",
-    title: "ゲーム作品サンプル 2025",
-    type: "game",
-    date: "2025年3月",
-    description: "2025年のサンプル作品。",
-    url: ""
-  },
-  {
-    id: "novel-2026",
-    title: "ノベル作品サンプル 2026",
-    type: "novel",
-    date: "2026年7月",
-    description: "2026年のサンプル作品。",
-    url: ""
-  },
-  {
-    id: "other-2024",
-    title: "パチンコ・スロット作品サンプル 2024",
-    type: "other",
-    date: "2024年6月",
-    description: "パチンコ・スロットなど、4分類に入らない作品の配置例。",
-    url: ""
-  }
+{
+  id: "stage-2015",
+  title: "アサルトリリィ × 私立ルドビコ女学院（仮）",
+  type: "stage",
+  date: "2015年10月",
+  description: "プロトタイプ用の仮データです。実際の初期舞台作品の情報に差し替えてください。",
+  url: ""
+},
+{
+  id: "stage-2016",
+  title: "舞台作品サンプル 2016",
+  type: "stage",
+  date: "2016年8月",
+  description: "舞台ラインの配置確認用サンプル。",
+  url: ""
+},
+{
+  id: "stage-2018",
+  title: "舞台作品サンプル 2018",
+  type: "stage",
+  date: "2018年2月",
+  description: "同じ年に複数作品を配置できることを確認するサンプル。",
+  url: ""
+},
+{
+  id: "stage-2019",
+  title: "舞台作品サンプル 2019",
+  type: "stage",
+  date: "2019年9月",
+  description: "クリックすると詳細ダイアログが開きます。",
+  url: ""
+},
+{
+  id: "anime-2020",
+  title: "アサルトリリィ BOUQUET",
+  type: "anime",
+  date: "2020年10月",
+  description: "アニメラインのサンプル作品。",
+  url: ""
+},
+{
+  id: "anime-2024",
+  title: "アニメ作品サンプル 2024",
+  type: "anime",
+  date: "2024年1月",
+  description: "後年のアニメ作品を配置する場合のサンプル。",
+  url: ""
+},
+{
+  id: "game-2020",
+  title: "アサルトリリィ Last Bullet",
+  type: "game",
+  date: "2021年1月",
+  description: "ゲームラインのサンプル作品。",
+  url: ""
+},
+{
+  id: "game-2023",
+  title: "ゲーム作品サンプル 2023",
+  type: "game",
+  date: "2023年6月",
+  description: "ゲーム作品の追加例。",
+  url: ""
+},
+{
+  id: "novel-2015",
+  title: "ノベル作品サンプル 2015",
+  type: "novel",
+  date: "2015年6月",
+  description: "ノベルラインのサンプル作品。",
+  url: ""
+},
+{
+  id: "novel-2017",
+  title: "ノベル作品サンプル 2017",
+  type: "novel",
+  date: "2017年4月",
+  description: "ノベル作品の追加例。",
+  url: ""
+},
+{
+  id: "novel-2022",
+  title: "ノベル作品サンプル 2022",
+  type: "novel",
+  date: "2022年11月",
+  description: "2022年のサンプル作品。",
+  url: ""
+},
+{
+  id: "stage-2022-a",
+  title: "舞台作品サンプル 2022 A",
+  type: "stage",
+  date: "2022年4月",
+  description: "同一年に複数作品があるケース。",
+  url: ""
+},
+{
+  id: "stage-2022-b",
+  title: "舞台作品サンプル 2022 B",
+  type: "stage",
+  date: "2022年10月",
+  description: "同一年に複数作品があるケース。",
+  url: ""
+},
+{
+  id: "game-2025",
+  title: "ゲーム作品サンプル 2025",
+  type: "game",
+  date: "2025年3月",
+  description: "2025年のサンプル作品。",
+  url: ""
+},
+{
+  id: "novel-2026",
+  title: "ノベル作品サンプル 2026",
+  type: "novel",
+  date: "2026年7月",
+  description: "2026年のサンプル作品。",
+  url: ""
+},
+{
+  id: "other-2024",
+  title: "パチンコ・スロット作品サンプル 2024",
+  type: "other",
+  date: "2024年6月",
+  description: "パチンコ・スロットなど、4分類に入らない作品の配置例。",
+  url: ""
+}
 ];
 
 let works = [];
@@ -744,11 +797,9 @@ function escapeHtml(value) {
 function render() {
   body.innerHTML = "";
 
-  // 非表示にしたラインは、列そのものを生成しない。
-  // そのため、作品だけでなくライン・縦線・ヘッダー列も丸ごと消えます。
   const activeTypes = TYPES.filter(type => visible[type]);
 
-  // ヘッダーを再生成して、表示中のラインだけを残す。
+  // ヘッダー再生成
   const header = document.querySelector(".header");
   header.innerHTML = "";
 
@@ -769,12 +820,9 @@ function render() {
     header.appendChild(title);
   }
 
-  // 年 + 表示中ライン数に応じて列幅を設定。
   const gridTemplate = `100px repeat(${activeTypes.length}, 1fr)`;
   header.style.gridTemplateColumns = gridTemplate;
 
-  // 表示中のラインに含まれる作品だけを対象に、年の範囲を動的に決定する。
-  // トグルで表示ラインを絞り込むと、その結果に合わせて年の範囲も変動する。
   const activeWorks = works.filter(w => activeTypes.includes(w.type));
 
   if (activeWorks.length === 0) {
@@ -789,6 +837,11 @@ function render() {
   const startYear = Math.min(...activeYears);
   const endYear = Math.max(...activeYears);
 
+  // 1年の基本高さ (作品が少ない年のデフォルト高さ)
+  const BASE_YEAR_HEIGHT = 180;
+  // カード同士の最小縦幅間隔 (カードの高さ + 余白)
+  const MIN_CARD_GAP = 75;
+
   for (let year = startYear; year <= endYear; year++) {
     const row = document.createElement("div");
     row.className = "year-row";
@@ -799,14 +852,13 @@ function render() {
     yearLabel.textContent = year;
     row.appendChild(yearLabel);
 
-    for (const type of activeTypes) {
-      const lane = document.createElement("div");
-      lane.className = "lane";
+    // その年で最も背が高くなるレーンの高さを保持する変数
+    let maxRowHeight = BASE_YEAR_HEIGHT;
 
-      // 同じ年・同じラインの作品は日付順に並べ、
-      // 絶対座標ではなく通常のフローで縦に積み上げる。
-      // これにより作品数が多い年でもカード同士が重ならず、
-      // 行の高さは中身に合わせて自動的に広がる。
+    // 各レーンのカード配置情報を一時保持する配列
+    const laneRenderData = [];
+
+    for (const type of activeTypes) {
       const laneWorks = works
         .filter(w => {
           if (w.type !== type) return false;
@@ -815,16 +867,66 @@ function render() {
         })
         .sort((a, b) => dateToNumber(a.date) - dateToNumber(b.date));
 
+      let currentLaneHeight = BASE_YEAR_HEIGHT;
+      let lastTop = -MIN_CARD_GAP;
+      const cardsInfo = [];
+
       for (const work of laneWorks) {
+        const yearProgress = dateToNumber(work.date) - year; // 0.0 ～ 1.0
+
+        // 日付から算出した理想のY位置（上下に20px余白を持たせる）
+        let targetTop = 15 + yearProgress * (BASE_YEAR_HEIGHT - 80);
+
+        // 重なり防止：前のカードとMIN_CARD_GAP以上離れていなければ押し下げる
+        if (targetTop < lastTop + MIN_CARD_GAP) {
+          targetTop = lastTop + MIN_CARD_GAP;
+        }
+
+        lastTop = targetTop;
+        cardsInfo.push({ work, top: targetTop });
+
+        // カードが押し出された結果、その年の基本高さを超えたらレーン高さを拡張
+        if (targetTop + MIN_CARD_GAP > currentLaneHeight) {
+          currentLaneHeight = targetTop + MIN_CARD_GAP + 15;
+        }
+      }
+
+      if (currentLaneHeight > maxRowHeight) {
+        maxRowHeight = currentLaneHeight;
+      }
+
+      laneRenderData.push({ type, cardsInfo });
+    }
+
+    // 決定したその年の最大高さを行にセット
+    row.style.height = `${maxRowHeight}px`;
+
+    // 実際にDOM要素（DOM要素とカード）を生成して配置
+    for (const laneData of laneRenderData) {
+      const lane = document.createElement("div");
+      lane.className = `lane ${laneData.type}`;
+
+      for (const cardData of laneData.cardsInfo) {
+        const { work, top } = cardData;
         const card = document.createElement("button");
         card.type = "button";
-        card.className = `work ${type}`;
+        card.className = `work ${laneData.type}`;
         card.dataset.id = work.id;
 
-        card.innerHTML = `
-          <div class="work-title">${escapeHtml(work.title)}</div>
-          <div class="work-date">${escapeHtml(work.date)}</div>
-        `;
+        if (work.image) {
+          card.innerHTML = `
+            <img class="work-image" src="${escapeHtml(work.image)}" alt="${escapeHtml(work.title)}" loading="lazy">
+            <div class="work-date">${escapeHtml(work.date)}</div>
+          `;
+        } else {
+          card.innerHTML = `
+            <div class="work-title">${escapeHtml(work.title)}</div>
+            <div class="work-date">${escapeHtml(work.date)}</div>
+          `;
+        }
+
+        // ピクセル単位で直接位置を指定
+        card.style.top = `${top}px`;
 
         card.addEventListener("click", () => openModal(work));
         lane.appendChild(card);
@@ -838,8 +940,21 @@ function render() {
 }
 function openModal(work) {
   document.getElementById("modalTitle").textContent = work.title;
-  document.getElementById("modalMeta").textContent =
-    `${TYPE_NAMES[work.type]} / ${work.date}`;
+
+  const modalImageWrap = document.getElementById("modalImageWrap");
+  const modalImage = document.getElementById("modalImage");
+
+  if (work.image) {
+    modalImage.src = work.image;
+    modalImage.alt = work.title;
+    modalImageWrap.style.display = "block";
+  } else {
+    modalImage.removeAttribute("src");
+    modalImage.alt = "";
+    modalImageWrap.style.display = "none";
+  }
+
+  document.getElementById("modalDate").textContent = work.date;
   document.getElementById("modalDescription").textContent =
     work.description || "";
 
