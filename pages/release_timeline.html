@@ -293,7 +293,7 @@
     color: #8c738c;
     text-align: center;
     border-right: 1px solid #e8e1e8; /* 左列の右罫線 */
-    background: #faf7fa;
+    background: #ffffff;
   }
 
   /* 各ライン（列）セルのベース */
@@ -366,6 +366,45 @@
   .work.is-cancelled:hover {
     opacity: 0.7;
     transform: none;           /* 拡大アニメーションを無効化（お好みで） */
+  }
+
+  /* カテゴリごとの色定義例 */
+  .work.game {
+    --type-color: #2b9e8a; /* ゲームの色 */
+  }
+
+  .work.book {
+    --type-color: #e67e22; /* ブックの色 */
+  }
+
+  /* 線を伸ばす親カード（基準位置設定） */
+  .work.has-duration-line {
+    position: relative;
+    overflow: visible !important;
+  }
+
+  /* 伸びる縦線のスタイル */
+  .work-duration-line {
+  position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 4px;
+    /* 親カードのカテゴリ色がそのまま線の色になる */
+    background-color: var(--type-color, #888);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 10;
+    border-radius: 0 0 2px 2px;
+  }
+
+  /* 継続中（末尾グラデーション表現） */
+  .work.is-ongoing .work-duration-line {
+    background: linear-gradient(
+      to bottom,
+      var(--type-color, #888) 0%,
+      var(--type-color, #888) 80%,
+      transparent 100%
+    );
   }
 
   .work-title {
@@ -780,6 +819,7 @@ const FALLBACK_WORKS = [
   "title": "アサルトリリィ Last Bullet",
   "type": "game",
   "date": "2021年1月20日",
+  "endDate": "ongoing",
   "description": "現在も展開中",
   "url": "https://w.atwiki.jp/assault_lily/pages/345.html",
   "image": "https://assaultlily.jp/wp-content/themes/assaultlily/image/ogp/ogp.png",
@@ -1035,6 +1075,7 @@ const FALLBACK_WORKS = [
   "title": "江ノ島臨海女学校リリィ列伝",
   "type": "book",
   "date": "2025年3月15日",
+  "endDate": "ongoing",
   "description": "2025年3月15日～（連載）",
   "url": "",
   "image": "https://pbs.twimg.com/media/G_RPl3XacAA35xb?format=jpg&name=4096x4096",
@@ -1312,16 +1353,35 @@ function render() {
       row.appendChild(cell);
     }
 
+    // DOMが配置された直後に線の長さを計算
+    requestAnimationFrame(() => {
+      updateDurationLines();
+    });
+
     body.appendChild(row);
   }
 }
 // カード（作品要素）を生成する関数
 function createWorkElement(work, type) {
-const card = document.createElement("button");
+  const card = document.createElement("button");
   card.type = "button";
-  // work.cancelled が true の場合は "is-cancelled" クラスを追加する
-  card.className = `work ${type}${work.cancelled ? " is-cancelled" : ""}`;
+
+  // endDateの有無と値のチェック
+  const hasEndDate = work.endDate && String(work.endDate).trim() !== "";
+  // "ongoing" や "現在" などの文字列が入っている場合は継続中判定
+  const isOngoing = hasEndDate && (work.endDate === "ongoing" || work.endDate === "現在");
+
+  let classNames = `work ${type}`;
+  if (work.cancelled) classNames += " is-cancelled";
+  if (hasEndDate) classNames += " has-duration-line";
+  if (isOngoing) classNames += " is-ongoing";
+
+  card.className = classNames;
   card.dataset.id = work.id;
+
+  // 計算用に日付データを持たせる
+  if (work.date) card.dataset.date = work.date;
+  if (hasEndDate) card.dataset.endDate = work.endDate;
 
   const displayImg1 = work.cardImage || work.image;
   const displayImg2 = work.cardImage2 || work.image2;
@@ -1355,14 +1415,63 @@ const card = document.createElement("button");
     }
   }
 
+  // 日付表記の組み立て
+  let dateText = escapeHtml(work.date);
+  if (hasEndDate) {
+    if (isOngoing) {
+      dateText = `${escapeHtml(work.date)} ～ 現在`;
+    } else {
+      dateText = `${escapeHtml(work.date)} ～ ${escapeHtml(work.endDate)}`;
+    }
+  }
+
+  // endDateが存在する場合のみ線要素を挿入
+  const lineHtml = hasEndDate ? `<div class="work-duration-line"></div>` : "";
+
   card.innerHTML = `
     ${imgHtml}
     <div class="work-title">${escapeHtml(work.title)}</div>
-    <div class="work-date">${escapeHtml(work.date)}</div>
+    <div class="work-date">${dateText}</div>
+    ${lineHtml}
   `;
 
   card.addEventListener("click", () => openModal(work));
   return card;
+}
+
+// 線の長さを一括設定する関数（描画後に実行）
+function updateDurationLines() {
+  const cards = document.querySelectorAll(".work.has-duration-line");
+  const container = document.querySelector(".timeline") || document.body;
+
+  cards.forEach(card => {
+    const line = card.querySelector(".work-duration-line");
+    if (!line) return;
+
+    const endDate = card.dataset.endDate;
+    const cardRect = card.getBoundingClientRect();
+    const isOngoing = endDate === "ongoing" || endDate === "現在";
+
+    if (isOngoing) {
+      // 継続中の場合：タイムライン最下部まで伸ばす
+      const containerRect = container.getBoundingClientRect();
+      const lineHeight = containerRect.bottom - cardRect.bottom;
+      line.style.height = `${Math.max(lineHeight, 100)}px`;
+    } else {
+      // 日付が設定されている場合：該当する日付要素の位置まで伸ばす
+      const targetEl = document.querySelector(`[data-date="${endDate}"]`) ||
+                       document.querySelector(`[data-year="${endDate.split('-')[0]}"]`);
+
+      if (targetEl) {
+        const targetRect = targetEl.getBoundingClientRect();
+        const lineHeight = targetRect.top - cardRect.bottom;
+        line.style.height = `${Math.max(lineHeight, 20)}px`;
+      } else {
+        // 対象日付要素が見つからない場合のフォールバック
+        line.style.height = "150px";
+      }
+    }
+  });
 }
 function openModal(work) {
   document.getElementById("modalTitle").textContent = work.title;
@@ -1460,7 +1569,7 @@ async function loadData() {
   render();
 }
 
-window.addEventListener("resize", render);
+window.addEventListener("resize", updateDurationLines);
 loadData();
 </script>
 </body>
