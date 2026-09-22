@@ -163,7 +163,7 @@
     box-shadow: 0 4px 18px rgba(104,76,98,.08);
 
     max-height: 80vh;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
 
     overscroll-behavior: contain;      /* スマホで端までスクロールした時に画面全体が引っ張られるのを防止 */
@@ -403,6 +403,7 @@
     pointer-events: none;
     z-index: 10;
     border-radius: 0 0 2px 2px;
+    max-height: 100%;
   }
 
   /* 継続中（末尾グラデーション表現） */
