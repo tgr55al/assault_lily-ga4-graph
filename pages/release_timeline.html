@@ -26,10 +26,6 @@
     font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo,
                  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: var(--text);
-    background:
-      radial-gradient(circle at 8% 10%, rgba(238,196,215,.22), transparent 22rem),
-      radial-gradient(circle at 94% 82%, rgba(211,197,229,.20), transparent 24rem),
-      var(--bg);
   }
 
   body { overflow-x: hidden; }
@@ -44,18 +40,6 @@
     padding: 18px 28px 14px;
     box-shadow: 0 3px 18px rgba(112,73,101,.06);
     overflow: hidden;
-  }
-
-  .topbar::before {
-    content: "❀";
-    position: absolute;
-    left: 18px;
-    top: -14px;
-    font-size: 82px;
-    line-height: 1;
-    color: rgba(214,128,167,.12);
-    transform: rotate(-12deg);
-    pointer-events: none;
   }
 
   .brand {
@@ -182,22 +166,6 @@
     color: rgba(214,128,167,.12);
     font-family: Georgia, serif;
     pointer-events: none;
-  }
-
-  .viewport::before {
-    content: "❀";
-    left: -5px;
-    top: 8px;
-    font-size: 70px;
-    transform: rotate(-18deg);
-  }
-
-  .viewport::after {
-    content: "❀";
-    right: 4px;
-    bottom: 15px;
-    font-size: 76px;
-    transform: rotate(18deg);
   }
 
   .timeline {
@@ -520,7 +488,7 @@
     <span class="brand-rule"></span>
   </div>
   <div class="controls">
-    <button class="toggle active" data-type="stage"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(0 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="4"/></g></svg></span><span>舞台</span></button>
+    <button class="toggle active" data-type="stage"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(72 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(144 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(216 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="3.6" fill="#fff" opacity="0.9"/></g></svg></span><span>舞台</span></button>
     <button class="toggle active" data-type="anime"><span class="type-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg></span><span>アニメ</span></button>
     <button class="toggle active" data-type="game"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15h18c5.5 0 9.3 3.6 10 9.2l1.1 8.6c.6 4.3-2.6 8.2-6.9 8.2-2.6 0-4.9-1.4-6.1-3.7l-2.3-4.3H19.2l-2.3 4.3c-1.2 2.3-3.5 3.7-6.1 3.7-4.3 0-7.5-3.9-6.9-8.2l1.1-8.6C5.7 18.6 9.5 15 15 15Z"/><path d="M14.5 23.5v7M11 27h7"/><circle cx="36" cy="23" r="1.4" fill="currentColor" stroke="none"/><circle cx="40" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="31" r="1.4" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.4" fill="currentColor" stroke="none"/></g></svg></span><span>ゲーム</span></button>
     <button class="toggle active" data-type="novel"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg></span><span>ノベル</span></button>
@@ -736,7 +704,7 @@ const TYPE_EN = {
 };
 
 const TYPE_ICONS = {
-  stage: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(0 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="4"/></g></svg>`,
+  stage: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(72 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(144 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(216 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="3.6" fill="#fff" opacity="0.9"/></g></svg>`,
   anime: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg>`,
   game: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15h18c5.5 0 9.3 3.6 10 9.2l1.1 8.6c.6 4.3-2.6 8.2-6.9 8.2-2.6 0-4.9-1.4-6.1-3.7l-2.3-4.3H19.2l-2.3 4.3c-1.2 2.3-3.5 3.7-6.1 3.7-4.3 0-7.5-3.9-6.9-8.2l1.1-8.6C5.7 18.6 9.5 15 15 15Z"/><path d="M14.5 23.5v7M11 27h7"/><circle cx="36" cy="23" r="1.4" fill="currentColor" stroke="none"/><circle cx="40" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="31" r="1.4" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.4" fill="currentColor" stroke="none"/></g></svg>`,
   novel: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg>`,
