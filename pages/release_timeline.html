@@ -1521,29 +1521,25 @@ function updateDurationLines() {
     const isOngoing = endDate === "ongoing" || endDate === "現在";
 
     if (isOngoing) {
-      // 2. カードの下端の位置（相対位置）を取得
       const cardRect = card.getBoundingClientRect();
 
-      // 3. 画面上の「コンテナの下端（凡例の上）」までの長さを正確に計算
+      // タイムラインの表示領域の下端
       const containerBottom = containerRect.bottom - legendHeight;
+
+      // カードから表示領域下端まで
       const lineHeight = containerBottom - cardRect.bottom;
 
-      // 計算結果をセット（マイナス値にならないようMath.maxを使用）
-      line.style.height = `${Math.max(lineHeight, 10)}px`;
-    } else {
-      // 終了日が決まっている場合
-      const targetEl = document.querySelector(`[data-date="${endDate}"]`) ||
-                       document.querySelector(`[data-year="${endDate.split('-')[0]}"]`);
+      // 線がマイナスにならないようにする
+      // ただし、コンテンツ自体を押し広げないよう上限を設ける
+      const maxLineHeight = Math.max(
+        0,
+        container.clientHeight - (cardRect.bottom - containerRect.top)
+      );
 
-      if (targetEl) {
-        const cardRect = card.getBoundingClientRect();
-        const targetRect = targetEl.getBoundingClientRect();
-        const lineHeight = targetRect.top - cardRect.bottom;
-
-        line.style.height = `${Math.max(lineHeight, 20)}px`;
-      } else {
-        line.style.height = "150px";
-      }
+      line.style.height = `${Math.min(
+        Math.max(lineHeight, 0),
+        maxLineHeight
+      )}px`;
     }
   });
 }
