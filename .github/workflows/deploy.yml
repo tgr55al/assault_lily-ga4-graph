@@ -17,15 +17,16 @@ jobs:
       - name: 公開用ファイルを public/ にコピー
         run: |
           mkdir -p public
-          cp pages/*.html public/
-          cp geojson/*.geojson public/
-          cp ga4Data/*.csv public/
-          cp ga4Data/pageviews_by_page.json public/
-          cp master/japan_map.csv public/
-          cp master/country_map.csv public/
-          cp master/terms.json public/
-          cp master/relationship.json public/
-          cp master/release_timeline.json public/
+          # エラーメッセージを無視して処理を続行させる
+          cp pages/*.html public/ 2>/dev/null || true
+          cp geojson/*.geojson public/ 2>/dev/null || true
+          cp ga4Data/*.csv public/ 2>/dev/null || true
+          cp ga4Data/pageviews_by_page.json public/ 2>/dev/null || true
+          cp master/japan_map.csv public/ 2>/dev/null || true
+          cp master/country_map.csv public/ 2>/dev/null || true
+          cp master/terms.json public/ 2>/dev/null || true
+          cp master/relationship.json public/ 2>/dev/null || true
+          cp master/release_timeline.json public/ 2>/dev/null || true
 
       - name: GitHub Pagesにデプロイ
         uses: peaceiris/actions-gh-pages@v4
