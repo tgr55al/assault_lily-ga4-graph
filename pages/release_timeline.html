@@ -1412,13 +1412,12 @@ function render() {
       row.appendChild(cell);
     }
 
-    // DOMが配置された直後に線の長さを計算
-    requestAnimationFrame(() => {
-      updateDurationLines();
-    });
-
     body.appendChild(row);
   }
+
+  requestAnimationFrame(() => {
+    updateDurationLines();
+  });
 }
 // カード（作品要素）を生成する関数
 function createWorkElement(work, type) {
@@ -1504,14 +1503,13 @@ function createWorkElement(work, type) {
 // 線の長さを一括設定する関数（描画後に実行）
 function updateDurationLines() {
   const cards = document.querySelectorAll(".work.has-duration-line");
-  const container = document.querySelector(".timeline");
-  const legend = document.querySelector(".legend");
+  const body = document.querySelector(".timeline .body");
 
-  if (!container) return;
+  if (!body) return;
 
-  // 1. タイムラインコンテナ自体の画面上の位置と高さを取得
-  const containerRect = container.getBoundingClientRect();
-  const legendHeight = legend ? legend.offsetHeight : 0;
+  // 作品一覧そのものの下端を基準にする
+  // .work-duration-line 自身の長さには影響されない
+  const bodyRect = body.getBoundingClientRect();
 
   cards.forEach(card => {
     const line = card.querySelector(".work-duration-line");
@@ -1520,26 +1518,28 @@ function updateDurationLines() {
     const endDate = card.dataset.endDate;
     const isOngoing = endDate === "ongoing" || endDate === "現在";
 
+    const cardRect = card.getBoundingClientRect();
+
     if (isOngoing) {
-      const cardRect = card.getBoundingClientRect();
+      // 「現在まで続いている作品」は作品一覧の末尾まで線を伸ばす
+      const lineHeight = bodyRect.bottom - cardRect.bottom;
 
-      // タイムラインの表示領域の下端
-      const containerBottom = containerRect.bottom - legendHeight;
+      line.style.height = `${Math.max(lineHeight, 10)}px`;
 
-      // カードから表示領域下端まで
-      const lineHeight = containerBottom - cardRect.bottom;
+    } else {
+      // 終了日が決まっている作品
+      const targetEl =
+        document.querySelector(`[data-date="${endDate}"]`) ||
+        document.querySelector(`[data-year="${endDate.split('-')[0]}"]`);
 
-      // 線がマイナスにならないようにする
-      // ただし、コンテンツ自体を押し広げないよう上限を設ける
-      const maxLineHeight = Math.max(
-        0,
-        container.clientHeight - (cardRect.bottom - containerRect.top)
-      );
+      if (targetEl) {
+        const targetRect = targetEl.getBoundingClientRect();
+        const lineHeight = targetRect.top - cardRect.bottom;
 
-      line.style.height = `${Math.min(
-        Math.max(lineHeight, 0),
-        maxLineHeight
-      )}px`;
+        line.style.height = `${Math.max(lineHeight, 20)}px`;
+      } else {
+        line.style.height = "150px";
+      }
     }
   });
 }
@@ -1651,8 +1651,6 @@ async function loadData() {
 }
 
 window.addEventListener("resize", updateDurationLines);
-// スクロール時にも線の長さを再計算して追従させる設定
-document.querySelector(".timeline")?.addEventListener("scroll", updateDurationLines);
 loadData();
 </script>
 </body>
