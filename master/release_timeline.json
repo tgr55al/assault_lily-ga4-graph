@@ -3,6 +3,7 @@
     {
       "id": "novel-2015-001",
       "title": "アサルトリリィ～一柳隊、出撃します！～",
+      "shortTitle": "一柳隊、出撃します！",
       "type": "book",
       "date": "2015年6月20日",
       "description": "",
@@ -13,6 +14,7 @@
     {
       "id": "novel-2016-001",
       "title": "アサルトリリィ アームズ",
+      "shortTitle": "アームズ",
       "type": "book",
       "date": "2016年2月7日",
       "description": "2016年2月7日～5月24日連載。2017年7月28日書籍化。",
@@ -23,6 +25,7 @@
     {
       "id": "stage-2016-001",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.1『シュベスターの祈り』",
+      "shortTitle": "シュベスターの祈り（初演版）",
       "type": "stage",
       "date": "2016年4月16日",
       "description": "シュベスターの祈り（再演版）、シュベスターの祈り（リリプロ版）と基本的には同じ",
@@ -33,6 +36,7 @@
     {
       "id": "stage-2016-002",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.2『シュベスターの秘密』",
+      "shortTitle": "シュベスターの秘密（初演版）",
       "type": "stage",
       "date": "2016年9月16日",
       "description": "シュベスターの秘密（再演版）と基本的には同じ",
@@ -43,6 +47,7 @@
     {
       "id": "stage-2017-001",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.3『シュベスターの誓い』",
+      "shortTitle": "シュベスターの誓い",
       "type": "stage",
       "date": "2017年3月1日",
       "description": "シュベスターの祈り（初演版）とシュベスターの秘密（初演版）をまとめた総集編・完全版",
@@ -53,6 +58,7 @@
     {
       "id": "novel-2018-001",
       "title": "アサルトリリィ外伝 京都編 眠る恋人",
+      "shortTitle": "京都編 眠る恋人",
       "type": "book",
       "date": "2018年1月18日",
       "description": "2018年1月18日～4月26日連載。2020年12月31日電子特装版。\n二次創作扱い",
@@ -63,6 +69,7 @@
     {
       "id": "stage-other-2018-001",
       "title": "アサルトリリィ×私立ルドビコ女学院×人狼TLPT人狼TLPT S『未来への十字架』",
+      "shortTitle": "未来への十字架",
       "type": "stage",
       "date": "2018年2月7日",
       "description": "ストーリーはほぼ無いので気にしなくてよい",
@@ -73,6 +80,7 @@
     {
       "id": "stage-2018-001",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.4『白きレジスタンス～約束の行方～』",
+      "shortTitle": "約束の行方（初演版）",
       "type": "stage",
       "date": "2018年9月21日",
       "description": "約束の行方（再演版）と基本的には同じ",
@@ -83,6 +91,7 @@
     {
       "id": "stage-other-2019-001",
       "title": "アサルトリリィ×私立ルドビコ女学院×人狼TLPT人狼TLPT S『未来への十字架Ⅱ』",
+      "shortTitle": "未来への十字架Ⅱ",
       "type": "stage",
       "date": "2019年2月8日",
       "description": "ストーリーはほぼ無いので気にしなくてよい",
@@ -93,6 +102,7 @@
     {
       "id": "stage-2019-001",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.5『白きレジスタンス～真実の刃～』",
+      "shortTitle": "真実の刃（初演版）",
       "type": "stage",
       "date": "2019年11月29日",
       "description": "真実の刃（再演版）と基本的には同じ",
@@ -104,6 +114,7 @@
     {
       "id": "stage-2020-001",
       "title": "アサルトリリィ League of Gardens",
+      "shortTitle": "League of Gardens",
       "type": "stage",
       "date": "2020年1月9日",
       "description": "",
@@ -114,6 +125,7 @@
     {
       "id": "other-2020-001",
       "title": "アサルトリリィ League of Gardens -full bloom-",
+      "shortTitle": "League of Gardens -full bloom-",
       "type": "book",
       "date": "2020年7月8日",
       "description": "2020年7月8日～2023年2月8日連載。2021年1月8日～2023年4月20日単行本。\nLoGを漫画化した作品",
@@ -124,6 +136,7 @@
     {
       "id": "stage-2020-002",
       "title": "アサルトリリィ The Fateful Gift",
+      "shortTitle": "The Fateful Gift",
       "type": "stage",
       "date": "2020年9月3日",
       "description": "",
@@ -134,6 +147,7 @@
     {
       "id": "anime-2020-001",
       "title": "アサルトリリィ BOUQUET",
+      "shortTitle": "BOUQUET",
       "type": "anime",
       "date": "2020年10月2日",
       "description": "",
@@ -144,6 +158,7 @@
     {
       "id": "game-2021-001",
       "title": "アサルトリリィ Last Bullet",
+      "shortTitle": "Last Bullet",
       "type": "game",
       "date": "2021年1月20日",
       "endDate": "ongoing",
@@ -156,6 +171,7 @@
     {
       "id": "stage-2021-001",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.6『シュベスターの祈り』",
+      "shortTitle": "シュベスターの祈り（再演版）",
       "type": "stage",
       "date": "2021年5月28日",
       "description": "シュベスターの祈り（初演版）、シュベスターの祈り（リリプロ版）と基本的には同じ",
@@ -166,6 +182,7 @@
     {
       "id": "novel-2021-001",
       "title": "アサルトリリィ グローリー 電撃新潟奪還戦",
+      "shortTitle": "グローリー",
       "type": "book",
       "date": "2021年6月13日",
       "description": "2021年6月13日～2022年3月27日連載。2023年1月27日書籍化。",
@@ -176,6 +193,7 @@
     {
       "id": "anime-2021-001",
       "title": "アサルトリリィ ふるーつ",
+      "shortTitle": "ふるーつ",
       "type": "anime",
       "date": "2021年7月20日",
       "description": "",
@@ -188,6 +206,7 @@
     {
       "id": "stage-2021-002",
       "title": "アサルトリリィ・御台場女学校-The Singular Ability-",
+      "shortTitle": "The Singular Ability",
       "type": "stage",
       "date": "2021年8月20日",
       "description": "",
@@ -198,6 +217,7 @@
     {
       "id": "stage-2021-003",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.7『シュベスターの秘密』",
+      "shortTitle": "シュベスターの秘密（再演版）",
       "type": "stage",
       "date": "2021年10月15日",
       "description": "シュベスターの秘密（初演版）と基本的には同じ",
@@ -208,6 +228,7 @@
     {
       "id": "stage-2022-001",
       "title": "アサルトリリィ Lost Memories",
+      "shortTitle": "Lost Memories",
       "type": "stage",
       "date": "2022年1月20日",
       "description": "",
@@ -218,6 +239,7 @@
     {
       "id": "stage-2022-002",
       "title": "アサルトリリィ・御台場女学校-The Empathy Phenomenon-",
+      "shortTitle": "The Empathy Phenomenon",
       "type": "stage",
       "date": "2022年2月17日",
       "description": "",
@@ -228,6 +250,7 @@
     {
       "id": "other-2022-001",
       "title": "アサルトリリィ『リリィコレクション2022 御台場女学校 with 私立ルドビコ女学院』",
+      "shortTitle": "リリィコレクション2022",
       "type": "stage",
       "date": "2022年4月7日",
       "description": "全公演中止",
@@ -239,6 +262,7 @@
     {
       "id": "stage-2022-003",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.8『白きレジスタンス～約束の行方～』",
+      "shortTitle": "約束の行方（再演版）",
       "type": "stage",
       "date": "2022年6月30日",
       "description": "約束の行方（初演版）と基本的には同じ",
@@ -249,6 +273,7 @@
     {
       "id": "other-2022-002",
       "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Sweet Memoria～",
+      "shortTitle": "しーくれっとがーでん ～Sweet Memoria～",
       "type": "book",
       "date": "2022年6月30日",
       "description": "",
@@ -259,6 +284,7 @@
     {
       "id": "other-2022-002",
       "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Innocent Memoria～",
+      "shortTitle": "しーくれっとがーでん ～Innocent Memoria～",
       "type": "book",
       "date": "2022年7月30日",
       "description": "",
@@ -269,6 +295,7 @@
     {
       "id": "other-2022-002",
       "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Dreamy Memoria～",
+      "shortTitle": "しーくれっとがーでん ～Dreamy Memoria～",
       "type": "book",
       "date": "2023年1月30日",
       "description": "",
@@ -279,6 +306,7 @@
     {
       "id": "stage-2022-004",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.9『白きレジスタンス～真実の刃～』",
+      "shortTitle": "真実の刃（再演版）",
       "type": "stage",
       "date": "2022年9月8日",
       "description": "LIVE SHOWへ変更",
@@ -290,6 +318,7 @@
     {
       "id": "other-2022-003",
       "title": "アサルトリリィ×私立ルドビコ女学院 LIVE SHOW",
+      "shortTitle": "ルド女 LIVE SHOW",
       "type": "stage",
       "date": "2022年9月8日",
       "description": "",
@@ -300,6 +329,7 @@
     {
       "id": "stage-2023-001",
       "title": "アサルトリリィ・御台場女学校-The Battle to Overcome-",
+      "shortTitle": "The Battle to Overcome",
       "type": "stage",
       "date": "2023年2月3日",
       "description": "",
@@ -310,6 +340,7 @@
     {
       "id": "novel-2023-001",
       "title": "アサルトリリィヴンダー 激闘！御台場迎撃戦",
+      "shortTitle": "ヴンダー",
       "type": "book",
       "date": "2023年2月26日",
       "description": "2023年2月26日～6月25日連載。2023年10月26日単行本化。\n御台場迎撃戦（用語）",
@@ -320,6 +351,7 @@
     {
       "id": "stage-2023-002",
       "title": "アサルトリリィ・イルマ女子美術高校-The Gleam of Dawn-",
+      "shortTitle": "The Gleam of Dawn",
       "type": "stage",
       "date": "2023年4月13日",
       "description": "",
@@ -330,6 +362,7 @@
     {
       "id": "stage-2023-003",
       "title": "Lily Project 第1弾 アサルトリリィ×私立ルドビコ女学院『シュベスターの祈り』",
+      "shortTitle": "シュベスターの祈り（リリプロ版）",
       "type": "stage",
       "date": "2023年5月18日",
       "description": "シュベスターの祈り（初演版）、シュベスターの祈り（再演版）と基本的には同じ",
@@ -340,6 +373,7 @@
     {
       "id": "stage-2023-004",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.9『白きレジスタンス～真実の刃～』",
+      "shortTitle": "真実の刃（再演版）",
       "type": "stage",
       "date": "2023年8月19日",
       "description": "真実の刃（初演版）と基本的には同じ",
@@ -350,6 +384,7 @@
     {
       "id": "other-2023-001",
       "title": "アサルトリリィ『リリィコレクション2023 御台場女学校 with 私立ルドビコ女学院』",
+      "shortTitle": "リリィコレクション2023",
       "type": "stage",
       "date": "2023年8月26日",
       "description": "リリコレ2022のリベンジ公演",
@@ -360,6 +395,7 @@
     {
       "id": "stage-2023-005",
       "title": "アサルトリリィ・新章 サングリーズル編『種の最果ての地で』／ 大島近海ネスト調査隊編『金瘡小草の咲く時』",
+      "shortTitle": "新章1弾",
       "type": "stage",
       "date": "2023年12月19日",
       "description": "",
@@ -370,6 +406,7 @@
     {
       "id": "stage-2024-001",
       "title": "アサルトリリィ・新章 サングリーズル編『花々の黄昏』／ 大島近海ネスト調査隊編『玲瓏たる深潭』",
+      "shortTitle": "新章2弾",
       "type": "stage",
       "date": "2024年5月17日",
       "description": "",
@@ -380,6 +417,7 @@
     {
       "id": "stage-2024-002",
       "title": "アサルトリリィ・御台場女学校-The Snowdrop-",
+      "shortTitle": "The Snowdrop",
       "type": "stage",
       "date": "2024年8月1日",
       "description": "",
@@ -390,6 +428,7 @@
     {
       "id": "stage-2024-003",
       "title": "アサルトリリィ・イルマ女子美術高校-The Bond with the White Rose-",
+      "shortTitle": "The Bond with the White Rose",
       "type": "stage",
       "date": "2024年12月5日",
       "description": "",
@@ -400,6 +439,7 @@
     {
       "id": "novel-2025-001",
       "title": "江ノ島臨海女学校リリィ列伝",
+      "shortTitle": "江ノ島編",
       "type": "book",
       "date": "2025年3月15日",
       "endDate": "ongoing",
@@ -411,6 +451,7 @@
     {
       "id": "stage-2025-001",
       "title": "アサルトリリィ・シュツルム ～サングリーズル編～",
+      "shortTitle": "シュツルム ～サングリーズル編～",
       "type": "stage",
       "date": "2025年4月25日",
       "description": "",
@@ -421,6 +462,7 @@
     {
       "id": "stage-2025-002",
       "title": "アサルトリリィ-眞說・御台場迎撃戦-",
+      "shortTitle": "眞說・御台場迎撃戦",
       "type": "stage",
       "date": "2025年9月20日",
       "description": "御台場迎撃戦（用語）",
@@ -431,6 +473,7 @@
     {
       "id": "other-2025-001",
       "title": "異空間リーディングステージ「アサルトリリィ」- RED - & - BLUE -",
+      "shortTitle": "異空間リーディングステージ - RED - & - BLUE -",
       "type": "stage",
       "date": "2025年11月28日",
       "description": "オムニバス形式",
@@ -442,6 +485,7 @@
     {
       "id": "stage-2026-001",
       "title": "アサルトリリィ・シュツルム ～サングリーズル編～第2弾",
+      "shortTitle": "シュツルム ～サングリーズル編～第2弾",
       "type": "stage",
       "date": "2026年4月18日",
       "description": "",
@@ -452,6 +496,7 @@
     {
       "id": "stage-2026-002",
       "title": "アサルトリリィ・シュツルム ～御台場女学校編～",
+      "shortTitle": "シュツルム ～御台場女学校編～",
       "type": "stage",
       "date": "2026年7月16日",
       "description": "",
@@ -462,6 +507,7 @@
     {
       "id": "other-2026-001",
       "title": "異空間リーディングステージ「アサルトリリィ」 vol.2（仮）",
+      "shortTitle": "異空間リーディングステージ vol.2",
       "type": "stage",
       "date": "2026年10月28日",
       "description": "オムニバス形式。",
@@ -472,6 +518,7 @@
     {
       "id": "stage-2027-001",
       "title": "アサルトリリィ×私立ルドビコ女学院 ～白薔薇のパスカ～",
+      "shortTitle": "白薔薇のパスカ",
       "type": "stage",
       "date": "2027年1月8日",
       "description": "",
@@ -482,6 +529,7 @@
     {
       "id": "stage-2027-002",
       "title": "アサルトリリィ Last Bullet ～The Promise of Someday～",
+      "shortTitle": "The Promise of Someday",
       "type": "stage",
       "date": "2027年1月15日",
       "description": "",
@@ -492,6 +540,7 @@
     {
       "id": "stage-2027-003",
       "title": "アサルトリリィ・シュツルム ～ロネスネス編～",
+      "shortTitle": "シュツルム ～ロネスネス編～",
       "type": "stage",
       "date": "2027年7月1日",
       "description": "",
