@@ -1,0 +1,36 @@
+name: GA4 Daily Export
+
+on:
+  workflow_dispatch:       # 手動実行も可能
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: 公開用ファイルを public/ にコピー
+        run: |
+          mkdir -p public
+          cp pages/*.html public/
+          cp geojson/*.geojson public/
+          cp ga4Data/*.csv public/
+          cp ga4Data/pageviews_by_page.json public/
+          cp master/japan_map.csv public/
+          cp master/country_map.csv public/
+          cp master/terms.json public/
+          cp master/relationship.json public/
+          cp master/release_timeline.json public/
+
+      - name: GitHub Pagesにデプロイ
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
