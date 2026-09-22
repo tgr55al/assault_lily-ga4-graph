@@ -14,7 +14,7 @@
     --stage: #e0568f;
     --anime: #5472d3;
     --game: #2b9e8a;
-    --novel: #d98a3d;
+    --book: #d98a3d;
     --other: #8a8a96;
   }
 
@@ -111,7 +111,7 @@
   .toggle[data-type="stage"].active { background: var(--stage); }
   .toggle[data-type="anime"].active { background: var(--anime); }
   .toggle[data-type="game"].active { background: var(--game); }
-  .toggle[data-type="novel"].active { background: var(--novel); }
+  .toggle[data-type="book"].active { background: var(--book); }
   .toggle[data-type="other"].active { background: var(--other); }
 
   .toggle:not(.active) {
@@ -223,9 +223,9 @@
     background: color-mix(in srgb, var(--game) 18%, white);
     color: color-mix(in srgb, var(--game) 62%, black);
   }
-  .lane-title.novel {
-    background: color-mix(in srgb, var(--novel) 18%, white);
-    color: color-mix(in srgb, var(--novel) 62%, black);
+  .lane-title.book {
+    background: color-mix(in srgb, var(--book) 18%, white);
+    color: color-mix(in srgb, var(--book) 62%, black);
   }
   .lane-title.other {
     background: color-mix(in srgb, var(--other) 18%, white);
@@ -258,31 +258,94 @@
     border-right: 1px solid var(--line);
   }
 
+  /* 左端の年セルの見た目 */
+  .year-cell {
+    padding: 8px 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8c738c;
+    text-align: center;
+    line-height: 1.2;
+    border-right: 1px solid #e8e1e8;
+  }
+
+  /* 同じ年の中で2行目以降の左端セル（空セル） */
+  .year-cell-empty {
+    border-right: 1px solid #e8e1e8;
+  }
+
+  /* 年の最初の行の上線（年の区切り線） */
+  .item-row.year-first-row {
+    border-top: 2px solid #e0d5e0;
+  }
+
+  /* 1イベント行のベース */
+  .item-row {
+    display: grid;
+    align-items: stretch;
+  }
+
+  /* 左端の年セル */
+  .year-cell, .year-cell-empty {
+    padding: 8px 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8c738c;
+    text-align: center;
+    border-right: 1px solid #e8e1e8; /* 左列の右罫線 */
+    background: #faf7fa;
+  }
+
+  /* 各ライン（列）セルのベース */
+  .lane-cell {
+    padding: 6px 4px;
+    min-width: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #e8e1e8;
+    box-sizing: border-box;
+  }
+
+  /* 最後の列の右罫線は消す */
+  .lane-cell:last-child {
+    border-right: none;
+  }
+
+  /* --------------------------------------------------
+     各カテゴリ（ライン）ごとの背景色
+     -------------------------------------------------- */
+  .lane-cell.stage  { background-color: rgba(230, 0, 110, 0.04); }  /* 舞台 */
+  .lane-cell.anime  { background-color: rgba(0, 100, 220, 0.04); }  /* アニメ */
+  .lane-cell.game   { background-color: rgba(0, 150, 100, 0.04); }  /* ゲーム */
+  .lane-cell.book  { background-color: rgba(180, 120, 30, 0.04); }  /* 書籍 */
+  .lane-cell.other  { background-color: rgba(100, 100, 100, 0.04); }/* その他 */
+
   .lane {
     position: relative;
-    padding: 2px;
+    padding: 4px 2px;
     border-right: 1px solid #eee7ee;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
   .lane:last-child { border-right: 0; }
 
   /* カード共通 */
   .work {
-    position: absolute;
-    left: 2px;
-    right: 2px;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
     max-width: 320px;
-    z-index: 3;
-    padding: 3px 3px 4px;
+    box-sizing: border-box;
+    padding: 4px;
     border: 1px solid #ddd4de;
     border-left: 3px solid var(--type-color);
     border-radius: 5px;
     background: #fff;
-    box-shadow: 0 2px 6px rgba(93,70,91,.08);
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
     cursor: pointer;
     text-align: left;
-    transition: transform .12s, box-shadow .12s, z-index .12s;
-    overflow: hidden;
   }
 
   .work:hover {
@@ -339,7 +402,7 @@
   .lane.stage { --type-color: var(--stage); background: rgba(224,86,143,.05); }
   .lane.anime { --type-color: var(--anime); background: rgba(84,114,211,.05); }
   .lane.game { --type-color: var(--game); background: rgba(43,158,138,.05); }
-  .lane.novel { --type-color: var(--novel); background: rgba(217,138,61,.05); }
+  .lane.book { --type-color: var(--book); background: rgba(217,138,61,.05); }
   .lane.other { --type-color: var(--other); background: rgba(138,138,150,.05); }
 
   .legend {
@@ -483,7 +546,7 @@
     <button class="toggle active" data-type="stage"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(72 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(144 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(216 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="3.6" fill="#fff" opacity="0.9"/></g></svg></span><span>舞台</span></button>
     <button class="toggle active" data-type="anime"><span class="type-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg></span><span>アニメ</span></button>
     <button class="toggle active" data-type="game"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15h18c5.5 0 9.3 3.6 10 9.2l1.1 8.6c.6 4.3-2.6 8.2-6.9 8.2-2.6 0-4.9-1.4-6.1-3.7l-2.3-4.3H19.2l-2.3 4.3c-1.2 2.3-3.5 3.7-6.1 3.7-4.3 0-7.5-3.9-6.9-8.2l1.1-8.6C5.7 18.6 9.5 15 15 15Z"/><path d="M14.5 23.5v7M11 27h7"/><circle cx="36" cy="23" r="1.4" fill="currentColor" stroke="none"/><circle cx="40" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="31" r="1.4" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.4" fill="currentColor" stroke="none"/></g></svg></span><span>ゲーム</span></button>
-    <button class="toggle active" data-type="novel"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg></span><span>ノベル</span></button>
+    <button class="toggle active" data-type="book"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg></span><span>書籍</span></button>
     <button class="toggle active" data-type="other"><span class="type-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span><span>その他</span></button>
     <span class="hint">※ ボタンで各ラインの表示 / 非表示を切り替え</span>
   </div>
@@ -501,7 +564,7 @@
     <span class="legend-item"><i class="dot" style="background:var(--stage)"></i>舞台</span>
     <span class="legend-item"><i class="dot" style="background:var(--anime)"></i>アニメ</span>
     <span class="legend-item"><i class="dot" style="background:var(--game)"></i>ゲーム</span>
-    <span class="legend-item"><i class="dot" style="background:var(--novel)"></i>ノベル</span>
+    <span class="legend-item"><i class="dot" style="background:var(--book)"></i>書籍</span>
     <span class="legend-item"><i class="dot" style="background:var(--other)"></i>その他</span>
   </div>
 </main>
@@ -549,7 +612,7 @@ const FALLBACK_WORKS = [
 {
   "id": "novel-2015-001",
   "title": "アサルトリリィ～一柳隊、出撃します！～",
-  "type": "novel",
+  "type": "book",
   "date": "2015年6月20日",
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/989.html",
@@ -559,12 +622,12 @@ const FALLBACK_WORKS = [
 {
   "id": "novel-2016-001",
   "title": "アサルトリリィ アームズ",
-  "type": "novel",
+  "type": "book",
   "date": "2016年2月7日",
   "description": "2016年2月7日～5月24日連載。2017年7月28日書籍化。",
   "url": "",
-  "image": "",
-  "imagePosition": "top"
+  "image": "https://www.assaultlily.com/_assets/images/novel/cover_book_002.png",
+  "imagePosition": "center 20%"
 },
 {
   "id": "stage-2016-001",
@@ -599,12 +662,12 @@ const FALLBACK_WORKS = [
 {
   "id": "novel-2018-001",
   "title": "アサルトリリィ外伝 京都編 眠る恋人",
-  "type": "novel",
+  "type": "book",
   "date": "2018年1月18日",
   "description": "2018年1月18日～4月26日連載。2020年12月31日電子特装版。\n二次創作扱い",
   "url": "",
-  "image": "",
-  "imagePosition": "top"
+  "image": "https://blog-imgs-135.fc2.com/d/o/g/dogmask/20201231204649112s.jpg",
+  "imagePosition": "center 40%"
 },
 {
   "id": "stage-other-2018-001",
@@ -660,7 +723,7 @@ const FALLBACK_WORKS = [
 {
   "id": "other-2020-001",
   "title": "アサルトリリィ League of Gardens -full bloom-",
-  "type": "other",
+  "type": "book",
   "date": "2020年7月8日",
   "description": "2020年7月8日～2023年2月8日連載。2021年1月8日～2023年4月20日単行本。\nLoGを漫画化した作品",
   "url": "https://w.atwiki.jp/assault_lily/pages/313.html",
@@ -710,12 +773,12 @@ const FALLBACK_WORKS = [
 },
 {
   "id": "novel-2021-001",
-  "title": "アサルトリリィ ～電撃新潟奪還戦～\nアサルトリリィ グローリー 電撃新潟奪還戦 小説完全版",
-  "type": "novel",
+  "title": "アサルトリリィ グローリー 電撃新潟奪還戦",
+  "type": "book",
   "date": "2021年6月13日",
   "description": "2021年6月13日～2022年3月27日連載。2023年1月27日書籍化。",
   "url": "",
-  "image": "",
+  "image": "https://hobby.dengeki.com/ss/hobby/2021/12/bb7ae4c2736e126de3a0aae01bcc3fd4_fVmspTO0s8AmvIdY77BEfu-_pcWX1wVQ.jpg",
   "imagePosition": "top"
 },
 {
@@ -773,7 +836,7 @@ const FALLBACK_WORKS = [
 {
   "id": "other-2022-001",
   "title": "アサルトリリィ『リリィコレクション2022 御台場女学校 with 私立ルドビコ女学院』",
-  "type": "other",
+  "type": "stage",
   "date": "2022年4月7日",
   "description": "全公演中止",
   "url": "",
@@ -792,13 +855,33 @@ const FALLBACK_WORKS = [
 },
 {
   "id": "other-2022-002",
-  "title": "アサルトリリィ Last Bullet しーくれっとがーでん ~Sweet Memoria~\nアサルトリリィ Last Bullet しーくれっとがーでん ~Innocent Memoria~\nアサルトリリィ Last Bullet しーくれっとがーでん ~Dreamy Memoria~",
-  "type": "other",
+  "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Sweet Memoria～",
+  "type": "book",
   "date": "2022年6月30日",
   "description": "",
   "url": "",
-  "image": "",
-  "imagePosition": "top"
+  "image": "https://cf.image-cdn.k-manga.jp/cover_320/16/164662/b164662_1_320.jpg",
+  "imagePosition": "center 95%"
+},
+{
+  "id": "other-2022-002",
+  "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Innocent Memoria～",
+  "type": "book",
+  "date": "2022年7月30日",
+  "description": "",
+  "url": "",
+  "image": "https://cf.image-cdn.k-manga.jp/cover_320/16/164894/b164894_1_320.jpg",
+  "imagePosition": "center 95%"
+},
+{
+  "id": "other-2022-002",
+  "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Dreamy Memoria～",
+  "type": "book",
+  "date": "2023年1月30日",
+  "description": "",
+  "url": "",
+  "image": "https://cf.image-cdn.k-manga.jp/cover_320/17/174121/b174121_1_320.jpg",
+  "imagePosition": "center 3%"
 },
 {
   "id": "stage-2022-004",
@@ -832,12 +915,12 @@ const FALLBACK_WORKS = [
 },
 {
   "id": "novel-2023-001",
-  "title": "アサルトリリィヴンダー ～激闘！御台場迎撃戦～\nアサルトリリィヴンダー 激闘！御台場迎撃戦",
-  "type": "novel",
+  "title": "アサルトリリィヴンダー 激闘！御台場迎撃戦",
+  "type": "book",
   "date": "2023年2月26日",
   "description": "2023年2月26日～6月25日連載。2023年10月26日単行本化。\n御台場迎撃戦（用語）",
   "url": "",
-  "image": "",
+  "image": "https://hobby.dengeki.com/ss/hobby/2023/07/AL_wunder_cover_mihon_0803_rzN-16zggX7suIOPD9LHB9u9qzULmail.jpg",
   "imagePosition": "top"
 },
 {
@@ -923,11 +1006,11 @@ const FALLBACK_WORKS = [
 {
   "id": "novel-2025-001",
   "title": "江ノ島臨海女学校リリィ列伝",
-  "type": "novel",
+  "type": "book",
   "date": "2025年3月15日",
   "description": "2025年3月15日～（連載）",
   "url": "",
-  "image": "",
+  "image": "https://pbs.twimg.com/media/G_RPl3XacAA35xb?format=jpg&name=4096x4096",
   "imagePosition": "top"
 },
 {
@@ -1025,12 +1108,12 @@ const FALLBACK_WORKS = [
 
 let works = [];
 
-const TYPES = ["stage", "anime", "game", "novel", "other"];
+const TYPES = ["stage", "anime", "game", "book", "other"];
 const TYPE_NAMES = {
   stage: "舞台",
   anime: "アニメ",
   game: "ゲーム",
-  novel: "ノベル",
+  book: "書籍",
   other: "その他"
 };
 
@@ -1038,7 +1121,7 @@ const TYPE_EN = {
   stage: "STAGE PLAY",
   anime: "ANIME",
   game: "GAME",
-  novel: "NOVEL",
+  book: "BOOK",
   other: "OTHER"
 };
 
@@ -1046,7 +1129,7 @@ const TYPE_ICONS = {
   stage: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(72 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(144 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(216 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="3.6" fill="#fff" opacity="0.9"/></g></svg>`,
   anime: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg>`,
   game: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15h18c5.5 0 9.3 3.6 10 9.2l1.1 8.6c.6 4.3-2.6 8.2-6.9 8.2-2.6 0-4.9-1.4-6.1-3.7l-2.3-4.3H19.2l-2.3 4.3c-1.2 2.3-3.5 3.7-6.1 3.7-4.3 0-7.5-3.9-6.9-8.2l1.1-8.6C5.7 18.6 9.5 15 15 15Z"/><path d="M14.5 23.5v7M11 27h7"/><circle cx="36" cy="23" r="1.4" fill="currentColor" stroke="none"/><circle cx="40" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="31" r="1.4" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.4" fill="currentColor" stroke="none"/></g></svg>`,
-  novel: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg>`,
+  book: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg>`,
   other: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>`
 };
 
@@ -1054,7 +1137,7 @@ const visible = {
   stage: true,
   anime: true,
   game: true,
-  novel: true,
+  book: true,
   other: true
 };
 
@@ -1148,12 +1231,15 @@ function render() {
     header.appendChild(title);
   }
 
-  // スマホでも全列均等配分（年表示欄のみ小さめの固定幅）
-  const yearColWidth = window.innerWidth <= 480 ? "36px" : "48px";
+  // 左端（年列）の幅
+  const yearColWidth = window.innerWidth <= 480 ? "40px" : "60px";
   const gridTemplate = `${yearColWidth} repeat(${activeTypes.length}, minmax(0, 1fr))`;
   header.style.gridTemplateColumns = gridTemplate;
 
-  const activeWorks = works.filter(w => activeTypes.includes(w.type));
+  // 選択されているカテゴリの作品を日付昇順（古い順）にソート
+  const activeWorks = works
+    .filter(w => activeTypes.includes(w.type))
+    .sort((a, b) => dateToNumber(a.date) - dateToNumber(b.date));
 
   if (activeWorks.length === 0) {
     const empty = document.createElement("div");
@@ -1163,79 +1249,35 @@ function render() {
     return;
   }
 
-  const activeYears = activeWorks.map(w => Math.floor(dateToNumber(w.date)));
-  const startYear = Math.min(...activeYears);
-  const endYear = Math.max(...activeYears);
+  let currentYear = null;
 
-  const BASE_YEAR_HEIGHT = 100;
+  // 1作品（イベント）ごとに1行作成
+  for (const work of activeWorks) {
+    const workYear = Math.floor(dateToNumber(work.date));
+    const isNewYear = (workYear !== currentYear);
 
-  for (let year = startYear; year <= endYear; year++) {
     const row = document.createElement("div");
-    row.className = "year-row";
+    row.className = `item-row ${isNewYear ? "year-first-row" : ""}`;
     row.style.gridTemplateColumns = gridTemplate;
 
-    const yearLabel = document.createElement("div");
-    yearLabel.className = "year";
-    yearLabel.textContent = year;
-    row.appendChild(yearLabel);
-
-    // 1. その年のカードを「全レーン混ざった状態」で抽出＆日付順にソート
-    const currentYearWorks = works
-      .filter(w => activeTypes.includes(w.type))
-      .filter(w => {
-        const n = dateToNumber(w.date);
-        return n >= year && n < year + 1;
-      })
-      .sort((a, b) => dateToNumber(a.date) - dateToNumber(b.date));
-
-    // 2. 年全体の配置トラッキング用変数
-    let globalLastBottom = 0; // 全レーンを通じた最後のカードの下端
-    const laneLastBottom = {}; // レーンごとの最後のカードの下端
-    activeTypes.forEach(t => laneLastBottom[t] = 0);
-
-    // カードごとの配置位置を保存するリスト
-    const placedCards = [];
-
-    // 3. 日付順に上から順にY位置（top）を決めていく
-    for (const work of currentYearWorks) {
-      const yearProgress = dateToNumber(work.date) - year;
-      const cardH = estimateCardHeight(work);
-
-      // 日付比率に基づいた理想的なTop位置
-      let targetTop = 6 + yearProgress * (BASE_YEAR_HEIGHT - cardH - 12);
-
-      // 【重要】時系列を綺麗に見せるため：
-      // 「直前の日付のカード（全レーン）」の下端より上には配置しない
-      if (targetTop < globalLastBottom + 4) {
-        targetTop = globalLastBottom + 4;
-      }
-
-      // 同じレーン内でカードが重なるのも防ぐ
-      if (targetTop < laneLastBottom[work.type] + 4) {
-        targetTop = laneLastBottom[work.type] + 4;
-      }
-
-      const bottom = targetTop + cardH;
-      laneLastBottom[work.type] = bottom;
-      globalLastBottom = bottom; // 時系列基準の位置を更新
-
-      placedCards.push({ work, top: targetTop });
+    // 左端：年セル（その年の最初の行だけに「2015」などの数字を表示）
+    const yearCell = document.createElement("div");
+    if (isNewYear) {
+      currentYear = workYear;
+      yearCell.className = "year-cell";
+      yearCell.textContent = currentYear;
+    } else {
+      yearCell.className = "year-cell-empty";
     }
+    row.appendChild(yearCell);
 
-    // 行の高さを設定（最低高さ or 最後のカードの下端 + 余白）
-    const rowHeight = Math.max(BASE_YEAR_HEIGHT, globalLastBottom + 10);
-    row.style.height = `${rowHeight}px`;
-
-    // 4. 各レーンエレメントを作成してカードをDOMに追加
+    // 各ライン（カテゴリ）のセルを作成
     for (const type of activeTypes) {
-      const lane = document.createElement("div");
-      lane.className = `lane ${type}`;
+      const cell = document.createElement("div");
+      cell.className = `lane-cell ${type}`;
 
-      // このレーンに所属するカードを取得
-      const laneCards = placedCards.filter(item => item.work.type === type);
-
-      for (const cardData of laneCards) {
-        const { work, top } = cardData;
+      // 該当する媒体（ライン）にのみカードを設置
+      if (work.type === type) {
         const card = document.createElement("button");
         card.type = "button";
         card.className = `work ${type}`;
@@ -1248,7 +1290,6 @@ function render() {
         const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos1;
         const imgScale = work.imageScale ? Number(work.imageScale) : 1;
 
-        // transformとtransform-originで拡大・拡大軸を適用
         const style1 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos1}; transform: scale(${imgScale}); transform-origin: ${imgPos1};`;
         const style2 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos2}; transform: scale(${imgScale}); transform-origin: ${imgPos2};`;
 
@@ -1280,12 +1321,11 @@ function render() {
           <div class="work-date">${escapeHtml(work.date)}</div>
         `;
 
-        card.style.top = `${top}px`;
         card.addEventListener("click", () => openModal(work));
-        lane.appendChild(card);
+        cell.appendChild(card);
       }
 
-      row.appendChild(lane);
+      row.appendChild(cell);
     }
 
     body.appendChild(row);

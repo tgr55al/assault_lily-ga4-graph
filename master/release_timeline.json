@@ -3,7 +3,7 @@
     {
       "id": "novel-2015-001",
       "title": "アサルトリリィ～一柳隊、出撃します！～",
-      "type": "novel",
+      "type": "book",
       "date": "2015年6月20日",
       "description": "",
       "url": "https://w.atwiki.jp/assault_lily/pages/989.html",
@@ -13,12 +13,12 @@
     {
       "id": "novel-2016-001",
       "title": "アサルトリリィ アームズ",
-      "type": "novel",
+      "type": "book",
       "date": "2016年2月7日",
       "description": "2016年2月7日～5月24日連載。2017年7月28日書籍化。",
       "url": "",
-      "image": "",
-      "imagePosition": "top"
+      "image": "https://www.assaultlily.com/_assets/images/novel/cover_book_002.png",
+      "imagePosition": "center 20%"
     },
     {
       "id": "stage-2016-001",
@@ -53,12 +53,12 @@
     {
       "id": "novel-2018-001",
       "title": "アサルトリリィ外伝 京都編 眠る恋人",
-      "type": "novel",
+      "type": "book",
       "date": "2018年1月18日",
       "description": "2018年1月18日～4月26日連載。2020年12月31日電子特装版。\n二次創作扱い",
       "url": "",
-      "image": "",
-      "imagePosition": "top"
+      "image": "https://blog-imgs-135.fc2.com/d/o/g/dogmask/20201231204649112s.jpg",
+      "imagePosition": "center 40%"
     },
     {
       "id": "stage-other-2018-001",
@@ -114,7 +114,7 @@
     {
       "id": "other-2020-001",
       "title": "アサルトリリィ League of Gardens -full bloom-",
-      "type": "other",
+      "type": "book",
       "date": "2020年7月8日",
       "description": "2020年7月8日～2023年2月8日連載。2021年1月8日～2023年4月20日単行本。\nLoGを漫画化した作品",
       "url": "https://w.atwiki.jp/assault_lily/pages/313.html",
@@ -164,12 +164,12 @@
     },
     {
       "id": "novel-2021-001",
-      "title": "アサルトリリィ ～電撃新潟奪還戦～\nアサルトリリィ グローリー 電撃新潟奪還戦 小説完全版",
-      "type": "novel",
+      "title": "アサルトリリィ グローリー 電撃新潟奪還戦",
+      "type": "book",
       "date": "2021年6月13日",
       "description": "2021年6月13日～2022年3月27日連載。2023年1月27日書籍化。",
       "url": "",
-      "image": "",
+      "image": "https://hobby.dengeki.com/ss/hobby/2021/12/bb7ae4c2736e126de3a0aae01bcc3fd4_fVmspTO0s8AmvIdY77BEfu-_pcWX1wVQ.jpg",
       "imagePosition": "top"
     },
     {
@@ -227,7 +227,7 @@
     {
       "id": "other-2022-001",
       "title": "アサルトリリィ『リリィコレクション2022 御台場女学校 with 私立ルドビコ女学院』",
-      "type": "other",
+      "type": "stage",
       "date": "2022年4月7日",
       "description": "全公演中止",
       "url": "",
@@ -246,13 +246,33 @@
     },
     {
       "id": "other-2022-002",
-      "title": "アサルトリリィ Last Bullet しーくれっとがーでん ~Sweet Memoria~\nアサルトリリィ Last Bullet しーくれっとがーでん ~Innocent Memoria~\nアサルトリリィ Last Bullet しーくれっとがーでん ~Dreamy Memoria~",
-      "type": "other",
+      "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Sweet Memoria～",
+      "type": "book",
       "date": "2022年6月30日",
       "description": "",
       "url": "",
-      "image": "",
-      "imagePosition": "top"
+      "image": "https://cf.image-cdn.k-manga.jp/cover_320/16/164662/b164662_1_320.jpg",
+      "imagePosition": "center 95%"
+    },
+    {
+      "id": "other-2022-002",
+      "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Innocent Memoria～",
+      "type": "book",
+      "date": "2022年7月30日",
+      "description": "",
+      "url": "",
+      "image": "https://cf.image-cdn.k-manga.jp/cover_320/16/164894/b164894_1_320.jpg",
+      "imagePosition": "center 95%"
+    },
+    {
+      "id": "other-2022-002",
+      "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Dreamy Memoria～",
+      "type": "book",
+      "date": "2023年1月30日",
+      "description": "",
+      "url": "",
+      "image": "https://cf.image-cdn.k-manga.jp/cover_320/17/174121/b174121_1_320.jpg",
+      "imagePosition": "center 3%"
     },
     {
       "id": "stage-2022-004",
@@ -286,12 +306,12 @@
     },
     {
       "id": "novel-2023-001",
-      "title": "アサルトリリィヴンダー ～激闘！御台場迎撃戦～\nアサルトリリィヴンダー 激闘！御台場迎撃戦",
-      "type": "novel",
+      "title": "アサルトリリィヴンダー 激闘！御台場迎撃戦",
+      "type": "book",
       "date": "2023年2月26日",
       "description": "2023年2月26日～6月25日連載。2023年10月26日単行本化。\n御台場迎撃戦（用語）",
       "url": "",
-      "image": "",
+      "image": "https://hobby.dengeki.com/ss/hobby/2023/07/AL_wunder_cover_mihon_0803_rzN-16zggX7suIOPD9LHB9u9qzULmail.jpg",
       "imagePosition": "top"
     },
     {
@@ -377,11 +397,11 @@
     {
       "id": "novel-2025-001",
       "title": "江ノ島臨海女学校リリィ列伝",
-      "type": "novel",
+      "type": "book",
       "date": "2025年3月15日",
       "description": "2025年3月15日～（連載）",
       "url": "",
-      "image": "",
+      "image": "https://pbs.twimg.com/media/G_RPl3XacAA35xb?format=jpg&name=4096x4096",
       "imagePosition": "top"
     },
     {
