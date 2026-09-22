@@ -1,4 +1,4 @@
-name: GA4 Daily Export
+name: Hand Deploy
 
 on:
   workflow_dispatch:       # 手動実行も可能
