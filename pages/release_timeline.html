@@ -163,12 +163,13 @@
     box-shadow: 0 4px 18px rgba(104,76,98,.08);
 
     max-height: 80vh;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
 
     overscroll-behavior: contain;      /* スマホで端までスクロールした時に画面全体が引っ張られるのを防止 */
     -webkit-overflow-scrolling: touch; /* スマホでの操作感を滑らかにする（慣性スクロール） */
     touch-action: pan-y;               /* 縦方向の操作のみを許可し、横ブレや意図しない拡大等を防ぐ */
+    contain: paint;
   }
 
   .header {
