@@ -640,7 +640,7 @@
       <img id="modalImage" class="modal-image" alt="">
     </div>
     <div id="modalDate" class="modal-date"></div>
-    <div class="note-label">備考</div>
+    <div id="modalNoteLabel" class="note-label">備考</div>
     <div id="modalDescription" class="description"></div>
     <div class="modal-actions">
       <button class="close-btn" id="closeModal">閉じる</button>
@@ -1500,7 +1500,18 @@ function openModal(work) {
   }
 
   document.getElementById("modalDate").textContent = work.date;
-  document.getElementById("modalDescription").textContent = work.description || "";
+  const noteLabel = document.getElementById("modalNoteLabel");
+  const descriptionEl = document.getElementById("modalDescription");
+
+  if (work.description) {
+    noteLabel.style.display = "";
+    descriptionEl.style.display = "";
+    descriptionEl.textContent = work.description;
+  } else {
+    noteLabel.style.display = "none";
+    descriptionEl.style.display = "none";
+    descriptionEl.textContent = "";
+  }
 
   const wikiButton = document.getElementById("wikiButton");
 
