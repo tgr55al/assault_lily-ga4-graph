@@ -354,6 +354,20 @@
     z-index: 10;
   }
 
+  /* 公演中止・グレーアウト表示用 */
+  .work.is-cancelled {
+    opacity: 0.5;               /* 全体を半透明に */
+    filter: grayscale(100%);    /* 画像や色をモノクロ化 */
+    background: #f0f0f0;        /* 背景をグレーに */
+    border-color: #ccc;         /* 枠線も薄く */
+  }
+
+  /* ホバー時も目立ちすぎないように制御 */
+  .work.is-cancelled:hover {
+    opacity: 0.7;
+    transform: none;           /* 拡大アニメーションを無効化（お好みで） */
+  }
+
   .work-title {
     font-size: 10px;
     line-height: 1.15;
@@ -850,9 +864,10 @@ const FALLBACK_WORKS = [
   "type": "stage",
   "date": "2022年4月7日",
   "description": "全公演中止",
-  "url": "",
-  "image": "",
-  "imagePosition": "top"
+  "cancelled": true,
+  "url": "https://w.atwiki.jp/assault_lily/pages/716.html#リリィコレクション2022 御台場女学校 with 私立ルドビコ女学院",
+  "image": "https://pbs.twimg.com/media/FOCkaCSVIAMJCfZ?format=jpg&name=large",
+  "imagePosition": "center 33%"
 },
 {
   "id": "stage-2022-003",
@@ -900,6 +915,7 @@ const FALLBACK_WORKS = [
   "type": "stage",
   "date": "2022年9月8日",
   "description": "LIVE SHOWへ変更",
+  "cancelled": true,
   "url": "https://w.atwiki.jp/assault_lily/pages/715.html",
   "image": "https://pbs.twimg.com/media/F0_OqvGaMAEXmpR?format=jpg",
   "imagePosition": "center 87%"
@@ -1289,50 +1305,7 @@ function render() {
 
       // 該当する媒体（ライン）にのみカードを設置
       if (work.type === type) {
-        const card = document.createElement("button");
-        card.type = "button";
-        card.className = `work ${type}`;
-        card.dataset.id = work.id;
-
-        const displayImg1 = work.cardImage || work.image;
-        const displayImg2 = work.cardImage2 || work.image2;
-
-        const imgPos1 = work.imagePosition ? escapeHtml(work.imagePosition) : 'center';
-        const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos1;
-        const imgScale = work.imageScale ? Number(work.imageScale) : 1;
-
-        const style1 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos1}; transform: scale(${imgScale}); transform-origin: ${imgPos1};`;
-        const style2 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos2}; transform: scale(${imgScale}); transform-origin: ${imgPos2};`;
-
-        let imgHtml = "";
-        if (displayImg1) {
-          if (displayImg2) {
-            imgHtml = `
-              <div class="work-images-container">
-                <div class="work-image-wrapper">
-                  <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
-                </div>
-                <div class="work-image-wrapper">
-                  <img class="work-image" src="${escapeHtml(displayImg2)}" style="${style2}" alt="" loading="lazy">
-                </div>
-              </div>`;
-          } else {
-            imgHtml = `
-              <div class="work-images-container">
-                <div class="work-image-wrapper">
-                  <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
-                </div>
-              </div>`;
-          }
-        }
-
-        card.innerHTML = `
-          ${imgHtml}
-          <div class="work-title">${escapeHtml(work.title)}</div>
-          <div class="work-date">${escapeHtml(work.date)}</div>
-        `;
-
-        card.addEventListener("click", () => openModal(work));
+        const card = createWorkElement(work, type);
         cell.appendChild(card);
       }
 
@@ -1341,6 +1314,55 @@ function render() {
 
     body.appendChild(row);
   }
+}
+// カード（作品要素）を生成する関数
+function createWorkElement(work, type) {
+const card = document.createElement("button");
+  card.type = "button";
+  // work.cancelled が true の場合は "is-cancelled" クラスを追加する
+  card.className = `work ${type}${work.cancelled ? " is-cancelled" : ""}`;
+  card.dataset.id = work.id;
+
+  const displayImg1 = work.cardImage || work.image;
+  const displayImg2 = work.cardImage2 || work.image2;
+
+  const imgPos1 = work.imagePosition ? escapeHtml(work.imagePosition) : 'center';
+  const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos1;
+  const imgScale = work.imageScale ? Number(work.imageScale) : 1;
+
+  const style1 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos1}; transform: scale(${imgScale}); transform-origin: ${imgPos1};`;
+  const style2 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos2}; transform: scale(${imgScale}); transform-origin: ${imgPos2};`;
+
+  let imgHtml = "";
+  if (displayImg1) {
+    if (displayImg2) {
+      imgHtml = `
+        <div class="work-images-container">
+          <div class="work-image-wrapper">
+            <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
+          </div>
+          <div class="work-image-wrapper">
+            <img class="work-image" src="${escapeHtml(displayImg2)}" style="${style2}" alt="" loading="lazy">
+          </div>
+        </div>`;
+    } else {
+      imgHtml = `
+        <div class="work-images-container">
+          <div class="work-image-wrapper">
+            <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
+          </div>
+        </div>`;
+    }
+  }
+
+  card.innerHTML = `
+    ${imgHtml}
+    <div class="work-title">${escapeHtml(work.title)}</div>
+    <div class="work-date">${escapeHtml(work.date)}</div>
+  `;
+
+  card.addEventListener("click", () => openModal(work));
+  return card;
 }
 function openModal(work) {
   document.getElementById("modalTitle").textContent = work.title;

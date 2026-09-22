@@ -230,9 +230,10 @@
       "type": "stage",
       "date": "2022年4月7日",
       "description": "全公演中止",
-      "url": "",
-      "image": "",
-      "imagePosition": "top"
+      "cancelled": true,
+      "url": "https://w.atwiki.jp/assault_lily/pages/716.html#リリィコレクション2022 御台場女学校 with 私立ルドビコ女学院",
+      "image": "https://pbs.twimg.com/media/FOCkaCSVIAMJCfZ?format=jpg&name=large",
+      "imagePosition": "center 33%"
     },
     {
       "id": "stage-2022-003",
@@ -280,6 +281,7 @@
       "type": "stage",
       "date": "2022年9月8日",
       "description": "LIVE SHOWへ変更",
+      "cancelled": true,
       "url": "https://w.atwiki.jp/assault_lily/pages/715.html",
       "image": "https://pbs.twimg.com/media/F0_OqvGaMAEXmpR?format=jpg",
       "imagePosition": "center 87%"
