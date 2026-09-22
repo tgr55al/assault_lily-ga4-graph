@@ -537,7 +537,7 @@ const FALLBACK_WORKS = [
     id: "stage-2015",
     title: "アサルトリリィ × 私立ルドビコ女学院（仮）",
     type: "stage",
-    date: "2015-10",
+    date: "2015年10月",
     description: "プロトタイプ用の仮データです。実際の初期舞台作品の情報に差し替えてください。",
     url: ""
   },
@@ -545,7 +545,7 @@ const FALLBACK_WORKS = [
     id: "stage-2016",
     title: "舞台作品サンプル 2016",
     type: "stage",
-    date: "2016-08",
+    date: "2016年8月",
     description: "舞台ラインの配置確認用サンプル。",
     url: ""
   },
@@ -553,7 +553,7 @@ const FALLBACK_WORKS = [
     id: "stage-2018",
     title: "舞台作品サンプル 2018",
     type: "stage",
-    date: "2018-02",
+    date: "2018年2月",
     description: "同じ年に複数作品を配置できることを確認するサンプル。",
     url: ""
   },
@@ -561,7 +561,7 @@ const FALLBACK_WORKS = [
     id: "stage-2019",
     title: "舞台作品サンプル 2019",
     type: "stage",
-    date: "2019-09",
+    date: "2019年9月",
     description: "クリックすると詳細ダイアログが開きます。",
     url: ""
   },
@@ -569,7 +569,7 @@ const FALLBACK_WORKS = [
     id: "anime-2020",
     title: "アサルトリリィ BOUQUET",
     type: "anime",
-    date: "2020-10",
+    date: "2020年10月",
     description: "アニメラインのサンプル作品。",
     url: ""
   },
@@ -577,7 +577,7 @@ const FALLBACK_WORKS = [
     id: "anime-2024",
     title: "アニメ作品サンプル 2024",
     type: "anime",
-    date: "2024-01",
+    date: "2024年1月",
     description: "後年のアニメ作品を配置する場合のサンプル。",
     url: ""
   },
@@ -585,7 +585,7 @@ const FALLBACK_WORKS = [
     id: "game-2020",
     title: "アサルトリリィ Last Bullet",
     type: "game",
-    date: "2021-01",
+    date: "2021年1月",
     description: "ゲームラインのサンプル作品。",
     url: ""
   },
@@ -593,7 +593,7 @@ const FALLBACK_WORKS = [
     id: "game-2023",
     title: "ゲーム作品サンプル 2023",
     type: "game",
-    date: "2023-06",
+    date: "2023年6月",
     description: "ゲーム作品の追加例。",
     url: ""
   },
@@ -601,7 +601,7 @@ const FALLBACK_WORKS = [
     id: "novel-2015",
     title: "ノベル作品サンプル 2015",
     type: "novel",
-    date: "2015-06",
+    date: "2015年6月",
     description: "ノベルラインのサンプル作品。",
     url: ""
   },
@@ -609,7 +609,7 @@ const FALLBACK_WORKS = [
     id: "novel-2017",
     title: "ノベル作品サンプル 2017",
     type: "novel",
-    date: "2017-04",
+    date: "2017年4月",
     description: "ノベル作品の追加例。",
     url: ""
   },
@@ -617,7 +617,7 @@ const FALLBACK_WORKS = [
     id: "novel-2022",
     title: "ノベル作品サンプル 2022",
     type: "novel",
-    date: "2022-11",
+    date: "2022年11月",
     description: "2022年のサンプル作品。",
     url: ""
   },
@@ -625,7 +625,7 @@ const FALLBACK_WORKS = [
     id: "stage-2022-a",
     title: "舞台作品サンプル 2022 A",
     type: "stage",
-    date: "2022-04",
+    date: "2022年4月",
     description: "同一年に複数作品があるケース。",
     url: ""
   },
@@ -633,7 +633,7 @@ const FALLBACK_WORKS = [
     id: "stage-2022-b",
     title: "舞台作品サンプル 2022 B",
     type: "stage",
-    date: "2022-10",
+    date: "2022年10月",
     description: "同一年に複数作品があるケース。",
     url: ""
   },
@@ -641,7 +641,7 @@ const FALLBACK_WORKS = [
     id: "game-2025",
     title: "ゲーム作品サンプル 2025",
     type: "game",
-    date: "2025-03",
+    date: "2025年3月",
     description: "2025年のサンプル作品。",
     url: ""
   },
@@ -649,7 +649,7 @@ const FALLBACK_WORKS = [
     id: "novel-2026",
     title: "ノベル作品サンプル 2026",
     type: "novel",
-    date: "2026-07",
+    date: "2026年7月",
     description: "2026年のサンプル作品。",
     url: ""
   },
@@ -657,7 +657,7 @@ const FALLBACK_WORKS = [
     id: "other-2024",
     title: "パチンコ・スロット作品サンプル 2024",
     type: "other",
-    date: "2024-06",
+    date: "2024年6月",
     description: "パチンコ・スロットなど、4分類に入らない作品の配置例。",
     url: ""
   }
@@ -701,12 +701,29 @@ const visible = {
 const body = document.getElementById("body");
 
 function dateToNumber(date) {
-  const parts = date.split("-").map(Number);
-  const year = parts[0];
-  const month = parts[1] || 1;
-  const day = parts[2] || 1;
+  let year, month = 1, day = 1;
 
-  // その年の中での位置を 0〜1 に近似。
+  if (typeof date === "string" && date.includes("年")) {
+    // 「YYYY年M月D日」または「YYYY年M月」形式を解析
+    const match = date.match(/(\d{4})年(?:(\d{1,2})月)?(?:(\d{1,2})日)?/);
+    if (match) {
+      year = parseInt(match[1], 10);
+      if (match[2]) month = parseInt(match[2], 10);
+      if (match[3]) day = parseInt(match[3], 10);
+    }
+  } else if (typeof date === "string" && date.includes("-")) {
+    // 従来の「YYYY-MM-DD」形式も引き続きサポート
+    const parts = date.split("-").map(Number);
+    year = parts[0];
+    month = parts[1] || 1;
+    day = parts[2] || 1;
+  } else {
+    year = parseInt(date, 10);
+  }
+
+  if (!year || isNaN(year)) return 0;
+
+  // その年の中での位置を 0〜1 に近似
   const daysInYear = new Date(year, 11, 31).getDate() === 31 ? 365 : 366;
   const start = new Date(year, 0, 1);
   const current = new Date(year, month - 1, day);
