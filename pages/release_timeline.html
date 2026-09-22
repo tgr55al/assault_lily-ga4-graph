@@ -1101,16 +1101,23 @@ function escapeHtml(value) {
 
 /* カードの高さを計算・推測 */
 function estimateCardHeight(work) {
-  const hasImg = !!work.image;
-  const baseImgHeight = hasImg ? 40 : 0; // 画像の高さ + margin
+  const isMobile = window.innerWidth <= 480;
+  const hasImg = !!(work.cardImage || work.image);
 
-  // タイトルの長さからおおよその行数を推定（1行あたり約12文字換算）
+  // スマホ表示では画像高さ30px（CSSの指定に合わせる）
+  const baseImgHeight = hasImg ? (isMobile ? 32 : 40) : 0;
+
+  // タイトルの長さから折り返し行数を推定
+  // スマホの狭いレーン幅では1行あたり6〜8文字程度で折り返されるため条件分岐
   const titleLength = work.title ? work.title.length : 0;
-  const lines = Math.max(1, Math.ceil(titleLength / 12));
-  const titleHeight = lines * 12; // 1行あたり約12px
+  const charsPerLine = isMobile ? 7 : 12;
+  const lines = Math.max(1, Math.ceil(titleLength / charsPerLine));
 
-  const dateHeight = 11; // 日付の高さ
-  const padding = 10;   // カード上下パディング＋枠線余白
+  const titleLineHeight = isMobile ? 11 : 12;
+  const titleHeight = lines * titleLineHeight;
+
+  const dateHeight = isMobile ? 9 : 11; // 日付の高さ
+  const padding = isMobile ? 8 : 10;    // パディング＋余白
 
   return baseImgHeight + titleHeight + dateHeight + padding;
 }
@@ -1172,124 +1179,116 @@ function render() {
     yearLabel.textContent = year;
     row.appendChild(yearLabel);
 
-    // その年で最も背が高くなるレーンの高さを保持する変数
-    let maxRowHeight = BASE_YEAR_HEIGHT;
+    // 1. その年のカードを「全レーン混ざった状態」で抽出＆日付順にソート
+    const currentYearWorks = works
+      .filter(w => activeTypes.includes(w.type))
+      .filter(w => {
+        const n = dateToNumber(w.date);
+        return n >= year && n < year + 1;
+      })
+      .sort((a, b) => dateToNumber(a.date) - dateToNumber(b.date));
 
-    // 各レーンのカード配置情報を一時保持する配列
-    const laneRenderData = [];
+    // 2. 年全体の配置トラッキング用変数
+    let globalLastBottom = 0; // 全レーンを通じた最後のカードの下端
+    const laneLastBottom = {}; // レーンごとの最後のカードの下端
+    activeTypes.forEach(t => laneLastBottom[t] = 0);
 
-    for (const type of activeTypes) {
-      const laneWorks = works
-        .filter(w => {
-          if (w.type !== type) return false;
-          const n = dateToNumber(w.date);
-          return n >= year && n < year + 1;
-        })
-        .sort((a, b) => dateToNumber(a.date) - dateToNumber(b.date));
+    // カードごとの配置位置を保存するリスト
+    const placedCards = [];
 
-      let currentLaneHeight = BASE_YEAR_HEIGHT;
-      let lastBottom = 0;
-      const cardsInfo = [];
+    // 3. 日付順に上から順にY位置（top）を決めていく
+    for (const work of currentYearWorks) {
+      const yearProgress = dateToNumber(work.date) - year;
+      const cardH = estimateCardHeight(work);
 
-      for (const work of laneWorks) {
-        const yearProgress = dateToNumber(work.date) - year;
-        const cardH = estimateCardHeight(work);
+      // 日付比率に基づいた理想的なTop位置
+      let targetTop = 6 + yearProgress * (BASE_YEAR_HEIGHT - cardH - 12);
 
-        let targetTop = 6 + yearProgress * (BASE_YEAR_HEIGHT - cardH - 12);
-
-        // 重なり防止：前のカードの下端より下に配置する (4px余白)
-        if (targetTop < lastBottom + 4) {
-          targetTop = lastBottom + 4;
-        }
-
-        lastBottom = targetTop + cardH;
-        cardsInfo.push({ work, top: targetTop, height: cardH });
-
-        if (lastBottom + 6 > currentLaneHeight) {
-          currentLaneHeight = lastBottom + 6;
-        }
+      // 【重要】時系列を綺麗に見せるため：
+      // 「直前の日付のカード（全レーン）」の下端より上には配置しない
+      if (targetTop < globalLastBottom + 4) {
+        targetTop = globalLastBottom + 4;
       }
 
-      if (currentLaneHeight > maxRowHeight) {
-        maxRowHeight = currentLaneHeight;
+      // 同じレーン内でカードが重なるのも防ぐ
+      if (targetTop < laneLastBottom[work.type] + 4) {
+        targetTop = laneLastBottom[work.type] + 4;
       }
 
-      laneRenderData.push({ type, cardsInfo });
+      const bottom = targetTop + cardH;
+      laneLastBottom[work.type] = bottom;
+      globalLastBottom = bottom; // 時系列基準の位置を更新
+
+      placedCards.push({ work, top: targetTop });
     }
 
-    // 決定したその年の最大高さを行にセット
-    row.style.height = `${maxRowHeight}px`;
+    // 行の高さを設定（最低高さ or 最後のカードの下端 + 余白）
+    const rowHeight = Math.max(BASE_YEAR_HEIGHT, globalLastBottom + 10);
+    row.style.height = `${rowHeight}px`;
 
-    // 実際にDOM要素（DOM要素とカード）を生成して配置
-    for (const laneData of laneRenderData) {
-        const lane = document.createElement("div");
-        lane.className = `lane ${laneData.type}`;
+    // 4. 各レーンエレメントを作成してカードをDOMに追加
+    for (const type of activeTypes) {
+      const lane = document.createElement("div");
+      lane.className = `lane ${type}`;
 
-        for (const cardData of laneData.cardsInfo) {
-          const { work, top } = cardData;
-          const card = document.createElement("button");
-          card.type = "button";
-          card.className = `work ${laneData.type}`;
-          card.dataset.id = work.id;
+      // このレーンに所属するカードを取得
+      const laneCards = placedCards.filter(item => item.work.type === type);
 
-          // カード用画像を優先使用し、無ければ従来の image を使用
-          const displayImg1 = work.cardImage || work.image;
-          const displayImg2 = work.cardImage2 || work.image2;
+      for (const cardData of laneCards) {
+        const { work, top } = cardData;
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = `work ${type}`;
+        card.dataset.id = work.id;
 
-          // 画像位置（未指定なら 'center'）
-          const imgPos1 = work.imagePosition ? escapeHtml(work.imagePosition) : 'center';
-          const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos1;
+        const displayImg1 = work.cardImage || work.image;
+        const displayImg2 = work.cardImage2 || work.image2;
 
-          // 縮尺・倍率（未指定なら 1）
-          const imgScale = work.imageScale ? Number(work.imageScale) : 1;
+        const imgPos1 = work.imagePosition ? escapeHtml(work.imagePosition) : 'center';
+        const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos1;
+        const imgScale = work.imageScale ? Number(work.imageScale) : 1;
 
-          // 1.5 → 150%（拡大・寄りの絵）, 0.8 → 80%（縮小・引いた絵で文字を全体表示）
-          const imgWidthPct = (100 * imgScale).toFixed(2);
-          const imgHeightPct = (100 * imgScale).toFixed(2);
+        // transformとtransform-originで拡大・拡大軸を適用
+        const style1 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos1}; transform: scale(${imgScale}); transform-origin: ${imgPos1};`;
+        const style2 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos2}; transform: scale(${imgScale}); transform-origin: ${imgPos2};`;
 
-          // 縮小指定(1未満)の時は見切れを防ぐため contain に切替
-          const fitMode = imgScale < 1 ? 'contain' : 'cover';
-
-          const style1 = `width: ${imgWidthPct}%; height: ${imgHeightPct}%; object-fit: ${fitMode}; object-position: ${imgPos1};`;
-          const style2 = `width: ${imgWidthPct}%; height: ${imgHeightPct}%; object-fit: ${fitMode}; object-position: ${imgPos2};`;
-
-          let imgHtml = "";
-          if (displayImg1) {
-            if (displayImg2) {
-              imgHtml = `
-                <div class="work-images-container">
-                  <div class="work-image-wrapper">
-                    <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
-                  </div>
-                  <div class="work-image-wrapper">
-                    <img class="work-image" src="${escapeHtml(displayImg2)}" style="${style2}" alt="" loading="lazy">
-                  </div>
-                </div>`;
-            } else {
-              imgHtml = `
-                <div class="work-images-container">
-                  <div class="work-image-wrapper">
-                    <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
-                  </div>
-                </div>`;
-            }
+        let imgHtml = "";
+        if (displayImg1) {
+          if (displayImg2) {
+            imgHtml = `
+              <div class="work-images-container">
+                <div class="work-image-wrapper">
+                  <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
+                </div>
+                <div class="work-image-wrapper">
+                  <img class="work-image" src="${escapeHtml(displayImg2)}" style="${style2}" alt="" loading="lazy">
+                </div>
+              </div>`;
+          } else {
+            imgHtml = `
+              <div class="work-images-container">
+                <div class="work-image-wrapper">
+                  <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
+                </div>
+              </div>`;
           }
-
-          card.innerHTML = `
-            ${imgHtml}
-            <div class="work-title">${escapeHtml(work.title)}</div>
-            <div class="work-date">${escapeHtml(work.date)}</div>
-          `;
-
-          card.style.top = `${top}px`;
-          card.addEventListener("click", () => openModal(work));
-          lane.appendChild(card);
         }
 
-        row.appendChild(lane);
+        card.innerHTML = `
+          ${imgHtml}
+          <div class="work-title">${escapeHtml(work.title)}</div>
+          <div class="work-date">${escapeHtml(work.date)}</div>
+        `;
+
+        card.style.top = `${top}px`;
+        card.addEventListener("click", () => openModal(work));
+        lane.appendChild(card);
       }
 
-      body.appendChild(row);
+      row.appendChild(lane);
+    }
+
+    body.appendChild(row);
   }
 }
 function openModal(work) {
