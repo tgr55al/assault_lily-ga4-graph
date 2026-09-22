@@ -524,7 +524,7 @@
   .close-btn { background: #eee; color: #333; }
   .wiki-btn { background: #333; color: #fff; }
 
-  /* スマホでの超小幅対応 (360px以下) */
+  /* スマホでの小幅対応 */
   @media (max-width: 480px) {
     .header > div { min-height: 38px; }
     .lane-title .en { display: none; }
@@ -532,6 +532,17 @@
     .work-title { font-size: 9px; }
     .work-image { height: 30px; }
     .work-date { font-size: 8px; }
+
+    /* 年セルのスマホ用調整 */
+    .year-cell {
+      padding: 6px 2px;       /* 左右パディングを詰める */
+      font-size: 11px;        /* 文字サイズを小さくする */
+      letter-spacing: -0.5px; /* 文字間隔を少し詰める */
+      word-break: break-all;  /* 万が一の場合も折り返す */
+    }
+    .year-cell-empty {
+      padding: 0 2px;
+    }
   }
 </style>
 </head>
@@ -1231,8 +1242,8 @@ function render() {
     header.appendChild(title);
   }
 
-  // 左端（年列）の幅
-  const yearColWidth = window.innerWidth <= 480 ? "40px" : "60px";
+  // 左端（年列）の幅（スマホ時は44px程度に調整）
+  const yearColWidth = window.innerWidth <= 480 ? "44px" : "60px";
   const gridTemplate = `${yearColWidth} repeat(${activeTypes.length}, minmax(0, 1fr))`;
   header.style.gridTemplateColumns = gridTemplate;
 
