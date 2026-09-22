@@ -11,12 +11,11 @@
     --text: #4b4350;
     --muted: #8d818d;
     --line: #e7dfe7;
-    --stage: #d56a9c;
-    --anime: #8a70bd;
-    --game: #8062ad;
-    --novel: #b46f9b;
-    --other: #8d858e;
-    --year-height: 210px;
+    --stage: #e0568f;
+    --anime: #5472d3;
+    --game: #2b9e8a;
+    --novel: #d98a3d;
+    --other: #8a8a96;
   }
 
   * { box-sizing: border-box; }
@@ -268,11 +267,26 @@
     opacity: .72;
   }
 
-  .lane-title.stage { color: var(--stage); }
-  .lane-title.anime { color: var(--anime); }
-  .lane-title.game { color: var(--game); }
-  .lane-title.novel { color: var(--novel); }
-  .lane-title.other { color: var(--other); }
+  .lane-title.stage {
+    background: color-mix(in srgb, var(--stage) 18%, white);
+    color: color-mix(in srgb, var(--stage) 62%, black);
+  }
+  .lane-title.anime {
+    background: color-mix(in srgb, var(--anime) 18%, white);
+    color: color-mix(in srgb, var(--anime) 62%, black);
+  }
+  .lane-title.game {
+    background: color-mix(in srgb, var(--game) 18%, white);
+    color: color-mix(in srgb, var(--game) 62%, black);
+  }
+  .lane-title.novel {
+    background: color-mix(in srgb, var(--novel) 18%, white);
+    color: color-mix(in srgb, var(--novel) 62%, black);
+  }
+  .lane-title.other {
+    background: color-mix(in srgb, var(--other) 18%, white);
+    color: color-mix(in srgb, var(--other) 62%, black);
+  }
 
   .body {
     position: relative;
@@ -281,7 +295,8 @@
   .year-row {
     position: relative;
     display: grid;
-    height: var(--year-height);
+    align-items: stretch;
+    min-height: 96px;
     border-bottom: 1px solid #e8e1e8;
   }
 
@@ -290,8 +305,8 @@
   .year {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 10px;
+    align-items: center;
+    padding: 18px 0;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 19px;
     font-weight: 500;
@@ -302,24 +317,21 @@
 
   .lane {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 10px;
     border-right: 1px solid #eee7ee;
     min-width: 0;
   }
 
-  .month-line {
-    position: absolute;
-    left: 0;
-    right: 0;
-    border-top: 1px dashed #eee9ef;
-    pointer-events: none;
-  }
-
   .work {
-    position: absolute;
+    position: relative;
     z-index: 3;
-    width: min(86%, 190px);
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 210px;
     padding: 9px 11px 10px;
     border: 1px solid #ddd4de;
     border-left: 4px solid var(--type-color);
@@ -332,7 +344,7 @@
   }
 
   .work:hover {
-    transform: translate(-50%, -50%) scale(1.035);
+    transform: scale(1.035);
     box-shadow: 0 7px 18px rgba(93,70,91,.16);
     z-index: 10;
   }
@@ -470,9 +482,9 @@
     <span class="brand-rule"></span>
   </div>
   <div class="controls">
-    <button class="toggle active" data-type="stage"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 21c-6.4 0-9.8-4.2-7.7-8.1 1.2-2.2 4.1-3.4 6.5-2.4-1.7-2.9.3-6.2 3.6-6.2 3.1 0 4.9 3 3.6 5.8 3.4-1.2 6.3.9 6.3 4.1 0 4.4-5.2 6.8-12.3 6.8Z"/><path d="M24 20c-3.5-1.1-4.9-3.6-3.7-5.8 1-1.8 3.3-2.5 5-1.3-1.2-2.2.1-4.4 2.3-4.4 2.3 0 3.5 2.3 2.2 4.4 2-.9 4 .5 4 2.5 0 2.9-4 4.8-9.8 4.6Z"/><path d="M25 21c-.4 5.2-1.3 10.2-3.2 14.8M21.8 35.8c-2.8 1.2-5.8 2.7-8.3 5.2M24.3 28.1c-3.2-1.4-6.3-1.1-8.6.4M20.7 34.2c-2.9-2.1-5.9-2.6-8.8-1.8M26.2 25.2c4.1-.4 7.3.9 9.5 3.5M27.4 29.1c3.4-.1 6.6.9 8.9 3.3M25.8 24.5c1.9-1.9 4.3-2.7 7.1-2.3"/></g></svg></span><span>舞台</span></button>
+    <button class="toggle active" data-type="stage"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(0 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="4"/></g></svg></span><span>舞台</span></button>
     <button class="toggle active" data-type="anime"><span class="type-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg></span><span>アニメ</span></button>
-    <button class="toggle active" data-type="game"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16.1 14.2h15.8c4.7 0 8.2 3.2 9.7 8.4l2.2 7.5c1 3.5-.8 6.8-3.8 7.4-2.3.5-4.1-.8-5.5-2.7l-3.1-4.3H16.6l-3.1 4.3c-1.4 1.9-3.2 3.2-5.5 2.7-3-.6-4.8-3.9-3.8-7.4l2.2-7.5c1.5-5.2 5-8.4 9.7-8.4Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M14 23v7M10.5 26.5h7M31.5 24.5h.01M36 28h.01" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span>ゲーム</span></button>
+    <button class="toggle active" data-type="game"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15h18c5.5 0 9.3 3.6 10 9.2l1.1 8.6c.6 4.3-2.6 8.2-6.9 8.2-2.6 0-4.9-1.4-6.1-3.7l-2.3-4.3H19.2l-2.3 4.3c-1.2 2.3-3.5 3.7-6.1 3.7-4.3 0-7.5-3.9-6.9-8.2l1.1-8.6C5.7 18.6 9.5 15 15 15Z"/><path d="M14.5 23.5v7M11 27h7"/><circle cx="36" cy="23" r="1.4" fill="currentColor" stroke="none"/><circle cx="40" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="31" r="1.4" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.4" fill="currentColor" stroke="none"/></g></svg></span><span>ゲーム</span></button>
     <button class="toggle active" data-type="novel"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg></span><span>ノベル</span></button>
     <button class="toggle active" data-type="other"><span class="type-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span><span>その他</span></button>
     <span class="hint">※ ボタンで各ラインの表示 / 非表示を切り替え</span>
@@ -482,7 +494,7 @@
 <main class="viewport">
   <div class="timeline">
     <div class="header">
-      <div class="year-label">年</div>
+      <div class="year-label"></div>
     </div>
     <div id="body" class="body"></div>
   </div>
@@ -682,16 +694,12 @@ const TYPE_EN = {
 };
 
 const TYPE_ICONS = {
-  stage: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 21c-6.4 0-9.8-4.2-7.7-8.1 1.2-2.2 4.1-3.4 6.5-2.4-1.7-2.9.3-6.2 3.6-6.2 3.1 0 4.9 3 3.6 5.8 3.4-1.2 6.3.9 6.3 4.1 0 4.4-5.2 6.8-12.3 6.8Z"/><path d="M24 20c-3.5-1.1-4.9-3.6-3.7-5.8 1-1.8 3.3-2.5 5-1.3-1.2-2.2.1-4.4 2.3-4.4 2.3 0 3.5 2.3 2.2 4.4 2-.9 4 .5 4 2.5 0 2.9-4 4.8-9.8 4.6Z"/><path d="M25 21c-.4 5.2-1.3 10.2-3.2 14.8M21.8 35.8c-2.8 1.2-5.8 2.7-8.3 5.2M24.3 28.1c-3.2-1.4-6.3-1.1-8.6.4M20.7 34.2c-2.9-2.1-5.9-2.6-8.8-1.8M26.2 25.2c4.1-.4 7.3.9 9.5 3.5M27.4 29.1c3.4-.1 6.6.9 8.9 3.3M25.8 24.5c1.9-1.9 4.3-2.7 7.1-2.3"/></g></svg>`,
+  stage: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(0 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(72 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(144 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(216 24 24)"/><ellipse cx="24" cy="13" rx="6" ry="9.5" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="4"/></g></svg>`,
   anime: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg>`,
-  game: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16.1 14.2h15.8c4.7 0 8.2 3.2 9.7 8.4l2.2 7.5c1 3.5-.8 6.8-3.8 7.4-2.3.5-4.1-.8-5.5-2.7l-3.1-4.3H16.6l-3.1 4.3c-1.4 1.9-3.2 3.2-5.5 2.7-3-.6-4.8-3.9-3.8-7.4l2.2-7.5c1.5-5.2 5-8.4 9.7-8.4Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M14 23v7M10.5 26.5h7M31.5 24.5h.01M36 28h.01" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>`,
+  game: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15h18c5.5 0 9.3 3.6 10 9.2l1.1 8.6c.6 4.3-2.6 8.2-6.9 8.2-2.6 0-4.9-1.4-6.1-3.7l-2.3-4.3H19.2l-2.3 4.3c-1.2 2.3-3.5 3.7-6.1 3.7-4.3 0-7.5-3.9-6.9-8.2l1.1-8.6C5.7 18.6 9.5 15 15 15Z"/><path d="M14.5 23.5v7M11 27h7"/><circle cx="36" cy="23" r="1.4" fill="currentColor" stroke="none"/><circle cx="40" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="31" r="1.4" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.4" fill="currentColor" stroke="none"/></g></svg>`,
   novel: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg>`,
   other: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>`
 };
-
-const START_YEAR = 2015;
-const END_YEAR = 2026;
-const YEAR_HEIGHT = 210;
 
 const visible = {
   stage: true,
@@ -740,7 +748,6 @@ function render() {
 
   const yearHeader = document.createElement("div");
   yearHeader.className = "year-label";
-  yearHeader.textContent = "年";
   header.appendChild(yearHeader);
 
   for (const type of activeTypes) {
@@ -760,7 +767,23 @@ function render() {
   const gridTemplate = `100px repeat(${activeTypes.length}, 1fr)`;
   header.style.gridTemplateColumns = gridTemplate;
 
-  for (let year = START_YEAR; year <= END_YEAR; year++) {
+  // 表示中のラインに含まれる作品だけを対象に、年の範囲を動的に決定する。
+  // トグルで表示ラインを絞り込むと、その結果に合わせて年の範囲も変動する。
+  const activeWorks = works.filter(w => activeTypes.includes(w.type));
+
+  if (activeWorks.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "表示できる作品がありません。";
+    body.appendChild(empty);
+    return;
+  }
+
+  const activeYears = activeWorks.map(w => Math.floor(dateToNumber(w.date)));
+  const startYear = Math.min(...activeYears);
+  const endYear = Math.max(...activeYears);
+
+  for (let year = startYear; year <= endYear; year++) {
     const row = document.createElement("div");
     row.className = "year-row";
     row.style.gridTemplateColumns = gridTemplate;
@@ -774,19 +797,17 @@ function render() {
       const lane = document.createElement("div");
       lane.className = "lane";
 
-      // 3か月ごとの薄い補助線
-      [25, 50, 75].forEach(percent => {
-        const line = document.createElement("div");
-        line.className = "month-line";
-        line.style.top = percent + "%";
-        lane.appendChild(line);
-      });
-
-      const laneWorks = works.filter(w => {
-        if (w.type !== type) return false;
-        const n = dateToNumber(w.date);
-        return n >= year && n < year + 1;
-      });
+      // 同じ年・同じラインの作品は日付順に並べ、
+      // 絶対座標ではなく通常のフローで縦に積み上げる。
+      // これにより作品数が多い年でもカード同士が重ならず、
+      // 行の高さは中身に合わせて自動的に広がる。
+      const laneWorks = works
+        .filter(w => {
+          if (w.type !== type) return false;
+          const n = dateToNumber(w.date);
+          return n >= year && n < year + 1;
+        })
+        .sort((a, b) => dateToNumber(a.date) - dateToNumber(b.date));
 
       for (const work of laneWorks) {
         const card = document.createElement("button");
@@ -794,10 +815,6 @@ function render() {
         card.className = `work ${type}`;
         card.dataset.id = work.id;
 
-        const n = dateToNumber(work.date);
-        const percent = (n - year) * 100;
-
-        card.style.top = percent + "%";
         card.innerHTML = `
           <div class="work-title">${escapeHtml(work.title)}</div>
           <div class="work-date">${escapeHtml(work.date)}</div>
