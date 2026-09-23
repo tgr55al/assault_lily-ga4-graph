@@ -5747,6 +5747,7 @@
     { "from": "hekiru",   "to": "mayuri",  "type": "親しかった",    "spoiler": false },
     { "from": "hekiru",   "to": "tohka",  "type": "仲が良かった",    "spoiler": false },
     { "from": "nadeshiko",   "to": "hekiru",  "type": "お気に入り", "arrows": "to",    "spoiler": false },
+    { "from": "nadeshiko",   "to": "chihiro",  "type": "お気に入り", "arrows": "to",    "spoiler": false },
 
     { "from": "wako",   "to": "chisa",  "type": "仲が良い",    "spoiler": false },
 
