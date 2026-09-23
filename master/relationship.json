@@ -4596,6 +4596,8 @@
     { "from": "yoko",   "to": "miyazu",  "type": "",    "spoiler": false },
     { "from": "yoko",   "to": "saho",  "type": "",    "spoiler": false },
     { "from": "yoko",   "to": "wakana",  "type": "",    "spoiler": false },
+    { "from": "yoko",   "to": "nagi",  "type": "",    "spoiler": false },
+    { "from": "yoko",   "to": "hibari",  "type": "",    "spoiler": false },
 
     { "from": "risuko",   "to": "ameri",  "type": "同レギオン",    "spoiler": false },
     { "from": "risuko",   "to": "non",  "type": "同レギオン",    "spoiler": false },
