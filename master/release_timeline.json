@@ -292,7 +292,9 @@
       "description": "約束の行方（初演版）と基本的には同じ",
       "url": "https://w.atwiki.jp/assault_lily/pages/714.html",
       "image": "https://pbs.twimg.com/media/FVgat6WUEAQWNZt?format=jpg",
-      "imagePosition": "center 48%"
+      "cardImage": "https://news.azone-int.co.jp/wp-content/uploads/2022/06/banner.jpg",
+      "imagePosition": "right 40%",
+      "imageScale": 2.3
     },
     {
       "id": "other-2022-002",
