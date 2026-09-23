@@ -5681,7 +5681,7 @@
 
     { "from": "konohana",   "to": "otsunohana",  "type": "友人",    "spoiler": true },
     { "from": "konohana",   "to": "tekeriri",  "type": "大切な友達・相棒",    "spoiler": true },
-    { "from": "konohana",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": true },
+    { "from": "nadeshiko",   "to": "konohana",  "type": "お気に入り", "arrows": "to",    "spoiler": true },
     { "from": "konohana",   "to": "tohka",  "type": "薄汚い女狐", "arrows": "to",    "spoiler": true },
     { "from": "tohka",   "to": "konohana",  "type": "死に損ない", "arrows": "to",    "spoiler": true },
     { "from": "konohana",   "to": "seira",  "type": "シュッツエンゲル",    "spoiler": true },
@@ -5702,7 +5702,7 @@
     { "from": "otsunohana",   "to": "chihana",  "type": "親しい",    "spoiler": true },
     { "from": "otsunohana",   "to": "mayuri",  "type": "親しい",    "spoiler": true },
     { "from": "otsunohana",   "to": "tohka",  "type": "仲が良い",    "spoiler": true },
-    { "from": "otsunohana",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": true },
+    { "from": "nadeshiko",   "to": "otsunohana",  "type": "お気に入り", "arrows": "to",    "spoiler": true },
 
     { "from": "heinohana",   "to": "teinohana",  "type": "同レギオン",    "spoiler": false },
     { "from": "heinohana",   "to": "bonohana",  "type": "同レギオン",    "spoiler": false },
@@ -5743,7 +5743,7 @@
     { "from": "hekiru",   "to": "chihana",  "type": "親しかった",    "spoiler": false },
     { "from": "hekiru",   "to": "mayuri",  "type": "親しかった",    "spoiler": false },
     { "from": "hekiru",   "to": "tohka",  "type": "仲が良かった",    "spoiler": false },
-    { "from": "hekiru",   "to": "nadeshiko",  "type": "お気に入り",    "spoiler": false },
+    { "from": "nadeshiko",   "to": "hekiru",  "type": "お気に入り", "arrows": "to",    "spoiler": false },
 
     { "from": "wako",   "to": "chisa",  "type": "仲が良い",    "spoiler": false },
 
@@ -5935,6 +5935,9 @@
     { "from": "natsumi",   "to": "fumi",  "type": "高く評価", "arrows": "to",    "spoiler": false },
     { "from": "natsumi",   "to": "mimi",  "type": "最悪",    "spoiler": false },
     { "from": "natsumi",   "to": "kikyo",  "type": "仲が良い",    "spoiler": false },
+
+    { "from": "natsumi",   "to": "manaka",  "type": "",    "spoiler": false },
+    { "from": "natsumi",   "to": "yoko",  "type": "",    "spoiler": false },
 
     { "from": "mayumi",   "to": "nadeshiko",  "type": "尊敬", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "mayumi",  "type": "辛辣に評価", "arrows": "to",    "spoiler": true },
