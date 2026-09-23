@@ -3543,6 +3543,7 @@
     { "from": "riri",   "to": "kayuu",   "type": "幼馴染",          "spoiler": false },
     { "from": "riri",   "to": "kanaho", "type": "隊長仲間",            "spoiler": false },
     { "from": "riri",   "to": "kazuha", "type": "隊長仲間",            "spoiler": false },
+    { "from": "riri",   "to": "moyu", "type": "",          "spoiler": false },
 
     { "from": "yuyu",   "to": "kaede",  "type": "同レギオン",    "spoiler": false },
     { "from": "yuyu",   "to": "fumi",   "type": "同レギオン",          "spoiler": false },
