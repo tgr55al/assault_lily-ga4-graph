@@ -2741,6 +2741,20 @@
       "image": "https://i.gyazo.com/5548ac9d7191d68c9168f83f3b33f481.jpg"
     },
     {
+      "id": "yoshiko",
+      "name": "大槻 佳鼓",
+      "garden": "神庭女子藝術高校",
+      "wiki": "https://w.atwiki.jp/assault_lily/pages/1068.html",
+      "image": null
+    },
+    {
+      "id": "kurumi",
+      "name": "新津 胡桃",
+      "garden": "神庭女子藝術高校",
+      "wiki": "https://w.atwiki.jp/assault_lily/pages/1067.html",
+      "image": null
+    },
+    {
       "id": "io",
       "name": "桑田 一乙",
       "garden": "神庭女子藝術高校",
@@ -5423,6 +5437,7 @@
     { "from": "akari",   "to": "himeka",  "type": "ルームメイト",    "spoiler": false },
     { "from": "akari",   "to": "moka",  "type": "友人",    "spoiler": false },
     { "from": "akari",   "to": "asagao",  "type": "がおがお先輩", "arrows": "to",    "spoiler": false },
+    { "from": "akari",   "to": "kurumi",  "type": "親しい",    "spoiler": false },
 
     { "from": "himeka",   "to": "kuo",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
 
