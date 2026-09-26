@@ -106,6 +106,7 @@ button:active { background: #e0e0e0; }
 button.active-blue   { background: #1565c0; color: #fff; border-color: #1565c0; }
 button.active-purple { background: #6a1b9a; color: #fff; border-color: #6a1b9a; }
 button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; }
+button.active-green  { background: #2e7d32; color: #fff; border-color: #2e7d32; }
 
 /* ❓ 使い方ボタンを右端へ押し出す */
 #btn-toggle-help { margin-left: auto; }
@@ -309,6 +310,10 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
         <i data-lucide="square-dashed" width="12" height="12" style="position:relative; top:2px;"></i><span id="btn-legion-frame-text"> レギオン枠 OFF</span>
       </button>
       <span class="tb-sep">|</span>
+      <button id="btn-fullscreen">
+        <i data-lucide="maximize" width="12" height="12" style="position:relative; top:2px;"></i><span id="btn-fullscreen-text"> 全画面表示</span>
+      </button>
+      <span class="tb-sep">|</span>
       <button id="btn-reset-focus">
         <i data-lucide="rotate-ccw" width="12" height="12" style="position:relative; top:2px;"></i> リセット
       </button>
@@ -339,6 +344,7 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
       <li><strong>全展開</strong>：登録されているすべてのキャラクターを一括表示します。</li>
       <li><strong>ネタバレ OFF/ON</strong>：ネタバレを含む関係の表示・非表示を切り替えます。</li>
       <li><strong>レギオン枠 OFF/ON</strong>：同じレギオンに所属するキャラクターを枠で囲んで表示します。表示階層1・全展開OFFのときのみ使用できます（それ以外では自動的にOFF・非表示になります）。</li>
+      <li><strong>全画面表示</strong>：この相関図を全画面表示にします。もう一度押す、またはEscキーで元の表示に戻ります。（iPhoneではブラウザの種類を問わず仕様上ご利用いただけません。iPadは対応しています）</li>
       <li><strong>物理演算</strong>：物理演算エンジンの種類を切り替えます。レイアウトの雰囲気が変わります（再描画は不要、即反映）。</li>
       <li><strong>所属ガーデンで絞り込む</strong>：ガーデン単位でノードの表示・非表示を切り替えます。</li>
     </ul>
@@ -1331,6 +1337,83 @@ button.active-amber  { background: #e65100; color: #fff; border-color: #e65100; 
 
       render();
       gaEvent("relmap_toggle_spoiler", { state: showSpoiler ? "on" : "off" });
+    });
+
+    const btnFullscreen = document.getElementById("btn-fullscreen");
+
+    // ベンダープレフィックス込みで「現在の全画面要素」を取得
+    function getFullscreenElement() {
+      return document.fullscreenElement ||
+             document.webkitFullscreenElement ||
+             document.mozFullScreenElement ||
+             document.msFullscreenElement || null;
+    }
+
+    // ベンダープレフィックス込みで全画面表示を要求
+    function requestFullscreenCompat(el) {
+      const fn = el.requestFullscreen ||
+                 el.webkitRequestFullscreen ||
+                 el.webkitRequestFullScreen ||
+                 el.mozRequestFullScreen ||
+                 el.msRequestFullscreen;
+      if (!fn) return Promise.reject(new Error("Fullscreen API not supported"));
+      return Promise.resolve(fn.call(el));
+    }
+
+    // ベンダープレフィックス込みで全画面表示を解除
+    function exitFullscreenCompat() {
+      const fn = document.exitFullscreen ||
+                 document.webkitExitFullscreen ||
+                 document.webkitCancelFullScreen ||
+                 document.mozCancelFullScreen ||
+                 document.msExitFullscreen;
+      if (!fn) return Promise.reject(new Error("Fullscreen API not supported"));
+      return Promise.resolve(fn.call(document));
+    }
+
+    // 端末・ブラウザがFullscreen APIに対応しているか（iOS Safariは非対応）
+    const fullscreenSupported = !!(
+      document.fullscreenEnabled ||
+      document.webkitFullscreenEnabled ||
+      document.mozFullScreenEnabled ||
+      document.msFullscreenEnabled
+    );
+
+    if (btnFullscreen && !fullscreenSupported) {
+      // iOS Safariなど、そもそも全画面表示に対応していない環境では、
+      // 押しても無反応で終わらせず理由を示す。
+      btnFullscreen.title = "この端末・ブラウザは全画面表示に対応していません";
+      btnFullscreen.addEventListener("click", () => {
+        alert("お使いの端末・ブラウザは全画面表示に対応していません。（iPhoneではブラウザの種類を問わず仕様上ご利用いただけません。iPadは対応しています）");
+      });
+    } else {
+      btnFullscreen?.addEventListener("click", () => {
+        if (!getFullscreenElement()) {
+          const container = document.getElementById("app");
+          requestFullscreenCompat(container).catch(err => {
+            console.warn("全画面表示に失敗しました:", err);
+            alert("全画面表示を開始できませんでした。");
+          });
+        } else {
+          exitFullscreenCompat().catch(() => {});
+        }
+      });
+    }
+
+    // Escキーなど、ボタン以外の操作で全画面表示が解除された場合にも
+    // ボタンの見た目（テキスト・色）を実際の状態に同期させる。
+    const btnFullscreenText = document.getElementById("btn-fullscreen-text");
+    ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(evt => {
+      document.addEventListener(evt, () => {
+        if (!btnFullscreen) return;
+        if (getFullscreenElement()) {
+          if (btnFullscreenText) btnFullscreenText.textContent = " 全画面表示解除";
+          btnFullscreen.classList.add("active-green");
+        } else {
+          if (btnFullscreenText) btnFullscreenText.textContent = " 全画面表示";
+          btnFullscreen.classList.remove("active-green");
+        }
+      });
     });
 
     const btnLegionFrame = document.getElementById("btn-legion-frame");
