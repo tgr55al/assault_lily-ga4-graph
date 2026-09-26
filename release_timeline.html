@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アサルトリリィ 作品公開順タイムライン</title>
+<style>
+  :root {
+    --bg: #fffafb;
+    --panel: #ffffff;
+    --text: #4b4350;
+    --muted: #8d818d;
+    --line: #e7dfe7;
+    --stage: #e0568f;
+    --anime: #5472d3;
+    --game: #2b9e8a;
+    --book: #d98a3d;
+    --other: #8a8a96;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo,
+                 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    background: var(--bg);
+  }
+
+  /* Fullscreen APIでは、fullscreen要素自身の背景が未指定だと
+     要素の外側（max-widthの余白）が黒く見えるブラウザがあるため、
+     #app全体に背景色を明示する。 */
+  #app:fullscreen {
+    background: var(--bg);
+  }
+
+  #app:-webkit-full-screen {
+    background: var(--bg);
+  }
+
+  button.fullscreen-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid #d9cbd7;
+    background: rgba(255,255,255,.92);
+    color: #625666;
+    border-radius: 999px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 2px 6px rgba(102,72,96,.04);
+    transition: .15s ease;
+    white-space: nowrap;
+    touch-action: manipulation;
+  }
+
+  button.fullscreen-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(102,72,96,.10);
+    background: rgba(255,255,255,.98);
+  }
+
+  button.fullscreen-btn:active {
+    transform: none;
+    background: #f0eaf0;
+  }
+
+  button.fullscreen-btn.active-green {
+    color: #fff;
+    background: #2e7d32;
+    border-color: #2e7d32;
+  }
+
+  button.fullscreen-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex: 0 0 14px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,252,253,.97);
+    backdrop-filter: blur(12px);
+    padding: 10px 12px;
+    box-shadow: 0 3px 18px rgba(112,73,101,.06);
+  }
+
+  .controls {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid #d9cbd7;
+    background: rgba(255,255,255,.92);
+    color: #625666;
+    border-radius: 999px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 2px 6px rgba(102,72,96,.04);
+    transition: .15s ease;
+  }
+
+  .toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(102,72,96,.10);
+  }
+
+  .toggle.active {
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .toggle[data-type="stage"].active { background: var(--stage); }
+  .toggle[data-type="anime"].active { background: var(--anime); }
+  .toggle[data-type="game"].active { background: var(--game); }
+  .toggle[data-type="book"].active { background: var(--book); }
+  .toggle[data-type="other"].active { background: var(--other); }
+
+  .toggle:not(.active) {
+    color: #9b909a;
+    background: #f7f3f7;
+  }
+
+  .type-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 16px;
+  }
+
+  .type-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .hint {
+    color: var(--muted);
+    font-size: 11px;
+    margin-left: 5px;
+  }
+
+  .viewport {
+    position: relative;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 4px;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+  }
+
+  .timeline {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background: rgba(255,255,255,.96);
+    border: 1px solid #e5dce5;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(104,76,98,.08);
+
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    overscroll-behavior: contain;      /* スマホで端までスクロールした時に画面全体が引っ張られるのを防止 */
+    -webkit-overflow-scrolling: touch; /* スマホでの操作感を滑らかにする（慣性スクロール） */
+    touch-action: pan-y;               /* 縦方向の操作のみを許可し、横ブレや意図しない拡大等を防ぐ */
+    contain: paint;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    background: #fff;
+    border-bottom: 1px solid #e5dce5;
+  }
+
+  .header > div {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--line);
+    font-weight: 800;
+    padding: 2px;
+  }
+
+  .header > div:last-child { border-right: 0; }
+
+  .year-label {
+    color: #a66f8d;
+    font-size: 15px;
+  }
+
+  .lane-title {
+    gap: 4px;
+    font-size: 14px;
+    letter-spacing: .02em;
+    text-align: center;
+  }
+
+  .lane-title .title-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+  }
+
+  .lane-title .en {
+    margin-top: 1px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: .05em;
+    opacity: .72;
+  }
+
+  .lane-title.stage {
+    background: color-mix(in srgb, var(--stage) 18%, white);
+    color: color-mix(in srgb, var(--stage) 62%, black);
+  }
+  .lane-title.anime {
+    background: color-mix(in srgb, var(--anime) 18%, white);
+    color: color-mix(in srgb, var(--anime) 62%, black);
+  }
+  .lane-title.game {
+    background: color-mix(in srgb, var(--game) 18%, white);
+    color: color-mix(in srgb, var(--game) 62%, black);
+  }
+  .lane-title.book {
+    background: color-mix(in srgb, var(--book) 18%, white);
+    color: color-mix(in srgb, var(--book) 62%, black);
+  }
+  .lane-title.other {
+    background: color-mix(in srgb, var(--other) 18%, white);
+    color: color-mix(in srgb, var(--other) 62%, black);
+  }
+
+  .body {
+    position: relative;
+  }
+
+  .year-row {
+    position: relative;
+    display: grid;
+    align-items: stretch;
+    border-bottom: 1px solid #e8e1e8;
+  }
+
+  .year-row:last-child { border-bottom: 0; }
+
+  .year {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(11px, 2.5vw, 16px);
+    font-weight: 600;
+    color: #a65f82;
+    background: #fffafd;
+    border-right: 1px solid var(--line);
+  }
+
+  /* 左端の年セルの見た目 */
+  .year-cell {
+    padding: 8px 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8c738c;
+    text-align: center;
+    line-height: 1.2;
+    border-right: 1px solid #e8e1e8;
+  }
+
+  /* 同じ年の中で2行目以降の左端セル（空セル） */
+  .year-cell-empty {
+    border-right: 1px solid #e8e1e8;
+  }
+
+  /* 年の最初の行の上線（年の区切り線） */
+  .item-row.year-first-row {
+    border-top: 2px solid #e0d5e0;
+  }
+
+  /* 1イベント行のベース */
+  .item-row {
+    display: grid;
+    align-items: stretch;
+  }
+
+  /* 左端の年セル */
+  .year-cell, .year-cell-empty {
+    padding: 8px 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8c738c;
+    text-align: center;
+    border-right: 1px solid #e8e1e8; /* 左列の右罫線 */
+    background: #ffffff;
+  }
+
+  /* 各ライン（列）セルのベース */
+  .lane-cell {
+    padding: 6px 4px;
+    min-width: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #e8e1e8;
+    box-sizing: border-box;
+  }
+
+  /* 最後の列の右罫線は消す */
+  .lane-cell:last-child {
+    border-right: none;
+  }
+
+  /* --------------------------------------------------
+     各カテゴリ（ライン）ごとの背景色
+     -------------------------------------------------- */
+  .lane-cell.stage  { background-color: rgba(230, 0, 110, 0.04); }  /* 舞台 */
+  .lane-cell.anime  { background-color: rgba(0, 100, 220, 0.04); }  /* アニメ */
+  .lane-cell.game   { background-color: rgba(0, 150, 100, 0.04); }  /* ゲーム */
+  .lane-cell.book  { background-color: rgba(180, 120, 30, 0.04); }  /* 書籍 */
+  .lane-cell.other  { background-color: rgba(100, 100, 100, 0.04); }/* その他 */
+
+  .lane {
+    position: relative;
+    padding: 4px 2px;
+    border-right: 1px solid #eee7ee;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lane:last-child { border-right: 0; }
+
+  /* カード共通 */
+  .work {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    padding: 4px;
+    border: 1px solid #ddd4de;
+    border-left: 3px solid var(--type-color);
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .work:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 12px rgba(93,70,91,.2);
+    z-index: 10;
+  }
+
+  /* 公演中止・グレーアウト表示用 */
+  .work.is-cancelled {
+    opacity: 0.5;               /* 全体を半透明に */
+    filter: grayscale(100%);    /* 画像や色をモノクロ化 */
+    background: #f0f0f0;        /* 背景をグレーに */
+    border-color: #ccc;         /* 枠線も薄く */
+  }
+
+  /* ホバー時も目立ちすぎないように制御 */
+  .work.is-cancelled:hover {
+    opacity: 0.7;
+    transform: none;           /* 拡大アニメーションを無効化（お好みで） */
+  }
+
+  /* カテゴリごとの色定義例 */
+  .work.game {
+    --type-color: #2b9e8a; /* ゲームの色 */
+  }
+
+  .work.book {
+    --type-color: #e67e22; /* ブックの色 */
+  }
+
+  /* 線を伸ばす親カード（基準位置設定） */
+  .work.has-duration-line {
+    position: relative;
+    overflow: visible !important;
+  }
+
+  /* 伸びる縦線のスタイル */
+  .work-duration-line {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 4px;
+    background-color: var(--type-color, #888);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 10;
+    border-radius: 0 0 2px 2px;
+  }
+
+  /* 継続中（末尾グラデーション表現） */
+  .work.is-ongoing .work-duration-line {
+    background: linear-gradient(
+      to bottom,
+      var(--type-color, #888) 0%,
+      var(--type-color, #888) 80%,
+      transparent 100%
+    );
+  }
+
+  .work-title {
+    font-size: 10px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #4e4650;
+    word-break: break-all;
+  }
+
+  /* 画像ラッパー (複数対応) */
+  .work-images-container {
+    display: flex;
+    gap: 2px;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+   /* 拡大時に枠からはみ出さないようラッパー要素を調整 */
+   .work-image-wrapper {
+    flex: 1;
+    min-width: 0;
+    aspect-ratio: 16 / 7;
+    max-height: 80px;
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .work-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform .15s ease;
+  }
+
+  .work-date {
+    margin-top: 1px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 9px;
+    color: #9a8d98;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+
+  .lane.stage { --type-color: var(--stage); background: rgba(224,86,143,.05); }
+  .lane.anime { --type-color: var(--anime); background: rgba(84,114,211,.05); }
+  .lane.game { --type-color: var(--game); background: rgba(43,158,138,.05); }
+  .lane.book { --type-color: var(--book); background: rgba(217,138,61,.05); }
+  .lane.other { --type-color: var(--other); background: rgba(138,138,150,.05); }
+
+  .legend {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-top: 1px solid #e5dce5;
+    display: flex;
+    gap: 16px;
+    padding: 10px 14px;
+    font-size: 11px;
+    color: #817681;
+  }
+
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .empty {
+    color: #999;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 13px;
+  }
+
+  /* モーダル */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(0,0,0,.45);
+  }
+
+  .modal-backdrop.show { display: flex; }
+
+  .modal {
+    width: min(500px, 100%);
+    max-height: 85vh;
+    overflow: auto;
+    background: #fffafd;
+    border: 1px solid #e5d7e2;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    padding: 16px;
+  }
+
+  .modal h2 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .modal .modal-image-wrap {
+    margin: 10px 0;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .modal .modal-image {
+    display: block;
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 6px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .modal .modal-date {
+    margin-bottom: 10px;
+    color: #777;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+  }
+
+  .modal .note-label {
+    margin-bottom: 4px;
+    color: #8d7185;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .modal .description {
+    line-height: 1.6;
+    font-size: 13px;
+    white-space: pre-wrap;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .modal-actions button,
+  .modal-actions a {
+    display: inline-block;
+    border: 0;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .close-btn { background: #eee; color: #333; }
+  .wiki-btn { background: #333; color: #fff; }
+
+  /* スマホでの小幅対応 */
+  @media (max-width: 480px) {
+    .header > div { min-height: 38px; }
+    .lane-title .en { display: none; }
+    .work { padding: 3px 2px; }
+    .work-title { font-size: 9px; }
+    .work-image { height: 30px; }
+    .work-date { font-size: 8px; }
+
+    /* 年セルのスマホ用調整 */
+    .year-cell {
+      padding: 6px 2px;       /* 左右パディングを詰める */
+      font-size: 11px;        /* 文字サイズを小さくする */
+      letter-spacing: -0.5px; /* 文字間隔を少し詰める */
+      word-break: break-all;  /* 万が一の場合も折り返す */
+    }
+    .year-cell-empty {
+      padding: 0 2px;
+    }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+<div class="topbar">
+  <div class="controls">
+    <button class="toggle active" data-type="stage"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(72 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(144 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(216 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="3.6" fill="#fff" opacity="0.9"/></g></svg></span><span>舞台</span></button>
+    <button class="toggle active" data-type="anime"><span class="type-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg></span><span>アニメ</span></button>
+    <button class="toggle active" data-type="game"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15h18c5.5 0 9.3 3.6 10 9.2l1.1 8.6c.6 4.3-2.6 8.2-6.9 8.2-2.6 0-4.9-1.4-6.1-3.7l-2.3-4.3H19.2l-2.3 4.3c-1.2 2.3-3.5 3.7-6.1 3.7-4.3 0-7.5-3.9-6.9-8.2l1.1-8.6C5.7 18.6 9.5 15 15 15Z"/><path d="M14.5 23.5v7M11 27h7"/><circle cx="36" cy="23" r="1.4" fill="currentColor" stroke="none"/><circle cx="40" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="31" r="1.4" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.4" fill="currentColor" stroke="none"/></g></svg></span><span>ゲーム</span></button>
+    <button class="toggle active" data-type="book"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg></span><span>書籍</span></button>
+    <button class="toggle active" data-type="other"><span class="type-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span><span>その他</span></button>
+    <button id="btn-fullscreen" class="fullscreen-btn" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>
+      <span id="btn-fullscreen-text">全画面表示</span>
+    </button>
+    <span class="hint">※ ボタンで各ラインの表示 / 非表示を切り替え</span>
+  </div>
+</div>
+
+<main class="viewport">
+  <div class="timeline">
+    <div class="header">
+      <div class="year-label"></div>
+    </div>
+    <div id="body" class="body"></div>
+    <div class="legend">
+      <span class="legend-item"><i class="dot" style="background:var(--stage)"></i>舞台</span>
+      <span class="legend-item"><i class="dot" style="background:var(--anime)"></i>アニメ</span>
+      <span class="legend-item"><i class="dot" style="background:var(--game)"></i>ゲーム</span>
+      <span class="legend-item"><i class="dot" style="background:var(--book)"></i>書籍</span>
+      <span class="legend-item"><i class="dot" style="background:var(--other)"></i>その他</span>
+    </div>
+  </div>
+</main>
+
+<div id="modalBackdrop" class="modal-backdrop">
+  <div class="modal">
+    <h2 id="modalTitle"></h2>
+    <div id="modalImageWrap" class="modal-image-wrap" style="display:none;">
+      <img id="modalImage" class="modal-image" alt="">
+    </div>
+    <div id="modalDate" class="modal-date"></div>
+    <div id="modalNoteLabel" class="note-label">履修方法</div>
+    <div id="modalViewingMethod" class="description"></div>
+    <div id="modalDescLabel" class="note-label">備考</div>
+    <div id="modalDescription" class="description"></div>
+    <div class="modal-actions">
+      <button class="close-btn" id="closeModal">閉じる</button>
+      <a class="wiki-btn" id="wikiButton" target="_blank" rel="noopener">ページを開く</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/*
+ * ==========================================================
+ * 作品データ
+ * ==========================================================
+ * prototype 用の仮データです。
+ *
+ * date:
+ *   YYYY-MM     → 月単位
+ *   YYYY-MM-DD → 日単位
+ *
+ * 実データ化するときは、この works 配列だけ差し替えれば
+ * タイムラインの描画ロジックはそのまま利用できます。
+ */
+const DATA_URL = "release_timeline.json";
+
+/*
+ * ==========================================================
+ * HTML直書きフォールバックデータ
+ * ==========================================================
+ * JSONを取得できない場合はこちらが使われます。
+ * 試作中はこの配列を直接編集できます。
+ */
+const FALLBACK_WORKS = [
+{
+  "id": "novel-2015-001",
+  "title": "アサルトリリィ～一柳隊、出撃します！～",
+  "shortTitle": "一柳隊、出撃します！",
+  "type": "book",
+  "date": "2015年6月20日",
+  "viewingMethod": "物理書籍、電子書籍",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/989.html",
+  "image": "https://microgrouplibrary.com/web/img/uploads/book/80.jpg",
+  "imagePosition": "center 30%"
+},
+{
+  "id": "novel-2016-001",
+  "title": "アサルトリリィ アームズ",
+  "shortTitle": "アームズ",
+  "type": "book",
+  "date": "2016年2月7日",
+  "viewingMethod": "物理書籍、電子書籍",
+  "description": "2016年2月7日～5月24日連載。2017年7月28日書籍化。",
+  "url": "",
+  "image": "https://www.assaultlily.com/_assets/images/novel/cover_book_002.png",
+  "imagePosition": "center 20%"
+},
+{
+  "id": "stage-2016-001",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.1『シュベスターの祈り』",
+  "shortTitle": "シュベスターの祈り（初演版）",
+  "type": "stage",
+  "date": "2016年4月16日",
+  "viewingMethod": "DVD",
+  "description": "シュベスターの祈り（再演版）、シュベスターの祈り（リリプロ版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/173.html",
+  "image": "https://stage-image.corich.jp/img_stage/l/582/stage58294_1.jpg",
+  "imagePosition": "bottom"
+},
+{
+  "id": "stage-2016-002",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.2『シュベスターの秘密』",
+  "shortTitle": "シュベスターの秘密（初演版）",
+  "type": "stage",
+  "date": "2016年9月16日",
+  "viewingMethod": "DVD",
+  "description": "シュベスターの秘密（再演版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/172.html",
+  "image": "https://pbs.twimg.com/media/Crb1IDKUkAAssxv.jpg",
+  "imagePosition": "center 53%"
+},
+{
+  "id": "stage-2017-001",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.3『シュベスターの誓い』",
+  "shortTitle": "シュベスターの誓い",
+  "type": "stage",
+  "date": "2017年3月1日",
+  "viewingMethod": "DVD",
+  "description": "シュベスターの祈り（初演版）とシュベスターの秘密（初演版）をまとめた総集編・完全版",
+  "url": "https://w.atwiki.jp/assault_lily/pages/171.html",
+  "image": "https://stage-image.corich.jp/img_stage/l/659/stage_65949.jpg",
+  "imagePosition": "center 7%"
+},
+{
+  "id": "novel-2018-001",
+  "title": "アサルトリリィ外伝 京都編 眠る恋人",
+  "shortTitle": "京都編 眠る恋人",
+  "type": "book",
+  "date": "2018年1月18日",
+  "viewingMethod": "無料公開（PDF形式）",
+  "description": "2018年1月18日～4月26日連載。2020年12月31日電子特装版。\n二次創作扱い",
+  "url": "",
+  "image": "https://blog-imgs-135.fc2.com/d/o/g/dogmask/20201231204649112s.jpg",
+  "imagePosition": "center 40%"
+},
+{
+  "id": "stage-other-2018-001",
+  "title": "アサルトリリィ×私立ルドビコ女学院×人狼TLPT人狼TLPT S『未来への十字架』",
+  "shortTitle": "未来への十字架",
+  "type": "stage",
+  "date": "2018年2月7日",
+  "viewingMethod": "なし",
+  "description": "ストーリーはほぼ無いので気にしなくてよい",
+  "url": "https://w.atwiki.jp/assault_lily/pages/116.html",
+  "image": "https://pbs.twimg.com/media/DSLLDaYUIAA5dAU.jpg",
+  "imagePosition": "center 10%"
+},
+{
+  "id": "stage-2018-001",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.4『白きレジスタンス～約束の行方～』",
+  "shortTitle": "約束の行方（初演版）",
+  "type": "stage",
+  "date": "2018年9月21日",
+  "viewingMethod": "DVD",
+  "description": "約束の行方（再演版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/114.html",
+  "image": "https://pbs.twimg.com/media/Dj52vLNUUAAnNTP.jpg",
+  "imagePosition": "center 98%"
+},
+{
+  "id": "stage-other-2019-001",
+  "title": "アサルトリリィ×私立ルドビコ女学院×人狼TLPT人狼TLPT S『未来への十字架Ⅱ』",
+  "shortTitle": "未来への十字架Ⅱ",
+  "type": "stage",
+  "date": "2019年2月8日",
+  "viewingMethod": "なし",
+  "description": "ストーリーはほぼ無いので気にしなくてよい",
+  "url": "https://w.atwiki.jp/assault_lily/pages/115.html",
+  "image": "https://pbs.twimg.com/media/DxPj_M4VsAAbA4b.jpg",
+  "imagePosition": "center 5%"
+},
+{
+  "id": "stage-2019-001",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.5『白きレジスタンス～真実の刃～』",
+  "shortTitle": "真実の刃（初演版）",
+  "type": "stage",
+  "date": "2019年11月29日",
+  "viewingMethod": "DVD",
+  "description": "真実の刃（再演版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/109.html",
+  "image": "https://pbs.twimg.com/media/EIhaxhuVUAAjcsq?format=jpg&name=large",
+  "image2": "https://pbs.twimg.com/media/EIhaxhsU0AIrT-d?format=jpg&name=large",
+  "imagePosition": "center 97%"
+},
+{
+  "id": "stage-2020-001",
+  "title": "アサルトリリィ League of Gardens",
+  "shortTitle": "League of Gardens",
+  "type": "stage",
+  "date": "2020年1月9日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/95.html",
+  "image": "https://stage-image.corich.jp/img_stage/l/860/stage_86091.jpg",
+  "imagePosition": "center 89%"
+},
+{
+  "id": "other-2020-001",
+  "title": "アサルトリリィ League of Gardens -full bloom-",
+  "shortTitle": "League of Gardens -full bloom-",
+  "type": "book",
+  "date": "2020年7月8日",
+  "viewingMethod": "物理書籍、電子書籍",
+  "description": "2020年7月8日～2023年2月8日連載。2021年1月8日～2023年4月20日単行本。\nLoGを漫画化した作品",
+  "url": "https://w.atwiki.jp/assault_lily/pages/313.html",
+  "image": "https://pbs.twimg.com/media/EsWeOZWVEAUHfyv?format=jpg&name=4096x4096",
+  "imagePosition": "center 86%"
+},
+{
+  "id": "stage-2020-002",
+  "title": "アサルトリリィ The Fateful Gift",
+  "shortTitle": "The Fateful Gift",
+  "type": "stage",
+  "date": "2020年9月3日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/106.html",
+  "image": "https://love-annex.jp/wp-content/uploads/2020/09/0903_アサルト舞台.jpg",
+  "imagePosition": "center 95%"
+},
+{
+  "id": "anime-2020-001",
+  "title": "アサルトリリィ BOUQUET",
+  "shortTitle": "BOUQUET",
+  "type": "anime",
+  "date": "2020年10月2日",
+  "viewingMethod": "Blu-ray、各種配信",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/312.html",
+  "image": "https://pbs.twimg.com/media/EqkseV8UcAI7SQe?format=png&name=small",
+  "imagePosition": "center 94%"
+},
+{
+  "id": "game-2021-001",
+  "title": "アサルトリリィ Last Bullet",
+  "shortTitle": "Last Bullet",
+  "type": "game",
+  "date": "2021年1月20日",
+  "endDate": "ongoing",
+  "viewingMethod": "アプリ",
+  "description": "現在も展開中",
+  "url": "https://w.atwiki.jp/assault_lily/pages/345.html",
+  "image": "https://assaultlily.jp/wp-content/themes/assaultlily/image/ogp/ogp.png",
+  "cardImage": "https://www.assaultlily.com/wp/wp-content/uploads/2020/03/bnr_007.jpg",
+  "imagePosition": "right 60%"
+},
+{
+  "id": "stage-2021-001",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.6『シュベスターの祈り』",
+  "shortTitle": "シュベスターの祈り（再演版）",
+  "type": "stage",
+  "date": "2021年5月28日",
+  "viewingMethod": "Blu-ray、配信（DMM TV）",
+  "description": "シュベスターの祈り（初演版）、シュベスターの祈り（リリプロ版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/711.html",
+  "image": "https://pbs.twimg.com/media/EzzfL-NVkAA4obT?format=jpg",
+  "imagePosition": "center 91%"
+},
+{
+  "id": "novel-2021-001",
+  "title": "アサルトリリィ グローリー 電撃新潟奪還戦",
+  "shortTitle": "グローリー",
+  "type": "book",
+  "date": "2021年6月13日",
+  "viewingMethod": "連載記事、物理書籍",
+  "description": "2021年6月13日～2022年3月27日連載。2023年1月27日書籍化。",
+  "url": "",
+  "image": "https://hobby.dengeki.com/ss/hobby/2021/12/bb7ae4c2736e126de3a0aae01bcc3fd4_fVmspTO0s8AmvIdY77BEfu-_pcWX1wVQ.jpg",
+  "imagePosition": "top"
+},
+{
+  "id": "anime-2021-001",
+  "title": "アサルトリリィ ふるーつ",
+  "shortTitle": "ふるーつ",
+  "type": "anime",
+  "date": "2021年7月20日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/427.html",
+  "image": "https://anime.assaultlily-pj.com/wp-content/themes/anime-assaultlily-pj/assets/images/pc/fruits/img_kv.png",
+  "cardImage": "https://anime.assaultlily-pj.com/wp-content/themes/anime-assaultlily-pj/assets/images/sp/fruits/img_logo.png",
+  "imagePosition": "center 50%",
+  "imageScale": 0.99
+},
+{
+  "id": "stage-2021-002",
+  "title": "アサルトリリィ・御台場女学校-The Singular Ability-",
+  "shortTitle": "The Singular Ability",
+  "type": "stage",
+  "date": "2021年8月20日",
+  "viewingMethod": "Blu-ray、配信（DMM TV）",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/418.html",
+  "image": "https://pbs.twimg.com/media/E7rPXQeVgAA0YsF?format=jpg&name=large",
+  "imagePosition": "center 93%"
+},
+{
+  "id": "stage-2021-003",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.7『シュベスターの秘密』",
+  "shortTitle": "シュベスターの秘密（再演版）",
+  "type": "stage",
+  "date": "2021年10月15日",
+  "viewingMethod": "Blu-ray、配信（DMM TV）",
+  "description": "シュベスターの秘密（初演版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/713.html",
+  "image": "https://pbs.twimg.com/media/FAcFb3BVQAIk-R_?format=jpg",
+  "imagePosition": "center 91%"
+},
+{
+  "id": "stage-2022-001",
+  "title": "アサルトリリィ Lost Memories",
+  "shortTitle": "Lost Memories",
+  "type": "stage",
+  "date": "2022年1月20日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/437.html",
+  "image": "https://assaultlily-pj.com/wp-content/uploads/2022/10/d6d14-1e69c88e8889ee58fb0kv.jpg",
+  "imagePosition": "left 95%"
+},
+{
+  "id": "stage-2022-002",
+  "title": "アサルトリリィ・御台場女学校-The Empathy Phenomenon-",
+  "shortTitle": "The Empathy Phenomenon",
+  "type": "stage",
+  "date": "2022年2月17日",
+  "viewingMethod": "Blu-ray、配信（DMM TV）",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/532.html",
+  "image": "https://pbs.twimg.com/media/FJI82iEVEAIAneR?format=jpg&name=large",
+  "imagePosition": "center 93%"
+},
+{
+  "id": "other-2022-001",
+  "title": "アサルトリリィ『リリィコレクション2022 御台場女学校 with 私立ルドビコ女学院』",
+  "shortTitle": "リリィコレクション2022",
+  "type": "stage",
+  "date": "2022年4月7日",
+  "viewingMethod": "上演台本",
+  "description": "全公演中止",
+  "cancelled": true,
+  "url": "https://w.atwiki.jp/assault_lily/pages/716.html#リリィコレクション2022 御台場女学校 with 私立ルドビコ女学院",
+  "image": "https://pbs.twimg.com/media/FOCkaCSVIAMJCfZ?format=jpg&name=large",
+  "imagePosition": "center 33%"
+},
+{
+  "id": "stage-2022-003",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.8『白きレジスタンス～約束の行方～』",
+  "shortTitle": "約束の行方（再演版）",
+  "type": "stage",
+  "date": "2022年6月30日",
+  "viewingMethod": "Blu-ray、配信（DMM TV）",
+  "description": "約束の行方（初演版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/714.html",
+  "image": "https://pbs.twimg.com/media/FVgat6WUEAQWNZt?format=jpg",
+  "cardImage": "https://news.azone-int.co.jp/wp-content/uploads/2022/06/banner.jpg",
+  "imagePosition": "right 40%",
+  "imageScale": 2.3
+},
+{
+  "id": "other-2022-002",
+  "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Sweet Memoria～",
+  "shortTitle": "しーくれっとがーでん ～Sweet Memoria～",
+  "type": "book",
+  "date": "2022年6月30日",
+  "viewingMethod": "無料公開",
+  "description": "",
+  "url": "",
+  "image": "https://cf.image-cdn.k-manga.jp/cover_320/16/164662/b164662_1_320.jpg",
+  "imagePosition": "center 95%"
+},
+{
+  "id": "other-2022-002",
+  "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Innocent Memoria～",
+  "shortTitle": "しーくれっとがーでん ～Innocent Memoria～",
+  "type": "book",
+  "date": "2022年7月30日",
+  "viewingMethod": "無料公開",
+  "description": "",
+  "url": "",
+  "image": "https://cf.image-cdn.k-manga.jp/cover_320/16/164894/b164894_1_320.jpg",
+  "imagePosition": "center 95%"
+},
+{
+  "id": "other-2022-002",
+  "title": "アサルトリリィ Last Bullet しーくれっとがーでん ～Dreamy Memoria～",
+  "shortTitle": "しーくれっとがーでん ～Dreamy Memoria～",
+  "type": "book",
+  "date": "2023年1月30日",
+  "viewingMethod": "無料公開",
+  "description": "",
+  "url": "",
+  "image": "https://cf.image-cdn.k-manga.jp/cover_320/17/174121/b174121_1_320.jpg",
+  "imagePosition": "center 3%"
+},
+{
+  "id": "stage-2022-004",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.9『白きレジスタンス～真実の刃～』",
+  "shortTitle": "真実の刃（再演版）",
+  "type": "stage",
+  "date": "2022年9月8日",
+  "viewingMethod": "Blu-ray",
+  "description": "LIVE SHOWへ変更",
+  "cancelled": true,
+  "url": "https://w.atwiki.jp/assault_lily/pages/715.html",
+  "image": "https://pbs.twimg.com/media/F0_OqvGaMAEXmpR?format=jpg",
+  "imagePosition": "center 87%"
+},
+{
+  "id": "other-2022-003",
+  "title": "アサルトリリィ×私立ルドビコ女学院 LIVE SHOW",
+  "shortTitle": "ルド女 LIVE SHOW",
+  "type": "stage",
+  "date": "2022年9月8日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/639.html",
+  "image": "https://pbs.twimg.com/media/FfuMospUoAEvOQg?format=jpg",
+  "imagePosition": "center 56%"
+},
+{
+  "id": "stage-2023-001",
+  "title": "アサルトリリィ・御台場女学校-The Battle to Overcome-",
+  "shortTitle": "The Battle to Overcome",
+  "type": "stage",
+  "date": "2023年2月3日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/575.html",
+  "image": "https://pbs.twimg.com/media/FkuTF4yaUAAYhow?format=jpg&name=large",
+  "imagePosition": "center 91%"
+},
+{
+  "id": "novel-2023-001",
+  "title": "アサルトリリィヴンダー 激闘！御台場迎撃戦",
+  "shortTitle": "ヴンダー",
+  "type": "book",
+  "date": "2023年2月26日",
+  "viewingMethod": "連載記事、物理書籍、電子書籍",
+  "description": "2023年2月26日～6月25日連載。2023年10月26日単行本化。\n御台場迎撃戦（用語）",
+  "url": "",
+  "image": "https://hobby.dengeki.com/ss/hobby/2023/07/AL_wunder_cover_mihon_0803_rzN-16zggX7suIOPD9LHB9u9qzULmail.jpg",
+  "imagePosition": "top"
+},
+{
+  "id": "stage-2023-002",
+  "title": "アサルトリリィ・イルマ女子美術高校-The Gleam of Dawn-",
+  "shortTitle": "The Gleam of Dawn",
+  "type": "stage",
+  "date": "2023年4月13日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/576.html",
+  "image": "https://pbs.twimg.com/media/FsYvCvAaYAADLH-?format=jpg",
+  "imagePosition": "center 95%"
+},
+{
+  "id": "stage-2023-003",
+  "title": "Lily Project 第1弾 アサルトリリィ×私立ルドビコ女学院『シュベスターの祈り』",
+  "shortTitle": "シュベスターの祈り（リリプロ版）",
+  "type": "stage",
+  "date": "2023年5月18日",
+  "viewingMethod": "Blu-ray",
+  "description": "シュベスターの祈り（初演版）、シュベスターの祈り（再演版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/712.html",
+  "image": "https://pbs.twimg.com/media/Fuyw7vGaUAAyQdN?format=jpg",
+  "imagePosition": "center 91%"
+},
+{
+  "id": "stage-2023-004",
+  "title": "アサルトリリィ×私立ルドビコ女学院vol.9『白きレジスタンス～真実の刃～』",
+  "shortTitle": "真実の刃（再演版）",
+  "type": "stage",
+  "date": "2023年8月19日",
+  "viewingMethod": "Blu-ray",
+  "description": "真実の刃（初演版）と基本的には同じ",
+  "url": "https://w.atwiki.jp/assault_lily/pages/715.html",
+  "image": "https://pbs.twimg.com/media/F0_OqvGaMAEXmpR?format=jpg",
+  "imagePosition": "center 87%"
+},
+{
+  "id": "other-2023-001",
+  "title": "アサルトリリィ『リリィコレクション2023 御台場女学校 with 私立ルドビコ女学院』",
+  "shortTitle": "リリィコレクション2023",
+  "type": "stage",
+  "date": "2023年8月26日",
+  "viewingMethod": "Blu-ray",
+  "description": "リリコレ2022のリベンジ公演",
+  "url": "https://w.atwiki.jp/assault_lily/pages/640.html",
+  "image": "https://pbs.twimg.com/media/F0_Pm3NagAE6Cdg?format=jpg",
+  "imagePosition": "center 37%"
+},
+{
+  "id": "stage-2023-005",
+  "title": "アサルトリリィ・新章 サングリーズル編『種の最果ての地で』／ 大島近海ネスト調査隊編『金瘡小草の咲く時』",
+  "shortTitle": "新章1弾",
+  "type": "stage",
+  "date": "2023年12月19日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/647.html",
+  "image": "https://pbs.twimg.com/media/F8CjLdUbEAAuDQ0?format=jpg",
+  "imagePosition": "center 14%"
+},
+{
+  "id": "stage-2024-001",
+  "title": "アサルトリリィ・新章 サングリーズル編『花々の黄昏』／ 大島近海ネスト調査隊編『玲瓏たる深潭』",
+  "shortTitle": "新章2弾",
+  "type": "stage",
+  "date": "2024年5月17日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/725.html",
+  "image": "https://pbs.twimg.com/media/GIWF3-8a8AA_jvm?format=jpg&name=large",
+  "imagePosition": "center 89%"
+},
+{
+  "id": "stage-2024-002",
+  "title": "アサルトリリィ・御台場女学校-The Snowdrop-",
+  "shortTitle": "The Snowdrop",
+  "type": "stage",
+  "date": "2024年8月1日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/730.html",
+  "image": "https://pbs.twimg.com/media/GS1745zbkAAYYCT.jpg",
+  "imagePosition": "left 13%"
+},
+{
+  "id": "stage-2024-003",
+  "title": "アサルトリリィ・イルマ女子美術高校-The Bond with the White Rose-",
+  "shortTitle": "The Bond with the White Rose",
+  "type": "stage",
+  "date": "2024年12月5日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/801.html",
+  "image": "https://pbs.twimg.com/media/Gc0d1yDbsAA9VED?format=jpg&name=medium",
+  "imagePosition": "center 90%"
+},
+{
+  "id": "novel-2025-001",
+  "title": "江ノ島臨海女学校リリィ列伝",
+  "shortTitle": "江ノ島編",
+  "type": "book",
+  "date": "2025年3月15日",
+  "endDate": "ongoing",
+  "viewingMethod": "連載記事",
+  "description": "現在も連載中",
+  "url": "",
+  "image": "https://pbs.twimg.com/media/G_RPl3XacAA35xb?format=jpg&name=4096x4096",
+  "imagePosition": "top"
+},
+{
+  "id": "stage-2025-001",
+  "title": "アサルトリリィ・シュツルム ～サングリーズル編～",
+  "shortTitle": "シュツルム ～サングリーズル編～",
+  "type": "stage",
+  "date": "2025年4月25日",
+  "viewingMethod": "Blu-ray",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/892.html",
+  "image": "https://pbs.twimg.com/media/Go3cMKOasAAR1Jn?format=jpg&name=small",
+  "imagePosition": "center 8%"
+},
+{
+  "id": "stage-2025-002",
+  "title": "アサルトリリィ-眞說・御台場迎撃戦-",
+  "shortTitle": "眞說・御台場迎撃戦",
+  "type": "stage",
+  "date": "2025年9月20日",
+  "viewingMethod": "なし（Blu-ray予約中）",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/915.html",
+  "image": "https://pbs.twimg.com/media/G09JyPpaEAEfr2N?format=jpg&name=large",
+  "imagePosition": "center 81%"
+},
+{
+  "id": "other-2025-001",
+  "title": "異空間リーディングステージ「アサルトリリィ」- RED - & - BLUE -",
+  "shortTitle": "異空間リーディングステージ - RED - & - BLUE -",
+  "type": "stage",
+  "date": "2025年11月28日",
+  "viewingMethod": "なし（Blu-ray予約中）",
+  "description": "オムニバス形式",
+  "url": "https://w.atwiki.jp/assault_lily/pages/939.html",
+  "image": "https://pbs.twimg.com/media/Gyhcma1bEAAVHqe?format=jpg&name=medium",
+  "image2": "https://pbs.twimg.com/media/Gyhcma4aUAAdWg7?format=jpg&name=medium",
+  "imagePosition": "center 40%"
+},
+{
+  "id": "stage-2026-001",
+  "title": "アサルトリリィ・シュツルム ～サングリーズル編～第2弾",
+  "shortTitle": "シュツルム ～サングリーズル編～第2弾",
+  "type": "stage",
+  "date": "2026年4月18日",
+  "viewingMethod": "なし（Blu-ray予約中）",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/961.html",
+  "image": "https://pbs.twimg.com/media/HFiZLIBakAILTxn?format=jpg&name=4096x4096",
+  "imagePosition": "center 8%"
+},
+{
+  "id": "stage-2026-002",
+  "title": "アサルトリリィ・シュツルム ～御台場女学校編～",
+  "shortTitle": "シュツルム ～御台場女学校編～",
+  "type": "stage",
+  "date": "2026年7月16日",
+  "viewingMethod": "なし（Blu-ray予約中）",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/992.html",
+  "image": "https://pbs.twimg.com/media/HGrGj_FbUAAXNGg?format=jpg&name=4096x4096",
+  "imagePosition": "left 7%"
+},
+{
+  "id": "other-2026-002",
+  "title": "e アサルトリリィ",
+  "type": "other",
+  "date": "2026年9月7日",
+  "viewingMethod": "",
+  "description": "",
+  "url": "",
+  "image": "https://www.e-assaultlily.jp/img/visual_logo.png",
+  "imagePosition": "top"
+},
+{
+  "id": "other-2026-001",
+  "title": "異空間リーディングステージ「アサルトリリィ」 vol.2（仮）",
+  "shortTitle": "異空間リーディングステージ vol.2",
+  "type": "stage",
+  "date": "2026年10月28日",
+  "viewingMethod": "",
+  "description": "オムニバス形式。",
+  "url": "https://w.atwiki.jp/assault_lily/pages/999.html",
+  "image": "https://pbs.twimg.com/media/HNupJkObwAAFXNM?format=jpg&name=4096x4096",
+  "imagePosition": "center 45%"
+},
+{
+  "id": "stage-2027-001",
+  "title": "アサルトリリィ×私立ルドビコ女学院 ～白薔薇のパスカ～",
+  "shortTitle": "白薔薇のパスカ",
+  "type": "stage",
+  "date": "2027年1月8日",
+  "viewingMethod": "",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/1048.html",
+  "image": "https://pbs.twimg.com/media/HMUKfVBaQAE0saz?format=jpg&name=4096x4096",
+  "imagePosition": "center 5%"
+},
+{
+  "id": "stage-2027-002",
+  "title": "アサルトリリィ Last Bullet ～The Promise of Someday～",
+  "shortTitle": "The Promise of Someday",
+  "type": "stage",
+  "date": "2027年1月15日",
+  "viewingMethod": "",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/1015.html",
+  "image": "https://pbs.twimg.com/media/HNlxPykaEAEMlhG?format=jpg&name=large",
+  "imagePosition": "center 36%"
+},
+{
+  "id": "stage-2027-003",
+  "title": "アサルトリリィ・シュツルム ～ロネスネス編～",
+  "shortTitle": "シュツルム ～ロネスネス編～",
+  "type": "stage",
+  "date": "2027年7月1日",
+  "viewingMethod": "",
+  "description": "",
+  "url": "https://w.atwiki.jp/assault_lily/pages/1057.html",
+  "image": "https://pbs.twimg.com/media/HNuoYyiaEAAoSNA?format=jpg&name=large",
+  "imagePosition": "center 21%"
+}
+];
+
+let works = [];
+
+const TYPES = ["stage", "anime", "game", "book", "other"];
+const TYPE_NAMES = {
+  stage: "舞台",
+  anime: "アニメ",
+  game: "ゲーム",
+  book: "書籍",
+  other: "その他"
+};
+
+const TYPE_EN = {
+  stage: "STAGE PLAY",
+  anime: "ANIME",
+  game: "GAME",
+  book: "BOOK",
+  other: "OTHER"
+};
+
+const TYPE_ICONS = {
+  stage: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(72 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(144 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(216 24 24)"/><path d="M24 5 C 19 10, 19 16, 24 20 C 29 16, 29 10, 24 5 Z" transform="rotate(288 24 24)"/><circle cx="24" cy="24" r="3.6" fill="#fff" opacity="0.9"/></g></svg>`,
+  anime: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg>`,
+  game: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15h18c5.5 0 9.3 3.6 10 9.2l1.1 8.6c.6 4.3-2.6 8.2-6.9 8.2-2.6 0-4.9-1.4-6.1-3.7l-2.3-4.3H19.2l-2.3 4.3c-1.2 2.3-3.5 3.7-6.1 3.7-4.3 0-7.5-3.9-6.9-8.2l1.1-8.6C5.7 18.6 9.5 15 15 15Z"/><path d="M14.5 23.5v7M11 27h7"/><circle cx="36" cy="23" r="1.4" fill="currentColor" stroke="none"/><circle cx="40" cy="27" r="1.4" fill="currentColor" stroke="none"/><circle cx="36" cy="31" r="1.4" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="1.4" fill="currentColor" stroke="none"/></g></svg>`,
+  book: `<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg>`,
+  other: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>`
+};
+
+const visible = {
+  stage: true,
+  anime: true,
+  game: true,
+  book: true,
+  other: true
+};
+
+const body = document.getElementById("body");
+
+function dateToNumber(date) {
+  let year, month = 1, day = 1;
+
+  if (typeof date === "string" && date.includes("年")) {
+    // 「YYYY年M月D日」または「YYYY年M月」形式を解析
+    const match = date.match(/(\d{4})年(?:(\d{1,2})月)?(?:(\d{1,2})日)?/);
+    if (match) {
+      year = parseInt(match[1], 10);
+      if (match[2]) month = parseInt(match[2], 10);
+      if (match[3]) day = parseInt(match[3], 10);
+    }
+  } else if (typeof date === "string" && date.includes("-")) {
+    // 従来の「YYYY-MM-DD」形式も引き続きサポート
+    const parts = date.split("-").map(Number);
+    year = parts[0];
+    month = parts[1] || 1;
+    day = parts[2] || 1;
+  } else {
+    year = parseInt(date, 10);
+  }
+
+  if (!year || isNaN(year)) return 0;
+
+  // その年の中での位置を 0〜1 に近似
+  const daysInYear = new Date(year, 11, 31).getDate() === 31 ? 365 : 366;
+  const start = new Date(year, 0, 1);
+  const current = new Date(year, month - 1, day);
+  const elapsed = Math.max(0, current - start) / 86400000;
+
+  return year + elapsed / daysInYear;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+/* カードの高さを計算・推測 */
+function estimateCardHeight(work) {
+  const isMobile = window.innerWidth <= 480;
+  const hasImg = !!(work.cardImage || work.image);
+
+  // アスペクト比に応じた画像の推定高さ
+  const baseImgHeight = hasImg ? (isMobile ? 35 : 50) : 0;
+
+  const titleLength = work.title ? work.title.length : 0;
+  const charsPerLine = isMobile ? 8 : 14;
+  const lines = Math.max(1, Math.ceil(titleLength / charsPerLine));
+
+  const titleLineHeight = isMobile ? 11 : 13;
+  const titleHeight = lines * titleLineHeight;
+
+  const dateHeight = isMobile ? 9 : 11;
+  const padding = isMobile ? 8 : 10;
+
+  return baseImgHeight + titleHeight + dateHeight + padding;
+}
+
+function render() {
+  body.innerHTML = "";
+
+  const activeTypes = TYPES.filter(type => visible[type]);
+
+  // ヘッダー再生成
+  const header = document.querySelector(".header");
+  header.innerHTML = "";
+
+  const yearHeader = document.createElement("div");
+  yearHeader.className = "year-label";
+  header.appendChild(yearHeader);
+
+  for (const type of activeTypes) {
+    const title = document.createElement("div");
+    title.className = `lane-title ${type}`;
+    title.innerHTML = `
+      <span class="type-icon">${TYPE_ICONS[type]}</span>
+      <span class="title-copy">
+        <span>${TYPE_NAMES[type]}</span>
+        <span class="en">${TYPE_EN[type]}</span>
+      </span>
+    `;
+    header.appendChild(title);
+  }
+
+  // 左端（年列）の幅（スマホ時は44px程度に調整）
+  const yearColWidth = window.innerWidth <= 480 ? "44px" : "60px";
+  const gridTemplate = `${yearColWidth} repeat(${activeTypes.length}, minmax(0, 1fr))`;
+  header.style.gridTemplateColumns = gridTemplate;
+
+  // 選択されているカテゴリの作品を日付昇順（古い順）にソート
+  const activeWorks = works
+    .filter(w => activeTypes.includes(w.type))
+    .sort((a, b) => dateToNumber(a.date) - dateToNumber(b.date));
+
+  if (activeWorks.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "表示できる作品がありません。";
+    body.appendChild(empty);
+    return;
+  }
+
+  let currentYear = null;
+
+  // 1作品（イベント）ごとに1行作成
+  for (const work of activeWorks) {
+    const workYear = Math.floor(dateToNumber(work.date));
+    const isNewYear = (workYear !== currentYear);
+
+    const row = document.createElement("div");
+    row.className = `item-row ${isNewYear ? "year-first-row" : ""}`;
+    row.style.gridTemplateColumns = gridTemplate;
+
+    // 左端：年セル（その年の最初の行だけに「2015」などの数字を表示）
+    const yearCell = document.createElement("div");
+    if (isNewYear) {
+      currentYear = workYear;
+      yearCell.className = "year-cell";
+      yearCell.textContent = currentYear;
+    } else {
+      yearCell.className = "year-cell-empty";
+    }
+    row.appendChild(yearCell);
+
+    // 各ライン（カテゴリ）のセルを作成
+    for (const type of activeTypes) {
+      const cell = document.createElement("div");
+      cell.className = `lane-cell ${type}`;
+
+      // 該当する媒体（ライン）にのみカードを設置
+      if (work.type === type) {
+        const card = createWorkElement(work, type);
+        cell.appendChild(card);
+      }
+
+      row.appendChild(cell);
+    }
+
+    body.appendChild(row);
+  }
+
+  requestAnimationFrame(() => {
+    updateDurationLines();
+  });
+}
+// カード（作品要素）を生成する関数
+function createWorkElement(work, type) {
+  const card = document.createElement("button");
+  card.type = "button";
+
+  // endDateの有無と値のチェック
+  const hasEndDate = work.endDate && String(work.endDate).trim() !== "";
+  // "ongoing" や "現在" などの文字列が入っている場合は継続中判定
+  const isOngoing = hasEndDate && (work.endDate === "ongoing" || work.endDate === "現在");
+
+  let classNames = `work ${type}`;
+  if (work.cancelled) classNames += " is-cancelled";
+  if (hasEndDate) classNames += " has-duration-line";
+  if (isOngoing) classNames += " is-ongoing";
+
+  card.className = classNames;
+  card.dataset.id = work.id;
+
+  // 計算用に日付データを持たせる
+  if (work.date) card.dataset.date = work.date;
+  if (hasEndDate) card.dataset.endDate = work.endDate;
+
+  const displayImg1 = work.cardImage || work.image;
+  const displayImg2 = work.cardImage2 || work.image2;
+
+  const imgPos1 = work.imagePosition ? escapeHtml(work.imagePosition) : 'center';
+  const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos1;
+  const imgScale = work.imageScale ? Number(work.imageScale) : 1;
+
+  const style1 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos1}; transform: scale(${imgScale}); transform-origin: ${imgPos1};`;
+  const style2 = `width: 100%; height: 100%; object-fit: cover; object-position: ${imgPos2}; transform: scale(${imgScale}); transform-origin: ${imgPos2};`;
+
+  let imgHtml = "";
+  if (displayImg1) {
+    if (displayImg2) {
+      imgHtml = `
+        <div class="work-images-container">
+          <div class="work-image-wrapper">
+            <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
+          </div>
+          <div class="work-image-wrapper">
+            <img class="work-image" src="${escapeHtml(displayImg2)}" style="${style2}" alt="" loading="lazy">
+          </div>
+        </div>`;
+    } else {
+      imgHtml = `
+        <div class="work-images-container">
+          <div class="work-image-wrapper">
+            <img class="work-image" src="${escapeHtml(displayImg1)}" style="${style1}" alt="" loading="lazy">
+          </div>
+        </div>`;
+    }
+  }
+
+  // 表示用タイトルの判定（shortTitle があれば優先、なければ title を使用）
+  const displayTitle = work.shortTitle ? work.shortTitle : work.title;
+
+  // 日付表記の組み立て
+  let dateText = escapeHtml(work.date);
+  if (hasEndDate) {
+    if (isOngoing) {
+      dateText = `${escapeHtml(work.date)} ～ 現在`;
+    } else {
+      dateText = `${escapeHtml(work.date)} ～ ${escapeHtml(work.endDate)}`;
+    }
+  }
+
+  // endDateが存在する場合のみ線要素を挿入
+  const lineHtml = hasEndDate ? `<div class="work-duration-line"></div>` : "";
+
+  card.innerHTML = `
+    ${imgHtml}
+    <div class="work-title" title="${escapeHtml(work.title)}">${escapeHtml(displayTitle)}</div>
+    <div class="work-date">${dateText}</div>
+    ${lineHtml}
+  `;
+
+  card.addEventListener("click", () => openModal(work));
+  return card;
+}
+
+// 線の長さを一括設定する関数（描画後に実行）
+function updateDurationLines() {
+  const cards = document.querySelectorAll(".work.has-duration-line");
+  const body = document.querySelector(".timeline .body");
+
+  if (!body) return;
+
+  // 作品一覧そのものの下端を基準にする
+  // .work-duration-line 自身の長さには影響されない
+  const bodyRect = body.getBoundingClientRect();
+
+  cards.forEach(card => {
+    const line = card.querySelector(".work-duration-line");
+    if (!line) return;
+
+    const endDate = card.dataset.endDate;
+    const isOngoing = endDate === "ongoing" || endDate === "現在";
+
+    const cardRect = card.getBoundingClientRect();
+
+    if (isOngoing) {
+      // 「現在まで続いている作品」は作品一覧の末尾まで線を伸ばす
+      const lineHeight = bodyRect.bottom - cardRect.bottom;
+
+      line.style.height = `${Math.max(lineHeight, 10)}px`;
+
+    } else {
+      // 終了日が決まっている作品
+      const targetEl =
+        document.querySelector(`[data-date="${endDate}"]`) ||
+        document.querySelector(`[data-year="${endDate.split('-')[0]}"]`);
+
+      if (targetEl) {
+        const targetRect = targetEl.getBoundingClientRect();
+        const lineHeight = targetRect.top - cardRect.bottom;
+
+        line.style.height = `${Math.max(lineHeight, 20)}px`;
+      } else {
+        line.style.height = "150px";
+      }
+    }
+  });
+}
+function openModal(work) {
+  document.getElementById("modalTitle").textContent = work.title;
+
+  const modalImageWrap = document.getElementById("modalImageWrap");
+  modalImageWrap.innerHTML = "";
+
+  if (work.image) {
+    const img1 = document.createElement("img");
+    img1.className = "modal-image";
+    img1.src = work.image;
+    img1.alt = work.title;
+    modalImageWrap.appendChild(img1);
+
+    if (work.image2) {
+      const img2 = document.createElement("img");
+      img2.className = "modal-image";
+      img2.src = work.image2;
+      img2.alt = work.title;
+      modalImageWrap.appendChild(img2);
+    }
+
+    modalImageWrap.style.display = "flex";
+  } else {
+    modalImageWrap.style.display = "none";
+  }
+
+  document.getElementById("modalDate").textContent = work.date;
+
+  const methodLabel = document.getElementById("modalNoteLabel");
+  const methodEl = document.getElementById("modalViewingMethod");
+
+  if (work.viewingMethod) {
+    methodLabel.style.display = "";
+    methodEl.style.display = "";
+    methodEl.textContent = work.viewingMethod;
+  } else {
+    methodLabel.style.display = "none";
+    methodEl.style.display = "none";
+    methodEl.textContent = "";
+  }
+
+  const noteLabel = document.getElementById("modalDescLabel");
+  const descriptionEl = document.getElementById("modalDescription");
+
+  if (work.description) {
+    noteLabel.style.display = "";
+    descriptionEl.style.display = "";
+    descriptionEl.textContent = work.description;
+  } else {
+    noteLabel.style.display = "none";
+    descriptionEl.style.display = "none";
+    descriptionEl.textContent = "";
+  }
+
+  const wikiButton = document.getElementById("wikiButton");
+
+  if (work.url) {
+    wikiButton.href = work.url;
+    wikiButton.style.display = "inline-block";
+  } else {
+    wikiButton.removeAttribute("href");
+    wikiButton.style.display = "none";
+  }
+
+  document.getElementById("modalBackdrop").classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("modalBackdrop").classList.remove("show");
+}
+
+document.querySelectorAll(".toggle").forEach(button => {
+  button.addEventListener("click", () => {
+    const type = button.dataset.type;
+    visible[type] = !visible[type];
+    button.classList.toggle("active", visible[type]);
+    render();
+  });
+});
+
+document.getElementById("closeModal").addEventListener("click", closeModal);
+
+document.getElementById("modalBackdrop").addEventListener("click", event => {
+  if (event.target.id === "modalBackdrop") closeModal();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeModal();
+});
+
+async function loadData() {
+  try {
+    const response = await fetch(DATA_URL, { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const json = await response.json();
+
+    if (!Array.isArray(json.works)) {
+      throw new Error("JSONに works 配列がありません。");
+    }
+
+    // JSON取得成功 → JSONの値を使用
+    works = json.works;
+
+    console.log(`作品データ: JSONを使用 (${works.length}件)`);
+  } catch (error) {
+    // JSON取得失敗 → HTML直書きデータを使用
+    works = FALLBACK_WORKS;
+
+    console.warn(
+      "作品データ: HTML直書きのフォールバックを使用",
+      error
+    );
+  }
+
+  render();
+}
+
+    // ============================================================
+    // 全画面表示
+    // 相関図 relationship.html と同じ挙動・メッセージに統一
+    // ============================================================
+    const btnFullscreen = document.getElementById("btn-fullscreen");
+
+    function getFullscreenElement() {
+      return document.fullscreenElement ||
+             document.webkitFullscreenElement ||
+             document.mozFullScreenElement ||
+             document.msFullscreenElement || null;
+    }
+
+    function requestFullscreenCompat(el) {
+      const fn = el.requestFullscreen ||
+                 el.webkitRequestFullscreen ||
+                 el.webkitRequestFullScreen ||
+                 el.mozRequestFullScreen ||
+                 el.msRequestFullscreen;
+      if (!fn) return Promise.reject(new Error("Fullscreen API not supported"));
+      return Promise.resolve(fn.call(el));
+    }
+
+    function exitFullscreenCompat() {
+      const fn = document.exitFullscreen ||
+                 document.webkitExitFullscreen ||
+                 document.webkitCancelFullScreen ||
+                 document.mozCancelFullScreen ||
+                 document.msExitFullscreen;
+      if (!fn) return Promise.reject(new Error("Fullscreen API not supported"));
+      return Promise.resolve(fn.call(document));
+    }
+
+    const fullscreenSupported = !!(
+      document.fullscreenEnabled ||
+      document.webkitFullscreenEnabled ||
+      document.mozFullScreenEnabled ||
+      document.msFullscreenEnabled
+    );
+
+    if (btnFullscreen && !fullscreenSupported) {
+      btnFullscreen.title = "この端末・ブラウザは全画面表示に対応していません";
+      btnFullscreen.addEventListener("click", () => {
+        alert("お使いの端末・ブラウザは全画面表示に対応していません。（iPhoneではブラウザの種類を問わず仕様上ご利用いただけません。iPadは対応しています）");
+      });
+    } else {
+      btnFullscreen?.addEventListener("click", () => {
+        if (!getFullscreenElement()) {
+          const container = document.getElementById("app");
+          requestFullscreenCompat(container).catch(err => {
+            console.warn("全画面表示に失敗しました:", err);
+            alert("全画面表示を開始できませんでした。");
+          });
+        } else {
+          exitFullscreenCompat().catch(() => {});
+        }
+      });
+    }
+
+    // Escキーなど、ボタン以外の操作で全画面表示が解除された場合にも
+    // ボタンの見た目（テキスト・色）を実際の状態に同期させる。
+    const btnFullscreenText = document.getElementById("btn-fullscreen-text");
+    ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(evt => {
+      document.addEventListener(evt, () => {
+        if (!btnFullscreen) return;
+        if (getFullscreenElement()) {
+          if (btnFullscreenText) btnFullscreenText.textContent = "全画面表示解除";
+          btnFullscreen.classList.add("active-green");
+        } else {
+          if (btnFullscreenText) btnFullscreenText.textContent = "全画面表示";
+          btnFullscreen.classList.remove("active-green");
+        }
+      });
+    });
+
+window.addEventListener("resize", updateDurationLines);
+loadData();
+</script>
+</div>
+</body>
+</html>
