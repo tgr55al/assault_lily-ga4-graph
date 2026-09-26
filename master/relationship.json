@@ -5044,7 +5044,7 @@
 
     { "from": "asagao",   "to": "yukari",  "type": "同レギオン",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "asagao",   "to": "nanaho",  "type": "ブラックコーヒー同盟",    "spoiler": false },
-    { "from": "asagao",   "to": "soraha",  "type": "",    "spoiler": false },
+    { "from": "asagao",   "to": "soraha",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
     { "from": "asagao",   "to": "akane",  "type": "仲が良い",    "spoiler": false },
     { "from": "asagao",   "to": "ena",  "type": "仲が良い",    "spoiler": false },
     { "from": "asagao",   "to": "sumire_komai",  "type": "同レギオン",    "spoiler": true },
