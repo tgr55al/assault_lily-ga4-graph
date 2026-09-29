@@ -4726,6 +4726,9 @@
     { "from": "ginrangyoku",   "to": "kisara",  "type": "",    "spoiler": false },
     { "from": "ginrangyoku",   "to": "natsumi",  "type": "ファン", "arrows": "to",    "spoiler": false },
 
+	{ "from": "miaki",   "to": "ticia",  "type": "超絶憧れ", "arrows": "to",    "spoiler": false },
+	{ "from": "miaki",   "to": "fuka",  "type": "",    "spoiler": false },
+
     { "from": "goteni",   "to": "kinrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "ginrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "tomoyo_nakahara",  "type": "評価", "arrows": "to",    "spoiler": true },
