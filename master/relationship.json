@@ -5994,9 +5994,23 @@
     { "from": "tomoyo_nakahara",   "to": "kotohi",  "type": "使い捨ての駒", "arrows": "to",    "spoiler": true },
     { "from": "kotohi",   "to": "tomoyo_nakahara",  "type": "決別", "arrows": "to",    "spoiler": true },
 
-    { "from": "hiromi",   "to": "anzu",  "type": "レギオン結成を目指している",    "spoiler": false },
-    { "from": "hiromi",   "to": "chie",  "type": "レギオン結成を目指している",    "spoiler": false },
-    { "from": "anzu",   "to": "chie",  "type": "親友・レギオン結成を目指している",    "spoiler": false },
+    { "from": "hiromi",   "to": "anzu",  "type": "レギオン結成を目指している",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "hiromi",   "to": "chie",  "type": "レギオン結成を目指している",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "anzu",   "to": "chie",  "type": "親友・レギオン結成を目指している",    "spoiler": false, "hideWhenSpoiler": true },
+
+    { "from": "hiromi",   "to": "chie",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hiromi",   "to": "anzu",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hiromi",   "to": "kurumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "hiromi",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "chie",   "to": "anzu",  "type": "親友",    "spoiler": true },
+    { "from": "chie",   "to": "kurumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chie",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "anzu",   "to": "kurumi",  "type": "同レギオン",    "spoiler": true },
+    { "from": "anzu",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
+
+    { "from": "kurumi",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
 
     { "from": "io",   "to": "mioko",  "type": "冠輝の誓い",    "spoiler": false },
     { "from": "io",   "to": "yakumo",  "type": "",    "spoiler": false },
@@ -6288,7 +6302,7 @@
     {
       "id": "gran_eple",
       "name": "ヘイズルーン",
-      "membersSpoiler": ["chie"]
+      "membersSpoiler": ["chie","hiromi","anzu","yoshiko","kurumi"]
     },
     {
       "id": "kamba_student_council_defense_force",
