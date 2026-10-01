@@ -6251,7 +6251,8 @@
     {
       "id": "cuelebre",
       "name": "クエレブレ",
-      "membersNoSpoiler": ["fuka", "mitake", "makina", "yuni", "higure"]
+      "membersNoSpoiler": ["fuka", "mitake", "makina", "yuni", "higure"],
+      "membersSpoiler": ["fuka", "mitake", "makina", "yuni", "higure", "miho"]
     },
     {
       "id": "basa-andre",
@@ -6283,6 +6284,11 @@
       "name": "グラン・エプレ",
       "membersNoSpoiler": ["kanaho", "takane", "kureha", "akari", "himeka"],
       "membersSpoiler": ["kanaho", "takane", "kureha", "akari", "himeka", "akehi", "haruna", "suzume", "fujino"]
+    },
+    {
+      "id": "gran_eple",
+      "name": "ヘイズルーン",
+      "membersSpoiler": ["chie"]
     },
     {
       "id": "kamba_student_council_defense_force",
