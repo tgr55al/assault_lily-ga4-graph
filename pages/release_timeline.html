@@ -663,7 +663,7 @@
     <button class="toggle active" data-type="book"><span class="type-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10.5c-4.2-3-9.3-3.5-15-1.7v25.8c5.7-1.8 10.8-1.3 15 1.7"/><path d="M24 10.5c4.2-3 9.3-3.5 15-1.7v25.8c-5.7-1.8-10.8-1.3-15 1.7"/><path d="M24 10.5v25.8"/><path d="M12.5 15.2c3.3-.6 6.2-.1 8.8 1.3M12.5 20.1c3.3-.6 6.2-.1 8.8 1.3M35.5 15.2c-3.3-.6-6.2-.1-8.8 1.3M35.5 20.1c-3.3-.6-6.2-.1-8.8 1.3"/></g></svg></span><span>書籍</span></button>
     <button class="toggle active" data-type="other"><span class="type-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span><span>その他</span></button>
     <button id="btn-fullscreen" class="fullscreen-btn" type="button">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>
+      <svg id="btn-fullscreen-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>
       <span id="btn-fullscreen-text">全画面表示</span>
     </button>
     <span class="hint">※ ボタンで各ラインの表示 / 非表示を切り替え</span>
@@ -762,7 +762,7 @@ const FALLBACK_WORKS = [
   "description": "シュベスターの祈り（再演版）、シュベスターの祈り（リリプロ版）と基本的には同じ",
   "url": "https://w.atwiki.jp/assault_lily/pages/173.html",
   "image": "https://stage-image.corich.jp/img_stage/l/582/stage58294_1.jpg",
-  "imagePosition": "bottom"
+  "cardImage": "https://i.gyazo.com/75917450a2c33926b4fb5a4d6196d981.jpg"
 },
 {
   "id": "stage-2016-002",
@@ -859,7 +859,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/95.html",
   "image": "https://stage-image.corich.jp/img_stage/l/860/stage_86091.jpg",
-  "imagePosition": "center 89%"
+  "cardImage": "https://i.gyazo.com/21c5e3884fae8bada09c6bf8c553dfdd.jpg"
 },
 {
   "id": "other-2020-001",
@@ -895,7 +895,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/312.html",
   "image": "https://pbs.twimg.com/media/EqkseV8UcAI7SQe?format=png&name=small",
-  "imagePosition": "center 94%"
+  "cardImage": "https://i.gyazo.com/33aabc7f1766390c1d6aab812650b900.png"
 },
 {
   "id": "game-2021-001",
@@ -933,7 +933,7 @@ const FALLBACK_WORKS = [
   "description": "2021年6月13日～2022年3月27日連載。2023年1月27日書籍化。",
   "url": "",
   "image": "https://hobby.dengeki.com/ss/hobby/2021/12/bb7ae4c2736e126de3a0aae01bcc3fd4_fVmspTO0s8AmvIdY77BEfu-_pcWX1wVQ.jpg",
-  "imagePosition": "top"
+  "cardImage": "https://i.gyazo.com/8bd2503ab8a31d56f965390e0f4b598a.jpg"
 },
 {
   "id": "anime-2021-001",
@@ -945,9 +945,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/427.html",
   "image": "https://anime.assaultlily-pj.com/wp-content/themes/anime-assaultlily-pj/assets/images/pc/fruits/img_kv.png",
-  "cardImage": "https://anime.assaultlily-pj.com/wp-content/themes/anime-assaultlily-pj/assets/images/sp/fruits/img_logo.png",
-  "imagePosition": "center 50%",
-  "imageScale": 0.99
+  "cardImage": "https://i.gyazo.com/bfdef40f3c0e052b8ebcf532189b90f8.png"
 },
 {
   "id": "stage-2021-002",
@@ -959,7 +957,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/418.html",
   "image": "https://pbs.twimg.com/media/E7rPXQeVgAA0YsF?format=jpg&name=large",
-  "imagePosition": "center 93%"
+  "cardImage": "https://i.gyazo.com/ea98bb8e28f61a0829a7dd330eedc34e.jpg"
 },
 {
   "id": "stage-2021-003",
@@ -1336,7 +1334,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/1057.html",
   "image": "https://pbs.twimg.com/media/HNuoYyiaEAAoSNA?format=jpg&name=large",
-  "imagePosition": "center 21%"
+  "cardImage": "https://i.gyazo.com/fb986e1a6c320641f1d70590cdd5a3d3.jpg"
 }
 ];
 
@@ -1833,18 +1831,35 @@ async function loadData() {
     // Escキーなど、ボタン以外の操作で全画面表示が解除された場合にも
     // ボタンの見た目（テキスト・色）を実際の状態に同期させる。
     const btnFullscreenText = document.getElementById("btn-fullscreen-text");
-    ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(evt => {
-      document.addEventListener(evt, () => {
-        if (!btnFullscreen) return;
-        if (getFullscreenElement()) {
-          if (btnFullscreenText) btnFullscreenText.textContent = "全画面表示解除";
-          btnFullscreen.classList.add("active-green");
-        } else {
-          if (btnFullscreenText) btnFullscreenText.textContent = "全画面表示";
-          btnFullscreen.classList.remove("active-green");
+    const btnFullscreenIcon = document.getElementById("btn-fullscreen-icon");
+
+    function updateFullscreenButton() {
+      if (!btnFullscreen) return;
+
+      if (getFullscreenElement()) {
+        if (btnFullscreenText) btnFullscreenText.textContent = "全画面表示解除";
+        if (btnFullscreenIcon) {
+          // 一般的な「全画面表示解除」＝四隅が内側を向くアイコン
+          btnFullscreenIcon.innerHTML =
+            '<path d="M8 3v5H3M16 3v5h5M21 16h-5v5M8 21v-5H3"/>';
         }
-      });
+        btnFullscreen.classList.add("active-green");
+      } else {
+        if (btnFullscreenText) btnFullscreenText.textContent = "全画面表示";
+        if (btnFullscreenIcon) {
+          // 一般的な「全画面表示」＝四隅が外側を向くアイコン
+          btnFullscreenIcon.innerHTML =
+            '<path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/>';
+        }
+        btnFullscreen.classList.remove("active-green");
+      }
+    }
+
+    ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(evt => {
+      document.addEventListener(evt, updateFullscreenButton);
     });
+
+    updateFullscreenButton();
 
 window.addEventListener("resize", updateDurationLines);
 loadData();

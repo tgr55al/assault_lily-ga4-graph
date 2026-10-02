@@ -316,7 +316,7 @@ button.active-green  { background: #2e7d32; color: #fff; border-color: #2e7d32; 
       </button>
       <span class="tb-sep">|</span>
       <button id="btn-fullscreen">
-        <i data-lucide="maximize" width="12" height="12" style="position:relative; top:2px;"></i><span id="btn-fullscreen-text"> 全画面表示</span>
+        <span id="btn-fullscreen-icon" aria-hidden="true" style="display:inline-flex; width:12px; height:12px; position:relative; top:-1px; vertical-align:middle;"></span><span id="btn-fullscreen-text"> 全画面表示</span>
       </button>
       <span class="tb-sep">|</span>
       <button id="btn-reset-focus">
@@ -1405,21 +1405,47 @@ button.active-green  { background: #2e7d32; color: #fff; border-color: #2e7d32; 
       });
     }
 
-    // Escキーなど、ボタン以外の操作で全画面表示が解除された場合にも
-    // ボタンの見た目（テキスト・色）を実際の状態に同期させる。
     const btnFullscreenText = document.getElementById("btn-fullscreen-text");
+    const btnFullscreenIcon = document.getElementById("btn-fullscreen-icon");
+
+    const fullscreenEnterIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
+        <path d="M21 8V5a2 2 0 0 0-2-2h-3"/>
+        <path d="M3 16v3a2 2 0 0 0 2 2h3"/>
+        <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
+      </svg>`;
+
+    const fullscreenExitIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 3v3a2 2 0 0 1-2 2H3"/>
+        <path d="M21 8h-3a2 2 0 0 1-2-2V3"/>
+        <path d="M3 16h3a2 2 0 0 1 2 2v3"/>
+        <path d="M16 21v-3a2 2 0 0 1 2-2h3"/>
+      </svg>`;
+
+    function updateFullscreenButton() {
+      if (!btnFullscreen) return;
+      const isFullscreen = !!getFullscreenElement();
+
+      if (btnFullscreenText) {
+        btnFullscreenText.textContent = isFullscreen ? " 全画面表示解除" : " 全画面表示";
+      }
+      btnFullscreen.classList.toggle("active-green", isFullscreen);
+
+      if (btnFullscreenIcon) {
+        // 通常時：四隅が外側を向く「全画面表示」
+        // 全画面時：四隅が内側を向く「全画面表示解除」
+        btnFullscreenIcon.innerHTML = isFullscreen ? fullscreenExitIcon : fullscreenEnterIcon;
+      }
+    }
+
     ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"].forEach(evt => {
-      document.addEventListener(evt, () => {
-        if (!btnFullscreen) return;
-        if (getFullscreenElement()) {
-          if (btnFullscreenText) btnFullscreenText.textContent = " 全画面表示解除";
-          btnFullscreen.classList.add("active-green");
-        } else {
-          if (btnFullscreenText) btnFullscreenText.textContent = " 全画面表示";
-          btnFullscreen.classList.remove("active-green");
-        }
-      });
+      document.addEventListener(evt, updateFullscreenButton);
     });
+
+    // 初期状態も同期
+    updateFullscreenButton();
 
     const btnLegionFrame = document.getElementById("btn-legion-frame");
     const btnLegionFrameText = document.getElementById("btn-legion-frame-text");
