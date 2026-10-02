@@ -121,7 +121,6 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 4px;
-    max-width: 1180px;
     margin: 0 auto;
   }
 
@@ -190,7 +189,6 @@
   .viewport {
     position: relative;
     width: 100%;
-    max-width: 1180px;
     margin: 0 auto;
     padding: 0 4px;
     flex: 1;
@@ -479,11 +477,11 @@
   }
 
    /* 拡大時に枠からはみ出さないようラッパー要素を調整 */
-   .work-image-wrapper {
-    flex: 1;
+  .work-image-wrapper {
+    flex: 1 1 0;
     min-width: 0;
+    width: 100%;
     aspect-ratio: 16 / 7;
-    max-height: 80px;
     overflow: hidden;
     border-radius: 3px;
     position: relative;
@@ -640,7 +638,6 @@
     .lane-title .en { display: none; }
     .work { padding: 3px 2px; }
     .work-title { font-size: 9px; }
-    .work-image { height: 30px; }
     .work-date { font-size: 8px; }
 
     /* 年セルのスマホ用調整 */
@@ -886,7 +883,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/106.html",
   "image": "https://love-annex.jp/wp-content/uploads/2020/09/0903_アサルト舞台.jpg",
-  "imagePosition": "center 95%"
+  "cardImage": "https://i.gyazo.com/580aba84982b3213fca60f17ef7395c0.jpg"
 },
 {
   "id": "anime-2020-001",
@@ -924,7 +921,7 @@ const FALLBACK_WORKS = [
   "description": "シュベスターの祈り（初演版）、シュベスターの祈り（リリプロ版）と基本的には同じ",
   "url": "https://w.atwiki.jp/assault_lily/pages/711.html",
   "image": "https://pbs.twimg.com/media/EzzfL-NVkAA4obT?format=jpg",
-  "imagePosition": "center 91%"
+  "cardImage": "https://i.gyazo.com/e4e3718b70f01ec6a49d6b9c98ff3b9d.jpg"
 },
 {
   "id": "novel-2021-001",
@@ -986,7 +983,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/437.html",
   "image": "https://assaultlily-pj.com/wp-content/uploads/2022/10/d6d14-1e69c88e8889ee58fb0kv.jpg",
-  "imagePosition": "left 95%"
+  "cardImage": "https://i.gyazo.com/7fdce1c09230afd86073683a402ecb31.jpg"
 },
 {
   "id": "stage-2022-002",
@@ -1074,7 +1071,7 @@ const FALLBACK_WORKS = [
   "cancelled": true,
   "url": "https://w.atwiki.jp/assault_lily/pages/715.html",
   "image": "https://pbs.twimg.com/media/F0_OqvGaMAEXmpR?format=jpg",
-  "imagePosition": "center 87%"
+  "cardImage": "https://i.gyazo.com/497104c5417f63d441a1dc61c6e08f4b.jpg"
 },
 {
   "id": "other-2022-003",
@@ -1098,7 +1095,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/575.html",
   "image": "https://pbs.twimg.com/media/FkuTF4yaUAAYhow?format=jpg&name=large",
-  "imagePosition": "center 91%"
+  "cardImage": "https://i.gyazo.com/8823d22c0e9ec5901ca43a661b01ab9c.jpg"
 },
 {
   "id": "novel-2023-001",
@@ -1146,7 +1143,7 @@ const FALLBACK_WORKS = [
   "description": "真実の刃（初演版）と基本的には同じ",
   "url": "https://w.atwiki.jp/assault_lily/pages/715.html",
   "image": "https://pbs.twimg.com/media/F0_OqvGaMAEXmpR?format=jpg",
-  "imagePosition": "center 87%"
+  "cardImage": "https://i.gyazo.com/497104c5417f63d441a1dc61c6e08f4b.jpg"
 },
 {
   "id": "other-2023-001",
@@ -1194,7 +1191,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/730.html",
   "image": "https://pbs.twimg.com/media/GS1745zbkAAYYCT.jpg",
-  "imagePosition": "left 13%"
+  "cardImage": "https://i.gyazo.com/399a1d2505363054fe2f82631e3ce5fe.jpg"
 },
 {
   "id": "stage-2024-003",
@@ -1206,7 +1203,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/801.html",
   "image": "https://pbs.twimg.com/media/Gc0d1yDbsAA9VED?format=jpg&name=medium",
-  "imagePosition": "center 90%"
+  "cardImage": "https://i.gyazo.com/a61cdc93474f02d3a90ea2458a21f595.jpg"
 },
 {
   "id": "novel-2025-001",
@@ -1243,7 +1240,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/915.html",
   "image": "https://pbs.twimg.com/media/G09JyPpaEAEfr2N?format=jpg&name=large",
-  "imagePosition": "center 81%"
+  "cardImage": "https://i.gyazo.com/8b8fede4d901cfd87961f5fcb609af77.jpg"
 },
 {
   "id": "other-2025-001",
@@ -1280,7 +1277,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/992.html",
   "image": "https://pbs.twimg.com/media/HGrGj_FbUAAXNGg?format=jpg&name=4096x4096",
-  "imagePosition": "left 7%"
+  "cardImage": "https://i.gyazo.com/f604d3ac9bc189b5e7d64dba8fbf0848.jpg"
 },
 {
   "id": "other-2026-002",
@@ -1291,7 +1288,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "",
   "image": "https://www.e-assaultlily.jp/img/visual_logo.png",
-  "imagePosition": "top"
+  "cardImage": "https://i.gyazo.com/9c0f54418ef15188171d8439bd3e1a02.png"
 },
 {
   "id": "other-2026-001",
