@@ -58,7 +58,7 @@
       "description": "シュベスターの祈り（初演版）とシュベスターの秘密（初演版）をまとめた総集編・完全版",
       "url": "https://w.atwiki.jp/assault_lily/pages/171.html",
       "image": "https://stage-image.corich.jp/img_stage/l/659/stage_65949.jpg",
-      "imagePosition": "center 7%"
+      "cardImage": "https://i.gyazo.com/e1afc47fb2f213872eee70ad84972197.jpg"
     },
     {
       "id": "novel-2018-001",
@@ -70,7 +70,7 @@
       "description": "2018年1月18日～4月26日連載。2020年12月31日電子特装版。\n二次創作扱い",
       "url": "",
       "image": "https://blog-imgs-135.fc2.com/d/o/g/dogmask/20201231204649112s.jpg",
-      "imagePosition": "center 40%"
+      "cardImage": "https://i.gyazo.com/436b350e8a01a41a5336beb94611bcc0.jpg"
     },
     {
       "id": "stage-other-2018-001",
@@ -289,9 +289,7 @@
       "description": "約束の行方（初演版）と基本的には同じ",
       "url": "https://w.atwiki.jp/assault_lily/pages/714.html",
       "image": "https://pbs.twimg.com/media/FVgat6WUEAQWNZt?format=jpg",
-      "cardImage": "https://news.azone-int.co.jp/wp-content/uploads/2022/06/banner.jpg",
-      "imagePosition": "right 40%",
-      "imageScale": 2.3
+      "cardImage": "https://i.gyazo.com/4908828667c407b4686b79c013768435.jpg"
     },
     {
       "id": "other-2022-002",
