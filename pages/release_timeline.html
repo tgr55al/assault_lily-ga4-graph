@@ -774,7 +774,7 @@ const FALLBACK_WORKS = [
   "description": "シュベスターの秘密（再演版）と基本的には同じ",
   "url": "https://w.atwiki.jp/assault_lily/pages/172.html",
   "image": "https://pbs.twimg.com/media/Crb1IDKUkAAssxv.jpg",
-  "imagePosition": "center 53%"
+  "cardImage": "https://i.gyazo.com/63f2c0b4f55571415c1dac0d9e070d37.jpg"
 },
 {
   "id": "stage-2017-001",
@@ -822,7 +822,7 @@ const FALLBACK_WORKS = [
   "description": "約束の行方（再演版）と基本的には同じ",
   "url": "https://w.atwiki.jp/assault_lily/pages/114.html",
   "image": "https://pbs.twimg.com/media/Dj52vLNUUAAnNTP.jpg",
-  "imagePosition": "center 98%"
+  "cardImage": "https://i.gyazo.com/6d9dceabfa524f4da2bb68508a06fd9c.jpg"
 },
 {
   "id": "stage-other-2019-001",
@@ -847,7 +847,7 @@ const FALLBACK_WORKS = [
   "url": "https://w.atwiki.jp/assault_lily/pages/109.html",
   "image": "https://pbs.twimg.com/media/EIhaxhuVUAAjcsq?format=jpg&name=large",
   "image2": "https://pbs.twimg.com/media/EIhaxhsU0AIrT-d?format=jpg&name=large",
-  "imagePosition": "center 97%"
+  "cardImage": "https://i.gyazo.com/de58518fca4342370491856845c55e86.jpg"
 },
 {
   "id": "stage-2020-001",
@@ -1248,7 +1248,8 @@ const FALLBACK_WORKS = [
   "url": "https://w.atwiki.jp/assault_lily/pages/939.html",
   "image": "https://pbs.twimg.com/media/Gyhcma1bEAAVHqe?format=jpg&name=medium",
   "image2": "https://pbs.twimg.com/media/Gyhcma4aUAAdWg7?format=jpg&name=medium",
-  "imagePosition": "center 40%"
+  "cardImage": "https://i.gyazo.com/f8014252d88a2bd4d5e8094686d9076d.jpg",
+  "cardImage2": "https://i.gyazo.com/4c3eb28550b796b2eba52f5ae9386812.jpg"
 },
 {
   "id": "stage-2026-001",
@@ -1319,7 +1320,7 @@ const FALLBACK_WORKS = [
   "description": "",
   "url": "https://w.atwiki.jp/assault_lily/pages/1015.html",
   "image": "https://pbs.twimg.com/media/HNlxPykaEAEMlhG?format=jpg&name=large",
-  "imagePosition": "center 36%"
+  "cardImage": "https://i.gyazo.com/838770547ed1ed21b7215e437f060db9.jpg"
 },
 {
   "id": "stage-2027-003",
@@ -1544,7 +1545,7 @@ function createWorkElement(work, type) {
   if (hasEndDate) card.dataset.endDate = work.endDate;
 
   const displayImg1 = work.cardImage || work.image;
-  const displayImg2 = work.cardImage2 || work.image2;
+  const displayImg2 = work.cardImage2;
 
   const imgPos1 = work.imagePosition ? escapeHtml(work.imagePosition) : 'center';
   const imgPos2 = work.image2Position ? escapeHtml(work.image2Position) : imgPos1;
