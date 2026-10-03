@@ -10,7 +10,7 @@
       "description": "",
       "url": "https://w.atwiki.jp/assault_lily/pages/989.html",
       "image": "https://microgrouplibrary.com/web/img/uploads/book/80.jpg",
-      "imagePosition": "center 30%"
+      "cardImage": "https://i.gyazo.com/c6ef77cbdbf27244471dcad1f33f3aaa.jpg"
     },
     {
       "id": "novel-2016-001",
@@ -22,7 +22,7 @@
       "description": "2016年2月7日～5月24日連載。2017年7月28日書籍化。",
       "url": "",
       "image": "https://www.assaultlily.com/_assets/images/novel/cover_book_002.png",
-      "imagePosition": "center 20%"
+      "cardImage": "https://i.gyazo.com/6e4be7b5e20d88521c2784c37299b2d4.png"
     },
     {
       "id": "stage-2016-001",
@@ -374,7 +374,7 @@
       "description": "2023年2月26日～6月25日連載。2023年10月26日単行本化。\n御台場迎撃戦（用語）",
       "url": "",
       "image": "https://hobby.dengeki.com/ss/hobby/2023/07/AL_wunder_cover_mihon_0803_rzN-16zggX7suIOPD9LHB9u9qzULmail.jpg",
-      "imagePosition": "top"
+      "cardImage": "https://i.gyazo.com/a2d33ef8a9240e84b93636c9e2dda6ef.jpg"
     },
     {
       "id": "stage-2023-002",
@@ -483,7 +483,7 @@
       "description": "現在も連載中",
       "url": "",
       "image": "https://pbs.twimg.com/media/G_RPl3XacAA35xb?format=jpg&name=4096x4096",
-      "imagePosition": "top"
+      "cardImage": "https://i.gyazo.com/be2b6146c2f26f34214335ae6b916aff.jpg"
     },
     {
       "id": "stage-2025-001",
@@ -568,7 +568,7 @@
       "description": "オムニバス形式。",
       "url": "https://w.atwiki.jp/assault_lily/pages/999.html",
       "image": "https://pbs.twimg.com/media/HNupJkObwAAFXNM?format=jpg&name=4096x4096",
-      "imagePosition": "center 45%"
+      "cardImage": "https://i.gyazo.com/514efaebaad11f7ae362e65f826f497c.jpg"
     },
     {
       "id": "stage-2027-001",
