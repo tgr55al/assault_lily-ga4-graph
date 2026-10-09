@@ -3696,7 +3696,7 @@
     { "from": "chikaru", "to": "makoto",     "type": "親友",          "spoiler": false },
     { "from": "chikaru", "to": "mai",     "type": "友人",          "spoiler": false },
     { "from": "chikaru", "to": "kazuha",     "type": "崇拝", "arrows": "to",          "spoiler": false },
-    { "from": "chikaru", "to": "sasaki",     "type": "可愛い", "arrows": "to",          "spoiler": false },
+    { "from": "chikaru", "to": "sasaki",     "type": "溺愛", "arrows": "to",          "spoiler": false },
     { "from": "chikaru", "to": "shiori",     "type": "",          "spoiler": false },
 
     { "from": "soraha",   "to": "kusumi",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
@@ -5406,7 +5406,7 @@
     { "from": "yuni",   "to": "nanaho",  "type": "狙っている", "arrows": "to",    "spoiler": false },
 
     { "from": "chikaru",   "to": "higure",  "type": "手料理を振舞っている", "arrows": "to",    "spoiler": true },
-    { "from": "higure",   "to": "chikaru",  "type": "高く評価", "arrows": "to",    "spoiler": true },
+    { "from": "higure",   "to": "chikaru",  "type": "母の面影を重ねている", "arrows": "to",    "spoiler": true },
 
     { "from": "noi",   "to": "nako",  "type": "同レギオン",    "spoiler": false },
     { "from": "noi",   "to": "uru",  "type": "同レギオン",    "spoiler": false },

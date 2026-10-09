@@ -183,6 +183,18 @@
       "cardImage": "https://i.gyazo.com/2623a27cb18a63608ac72063a70569e7.png"
     },
     {
+      "id": "other-2021-001",
+      "title": "アサルトリリィ BOUQUET Special Live Edel Lilie",
+      "shortTitle": "Edel Lilie",
+      "type": "other",
+      "date": "2021年3月21日",
+      "viewingMethod": "Blu-ray",
+      "description": "夜の部収録",
+      "url": "https://w.atwiki.jp/assault_lily/pages/1161.html",
+      "image": "https://i.gyazo.com/0559d6d4ef1c68551f1291adafc80d6f.png",
+      "cardImage": "https://i.gyazo.com/8c29fde655e86150cf5db75fb685f7a7.png"
+    },
+    {
       "id": "stage-2021-001",
       "title": "アサルトリリィ×私立ルドビコ女学院vol.6『シュベスターの祈り』",
       "shortTitle": "シュベスターの祈り（再演版）",
@@ -205,6 +217,18 @@
       "url": "",
       "image": "https://hobby.dengeki.com/ss/hobby/2021/12/bb7ae4c2736e126de3a0aae01bcc3fd4_fVmspTO0s8AmvIdY77BEfu-_pcWX1wVQ.jpg",
       "cardImage": "https://i.gyazo.com/8bd2503ab8a31d56f965390e0f4b598a.jpg"
+    },
+    {
+      "id": "other-2021-002",
+      "title": "アサルトリリィ Last Bullet Presents Edel Lilie+",
+      "shortTitle": "Edel Lilie+",
+      "type": "other",
+      "date": "2021年7月3日",
+      "viewingMethod": "Blu-ray",
+      "description": "夜の部収録",
+      "url": "https://w.atwiki.jp/assault_lily/pages/1163.html",
+      "image": "https://i.gyazo.com/c53ab6ef08e50fcdd83fb8fa0b49e959.png",
+      "cardImage": "https://i.gyazo.com/724e770494e4fc05549c7561e9e8a96d.png"
     },
     {
       "id": "anime-2021-001",
@@ -344,7 +368,7 @@
       "id": "other-2022-003",
       "title": "アサルトリリィ×私立ルドビコ女学院 LIVE SHOW",
       "shortTitle": "ルド女 LIVE SHOW",
-      "type": "stage",
+      "type": "other",
       "date": "2022年9月8日",
       "viewingMethod": "Blu-ray",
       "description": "",
