@@ -4140,6 +4140,8 @@
     { "from": "kaho",   "to": "hijiri",  "type": "ライバル",    "spoiler": false },
     { "from": "kaho",   "to": "akane",  "type": "",    "spoiler": false },
     { "from": "tohka",   "to": "kaho",  "type": "嫉妬", "arrows": "to",    "spoiler": false },
+    { "from": "kaho",   "to": "homare",  "type": "交流がある",    "spoiler": false },
+    { "from": "kaho",   "to": "hikaru",  "type": "交流がある",    "spoiler": false },
 
     { "from": "hiromu",   "to": "yukiyo",  "type": "友人",    "spoiler": false },
     { "from": "hiromu",   "to": "sayu",  "type": "友人",    "spoiler": false },
