@@ -533,6 +533,30 @@
       "cardImage": "https://i.gyazo.com/725dfbae65bb07f6bd7132f8c4ddd0f0.jpg"
     },
     {
+      "id": "other-2024-001",
+      "title": "アサルトリリィ Last Bullet LIVE Lily's Dreamin' ☆ Party",
+      "shortTitle": "Lily's Dreamin' ☆ Party",
+      "type": "other",
+      "date": "2024年2月24日",
+      "viewingMethod": "Blu-ray",
+      "description": "Blu-rayには3公演すべてを収録",
+      "url": "https://w.atwiki.jp/assault_lily/pages/1170.html",
+      "image": "https://i.gyazo.com/8f2a20c75b1dffaacdccd3b3ff9e7f4c.png",
+      "cardImage": "https://i.gyazo.com/a84cf98ee2de0eb6c358d343bcf767ea.png"
+    },
+    {
+      "id": "other-2024-002",
+      "title": "舞台アサルトリリィ・生演奏バンドライブ『Lily Scramble!!!! -春の合同音楽祭-』",
+      "shortTitle": "Lily Scramble!!!! -春の合同音楽祭-",
+      "type": "other",
+      "date": "2024年4月18日",
+      "viewingMethod": "Blu-ray",
+      "description": "Blu-rayには4月19日夜の部全編映像と、他公演のスクランブルコーナーの一部を収録",
+      "url": "https://w.atwiki.jp/assault_lily/pages/797.html",
+      "image": "https://lily-scramble.jp/LS_logo.png",
+      "cardImage": "https://i.gyazo.com/5443fd2b95fbdb6f66fca9901acb11b2.png"
+    },
+    {
       "id": "stage-2024-001",
       "title": "アサルトリリィ・新章 サングリーズル編『花々の黄昏』／ 大島近海ネスト調査隊編『玲瓏たる深潭』",
       "shortTitle": "新章2弾",
@@ -558,6 +582,18 @@
     },
     {
       "id": "stage-2024-003",
+      "title": "アサルトリリィ Last Bullet READING & LIVE 残響のスキャルドメール ～命の証明・未来への共鳴～",
+      "shortTitle": "残響のスキャルドメール ～命の証明・未来への共鳴～",
+      "type": "other",
+      "date": "2024年10月20日",
+      "viewingMethod": "Blu-ray",
+      "description": "",
+      "url": "https://w.atwiki.jp/assault_lily/pages/796.html",
+      "image": "https://i.gyazo.com/thumb/1000/d07b76c90621ecbc26e28081e8f569e1-png.jpg",
+      "cardImage": "https://i.gyazo.com/fe9b886e417759ae122ec792e6bc9021.jpg"
+    },
+    {
+      "id": "stage-2024-004",
       "title": "アサルトリリィ・イルマ女子美術高校-The Bond with the White Rose-",
       "shortTitle": "The Bond with the White Rose",
       "type": "stage",
