@@ -584,7 +584,7 @@
       "id": "stage-2024-003",
       "title": "アサルトリリィ Last Bullet READING & LIVE 残響のスキャルドメール ～命の証明・未来への共鳴～",
       "shortTitle": "残響のスキャルドメール ～命の証明・未来への共鳴～",
-      "type": "other",
+      "type": "stage",
       "date": "2024年10月20日",
       "viewingMethod": "Blu-ray",
       "description": "",
@@ -616,6 +616,18 @@
       "url": "",
       "image": "https://pbs.twimg.com/media/G_RPl3XacAA35xb?format=jpg&name=4096x4096",
       "cardImage": "https://i.gyazo.com/be2b6146c2f26f34214335ae6b916aff.jpg"
+    },
+    {
+      "id": "other-2025-001",
+      "title": "アサルトリリィ Project 5th Anniversary LIVE CONSTELLAT10N ～Wish Upon A Star～",
+      "shortTitle": "CONSTELLAT10N ～Wish Upon A Star～",
+      "type": "other",
+      "date": "2025年3月30日",
+      "viewingMethod": "Blu-ray",
+      "description": "Blu-rayには夜公演全編映像と、昼公演の一部映像を収録",
+      "url": "https://w.atwiki.jp/assault_lily/pages/1171.html",
+      "image": "https://i.gyazo.com/0c25a6b88f97775f1a5707ce662c32e6.png",
+      "cardImage": "https://i.gyazo.com/1a4ad9a7ae3c101c7af502d11b2d292a.png"
     },
     {
       "id": "stage-2025-001",
