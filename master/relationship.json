@@ -3323,8 +3323,7 @@
     },
     {
       "id": "goteni",
-      "name": "御典医",
-      "spoilerName": "南方 瑞畝（御典医）",
+      "name": "御典医（南方 瑞畝）",
       "garden": "G.E.H.E.N.A.",
       "wiki": "https://w.atwiki.jp/assault_lily/pages/921.html",
       "image": "https://i.gyazo.com/ebe11917c4e1196a487aeb97e8038190.jpg"
@@ -3596,7 +3595,7 @@
     { "from": "fumi",   "to": "tazusa", "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "miriam", "type": "同レギオン",          "spoiler": false },
     { "from": "fumi",   "to": "yujia", "type": "同レギオン",          "spoiler": false },
-    { "from": "fumi",   "to": "fuka", "type": "",          "spoiler": false },
+    { "from": "fumi",   "to": "fuka", "type": "連絡先を交換した",          "spoiler": false },
     { "from": "fumi",   "to": "kureha", "type": "ソウルフレンド",          "spoiler": false },
     { "from": "fumi",   "to": "ena", "type": "コスプレ友達",          "spoiler": false },
     { "from": "fumi",   "to": "shiori", "type": "天使", "arrows": "to",          "spoiler": false },
@@ -3611,6 +3610,7 @@
     { "from": "fumi",   "to": "keine", "type": "甲斐聖山の推しリリィ", "arrows": "to",          "spoiler": false },
     { "from": "fumi",   "to": "mio", "type": "ロスヴァイセの推しリリィ", "arrows": "to",          "spoiler": false },
     { "from": "fumi",   "to": "yasuna", "type": "那賀大串の推しリリィ", "arrows": "to",          "spoiler": false },
+    { "from": "fumi",   "to": "noi", "type": "エレンスゲの推しリリィ", "arrows": "to",          "spoiler": false },
 
     { "from": "fumi",   "to": "god", "type": "知人",          "spoiler": false },
     { "from": "god",   "to": "shiori", "type": "お気に入り", "arrows": "to",          "spoiler": false },
