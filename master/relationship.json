@@ -4665,6 +4665,7 @@
     { "from": "althea",   "to": "misaka",  "type": "戦友",    "spoiler": false },
     { "from": "althea",   "to": "momiji",  "type": "カップルと言ってもいい間柄",    "spoiler": false },
     { "from": "althea",   "to": "ticia",  "type": "盟友",    "spoiler": false },
+    { "from": "althea",   "to": "charlotta",  "type": "距離を置いている", "arrows": "to",    "spoiler": false },
 
     { "from": "lemie",   "to": "stella",  "type": "同レギオン",    "spoiler": false },
     { "from": "lemie",   "to": "nyx",  "type": "同レギオン",    "spoiler": false },
