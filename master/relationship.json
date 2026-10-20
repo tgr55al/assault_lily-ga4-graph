@@ -3847,6 +3847,7 @@
     { "from": "shiori",   "to": "kanon",  "type": "牙の姉妹",    "spoiler": false },
     { "from": "shiori",   "to": "sena",  "type": "姉妹",    "spoiler": false },
     { "from": "shiori",   "to": "tatsuki",  "type": "仲が良い",    "spoiler": false },
+    { "from": "shiori",   "to": "sachie",  "type": "師弟関係",    "spoiler": false },
 
     { "from": "hijiri",   "to": "nodoka",  "type": "ルームメイト",    "spoiler": false },
     { "from": "botan",   "to": "hijiri",  "type": "自称ライバル", "arrows": "to",    "spoiler": false },
