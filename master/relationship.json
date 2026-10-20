@@ -2772,6 +2772,13 @@
       "image": "https://i.gyazo.com/5ac8ea9ef6502c7a71bd7f0e90bb2698.jpg"
     },
     {
+      "id": "kyo",
+      "name": "きょうちゃん",
+      "garden": "神庭女子藝術高校",
+      "wiki": null,
+      "image": null
+    },
+    {
       "id": "nuyuna",
       "name": "九鬼 縫雪花",
       "garden": "聖橋大学附属女子高等学校",
@@ -6020,6 +6027,7 @@
     { "from": "chie",   "to": "anzu",  "type": "親友",    "spoiler": true },
     { "from": "chie",   "to": "kurumi",  "type": "同レギオン",    "spoiler": true },
     { "from": "chie",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
+    { "from": "chie",   "to": "kyo",  "type": "憧れ", "arrows": "to",    "spoiler": false },
 
     { "from": "anzu",   "to": "kurumi",  "type": "同レギオン",    "spoiler": true },
     { "from": "anzu",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
