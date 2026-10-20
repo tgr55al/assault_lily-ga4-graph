@@ -374,6 +374,13 @@
       "image": null
     },
     {
+      "id": "kaoru_hayashi_sister",
+      "name": "林薫のシュッツエンゲル",
+      "garden": "百合ヶ丘女学院",
+      "wiki": null,
+      "image": null
+    },
+    {
       "id": "maasa",
       "name": "福屋 真亜沙",
       "garden": "百合ヶ丘女学院",
@@ -3665,10 +3672,12 @@
     { "from": "shin",   "to": "mai", "type": "気が合う",          "spoiler": false },
     { "from": "shin",   "to": "mimi", "type": "微妙",          "spoiler": false },
     { "from": "shin",   "to": "shinobu", "type": "冗談で煽りあう仲",          "spoiler": false },
+    { "from": "shin",   "to": "kaoru_hayashi_sister", "arrows": "to",  "type": "慕っていた",    "spoiler": false },
 
     { "from": "yahiro",   "to": "yuyu", "type": "友人",          "spoiler": false },
     { "from": "yahiro",   "to": "mai", "type": "友人",          "spoiler": false },
     { "from": "yahiro",   "to": "mimi", "type": "微妙",          "spoiler": false },
+    { "from": "yahiro",   "to": "kaoru_hayashi_sister", "arrows": "to",  "type": "慕っていた",    "spoiler": false },
 
     { "from": "kazuha", "to": "renka",     "type": "信頼",          "spoiler": false },
     { "from": "sasaki", "to": "kazuha",     "type": "なついてる", "arrows": "to",          "spoiler": false },
@@ -4229,6 +4238,7 @@
 
     { "from": "kaoru_hayashi",   "to": "maasa",  "type": "同レギオン",    "spoiler": false },
     { "from": "kaoru_hayashi",   "to": "tohka",  "type": "師弟関係",    "spoiler": false },
+    { "from": "kaoru_hayashi",   "to": "kaoru_hayashi_sister",  "type": "シュッツエンゲル",    "spoiler": false },
 
     { "from": "meika",   "to": "ayako",  "type": "同レギオン",    "spoiler": false },
     { "from": "meika",   "to": "hitomi",  "type": "同レギオン",    "spoiler": false },
