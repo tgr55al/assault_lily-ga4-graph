@@ -2779,6 +2779,13 @@
       "image": null
     },
     {
+      "id": "sakanashi",
+      "name": "坂梨",
+      "garden": "神庭女子藝術高校",
+      "wiki": null,
+      "image": null
+    },
+    {
       "id": "nuyuna",
       "name": "九鬼 縫雪花",
       "garden": "聖橋大学附属女子高等学校",
@@ -6028,6 +6035,11 @@
     { "from": "chie",   "to": "kurumi",  "type": "同レギオン",    "spoiler": true },
     { "from": "chie",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
     { "from": "chie",   "to": "kyo",  "type": "憧れ", "arrows": "to",    "spoiler": false },
+
+    { "from": "sakanashi",   "to": "kyo",  "type": "大切な友人",    "spoiler": false },
+    { "from": "himeka",   "to": "kyo",  "type": "遺品を両親へ届けた", "arrows": "to",    "spoiler": true },
+    { "from": "akari",   "to": "kyo",  "type": "遺品を両親へ届けた", "arrows": "to",    "spoiler": true },
+    { "from": "kureha",   "to": "kyo",  "type": "遺品を両親へ届けた", "arrows": "to",    "spoiler": true },
 
     { "from": "anzu",   "to": "kurumi",  "type": "同レギオン",    "spoiler": true },
     { "from": "anzu",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
