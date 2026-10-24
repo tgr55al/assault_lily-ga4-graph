@@ -3825,6 +3825,7 @@
     { "from": "tatsuki",   "to": "kisara",  "type": "同レギオン",    "spoiler": false },
     { "from": "tatsuki",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
     { "from": "tatsuki",   "to": "moyu",  "type": "尊敬", "arrows": "to",    "spoiler": false },
+    { "from": "tatsuki",   "to": "miu",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "wakana",   "to": "kisara",  "type": "ルームメイト",    "spoiler": false },
     { "from": "wakana",   "to": "noa",  "type": "同レギオン",    "spoiler": false },
