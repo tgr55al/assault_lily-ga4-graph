@@ -4054,6 +4054,7 @@
     { "from": "homare",   "to": "konohana",  "type": "レギオン結成の誓い",    "spoiler": true },
     { "from": "homare",   "to": "moyu",  "type": "同レギオン",    "spoiler": true },
     { "from": "homare",   "to": "mimi",  "type": "衝突",    "spoiler": false },
+    { "from": "homare",   "to": "ticia",  "type": "評価", "arrows": "to",    "spoiler": false },
 
     { "from": "tokiwa",   "to": "tomoyo_seike",  "type": "同レギオン",    "spoiler": false },
     { "from": "tokiwa",   "to": "hibari",  "type": "同レギオン",    "spoiler": false },
