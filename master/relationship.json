@@ -5841,6 +5841,8 @@
     { "from": "chino",   "to": "miyabi",  "type": "尊敬", "arrows": "to",    "spoiler": false },
     { "from": "chino",   "to": "touko",  "type": "良い関係",    "spoiler": false },
 
+    { "from": "chino",   "to": "momiji",  "type": "姉妹",    "spoiler": false },
+
     { "from": "kuroe",   "to": "kaede",  "type": "ライバル",    "spoiler": false },
     { "from": "kuroe",   "to": "alexia",  "type": "幼馴染",    "spoiler": false },
 
