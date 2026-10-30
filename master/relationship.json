@@ -5187,6 +5187,8 @@
     { "from": "kukuri",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
     { "from": "kukuri",   "to": "imari",  "type": "同レギオン",    "spoiler": false },
     { "from": "kukuri",   "to": "saho",  "type": "尊敬", "arrows": "to",    "spoiler": false },
+    { "from": "kukuri",   "to": "tokuko",  "type": "高く評価", "arrows": "to",    "spoiler": false },
+    { "from": "tokuko",   "to": "kukuri",  "type": "戦友", "arrows": "to",    "spoiler": false },
 
     { "from": "rengetsu",   "to": "murasame",  "type": "姉妹",    "spoiler": false },
     { "from": "rengetsu",   "to": "kasumiko",  "type": "同レギオン",    "spoiler": false },
