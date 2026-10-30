@@ -4920,6 +4920,7 @@
     { "from": "momiji",   "to": "soraha",  "type": "仲が良い",    "spoiler": false },
     { "from": "momiji",   "to": "kukuri",  "type": "懇意にしている",    "spoiler": false },
     { "from": "lemie",   "to": "momiji",  "type": "懐いている", "arrows": "to",    "spoiler": false },
+    { "from": "momiji",   "to": "saho",  "type": "高く評価", "arrows": "to",    "spoiler": false },
 
     { "from": "katsura",   "to": "kurena",  "type": "同レギオン",    "spoiler": false },
     { "from": "katsura",   "to": "chinami",  "type": "同レギオン",    "spoiler": false },
