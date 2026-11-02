@@ -4756,15 +4756,18 @@
     { "from": "ginrangyoku",   "to": "kisara",  "type": "",    "spoiler": false },
     { "from": "ginrangyoku",   "to": "natsumi",  "type": "ファン", "arrows": "to",    "spoiler": false },
 
-	{ "from": "miaki",   "to": "ticia",  "type": "超絶憧れ", "arrows": "to",    "spoiler": false },
-	{ "from": "miaki",   "to": "fuka",  "type": "",    "spoiler": false },
+    { "from": "miaki",   "to": "ticia",  "type": "超絶憧れ", "arrows": "to",    "spoiler": false },
+    { "from": "miaki",   "to": "fuka",  "type": "",    "spoiler": false },
 
     { "from": "goteni",   "to": "kinrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "ginrangyoku",  "type": "命令", "arrows": "to",    "spoiler": true },
     { "from": "goteni",   "to": "tomoyo_nakahara",  "type": "評価", "arrows": "to",    "spoiler": true },
-    { "from": "goteni",   "to": "toriyama",  "type": "同研究チーム",    "spoiler": false },
-    { "from": "goteni",   "to": "kitahaba",  "type": "同研究チーム",    "spoiler": false },
-    { "from": "goteni",   "to": "akiyama",  "type": "同研究チーム",    "spoiler": false },
+    { "from": "goteni",   "to": "toriyama",  "type": "師であり、憧れの存在", "arrows": "to",    "spoiler": false },
+    { "from": "toriyama",   "to": "goteni",  "type": "教え子", "arrows": "to",    "spoiler": false },
+    { "from": "goteni",   "to": "kitahaba",  "type": "姉のような存在", "arrows": "to",    "spoiler": false },
+    { "from": "kitahaba",   "to": "goteni",  "type": "妹のように可愛がった", "arrows": "to",    "spoiler": false },
+    { "from": "goteni",   "to": "akiyama",  "type": "戦闘技術の師匠", "arrows": "to",    "spoiler": false },
+    { "from": "akiyama",   "to": "goteni",  "type": "戦闘技術の弟子", "arrows": "to",    "spoiler": false },
 
     { "from": "toriyama",   "to": "kitahaba",  "type": "同研究チーム",    "spoiler": false },
     { "from": "toriyama",   "to": "akiyama",  "type": "同研究チーム",    "spoiler": false },
