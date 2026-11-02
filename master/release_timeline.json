@@ -668,7 +668,7 @@
     {
       "id": "other-2025-001",
       "title": "異空間リーディングステージ「アサルトリリィ」- RED - & - BLUE -",
-      "shortTitle": "異空間リーディングステージ - RED - & - BLUE -",
+      "shortTitle": "異空間リステ - RED - & - BLUE -",
       "type": "stage",
       "date": "2025年11月28日",
       "viewingMethod": "なし（Blu-ray予約中）",
@@ -741,7 +741,7 @@
     {
       "id": "other-2026-001",
       "title": "異空間リーディングステージ「アサルトリリィ」 vol.2",
-      "shortTitle": "異空間リーディングステージ vol.2",
+      "shortTitle": "異空間リステ vol.2",
       "type": "stage",
       "date": "2026年10月28日",
       "viewingMethod": "なし（Blu-ray予約中）",
@@ -773,6 +773,18 @@
       "url": "https://w.atwiki.jp/assault_lily/pages/1015.html",
       "image": "https://pbs.twimg.com/media/HNlxPykaEAEMlhG?format=jpg&name=large",
       "cardImage": "https://i.gyazo.com/838770547ed1ed21b7215e437f060db9.jpg"
+    },
+    {
+      "id": "other-2027-001",
+      "title": "異空間リーディングステージ「アサルトリリィ」 vol.3",
+	  "shortTitle": "異空間リステ vol.3",
+      "type": "stage",
+      "date": "2027年3月10日",
+      "viewingMethod": "",
+      "description": "オムニバス形式。",
+      "url": "https://w.atwiki.jp/assault_lily/pages/1176.html",
+      "image": "https://pbs.twimg.com/media/HWAbg9MbwAEOwa7?format=jpg&name=large",
+      "cardImage": "https://pbs.twimg.com/media/HWAbg9MbwAEOwa7?format=jpg&name=large"
     },
     {
       "id": "stage-2027-003",
