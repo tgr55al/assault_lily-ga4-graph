@@ -3715,6 +3715,7 @@
     { "from": "yo", "to": "chikaru",     "type": "実力を認めている", "arrows": "to",          "spoiler": false },
     { "from": "sasaki", "to": "kiito",     "type": "きいたん", "arrows": "to",          "spoiler": false },
     { "from": "sasaki", "to": "ui",     "type": "ういたん", "arrows": "to",          "spoiler": false },
+    { "from": "sasaki", "to": "suzume",     "type": "ベルちゃん", "arrows": "to",          "spoiler": false },
 
     { "from": "chikaru", "to": "makoto",     "type": "親友",          "spoiler": false },
     { "from": "chikaru", "to": "mai",     "type": "友人",          "spoiler": false },
