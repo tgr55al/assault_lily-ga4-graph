@@ -5721,6 +5721,7 @@
     { "from": "ichigo",   "to": "uta_masukawa",  "type": "チーム",    "spoiler": false },
     { "from": "ichigo",   "to": "misora",  "type": "友人",    "spoiler": false },
     { "from": "ichigo",   "to": "katsura",  "type": "友人",    "spoiler": false },
+    { "from": "ichigo",   "to": "inori",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "eishin",   "to": "uta_masukawa",  "type": "チーム",    "spoiler": false },
     { "from": "eishin",   "to": "cherice",  "type": "憧れ", "arrows": "to",    "spoiler": false },
