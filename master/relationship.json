@@ -4394,6 +4394,10 @@
     { "from": "rosalinde",   "to": "kisara",  "type": "仲が良い",    "spoiler": false },
     { "from": "rosalinde",   "to": "tohka",  "type": "",    "spoiler": false },
     { "from": "rosalinde",   "to": "mimi",  "type": "距離を取っている", "arrows": "to",    "spoiler": false },
+    { "from": "rosalinde",   "to": "sachie",  "type": "仲が良い",    "spoiler": false },
+    { "from": "rosalinde",   "to": "shinobu",  "type": "仲が良い",    "spoiler": false },
+    { "from": "rosalinde",   "to": "yuyu",  "type": "仲が良い",    "spoiler": false },
+    { "from": "rosalinde",   "to": "shiori",  "type": "仲が良い",    "spoiler": false },
 
     { "from": "inori",   "to": "mio",  "type": "シュッツエンゲル（ノルン）",    "spoiler": false },
     { "from": "inori",   "to": "samidori",  "type": "同レギオン",    "spoiler": false },
