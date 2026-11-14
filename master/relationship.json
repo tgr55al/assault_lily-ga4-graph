@@ -4205,7 +4205,7 @@
     { "from": "sayu",   "to": "yukiko",  "type": "盟友",    "spoiler": false },
     { "from": "sayu",   "to": "kaede",  "type": "良きライバル",    "spoiler": false },
     { "from": "sayu",   "to": "ichi",  "type": "",    "spoiler": false },
-    { "from": "sayu",   "to": "kuo",  "type": "距離を縮めたかった", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "sayu",   "to": "kuo",  "type": "距離を縮めたい", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "kuo",   "to": "sayu",  "type": "ライバル視", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "kuo",   "to": "sayu",  "type": "和解", "spoiler": true },
 
@@ -5975,6 +5975,7 @@
     { "from": "fujino",   "to": "yo",  "type": "",    "spoiler": false },
     { "from": "fujino",   "to": "kasumiko",  "type": "懇意にしている",    "spoiler": false },
     { "from": "miyazu",   "to": "fujino",  "type": "警戒", "arrows": "to",    "spoiler": false },
+    { "from": "nadeshiko",   "to": "fujino",  "type": "インストール施術を実施", "arrows": "to",    "spoiler": true },
 
     { "from": "anja",   "to": "shiera_takamatsu",  "type": "戦友",    "spoiler": false },
     { "from": "anja",   "to": "kougetsu",  "type": "戦友",    "spoiler": false },
