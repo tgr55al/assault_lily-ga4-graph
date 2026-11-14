@@ -4205,6 +4205,9 @@
     { "from": "sayu",   "to": "yukiko",  "type": "盟友",    "spoiler": false },
     { "from": "sayu",   "to": "kaede",  "type": "良きライバル",    "spoiler": false },
     { "from": "sayu",   "to": "ichi",  "type": "",    "spoiler": false },
+    { "from": "sayu",   "to": "kuo",  "type": "距離を縮めたかった", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "kuo",   "to": "sayu",  "type": "ライバル視", "arrows": "to",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "kuo",   "to": "sayu",  "type": "和解", "spoiler": true },
 
     { "from": "mitsune_ishimoto",   "to": "yukiko",  "type": "ルームメイトの約束",    "spoiler": false },
 
