@@ -3873,6 +3873,8 @@
     { "from": "shiori",   "to": "sena",  "type": "姉妹",    "spoiler": false },
     { "from": "shiori",   "to": "tatsuki",  "type": "仲が良い",    "spoiler": false },
     { "from": "shiori",   "to": "sachie",  "type": "師弟関係",    "spoiler": false },
+    { "from": "hiromu",   "to": "shiori",  "type": "復帰を手助けした", "arrows": "to",    "spoiler": false },
+    { "from": "kaho",   "to": "shiori",  "type": "シュッツエンゲルの契りを申し出た", "arrows": "to",    "spoiler": false },
 
     { "from": "hijiri",   "to": "nodoka",  "type": "ルームメイト",    "spoiler": false },
     { "from": "botan",   "to": "hijiri",  "type": "自称ライバル", "arrows": "to",    "spoiler": false },
