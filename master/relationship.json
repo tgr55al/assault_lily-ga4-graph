@@ -6075,6 +6075,7 @@
     { "from": "kaina",   "to": "ryouka",  "type": "惹かれていた", "arrows": "to",    "spoiler": false },
 
     { "from": "shizuku_esaka",   "to": "sasaki",  "type": "旧知の仲",    "spoiler": false },
+    { "from": "ouka_sano",   "to": "shizuku_esaka",  "type": "お気に入り", "arrows": "to",    "spoiler": true },
 
     { "from": "fuka",   "to": "hirari",  "type": "ひどく嫌っている", "arrows": "to",    "spoiler": false },
 
