@@ -6065,6 +6065,7 @@
 
     { "from": "anzu",   "to": "kurumi",  "type": "同レギオン",    "spoiler": true },
     { "from": "anzu",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
+    { "from": "anzu",   "to": "rito",  "type": "闘星塾時代の友人",    "spoiler": false },
 
     { "from": "kurumi",   "to": "yoshiko",  "type": "同レギオン",    "spoiler": true },
 
