@@ -5505,7 +5505,7 @@
     { "from": "himeka",   "to": "kuo",  "type": "ライバル視", "arrows": "to",    "spoiler": false },
 
     { "from": "himeka",   "to": "akehi",  "type": "同レギオン",    "spoiler": true },
-    { "from": "himeka",   "to": "haruna",  "type": "同レギオン",    "spoiler": true },
+    { "from": "haruna",   "to": "himeka",  "type": "内心惹かれている", "arrows": "to",    "spoiler": true },
     { "from": "himeka",   "to": "suzume",  "type": "同レギオン",    "spoiler": true },
     { "from": "himeka",   "to": "fujino",  "type": "同レギオン",    "spoiler": true },
     { "from": "himeka",   "to": "moka",  "type": "同レギオン",    "spoiler": true },
