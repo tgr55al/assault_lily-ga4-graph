@@ -6047,6 +6047,7 @@
     { "from": "hiromi",   "to": "anzu",  "type": "レギオン結成を目指している",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "hiromi",   "to": "chie",  "type": "レギオン結成を目指している",    "spoiler": false, "hideWhenSpoiler": true },
     { "from": "anzu",   "to": "chie",  "type": "親友・レギオン結成を目指している",    "spoiler": false, "hideWhenSpoiler": true },
+    { "from": "hiromi",   "to": "kureha",  "type": "",    "spoiler": false },
 
     { "from": "hiromi",   "to": "chie",  "type": "同レギオン",    "spoiler": true },
     { "from": "hiromi",   "to": "anzu",  "type": "同レギオン",    "spoiler": true },
