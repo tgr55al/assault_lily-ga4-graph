@@ -3686,12 +3686,12 @@
     { "from": "shin",   "to": "mai", "type": "気が合う",          "spoiler": false },
     { "from": "shin",   "to": "mimi", "type": "微妙",          "spoiler": false },
     { "from": "shin",   "to": "shinobu", "type": "冗談で煽りあう仲",          "spoiler": false },
-    { "from": "shin",   "to": "kaoru_hayashi_sister", "arrows": "to",  "type": "慕っていた",    "spoiler": false },
+    { "from": "shin",   "to": "kaoru_hayashi", "arrows": "to",  "type": "慕っている",    "spoiler": false },
 
     { "from": "yahiro",   "to": "yuyu", "type": "友人",          "spoiler": false },
     { "from": "yahiro",   "to": "mai", "type": "友人",          "spoiler": false },
     { "from": "yahiro",   "to": "mimi", "type": "微妙",          "spoiler": false },
-    { "from": "yahiro",   "to": "kaoru_hayashi_sister", "arrows": "to",  "type": "慕っていた",    "spoiler": false },
+    { "from": "yahiro",   "to": "kaoru_hayashi", "arrows": "to",  "type": "慕っている",    "spoiler": false },
 
     { "from": "kazuha", "to": "renka",     "type": "信頼",          "spoiler": false },
     { "from": "sasaki", "to": "kazuha",     "type": "なついてる", "arrows": "to",          "spoiler": false },
