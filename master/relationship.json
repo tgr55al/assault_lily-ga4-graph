@@ -4523,6 +4523,7 @@
 
     { "from": "natsuki",   "to": "azuki",  "type": "ルームメイト",    "spoiler": false },
     { "from": "natsuki",   "to": "soraha",  "type": "仲が良い",    "spoiler": false },
+    { "from": "natsuki",   "to": "mai",  "type": "戦友",    "spoiler": false },
 
     { "from": "rinka",   "to": "honori",  "type": "親友",    "spoiler": false },
     { "from": "rinka",   "to": "keine",  "type": "同レギオン",    "spoiler": false },
