@@ -3920,6 +3920,7 @@
     { "from": "botan",   "to": "natose",  "type": "同レギオン",    "spoiler": false },
     { "from": "botan",   "to": "noa",  "type": "ルームメイト",    "spoiler": false },
     { "from": "botan",   "to": "hibari",  "type": "苦手",    "spoiler": false },
+    { "from": "botan",   "to": "misora",  "type": "交流がある",    "spoiler": false },
 
     { "from": "sakua",   "to": "midori",  "type": "同レギオン",    "spoiler": false },
     { "from": "sakua",   "to": "nayuru",  "type": "同レギオン",    "spoiler": false },
